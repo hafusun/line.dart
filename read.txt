@@ -1,0 +1,1 @@
+{data: {1: {1: true, 2: true}, 2: 7}, _info: <TMessage name: 'getAllChatMids' type: 1 seqid: 0>}

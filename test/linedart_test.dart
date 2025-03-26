@@ -2,6 +2,7 @@ import 'dart:io'; // ファイル操作のためにdart:ioをインポート
 import 'package:fbthrift/fbthrift.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:linedart/thrift/read.dart';
 import 'package:linedart/thrift/write.dart';
 
 void main() {
@@ -16,6 +17,11 @@ void main() {
     // ファイルに書き出し
     final file = File('output.bin');
     await file.writeAsBytes(result);
+
+    final read = readThrift(await file.readAsBytes(), TCompactProtocol);
+    final rfile = File('read.txt');
+    await rfile.writeAsString('$read');
+    print('$read');
 
     // デバッグ用にコンソールにも出力
     debugPrint(result.toString());
