@@ -21,7 +21,7 @@ void main() {
     final read = readThrift(await file.readAsBytes(), TCompactProtocol);
     final rfile = File('read.txt');
     await rfile.writeAsString('$read');
-    print('$read');
+    print('${read['data']}');
 
     // デバッグ用にコンソールにも出力
     debugPrint(result.toString());

@@ -107,10 +107,10 @@ dynamic _readThrift(Uint8List data, dynamic protocol) {
   } else if (protocol == TBinaryProtocol) {
     proto = TBinaryProtocol(bufTrans as TTransport);
   }
-  TMessage msg_info = proto.readMessageBegin();
+  TMessage msgInfo = proto.readMessageBegin();
   dynamic tdata = readStruct(proto);
   proto.readMessageEnd();
-  return {'data': tdata, '_info': msg_info};
+  return {'data': tdata, '_info': parseTMessage(msgInfo)};
 }
 
 Map readThrift(data, protocol) {
@@ -126,4 +126,8 @@ dynamic readThriftStruct(Uint8List data, dynamic protocol) {
     proto = TBinaryProtocol(bufTrans as TTransport);
   }
   return readStruct(proto);
+}
+
+Map parseTMessage(TMessage message) {
+  return { 'fname': message.name, 'mtype': message.type, 'rseqid': message.seqid };
 }
