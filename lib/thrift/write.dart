@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 import 'package:fbthrift/fbthrift.dart';
-import 'types.dart';
+import 'declares.dart';
 import 't_buffered_transport.dart';
 import 'package:fixnum/fixnum.dart';
 
