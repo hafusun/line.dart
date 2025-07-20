@@ -8134,17 +8134,17 @@ class AuthSessionRequest {
 }
 
 class AuthenticateWithPaakRequest {
-  final String authSessionId;
+  final String sessionId;
   final AuthPublicKeyCredential credential;
 
   AuthenticateWithPaakRequest({
-    required this.authSessionId,
+    required this.sessionId,
     required this.credential
   });
 
   factory AuthenticateWithPaakRequest.fromJson(Map json) {
     return AuthenticateWithPaakRequest(
-      authSessionId: json["authSessionId"],
+      sessionId: json["authSessionId"],
       credential: AuthPublicKeyCredential.fromJson(json["credential"]),
     );
   }
@@ -11947,18 +11947,18 @@ class DetermineMediaMessageFlowResponse {
 }
 
 class Device {
+  final String udid;
   final String deviceModel;
-  final String deviceId;
 
   Device({
-    required this.deviceModel,
-    required this.deviceId
+    required this.udid,
+    required this.deviceModel
   });
 
   factory Device.fromJson(Map json) {
     return Device(
+      udid: json["udid"],
       deviceModel: json["deviceModel"],
-      deviceId: json["deviceId"],
     );
   }
 }
@@ -12179,16 +12179,19 @@ class E2EENegotiationResult {
 class EapLogin {
   final Q70_q type;
   final String accessToken;
+  final String countryCode;
 
   EapLogin({
     required this.type,
-    required this.accessToken
+    required this.accessToken,
+    required this.countryCode
   });
 
   factory EapLogin.fromJson(Map json) {
     return EapLogin(
       type: Q70_q.fromValue(json["type"]),
       accessToken: json["accessToken"],
+      countryCode: json["countryCode"]
     );
   }
 }
@@ -13600,15 +13603,15 @@ class GetCampaignResponse {
 }
 
 class GetChallengeForPaakAuthRequest {
-  final String authSessionId;
+  final String sessionId;
 
   GetChallengeForPaakAuthRequest({
-    required this.authSessionId
+    required this.sessionId
   });
 
   factory GetChallengeForPaakAuthRequest.fromJson(Map json) {
     return GetChallengeForPaakAuthRequest(
-      authSessionId: json["authSessionId"],
+      sessionId: json["sessionId"],
     );
   }
 }
@@ -14949,15 +14952,15 @@ class GetLiveTalkSpeakersForNonMemberResponse {
 }
 
 class GetLoginActorContextRequest {
-  final String authSessionId;
+  final String sessionId;
 
   GetLoginActorContextRequest({
-    required this.authSessionId
+    required this.sessionId
   });
 
   factory GetLoginActorContextRequest.fromJson(Map json) {
     return GetLoginActorContextRequest(
-      authSessionId: json["authSessionId"],
+      sessionId: json["authSessionId"],
     );
   }
 }
@@ -22034,18 +22037,15 @@ class OkButton {
 }
 
 class OpenSessionRequest {
-  final Device device;
-  final Q70_q type;
+  final Map metaData;
 
   OpenSessionRequest({
-    required this.device,
-    required this.type
+    required this.metaData,
   });
 
   factory OpenSessionRequest.fromJson(Map json) {
     return OpenSessionRequest(
-      device: Device.fromJson(json["device"]),
-      type: Q70_q.fromValue(json["type"]),
+      metaData: Map.from(json["metaData"])
     );
   }
 }
@@ -49543,14 +49543,17 @@ class updateProfileAttribute_result {
 }
 
 class updateProfileAttributes_args {
+  final int reqSeq;
   final UpdateProfileAttributesRequest request;
 
   updateProfileAttributes_args({
+    required this.reqSeq,
     required this.request
   });
 
   factory updateProfileAttributes_args.fromJson(Map json) {
     return updateProfileAttributes_args(
+      reqSeq: json["reqSeq"],
       request: UpdateProfileAttributesRequest.fromJson(json["request"]),
     );
   }
