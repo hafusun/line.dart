@@ -1,4 +1,4 @@
-import 'line_types.dart' as LINEtypes;
+import '../line_types.dart' as LINEtypes;
 
 Map<K, R> map<K, T, R>(
   R Function(T v) call,
