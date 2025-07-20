@@ -78,15 +78,15 @@ List AcceptToSpeakRequest(LINEtypes.AcceptToSpeakRequest? param) {
 		[11, 3, param.inviteRequestId],
 	];
 }
-dynamic LiveTalkType(LINEtypes.LiveTalkType? param) {
+dynamic LiveTalkType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.LiveTalkType.fromValue(param as int);
+		return LINEtypes.LiveTalkType.fromValue(param);
 	}
 	return param;
 }
-dynamic LiveTalkSpeakerSetting(LINEtypes.LiveTalkSpeakerSetting? param) {
+dynamic LiveTalkSpeakerSetting(dynamic param) {
 	if (param is int) {
-		return LINEtypes.LiveTalkSpeakerSetting.fromValue(param as int);
+		return LINEtypes.LiveTalkSpeakerSetting.fromValue(param);
 	}
 	return param;
 }
@@ -175,9 +175,9 @@ List GetSquareInfoByChatMidRequest(LINEtypes.GetSquareInfoByChatMidRequest? para
 		[11, 1, param.squareChatMid],
 	];
 }
-dynamic LiveTalkRole(LINEtypes.LiveTalkRole? param) {
+dynamic LiveTalkRole(dynamic param) {
 	if (param is int) {
-		return LINEtypes.LiveTalkRole.fromValue(param as int);
+		return LINEtypes.LiveTalkRole.fromValue(param);
 	}
 	return param;
 }
@@ -222,9 +222,9 @@ List InviteToSpeakRequest(LINEtypes.InviteToSpeakRequest? param) {
 		[11, 3, param.targetMid],
 	];
 }
-dynamic BooleanState(LINEtypes.BooleanState? param) {
+dynamic BooleanState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.BooleanState.fromValue(param as int);
+		return LINEtypes.BooleanState.fromValue(param);
 	}
 	return param;
 }
@@ -305,9 +305,9 @@ List RemoveLiveTalkSubscriptionRequest(LINEtypes.RemoveLiveTalkSubscriptionReque
 		[11, 2, param.sessionId],
 	];
 }
-dynamic LiveTalkReportType(LINEtypes.LiveTalkReportType? param) {
+dynamic LiveTalkReportType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.LiveTalkReportType.fromValue(param as int);
+		return LINEtypes.LiveTalkReportType.fromValue(param);
 	}
 	return param;
 }
@@ -350,9 +350,9 @@ List RequestToSpeakRequest(LINEtypes.RequestToSpeakRequest? param) {
 		[11, 2, param.sessionId],
 	];
 }
-dynamic LiveTalkAttribute(LINEtypes.LiveTalkAttribute? param) {
+dynamic LiveTalkAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.LiveTalkAttribute.fromValue(param as int);
+		return LINEtypes.LiveTalkAttribute.fromValue(param);
 	}
 	return param;
 }
@@ -386,21 +386,21 @@ List UpdateLiveTalkAttrsRequest(LINEtypes.UpdateLiveTalkAttrsRequest? param) {
 		[12, 2, LiveTalk(param.liveTalk)],
 	];
 }
-dynamic Pb1_D4(LINEtypes.Pb1_D4? param) {
+dynamic Pb1_D4(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_D4.fromValue(param as int);
+		return LINEtypes.Pb1_D4.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_EnumC13222w4(LINEtypes.Pb1_EnumC13222w4? param) {
+dynamic Pb1_EnumC13222w4(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13222w4.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13222w4.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_EnumC13237x5(LINEtypes.Pb1_EnumC13237x5? param) {
+dynamic Pb1_EnumC13237x5(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13237x5.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13237x5.fromValue(param);
 	}
 	return param;
 }
@@ -414,15 +414,15 @@ List AcquireOACallRouteRequest(LINEtypes.AcquireOACallRouteRequest? param) {
 		[11, 3, param.otp],
 	];
 }
-dynamic PaidCallType(LINEtypes.PaidCallType? param) {
+dynamic PaidCallType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.PaidCallType.fromValue(param as int);
+		return LINEtypes.PaidCallType.fromValue(param);
 	}
 	return param;
 }
-dynamic og_EnumC32661b(LINEtypes.og_EnumC32661b? param) {
+dynamic og_EnumC32661b(dynamic param) {
 	if (param is int) {
-		return LINEtypes.og_EnumC32661b.fromValue(param as int);
+		return LINEtypes.og_EnumC32661b.fromValue(param);
 	}
 	return param;
 }
@@ -796,9 +796,9 @@ List AddFriendByMidRequest(LINEtypes.AddFriendByMidRequest? param) {
 		[12, 3, AddFriendTracking(param.tracking)],
 	];
 }
-dynamic Ob1_O0(LINEtypes.Ob1_O0? param) {
+dynamic Ob1_O0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Ob1_O0.fromValue(param as int);
+		return LINEtypes.Ob1_O0.fromValue(param);
 	}
 	return param;
 }
@@ -932,15 +932,15 @@ List CreateSquareChatAnnouncementRequest(LINEtypes.CreateSquareChatAnnouncementR
 		[12, 3, SquareChatAnnouncement(param.squareChatAnnouncement)],
 	];
 }
-dynamic SquareChatType(LINEtypes.SquareChatType? param) {
+dynamic SquareChatType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareChatType.fromValue(param as int);
+		return LINEtypes.SquareChatType.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareChatState(LINEtypes.SquareChatState? param) {
+dynamic SquareChatState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareChatState.fromValue(param as int);
+		return LINEtypes.SquareChatState.fromValue(param);
 	}
 	return param;
 }
@@ -982,27 +982,27 @@ List CreateSquareChatRequest(LINEtypes.CreateSquareChatRequest? param) {
 		[15, 3, [11, param.squareMemberMids]],
 	];
 }
-dynamic SquareType(LINEtypes.SquareType? param) {
+dynamic SquareType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareType.fromValue(param as int);
+		return LINEtypes.SquareType.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareState(LINEtypes.SquareState? param) {
+dynamic SquareState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareState.fromValue(param as int);
+		return LINEtypes.SquareState.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareEmblem(LINEtypes.SquareEmblem? param) {
+dynamic SquareEmblem(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareEmblem.fromValue(param as int);
+		return LINEtypes.SquareEmblem.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareJoinMethodType(LINEtypes.SquareJoinMethodType? param) {
+dynamic SquareJoinMethodType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareJoinMethodType.fromValue(param as int);
+		return LINEtypes.SquareJoinMethodType.fromValue(param);
 	}
 	return param;
 }
@@ -1064,15 +1064,15 @@ List Square(LINEtypes.Square? param) {
 		[10, 17, param.createdAt],
 	];
 }
-dynamic SquareMembershipState(LINEtypes.SquareMembershipState? param) {
+dynamic SquareMembershipState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareMembershipState.fromValue(param as int);
+		return LINEtypes.SquareMembershipState.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareMemberRole(LINEtypes.SquareMemberRole? param) {
+dynamic SquareMemberRole(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareMemberRole.fromValue(param as int);
+		return LINEtypes.SquareMemberRole.fromValue(param);
 	}
 	return param;
 }
@@ -1171,15 +1171,15 @@ List FetchMyEventsRequest(LINEtypes.FetchMyEventsRequest? param) {
 		[11, 4, param.continuationToken],
 	];
 }
-dynamic FetchDirection(LINEtypes.FetchDirection? param) {
+dynamic FetchDirection(dynamic param) {
 	if (param is int) {
-		return LINEtypes.FetchDirection.fromValue(param as int);
+		return LINEtypes.FetchDirection.fromValue(param);
 	}
 	return param;
 }
-dynamic FetchType(LINEtypes.FetchType? param) {
+dynamic FetchType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.FetchType.fromValue(param as int);
+		return LINEtypes.FetchType.fromValue(param);
 	}
 	return param;
 }
@@ -1223,9 +1223,9 @@ List FindSquareByInvitationTicketV2Request(LINEtypes.FindSquareByInvitationTicke
 		[11, 1, param.invitationTicket],
 	];
 }
-dynamic AdScreen(LINEtypes.AdScreen? param) {
+dynamic AdScreen(dynamic param) {
 	if (param is int) {
-		return LINEtypes.AdScreen.fromValue(param as int);
+		return LINEtypes.AdScreen.fromValue(param);
 	}
 	return param;
 }
@@ -1275,9 +1275,9 @@ List GetJoinedSquaresRequest(LINEtypes.GetJoinedSquaresRequest? param) {
 		[8, 3, param.limit],
 	];
 }
-dynamic MessageReactionType(LINEtypes.MessageReactionType? param) {
+dynamic MessageReactionType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.MessageReactionType.fromValue(param as int);
+		return LINEtypes.MessageReactionType.fromValue(param);
 	}
 	return param;
 }
@@ -1414,9 +1414,9 @@ List GetSquareMemberRelationRequest(LINEtypes.GetSquareMemberRelationRequest? pa
 		[11, 3, param.targetSquareMemberMid],
 	];
 }
-dynamic SquareMemberRelationState(LINEtypes.SquareMemberRelationState? param) {
+dynamic SquareMemberRelationState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareMemberRelationState.fromValue(param as int);
+		return LINEtypes.SquareMemberRelationState.fromValue(param);
 	}
 	return param;
 }
@@ -1651,9 +1651,9 @@ List RemoveSubscriptionsRequest(LINEtypes.RemoveSubscriptionsRequest? param) {
 		[15, 2, [10, param.unsubscriptions]],
 	];
 }
-dynamic MessageSummaryReportType(LINEtypes.MessageSummaryReportType? param) {
+dynamic MessageSummaryReportType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.MessageSummaryReportType.fromValue(param as int);
+		return LINEtypes.MessageSummaryReportType.fromValue(param);
 	}
 	return param;
 }
@@ -1667,9 +1667,9 @@ List ReportMessageSummaryRequest(LINEtypes.ReportMessageSummaryRequest? param) {
 		[8, 3, MessageSummaryReportType(param.reportType)],
 	];
 }
-dynamic ReportType(LINEtypes.ReportType? param) {
+dynamic ReportType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.ReportType.fromValue(param as int);
+		return LINEtypes.ReportType.fromValue(param);
 	}
 	return param;
 }
@@ -1798,21 +1798,21 @@ List SearchSquaresRequest(LINEtypes.SearchSquaresRequest? param) {
 		[8, 4, param.limit],
 	];
 }
-dynamic MIDType(LINEtypes.MIDType? param) {
+dynamic MIDType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.MIDType.fromValue(param as int);
+		return LINEtypes.MIDType.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_D6(LINEtypes.Pb1_D6? param) {
+dynamic Pb1_D6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_D6.fromValue(param as int);
+		return LINEtypes.Pb1_D6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_EnumC13050k(LINEtypes.Pb1_EnumC13050k? param) {
+dynamic Pb1_EnumC13050k(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13050k.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13050k.fromValue(param);
 	}
 	return param;
 }
@@ -1845,27 +1845,27 @@ List Location(LINEtypes.Location? param) {
 		[4, 9, param.altitudeMeters],
 	];
 }
-dynamic ContentType(LINEtypes.ContentType? param) {
+dynamic ContentType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.ContentType.fromValue(param as int);
+		return LINEtypes.ContentType.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_EnumC13015h6(LINEtypes.Pb1_EnumC13015h6? param) {
+dynamic Pb1_EnumC13015h6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13015h6.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13015h6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_E7(LINEtypes.Pb1_E7? param) {
+dynamic Pb1_E7(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_E7.fromValue(param as int);
+		return LINEtypes.Pb1_E7.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_B(LINEtypes.Pb1_B? param) {
+dynamic Pb1_B(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_B.fromValue(param as int);
+		return LINEtypes.Pb1_B.fromValue(param);
 	}
 	return param;
 }
@@ -1914,9 +1914,9 @@ List Message(LINEtypes.Message? param) {
 		[15, 27, [12, param.reactions != null ? param.reactions.map((e) => Reaction(e)).toList() : []]],
 	];
 }
-dynamic SquareMessageState(LINEtypes.SquareMessageState? param) {
+dynamic SquareMessageState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareMessageState.fromValue(param as int);
+		return LINEtypes.SquareMessageState.fromValue(param);
 	}
 	return param;
 }
@@ -1989,9 +1989,9 @@ List UnsendMessageRequest(LINEtypes.UnsendMessageRequest? param) {
 		[11, 4, param.threadMid],
 	];
 }
-dynamic SquareAuthorityAttribute(LINEtypes.SquareAuthorityAttribute? param) {
+dynamic SquareAuthorityAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareAuthorityAttribute.fromValue(param as int);
+		return LINEtypes.SquareAuthorityAttribute.fromValue(param);
 	}
 	return param;
 }
@@ -2029,15 +2029,15 @@ List UpdateSquareAuthorityRequest(LINEtypes.UpdateSquareAuthorityRequest? param)
 		[12, 3, SquareAuthority(param.authority)],
 	];
 }
-dynamic SquareChatMemberAttribute(LINEtypes.SquareChatMemberAttribute? param) {
+dynamic SquareChatMemberAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareChatMemberAttribute.fromValue(param as int);
+		return LINEtypes.SquareChatMemberAttribute.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareChatMembershipState(LINEtypes.SquareChatMembershipState? param) {
+dynamic SquareChatMembershipState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareChatMembershipState.fromValue(param as int);
+		return LINEtypes.SquareChatMembershipState.fromValue(param);
 	}
 	return param;
 }
@@ -2066,9 +2066,9 @@ List UpdateSquareChatMemberRequest(LINEtypes.UpdateSquareChatMemberRequest? para
 		[12, 3, SquareChatMember(param.chatMember)],
 	];
 }
-dynamic SquareChatAttribute(LINEtypes.SquareChatAttribute? param) {
+dynamic SquareChatAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareChatAttribute.fromValue(param as int);
+		return LINEtypes.SquareChatAttribute.fromValue(param);
 	}
 	return param;
 }
@@ -2084,15 +2084,15 @@ List UpdateSquareChatRequest(LINEtypes.UpdateSquareChatRequest? param) {
 		[12, 3, SquareChat(param.squareChat)],
 	];
 }
-dynamic SquareFeatureSetAttribute(LINEtypes.SquareFeatureSetAttribute? param) {
+dynamic SquareFeatureSetAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareFeatureSetAttribute.fromValue(param as int);
+		return LINEtypes.SquareFeatureSetAttribute.fromValue(param);
 	}
 	return param;
 }
-dynamic SquareFeatureControlState(LINEtypes.SquareFeatureControlState? param) {
+dynamic SquareFeatureControlState(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareFeatureControlState.fromValue(param as int);
+		return LINEtypes.SquareFeatureControlState.fromValue(param);
 	}
 	return param;
 }
@@ -2161,15 +2161,15 @@ List UpdateSquareMemberRelationRequest(LINEtypes.UpdateSquareMemberRelationReque
 		[12, 5, SquareMemberRelation(param.relation)],
 	];
 }
-dynamic SquareMemberAttribute(LINEtypes.SquareMemberAttribute? param) {
+dynamic SquareMemberAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareMemberAttribute.fromValue(param as int);
+		return LINEtypes.SquareMemberAttribute.fromValue(param);
 	}
 	return param;
 }
-dynamic SquarePreferenceAttribute(LINEtypes.SquarePreferenceAttribute? param) {
+dynamic SquarePreferenceAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquarePreferenceAttribute.fromValue(param as int);
+		return LINEtypes.SquarePreferenceAttribute.fromValue(param);
 	}
 	return param;
 }
@@ -2201,9 +2201,9 @@ List UpdateSquareMembersRequest(LINEtypes.UpdateSquareMembersRequest? param) {
 		[15, 3, [12, param.members != null ? param.members.map((e) => SquareMember(e)).toList() : []]],
 	];
 }
-dynamic SquareAttribute(LINEtypes.SquareAttribute? param) {
+dynamic SquareAttribute(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SquareAttribute.fromValue(param as int);
+		return LINEtypes.SquareAttribute.fromValue(param);
 	}
 	return param;
 }
@@ -2235,15 +2235,15 @@ List UpdateUserSettingsRequest(LINEtypes.UpdateUserSettingsRequest? param) {
 		[12, 2, SquareUserSettings(param.userSettings)],
 	];
 }
-dynamic r80_EnumC34362b(LINEtypes.r80_EnumC34362b? param) {
+dynamic r80_EnumC34362b(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34362b.fromValue(param as int);
+		return LINEtypes.r80_EnumC34362b.fromValue(param);
 	}
 	return param;
 }
-dynamic r80_EnumC34361a(LINEtypes.r80_EnumC34361a? param) {
+dynamic r80_EnumC34361a(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34361a.fromValue(param as int);
+		return LINEtypes.r80_EnumC34361a.fromValue(param);
 	}
 	return param;
 }
@@ -2296,9 +2296,9 @@ List BulkFollowRequest(LINEtypes.BulkFollowRequest? param) {
 		[2, 3, param.hasNext],
 	];
 }
-dynamic t80_h(LINEtypes.t80_h? param) {
+dynamic t80_h(dynamic param) {
 	if (param is int) {
-		return LINEtypes.t80_h.fromValue(param as int);
+		return LINEtypes.t80_h.fromValue(param);
 	}
 	return param;
 }
@@ -2389,21 +2389,21 @@ List CancelReactionRequest(LINEtypes.CancelReactionRequest? param) {
 		[10, 2, param.messageId],
 	];
 }
-dynamic VerificationMethod(LINEtypes.VerificationMethod? param) {
+dynamic VerificationMethod(dynamic param) {
 	if (param is int) {
-		return LINEtypes.VerificationMethod.fromValue(param as int);
+		return LINEtypes.VerificationMethod.fromValue(param);
 	}
 	return param;
 }
-dynamic r80_n0(LINEtypes.r80_n0? param) {
+dynamic r80_n0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_n0.fromValue(param as int);
+		return LINEtypes.r80_n0.fromValue(param);
 	}
 	return param;
 }
-dynamic T70_EnumC14390b(LINEtypes.T70_EnumC14390b? param) {
+dynamic T70_EnumC14390b(dynamic param) {
 	if (param is int) {
-		return LINEtypes.T70_EnumC14390b.fromValue(param as int);
+		return LINEtypes.T70_EnumC14390b.fromValue(param);
 	}
 	return param;
 }
@@ -2453,15 +2453,15 @@ List CheckIfPhonePinCodeMsgVerifiedRequest(LINEtypes.CheckIfPhonePinCodeMsgVerif
 		[12, 2, UserPhoneNumber(param.userPhoneNumber)],
 	];
 }
-dynamic r80_EnumC34368h(LINEtypes.r80_EnumC34368h? param) {
+dynamic r80_EnumC34368h(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34368h.fromValue(param as int);
+		return LINEtypes.r80_EnumC34368h.fromValue(param);
 	}
 	return param;
 }
-dynamic r80_EnumC34371k(LINEtypes.r80_EnumC34371k? param) {
+dynamic r80_EnumC34371k(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34371k.fromValue(param as int);
+		return LINEtypes.r80_EnumC34371k.fromValue(param);
 	}
 	return param;
 }
@@ -2482,15 +2482,15 @@ List CheckUserAgeWithDocomoV2Request(LINEtypes.CheckUserAgeWithDocomoV2Request? 
 		[11, 1, param.authCode],
 	];
 }
-dynamic CarrierCode(LINEtypes.CarrierCode? param) {
+dynamic CarrierCode(dynamic param) {
 	if (param is int) {
-		return LINEtypes.CarrierCode.fromValue(param as int);
+		return LINEtypes.CarrierCode.fromValue(param);
 	}
 	return param;
 }
-dynamic IdentityProvider(LINEtypes.IdentityProvider? param) {
+dynamic IdentityProvider(dynamic param) {
 	if (param is int) {
-		return LINEtypes.IdentityProvider.fromValue(param as int);
+		return LINEtypes.IdentityProvider.fromValue(param);
 	}
 	return param;
 }
@@ -2524,9 +2524,9 @@ List ConnectEapAccountRequest(LINEtypes.ConnectEapAccountRequest? param) {
 		[11, 1, param.authSessionId],
 	];
 }
-dynamic Pb1_X2(LINEtypes.Pb1_X2? param) {
+dynamic Pb1_X2(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_X2.fromValue(param as int);
+		return LINEtypes.Pb1_X2.fromValue(param);
 	}
 	return param;
 }
@@ -2552,9 +2552,9 @@ List ChatRoomAnnouncementContents(LINEtypes.ChatRoomAnnouncementContents? param)
 		[12, 5, ChatRoomAnnouncementContentMetadata(param.contentMetadata)],
 	];
 }
-dynamic Pb1_Z2(LINEtypes.Pb1_Z2? param) {
+dynamic Pb1_Z2(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_Z2.fromValue(param as int);
+		return LINEtypes.Pb1_Z2.fromValue(param);
 	}
 	return param;
 }
@@ -2570,9 +2570,9 @@ List CreateChatRequest(LINEtypes.CreateChatRequest? param) {
 		[11, 5, param.picturePath],
 	];
 }
-dynamic Pb1_A3(LINEtypes.Pb1_A3? param) {
+dynamic Pb1_A3(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_A3.fromValue(param as int);
+		return LINEtypes.Pb1_A3.fromValue(param);
 	}
 	return param;
 }
@@ -2719,9 +2719,9 @@ List DetermineMediaMessageFlowRequest(LINEtypes.DetermineMediaMessageFlowRequest
 		[11, 1, param.chatMid],
 	];
 }
-dynamic Q70_q(LINEtypes.Q70_q? param) {
+dynamic Q70_q(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Q70_q.fromValue(param as int);
+		return LINEtypes.Q70_q.fromValue(param);
 	}
 	return param;
 }
@@ -2757,9 +2757,9 @@ List FetchPhonePinCodeMsgRequest(LINEtypes.FetchPhonePinCodeMsgRequest? param) {
 		[12, 2, UserPhoneNumber(param.userPhoneNumber)],
 	];
 }
-dynamic Pb1_F0(LINEtypes.Pb1_F0? param) {
+dynamic Pb1_F0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_F0.fromValue(param as int);
+		return LINEtypes.Pb1_F0.fromValue(param);
 	}
 	return param;
 }
@@ -2796,9 +2796,9 @@ List GetAllChatMidsRequest(LINEtypes.GetAllChatMidsRequest? param) {
 		[2, 2, param.withInvitedChats],
 	];
 }
-dynamic Pb1_V7(LINEtypes.Pb1_V7? param) {
+dynamic Pb1_V7(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_V7.fromValue(param as int);
+		return LINEtypes.Pb1_V7.fromValue(param);
 	}
 	return param;
 }
@@ -2824,9 +2824,9 @@ List LatestProductsByAuthorRequest(LINEtypes.LatestProductsByAuthorRequest? para
 		[8, 3, param.limit],
 	];
 }
-dynamic Ob1_a2(LINEtypes.Ob1_a2? param) {
+dynamic Ob1_a2(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Ob1_a2.fromValue(param as int);
+		return LINEtypes.Ob1_a2.fromValue(param);
 	}
 	return param;
 }
@@ -2891,9 +2891,9 @@ List AdRequest(LINEtypes.AdRequest? param) {
 		[13, 2, [11, 11, param.queryParams]],
 	];
 }
-dynamic Uf_EnumC14873o(LINEtypes.Uf_EnumC14873o? param) {
+dynamic Uf_EnumC14873o(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Uf_EnumC14873o.fromValue(param as int);
+		return LINEtypes.Uf_EnumC14873o.fromValue(param);
 	}
 	return param;
 }
@@ -2944,9 +2944,9 @@ List GetBuddyChatBarRequest(LINEtypes.GetBuddyChatBarRequest? param) {
 		[11, 3, param.richMenuId],
 	];
 }
-dynamic Pb1_D0(LINEtypes.Pb1_D0? param) {
+dynamic Pb1_D0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_D0.fromValue(param as int);
+		return LINEtypes.Pb1_D0.fromValue(param);
 	}
 	return param;
 }
@@ -3008,9 +3008,9 @@ List GetChannelContextRequest(LINEtypes.GetChannelContextRequest? param) {
 		[11, 1, param.authSessionId],
 	];
 }
-dynamic Pb1_Q2(LINEtypes.Pb1_Q2? param) {
+dynamic Pb1_Q2(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_Q2.fromValue(param as int);
+		return LINEtypes.Pb1_Q2.fromValue(param);
 	}
 	return param;
 }
@@ -3033,15 +3033,15 @@ List GetChatsRequest(LINEtypes.GetChatsRequest? param) {
 		[2, 3, param.withInvitees],
 	];
 }
-dynamic jO0_EnumC27533B(LINEtypes.jO0_EnumC27533B? param) {
+dynamic jO0_EnumC27533B(dynamic param) {
 	if (param is int) {
-		return LINEtypes.jO0_EnumC27533B.fromValue(param as int);
+		return LINEtypes.jO0_EnumC27533B.fromValue(param);
 	}
 	return param;
 }
-dynamic jO0_EnumC27559z(LINEtypes.jO0_EnumC27559z? param) {
+dynamic jO0_EnumC27559z(dynamic param) {
 	if (param is int) {
-		return LINEtypes.jO0_EnumC27559z.fromValue(param as int);
+		return LINEtypes.jO0_EnumC27559z.fromValue(param);
 	}
 	return param;
 }
@@ -3110,9 +3110,9 @@ List GetContactsV3Request(LINEtypes.GetContactsV3Request? param) {
 		[2, 3, param.checkUserStatusStrictly],
 	];
 }
-dynamic Pb1_EnumC13221w3(LINEtypes.Pb1_EnumC13221w3? param) {
+dynamic Pb1_EnumC13221w3(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13221w3.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13221w3.fromValue(param);
 	}
 	return param;
 }
@@ -3192,9 +3192,9 @@ List GetFollowingsRequest(LINEtypes.GetFollowingsRequest? param) {
 		[11, 2, param.cursor],
 	];
 }
-dynamic VR0_l(LINEtypes.VR0_l? param) {
+dynamic VR0_l(dynamic param) {
 	if (param is int) {
-		return LINEtypes.VR0_l.fromValue(param as int);
+		return LINEtypes.VR0_l.fromValue(param);
 	}
 	return param;
 }
@@ -3226,9 +3226,9 @@ List GetFriendDetailsRequest(LINEtypes.GetFriendDetailsRequest? param) {
 		[8, 2, Pb1_V7(param.syncReason)],
 	];
 }
-dynamic Pb1_F4(LINEtypes.Pb1_F4? param) {
+dynamic Pb1_F4(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_F4.fromValue(param as int);
+		return LINEtypes.Pb1_F4.fromValue(param);
 	}
 	return param;
 }
@@ -3312,9 +3312,9 @@ List LiffViewWithoutUserContextRequest(LINEtypes.LiffViewWithoutUserContextReque
 		[11, 1, param.liffId],
 	];
 }
-dynamic r80_EnumC34372l(LINEtypes.r80_EnumC34372l? param) {
+dynamic r80_EnumC34372l(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34372l.fromValue(param as int);
+		return LINEtypes.r80_EnumC34372l.fromValue(param);
 	}
 	return param;
 }
@@ -3391,9 +3391,9 @@ List GetModulesRequestV2(LINEtypes.GetModulesRequestV2? param) {
 		[11, 2, param.deviceAdId],
 	];
 }
-dynamic NZ0_EnumC12169g1(LINEtypes.NZ0_EnumC12169g1? param) {
+dynamic NZ0_EnumC12169g1(dynamic param) {
 	if (param is int) {
-		return LINEtypes.NZ0_EnumC12169g1.fromValue(param as int);
+		return LINEtypes.NZ0_EnumC12169g1.fromValue(param);
 	}
 	return param;
 }
@@ -3680,9 +3680,9 @@ List Qj_C13595l(LINEtypes.Qj_C13595l? param) {
 		[12, 3, LiffSquareChatContext(param.squareChat)],
 	];
 }
-dynamic Qj_EnumC13584a(LINEtypes.Qj_EnumC13584a? param) {
+dynamic Qj_EnumC13584a(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Qj_EnumC13584a.fromValue(param as int);
+		return LINEtypes.Qj_EnumC13584a.fromValue(param);
 	}
 	return param;
 }
@@ -3746,9 +3746,9 @@ List NZ0_U(LINEtypes.NZ0_U? param) {
 	}
 	return [];
 }
-dynamic SettingsAttributeEx(LINEtypes.SettingsAttributeEx? param) {
+dynamic SettingsAttributeEx(dynamic param) {
 	if (param is int) {
-		return LINEtypes.SettingsAttributeEx.fromValue(param as int);
+		return LINEtypes.SettingsAttributeEx.fromValue(param);
 	}
 	return param;
 }
@@ -3776,9 +3776,9 @@ List Ob1_C12606a0(LINEtypes.Ob1_C12606a0? param) {
 	}
 	return [];
 }
-dynamic Ob1_K1(LINEtypes.Ob1_K1? param) {
+dynamic Ob1_K1(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Ob1_K1.fromValue(param as int);
+		return LINEtypes.Ob1_K1.fromValue(param);
 	}
 	return param;
 }
@@ -4043,15 +4043,15 @@ List NotifyChatAdEntryRequest(LINEtypes.NotifyChatAdEntryRequest? param) {
 		[11, 3, param.sdata],
 	];
 }
-dynamic do0_EnumC23148f(LINEtypes.do0_EnumC23148f? param) {
+dynamic do0_EnumC23148f(dynamic param) {
 	if (param is int) {
-		return LINEtypes.do0_EnumC23148f.fromValue(param as int);
+		return LINEtypes.do0_EnumC23148f.fromValue(param);
 	}
 	return param;
 }
-dynamic do0_EnumC23147e(LINEtypes.do0_EnumC23147e? param) {
+dynamic do0_EnumC23147e(dynamic param) {
 	if (param is int) {
-		return LINEtypes.do0_EnumC23147e.fromValue(param as int);
+		return LINEtypes.do0_EnumC23147e.fromValue(param);
 	}
 	return param;
 }
@@ -4079,15 +4079,15 @@ List NotifyDeviceDisconnectionRequest(LINEtypes.NotifyDeviceDisconnectionRequest
 		[10, 4, param.disconnectedTime],
 	];
 }
-dynamic kf_p(LINEtypes.kf_p? param) {
+dynamic kf_p(dynamic param) {
 	if (param is int) {
-		return LINEtypes.kf_p.fromValue(param as int);
+		return LINEtypes.kf_p.fromValue(param);
 	}
 	return param;
 }
-dynamic kf_o(LINEtypes.kf_o? param) {
+dynamic kf_o(dynamic param) {
 	if (param is int) {
-		return LINEtypes.kf_o.fromValue(param as int);
+		return LINEtypes.kf_o.fromValue(param);
 	}
 	return param;
 }
@@ -4105,9 +4105,9 @@ List OATalkroomEventContext(LINEtypes.OATalkroomEventContext? param) {
 		[11, 7, param.region],
 	];
 }
-dynamic kf_u(LINEtypes.kf_u? param) {
+dynamic kf_u(dynamic param) {
 	if (param is int) {
-		return LINEtypes.kf_u.fromValue(param as int);
+		return LINEtypes.kf_u.fromValue(param);
 	}
 	return param;
 }
@@ -4120,9 +4120,9 @@ List RichmenuCoordinates(LINEtypes.RichmenuCoordinates? param) {
 		[4, 2, param.y],
 	];
 }
-dynamic kf_r(LINEtypes.kf_r? param) {
+dynamic kf_r(dynamic param) {
 	if (param is int) {
-		return LINEtypes.kf_r.fromValue(param as int);
+		return LINEtypes.kf_r.fromValue(param);
 	}
 	return param;
 }
@@ -4139,9 +4139,9 @@ List RichmenuEvent(LINEtypes.RichmenuEvent? param) {
 		[8, 6, kf_r(param.clickAction)],
 	];
 }
-dynamic kf_x(LINEtypes.kf_x? param) {
+dynamic kf_x(dynamic param) {
 	if (param is int) {
-		return LINEtypes.kf_x.fromValue(param as int);
+		return LINEtypes.kf_x.fromValue(param);
 	}
 	return param;
 }
@@ -4198,9 +4198,9 @@ List NotifyOATalkroomEventsRequest(LINEtypes.NotifyOATalkroomEventsRequest? para
 		[15, 1, [12, param.events != null ? param.events.map((e) => OATalkroomEvent(e)).toList() : []]],
 	];
 }
-dynamic do0_G(LINEtypes.do0_G? param) {
+dynamic do0_G(dynamic param) {
 	if (param is int) {
-		return LINEtypes.do0_G.fromValue(param as int);
+		return LINEtypes.do0_G.fromValue(param);
 	}
 	return param;
 }
@@ -4258,9 +4258,9 @@ List NotifyScenarioExecutedRequest(LINEtypes.NotifyScenarioExecutedRequest? para
 		]],
 	];
 }
-dynamic ApplicationType(LINEtypes.ApplicationType? param) {
+dynamic ApplicationType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.ApplicationType.fromValue(param as int);
+		return LINEtypes.ApplicationType.fromValue(param);
 	}
 	return param;
 }
@@ -4469,9 +4469,9 @@ List RemoveProductFromSubscriptionSlotRequest(LINEtypes.RemoveProductFromSubscri
 		[14, 4, [11, param.productIds]],
 	];
 }
-dynamic Pb1_EnumC13128p7(LINEtypes.Pb1_EnumC13128p7? param) {
+dynamic Pb1_EnumC13128p7(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13128p7.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13128p7.fromValue(param);
 	}
 	return param;
 }
@@ -4571,15 +4571,15 @@ List Geolocation(LINEtypes.Geolocation? param) {
 		]],
 	];
 }
-dynamic Pb1_EnumC12917a6(LINEtypes.Pb1_EnumC12917a6? param) {
+dynamic Pb1_EnumC12917a6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC12917a6.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC12917a6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_EnumC12998g3(LINEtypes.Pb1_EnumC12998g3? param) {
+dynamic Pb1_EnumC12998g3(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC12998g3.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC12998g3.fromValue(param);
 	}
 	return param;
 }
@@ -4608,9 +4608,9 @@ List ClientNetworkStatus(LINEtypes.ClientNetworkStatus? param) {
 		]],
 	];
 }
-dynamic Pb1_F6(LINEtypes.Pb1_F6? param) {
+dynamic Pb1_F6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_F6.fromValue(param as int);
+		return LINEtypes.Pb1_F6.fromValue(param);
 	}
 	return param;
 }
@@ -4642,15 +4642,15 @@ List AvatarProfile(LINEtypes.AvatarProfile? param) {
 		[2, 4, param.usablePublicly],
 	];
 }
-dynamic Pb1_N6(LINEtypes.Pb1_N6? param) {
+dynamic Pb1_N6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_N6.fromValue(param as int);
+		return LINEtypes.Pb1_N6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_O6(LINEtypes.Pb1_O6? param) {
+dynamic Pb1_O6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_O6.fromValue(param as int);
+		return LINEtypes.Pb1_O6.fromValue(param);
 	}
 	return param;
 }
@@ -4683,9 +4683,9 @@ List Profile(LINEtypes.Profile? param) {
 		[10, 42, param.createdTimeMillis],
 	];
 }
-dynamic Pb1_EnumC13009h0(LINEtypes.Pb1_EnumC13009h0? param) {
+dynamic Pb1_EnumC13009h0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13009h0.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13009h0.fromValue(param);
 	}
 	return param;
 }
@@ -4711,39 +4711,39 @@ List ReportRefreshedAccessTokenRequest(LINEtypes.ReportRefreshedAccessTokenReque
 		[11, 1, param.accessToken],
 	];
 }
-dynamic EmailConfirmationStatus(LINEtypes.EmailConfirmationStatus? param) {
+dynamic EmailConfirmationStatus(dynamic param) {
 	if (param is int) {
-		return LINEtypes.EmailConfirmationStatus.fromValue(param as int);
+		return LINEtypes.EmailConfirmationStatus.fromValue(param);
 	}
 	return param;
 }
-dynamic AccountMigrationPincodeType(LINEtypes.AccountMigrationPincodeType? param) {
+dynamic AccountMigrationPincodeType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.AccountMigrationPincodeType.fromValue(param as int);
+		return LINEtypes.AccountMigrationPincodeType.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_I6(LINEtypes.Pb1_I6? param) {
+dynamic Pb1_I6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_I6.fromValue(param as int);
+		return LINEtypes.Pb1_I6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_S7(LINEtypes.Pb1_S7? param) {
+dynamic Pb1_S7(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_S7.fromValue(param as int);
+		return LINEtypes.Pb1_S7.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_M6(LINEtypes.Pb1_M6? param) {
+dynamic Pb1_M6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_M6.fromValue(param as int);
+		return LINEtypes.Pb1_M6.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_gd(LINEtypes.Pb1_gd? param) {
+dynamic Pb1_gd(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_gd.fromValue(param as int);
+		return LINEtypes.Pb1_gd.fromValue(param);
 	}
 	return param;
 }
@@ -4844,15 +4844,15 @@ List Settings(LINEtypes.Settings? param) {
 		[10, 120, param.agreementLypPremiumMultiProfileVersion],
 	];
 }
-dynamic Pb1_od(LINEtypes.Pb1_od? param) {
+dynamic Pb1_od(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_od.fromValue(param as int);
+		return LINEtypes.Pb1_od.fromValue(param);
 	}
 	return param;
 }
-dynamic T70_K(LINEtypes.T70_K? param) {
+dynamic T70_K(dynamic param) {
 	if (param is int) {
-		return LINEtypes.T70_K.fromValue(param as int);
+		return LINEtypes.T70_K.fromValue(param);
 	}
 	return param;
 }
@@ -4866,9 +4866,9 @@ List ReqToSendPhonePinCodeRequest(LINEtypes.ReqToSendPhonePinCodeRequest? param)
 		[8, 3, T70_K(param.verifMethod)],
 	];
 }
-dynamic r80_g0(LINEtypes.r80_g0? param) {
+dynamic r80_g0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_g0.fromValue(param as int);
+		return LINEtypes.r80_g0.fromValue(param);
 	}
 	return param;
 }
@@ -4887,9 +4887,9 @@ List CoinPurchaseReservation(LINEtypes.CoinPurchaseReservation? param) {
 		[11, 8, param.redirectUrl],
 	];
 }
-dynamic fN0_G(LINEtypes.fN0_G? param) {
+dynamic fN0_G(dynamic param) {
 	if (param is int) {
-		return LINEtypes.fN0_G.fromValue(param as int);
+		return LINEtypes.fN0_G.fromValue(param);
 	}
 	return param;
 }
@@ -5033,9 +5033,9 @@ List StopBundleSubscriptionRequest(LINEtypes.StopBundleSubscriptionRequest? para
 		[8, 2, Ob1_K1(param.storeCode)],
 	];
 }
-dynamic Qj_e0(LINEtypes.Qj_e0? param) {
+dynamic Qj_e0(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Qj_e0.fromValue(param as int);
+		return LINEtypes.Qj_e0.fromValue(param);
 	}
 	return param;
 }
@@ -5059,9 +5059,9 @@ List SubWindowResultRequest(LINEtypes.SubWindowResultRequest? param) {
 		[11, 2, param.mstVerifier],
 	];
 }
-dynamic Pb1_EnumC13029i6(LINEtypes.Pb1_EnumC13029i6? param) {
+dynamic Pb1_EnumC13029i6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_EnumC13029i6.fromValue(param as int);
+		return LINEtypes.Pb1_EnumC13029i6.fromValue(param);
 	}
 	return param;
 }
@@ -5079,9 +5079,9 @@ List ContactModification(LINEtypes.ContactModification? param) {
 		[11, 15, param.phoneticName],
 	];
 }
-dynamic Pb1_J4(LINEtypes.Pb1_J4? param) {
+dynamic Pb1_J4(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_J4.fromValue(param as int);
+		return LINEtypes.Pb1_J4.fromValue(param);
 	}
 	return param;
 }
@@ -5098,9 +5098,9 @@ List SyncRequest(LINEtypes.SyncRequest? param) {
 		[13, 6, [8, 10, param.lastPartialFullSyncs]],
 	];
 }
-dynamic Pb1_G4(LINEtypes.Pb1_G4? param) {
+dynamic Pb1_G4(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_G4.fromValue(param as int);
+		return LINEtypes.Pb1_G4.fromValue(param);
 	}
 	return param;
 }
@@ -5185,9 +5185,9 @@ List Chat(LINEtypes.Chat? param) {
 		[12, 8, Pb1_C13208v4(param.extra)],
 	];
 }
-dynamic Pb1_O2(LINEtypes.Pb1_O2? param) {
+dynamic Pb1_O2(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_O2.fromValue(param as int);
+		return LINEtypes.Pb1_O2.fromValue(param);
 	}
 	return param;
 }
@@ -5201,15 +5201,15 @@ List UpdateChatRequest(LINEtypes.UpdateChatRequest? param) {
 		[8, 3, Pb1_O2(param.updatedAttribute)],
 	];
 }
-dynamic ContactSetting(LINEtypes.ContactSetting? param) {
+dynamic ContactSetting(dynamic param) {
 	if (param is int) {
-		return LINEtypes.ContactSetting.fromValue(param as int);
+		return LINEtypes.ContactSetting.fromValue(param);
 	}
 	return param;
 }
-dynamic Pb1_H6(LINEtypes.Pb1_H6? param) {
+dynamic Pb1_H6(dynamic param) {
 	if (param is int) {
-		return LINEtypes.Pb1_H6.fromValue(param as int);
+		return LINEtypes.Pb1_H6.fromValue(param);
 	}
 	return param;
 }
@@ -5251,9 +5251,9 @@ List UpdateGroupCallUrlRequest(LINEtypes.UpdateGroupCallUrlRequest? param) {
 		[12, 2, Pb1_ad(param.targetAttribute)],
 	];
 }
-dynamic NotificationType(LINEtypes.NotificationType? param) {
+dynamic NotificationType(dynamic param) {
 	if (param is int) {
-		return LINEtypes.NotificationType.fromValue(param as int);
+		return LINEtypes.NotificationType.fromValue(param);
 	}
 	return param;
 }
@@ -5283,9 +5283,9 @@ List UpdateProfileAttributesRequest(LINEtypes.UpdateProfileAttributesRequest? pa
 		[13, 1, [8, 12, map(ProfileContent, param.profileAttributes)]],
 	];
 }
-dynamic vh_m(LINEtypes.vh_m? param) {
+dynamic vh_m(dynamic param) {
 	if (param is int) {
-		return LINEtypes.vh_m.fromValue(param as int);
+		return LINEtypes.vh_m.fromValue(param);
 	}
 	return param;
 }
@@ -5308,9 +5308,9 @@ List UsePhotoboothTicketRequest(LINEtypes.UsePhotoboothTicketRequest? param) {
 		[11, 2, param.photoboothSessionId],
 	];
 }
-dynamic r80_EnumC34376p(LINEtypes.r80_EnumC34376p? param) {
+dynamic r80_EnumC34376p(dynamic param) {
 	if (param is int) {
-		return LINEtypes.r80_EnumC34376p.fromValue(param as int);
+		return LINEtypes.r80_EnumC34376p.fromValue(param);
 	}
 	return param;
 }
@@ -5354,9 +5354,9 @@ List BirthdayGiftAssociationVerifyRequest(LINEtypes.BirthdayGiftAssociationVerif
 		[11, 1, param.associationToken],
 	];
 }
-dynamic T70_j1(LINEtypes.T70_j1? param) {
+dynamic T70_j1(dynamic param) {
 	if (param is int) {
-		return LINEtypes.T70_j1.fromValue(param as int);
+		return LINEtypes.T70_j1.fromValue(param);
 	}
 	return param;
 }
@@ -5370,9 +5370,9 @@ List SocialLogin(LINEtypes.SocialLogin? param) {
 		[11, 3, param.countryCode],
 	];
 }
-dynamic a80_EnumC16644b(LINEtypes.a80_EnumC16644b? param) {
+dynamic a80_EnumC16644b(dynamic param) {
 	if (param is int) {
-		return LINEtypes.a80_EnumC16644b.fromValue(param as int);
+		return LINEtypes.a80_EnumC16644b.fromValue(param);
 	}
 	return param;
 }
