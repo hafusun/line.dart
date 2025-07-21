@@ -20710,12 +20710,12 @@ class Message {
   final String id;
   final Int64 createdTime;
   final Int64 deliveredTime;
-  final String text;
-  final Location location;
+  String text;
+  Location location;
   final bool hasContent;
   final ContentType contentType;
   final String contentPreview;
-  final Map<String, String> contentMetadata;
+  Map<String, String> contentMetadata;
   final int sessionId;
   final List<String> chunks;
   final String relatedMessageId;
