@@ -23,3 +23,18 @@ Map<dynamic, List<int> Function(String)> genHeader = {
     return result;
   },
 };
+
+Map Protocols = {
+  4: TCompactProtocol,
+  3: TBinaryProtocol
+};
+
+class ParsedThrift {
+  dynamic data;
+  final TMessage info_;
+
+  ParsedThrift({
+    required this.data,
+    required this.info_
+  });
+}

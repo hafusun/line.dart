@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fbthrift/fbthrift.dart';
-import '../t_framed_transport.dart' as _TFramedTransport;
+import '../transport/t_framed_transport.dart' as _TFramedTransport;
 
 dynamic readStruct(TCompactProtocol input) {
   Map returnData = {};
