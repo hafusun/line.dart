@@ -11,9 +11,6 @@ Map<K, R> map<K, T, R>(
   return tMap;
 }
 
-
-
-
 List AcceptChatInvitationByTicketRequest(LINEtypes.AcceptChatInvitationByTicketRequest? param) {
   if (param == null) {
     return [];

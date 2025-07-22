@@ -1,6 +1,6 @@
 import 'dart:async';
 
-typedef EventCallback = void Function(List<dynamic> args);
+typedef EventCallback = void Function(Map<dynamic, dynamic> args);
 
 class TypedEventEmitter {
   final Map<String, List<EventCallback>> _listeners = {};
@@ -16,7 +16,7 @@ class TypedEventEmitter {
     return this;
   }
 
-  TypedEventEmitter emit(String event, [List<dynamic> args = const []]) {
+  TypedEventEmitter emit(String event, [dynamic args = const {}]) {
     final eventListeners = _listeners[event];
     if (eventListeners != null) {
       for (final listener in List<EventCallback>.from(eventListeners)) {
@@ -32,7 +32,7 @@ class TypedEventEmitter {
     final completer = Completer<List<dynamic>>();
     listener = (args) {
       off(event, listener);
-      completer.complete(args);
+      completer.complete(args as List<dynamic>);
     };
 
     on(event, listener);
