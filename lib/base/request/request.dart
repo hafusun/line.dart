@@ -1,6 +1,4 @@
 import "dart:convert";
-import "dart:ffi";
-import "dart:ui";
 
 import "package:fbthrift/fbthrift.dart";
 import "package:http/http.dart" hide BaseClient;
@@ -15,7 +13,7 @@ List<String> square = ["/SQ1", "/SQLV1"];
 
 class RequestClient {
   BaseClient client;
-  late String endpoint;
+  late String? endpoint;
   late String userAgent;
   late String systemType;
   Map EXCEPTION_TYPES = {
@@ -39,7 +37,7 @@ class RequestClient {
     this.client = client;
   }
 
-  Future<dynamic> request(List value, String methodName, [int ProtocolKey = 3, dynamic parse = true, String path = "/S3", Map headers = const {}, dynamic timeout = this.client.config["timeout"]]) async {
+  Future<dynamic> request(List value, String methodName, [int ProtocolKey = 3, dynamic parse = true, String path = "/S3", Map<String, String> headers = const {}, dynamic timeout = this.client.config["timeout"]]) async {
     dynamic res = await this.requestCore(
       path,
       value,
@@ -54,16 +52,17 @@ class RequestClient {
     return res["data"]["success"];
   }
 
-  Future<ParsedThrift> requestCore(String path, List value, String methodName, int protocolType, Map appendHeaders, [String? overrideMethod = "POST", dynamic parse = true, bool isReRequest = false, int timeout = 1000]) async {
+  Future<ParsedThrift> requestCore(String path, List value, String methodName, int protocolType, Map<String, String> appendHeaders, [String? overrideMethod = "POST", dynamic parse = true, bool? isReRequest = false, int timeout = 1000]) async {
     TProtocol protocol = Protocols[protocolType];
-    Map headers = this.genHeader(overrideMethod).addAll(appendHeaders);
+    Map<String, String> headers = this.getHeader(overrideMethod ?? "POST");
+    headers.addAll(appendHeaders);
     this.client.log("writeThrift", { "value": value, "methodName": methodName, "protocolType": protocolType });
     Uint8List Trequest = this.client.thrift.writeThrift([value, methodName, protocol]);
     this.client.log("request", { "methodName": methodName, "path": "https://${this.endpoint}$path", "method": overrideMethod, "headers": headers, "timeout": timeout, "body": Trequest });
 
     Response response = await this.client.fetch(
       "https://${this.endpoint}$path",
-      method: overrideMethod,
+      method: overrideMethod ?? "POST",
       headers: headers,
       body: Trequest,
       timeout: timeout,
@@ -119,7 +118,7 @@ class RequestClient {
     if (hasError && !isRefresh) {
       throw new InternalError("RequestError", "Request internal failed, $methodName($path) -> ${jsonEncode(res.data)}");
     }
-    if (isRefresh && !isReRequest) {
+    if (isRefresh && !(isReRequest ?? false)) {
       await this.client.auth.tryRefreshToken();
       return this.requestCore(
         path,
@@ -135,8 +134,8 @@ class RequestClient {
     return res;
   }
 
-  Map getHeader(String overrideMethod) {
-    Map header = {
+  Map<String, String> getHeader(String overrideMethod) {
+    Map<String, String> header = {
       "Host": this.endpoint,
       "accept": "application/x-thrift",
       "user-agent":this.userAgent,
@@ -148,7 +147,7 @@ class RequestClient {
       "accept-encoding": "gzip",
     };
     if (this.client.authToken != null) {
-      header["x-line-access"] = this.client.authToken;
+      header["x-line-access"] = this.client.authToken!;
     }
     return header;
   }

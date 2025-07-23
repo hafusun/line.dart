@@ -19518,8 +19518,8 @@ class LiffDeviceSetting {
 }
 
 class LiffErrorConsentRequired {
-  final String channelId;
-  final String consentUrl;
+  final String? channelId;
+  final String? consentUrl;
 
   LiffErrorConsentRequired({
     required this.channelId,
@@ -50473,4 +50473,3 @@ class LoginResult {
     );
   }
 }
-

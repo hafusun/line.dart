@@ -355,7 +355,7 @@ class E2EE {
   }
 
   Future<dynamic> encryptE2EEMessage(String to, dynamic data, {LINETypes.ContentType contentType = LINETypes.ContentType.NONE, int specVersion = 2}) async {
-    int ContentType = LINETypes.ContentType.fromValue(contentType.value).value;
+    int ContentType = contentType.value;
     String _from = this.client.profile?.mid as String;
     dynamic selfKeyData = await this.getE2EESelfKeyData(_from);
 
