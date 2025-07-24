@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+import 'package:linedart/base/polling/polling.dart';
 
 import '../obs/obs.dart';
 import '../request/request.dart';
@@ -17,6 +20,7 @@ import "./typed-event-emitter/emitter.dart";
 import "./utils/events.dart";
 import "./utils/error.dart";
 
+import '../login/login.dart';
 import '../../thrift/thrift.dart';
 import '../storage/base.dart';
 import '../../thrift/line_types.dart' as LINETypes;
@@ -81,6 +85,41 @@ class BaseClient extends TypedEventEmitter {
     required this.endpoint,
   });
 
+  log(String type, dynamic data) {
+    this.emit("log", { "type": type, "data": data });
+  }
+
+  int? getToType(String mid) {
+    Map typeMapping = {
+      "u": 0,
+      "r": 1,
+      "c": 2,
+      "s": 3,
+      "m": 4,
+      "p": 5,
+      "v": 6,
+      "t": 7
+    };
+    return typeMapping[mid[0]] ?? null;
+  }
+
+  Map<String, int>? reqseqs;
+
+  Future<int> getReqseq([String name = "talk"]) async {
+    if (this.reqseqs == null) {
+      this.reqseqs = jsonDecode(
+        ((await this.storage.get("reqseq")) ?? "{}").toString(),
+      ) as Map<String, int>;
+    }
+    if (this.reqseqs![name] == null) {
+      this.reqseqs![name] = 0;
+    }
+    int seq = this.reqseqs![name]!;
+    this.reqseqs![name] = seq + 1;
+    await this.storage.set("reqseq", jsonEncode(this.reqseqs));
+    return seq;
+  }
+
   Future<http.Response> fetch(
     String url, {
     String method = 'GET',
@@ -101,5 +140,36 @@ class BaseClient extends TypedEventEmitter {
         : http.Client().send(request).timeout(Duration(milliseconds: timeout ?? 1000)));
 
     return http.Response.fromStream(streamResponse);
+  }
+
+  Polling createPolling() {
+    return new Polling(this);
+  }
+
+  dynamic jsonReplacer(dynamic k, dynamic v) {
+    if (v is String) {
+      dynamic midType = RegExp(r"(.)[0123456789abcdef]{32}").firstMatch(v);
+      if (midType != null && midType.group(1) != null) {
+        return "[${midType.group(1).toUpperCase()} mid]";
+      }
+      if (k == "x-line-access") {
+        return "[AuthToken]";
+      }
+    }
+    if (v is Map) {
+      Map newObj = {};
+      int midCount = 0;
+      v.forEach((key, v) {
+        dynamic match = RegExp(r"(.)[0123456789abcdef]{32}").firstMatch(key);
+        if (match != null && match.group(1) != null) {
+          midCount += 1;
+          newObj["${match.group(1)!.toString().toUpperCase()} mid $midCount"] = v;
+        } else {
+          newObj[key] = v;
+        }
+      });
+      return newObj;
+    }
+    return v;
   }
 }

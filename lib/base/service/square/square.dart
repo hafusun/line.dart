@@ -94,7 +94,7 @@ class SquareService extends BaseService {
   Future<dynamic> sendMessage(Map param) async {
     Map data = {
       "request": {
-        "reqSeq": await this.client.getReqSeq("sq"),
+        "reqSeq": await this.client.getReqseq("sq"),
         "squareChatMid": param["squareChatMid"],
         "squareMessage": {
           "squareMessageRevision": 4,

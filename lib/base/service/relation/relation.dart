@@ -64,7 +64,7 @@ class RelationService extends BaseService {
   Future<dynamic> addFriendByMid(String mid, [String? reference, int trackingMetaType = 5, String? trackingMetaHint]) async {
     return await this.client.request.request(
       [
-        [8, 1, await this.client.getReqSeq()],
+        [8, 1, await this.client.getReqseq()],
         [11, 2, mid],
         [12, 3, [
           [11, 1, reference],

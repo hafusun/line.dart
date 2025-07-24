@@ -78,7 +78,7 @@ class E2EE {
       LINETypes.E2EENegotiationResult receiverKeyData;
       if (key == null || key == false) {
         receiverKeyData = await this.client.talk.negotiateE2EEPublicKey(
-          { mid }
+          { "mid": mid }
         );
         dynamic specVersion = receiverKeyData.specVersion;
         if (specVersion == -1) {

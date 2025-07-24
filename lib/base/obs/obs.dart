@@ -89,7 +89,7 @@ class LineObs {
       headers: {
         "accept": "application/json, text/plain, */*",
         "x-line-application": this.client.request.systemType,
-        "x-line-access": this.client.authToken
+        "x-line-access": this.client.authToken!
         }
     );
     Map fileInfo = await this.getMessageObsMetadata(messageId, isSquare: square);
@@ -107,7 +107,7 @@ class LineObs {
       headers: {
         "accept": "application/json, text/plain, */*",
         "x-line-application" : this.client.request.systemType,
-        "x-Line-access": this.client.authToken,
+        "x-Line-access": this.client.authToken!,
         }
     );
     Map data = Map.from(jsonDecode(r.body));
@@ -120,7 +120,7 @@ class LineObs {
     }
     Map param = {
       "oid": oid != null ? oid : "reqSeq",
-      "reqseq": oid != null ? null : this.client.getReqSeq("talk").toString(),
+      "reqseq": oid != null ? null : this.client.getReqseq("talk").toString(),
       "tomid": oid != null ? null : to,
       "ver": "2.0",
       "name" : "linejs.$type",
@@ -146,7 +146,7 @@ class LineObs {
     );
   }
 
-  Future<Map> uploadObjectForService({ required Uint8List data, String? oType, String? obsPath, Map? params, String? filename, Map? addHeaders }) async {
+  Future<Map> uploadObjectForService({ required Uint8List data, String? oType, String? obsPath, Map? params, String? filename, Map<String, String>? addHeaders }) async {
     String obsPathFinal = "/r/$obsPath";
     oType = (oType ?? "image").toLowerCase();
     if (filename == null) {
@@ -165,7 +165,7 @@ class LineObs {
     if (data.isEmpty || data.length == 0) {
       throw new InternalError("ObsError", "No data to send.");
     }
-    Map headers = this.client.request.getHeaders("POST");
+    Map<String, String> headers = this.client.request.getHeader("POST");
     headers["Content-Type"] = "application/octet-stream";
     headers["X-Obs-Params"] = base64.encode(utf8.encode(jsonEncode(params)));
     if (addHeaders != null) {
@@ -182,13 +182,13 @@ class LineObs {
     return { "objId": objId, "objHash": objHash, "headers": response.headers };
   }
 
-  Future<Uint8List> downloadObjectForService({required String obsPath, required String oid, Map? addHeaders}) async {
+  Future<Uint8List> downloadObjectForService({required String obsPath, required String oid, Map<String, String>? addHeaders}) async {
     if (obsPath.contains("{oid}")) {
       obsPath = obsPath.replaceAll("{oid}", oid);
     } else {
       obsPath = obsPath + "/" + oid;
     }
-    Map headers = this.client.request.getHeaders("GET");
+    Map<String, String> headers = this.client.request.getHeader("GET");
     headers.addAll(addHeaders ?? {});
     String obsPathFinal = "r/$obsPath";
     Response response = await this.client.fetch(
@@ -270,12 +270,12 @@ class LineObs {
         } : {},
       );
 
-    return await this.client.talk.sendMessage(
-      to: to,
-      chunks: chunks,
-      contentType: LINETypes.ContentType.fromValue(contentType),
-      contentMetadata: contentMetadata,
-    );
+    return await this.client.talk.sendMessage({
+      "to": to,
+      "chunks": chunks,
+      "contentType": LINETypes.ContentType.fromValue(contentType),
+      "contentMetadata": contentMetadata,
+    });
   }
 
   Future<dynamic> downloadMediaByE2EE(LINETypes.Message message) async {

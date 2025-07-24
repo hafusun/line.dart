@@ -471,7 +471,7 @@ class TalkService extends BaseService {
     );
   }
 
-  Future<dynamic> registerE2EEGroupKey(Map param) async {
+  Future<LINETypes.Pb1_U3> registerE2EEGroupKey(Map param) async {
     return await this.client.request.request(
       LINEStructs.registerE2EEGroupKey_args(LINETypes.registerE2EEGroupKey_args.fromJson(param)),
       "registerE2EEGroupKey",
@@ -501,7 +501,7 @@ class TalkService extends BaseService {
     );
   }
 
-  Future<dynamic> geLastE2EEPublicKeys(Map param) async {
+  Future<dynamic> getLastE2EEPublicKeys(Map param) async {
     return await this.client.request.request(
       LINEStructs.getLastE2EEPublicKeys_args(LINETypes.getLastE2EEPublicKeys_args.fromJson(param)),
       "getLastE2EEPublicKeys",

@@ -37,7 +37,8 @@ class RequestClient {
     this.client = client;
   }
 
-  Future<dynamic> request(List value, String methodName, [int ProtocolKey = 3, dynamic parse = true, String path = "/S3", Map<String, String> headers = const {}, dynamic timeout = this.client.config["timeout"]]) async {
+  Future<dynamic> request(List value, String methodName, [int ProtocolKey = 3, dynamic parse = true, String path = "/S3", Map<String, String> headers = const {}, dynamic timeout]) async {
+    timeout =  timeout ? timeout : this.client.config.timeout;
     dynamic res = await this.requestCore(
       path,
       value,
@@ -136,7 +137,7 @@ class RequestClient {
 
   Map<String, String> getHeader(String overrideMethod) {
     Map<String, String> header = {
-      "Host": this.endpoint,
+      "Host": this.endpoint!,
       "accept": "application/x-thrift",
       "user-agent":this.userAgent,
       "x-line-application": this.systemType,

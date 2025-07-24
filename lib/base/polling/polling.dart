@@ -18,11 +18,11 @@ class Polling {
     String? continuationToken;
     while (true) {
       try {
-        dynamic response = await this.client.square.fetchMyEvents({
-          "syncToken": this.sync["square"],
-          "continuationToken": continuationToken,
-          "limit": 100,
-        });
+        dynamic response = await this.client.square.fetchMyEvents(
+          this.sync["square"],
+          continuationToken,
+          100,
+        );
         this.sync["square"] = response["syncToken"];
         continuationToken = response["continuationToken"];
         for (dynamic event in response["events"]) {
@@ -46,9 +46,9 @@ class Polling {
     int pollingInterval = options["pollingInterval"] ?? 1000;
     while (true) {
       try {
-        dynamic response= await this.client.talk.sync({
-          "limit": 100,
-        }.addAll(this.sync["talk"]));
+        Map param = { "limit": 100 };
+        param.addAll(this.sync["talk"]);
+        dynamic response= await this.client.talk.sync(param);
         if (response["fullSyncResponse"].isNotEmpty && response["fullSyncResponse"]["nextRevision"] != null) {
           this.sync["talk"]["revision"] = response["fullSyncResponse"]["nextRevision"];
         }
@@ -58,7 +58,7 @@ class Polling {
         if (response["operationResponse"].isNotEmpty && response["operationResponse"]["individualEvents"].isNotEmpty && response["operationResponse"]["individualEvents"]["lastRevision"] != null) {
           this.sync["talk"]["individualRev"] = response["operationResponse"]["individualEvents"]["lastRevision"];
         }
-        if (!(response["operationResponse"].isNotEmpty && response.["operationResponse"]["operations"].isNotEmpty)) {
+        if (!(response["operationResponse"].isNotEmpty && response["operationResponse"]["operations"].isNotEmpty)) {
           continue;
         }
         for (dynamic event in response["operationResponse"]["operations"]) {
