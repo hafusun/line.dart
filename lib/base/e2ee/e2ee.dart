@@ -241,7 +241,7 @@ class E2EE {
     return buf2;
   }
 
-  Uint8List getSHA256Sum(List args) {
+  Uint8List getSHA256Sum(dynamic args) {
     final sha256Digest = sha256.convert(
       args.expand((arg) {
         if (arg is String) {
@@ -698,7 +698,7 @@ class E2EE {
     this.client.log("e2ee", { "type": type, "message": message });
   }
 
-  Future<List> createSqrSecret({ bool base64Only = false }) async {
+  Future<List> createSqrSecret([bool base64Only = false]) async {
     dynamic algorithm = X25519();
     dynamic keyPair = await algorithm.newKeyPair();
     dynamic publicKey = await keyPair.extractPublicKey();

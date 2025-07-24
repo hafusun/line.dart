@@ -9,16 +9,28 @@ import '../service/call/call.dart';
 import '../service/liff/liff.dart';
 import '../service/livetalk/livetalk.dart';
 import '../service/relation/relation.dart';
+import '../service/square/square.dart';
+import '../service/talk/talk.dart';
 
-import "utils/devices.dart";
-import "typed-event-emitter/emitter.dart";
-import "utils/events.dart";
-import "utils/error.dart";
+import "./utils/devices.dart";
+import "./typed-event-emitter/emitter.dart";
+import "./utils/events.dart";
+import "./utils/error.dart";
 
 import '../../thrift/thrift.dart';
 import '../storage/base.dart';
 import '../../thrift/line_types.dart' as LINETypes;
 import '../e2ee/e2ee.dart';
+
+class Config {
+  int timeout;
+  int longTimeout;
+
+  Config({
+    this.timeout = 30000,
+    this.longTimeout = 180000,
+  });
+}
 
 class BaseClient extends TypedEventEmitter {
   String? authToken;
@@ -35,10 +47,13 @@ class BaseClient extends TypedEventEmitter {
   LiffService liff;
   SquareLiveTalkService livetalk;
   RelationService relation;
+  SquareService square;
+  TalkService talk;
 
   Function? customFetch;
 
   LINETypes.Profile? profile;
+  Config config;
   DeviceDetails deviceDetails;
 
   String endpoint;
@@ -57,8 +72,11 @@ class BaseClient extends TypedEventEmitter {
     required this.liff,
     required this.livetalk,
     required this.relation,
+    required this.square,
+    required this.talk,
     this.customFetch,
     this.profile,
+    required this.config,
     required this.deviceDetails,
     required this.endpoint,
   });

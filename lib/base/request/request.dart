@@ -83,7 +83,7 @@ class RequestClient {
     if (!res.data[0] && res.data.length != 0) {
       hasError = true;
     }
-    if (parse == true) {
+    if (parse is bool && parse == true) {
       this.client.thrift.rename_data(res, square: square.contains(path));
     } else if (parse is String) {
       res.data["success"] = this.client.thrift.rename_thrift(parse, res.data[0]);
