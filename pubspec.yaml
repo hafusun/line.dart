@@ -11,7 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
   fbthrift: ^1.0.0+4
-  flutter_js: ^0.8.2
   fixnum: ^1.1.1
   curve25519_vrf: ^2.0.1
   crypto: ^3.0.6

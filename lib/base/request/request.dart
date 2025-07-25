@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import "package:fbthrift/fbthrift.dart";
 import "package:http/http.dart" hide BaseClient;
-import "../../base/core/utils/devices.dart";
-import "../../base/core/utils/error.dart";
+import "../core/utils/devices.dart";
+import "../core/utils/error.dart";
 import "../../thrift/readwrite/declares.dart";
 
 import "../core/core.dart";

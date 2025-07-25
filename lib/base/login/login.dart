@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' hide BaseClient;
-import '../../base/core/utils/devices.dart';
-import '../../base/core/utils/error.dart';
+import '../core/utils/devices.dart';
+import '../core/utils/error.dart';
 
 import '../core/core.dart';
 import './regex.dart';

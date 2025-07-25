@@ -1,4 +1,4 @@
-import '../../../base/core/utils/error.dart';
+import '../../core/utils/error.dart';
 import '../../service/types.dart';
 import '../../core/core.dart';
 import '../../../thrift/line_types.dart' as LINETypes;
