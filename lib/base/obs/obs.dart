@@ -1,14 +1,11 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:fbthrift/fbthrift.dart';
-import 'package:linedart/thrift/readwrite/write.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' hide BaseClient;
 
-import './mime.dart';
+import '../../thrift/readwrite/write.dart';
 import '../../thrift/line_types.dart' as LINETypes;
-import '../../thrift/readwrite/struct.dart';
 import '../core/utils/error.dart';
 import '../core/core.dart';
 
@@ -73,41 +70,41 @@ class LineObs {
   LineObs(this.client);
 
   String getMessageDataUrl(String messageId, { bool isPreview = false, bool square = false }) {
-    return this.prefix + "r/" + (square ? "g2" : "talk") + "/m/" + messageId + (isPreview ? "/preview" : "");
+    return "${prefix}r/${square ? "g2" : "talk"}/m/$messageId${isPreview ? "/preview" : ""}";
   }
 
   String getMessageMetadataUrl(String messageId, { bool square = false }) {
-    return this.prefix + "r/" + (square ? "g2" : "talk") + "/m/" + messageId + "/object_info.obs";
+    return "${prefix}r/${square ? "g2" : "talk"}/m/$messageId/object_info.obs";
   }
 
   Future<Map> downloadMessage(String messageId, { bool isPreview = false, bool square = false }) async {
-    if (this.client.authToken == null) {
-      throw new InternalError("Not setup yet", "Please call 'login()' first");
+    if (client.authToken == null) {
+      throw InternalError("Not setup yet", "Please call 'login()' first");
     }
-    Response r = await this.client.fetch(
-      this.getMessageDataUrl(messageId, isPreview: isPreview, square: square ),
+    Response r = await client.fetch(
+      getMessageDataUrl(messageId, isPreview: isPreview, square: square ),
       headers: {
         "accept": "application/json, text/plain, */*",
-        "x-line-application": this.client.request.systemType,
-        "x-line-access": this.client.authToken!
+        "x-line-application": client.request.systemType,
+        "x-line-access": client.authToken!
         }
     );
-    Map fileInfo = await this.getMessageObsMetadata(messageId, isSquare: square);
+    Map fileInfo = await getMessageObsMetadata(messageId, isSquare: square);
     Uint8List blob = r.bodyBytes;
     String filename = fileInfo["name"];
     return { "fileName": filename, "blob": blob };
   }
 
   Future<Map> getMessageObsMetadata(String messageId, { bool isSquare = false}) async {
-    if (this.client.authToken == null) {
-      throw new InternalError("Not setup yet", "Please call 'login()' first");
+    if (client.authToken == null) {
+      throw InternalError("Not setup yet", "Please call 'login()' first");
     }
-    Response r = await this.client.fetch(
-      this.getMessageMetadataUrl(messageId, square: isSquare),
+    Response r = await client.fetch(
+      getMessageMetadataUrl(messageId, square: isSquare),
       headers: {
         "accept": "application/json, text/plain, */*",
-        "x-line-application" : this.client.request.systemType,
-        "x-Line-access": this.client.authToken!,
+        "x-line-application" : client.request.systemType,
+        "x-Line-access": client.authToken!,
         }
     );
     Map data = Map.from(jsonDecode(r.body));
@@ -115,12 +112,12 @@ class LineObs {
   }
 
   Future<Map> uploadObjTalk(String to, String type, Uint8List data, [String? oid, String? filename]) async {
-    if (this.client.authToken == null) {
-      throw new InternalError("Not setup yet", "Please call 'login()' first");
+    if (client.authToken == null) {
+      throw InternalError("Not setup yet", "Please call 'login()' first");
     }
     Map param = {
-      "oid": oid != null ? oid : "reqSeq",
-      "reqseq": oid != null ? null : this.client.getReqseq("talk").toString(),
+      "oid": oid ?? "reqSeq",
+      "reqseq": oid != null ? null : client.getReqseq("talk").toString(),
       "tomid": oid != null ? null : to,
       "ver": "2.0",
       "name" : "linejs.$type",
@@ -140,7 +137,7 @@ class LineObs {
     return await uploadObjectForService(
       data: data,
       oType: type,
-      obsPath: toType + "/m/" + (oid ?? "reqseq"),
+      obsPath: "$toType/m/${oid ?? "reqseq"}",
       filename: param["name"],
       params: param,
     );
@@ -149,12 +146,8 @@ class LineObs {
   Future<Map> uploadObjectForService({ required Uint8List data, String? oType, String? obsPath, Map? params, String? filename, Map<String, String>? addHeaders }) async {
     String obsPathFinal = "/r/$obsPath";
     oType = (oType ?? "image").toLowerCase();
-    if (filename == null) {
-      filename = Uuid().v4();
-    }
-    if (params == null) {
-      params = {};
-    }
+    filename ??= Uuid().v4();
+    params ??= {};
     Map baseParam = {
       "type": oType,
       "ver": "2.0",
@@ -162,17 +155,17 @@ class LineObs {
     };
 
     params.addAll(baseParam);
-    if (data.isEmpty || data.length == 0) {
-      throw new InternalError("ObsError", "No data to send.");
+    if (data.isEmpty || data.isEmpty) {
+      throw InternalError("ObsError", "No data to send.");
     }
-    Map<String, String> headers = this.client.request.getHeader("POST");
+    Map<String, String> headers = client.request.getHeader("POST");
     headers["Content-Type"] = "application/octet-stream";
     headers["X-Obs-Params"] = base64.encode(utf8.encode(jsonEncode(params)));
     if (addHeaders != null) {
       headers.addAll(addHeaders);
     }
-    Response response = await this.client.fetch(
-      this.prefix + obsPathFinal,
+    Response response = await client.fetch(
+      prefix + obsPathFinal,
       method: "POST",
       headers: headers,
       body: data,
@@ -186,13 +179,13 @@ class LineObs {
     if (obsPath.contains("{oid}")) {
       obsPath = obsPath.replaceAll("{oid}", oid);
     } else {
-      obsPath = obsPath + "/" + oid;
+      obsPath = "$obsPath/$oid";
     }
-    Map<String, String> headers = this.client.request.getHeader("GET");
+    Map<String, String> headers = client.request.getHeader("GET");
     headers.addAll(addHeaders ?? {});
     String obsPathFinal = "r/$obsPath";
-    Response response = await this.client.fetch(
-      this.prefix + obsPathFinal,
+    Response response = await client.fetch(
+      prefix + obsPathFinal,
       method: "GET",
       headers: headers,
     );
@@ -218,14 +211,14 @@ class LineObs {
       params["cat"] = "original";
     }
     if (to[0] != "u" && to[0] != "c") {
-      throw new InternalError("ObsError", "Invalid mid, $to");
+      throw InternalError("ObsError", "Invalid mid, $to");
     }
-    Map e2eeMaterial = await this.client.e2ee.encryptByKeyMaterial(data);
+    Map e2eeMaterial = await client.e2ee.encryptByKeyMaterial(data);
     String keyMaterial = e2eeMaterial["keyMaterial"];
     Uint8List encryptedData = e2eeMaterial["encryptedData"];
-    String tempId = "reqid-" + Uuid().v4();
+    String tempId = "reqid-${Uuid().v4()}";
     Uint8List edata = encryptedData;
-    Map uploadResponse = await this.uploadObjectForService(
+    Map uploadResponse = await uploadObjectForService(
       data: edata,
       oType: "file",
       obsPath: "$serviceName/$obsNamespace/$tempId",
@@ -233,20 +226,20 @@ class LineObs {
     );
     String objId = uploadResponse["objId"];
     if (oType == "image" || oType == "gif" || oType == "video") {
-      Map uploadResponse = await this.uploadObjectForService(
+      Map uploadResponse = await uploadObjectForService(
         data: edata,
         oType: "file",
-        obsPath: "$serviceName/$obsNamespace/$tempId " + "__ud-preview",
+        obsPath: "$serviceName/$obsNamespace/$tempId " "__ud-preview",
         params: params,
       );
       String objId2 = uploadResponse["objId"];
       Map headers = uploadResponse["headers"];
       if (objId == objId2) {
-        throw new InternalError("ObsError", "objId not match, $headers");
+        throw InternalError("ObsError", "objId not match, $headers");
       }
     }
 
-    List chunks = await this.client.e2ee.encryptE2EEMessage(
+    List chunks = await client.e2ee.encryptE2EEMessage(
       to,
       { "keyMaterial": keyMaterial, "fileName": (filename ?? "linejs.$oType") },
       contentType: LINETypes.ContentType.fromValue(contentType),
@@ -270,7 +263,7 @@ class LineObs {
         } : {},
       );
 
-    return await this.client.talk.sendMessage({
+    return await client.talk.sendMessage({
       "to": to,
       "chunks": chunks,
       "contentType": LINETypes.ContentType.fromValue(contentType),
@@ -280,7 +273,7 @@ class LineObs {
 
   Future<dynamic> downloadMediaByE2EE(LINETypes.Message message) async {
     if (message.to[0] != "u" && message.to[0] != "c") {
-      throw new InternalError("ObsError", "Invalid mid, ${message.to}");
+      throw InternalError("ObsError", "Invalid mid, ${message.to}");
     }
     String id = message.id;
     Map contentMetadata = message.contentMetadata;
@@ -288,9 +281,9 @@ class LineObs {
     if (chunks.isEmpty) {
       return null;
     }
-    Map<dynamic, dynamic>? decryptedData = await this.client.e2ee.decryptE2EEDataMessage(message);
+    Map<dynamic, dynamic>? decryptedData = await client.e2ee.decryptE2EEDataMessage(message);
     dynamic keyMaterial = decryptedData!["keyMaterial"];
-    String fileName = decryptedData!["fileName"];
+    String fileName = decryptedData["fileName"];
 
     String talkMeta = base64.encode(
       utf8.encode(
@@ -304,12 +297,12 @@ class LineObs {
         })
       )
     );
-    Uint8List data = await this.downloadObjectForService(
+    Uint8List data = await downloadObjectForService(
       oid: contentMetadata["OID"]!,
       obsPath: "talk/${contentMetadata["SID"]!}",
       addHeaders: { "X-Talk-Meta" : talkMeta },
     );
-    Uint8List blob = await this.client.e2ee.decryptByKeyMaterial(
+    Uint8List blob = await client.e2ee.decryptByKeyMaterial(
       data,
       keyMaterial,
     );

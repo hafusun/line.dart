@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:linedart/base/polling/polling.dart';
+import '../../base/polling/polling.dart';
 
 import '../obs/obs.dart';
 import '../request/request.dart';
@@ -17,10 +17,6 @@ import '../service/talk/talk.dart';
 
 import "./utils/devices.dart";
 import "./typed-event-emitter/emitter.dart";
-import "./utils/events.dart";
-import "./utils/error.dart";
-
-import '../login/login.dart';
 import '../../thrift/thrift.dart';
 import '../storage/base.dart';
 import '../../thrift/line_types.dart' as LINETypes;
@@ -86,7 +82,7 @@ class BaseClient extends TypedEventEmitter {
   });
 
   log(String type, dynamic data) {
-    this.emit("log", { "type": type, "data": data });
+    emit("log", { "type": type, "data": data });
   }
 
   int? getToType(String mid) {
@@ -100,23 +96,21 @@ class BaseClient extends TypedEventEmitter {
       "v": 6,
       "t": 7
     };
-    return typeMapping[mid[0]] ?? null;
+    return typeMapping[mid[0]];
   }
 
   Map<String, int>? reqseqs;
 
   Future<int> getReqseq([String name = "talk"]) async {
-    if (this.reqseqs == null) {
-      this.reqseqs = jsonDecode(
-        ((await this.storage.get("reqseq")) ?? "{}").toString(),
+    reqseqs ??= jsonDecode(
+        ((await storage.get("reqseq")) ?? "{}").toString(),
       ) as Map<String, int>;
+    if (reqseqs![name] == null) {
+      reqseqs![name] = 0;
     }
-    if (this.reqseqs![name] == null) {
-      this.reqseqs![name] = 0;
-    }
-    int seq = this.reqseqs![name]!;
-    this.reqseqs![name] = seq + 1;
-    await this.storage.set("reqseq", jsonEncode(this.reqseqs));
+    int seq = reqseqs![name]!;
+    reqseqs![name] = seq + 1;
+    await storage.set("reqseq", jsonEncode(reqseqs));
     return seq;
   }
 
@@ -143,7 +137,7 @@ class BaseClient extends TypedEventEmitter {
   }
 
   Polling createPolling() {
-    return new Polling(this);
+    return Polling(this);
   }
 
   dynamic jsonReplacer(dynamic k, dynamic v) {

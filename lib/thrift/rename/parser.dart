@@ -70,33 +70,33 @@ class ThriftRenameParser {
     if (object is! Map && object is! List) return object;
     for (const fid in object) {
       dynamic value = object[fid];
-      dynamic finfo = this._fid2name(structName, fid);
+      dynamic finfo = _fid2name(structName, fid);
       if (value == null) {
         continue;
       }
       if (finfo.struct != null && finfo.struct is String && (value is Map || value is List)) {
-        if (isStruct(this.def[finfo.struct])) {
-          newObject[finfo.name] = this.rename_thrift(finfo.struct, value);
-        } else if (this.def[finfo.struct] != null) {
-          newObject[finfo.name] = (this.def[finfo.struct] as dynamic)[value] ?? value;
+        if (isStruct(def[finfo.struct])) {
+          newObject[finfo.name] = rename_thrift(finfo.struct, value);
+        } else if (def[finfo.struct] != null) {
+          newObject[finfo.name] = (def[finfo.struct] as dynamic)[value] ?? value;
         } else {
           newObject[finfo.name] = value;
         }
       } else if (finfo.list != null && finfo.list is String && (value is Map || value is List)) {
           newObject[finfo.name] = [];
           value.forEach((e, i) => {
-            newObject[finfo.name][i] = this.rename_thrift(finfo.list, e)
+            newObject[finfo.name][i] = rename_thrift(finfo.list, e)
           });
       } else if (finfo.map != null && finfo.map is String && (value is Map || value is List)) {
         newObject[finfo.name] = {};
         for (const key in value) {
           dynamic e = value[key];
-          newObject[finfo.name][key] = this.rename_thrift(finfo.map, e);
+          newObject[finfo.name][key] = rename_thrift(finfo.map, e);
         }
       } else if (finfo.set != null && finfo.set is String && (value is Map || value is List)) {
         newObject[finfo.name] = [];
         value.forEach((e, i) => {
-          newObject[finfo.name][i] = this.rename_thrift(finfo.set, e)
+          newObject[finfo.name][i] = rename_thrift(finfo.set, e)
         });
       } else {
         newObject[finfo.name] = value;
@@ -107,8 +107,8 @@ class ThriftRenameParser {
 
   ParsedThrift rename_data(ParsedThrift data, {bool square = false}) {
     dynamic name = data.info_.name;
-    String struct_name = (square ? "SquareService_" : "") + name + "_result";
-    data.data = this.rename_thrift(struct_name, data.data);
+    String structName = "${(square ? "SquareService_" : "") + name}_result";
+    data.data = rename_thrift(structName, data.data);
     return data;
   }
 }

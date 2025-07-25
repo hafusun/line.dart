@@ -9,31 +9,31 @@ class MemoryStorage extends BaseStorage {
 
   @override
   Future<void> set(dynamic key, dynamic value) async {
-    this.data[key] = value;
+    data[key] = value;
   }
 
   @override
   Future<dynamic> get(dynamic key) async {
-    return this.data[key];
+    return data[key];
   }
 
   @override
   Future<void> delete(dynamic key) async {
-    this.data.remove(key);
+    data.remove(key);
   }
 
   @override
   Future<void> clear() async {
-    this.data = {};
+    data = {};
   }
 
   Future<Map> getAll() async {
-    return this.data;
+    return data;
   }
 
   @override
   Future<void> migrate(BaseStorage storage) async {
-    Map kv = await this.getAll();
+    Map kv = await getAll();
     for (dynamic key in kv.keys) {
       if (kv.containsKey(key)) {
         dynamic value = kv[key];

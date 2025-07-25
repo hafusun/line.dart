@@ -1,5 +1,4 @@
-library linedart;
-import 'package:fbthrift/fbthrift.dart';
+library;
 
 /// A Calculator.
 class Calculator {

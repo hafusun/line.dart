@@ -11,7 +11,7 @@ class FileStorage extends BaseStorage {
 
   @override
   Future<void> set(dynamic key, dynamic value) async {
-    Map data = await this.getAll();
+    Map data = await getAll();
     data[key] = value;
     final file = File(path);
     await file.writeAsString(jsonEncode(data));
@@ -19,13 +19,13 @@ class FileStorage extends BaseStorage {
 
   @override
   Future<dynamic> get(dynamic key) async {
-    Map data = await this.getAll();
+    Map data = await getAll();
     return data[key];
   }
 
   @override
   Future<void> delete(dynamic key) async {
-    Map data = await this.getAll();
+    Map data = await getAll();
     data.remove(key);
     final file = File(path);
     await file.writeAsString(jsonEncode(data));
@@ -45,7 +45,7 @@ class FileStorage extends BaseStorage {
 
   @override
   Future<void> migrate(BaseStorage storage) async {
-    Map kv = await this.getAll();
+    Map kv = await getAll();
     for (dynamic key in kv.keys) {
       if (kv.containsKey(key)) {
         dynamic value = kv[key];

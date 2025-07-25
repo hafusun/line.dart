@@ -20717,7 +20717,7 @@ class Message {
   final String contentPreview;
   Map<String, String> contentMetadata;
   final int sessionId;
-  final List<String> chunks;
+  final List<dynamic> chunks;
   final String relatedMessageId;
   final Pb1_EnumC13015h6 messageRelationType;
   final int readCount;

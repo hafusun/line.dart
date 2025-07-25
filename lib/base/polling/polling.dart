@@ -1,4 +1,4 @@
-import 'package:linedart/base/core/core.dart';
+import '../../base/core/core.dart';
 
 Future<void> sleep(Duration duration) async {
   await Future.delayed(duration);
@@ -18,12 +18,12 @@ class Polling {
     String? continuationToken;
     while (true) {
       try {
-        dynamic response = await this.client.square.fetchMyEvents(
-          this.sync["square"],
+        dynamic response = await client.square.fetchMyEvents(
+          sync["square"],
           continuationToken,
           100,
         );
-        this.sync["square"] = response["syncToken"];
+        sync["square"] = response["syncToken"];
         continuationToken = response["continuationToken"];
         for (dynamic event in response["events"]) {
           yield event;
@@ -47,22 +47,22 @@ class Polling {
     while (true) {
       try {
         Map param = { "limit": 100 };
-        param.addAll(this.sync["talk"]);
-        dynamic response= await this.client.talk.sync(param);
+        param.addAll(sync["talk"]);
+        dynamic response= await client.talk.sync(param);
         if (response["fullSyncResponse"].isNotEmpty && response["fullSyncResponse"]["nextRevision"] != null) {
-          this.sync["talk"]["revision"] = response["fullSyncResponse"]["nextRevision"];
+          sync["talk"]["revision"] = response["fullSyncResponse"]["nextRevision"];
         }
         if (response["operationResponse"].isNotEmpty && response["operationResponse"]["glovalEvents"].isNotEmpty && response["operationResponse"]["glovalEvents"]["lastRevision"] != null) {
-          this.sync["talk"]["glovalRev"] = response["operationResponse"]["glovalEvents"]["lastRevision"];
+          sync["talk"]["glovalRev"] = response["operationResponse"]["glovalEvents"]["lastRevision"];
         }
         if (response["operationResponse"].isNotEmpty && response["operationResponse"]["individualEvents"].isNotEmpty && response["operationResponse"]["individualEvents"]["lastRevision"] != null) {
-          this.sync["talk"]["individualRev"] = response["operationResponse"]["individualEvents"]["lastRevision"];
+          sync["talk"]["individualRev"] = response["operationResponse"]["individualEvents"]["lastRevision"];
         }
         if (!(response["operationResponse"].isNotEmpty && response["operationResponse"]["operations"].isNotEmpty)) {
           continue;
         }
         for (dynamic event in response["operationResponse"]["operations"]) {
-          this.sync["talk"]["revision"] = event["revision"];
+          sync["talk"]["revision"] = event["revision"];
           yield event;
         }
       } catch (error) {

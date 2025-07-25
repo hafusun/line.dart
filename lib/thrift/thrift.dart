@@ -1,6 +1,4 @@
 import 'rename/parser.dart';
-import 'readwrite/read.dart' show readThrift, readThriftStruct;
-import 'readwrite/write.dart' show writeThrift;
 
 class Thrift extends ThriftRenameParser {
   Thrift() : super();

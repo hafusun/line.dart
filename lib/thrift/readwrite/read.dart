@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fbthrift/fbthrift.dart';
-import '../transport/t_framed_transport.dart' as _TFramedTransport;
+import '../transport/t_framed_transport.dart' as TFramedTransport;
 
 dynamic readStruct(TCompactProtocol input) {
   Map returnData = {};
@@ -62,7 +62,7 @@ dynamic readValue(TCompactProtocol input, int ftype) {
     TList ListBegin = input.readListBegin();
     int size = ListBegin.length;
     int etype = ListBegin.elementType;
-    for (int _i = 0; _i < size; _i++) {
+    for (int i = 0; i < size; i++) {
       returnData.add(readValue(input, etype));
     }
     input.readListEnd();
@@ -73,7 +73,7 @@ dynamic readValue(TCompactProtocol input, int ftype) {
     int size = MapBegin.length;
     int ktype = MapBegin.keyType;
     int vtype = MapBegin.valueType;
-    for (int _i = 0; _i < size; _i++) {
+    for (int i = 0; i < size; i++) {
       dynamic key = readValue(input, ktype);
       dynamic val = readValue(input, vtype);
       returnData[key] = val;
@@ -85,7 +85,7 @@ dynamic readValue(TCompactProtocol input, int ftype) {
     TSet SetBegin = input.readSetBegin();
     int size = SetBegin.length;
     int etype = SetBegin.elementType;
-    for (int _i = 0;_i < size; _i++) {
+    for (int i = 0;i < size; i++) {
       returnData.add(readValue(input, etype));
     }
     input.readSetEnd();
@@ -100,7 +100,7 @@ dynamic readValue(TCompactProtocol input, int ftype) {
 }
 
 dynamic _readThrift(Uint8List data, dynamic protocol) {
-  _TFramedTransport.TFramedTransport bufTrans = _TFramedTransport.TFramedTransport(data, null);
+  TFramedTransport.TFramedTransport bufTrans = TFramedTransport.TFramedTransport(data, null);
   dynamic proto;
   if (protocol == TCompactProtocol) {
     proto = TCompactProtocol(bufTrans as TTransport);
@@ -118,7 +118,7 @@ Map readThrift(data, protocol) {
 }
 
 dynamic readThriftStruct(Uint8List data, dynamic protocol) {
-  _TFramedTransport.TFramedTransport bufTrans = _TFramedTransport.TFramedTransport(data, null);
+  TFramedTransport.TFramedTransport bufTrans = TFramedTransport.TFramedTransport(data, null);
   dynamic proto;
   if (protocol == TCompactProtocol) {
     proto = TCompactProtocol(bufTrans as TTransport);

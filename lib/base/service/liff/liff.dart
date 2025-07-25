@@ -11,11 +11,14 @@ class LiffService extends BaseService {
   String CONSENT_API_URL = "https://api.line.me/dialog/api/permissions";
   String AUTH_CONSENT_URL = "https://access.line.me/oauth2/v2.1/authorize/consent";
   Map liffTokenCache = {};
+  @override
   String requestPath = "/LIFF1";
+  @override
   String errorName = "LiffServiceError";
   String liffId = "2006747340-AoraPvdD";
   RegExp csrfRegExp = RegExp(r'<input type="hidden" name="__csrf" id="__csrf" value="(.*?)">');
 
+  @override
   BaseClient client;
 
   LiffService(
@@ -33,7 +36,7 @@ class LiffService extends BaseService {
 
   Future<LINETypes.LiffViewResponse> issueLiffView(String liffId, [String? chatMid, String? lang]) async {
     List context = [12, 1, []];
-    int chaLINETypes;;
+    int chaLINETypes;
     List chat;
     if (chatMid != null) {
       chat = [11, 1, chatMid];
@@ -44,76 +47,76 @@ class LiffService extends BaseService {
       }
       context = [12, chaLINETypes, [chat]];
     }
-    return await this.client.request.request(
+    return await client.request.request(
       [[12, 1, [
         [11, 1, liffId],
         [12, 2, [context]],
         [11, 3, (lang ?? "ja_JP")],
       ]]],
       "issueLiffiew",
-      this.protocolType,
+      protocolType,
       true,
-      this.requestPath
+      requestPath
     );
   }
 
   Future<dynamic> getLiffViewWithoutUserContext(Map param) async {
-    return await this.client.request.request(
+    return await client.request.request(
       LINEStructs.getLiffViewWithoutUserContext_args(LINETypes.getLiffViewWithoutUserContext_args.fromJson(param)),
       "getLiffViewWithoutUserContext",
-      this.protocolType,
+      protocolType,
       true,
-      this.requestPath
+      requestPath
     );
   }
 
   Future<dynamic> issueSubLiffView(Map param) async {
-    return await this.client.request.request(
+    return await client.request.request(
       LINEStructs.issueSubLiffView_args(LINETypes.issueSubLiffView_args.fromJson(param)),
       "issueSubLiffView",
-      this.protocolType,
+      protocolType,
       true,
-      this.requestPath
+      requestPath
     );
   }
 
   Future<String> getLiffToken(String liffId, [String? chatMid, String? lang, bool? tryConsent]) async {
     try {
-      LINETypes.LiffViewResponse liff = await this.issueLiffView(liffId, chatMid, lang);
+      LINETypes.LiffViewResponse liff = await issueLiffView(liffId, chatMid, lang);
       return liff.accessToken;
     } catch(e) {
-      if ((e as InternalError).data.length != 0) {
+      if ((e as InternalError).data.isNotEmpty) {
         InternalError error = e;
-        this.client.log("liff-error", error.data);
+        client.log("liff-error", error.data);
         if ((error.data["liffException"] as LINETypes.LiffException).code == "CONSENT_REQUIRED" && (tryConsent ?? false)) {
           LINETypes.LiffException data = error.data["liffException"] as LINETypes.LiffException;
           LINETypes.Qj_C13599p payload = data.payload;
           String? channelId = payload.consentRequired.channelId;
           String? consentUrl = payload.consentRequired.consentUrl;
-          dynamic toType = chatMid != null ? this.client.getToType(chatMid) : null;
+          dynamic toType = chatMid != null ? client.getToType(chatMid) : null;
           bool hasConsent = false;
           if (channelId != null && consentUrl != null) {
-            if ((toType != null && toType == 4) || this.client.device.startsWith("DESKTOP")) {
-              hasConsent = await this.tryConsentAuthorize(consentUrl, channelId);
+            if ((toType != null && toType == 4) || client.device.startsWith("DESKTOP")) {
+              hasConsent = await tryConsentAuthorize(consentUrl, channelId);
             } else {
-              hasConsent = await this.tryConsentLiff(channelId);
+              hasConsent = await tryConsentLiff(channelId);
             }
             if (hasConsent) {
-              return this.getLiffToken(liffId, chatMid, lang, false);
+              return getLiffToken(liffId, chatMid, lang, false);
             }
           }
         }
       }
-      throw new InternalError(this.errorName, "Failed to get LiffToken: $liffId${chatMid != null ? "@" + chatMid : ""}");
+      throw InternalError(errorName, "Failed to get LiffToken: $liffId${chatMid != null ? "@$chatMid" : ""}");
     }
   }
 
   Future<dynamic> sendLiff(String to, List message, [bool? tryConsent, bool? forceIssue]) async {
     String token;
-    if (!this.liffTokenCache[to] || (forceIssue ?? false)) {
-      token = await this.getLiffToken(to, this.liffId);
+    if (!liffTokenCache[to] || (forceIssue ?? false)) {
+      token = await getLiffToken(to, liffId);
     } else {
-      token = this.liffTokenCache[to];
+      token = liffTokenCache[to];
     }
     Map<String, String> liffHeaders = {
       "Accept": "application/json, text/plain, */*",
@@ -124,7 +127,7 @@ class LiffService extends BaseService {
       "content-type": "application/json",
     };
     String payload = jsonEncode({ "message": message });
-    Response response = await this.client.fetch(
+    Response response = await client.fetch(
       "https://api.line.me/message/v3/share",
       method: "POST",
       body: payload,
@@ -132,7 +135,7 @@ class LiffService extends BaseService {
     );
     Map responseBody = jsonDecode(response.body);
     if (response.statusCode > 200 || response.statusCode >= 300) {
-      throw new InternalError(this.errorName, "Failed to send Liff message: ${response.reasonPhrase ?? response.statusCode}");
+      throw InternalError(errorName, "Failed to send Liff message: ${response.reasonPhrase ?? response.statusCode}");
     }
     return responseBody;
   }
@@ -141,16 +144,16 @@ class LiffService extends BaseService {
     String payload = jsonEncode({ "on": ["P", "CM"], "off": [] });
     Map<String, String> headers = {
       "X-LINE-ChannelId": channelId,
-      "X-LINE-Access": this.client.authToken as String,
+      "X-LINE-Access": client.authToken as String,
       "User-Agent": "Mozilla/5.0 (Linux; Android 8.0.1; SAMSUNG Realise/DeachSword; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/56.0.2924.87 Mobile Safari/537.36",
       "Content-Type": "application/json",
-      "X-Line-Application": this.client.request.systemType,
+      "X-Line-Application": client.request.systemType,
       "X-Requested-With": "XMLHttpRequest",
       "Accept-Language": "ja-JP,en-US;q=0.8"
     };
     headers.addAll(refere != null ? { "refere": refere } : {});
-    Response response = await this.client.fetch(
-      this.CONSENT_API_URL,
+    Response response = await client.fetch(
+      CONSENT_API_URL,
       method: "POST",
       body: payload,
       headers: headers
@@ -160,11 +163,11 @@ class LiffService extends BaseService {
 
   Future<bool> tryConsentAuthorize(String consentUrl, String channelId, [List<String> allPermission = const ["P", "CM", "OC"], List<String> approvedPermission = const ["P", "CM", "OC"]]) async {
     Map<String, String> headers = {
-      "X-Line-Access": this.client.authToken as String,
-      "User-Agent": this.client.request.userAgent,
-      "X-Line-Application": this.client.request.systemType
+      "X-Line-Access": client.authToken as String,
+      "User-Agent": client.request.userAgent,
+      "X-Line-Application": client.request.systemType
     };
-    Response response = await this.client.fetch(
+    Response response = await client.fetch(
       consentUrl,
       method: "GET",
       headers: headers
@@ -177,14 +180,14 @@ class LiffService extends BaseService {
         }
       });
       String text = response.body;
-      String? csrfToken = this.csrfRegExp.firstMatch(text) != null ? this.csrfRegExp.firstMatch(text)!.group(1) : null;
+      String? csrfToken = csrfRegExp.firstMatch(text)?.group(1);
       if (csrfToken != null) {
         headers["cookie"] = cookies.join("; ");
         headers["refere"] = consentUrl;
-        Response authResponse = await this.client.fetch(
-          this.AUTH_CONSENT_URL,
+        Response authResponse = await client.fetch(
+          AUTH_CONSENT_URL,
           method: "POST",
-          body: '${allPermission.map((e) => "allPermission=" + e).join("&")}&${approvedPermission.map((e) => "approvedPermission=" + e).join("&")}&__WLS=&channelId=200674734&__csrf=$csrfToken&allow=true',
+          body: '${allPermission.map((e) => "allPermission=$e").join("&")}&${approvedPermission.map((e) => "approvedPermission=$e").join("&")}&__WLS=&channelId=200674734&__csrf=$csrfToken&allow=true',
           headers: headers
         );
         return (authResponse.statusCode > 200 || authResponse.statusCode >= 300);
