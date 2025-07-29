@@ -30,21 +30,22 @@ Uint8List _removePKCS7Padding(Uint8List data) {
 
 Uint8List generateRandomBytes(int length) {
   final random = Random.secure();
-  return Uint8List.fromList(
-    List<int>.generate(length, (_) => random.nextInt(256)),
-  );
+  final bytes = Uint8List(length);
+  for (int i = 0; i < length; i++) {
+    bytes[i] = random.nextInt(256);
+  }
+  return bytes;
 }
 
-Uint8List encryptAesGcm(Uint8List key, Uint8List nonce, Uint8List aad, Uint8List data) {
+Uint8List encryptAesGcm(Uint8List key, Uint8List nonce, Uint8List aad, Uint8List plaintext) {
   final cipher = GCMBlockCipher(AESEngine());
 
-  final aeadParameters = AEADParameters(KeyParameter(key), 128, nonce, aad);
+  final params = AEADParameters(KeyParameter(key), 128, nonce, aad);
+  cipher.init(true, params);
 
-  cipher.init(true, aeadParameters);
+  final output = cipher.process(plaintext);
 
-  final encrypted = cipher.process(data);
-
-  return encrypted;
+  return output;
 }
 
 Uint8List decryptAesGcm({

@@ -192,7 +192,7 @@ class LineObs {
     return response.bodyBytes;
   }
 
-  Future<LINETypes.Message> uploadMediaByE2EE(Uint8List data, String oType, String to, [String? filename]) async {
+  Future<Map> uploadMediaByE2EE(Uint8List data, String oType, String to, [String? filename]) async {
     Map typeSet = {
       "image": ["emi", 1],
       "video": ["emv", 2],

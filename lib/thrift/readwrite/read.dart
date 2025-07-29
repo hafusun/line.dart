@@ -100,6 +100,7 @@ dynamic readValue(dynamic input, int ftype) {
   } else if (ftype == TType.DOUBLE) {
     return input.readDouble();
   } else {
+    skip(input, ftype);
     return;
   }
 }
@@ -135,4 +136,58 @@ dynamic readThriftStruct(Uint8List data, dynamic protocol) {
 
 Map parseTMessage(TMessage message) {
   return { 'fname': message.name, 'mtype': message.type, 'rseqid': message.seqid };
+}
+
+skip(dynamic iprot, int ftype) async {
+  switch (ftype) {
+    case TType.BOOL:
+      await iprot.readBool();
+      break;
+    case TType.BYTE:
+      await iprot.readByte();
+      break;
+    case TType.I16:
+      await iprot.readI16();
+      break;
+    case TType.I32:
+      await iprot.readI32();
+      break;
+    case TType.I64:
+      await iprot.readI64();
+      break;
+    case TType.DOUBLE:
+      await iprot.readDouble();
+      break;
+    case TType.STRING:
+      await iprot.readString();
+      break;
+    case TType.STRUCT:
+      final struct = await iprot.readStructBegin();
+      while (true) {
+        final field = await iprot.readFieldBegin();
+        if (field.type == TType.STOP) break;
+        await skip(iprot, field.type);
+        await iprot.readFieldEnd();
+      }
+      await iprot.readStructEnd();
+      break;
+    case TType.MAP:
+      final mapMeta = await iprot.readMapBegin();
+      for (int i = 0; i < mapMeta.size; i++) {
+        await skip(iprot, mapMeta.keyType);
+        await skip(iprot, mapMeta.valueType);
+      }
+      await iprot.readMapEnd();
+      break;
+    case TType.SET:
+    case TType.LIST:
+      final listMeta = await iprot.readListBegin();
+      for (int i = 0; i < listMeta.size; i++) {
+        await skip(iprot, listMeta.elementType);
+      }
+      await iprot.readListEnd();
+      break;
+    default:
+      throw Exception("Unknown type: $ftype");
+  }
 }

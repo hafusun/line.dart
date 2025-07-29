@@ -29,13 +29,13 @@ class AuthService extends BaseService {
   }
 
   Future<LINETypes.RefreshAccessTokenResponse> refresh(Map param) async {
-    return await client.request.request(
+    return LINETypes.RefreshAccessTokenResponse.fromJson(await client.request.request(
       LINEStructs.refresh_args(LINETypes.refresh_args.fromJson(param)),
       "refresh",
       protocolType,
       true,
       "/EXT/auth/tokenrefresh/v1"
-    );
+    ));
   }
 
   Future<dynamic> reportRefreshedAccessToken(Map param) async {

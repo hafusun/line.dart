@@ -47,7 +47,7 @@ class LiffService extends BaseService {
       }
       context = [12, chaLINETypes, [chat]];
     }
-    return await client.request.request(
+    return LINETypes.LiffViewResponse.fromJson(await client.request.request(
       [[12, 1, [
         [11, 1, liffId],
         [12, 2, [context]],
@@ -57,7 +57,7 @@ class LiffService extends BaseService {
       protocolType,
       true,
       requestPath
-    );
+    ));
   }
 
   Future<dynamic> getLiffViewWithoutUserContext(Map param) async {

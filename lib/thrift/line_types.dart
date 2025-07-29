@@ -20705,7 +20705,7 @@ class MentionableSquareMember {
 class Message {
   final String? from;
   final String to;
-  final MIDType toType;
+  final MIDType? toType;
   final String? id;
   final dynamic createdTime;
   final dynamic deliveredTime;
@@ -20751,7 +20751,7 @@ class Message {
     return Message(
       from: json["from"],
       to: json["to"],
-      toType: MIDType.fromValue(json["toType"] ?? 0),
+      toType: json["toType"] != null ? MIDType.fromValue(json["toType"]) : null,
       id: json["id"],
       createdTime: json["createdTime"],
       deliveredTime: json["deliveredTime"],
@@ -20762,15 +20762,15 @@ class Message {
       contentPreview: json["contentPreview"],
       contentMetadata: Map.from(json["contentMetadata"] ?? {}),
       sessionId: json["sessionId"],
-      chunks: List.from(json["chunks"] ?? [] ?? []),
+      chunks: List.from(json["chunks"] ?? []),
       relatedMessageId: json["relatedMessageId"],
-      messageRelationType: Pb1_EnumC13015h6.fromValue(json["messageRelationType"] ?? 0),
+      messageRelationType: json["messageRelationType"] != null ? Pb1_EnumC13015h6.fromValue(json["messageRelationType"]) : null,
       readCount: json["readCount"],
-      relatedMessageServiceCode: Pb1_E7.fromValue(json["relatedMessageServiceCode"] ?? 0),
-      appExtensionType: Pb1_B.fromValue(json["appExtensionType"] ?? 0),
-      reactions: List.from(json["reactions"] ?? [] ?? [])
+      relatedMessageServiceCode: json["relatedMessageServiceCode"] != null ? Pb1_E7.fromValue(json["relatedMessageServiceCode"]) : null,
+      appExtensionType: json["appExtensionType"] != null ? Pb1_B.fromValue(json["appExtensionType"]) : null,
+      reactions: json["reactions"] != null ? List.from(json["reactions"])
           .map((e) => Reaction.fromJson(e))
-          .toList(),
+          .toList() : null,
     );
   }
 }

@@ -1796,8 +1796,9 @@ List SearchSquaresRequest(LINEtypes.SearchSquaresRequest? param) {
 	];
 }
 dynamic MIDType(dynamic param) {
-	if (param is int) {
-		return LINEtypes.MIDType.fromValue(param).value;
+  if (param == null) return param;
+	if (param is! int) {
+		return LINEtypes.MIDType.fromValue(param.value).value;
 	}
 	return param;
 }
@@ -1908,7 +1909,7 @@ List Message(LINEtypes.Message? param) {
 		[8, 23, param.readCount],
 		[8, 24, Pb1_E7(param.relatedMessageServiceCode)],
 		[8, 25, Pb1_B(param.appExtensionType)],
-		[15, 27, [12, param.reactions != null ? (param.reactions ?? []).map((e) => Reaction(e)).toList() : []]],
+		[15, 27, [12, param.reactions != null ? (param.reactions ?? []).map((e) => Reaction(e)).toList() : null]],
 	];
 }
 dynamic SquareMessageState(dynamic param) {

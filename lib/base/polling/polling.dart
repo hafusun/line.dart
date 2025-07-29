@@ -1,4 +1,5 @@
 import '../core/core.dart';
+import 'dart:typed_data';
 
 Future<void> sleep(Duration duration) async {
   await Future.delayed(duration);
@@ -48,17 +49,19 @@ class Polling {
       try {
         Map param = { "limit": 100 };
         param.addAll(sync["talk"]);
-        dynamic response= await client.talk.sync(param);
-        if (response["fullSyncResponse"].isNotEmpty && response["fullSyncResponse"]["nextRevision"] != null) {
-          sync["talk"]["revision"] = response["fullSyncResponse"]["nextRevision"];
+        dynamic response = await client.talk.sync(param);
+        if (response["fullSyncResponse"] != null && response["fullSyncResponse"]["nextRevision"] != null) {
+          final byteData = ByteData.sublistView(response["fullSyncResponse"]["nextRevision"]);
+          final value = byteData.getInt64(0, Endian.big);
+          sync["talk"]["revision"] = value;
         }
-        if (response["operationResponse"].isNotEmpty && response["operationResponse"]["glovalEvents"].isNotEmpty && response["operationResponse"]["glovalEvents"]["lastRevision"] != null) {
-          sync["talk"]["glovalRev"] = response["operationResponse"]["glovalEvents"]["lastRevision"];
+        if (response["operationResponse"] != null && response["operationResponse"]["glovalEvents"].isNotEmpty && response["operationResponse"]["glovalEvents"]["lastRevision"] != null) {
+          sync["talk"]["glovalRev"] = convertint(response["operationResponse"]["glovalEvents"]["lastRevision"]);
         }
-        if (response["operationResponse"].isNotEmpty && response["operationResponse"]["individualEvents"].isNotEmpty && response["operationResponse"]["individualEvents"]["lastRevision"] != null) {
-          sync["talk"]["individualRev"] = response["operationResponse"]["individualEvents"]["lastRevision"];
+        if (response["operationResponse"] != null && response["operationResponse"]["individualEvents"].isNotEmpty && response["operationResponse"]["individualEvents"]["lastRevision"] != null) {
+          sync["talk"]["individualRev"] = convertint(response["operationResponse"]["individualEvents"]["lastRevision"]);
         }
-        if (!(response["operationResponse"].isNotEmpty && response["operationResponse"]["operations"].isNotEmpty)) {
+        if (!(response["operationResponse"] != null && response["operationResponse"]["operations"].isNotEmpty)) {
           continue;
         }
         for (dynamic event in response["operationResponse"]["operations"]) {
@@ -76,4 +79,10 @@ class Polling {
       }
     }
   }
+}
+
+int convertint(Uint8List bytes) {
+  final byteData = ByteData.sublistView(bytes);
+  final value = byteData.getInt64(0, Endian.big);
+  return value;
 }

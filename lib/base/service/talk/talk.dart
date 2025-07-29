@@ -20,9 +20,9 @@ class TalkService extends BaseService {
     return await client.request.request(
       LINEStructs.sync_args(LINETypes.sync_args.fromJson({
         "request": {
-          "lastRevision": param["revision"],
-          "lastGlobalRevision": param["globalRev"],
-          "lastIndividualRevision": param["individualRev"],
+          "lastRevision": param["revision"] ?? 0,
+          "lastGlobalRevision": param["globalRev"] ?? 0,
+          "lastIndividualRevision": param["individualRev"] ?? 0,
           "count": param["limit"] ?? 100,
         }
       })),
@@ -33,9 +33,9 @@ class TalkService extends BaseService {
     );
   }
 
-  Future<LINETypes.Message> sendMessage(Map param) async {
+  Future<Map> sendMessage(Map param) async {
     if ((param["e2ee"] && param["chunks"] == null && param["location"] != null) || (param["e2ee"] && param["chunks"] == null && param["text"] != null)) {
-      dynamic chunks = await client.e2ee.encryptE2EEMessage(param["to"], (param["text"] ?? param["location"] ?? "Invalid"), contentType: param["contentType"]);
+      dynamic chunks = await client.e2ee.encryptE2EEMessage(param["to"], ((param["text"] ?? param["location"]) ?? "Invalid"), contentType: param["contentType"]);
       Map contentMetadata = {
         "e2eeVersion": "2",
         "contentType": param["contentType"] is LINETypes.ContentType ? param["contentType"].value.toString() : param["contentType"].toString(),
@@ -52,7 +52,6 @@ class TalkService extends BaseService {
     };
     return await sendMessage(options);
     }
-
     Map json = {
       "seq": await client.getReqseq(),
       "message": {
@@ -63,6 +62,7 @@ class TalkService extends BaseService {
         "hasContent": false,
         "contentType": param["contentType"] is LINETypes.ContentType ? param["contentType"].value.toString() : param["contentType"].toString(),
         "contentMetadata": param["contentMetadata"] ?? {},
+        "sessionId": 0,
         "text": param["text"],
         "location": param["location"],
         "chunks": param["chunks"],
@@ -475,13 +475,13 @@ class TalkService extends BaseService {
   }
 
   Future<LINETypes.Pb1_U3> registerE2EEGroupKey(Map param) async {
-    return await client.request.request(
+    return LINETypes.Pb1_U3.fromJson(await client.request.request(
       LINEStructs.registerE2EEGroupKey_args(LINETypes.registerE2EEGroupKey_args.fromJson(param)),
       "registerE2EEGroupKey",
       protocolType,
       true,
       requestPath
-    );
+    ));
   }
 
   Future<dynamic> getE2EEGroupSharedKey(Map param) async {
@@ -1194,7 +1194,7 @@ class TalkService extends BaseService {
     );
   }
 
-  Future<LINETypes.Contact> getContact(String mid) async {
+  Future<Map> getContact(String mid) async {
     return await client.request.request(
       [[11, 2, mid]],
       "getContact",
@@ -1216,7 +1216,7 @@ class TalkService extends BaseService {
     return response;
   }
 
-  Future<LINETypes.GetContactsV2Response> getContactsV2(List<String> mids) async {
+  Future<Map> getContactsV2(List<String> mids) async {
     return await client.request.request(
       [[12, 1, [[15, 1, [11, mids]]]]],
       "getContactsV2",

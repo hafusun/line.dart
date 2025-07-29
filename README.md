@@ -1,10 +1,10 @@
-#  LINEDart
-LINEDart is a library for control LINE.
+#  linedart
+linedart is a library for control LINE.
 
 
 ## Documentation
 ---
-##### <center>📚 Documentation: coming soom...
+##### <center>📚 Documentation: coming soon...
 ---
 
 
@@ -22,3 +22,6 @@ LINEDart is a library for control LINE.
 - [WEDeach/CHRLINE-Patch](https://github.com/WEDeach/CHRLINE-Patch)
 
 - [evex-dev/linejs](https://github.com/evex-dev/linejs)
+
+---
+# TODO: docs

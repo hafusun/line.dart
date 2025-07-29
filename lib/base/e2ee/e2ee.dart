@@ -72,38 +72,38 @@ class E2EE {
       String? key;
       if (keyId != null) {
         key = (await client.storage.get(
-          "e2eePublicKeys:" + keyId
+          "e2eePublicKeys:" + keyId.toString()
         )) as String?;
       }
-      LINETypes.E2EENegotiationResult receiverKeyData;
+      Map receiverKeyData;
       if (key == null || key == false) {
         receiverKeyData = await client.talk.negotiateE2EEPublicKey(
           { "mid": mid }
         );
-        dynamic specVersion = receiverKeyData.specVersion;
+        dynamic specVersion = receiverKeyData["specVersion"];
         if (specVersion == -1) {
           throw InternalError("Not Support E2EE", mid);
         }
-        dynamic publicKey = receiverKeyData.publicKey;
-        int receiverKeyId = publicKey.keyId;
+        dynamic publicKey = receiverKeyData["publicKey"];
+        int receiverKeyId = publicKey["keyId"];
         if (receiverKeyId == keyId) {
-          key = base64.encode(Uint8List.fromList(utf8.encode(publicKey.keyData)));
+          key = base64.encode(publicKey["keyData"]);
           await client.storage.set(
-            "e2eePublicKeys:" + keyId,
+            "e2eePublicKeys:" + keyId.toString(),
             key
           );
         } else {
           throw InternalError(
             "No E2EEKey",
-            "${"E2EE key id " + keyId}not found on $mid, key id  should be $receiverKeyId"
+            "${"E2EE key id " + keyId.toString()}not found on $mid, key id  should be $receiverKeyId"
           );
         }
       }
-      return base64.decode(key);
+      return base64.decode(key!);
     } else {
       String? key;
       key = (await client.storage.get(
-        "e2eegroupKeys:$mid",
+        "e2eeGroupKeys:$mid",
       )) as String?;
       if (keyId != null && key != null) {
         Map keyData = jsonDecode(key);
@@ -130,11 +130,11 @@ class E2EE {
             rethrow;
           }
         }
-        int groupKeyId = e2eeGroupSharedKey.groupKeyId;
-        String creator = e2eeGroupSharedKey.creator;
-        int creatorKeyId = e2eeGroupSharedKey.creatorKeyId;
-        int receiverKeyId = e2eeGroupSharedKey.receiverKeyId;
-        Uint8List encryptedSharedKey = base64.decode(e2eeGroupSharedKey.encryptedSharedKey);
+        int groupKeyId = e2eeGroupSharedKey["groupKeyId"];
+        String creator = e2eeGroupSharedKey["creator"];
+        int creatorKeyId = e2eeGroupSharedKey["creatorKeyId"];
+        int receiverKeyId = e2eeGroupSharedKey["receiverKeyId"];
+        Uint8List encryptedSharedKey = e2eeGroupSharedKey["encryptedSharedKey"];
         Uint8List selfKey = base64.decode(
           (await getE2EESelfKeyDataByKeyId(receiverKeyId))["privKey"] as String
         );
@@ -147,9 +147,9 @@ class E2EE {
           selfKey,
           creatorKey as Uint8List
         );
-        aesKey = getSHA256Sum([base64.decode(aesKey), "Key"]);
+        aesKey = getSHA256Sum([aesKey, "Key"]);
         dynamic aesIv = xor(
-          getSHA256Sum([base64.decode(aesKey), "IV"]),
+          getSHA256Sum([aesKey, "IV"]),
         );
 
         e2eeLog("getE2EELocalPublicKeyAESInfo", {
@@ -161,7 +161,7 @@ class E2EE {
         e2eeLog("getE2EELocalPublicKeyDecrypted", decrypted);
         Map data = { "privKey": decrypted, "keyId": groupKeyId };
         key = jsonEncode(data);
-        await client.storage.set("e2eegroupKeys:$mid", key);
+        await client.storage.set("e2eeGroupKeys:$mid", key);
         return data;
       }
       return jsonDecode(key);
@@ -325,14 +325,14 @@ class E2EE {
     return keychainData;
   }
 
-  Uint8List generateAAD(String a, String b, int c, int d, {int e = 2, int f = 0}) {
+  Uint8List generateAAD(String a, String b, int c, int d, [int e = 2, int f = 0]) {
     final aad = BytesBuilder();
     aad.add(utf8.encode(a));
     aad.add(utf8.encode(b));
-    aad.addByte(c);
-    aad.addByte(d);
-    aad.addByte(e);
-    aad.addByte(f);
+    aad.add(getIntBytes(c));
+    aad.add(getIntBytes(d));
+    aad.add(getIntBytes(e));
+    aad.add(getIntBytes(f));
     return aad.toBytes();
   }
 
@@ -379,11 +379,11 @@ class E2EE {
     } else {
       Map groupK = (await getE2EELocalPublicKey(to, null)) as Map;
       Uint8List privK = base64.decode(groupK["privKey"]);
-      Uint8List pubK = base64.decode(groupK["pubKey"]);
+      Uint8List pubK = base64.decode(selfKeyData["pubKey"]);
       receiverKeyId = groupK["keyId"];
       keyData = await generateSharedSecret(privK, pubK);
     }
-    if (ContentType == LINETypes.ContentType.LOCATION.value && (data is Map || data is Set)) {
+    if (ContentType == LINETypes.ContentType.LOCATION.value && (data is Map || data is Set || data is List)) {
       return encryptE2EELocationMessage(
         senderKeyId,
         receiverKeyId,
@@ -428,7 +428,7 @@ class E2EE {
   ) {
     Uint8List salt = generateRandomBytes(16);
     Uint8List gcmKey = getSHA256Sum([keyData, salt, utf8.encode("Key")]);
-    Uint8List aad = generateAAD(to, from, senderKeyId, receiverKeyId, e: specVersion, f: 0);
+    Uint8List aad = generateAAD(to, from, senderKeyId, receiverKeyId, specVersion, 0);
     Uint8List sign = generateRandomBytes(12);
     Uint8List data = utf8.encode(jsonEncode({ "text": text }));
     dynamic encData = encryptE2EEMessageV2(data, gcmKey, sign, aad);
@@ -454,7 +454,7 @@ class E2EE {
   ) {
     Uint8List salt = generateRandomBytes(16);
     Uint8List gcmKey = getSHA256Sum([keydata, salt, utf8.encode("Key")]);
-    Uint8List aad = generateAAD(to, from, senderKeyId, receiverKeyId, e: specVersion, f: contentType);
+    Uint8List aad = generateAAD(to, from, senderKeyId, receiverKeyId, specVersion, contentType);
     Uint8List sign = generateRandomBytes(12);
     Uint8List data = utf8.encode(jsonEncode(rawdata));
     dynamic encdata = encryptE2EEMessageV2(data, gcmKey, sign, aad);
@@ -480,7 +480,7 @@ class E2EE {
     Uint8List salt = generateRandomBytes(16);
     Uint8List gcmKey = getSHA256Sum([keydata, salt, utf8.encode("Key")]);
     Uint8List aad = generateAAD(
-      to, from, senderKeyId, receiverKeyId, e: specVersion, f: 15
+      to, from, senderKeyId, receiverKeyId, specVersion, 15
     );
     Uint8List sign = generateRandomBytes(12);
     Uint8List data = utf8.encode(jsonEncode({ "location": location }));
@@ -496,19 +496,19 @@ class E2EE {
   }
 
   Uint8List encryptE2EEMessageV2(Uint8List data, Uint8List gcmKey, Uint8List nonce, Uint8List aad) {
-    e2eeLog("createCipheriv", { data, gcmKey, nonce, aad });
+    e2eeLog("createCipheriv", { "data": data, "gcmKey": gcmKey, "nonce": nonce, "aad": aad });
     Uint8List encrypted = encryptAesGcm(gcmKey, nonce, aad, data);
     return encrypted;
   }
 
   Future<LINETypes.Message> decryptE2EEMessage(LINETypes.Message messageObj) async {
-    if ((messageObj.contentType == "NONE" || messageObj.contentType == LINETypes.ContentType.NONE) && (messageObj.chunks ?? []).isNotEmpty) {
+    if ((messageObj.contentType == LINETypes.ContentType.NONE) && (messageObj.chunks ?? []).isNotEmpty) {
       List decrypted = await decryptE2EETextMessage(messageObj);
       String text = decrypted[0];
       Map meta = decrypted[1];
       messageObj.text = text;
       messageObj.contentMetadata.addAll(meta as Map<String, String>);
-    } else if ((messageObj.contentType == "LOCATION" || messageObj.contentType == LINETypes.ContentType.LOCATION) && (messageObj.chunks ?? []).isNotEmpty) {
+    } else if ((messageObj.contentType == LINETypes.ContentType.LOCATION) && (messageObj.chunks ?? []).isNotEmpty) {
       messageObj.location = await decryptE2EELocationMessage(messageObj) as LINETypes.Location;
     }
     return messageObj;
@@ -675,7 +675,7 @@ class E2EE {
     Uint8List aesKey = await generateSharedSecret(privK, pubK);
     Uint8List gcmKey = getSHA256Sum([aesKey, salt, "Key"]);
     Uint8List aad = generateAAD(
-      to, from, senderKeyId, receiverKeyId, e: specVersion, f: contentType
+      to, from, senderKeyId, receiverKeyId, specVersion, contentType
     );
 
     dynamic decrypted;
