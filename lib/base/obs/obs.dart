@@ -275,9 +275,9 @@ class LineObs {
     if (message.to[0] != "u" && message.to[0] != "c") {
       throw InternalError("ObsError", "Invalid mid, ${message.to}");
     }
-    String id = message.id;
+    String id = message.id!;
     Map contentMetadata = message.contentMetadata;
-    List chunks = message.chunks;
+    List chunks = message.chunks!;
     if (chunks.isEmpty) {
       return null;
     }

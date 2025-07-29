@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import '../polling/polling.dart';
@@ -14,11 +15,17 @@ import '../service/livetalk/livetalk.dart';
 import '../service/relation/relation.dart';
 import '../service/square/square.dart';
 import '../service/talk/talk.dart';
+import '../timeline/timeline.dart';
+
+import '../login/login.dart';
+
+import '../../thrift/fid.dart';
 
 import "./utils/devices.dart";
 import "./typed-event-emitter/emitter.dart";
 import '../../thrift/thrift.dart';
 import '../storage/base.dart';
+import '../storage/storage.dart';
 import '../../thrift/line_types.dart' as LINETypes;
 import '../e2ee/e2ee.dart';
 
@@ -34,52 +41,56 @@ class Config {
 
 class BaseClient extends TypedEventEmitter {
   String? authToken;
-  Device device;
-  Thrift thrift;
-  RequestClient request;
-  BaseStorage storage;
-  E2EE e2ee;
-  LineObs obs;
+  Map device;
+  dynamic savePath;
+  late Thrift thrift;
+  late RequestClient request;
+  late BaseStorage storage;
+  late E2EE e2ee;
+  late LineObs obs;
+  late Timeline timeline;
 
-  AuthService auth;
-  CallService call;
-  ChannelService channel;
-  LiffService liff;
-  SquareLiveTalkService livetalk;
-  RelationService relation;
-  SquareService square;
-  TalkService talk;
+  late AuthService auth;
+  late CallService call;
+  late ChannelService channel;
+  late LiffService liff;
+  late SquareLiveTalkService livetalk;
+  late RelationService relation;
+  late SquareService square;
+  late TalkService talk;
+
+  late Login login;
 
   Function? customFetch;
 
-  LINETypes.Profile? profile;
-  Config config;
-  DeviceDetails deviceDetails;
+  late LINETypes.Profile? profile;
+  late Config config;
+  late DeviceDetails deviceDetails;
 
-  String endpoint;
+  String? endpoint;
 
-  BaseClient({
-    this.authToken,
-    required this.device,
-    required this.thrift,
-    required this.request,
-    required this.storage,
-    required this.e2ee,
-    required this.obs,
-    required this.auth,
-    required this.call,
-    required this.channel,
-    required this.liff,
-    required this.livetalk,
-    required this.relation,
-    required this.square,
-    required this.talk,
-    this.customFetch,
-    this.profile,
-    required this.config,
-    required this.deviceDetails,
-    required this.endpoint,
-  });
+  BaseClient(this.authToken, this.device, this.savePath, [String? endpoint]) {
+    deviceDetails = getDeviceDetails(device["device"], device["appVersion"])!;
+    thrift = Thrift();
+    thrift.def = fid2nameMap;
+    this.endpoint = endpoint ?? "legy.line-apps.com";
+    request = RequestClient(this);
+    storage = FileStorage(savePath);
+    e2ee = E2EE(this);
+    obs = LineObs(this);
+    timeline = Timeline(this);
+    auth = AuthService(this);
+    call = CallService(this);
+    channel = ChannelService(this);
+    liff  = LiffService(this);
+    livetalk = SquareLiveTalkService(this);
+    relation = RelationService(this);
+    square = SquareService(this);
+    talk = TalkService(this);
+    login = Login(this);
+    customFetch = customFetch;
+    config = Config(timeout: 30000, longTimeout: 180000);
+  }
 
   log(String type, dynamic data) {
     emit("log", { "type": type, "data": data });
@@ -99,12 +110,12 @@ class BaseClient extends TypedEventEmitter {
     return typeMapping[mid[0]];
   }
 
-  Map<String, int>? reqseqs;
+  Map<String, dynamic>? reqseqs;
 
   Future<int> getReqseq([String name = "talk"]) async {
-    reqseqs ??= jsonDecode(
+    reqseqs = jsonDecode(
         ((await storage.get("reqseq")) ?? "{}").toString(),
-      ) as Map<String, int>;
+      );
     if (reqseqs![name] == null) {
       reqseqs![name] = 0;
     }
@@ -118,17 +129,20 @@ class BaseClient extends TypedEventEmitter {
     String url, {
     String method = 'GET',
     Map<String, String>? headers,
-    Object? body,
+    dynamic body,
     int? timeout,
   }) async {
     final request = http.Request(method, Uri.parse(url));
     if (headers != null) {
       request.headers.addAll(headers);
     }
-    if (body != null && body is String) {
-      request.body = body;
+    if (body != null) {
+      if (body is String) {
+        request.body = body;
+      } else if (body is Uint8List) {
+        request.bodyBytes = body;
+      }
     }
-
     final streamResponse = await (customFetch != null
         ? customFetch!(request).timeout(Duration(milliseconds: timeout ?? 1000))
         : http.Client().send(request).timeout(Duration(milliseconds: timeout ?? 1000)));

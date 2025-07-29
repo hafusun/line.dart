@@ -108,7 +108,11 @@ class SquareService extends BaseService {
             "contentType": LINETypes.ContentType.fromValue(param["contentType"] ?? 0),
             "contentMetadata": param["contentMetadata"] ?? {},
             "location": param["location"],
-          }.addAll(
+          },
+        }
+      }
+    };
+    data["request"]["squareMessage"]["message"].addAll(
             param["relatedMessageId"] != null
             ? {
                 "relatedMessageId": param["relatedMessageId"],
@@ -116,10 +120,7 @@ class SquareService extends BaseService {
                 "messageRelationType": "REPLY"
               }
             : {},
-          ),
-        }
-      }
-    };
+          );
     return await client.request.request(
       LINEStructs.SquareService_sendMessage_args(LINETypes.SquareService_sendMessage_args.fromJson(data)),
       "sendMessage",

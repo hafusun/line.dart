@@ -96,7 +96,7 @@ class LiffService extends BaseService {
           dynamic toType = chatMid != null ? client.getToType(chatMid) : null;
           bool hasConsent = false;
           if (channelId != null && consentUrl != null) {
-            if ((toType != null && toType == 4) || client.device.startsWith("DESKTOP")) {
+            if ((toType != null && toType == 4) || client.deviceDetails.device.startsWith("DESKTOP")) {
               hasConsent = await tryConsentAuthorize(consentUrl, channelId);
             } else {
               hasConsent = await tryConsentLiff(channelId);
@@ -113,7 +113,7 @@ class LiffService extends BaseService {
 
   Future<dynamic> sendLiff(String to, List message, [bool? tryConsent, bool? forceIssue]) async {
     String token;
-    if (!liffTokenCache[to] || (forceIssue ?? false)) {
+    if (liffTokenCache[to] == null || (forceIssue ?? false)) {
       token = await getLiffToken(to, liffId);
     } else {
       token = liffTokenCache[to];

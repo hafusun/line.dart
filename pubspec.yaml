@@ -1,5 +1,5 @@
-name: LINEDart
-description: "LINEDart is a library for control LINE."
+name: linedart
+description: "linedart is a library for control LINE."
 version: 1.0.0
 homepage: "https://github.com/hafusun/line.dart"
 
@@ -21,6 +21,7 @@ dependencies:
   http: ^1.4.0
 
   pointycastle: any
+  convert: ^3.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

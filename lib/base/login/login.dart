@@ -37,8 +37,8 @@ class Login {
     if (client.authToken == null || client.authToken == "") {
       throw InternalError("NotAuthorized", "try login first");
     }
-    client.profile = await client.talk.getProfile({});
-    client.emit("ready", client.profile);
+    client.profile = LINETypes.Profile.fromJson(await client.talk.getProfile({}));
+    client.emit("ready", { "profile": client.profile });
   }
 
   Future<dynamic> login({String? authToken, String? email, String? password, String? pincode, bool? v3, bool? e2ee, bool? qr}) async {
@@ -47,7 +47,7 @@ class Login {
     } else if (qr != null && qr) {
       await withQrCode(v3: v3 ?? false);
     } else if (authToken != null) {
-      client.emit("update:authToken", authToken);
+      client.emit("update:authToken", { "authToken": authToken });
       client.authToken = authToken;
     } else if (email != null) {
       await withPassword(email: email, password: password, pincode: pincode, v3: v3, e2ee: e2ee);
@@ -60,7 +60,7 @@ class Login {
   Future<void> withQrCode({bool? v3}) async {
     String authToken;
     if (v3 == null) {
-      if (isV3Support(client.device)) {
+      if (isV3Support(client.deviceDetails.device)) {
         authToken = await requestSQR2();
       } else {
         authToken = await requestSQR();
@@ -72,7 +72,7 @@ class Login {
         authToken = await requestSQR();
       }
     }
-    client.emit("update:authToken", authToken);
+    client.emit("update:authToken", { "authToken": authToken });
     client.authToken = authToken;
   }
 
@@ -85,14 +85,14 @@ class Login {
     Uint8List secret = SqrSecret[0];
     String secretUrl = SqrSecret[1];
     url = url + secretUrl;
-    client.emit("qrcall", url);
+    client.emit("qrcall", { "url": url });
     if (await checkQrCodeVerified(sqr)) {
       try {
         await verifyCertificate(sqr, await getQrCert());
       } catch(_e) {
         Map createPin = await createPinCode(sqr);
         String pincode = createPin[1];
-        client.emit("pincall", pincode);
+        client.emit("pincall", { "pincode": pincode });
         await checkPinCodeVerified(sqr);
       }
       dynamic response = await qrCodeLogin(sqr);
@@ -100,7 +100,7 @@ class Login {
       String authToken = response[2];
       dynamic e2eeInfo = response[4];
       if (pem != null) {
-        client.emit("update:qrcert", pem);
+        client.emit("update:qrcert", { "cert": pem });
         await registerQrCert(pem);
       }
       if (e2eeInfo != null) {
@@ -120,14 +120,14 @@ class Login {
     Uint8List secret = createSecret[0];
     String secretUrl = createSecret[1];
     url = url + secretUrl;
-    client.emit("qrcall", url);
+    client.emit("qrcall", { "url" : url });
     if (await checkQrCodeVerified(sqr)) {
       try {
         await verifyCertificate(sqr, await getQrCert());
       } catch(_e) {
         Map createPin = await createPinCode(sqr);
         String pincode = createPin[1];
-        client.emit("pincall", pincode);
+        client.emit("pincall", { "pincode": pincode });
         await checkPinCodeVerified(sqr);
       }
       Map response = await qrCodeLoginV2(sqr);
@@ -135,7 +135,7 @@ class Login {
       Map? tokenInfo = response[3];
       dynamic e2eeInfo = response[10];
       if (pem != null) {
-        client.emit("update:qrcert", pem);
+        client.emit("update:qrcert", { "cert": pem });
         await registerQrCert(pem);
       }
       if (e2eeInfo != null) {
@@ -143,7 +143,6 @@ class Login {
       }
       await client.storage.set("refreshToken", tokenInfo![2]);
       await client.storage.set("expire", tokenInfo[3] + tokenInfo[6]);
-      print(tokenInfo);
       return tokenInfo[1];
     }
     throw InternalError("TimeoutError", "checkQrCodeVerified timed out");
@@ -158,7 +157,7 @@ class Login {
       throw InternalError("RegExpUnmatch", "Invalid password");
     }
     if (v3 == null) {
-      if (isV3Support(client.device)) {
+      if (isV3Support(client.deviceDetails.device)) {
         authToken = await requestEmailLoginV2(
           email: email!,
           password: password!,
@@ -168,7 +167,7 @@ class Login {
         authToken = await requestEmailLogin(
           email: email!,
           password: password!,
-          pincode: pincode!,
+          pincode: pincode,
           e2ee: e2ee
         );
       }
@@ -183,16 +182,18 @@ class Login {
         authToken = await requestEmailLogin(
           email: email!,
           password: password!,
-          pincode: pincode!,
+          pincode: pincode,
           e2ee: e2ee
         );
       }
     }
-    client.emit("update:authtoken", authToken);
+    client.emit("update:authtoken", { "authToken": authToken });
     client.authToken = authToken;
   }
 
-  Future<String> requestEmailLogin({required String email, required String password, String pincode = "123456", bool? e2ee = true}) async {
+  Future<String> requestEmailLogin({required String email, required String password, String? pincode, bool? e2ee}) async {
+    e2ee = e2ee ?? true;
+    pincode = pincode ?? "123456";
     if (pincode.length != 6) {
       throw InternalError("Invalid constant pincode", "The constant pincode should be 6 digits");
     }
@@ -200,8 +201,8 @@ class Login {
     client.log("login", { "method": "email_v1", "email": email, "password": password.length, "enableE2EE": e2ee, "constantPincode": pincode });
 
     LINETypes.RSAKey rsaKey = await getRSAKeyInfo();
-    String keynm = rsaKey.keynm;
-    String sessionKey = rsaKey.sessionKey;
+    String? keynm = rsaKey.keynm;
+    String? sessionKey = rsaKey.sessionKey;
 
     String message = String.fromCharCode(sessionKey.length) +
       sessionKey +
@@ -213,12 +214,12 @@ class Login {
     Uint8List? secret;
     String? secretPK;
     Map response;
-    if (e2ee!) {
+    if (e2ee) {
       List createSqr = await client.e2ee.createSqrSecret(true);
       secret = createSqr[0];
       secretPK = createSqr[1];
       e2eeData = client.e2ee.encryptAESECB(
-        client.e2ee.getSHA256Sum(pincode),
+        client.e2ee.getSHA256Sum([pincode]),
         base64.decode(secretPK!)
       );
     }
@@ -229,15 +230,15 @@ class Login {
     response = await loginV2(
       keynm,
       encryptedMessage,
-      client.device,
+      client.deviceDetails.device,
       null,
       e2eeData,
       cert,
       "loginZ"
     );
 
-    if (!response["authToken"]) {
-      client.emit("pincall", response["pinCode"] ?? pincode);
+    if (response["authToken"] == null) {
+      client.emit("pincall", { "pincode": response["pinCode"] ?? pincode });
       if (e2ee && secret != null && secret.isNotEmpty) {
         Map<String, String> headers = {
           "user-agent": client.request.userAgent,
@@ -250,8 +251,9 @@ class Login {
         };
         Response res = await client.fetch(
           "https://${client.request.endpoint}/LF1",
-          headers: headers
-        );
+          headers: headers,
+          timeout: 180000
+        ).timeout(Duration(minutes: 3));
         Map result = jsonDecode(res.body);
         dynamic e2eeInfo = result["result"];
         client.log("response", e2eeInfo);
@@ -268,7 +270,7 @@ class Login {
         response = await loginV2(
           keynm,
           encryptedMessage,
-          client.device,
+          client.deviceDetails.device,
           e2eeLogin,
           e2eeData,
           cert,
@@ -287,14 +289,15 @@ class Login {
         };
         Response r = await client.fetch(
           "https://${client.request.endpoint}/Q",
-          headers: headers
+          headers: headers,
+          timeout: 180000
         );
         Map verifier = jsonDecode(r.body);
         client.log("response", verifier);
         response = await loginV2(
           keynm,
           encryptedMessage,
-          client.device,
+          client.deviceDetails.device,
           verifier["result"]["verifier"],
           e2eeData,
           cert,
@@ -302,21 +305,22 @@ class Login {
         );
       }
     }
-    if (response["certificate"]) {
-      client.emit("update:cert", response["certificate"]);
+    if (response["certificate"] != null) {
+      client.emit("update:cert", { "cert": response["certificate"] });
       await registerCert(response["certificate"], email);
     }
     return response["authToken"]!;
   }
 
-  Future<String> requestEmailLoginV2({ required String email, required String password, String? pincode = "123456" }) async {
-    if (pincode!.length != 6) {
+  Future<String> requestEmailLoginV2({ required String email, required String password, String? pincode}) async {
+    pincode = pincode ?? "123456";
+    if ((pincode).length != 6) {
       throw InternalError("Invalid constant pincode", "The constant pincode should be 6 digits");
     }
-    client.log("login", { "method": "email", "email": email, "password": password.length, "constantPiincode": pincode });
+    client.log("login", { "method": "email", "email": email, "password": password.length, "constantPincode": pincode });
     LINETypes.RSAKey rsaKey = await getRSAKeyInfo();
-    String keynm = rsaKey.keynm;
-    String sessionKey = rsaKey.sessionKey;
+    String? keynm = rsaKey.keynm;
+    String? sessionKey = rsaKey.sessionKey;
     String message = String.fromCharCode(sessionKey.length) +
       sessionKey +
       String.fromCharCode(email.length) +
@@ -324,11 +328,11 @@ class Login {
       String.fromCharCode(password.length) +
       password;
 
-    List createSqr = await client.e2ee.createSqrSecret();
+    List createSqr = await client.e2ee.createSqrSecret(true);
     Uint8List secret = createSqr[0];
     String secretPK = createSqr[1];
     Uint8List e2eeData = client.e2ee.encryptAESECB(
-      client.e2ee.getSHA256Sum(pincode),
+      client.e2ee.getSHA256Sum([pincode]),
       base64.decode(secretPK)
     );
 
@@ -338,7 +342,7 @@ class Login {
     dynamic response = await loginV2(
       keynm,
       encryptedMessage,
-      client.device,
+      client.deviceDetails.device,
       null,
       e2eeData,
       cert,
@@ -346,7 +350,7 @@ class Login {
     );
 
     if (response[9] == null) {
-      client.emit("pincall", pincode);
+      client.emit("pincall", { "pincode": pincode });
       Map<String, String> headers = {
         "accept": "application/x-thrift",
         "user-agent": client.request.userAgent,
@@ -376,7 +380,7 @@ class Login {
       response = await loginV2(
         keynm,
         encryptedMessage,
-        client.device,
+        client.deviceDetails.device,
         e2eeLogin,
         e2eeData,
         cert,
@@ -384,7 +388,7 @@ class Login {
       );
     }
     if (response[2] != null) {
-      client.emit("update:cert", response[2]);
+      client.emit("update:cert", { "cert": response[2] });
       await registerCert(response[2], email);
     }
     await client.storage.set("refreshToken", response[9][2]);
@@ -419,9 +423,9 @@ class Login {
             [2, 5, 0],
             [11, 6, ""],
             [11, 7, device],
-            [11, 8, cert],
-            [11, 9, verifier],
-            [11, 10, secret],
+            [11, 8, cert ?? ""],
+            [11, 9, verifier ?? ""],
+            [11, 10, secret ?? ""],
             [8, 11, 1],
             [11, 12, "System Product Name"]
           ]
@@ -463,8 +467,9 @@ class Login {
         "checkQrCodeVerified",
         4,
         false,
-        "/acct/lgn/sq/v1",
-        { "x-lst": "180000", "x-line-access": qrcode }
+        "/acct/lp/lgn/sq/v1",
+        { "x-lst": "180000", "x-line-access": qrcode },
+        client.config.longTimeout
       );
       return true;
     } catch(error) {
@@ -513,7 +518,7 @@ class Login {
     return await client.request.request(
       [[12, 1, [
         [11, 1, authSessionId],
-        [11, 2, client.device],
+        [11, 2, client.deviceDetails.device],
         [2, 3, autoLoginIsRequired]
       ]]],
       "qrCodeLogin",

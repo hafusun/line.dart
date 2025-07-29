@@ -21,7 +21,7 @@ class AuthService extends BaseService {
     if (refreshToken is String) {
       dynamic RATR = await refresh({ "request": { "refreshToken": refreshToken }});
       client.authToken = RATR["accessToken"];
-      client.emit("update:authToken", RATR["accessToken"]);
+      client.emit("update:authToken", { "authToken": RATR["accessToken"] });
       await client.storage.set("expire", (RATR["tokenIssueTimeEpochSec"] as int) + (RATR["durationUntilRefreshInSec"] as int));
     } else {
       throw InternalError("refreshError", "refreshToken not found");

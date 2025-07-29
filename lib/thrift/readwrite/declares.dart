@@ -37,4 +37,11 @@ class ParsedThrift {
     required this.data,
     required this.info_
   });
+
+  factory ParsedThrift.fromJson(Map json) {
+    return ParsedThrift(
+      data: json["data"],
+      info_: json["_info"]
+    );
+  }
 }

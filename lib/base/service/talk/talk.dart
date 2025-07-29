@@ -34,7 +34,7 @@ class TalkService extends BaseService {
   }
 
   Future<LINETypes.Message> sendMessage(Map param) async {
-    if ((param["e2ee"] && param["chunks"] != null && param["location"] != null) || (param["e2ee"] && param["chunks"] != null && param["text"])) {
+    if ((param["e2ee"] && param["chunks"] == null && param["location"] != null) || (param["e2ee"] && param["chunks"] == null && param["text"] != null)) {
       dynamic chunks = await client.e2ee.encryptE2EEMessage(param["to"], (param["text"] ?? param["location"] ?? "Invalid"), contentType: param["contentType"]);
       Map contentMetadata = {
         "e2eeVersion": "2",
@@ -63,7 +63,7 @@ class TalkService extends BaseService {
         "hasContent": false,
         "contentType": param["contentType"] is LINETypes.ContentType ? param["contentType"].value.toString() : param["contentType"].toString(),
         "contentMetadata": param["contentMetadata"] ?? {},
-        "text": param["text"] ?? "",
+        "text": param["text"],
         "location": param["location"],
         "chunks": param["chunks"],
         "relatedMessageId": param["relatedMessageId"],

@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import '../readwrite/declares.dart';
 
 Map TYPE = {
@@ -40,7 +43,7 @@ class ThriftRenameParser {
   dynamic _name2fid(String structName, String, name) {
     dynamic struct = def[structName];
     if (struct != null && struct is List) {
-      final result = struct.indexWhere((e) => e.name == name);
+      final result = struct.indexWhere((e) => e["name"] == name);
       if (result == -1) {
         return { "name": name, "fid": -1 };
       } else {
@@ -51,10 +54,10 @@ class ThriftRenameParser {
     }
   }
 
-  dynamic _fid2name(String structName, String fid) {
+  dynamic _fid2name(String structName, dynamic fid) {
     dynamic struct = def[structName];
     if (struct != null && struct is List) {
-      final result = struct.firstWhere((e) => e.fid == fid);
+      final result = struct.indexWhere((e) => e["fid"] == fid);
       if (result == -1) {
         return { "name": fid, "fid": fid };
       } else {
@@ -68,47 +71,82 @@ class ThriftRenameParser {
   dynamic rename_thrift(String structName, dynamic object) {
     dynamic newObject = {};
     if (object is! Map && object is! List) return object;
-    for (const fid in object) {
-      dynamic value = object[fid];
-      dynamic finfo = _fid2name(structName, fid);
-      if (value == null) {
-        continue;
-      }
-      if (finfo.struct != null && finfo.struct is String && (value is Map || value is List)) {
-        if (isStruct(def[finfo.struct])) {
-          newObject[finfo.name] = rename_thrift(finfo.struct, value);
-        } else if (def[finfo.struct] != null) {
-          newObject[finfo.name] = (def[finfo.struct] as dynamic)[value] ?? value;
-        } else {
-          newObject[finfo.name] = value;
+    if (object is Map) {
+      for (dynamic fid in object.keys) {
+        dynamic value = object[fid];
+        dynamic finfo = _fid2name(structName, fid);
+        if (value == null) {
+          continue;
         }
-      } else if (finfo.list != null && finfo.list is String && (value is Map || value is List)) {
-          newObject[finfo.name] = [];
-          value.forEach((e, i) => {
-            newObject[finfo.name][i] = rename_thrift(finfo.list, e)
+        if (finfo["struct"] != null && finfo["struct"] is String && (value is Map || value is List)) {
+          if (isStruct(def[finfo["struct"]])) {
+            newObject[finfo["name"]] = rename_thrift(finfo["struct"], value);
+          } else if (def[finfo["struct"]] != null) {
+            newObject[finfo["name"]] = (def[finfo["struct"]] as dynamic)[value] ?? value;
+          } else {
+            newObject[finfo["name"]] = value;
+          }
+        } else if (finfo["list"] != null && finfo["list"] is String && value is List) {
+            newObject[finfo["name"]] = [];
+            for (int i = 0; i < value.length; i++) {
+              newObject[finfo["name"]].add(rename_thrift(finfo["list"], value[i]));
+            }
+        } else if (finfo["map"] != null && finfo["map"] is String && value is Map) {
+          newObject[finfo["name"]] = {};
+          value.forEach((k, v) {
+            newObject[finfo["name"]][k] = rename_thrift(finfo["map"], v);
           });
-      } else if (finfo.map != null && finfo.map is String && (value is Map || value is List)) {
-        newObject[finfo.name] = {};
-        for (const key in value) {
-          dynamic e = value[key];
-          newObject[finfo.name][key] = rename_thrift(finfo.map, e);
+        } else if (finfo["set"] != null && finfo["set"] is String && (value is Map || value is List)) {
+          newObject[finfo["name"]] = [];
+          value.forEach((e, i) => {
+            newObject[finfo["name"]][i] = rename_thrift(finfo["set"], e)
+          });
+        } else {
+          newObject[finfo["name"]] = value;
         }
-      } else if (finfo.set != null && finfo.set is String && (value is Map || value is List)) {
-        newObject[finfo.name] = [];
-        value.forEach((e, i) => {
-          newObject[finfo.name][i] = rename_thrift(finfo.set, e)
-        });
-      } else {
-        newObject[finfo.name] = value;
       }
-    }
+    } else if (object is List) {
+        for (int fid = 0; fid < object.length; fid++) {
+          dynamic value = object[fid];
+          dynamic finfo = _fid2name(structName, fid);
+          if (value == null) {
+            continue;
+          }
+          if (finfo["struct"] != null && finfo["struct"] is String && (value is Map || value is List)) {
+            if (isStruct(def[finfo["struct"]])) {
+              newObject[finfo["name"]] = rename_thrift(finfo["struct"], value);
+            } else if (def[finfo["struct"]] != null) {
+              newObject[finfo["name"]] = (def[finfo["struct"]] as dynamic)[value] ?? value;
+            } else {
+              newObject[finfo["name"]] = value;
+            }
+          } else if (finfo["list"] != null && finfo["list"] is String && value is List && value is! Uint8List) {
+              newObject[finfo["name"]] = [];
+              for (int i = 0; i < value.length; i++) {
+                newObject[finfo["name"]].add(rename_thrift(finfo["list"], value[i]));
+              }
+          } else if (finfo["map"] != null && finfo["map"] is String && value is Map) {
+            newObject[finfo["name"]] = {};
+            value.forEach((k, v) {
+              newObject[finfo["name"]][k] = rename_thrift(finfo["map"], v);
+            });
+          } else if (finfo["set"] != null && finfo["set"] is String && (value is Map || value is List)) {
+            newObject[finfo["name"]] = [];
+            value.forEach((e, i) => {
+              newObject[finfo["name"]][i] = rename_thrift(finfo["set"], e)
+            });
+          }  else {
+            newObject[finfo["fid"]] = value;
+          }
+        }
+      }
     return newObject;
   }
 
-  ParsedThrift rename_data(ParsedThrift data, {bool square = false}) {
-    dynamic name = data.info_.name;
+  Map rename_data(Map data, {bool square = false}) {
+    dynamic name = data["_info"]["fname"];
     String structName = "${(square ? "SquareService_" : "") + name}_result";
-    data.data = rename_thrift(structName, data.data);
+    data["data"] = rename_thrift(structName, data["data"]);
     return data;
   }
 }

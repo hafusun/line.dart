@@ -21,12 +21,12 @@ class TFramedTransport extends TTransport {
 
       while (residual.isNotEmpty) {
         if (residual.length < 4) {
-          return; // Not enough bytes to continue, save and resume on next packet
+          return;
         }
 
         int frameSize = _readI32(residual, 0);
         if (residual.length < 4 + frameSize) {
-          return; // Not enough bytes to continue, save and resume on next packet
+          return;
         }
 
         Uint8List frame = residual.sublist(4, 4 + frameSize);

@@ -1,4 +1,3 @@
-import 'package:fixnum/fixnum.dart';
 
 enum AR0_g {
   ILLEGAL_ARGUMENT(16641),
@@ -6356,7 +6355,7 @@ enum zf_EnumC40716d {
 
 class AccessTokenRefreshException {
   final P70_g errorCode;
-  final Int64 reasonCode;
+  final dynamic reasonCode;
 
   AccessTokenRefreshException({
     required this.errorCode,
@@ -6365,7 +6364,7 @@ class AccessTokenRefreshException {
 
   factory AccessTokenRefreshException.fromJson(Map json) {
     return AccessTokenRefreshException(
-      errorCode: P70_g.fromValue(json["errorCode"]),
+      errorCode: P70_g.fromValue(json["errorCode"] ?? 0),
       reasonCode: json["reasonCode"],
     );
   }
@@ -6384,9 +6383,9 @@ class AccountEapConnectException {
 
   factory AccountEapConnectException.fromJson(Map json) {
     return AccountEapConnectException(
-      code: Q70_r.fromValue(json["code"]),
+      code: Q70_r.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
-      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"]),
+      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"] ?? {}),
     );
   }
 }
@@ -6404,9 +6403,9 @@ class I80_C26390a {
 
   factory I80_C26390a.fromJson(Map json) {
     return I80_C26390a(
-      code: I80_EnumC26408j.fromValue(json["code"]),
+      code: I80_EnumC26408j.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
-      webAuthDetails: I80_K0.fromJson(json["webAuthDetails"]),
+      webAuthDetails: I80_K0.fromJson(json["webAuthDetails"] ?? {}),
     );
   }
 }
@@ -6424,9 +6423,9 @@ class AuthException {
 
   factory AuthException.fromJson(Map json) {
     return AuthException(
-      code: T70_EnumC14406j.fromValue(json["code"]),
+      code: T70_EnumC14406j.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
-      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"]),
+      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"] ?? {}),
     );
   }
 }
@@ -6444,9 +6443,9 @@ class BotException {
 
   factory BotException.fromJson(Map json) {
     return BotException(
-      errorCode: wm_EnumC38497a.fromValue(json["errorCode"]),
+      errorCode: wm_EnumC38497a.fromValue(json["errorCode"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6462,7 +6461,7 @@ class BotExternalException {
 
   factory BotExternalException.fromJson(Map json) {
     return BotExternalException(
-      errorCode: kf_EnumC28766a.fromValue(json["errorCode"]),
+      errorCode: kf_EnumC28766a.fromValue(json["errorCode"] ?? 0),
       reason: json["reason"],
     );
   }
@@ -6481,9 +6480,9 @@ class ChannelException {
 
   factory ChannelException.fromJson(Map json) {
     return ChannelException(
-      code: ChannelErrorCode.fromValue(json["code"]),
+      code: ChannelErrorCode.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6499,7 +6498,7 @@ class ChannelPaakAuthnException {
 
   factory ChannelPaakAuthnException.fromJson(Map json) {
     return ChannelPaakAuthnException(
-      code: n80_o.fromValue(json["code"]),
+      code: n80_o.fromValue(json["code"] ?? 0),
       errorMessage: json["errorMessage"],
     );
   }
@@ -6516,7 +6515,7 @@ class ChatappException {
 
   factory ChatappException.fromJson(Map json) {
     return ChatappException(
-      code: zf_EnumC40716d.fromValue(json["code"]),
+      code: zf_EnumC40716d.fromValue(json["code"] ?? 0),
       reason: json["reason"],
     );
   }
@@ -6535,9 +6534,9 @@ class CoinException {
 
   factory CoinException.fromJson(Map json) {
     return CoinException(
-      code: jO0_EnumC27535b.fromValue(json["code"]),
+      code: jO0_EnumC27535b.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6555,9 +6554,9 @@ class CollectionException {
 
   factory CollectionException.fromJson(Map json) {
     return CollectionException(
-      code: Ob1_EnumC12664u.fromValue(json["code"]),
+      code: Ob1_EnumC12664u.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6575,9 +6574,9 @@ class E2EEKeyBackupException {
 
   factory E2EEKeyBackupException.fromJson(Map json) {
     return E2EEKeyBackupException(
-      code: Pb1_W3.fromValue(json["code"]),
+      code: Pb1_W3.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6602,7 +6601,7 @@ class ExcessiveRequestItemException {
 class HomeException {
   final Fg_a exceptionCode;
   final String message;
-  final Int64 retryTimeMillis;
+  final dynamic retryTimeMillis;
 
   HomeException({
     required this.exceptionCode,
@@ -6612,7 +6611,7 @@ class HomeException {
 
   factory HomeException.fromJson(Map json) {
     return HomeException(
-      exceptionCode: Fg_a.fromValue(json["exceptionCode"]),
+      exceptionCode: Fg_a.fromValue(json["exceptionCode"] ?? 0),
       message: json["message"],
       retryTimeMillis: json["retryTimeMillis"],
     );
@@ -6628,7 +6627,7 @@ class LFLPremiumException {
 
   factory LFLPremiumException.fromJson(Map json) {
     return LFLPremiumException(
-      code: AR0_g.fromValue(json["code"]),
+      code: AR0_g.fromValue(json["code"] ?? 0),
     );
   }
 }
@@ -6646,9 +6645,9 @@ class LiffChannelException {
 
   factory LiffChannelException.fromJson(Map json) {
     return LiffChannelException(
-      code: Qj_EnumC13592i.fromValue(json["code"]),
+      code: Qj_EnumC13592i.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6666,9 +6665,9 @@ class LiffException {
 
   factory LiffException.fromJson(Map json) {
     return LiffException(
-      code: Qj_EnumC13597n.fromValue(json["code"]),
+      code: Qj_EnumC13597n.fromValue(json["code"] ?? 0),
       message: json["message"],
-      payload: Qj_C13599p.fromJson(json["payload"]),
+      payload: Qj_C13599p.fromJson(json["payload"] ?? {}),
     );
   }
 }
@@ -6686,9 +6685,9 @@ class MembershipException {
 
   factory MembershipException.fromJson(Map json) {
     return MembershipException(
-      code: og_EnumC32671l.fromValue(json["code"]),
+      code: og_EnumC32671l.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6706,9 +6705,9 @@ class OaChatException {
 
   factory OaChatException.fromJson(Map json) {
     return OaChatException(
-      code: jf_EnumC27717f.fromValue(json["code"]),
+      code: jf_EnumC27717f.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6724,7 +6723,7 @@ class PasswordUpdateException {
 
   factory PasswordUpdateException.fromJson(Map json) {
     return PasswordUpdateException(
-      errorCode: U70_c.fromValue(json["errorCode"]),
+      errorCode: U70_c.fromValue(json["errorCode"] ?? 0),
       errorMessage: json["errorMessage"],
     );
   }
@@ -6745,10 +6744,10 @@ class PaymentException {
 
   factory PaymentException.fromJson(Map json) {
     return PaymentException(
-      errorCode: r80_EnumC34374n.fromValue(json["errorCode"]),
+      errorCode: r80_EnumC34374n.fromValue(json["errorCode"] ?? 0),
       debugReason: json["debugReason"],
       serverDefinedMessage: json["serverDefinedMessage"],
-      errorDetailMap: Map.from(json["errorDetailMap"]),
+      errorDetailMap: Map.from(json["errorDetailMap"] ?? {}),
     );
   }
 }
@@ -6766,9 +6765,9 @@ class PointException {
 
   factory PointException.fromJson(Map json) {
     return PointException(
-      code: PointErrorCode.fromValue(json["code"]),
+      code: PointErrorCode.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      extra: Map.from(json["extra"]),
+      extra: Map.from(json["extra"] ?? {}),
     );
   }
 }
@@ -6784,7 +6783,7 @@ class PremiumException {
 
   factory PremiumException.fromJson(Map json) {
     return PremiumException(
-      code: fN0_q.fromValue(json["code"]),
+      code: fN0_q.fromValue(json["code"] ?? 0),
       reason: json["reason"],
     );
   }
@@ -6801,7 +6800,7 @@ class PrimaryQrCodeMigrationException {
 
   factory PrimaryQrCodeMigrationException.fromJson(Map json) {
     return PrimaryQrCodeMigrationException(
-      code: h80_EnumC25645e.fromValue(json["code"]),
+      code: h80_EnumC25645e.fromValue(json["code"] ?? 0),
       errorMessage: json["errorMessage"],
     );
   }
@@ -6818,7 +6817,7 @@ class PwlessCredentialException {
 
   factory PwlessCredentialException.fromJson(Map json) {
     return PwlessCredentialException(
-      code: R70_e.fromValue(json["code"]),
+      code: R70_e.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
     );
   }
@@ -6835,7 +6834,7 @@ class RejectedException {
 
   factory RejectedException.fromJson(Map json) {
     return RejectedException(
-      rejectionReason: LN0_F0.fromValue(json["rejectionReason"]),
+      rejectionReason: LN0_F0.fromValue(json["rejectionReason"] ?? 0),
       hint: json["hint"],
     );
   }
@@ -6854,7 +6853,7 @@ class SeamlessLoginException {
 
   factory SeamlessLoginException.fromJson(Map json) {
     return SeamlessLoginException(
-      code: g80_EnumC24993a.fromValue(json["code"]),
+      code: g80_EnumC24993a.fromValue(json["code"] ?? 0),
       errorMessage: json["errorMessage"],
       errorTitle: json["errorTitle"],
     );
@@ -6872,7 +6871,7 @@ class SecondAuthFactorPinCodeException {
 
   factory SecondAuthFactorPinCodeException.fromJson(Map json) {
     return SecondAuthFactorPinCodeException(
-      code: S70_a.fromValue(json["code"]),
+      code: S70_a.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
     );
   }
@@ -6889,7 +6888,7 @@ class SecondaryPwlessLoginException {
 
   factory SecondaryPwlessLoginException.fromJson(Map json) {
     return SecondaryPwlessLoginException(
-      code: o80_e.fromValue(json["code"]),
+      code: o80_e.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
     );
   }
@@ -6906,7 +6905,7 @@ class SecondaryQrCodeException {
 
   factory SecondaryQrCodeException.fromJson(Map json) {
     return SecondaryQrCodeException(
-      code: q80_EnumC33651c.fromValue(json["code"]),
+      code: q80_EnumC33651c.fromValue(json["code"] ?? 0),
       alertMessage: json["alertMessage"],
     );
   }
@@ -6939,9 +6938,9 @@ class SettingsException {
 
   factory SettingsException.fromJson(Map json) {
     return SettingsException(
-      code: t80_n.fromValue(json["code"]),
+      code: t80_n.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameters: Map.from(json["parameters"]),
+      parameters: Map.from(json["parameters"] ?? {}),
     );
   }
 }
@@ -6959,9 +6958,9 @@ class ShopException {
 
   factory ShopException.fromJson(Map json) {
     return ShopException(
-      code: Ob1_EnumC12652p1.fromValue(json["code"]),
+      code: Ob1_EnumC12652p1.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -6979,8 +6978,8 @@ class SquareException {
 
   factory SquareException.fromJson(Map json) {
     return SquareException(
-      errorCode: SquareErrorCode.fromValue(json["errorCode"]),
-      errorExtraInfo: ErrorExtraInfo.fromJson(json["errorExtraInfo"]),
+      errorCode: SquareErrorCode.fromValue(json["errorCode"] ?? 0),
+      errorExtraInfo: ErrorExtraInfo.fromJson(json["errorExtraInfo"] ?? {}),
       reason: json["reason"],
     );
   }
@@ -6999,9 +6998,9 @@ class SuggestTrialException {
 
   factory SuggestTrialException.fromJson(Map json) {
     return SuggestTrialException(
-      code: zR0_j.fromValue(json["code"]),
+      code: zR0_j.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -7019,9 +7018,9 @@ class TalkException {
 
   factory TalkException.fromJson(Map json) {
     return TalkException(
-      code: ErrorCode.fromValue(json["code"]),
+      code: ErrorCode.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      parameterMap: Map.from(json["parameterMap"]),
+      parameterMap: Map.from(json["parameterMap"] ?? {}),
     );
   }
 }
@@ -7037,7 +7036,7 @@ class ThingsException {
 
   factory ThingsException.fromJson(Map json) {
     return ThingsException(
-      code: do0_M.fromValue(json["code"]),
+      code: do0_M.fromValue(json["code"] ?? 0),
       reason: json["reason"],
     );
   }
@@ -7054,7 +7053,7 @@ class TokenAuthException {
 
   factory TokenAuthException.fromJson(Map json) {
     return TokenAuthException(
-      code: j80_EnumC27228a.fromValue(json["code"]),
+      code: j80_EnumC27228a.fromValue(json["code"] ?? 0),
       reason: json["reason"],
     );
   }
@@ -7073,9 +7072,9 @@ class WalletException {
 
   factory WalletException.fromJson(Map json) {
     return WalletException(
-      code: NZ0_EnumC12193o1.fromValue(json["code"]),
+      code: NZ0_EnumC12193o1.fromValue(json["code"] ?? 0),
       reason: json["reason"],
-      attributes: Map.from(json["attributes"]),
+      attributes: Map.from(json["attributes"] ?? {}),
     );
   }
 }
@@ -7098,7 +7097,7 @@ class AD {
   factory AD.fromJson(Map json) {
     return AD(
       body: json["body"],
-      priority: Priority.fromJson(json["priority"]),
+      priority: Priority.fromJson(json["priority"] ?? {}),
       lossUrl: json["lossUrl"],
     );
   }
@@ -7119,11 +7118,11 @@ class AR0_o {
 }
 
 class AbuseMessage {
-  final Int64 messageId;
+  final dynamic messageId;
   final String message;
   final String senderMid;
   final ContentType contentType;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final Map<String, String> metadata;
 
   AbuseMessage({
@@ -7140,9 +7139,9 @@ class AbuseMessage {
       messageId: json["messageId"],
       message: json["message"],
       senderMid: json["senderMid"],
-      contentType: ContentType.fromValue(json["contentType"]),
+      contentType: ContentType.fromValue(json["contentType"] ?? 0),
       createdTime: json["createdTime"],
-      metadata: Map.from(json["metadata"]),
+      metadata: Map.from(json["metadata"] ?? {}),
     );
   }
 }
@@ -7164,13 +7163,13 @@ class AbuseReport {
 
   factory AbuseReport.fromJson(Map json) {
     return AbuseReport(
-      reportSource: Pb1_EnumC13128p7.fromValue(json["reportSource"]),
-      applicationType: ApplicationType.fromValue(json["applicationType"]),
-      spammerReasons: List.from(json["spammerReasons"]),
-      abuseMessages: List.from(json["abuseMessages"])
+      reportSource: Pb1_EnumC13128p7.fromValue(json["reportSource"] ?? 0),
+      applicationType: ApplicationType.fromValue(json["applicationType"] ?? 0),
+      spammerReasons: List.from(json["spammerReasons"] ?? []),
+      abuseMessages: List.from(json["abuseMessages"] ?? [])
           .map((e) => AbuseMessage.fromJson(e))
           .toList(),
-      metadata: Map.from(json["metadata"]),
+      metadata: Map.from(json["metadata"] ?? {}),
     );
   }
 }
@@ -7191,8 +7190,8 @@ class AbuseReportLineMeeting {
   factory AbuseReportLineMeeting.fromJson(Map json) {
     return AbuseReportLineMeeting(
       reporteeMid: json["reporteeMid"],
-      spammerReasons: List.from(json["spammerReasons"]),
-      evidenceIds: List.from(json["evidenceIds"])
+      spammerReasons: List.from(json["spammerReasons"] ?? []),
+      evidenceIds: List.from(json["evidenceIds"] ?? [])
           .map((e) => EvidenceId.fromJson(e))
           .toList(),
       chatMid: json["chatMid"],
@@ -7252,7 +7251,7 @@ class AcceptSpeakersRequest {
     return AcceptSpeakersRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      targetMids: List.from(json["targetMids"]),
+      targetMids: List.from(json["targetMids"] ?? []),
     );
   }
 }
@@ -7330,7 +7329,7 @@ class AccountIdentifier {
 
   factory AccountIdentifier.fromJson(Map json) {
     return AccountIdentifier(
-      type: T70_EnumC14390b.fromValue(json["type"]),
+      type: T70_EnumC14390b.fromValue(json["type"] ?? 0),
       identifier: json["identifier"],
       countryCode: json["countryCode"],
     );
@@ -7354,8 +7353,8 @@ class AcquireLiveTalkRequest {
     return AcquireLiveTalkRequest(
       squareChatMid: json["squareChatMid"],
       title: json["title"],
-      type: LiveTalkType.fromValue(json["type"]),
-      speakerSetting: LiveTalkSpeakerSetting.fromValue(json["speakerSetting"]),
+      type: LiveTalkType.fromValue(json["type"] ?? 0),
+      speakerSetting: LiveTalkSpeakerSetting.fromValue(json["speakerSetting"] ?? 0),
     );
   }
 }
@@ -7369,7 +7368,7 @@ class AcquireLiveTalkResponse {
 
   factory AcquireLiveTalkResponse.fromJson(Map json) {
     return AcquireLiveTalkResponse(
-      liveTalk: LiveTalk.fromJson(json["liveTalk"]),
+      liveTalk: LiveTalk.fromJson(json["liveTalk"] ?? {}),
     );
   }
 }
@@ -7388,7 +7387,7 @@ class AcquireOACallRouteRequest {
   factory AcquireOACallRouteRequest.fromJson(Map json) {
     return AcquireOACallRouteRequest(
       searchId: json["searchId"],
-      fromEnvInfo: Map.from(json["fromEnvInfo"]),
+      fromEnvInfo: Map.from(json["fromEnvInfo"] ?? {}),
       otp: json["otp"],
     );
   }
@@ -7403,7 +7402,7 @@ class AcquireOACallRouteResponse {
 
   factory AcquireOACallRouteResponse.fromJson(Map json) {
     return AcquireOACallRouteResponse(
-      oaCallRoute: Pb1_C13113o6.fromJson(json["oaCallRoute"]),
+      oaCallRoute: Pb1_C13113o6.fromJson(json["oaCallRoute"] ?? {}),
     );
   }
 }
@@ -7434,7 +7433,7 @@ class ActivateSubscriptionRequest {
   factory ActivateSubscriptionRequest.fromJson(Map json) {
     return ActivateSubscriptionRequest(
       uniqueKey: json["uniqueKey"],
-      activeStatus: og_EnumC32661b.fromValue(json["activeStatus"]),
+      activeStatus: og_EnumC32661b.fromValue(json["activeStatus"] ?? 0),
     );
   }
 }
@@ -7450,8 +7449,8 @@ class AdRequest {
 
   factory AdRequest.fromJson(Map json) {
     return AdRequest(
-      headers: Map.from(json["headers"]),
-      queryParams: Map.from(json["queryParams"]),
+      headers: Map.from(json["headers"] ?? {}),
+      queryParams: Map.from(json["queryParams"] ?? {}),
     );
   }
 }
@@ -7488,7 +7487,7 @@ class AddFriendByMidRequest {
     return AddFriendByMidRequest(
       reqSeq: json["reqSeq"],
       userMid: json["userMid"],
-      tracking: AddFriendTracking.fromJson(json["tracking"]),
+      tracking: AddFriendTracking.fromJson(json["tracking"] ?? {}),
     );
   }
 }
@@ -7526,7 +7525,7 @@ class AddItemToCollectionRequest {
   factory AddItemToCollectionRequest.fromJson(Map json) {
     return AddItemToCollectionRequest(
       collectionId: json["collectionId"],
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
       itemId: json["itemId"],
     );
@@ -7770,7 +7769,7 @@ class AddProductToSubscriptionSlotRequest {
 
   factory AddProductToSubscriptionSlotRequest.fromJson(Map json) {
     return AddProductToSubscriptionSlotRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
       oldProductId: json["oldProductId"],
       subscriptionService: json["subscriptionService"],
@@ -7787,7 +7786,7 @@ class AddProductToSubscriptionSlotResponse {
 
   factory AddProductToSubscriptionSlotResponse.fromJson(Map json) {
     return AddProductToSubscriptionSlotResponse(
-      result: Ob1_U1.fromValue(json["result"]),
+      result: Ob1_U1.fromValue(json["result"] ?? 0),
     );
   }
 }
@@ -7821,7 +7820,7 @@ class AddThemeToSubscriptionSlotResponse {
 
   factory AddThemeToSubscriptionSlotResponse.fromJson(Map json) {
     return AddThemeToSubscriptionSlotResponse(
-      result: Ob1_U1.fromValue(json["result"]),
+      result: Ob1_U1.fromValue(json["result"] ?? 0),
     );
   }
 }
@@ -7835,7 +7834,7 @@ class AddToFollowBlacklistRequest {
 
   factory AddToFollowBlacklistRequest.fromJson(Map json) {
     return AddToFollowBlacklistRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
     );
   }
 }
@@ -7870,7 +7869,7 @@ class AgreeToTermsRequest {
   factory AgreeToTermsRequest.fromJson(Map json) {
     return AgreeToTermsRequest(
       termsType: json["termsType"],
-      termsAgreement: TermsAgreement.fromJson(json["termsAgreement"]),
+      termsAgreement: TermsAgreement.fromJson(json["termsAgreement"] ?? {}),
     );
   }
 }
@@ -7933,9 +7932,9 @@ class AnimationLayer {
 
   factory AnimationLayer.fromJson(Map json) {
     return AnimationLayer(
-      initialImage: RichImage.fromJson(json["initialImage"]),
-      frontImage: RichImage.fromJson(json["frontImage"]),
-      backgroundImage: RichImage.fromJson(json["backgroundImage"]),
+      initialImage: RichImage.fromJson(json["initialImage"] ?? {}),
+      frontImage: RichImage.fromJson(json["frontImage"] ?? {}),
+      backgroundImage: RichImage.fromJson(json["backgroundImage"] ?? {}),
     );
   }
 }
@@ -7989,7 +7988,7 @@ class ApproveSquareMembersRequest {
   factory ApproveSquareMembersRequest.fromJson(Map json) {
     return ApproveSquareMembersRequest(
       squareMid: json["squareMid"],
-      requestedMemberMids: List.from(json["requestedMemberMids"]),
+      requestedMemberMids: List.from(json["requestedMemberMids"] ?? []),
     );
   }
 }
@@ -8005,17 +8004,17 @@ class ApproveSquareMembersResponse {
 
   factory ApproveSquareMembersResponse.fromJson(Map json) {
     return ApproveSquareMembersResponse(
-      approvedMembers: List.from(json["approvedMembers"])
+      approvedMembers: List.from(json["approvedMembers"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      status: SquareStatus.fromJson(json["status"]),
+      status: SquareStatus.fromJson(json["status"] ?? {}),
     );
   }
 }
 
 class ApprovedChannelInfo {
   final ChannelInfo channelInfo;
-  final Int64 approvedAt;
+  final dynamic approvedAt;
 
   ApprovedChannelInfo({
     required this.channelInfo,
@@ -8024,7 +8023,7 @@ class ApprovedChannelInfo {
 
   factory ApprovedChannelInfo.fromJson(Map json) {
     return ApprovedChannelInfo(
-      channelInfo: ChannelInfo.fromJson(json["channelInfo"]),
+      channelInfo: ChannelInfo.fromJson(json["channelInfo"] ?? {}),
       approvedAt: json["approvedAt"],
     );
   }
@@ -8032,7 +8031,7 @@ class ApprovedChannelInfo {
 
 class ApprovedChannelInfos {
   final List<ApprovedChannelInfo> approvedChannelInfos;
-  final Int64 revision;
+  final dynamic revision;
 
   ApprovedChannelInfos({
     required this.approvedChannelInfos,
@@ -8041,7 +8040,7 @@ class ApprovedChannelInfos {
 
   factory ApprovedChannelInfos.fromJson(Map json) {
     return ApprovedChannelInfos(
-      approvedChannelInfos: List.from(json["approvedChannelInfos"])
+      approvedChannelInfos: List.from(json["approvedChannelInfos"] ?? [])
           .map((e) => ApprovedChannelInfo.fromJson(e))
           .toList(),
       revision: json["revision"],
@@ -8080,13 +8079,13 @@ class AssetServiceInfo {
 
   factory AssetServiceInfo.fromJson(Map json) {
     return AssetServiceInfo(
-      status: NZ0_C0.fromValue(json["status"]),
-      myAssetServiceCode: NZ0_B0.fromValue(json["myAssetServiceCode"]),
+      status: NZ0_C0.fromValue(json["status"] ?? 0),
+      myAssetServiceCode: NZ0_B0.fromValue(json["myAssetServiceCode"] ?? 0),
       name: json["name"],
       signupText: json["signupText"],
       iconUrl: json["iconUrl"],
       landingUrl: json["landingUrl"],
-      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"]),
+      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"] ?? {}),
       balance: json["balance"],
       profit: json["profit"],
       maintenanceText: json["maintenanceText"],
@@ -8113,8 +8112,8 @@ class AuthPublicKeyCredential {
     return AuthPublicKeyCredential(
       id: json["id"],
       type: json["type"],
-      response: AuthenticatorAssertionResponse.fromJson(json["response"]),
-      extensionResults: AuthenticationExtensionsClientOutputs.fromJson(json["extensionResults"]),
+      response: AuthenticatorAssertionResponse.fromJson(json["response"] ?? {}),
+      extensionResults: AuthenticationExtensionsClientOutputs.fromJson(json["extensionResults"] ?? {}),
     );
   }
 }
@@ -8128,7 +8127,7 @@ class AuthSessionRequest {
 
   factory AuthSessionRequest.fromJson(Map json) {
     return AuthSessionRequest(
-      metaData: Map.from(json["metaData"]),
+      metaData: Map.from(json["metaData"] ?? {}),
     );
   }
 }
@@ -8145,7 +8144,7 @@ class AuthenticateWithPaakRequest {
   factory AuthenticateWithPaakRequest.fromJson(Map json) {
     return AuthenticateWithPaakRequest(
       sessionId: json["authSessionId"],
-      credential: AuthPublicKeyCredential.fromJson(json["credential"]),
+      credential: AuthPublicKeyCredential.fromJson(json["credential"] ?? {}),
     );
   }
 }
@@ -8159,7 +8158,7 @@ class AuthenticationExtensionsClientInputs {
 
   factory AuthenticationExtensionsClientInputs.fromJson(Map json) {
     return AuthenticationExtensionsClientInputs(
-      lineAuthenSel: List.from(json["lineAuthenSel"]),
+      lineAuthenSel: List.from(json["lineAuthenSel"] ?? []),
     );
   }
 }
@@ -8216,7 +8215,7 @@ class AuthenticatorAttestationResponse {
     return AuthenticatorAttestationResponse(
       clientDataJSON: json["clientDataJSON"],
       attestationObject: json["attestationObject"],
-      transports: List.from(json["transports"]),
+      transports: List.from(json["transports"] ?? []),
     );
   }
 }
@@ -8252,15 +8251,15 @@ class AutoSuggestionShowcaseRequest {
 
   factory AutoSuggestionShowcaseRequest.fromJson(Map json) {
     return AutoSuggestionShowcaseRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
-      suggestionType: Ob1_a2.fromValue(json["suggestionType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
+      suggestionType: Ob1_a2.fromValue(json["suggestionType"] ?? 0),
     );
   }
 }
 
 class AutoSuggestionShowcaseResponse {
   final List<ProductSummaryForAutoSuggest> productList;
-  final Int64 totalSize;
+  final dynamic totalSize;
 
   AutoSuggestionShowcaseResponse({
     required this.productList,
@@ -8269,7 +8268,7 @@ class AutoSuggestionShowcaseResponse {
 
   factory AutoSuggestionShowcaseResponse.fromJson(Map json) {
     return AutoSuggestionShowcaseResponse(
-      productList: List.from(json["productList"])
+      productList: List.from(json["productList"] ?? [])
           .map((e) => ProductSummaryForAutoSuggest.fromJson(e))
           .toList(),
       totalSize: json["totalSize"],
@@ -8278,10 +8277,10 @@ class AutoSuggestionShowcaseResponse {
 }
 
 class AvatarProfile {
-  final String version;
-  final Int64 updatedMillis;
-  final String thumbnail;
-  final bool usablePublicly;
+  final String? version;
+  final dynamic updatedMillis;
+  final String? thumbnail;
+  final bool? usablePublicly;
 
   AvatarProfile({
     required this.version,
@@ -8302,7 +8301,7 @@ class AvatarProfile {
 
 class BadgeInfo {
   final bool enabled;
-  final Int64 badgeRevision;
+  final dynamic badgeRevision;
 
   BadgeInfo({
     required this.enabled,
@@ -8365,9 +8364,9 @@ class BalanceShortcut {
       iconAltText: json["iconAltText"],
       linkUrl: json["linkUrl"],
       tsTargetId: json["tsTargetId"],
-      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"]),
+      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"] ?? 0),
       iconUrlDarkMode: json["iconUrlDarkMode"],
-      toolTip: Tooltip.fromJson(json["toolTip"]),
+      toolTip: Tooltip.fromJson(json["toolTip"] ?? {}),
     );
   }
 }
@@ -8383,10 +8382,10 @@ class BalanceShortcutInfo {
 
   factory BalanceShortcutInfo.fromJson(Map json) {
     return BalanceShortcutInfo(
-      balanceShortcuts: List.from(json["balanceShortcuts"])
+      balanceShortcuts: List.from(json["balanceShortcuts"] ?? [])
           .map((e) => BalanceShortcut.fromJson(e))
           .toList(),
-      osPaymentFallbackShortcut: BalanceShortcut.fromJson(json["osPaymentFallbackShortcut"]),
+      osPaymentFallbackShortcut: BalanceShortcut.fromJson(json["osPaymentFallbackShortcut"] ?? {}),
     );
   }
 }
@@ -8404,10 +8403,10 @@ class BalanceShortcutInfoV4 {
 
   factory BalanceShortcutInfoV4.fromJson(Map json) {
     return BalanceShortcutInfoV4(
-      compactShortcuts: List.from(json["compactShortcuts"])
+      compactShortcuts: List.from(json["compactShortcuts"] ?? [])
           .map((e) => CompactShortcut.fromJson(e))
           .toList(),
-      balanceShortcuts: List.from(json["balanceShortcuts"])
+      balanceShortcuts: List.from(json["balanceShortcuts"] ?? [])
           .map((e) => BalanceShortcut.fromJson(e))
           .toList(),
       defaultExpand: json["defaultExpand"],
@@ -8454,17 +8453,17 @@ class BannerRequest {
   factory BannerRequest.fromJson(Map json) {
     return BannerRequest(
       test: json["test"],
-      trigger: Uf_C14856C.fromJson(json["trigger"]),
-      ad: AdRequest.fromJson(json["ad"]),
-      content: ContentRequest.fromJson(json["content"]),
+      trigger: Uf_C14856C.fromJson(json["trigger"] ?? {}),
+      ad: AdRequest.fromJson(json["ad"] ?? {}),
+      content: ContentRequest.fromJson(json["content"] ?? {}),
     );
   }
 }
 
 class BannerResponse {
   final String rid;
-  final Int64 timestamp;
-  final Int64 minInterval;
+  final dynamic timestamp;
+  final dynamic minInterval;
   final String lang;
   final Uf_C14856C trigger;
   final List<Uf_p> payloads;
@@ -8484,8 +8483,8 @@ class BannerResponse {
       timestamp: json["timestamp"],
       minInterval: json["minInterval"],
       lang: json["lang"],
-      trigger: Uf_C14856C.fromJson(json["trigger"]),
-      payloads: List.from(json["payloads"])
+      trigger: Uf_C14856C.fromJson(json["trigger"] ?? {}),
+      payloads: List.from(json["payloads"] ?? [])
           .map((e) => Uf_p.fromJson(e))
           .toList(),
     );
@@ -8507,9 +8506,9 @@ class Beacon {
 }
 
 class BeaconBackgroundNotification {
-  final Int64 actionInterval;
+  final dynamic actionInterval;
   final List<qm_C34110c> actionAndConditions;
-  final Int64 actionDelay;
+  final dynamic actionDelay;
   final List<List<dynamic>> actionConditions;
 
   BeaconBackgroundNotification({
@@ -8522,11 +8521,11 @@ class BeaconBackgroundNotification {
   factory BeaconBackgroundNotification.fromJson(Map json) {
     return BeaconBackgroundNotification(
       actionInterval: json["actionInterval"],
-      actionAndConditions: List.from(json["actionAndConditions"])
+      actionAndConditions: List.from(json["actionAndConditions"] ?? [])
           .map((e) => qm_C34110c.fromJson(e))
           .toList(),
       actionDelay: json["actionDelay"],
-      actionConditions: List.from(json["actionConditions"])
+      actionConditions: List.from(json["actionConditions"] ?? [])
           .map((e) => List<dynamic>.from(e))
           .toList(),
     );
@@ -8537,7 +8536,7 @@ class BeaconData {
   final String hwid;
   final int rssi;
   final int txPower;
-  final Int64 scannedTimestampMs;
+  final dynamic scannedTimestampMs;
 
   BeaconData({
     required this.hwid,
@@ -8563,7 +8562,7 @@ class BeaconLayerInfoAndActions {
   final List<String> actions;
   final List<qm_C34110c> showOrConditions;
   final List<List<dynamic>> showConditions;
-  final Int64 timeToHide;
+  final dynamic timeToHide;
 
   BeaconLayerInfoAndActions({
     required this.pictureUrl,
@@ -8580,11 +8579,11 @@ class BeaconLayerInfoAndActions {
       pictureUrl: json["pictureUrl"],
       label: json["label"],
       text: json["text"],
-      actions: List.from(json["actions"]),
-      showOrConditions: List.from(json["showOrConditions"])
+      actions: List.from(json["actions"] ?? []),
+      showOrConditions: List.from(json["showOrConditions"] ?? [])
           .map((e) => qm_C34110c.fromJson(e))
           .toList(),
-      showConditions: List.from(json["showConditions"])
+      showConditions: List.from(json["showConditions"] ?? [])
           .map((e) => List<dynamic>.from(e))
           .toList(),
       timeToHide: json["timeToHide"],
@@ -8594,7 +8593,7 @@ class BeaconLayerInfoAndActions {
 
 class BeaconQueryResponse {
   final List<String> deprecated_actionUrls;
-  final Int64 cacheTtl;
+  final dynamic cacheTtl;
   final BeaconTouchActions touchActions;
   final BeaconLayerInfoAndActions layerInfoAndActions;
   final BeaconBackgroundNotification backgroundEnteringNotification;
@@ -8604,9 +8603,9 @@ class BeaconQueryResponse {
   final String minor;
   final int effectiveRange;
   final List<String> channelWhiteList;
-  final Int64 actionId;
-  final Int64 stayReportInterval;
-  final Int64 leaveThresholdTime;
+  final dynamic actionId;
+  final dynamic stayReportInterval;
+  final dynamic leaveThresholdTime;
   final int touchThreshold;
   final int cutoffThreshold;
   final List<DataUserBot> dataUserBots;
@@ -8641,23 +8640,23 @@ class BeaconQueryResponse {
 
   factory BeaconQueryResponse.fromJson(Map json) {
     return BeaconQueryResponse(
-      deprecated_actionUrls: List.from(json["deprecated_actionUrls"]),
+      deprecated_actionUrls: List.from(json["deprecated_actionUrls"] ?? []),
       cacheTtl: json["cacheTtl"],
-      touchActions: BeaconTouchActions.fromJson(json["touchActions"]),
-      layerInfoAndActions: BeaconLayerInfoAndActions.fromJson(json["layerInfoAndActions"]),
-      backgroundEnteringNotification: BeaconBackgroundNotification.fromJson(json["backgroundEnteringNotification"]),
-      backgroundLeavingNotification: BeaconBackgroundNotification.fromJson(json["backgroundLeavingNotification"]),
+      touchActions: BeaconTouchActions.fromJson(json["touchActions"] ?? {}),
+      layerInfoAndActions: BeaconLayerInfoAndActions.fromJson(json["layerInfoAndActions"] ?? {}),
+      backgroundEnteringNotification: BeaconBackgroundNotification.fromJson(json["backgroundEnteringNotification"] ?? {}),
+      backgroundLeavingNotification: BeaconBackgroundNotification.fromJson(json["backgroundLeavingNotification"] ?? {}),
       group: json["group"],
       major: json["major"],
       minor: json["minor"],
       effectiveRange: json["effectiveRange"],
-      channelWhiteList: List.from(json["channelWhiteList"]),
+      channelWhiteList: List.from(json["channelWhiteList"] ?? []),
       actionId: json["actionId"],
       stayReportInterval: json["stayReportInterval"],
       leaveThresholdTime: json["leaveThresholdTime"],
       touchThreshold: json["touchThreshold"],
       cutoffThreshold: json["cutoffThreshold"],
-      dataUserBots: List.from(json["dataUserBots"])
+      dataUserBots: List.from(json["dataUserBots"] ?? [])
           .map((e) => DataUserBot.fromJson(e))
           .toList(),
       deviceId: json["deviceId"],
@@ -8677,7 +8676,7 @@ class BeaconTouchActions {
 
   factory BeaconTouchActions.fromJson(Map json) {
     return BeaconTouchActions(
-      actions: List.from(json["actions"]),
+      actions: List.from(json["actions"] ?? []),
     );
   }
 }
@@ -8707,7 +8706,7 @@ class BirthdayGiftAssociationVerifyResponse {
 
   factory BirthdayGiftAssociationVerifyResponse.fromJson(Map json) {
     return BirthdayGiftAssociationVerifyResponse(
-      tokenStatus: Ob1_EnumC12638l.fromValue(json["tokenStatus"]),
+      tokenStatus: Ob1_EnumC12638l.fromValue(json["tokenStatus"] ?? 0),
       recipientUserMid: json["recipientUserMid"],
     );
   }
@@ -8783,7 +8782,7 @@ class Bot {
       region: json["region"],
       displayName: json["displayName"],
       pictureUrl: json["pictureUrl"],
-      brandType: og_EnumC32663d.fromValue(json["brandType"]),
+      brandType: og_EnumC32663d.fromValue(json["brandType"] ?? 0),
     );
   }
 }
@@ -8803,8 +8802,8 @@ class BotBlockDetail {
 }
 
 class BotFriendDetail {
-  final Int64 createdTime;
-  final Int64 favoriteTime;
+  final dynamic createdTime;
+  final dynamic favoriteTime;
   final bool hidden;
 
   BotFriendDetail({
@@ -8850,7 +8849,7 @@ class BotTalkroomAds {
   factory BotTalkroomAds.fromJson(Map json) {
     return BotTalkroomAds(
       talkroomAdsEnabled: json["talkroomAdsEnabled"],
-      botTalkroomAdsInventoryKeys: List.from(json["botTalkroomAdsInventoryKeys"])
+      botTalkroomAdsInventoryKeys: List.from(json["botTalkroomAdsInventoryKeys"] ?? [])
           .map((e) => BotTalkroomAdsInventoryKey.fromJson(e))
           .toList(),
       displayTalkroomAdsToMembershipUser: json["displayTalkroomAdsToMembershipUser"],
@@ -8871,7 +8870,7 @@ class BotTalkroomAdsInventoryKey {
 
   factory BotTalkroomAdsInventoryKey.fromJson(Map json) {
     return BotTalkroomAdsInventoryKey(
-      talkroomAdsPosition: Pb1_EnumC13093n0.fromValue(json["talkroomAdsPosition"]),
+      talkroomAdsPosition: Pb1_EnumC13093n0.fromValue(json["talkroomAdsPosition"] ?? 0),
       talkroomAdsIosInventoryKey: json["talkroomAdsIosInventoryKey"],
       talkroomAdsAndroidInventoryKey: json["talkroomAdsAndroidInventoryKey"],
     );
@@ -8880,7 +8879,7 @@ class BotTalkroomAdsInventoryKey {
 
 class BrowsingHistory {
   final ProductSearchSummary productSearchSummary;
-  final Int64 browsingTime;
+  final dynamic browsingTime;
 
   BrowsingHistory({
     required this.productSearchSummary,
@@ -8904,7 +8903,7 @@ class BuddyCautionNotice {
 
   factory BuddyCautionNotice.fromJson(Map json) {
     return BuddyCautionNotice(
-      type: Pb1_EnumC13162s0.fromValue(json["type"]),
+      type: Pb1_EnumC13162s0.fromValue(json["type"] ?? 0),
     );
   }
 }
@@ -8918,7 +8917,7 @@ class BuddyCautionNoticeFromCMS {
 
   factory BuddyCautionNoticeFromCMS.fromJson(Map json) {
     return BuddyCautionNoticeFromCMS(
-      visibility: Pb1_EnumC13148r0.fromValue(json["visibility"]),
+      visibility: Pb1_EnumC13148r0.fromValue(json["visibility"] ?? 0),
     );
   }
 }
@@ -8932,7 +8931,7 @@ class BuddyChatBar {
 
   factory BuddyChatBar.fromJson(Map json) {
     return BuddyChatBar(
-      barItems: List.from(json["barItems"])
+      barItems: List.from(json["barItems"] ?? [])
           .map((e) => Pb1_C13190u0.fromJson(e))
           .toList(),
     );
@@ -8941,7 +8940,7 @@ class BuddyChatBar {
 
 class BuddyDetail {
   final String mid;
-  final Int64 memberCount;
+  final dynamic memberCount;
   final bool onAir;
   final bool businessAccount;
   final bool addable;
@@ -8955,16 +8954,16 @@ class BuddyDetail {
   final int iconType;
   final BotType botType;
   final bool showRichMenu;
-  final Int64 richMenuRevision;
+  final dynamic richMenuRevision;
   final Pb1_EnumC13260z0 onAirLabel;
   final bool useTheme;
   final String themeId;
   final bool useBar;
-  final Int64 barRevision;
+  final dynamic barRevision;
   final bool useBackground;
   final String backgroundId;
   final bool statusBarEnabled;
-  final Int64 statusBarRevision;
+  final dynamic statusBarRevision;
   final String searchId;
   final int onAirVersion;
   final bool blockable;
@@ -9027,7 +9026,7 @@ class BuddyDetail {
       onAir: json["onAir"],
       businessAccount: json["businessAccount"],
       addable: json["addable"],
-      acceptableContentTypes: List.from(json["acceptableContentTypes"]),
+      acceptableContentTypes: List.from(json["acceptableContentTypes"] ?? []),
       capableMyhome: json["capableMyhome"],
       freePhoneCallable: json["freePhoneCallable"],
       phoneNumberToDial: json["phoneNumberToDial"],
@@ -9035,10 +9034,10 @@ class BuddyDetail {
       channelId: json["channelId"],
       channelProviderName: json["channelProviderName"],
       iconType: json["iconType"],
-      botType: BotType.fromValue(json["botType"]),
+      botType: BotType.fromValue(json["botType"] ?? 0),
       showRichMenu: json["showRichMenu"],
       richMenuRevision: json["richMenuRevision"],
-      onAirLabel: Pb1_EnumC13260z0.fromValue(json["onAirLabel"]),
+      onAirLabel: Pb1_EnumC13260z0.fromValue(json["onAirLabel"] ?? 0),
       useTheme: json["useTheme"],
       themeId: json["themeId"],
       useBar: json["useBar"],
@@ -9050,15 +9049,15 @@ class BuddyDetail {
       searchId: json["searchId"],
       onAirVersion: json["onAirVersion"],
       blockable: json["blockable"],
-      botActiveStatus: Pb1_EnumC13037j0.fromValue(json["botActiveStatus"]),
+      botActiveStatus: Pb1_EnumC13037j0.fromValue(json["botActiveStatus"] ?? 0),
       membershipEnabled: json["membershipEnabled"],
       legalCountryCode: json["legalCountryCode"],
-      botTalkroomAds: BotTalkroomAds.fromJson(json["botTalkroomAds"]),
-      botOaCallDetail: BotOaCallDetail.fromJson(json["botOaCallDetail"]),
+      botTalkroomAds: BotTalkroomAds.fromJson(json["botTalkroomAds"] ?? {}),
+      botOaCallDetail: BotOaCallDetail.fromJson(json["botOaCallDetail"] ?? {}),
       aiChatBot: json["aiChatBot"],
       supportSpeechToText: json["supportSpeechToText"],
       voomEnabled: json["voomEnabled"],
-      buddyCautionNoticeFromCMS: BuddyCautionNoticeFromCMS.fromJson(json["buddyCautionNoticeFromCMS"]),
+      buddyCautionNoticeFromCMS: BuddyCautionNoticeFromCMS.fromJson(json["buddyCautionNoticeFromCMS"] ?? {}),
       region: json["region"],
     );
   }
@@ -9075,8 +9074,8 @@ class BuddyDetailWithPersonal {
 
   factory BuddyDetailWithPersonal.fromJson(Map json) {
     return BuddyDetailWithPersonal(
-      buddyDetail: BuddyDetail.fromJson(json["buddyDetail"]),
-      personalDetail: BuddyPersonalDetail.fromJson(json["personalDetail"]),
+      buddyDetail: BuddyDetail.fromJson(json["buddyDetail"] ?? {}),
+      personalDetail: BuddyPersonalDetail.fromJson(json["personalDetail"] ?? {}),
     );
   }
 }
@@ -9085,7 +9084,7 @@ class BuddyLive {
   final String mid;
   final bool onLive;
   final String title;
-  final Int64 viewerCount;
+  final dynamic viewerCount;
   final String liveUrl;
 
   BuddyLive({
@@ -9109,19 +9108,19 @@ class BuddyLive {
 
 class BuddyOnAir {
   final String mid;
-  final Int64 freshnessLifetime;
+  final dynamic freshnessLifetime;
   final String onAirId;
   final bool onAir;
   final String text;
-  final Int64 viewerCount;
-  final Int64 targetCount;
-  final Int64 livePlayTime;
+  final dynamic viewerCount;
+  final dynamic targetCount;
+  final dynamic livePlayTime;
   final String screenAspectRate;
   final Pb1_A0 onAirType;
   final BuddyOnAirUrls onAirUrls;
   final String aspectRatioOfSource;
   final bool useFadingOut;
-  final Int64 fadingOutIn;
+  final dynamic fadingOutIn;
   final String urlAfterFadingOut;
   final String labelAfterFadingOut;
   final bool useLowerBanner;
@@ -9161,8 +9160,8 @@ class BuddyOnAir {
       targetCount: json["targetCount"],
       livePlayTime: json["livePlayTime"],
       screenAspectRate: json["screenAspectRate"],
-      onAirType: Pb1_A0.fromValue(json["onAirType"]),
-      onAirUrls: BuddyOnAirUrls.fromJson(json["onAirUrls"]),
+      onAirType: Pb1_A0.fromValue(json["onAirType"] ?? 0),
+      onAirUrls: BuddyOnAirUrls.fromJson(json["onAirUrls"] ?? {}),
       aspectRatioOfSource: json["aspectRatioOfSource"],
       useFadingOut: json["useFadingOut"],
       fadingOutIn: json["fadingOutIn"],
@@ -9186,15 +9185,15 @@ class BuddyOnAirUrls {
 
   factory BuddyOnAirUrls.fromJson(Map json) {
     return BuddyOnAirUrls(
-      hls: Map.from(json["hls"]),
-      smoothStreaming: Map.from(json["smoothStreaming"]),
+      hls: Map.from(json["hls"] ?? {}),
+      smoothStreaming: Map.from(json["smoothStreaming"] ?? {}),
     );
   }
 }
 
 class BuddyPersonalDetail {
   final String richMenuId;
-  final Int64 statusBarRevision;
+  final dynamic statusBarRevision;
   final BuddyCautionNotice buddyCautionNotice;
 
   BuddyPersonalDetail({
@@ -9207,7 +9206,7 @@ class BuddyPersonalDetail {
     return BuddyPersonalDetail(
       richMenuId: json["richMenuId"],
       statusBarRevision: json["statusBarRevision"],
-      buddyCautionNotice: BuddyCautionNotice.fromJson(json["buddyCautionNotice"]),
+      buddyCautionNotice: BuddyCautionNotice.fromJson(json["buddyCautionNotice"] ?? {}),
     );
   }
 }
@@ -9262,7 +9261,7 @@ class BuddySearchResult {
       statusMessage: json["statusMessage"],
       businessAccount: json["businessAccount"],
       iconType: json["iconType"],
-      botType: BotType.fromValue(json["botType"]),
+      botType: BotType.fromValue(json["botType"] ?? 0),
     );
   }
 }
@@ -9285,7 +9284,7 @@ class BuddyStatusBar {
   factory BuddyStatusBar.fromJson(Map json) {
     return BuddyStatusBar(
       label: json["label"],
-      displayType: Pb1_EnumC12926b1.fromValue(json["displayType"]),
+      displayType: Pb1_EnumC12926b1.fromValue(json["displayType"] ?? 0),
       title: json["title"],
       iconUrl: json["iconUrl"],
       linkUrl: json["linkUrl"],
@@ -9344,7 +9343,7 @@ class BuddyWidgetListCharBarItem {
   factory BuddyWidgetListCharBarItem.fromJson(Map json) {
     return BuddyWidgetListCharBarItem(
       label: json["label"],
-      widgets: List.from(json["widgets"])
+      widgets: List.from(json["widgets"] ?? [])
           .map((e) => BuddyWidget.fromJson(e))
           .toList(),
       selected: json["selected"],
@@ -9365,8 +9364,8 @@ class BulkFollowRequest {
 
   factory BulkFollowRequest.fromJson(Map json) {
     return BulkFollowRequest(
-      followTargetMids: List.from(json["followTargetMids"]),
-      unfollowTargetMids: List.from(json["unfollowTargetMids"]),
+      followTargetMids: List.from(json["followTargetMids"] ?? []),
+      unfollowTargetMids: List.from(json["unfollowTargetMids"] ?? []),
       hasNext: json["hasNext"],
     );
   }
@@ -9381,7 +9380,7 @@ class BulkGetRequest {
 
   factory BulkGetRequest.fromJson(Map json) {
     return BulkGetRequest(
-      requests: List.from(json["requests"])
+      requests: List.from(json["requests"] ?? [])
           .map((e) => GetRequest.fromJson(e))
           .toList(),
     );
@@ -9397,7 +9396,7 @@ class BulkGetResponse {
 
   factory BulkGetResponse.fromJson(Map json) {
     return BulkGetResponse(
-      values: Map.from(json["values"]),
+      values: Map.from(json["values"] ?? {}),
     );
   }
 }
@@ -9411,7 +9410,7 @@ class BulkSetRequest {
 
   factory BulkSetRequest.fromJson(Map json) {
     return BulkSetRequest(
-      requests: List.from(json["requests"])
+      requests: List.from(json["requests"] ?? [])
           .map((e) => SetRequest.fromJson(e))
           .toList(),
     );
@@ -9427,7 +9426,7 @@ class BulkSetResponse {
 
   factory BulkSetResponse.fromJson(Map json) {
     return BulkSetResponse(
-      values: Map.from(json["values"]),
+      values: Map.from(json["values"] ?? {}),
     );
   }
 }
@@ -9443,8 +9442,8 @@ class Button {
 
   factory Button.fromJson(Map json) {
     return Button(
-      content: ButtonContent.fromJson(json["content"]),
-      style: ButtonStyle.fromJson(json["style"]),
+      content: ButtonContent.fromJson(json["content"] ?? {}),
+      style: ButtonStyle.fromJson(json["style"] ?? {}),
     );
   }
 }
@@ -9461,7 +9460,7 @@ class ButtonStyle {
   factory ButtonStyle.fromJson(Map json) {
     return ButtonStyle(
       textColorHexCode: json["textColorHexCode"],
-      bgColor: ButtonBGColor.fromJson(json["bgColor"]),
+      bgColor: ButtonBGColor.fromJson(json["bgColor"] ?? {}),
     );
   }
 }
@@ -9479,7 +9478,7 @@ class BuyMustbuyRequest {
 
   factory BuyMustbuyRequest.fromJson(Map json) {
     return BuyMustbuyRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
       serialNumber: json["serialNumber"],
     );
@@ -9554,7 +9553,7 @@ class CallRoute {
   factory CallRoute.fromJson(Map json) {
     return CallRoute(
       fromToken: json["fromToken"],
-      callFlowType: Pb1_EnumC13010h1.fromValue(json["callFlowType"]),
+      callFlowType: Pb1_EnumC13010h1.fromValue(json["callFlowType"] ?? 0),
       voipAddress: json["voipAddress"],
       voipUdpPort: json["voipUdpPort"],
       voipTcpPort: json["voipTcpPort"],
@@ -9626,8 +9625,8 @@ class CampaignContent {
     return CampaignContent(
       iconUrl: json["iconUrl"],
       iconAltText: json["iconAltText"],
-      iconDisplayRule: IconDisplayRule.fromJson(json["iconDisplayRule"]),
-      animationEffectContent: AnimationEffectContent.fromJson(json["animationEffectContent"]),
+      iconDisplayRule: IconDisplayRule.fromJson(json["iconDisplayRule"] ?? {}),
+      animationEffectContent: AnimationEffectContent.fromJson(json["animationEffectContent"] ?? {}),
     );
   }
 }
@@ -9652,8 +9651,8 @@ class CampaignProperty {
       id: json["id"],
       name: json["name"],
       type: json["type"],
-      headerContent: HeaderContent.fromJson(json["headerContent"]),
-      campaignContent: CampaignContent.fromJson(json["campaignContent"]),
+      headerContent: HeaderContent.fromJson(json["headerContent"] ?? {}),
+      campaignContent: CampaignContent.fromJson(json["campaignContent"] ?? {}),
     );
   }
 }
@@ -9667,7 +9666,7 @@ class CanCreateCombinationStickerRequest {
 
   factory CanCreateCombinationStickerRequest.fromJson(Map json) {
     return CanCreateCombinationStickerRequest(
-      packageIds: List.from(json["packageIds"]),
+      packageIds: List.from(json["packageIds"] ?? []),
     );
   }
 }
@@ -9684,7 +9683,7 @@ class CanCreateCombinationStickerResponse {
   factory CanCreateCombinationStickerResponse.fromJson(Map json) {
     return CanCreateCombinationStickerResponse(
       canCreate: json["canCreate"],
-      usablePackageIds: List.from(json["usablePackageIds"]),
+      usablePackageIds: List.from(json["usablePackageIds"] ?? []),
     );
   }
 }
@@ -9704,7 +9703,7 @@ class CancelChatInvitationRequest {
     return CancelChatInvitationRequest(
       reqSeq: json["reqSeq"],
       chatMid: json["chatMid"],
-      targetUserMids: List.from(json["targetUserMids"]),
+      targetUserMids: List.from(json["targetUserMids"] ?? []),
     );
   }
 }
@@ -9753,7 +9752,7 @@ class CancelPinCodeRequest {
 
 class CancelReactionRequest {
   final int reqSeq;
-  final Int64 messageId;
+  final dynamic messageId;
 
   CancelReactionRequest({
     required this.reqSeq,
@@ -9798,7 +9797,7 @@ class Candidate {
 
   factory Candidate.fromJson(Map json) {
     return Candidate(
-      type: zR0_EnumC40579d.fromValue(json["type"]),
+      type: zR0_EnumC40579d.fromValue(json["type"] ?? 0),
       productId: json["productId"],
       itemId: json["itemId"],
     );
@@ -9834,7 +9833,7 @@ class CategoryName {
   factory CategoryName.fromJson(Map json) {
     return CategoryName(
       categoryId: json["categoryId"],
-      names: Map.from(json["names"]),
+      names: Map.from(json["names"] ?? {}),
     );
   }
 }
@@ -9854,7 +9853,7 @@ class ChangeSubscriptionRequest {
     return ChangeSubscriptionRequest(
       billingItemId: json["billingItemId"],
       subscriptionService: json["subscriptionService"],
-      storeCode: Ob1_K1.fromValue(json["storeCode"]),
+      storeCode: Ob1_K1.fromValue(json["storeCode"] ?? 0),
     );
   }
 }
@@ -9872,7 +9871,7 @@ class ChangeSubscriptionResponse {
 
   factory ChangeSubscriptionResponse.fromJson(Map json) {
     return ChangeSubscriptionResponse(
-      result: Ob1_M1.fromValue(json["result"]),
+      result: Ob1_M1.fromValue(json["result"] ?? 0),
       orderId: json["orderId"],
       confirmUrl: json["confirmUrl"],
     );
@@ -9912,7 +9911,7 @@ class ChannelDomain {
 
 class ChannelDomains {
   final List<ChannelDomain> channelDomains;
-  final Int64 revision;
+  final dynamic revision;
 
   ChannelDomains({
     required this.channelDomains,
@@ -9921,7 +9920,7 @@ class ChannelDomains {
 
   factory ChannelDomains.fromJson(Map json) {
     return ChannelDomains(
-      channelDomains: List.from(json["channelDomains"])
+      channelDomains: List.from(json["channelDomains"] ?? [])
           .map((e) => ChannelDomain.fromJson(e))
           .toList(),
       revision: json["revision"],
@@ -9931,7 +9930,7 @@ class ChannelDomains {
 
 class ChannelIdWithLastUpdated {
   final String channelId;
-  final Int64 lastUpdated;
+  final dynamic lastUpdated;
 
   ChannelIdWithLastUpdated({
     required this.channelId,
@@ -9960,7 +9959,7 @@ class ChannelInfo {
   final bool lcsAllApiUsable;
   final List<Pb1_EnumC12997g2> allowedPermissions;
   final List<ChannelDomain> channelDomains;
-  final Int64 updatedTimestamp;
+  final dynamic updatedTimestamp;
   final List<Pb1_EnumC12941c2> featureLicenses;
 
   ChannelInfo({
@@ -9987,21 +9986,21 @@ class ChannelInfo {
       name: json["name"],
       entryPageUrl: json["entryPageUrl"],
       descriptionText: json["descriptionText"],
-      provider: ChannelProvider.fromJson(json["provider"]),
-      publicType: Pb1_P6.fromValue(json["publicType"]),
+      provider: ChannelProvider.fromJson(json["provider"] ?? {}),
+      publicType: Pb1_P6.fromValue(json["publicType"] ?? 0),
       iconImage: json["iconImage"],
-      permissions: List.from(json["permissions"]),
+      permissions: List.from(json["permissions"] ?? []),
       iconThumbnailImage: json["iconThumbnailImage"],
-      channelConfigurations: List.from(json["channelConfigurations"]),
+      channelConfigurations: List.from(json["channelConfigurations"] ?? []),
       lcsAllApiUsable: json["lcsAllApiUsable"],
-      allowedPermissions: List.from(json["allowedPermissions"])
+      allowedPermissions: List.from(json["allowedPermissions"] ?? [])
           .map((e) => Pb1_EnumC12997g2.fromValue(e))
           .toList(),
-      channelDomains: List.from(json["channelDomains"])
+      channelDomains: List.from(json["channelDomains"] ?? [])
           .map((e) => ChannelDomain.fromJson(e))
           .toList(),
       updatedTimestamp: json["updatedTimestamp"],
-      featureLicenses: List.from(json["featureLicenses"])
+      featureLicenses: List.from(json["featureLicenses"] ?? [])
           .map((e) => Pb1_EnumC12941c2.fromValue(e))
           .toList(),
     );
@@ -10068,7 +10067,7 @@ class ChannelSettings {
 class ChannelToken {
   final String token;
   final String obsToken;
-  final Int64 expiration;
+  final dynamic expiration;
   final String refreshToken;
   final String channelAccessToken;
 
@@ -10094,9 +10093,9 @@ class ChannelToken {
 class Chat {
   final Pb1_Z2 type;
   final String chatMid;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final bool notificationDisabled;
-  final Int64 favoriteTimestamp;
+  final dynamic favoriteTimestamp;
   final String chatName;
   final String picturePath;
   final Pb1_C13208v4 extra;
@@ -10114,29 +10113,29 @@ class Chat {
 
   factory Chat.fromJson(Map json) {
     return Chat(
-      type: Pb1_Z2.fromValue(json["type"]),
+      type: Pb1_Z2.fromValue(json["type"] ?? 0),
       chatMid: json["chatMid"],
       createdTime: json["createdTime"],
       notificationDisabled: json["notificationDisabled"],
       favoriteTimestamp: json["favoriteTimestamp"],
       chatName: json["chatName"],
       picturePath: json["picturePath"],
-      extra: Pb1_C13208v4.fromJson(json["extra"]),
+      extra: Pb1_C13208v4.fromJson(json["extra"] ?? {}),
     );
   }
 }
 
 class ChatEffectMeta {
-  final Int64 contentId;
+  final dynamic contentId;
   final Pb1_Q2 category;
   final String name;
   final ChatEffectMetaContent defaultContent;
   final Map<int, ChatEffectMetaContent> optionalContents;
   final List<String> keywords;
-  final Int64 beginTimeMillis;
-  final Int64 endTimeMillis;
-  final Int64 createdTimeMillis;
-  final Int64 updatedTimeMillis;
+  final dynamic beginTimeMillis;
+  final dynamic endTimeMillis;
+  final dynamic createdTimeMillis;
+  final dynamic updatedTimeMillis;
   final String contentMetadataTag;
 
   ChatEffectMeta({
@@ -10156,11 +10155,11 @@ class ChatEffectMeta {
   factory ChatEffectMeta.fromJson(Map json) {
     return ChatEffectMeta(
       contentId: json["contentId"],
-      category: Pb1_Q2.fromValue(json["category"]),
+      category: Pb1_Q2.fromValue(json["category"] ?? 0),
       name: json["name"],
-      defaultContent: ChatEffectMetaContent.fromJson(json["defaultContent"]),
-      optionalContents: Map.from(json["optionalContents"]),
-      keywords: List.from(json["keywords"]),
+      defaultContent: ChatEffectMetaContent.fromJson(json["defaultContent"] ?? {}),
+      optionalContents: Map.from(json["optionalContents"] ?? {}),
+      keywords: List.from(json["keywords"] ?? []),
       beginTimeMillis: json["beginTimeMillis"],
       endTimeMillis: json["endTimeMillis"],
       createdTimeMillis: json["createdTimeMillis"],
@@ -10188,11 +10187,11 @@ class ChatEffectMetaContent {
 }
 
 class ChatRoomAnnouncement {
-  final Int64 announcementSeq;
+  final dynamic announcementSeq;
   final Pb1_X2 type;
   final ChatRoomAnnouncementContents contents;
   final String creatorMid;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final Pb1_W2 deletePermission;
 
   ChatRoomAnnouncement({
@@ -10207,11 +10206,11 @@ class ChatRoomAnnouncement {
   factory ChatRoomAnnouncement.fromJson(Map json) {
     return ChatRoomAnnouncement(
       announcementSeq: json["announcementSeq"],
-      type: Pb1_X2.fromValue(json["type"]),
-      contents: ChatRoomAnnouncementContents.fromJson(json["contents"]),
+      type: Pb1_X2.fromValue(json["type"] ?? 0),
+      contents: ChatRoomAnnouncementContents.fromJson(json["contents"] ?? {}),
       creatorMid: json["creatorMid"],
       createdTime: json["createdTime"],
-      deletePermission: Pb1_W2.fromValue(json["deletePermission"]),
+      deletePermission: Pb1_W2.fromValue(json["deletePermission"] ?? 0),
     );
   }
 }
@@ -10257,14 +10256,14 @@ class ChatRoomAnnouncementContents {
       text: json["text"],
       link: json["link"],
       thumbnail: json["thumbnail"],
-      contentMetadata: ChatRoomAnnouncementContentMetadata.fromJson(json["contentMetadata"]),
+      contentMetadata: ChatRoomAnnouncementContentMetadata.fromJson(json["contentMetadata"] ?? {}),
     );
   }
 }
 
 class ChatRoomBGM {
   final String creatorMid;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final String chatRoomBGMInfo;
 
   ChatRoomBGM({
@@ -10303,7 +10302,7 @@ class Chatapp {
       name: json["name"],
       icon: json["icon"],
       url: json["url"],
-      availableChatTypes: List.from(json["availableChatTypes"]),
+      availableChatTypes: List.from(json["availableChatTypes"] ?? []),
     );
   }
 }
@@ -10340,14 +10339,14 @@ class ChatroomPopup {
       imageObsHash: json["imageObsHash"],
       title: json["title"],
       content: json["content"],
-      targetRoles: List.from(json["targetRoles"]),
-      button: Button.fromJson(json["button"]),
-      type: ChatroomPopupType.fromValue(json["type"]),
+      targetRoles: List.from(json["targetRoles"] ?? []),
+      button: Button.fromJson(json["button"] ?? {}),
+      type: ChatroomPopupType.fromValue(json["type"] ?? 0),
       animatedImage: json["animatedImage"],
-      targetChatType: TargetChatType.fromValue(json["targetChatType"]),
-      targetChats: TargetChats.fromJson(json["targetChats"]),
-      targetUserType: TargetUserType.fromValue(json["targetUserType"]),
-      targetUsers: TargetUsers.fromJson(json["targetUsers"]),
+      targetChatType: TargetChatType.fromValue(json["targetChatType"] ?? 0),
+      targetChats: TargetChats.fromJson(json["targetChats"] ?? {}),
+      targetUserType: TargetUserType.fromValue(json["targetUserType"] ?? 0),
+      targetUsers: TargetUsers.fromJson(json["targetUsers"] ?? {}),
     );
   }
 }
@@ -10392,7 +10391,7 @@ class CheckIfEncryptedE2EEKeyReceivedRequest {
   factory CheckIfEncryptedE2EEKeyReceivedRequest.fromJson(Map json) {
     return CheckIfEncryptedE2EEKeyReceivedRequest(
       sessionId: json["sessionId"],
-      secureChannelData: h80_t.fromJson(json["secureChannelData"]),
+      secureChannelData: h80_t.fromJson(json["secureChannelData"] ?? {}),
     );
   }
 }
@@ -10463,7 +10462,7 @@ class CheckIfPhonePinCodeMsgVerifiedRequest {
   factory CheckIfPhonePinCodeMsgVerifiedRequest.fromJson(Map json) {
     return CheckIfPhonePinCodeMsgVerifiedRequest(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
     );
   }
 }
@@ -10486,7 +10485,7 @@ class CheckIfPhonePinCodeMsgVerifiedResponse {
       accountExist: json["accountExist"],
       sameUdidFromAccount: json["sameUdidFromAccount"],
       allowedToRegister: json["allowedToRegister"],
-      userProfile: UserProfile.fromJson(json["userProfile"]),
+      userProfile: UserProfile.fromJson(json["userProfile"] ?? {}),
     );
   }
 }
@@ -10568,7 +10567,7 @@ class CheckUserAgeAfterApprovalWithDocomoV2Response {
 
   factory CheckUserAgeAfterApprovalWithDocomoV2Response.fromJson(Map json) {
     return CheckUserAgeAfterApprovalWithDocomoV2Response(
-      userAgeType: Pb1_gd.fromValue(json["userAgeType"]),
+      userAgeType: Pb1_gd.fromValue(json["userAgeType"] ?? 0),
     );
   }
 }
@@ -10602,8 +10601,8 @@ class CheckUserAgeWithDocomoV2Response {
 
   factory CheckUserAgeWithDocomoV2Response.fromJson(Map json) {
     return CheckUserAgeWithDocomoV2Response(
-      responseType: Pb1_EnumC12970e3.fromValue(json["responseType"]),
-      userAgeType: Pb1_gd.fromValue(json["userAgeType"]),
+      responseType: Pb1_EnumC12970e3.fromValue(json["responseType"] ?? 0),
+      userAgeType: Pb1_gd.fromValue(json["userAgeType"] ?? 0),
       approvalRedirectUrl: json["approvalRedirectUrl"],
       accessToken: json["accessToken"],
     );
@@ -10621,8 +10620,8 @@ class ClientNetworkStatus {
 
   factory ClientNetworkStatus.fromJson(Map json) {
     return ClientNetworkStatus(
-      networkType: Pb1_EnumC12998g3.fromValue(json["networkType"]),
-      wifiSignals: List.from(json["wifiSignals"])
+      networkType: Pb1_EnumC12998g3.fromValue(json["networkType"] ?? 0),
+      wifiSignals: List.from(json["wifiSignals"] ?? [])
           .map((e) => WifiSignal.fromJson(e))
           .toList(),
     );
@@ -10667,7 +10666,7 @@ class Coin {
 }
 
 class CoinHistory {
-  final Int64 payDate;
+  final dynamic payDate;
   final int coinBalance;
   final int coin;
   final String price;
@@ -10707,7 +10706,7 @@ class CoinHistory {
       currency: json["currency"],
       currencySign: json["currencySign"],
       displayPrice: json["displayPrice"],
-      payload: CoinPayLoad.fromJson(json["payload"]),
+      payload: CoinPayLoad.fromJson(json["payload"] ?? {}),
       channelId: json["channelId"],
     );
   }
@@ -10730,7 +10729,7 @@ class CoinPayLoad {
     return CoinPayLoad(
       payCoin: json["payCoin"],
       freeCoin: json["freeCoin"],
-      type: PayloadType.fromValue(json["type"]),
+      type: PayloadType.fromValue(json["type"] ?? 0),
       rewardCoin: json["rewardCoin"],
     );
   }
@@ -10798,9 +10797,9 @@ class CoinPurchaseReservation {
       country: json["country"],
       currency: json["currency"],
       price: json["price"],
-      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"]),
+      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"] ?? 0),
       language: json["language"],
-      pgCode: jO0_EnumC27559z.fromValue(json["pgCode"]),
+      pgCode: jO0_EnumC27559z.fromValue(json["pgCode"] ?? 0),
       redirectUrl: json["redirectUrl"],
     );
   }
@@ -10810,8 +10809,8 @@ class Collection {
   final String collectionId;
   final List<CollectionItem> items;
   final Ob1_O0 productType;
-  final Int64 createdTimeMillis;
-  final Int64 updatedTimeMillis;
+  final dynamic createdTimeMillis;
+  final dynamic updatedTimeMillis;
 
   Collection({
     required this.collectionId,
@@ -10824,10 +10823,10 @@ class Collection {
   factory Collection.fromJson(Map json) {
     return Collection(
       collectionId: json["collectionId"],
-      items: List.from(json["items"])
+      items: List.from(json["items"] ?? [])
           .map((e) => CollectionItem.fromJson(e))
           .toList(),
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       createdTimeMillis: json["createdTimeMillis"],
       updatedTimeMillis: json["updatedTimeMillis"],
     );
@@ -10851,14 +10850,14 @@ class CollectionItem {
     return CollectionItem(
       itemId: json["itemId"],
       productId: json["productId"],
-      displayData: Ob1_E.fromJson(json["displayData"]),
+      displayData: Ob1_E.fromJson(json["displayData"] ?? {}),
       sortId: json["sortId"],
     );
   }
 }
 
 class CombinationStickerMetadata {
-  final Int64 version;
+  final dynamic version;
   final int canvasWidth;
   final int canvasHeight;
   final List<StickerLayout> stickerLayouts;
@@ -10875,7 +10874,7 @@ class CombinationStickerMetadata {
       version: json["version"],
       canvasWidth: json["canvasWidth"],
       canvasHeight: json["canvasHeight"],
-      stickerLayouts: List.from(json["stickerLayouts"])
+      stickerLayouts: List.from(json["stickerLayouts"] ?? [])
           .map((e) => StickerLayout.fromJson(e))
           .toList(),
     );
@@ -10885,7 +10884,7 @@ class CombinationStickerMetadata {
 class CombinationStickerStickerData {
   final String packageId;
   final String stickerId;
-  final Int64 version;
+  final dynamic version;
 
   CombinationStickerStickerData({
     required this.packageId,
@@ -10924,7 +10923,7 @@ class CompactShortcut {
       iconPosition: json["iconPosition"],
       iconUrl: json["iconUrl"],
       iconAltText: json["iconAltText"],
-      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"]),
+      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"] ?? 0),
       linkUrl: json["linkUrl"],
       tsTargetId: json["tsTargetId"],
     );
@@ -10932,7 +10931,7 @@ class CompactShortcut {
 }
 
 class Configurations {
-  final Int64 revision;
+  final dynamic revision;
   final Map<String, String> configMap;
 
   Configurations({
@@ -10943,7 +10942,7 @@ class Configurations {
   factory Configurations.fromJson(Map json) {
     return Configurations(
       revision: json["revision"],
-      configMap: Map.from(json["configMap"]),
+      configMap: Map.from(json["configMap"] ?? {}),
     );
   }
 }
@@ -10972,7 +10971,7 @@ class ConfigurationsParams {
 }
 
 class ConnectDeviceOperation {
-  final Int64 connectionTimeoutMillis;
+  final dynamic connectionTimeoutMillis;
 
   ConnectDeviceOperation({
     required this.connectionTimeoutMillis
@@ -11001,7 +11000,7 @@ class ConnectEapAccountRequest {
 
 class Contact {
   final String mid;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final ContactType type;
   final ContactStatus status;
   final Pb1_EnumC13151r3 relation;
@@ -11011,13 +11010,13 @@ class Contact {
   final String thumbnailUrl;
   final String statusMessage;
   final String displayNameOverridden;
-  final Int64 favoriteTime;
+  final dynamic favoriteTime;
   final bool capableVoiceCall;
   final bool capableVideoCall;
   final bool capableMyhome;
   final bool capableBuddy;
   final int attributes;
-  final Int64 settings;
+  final dynamic settings;
   final String picturePath;
   final String recommendParams;
   final FriendRequestStatus friendRequestStatus;
@@ -11068,9 +11067,9 @@ class Contact {
     return Contact(
       mid: json["mid"],
       createdTime: json["createdTime"],
-      type: ContactType.fromValue(json["type"]),
-      status: ContactStatus.fromValue(json["status"]),
-      relation: Pb1_EnumC13151r3.fromValue(json["relation"]),
+      type: ContactType.fromValue(json["type"] ?? 0),
+      status: ContactStatus.fromValue(json["status"] ?? 0),
+      relation: Pb1_EnumC13151r3.fromValue(json["relation"] ?? 0),
       displayName: json["displayName"],
       phoneticName: json["phoneticName"],
       pictureStatus: json["pictureStatus"],
@@ -11086,15 +11085,15 @@ class Contact {
       settings: json["settings"],
       picturePath: json["picturePath"],
       recommendParams: json["recommendParams"],
-      friendRequestStatus: FriendRequestStatus.fromValue(json["friendRequestStatus"]),
+      friendRequestStatus: FriendRequestStatus.fromValue(json["friendRequestStatus"] ?? 0),
       musicProfile: json["musicProfile"],
       videoProfile: json["videoProfile"],
-      statusMessageContentMetadata: Map.from(json["statusMessageContentMetadata"]),
-      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"]),
+      statusMessageContentMetadata: Map.from(json["statusMessageContentMetadata"] ?? {}),
+      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"] ?? {}),
       friendRingtone: json["friendRingtone"],
       friendRingbackTone: json["friendRingbackTone"],
       nftProfile: json["nftProfile"],
-      pictureSource: Pb1_N6.fromValue(json["pictureSource"]),
+      pictureSource: Pb1_N6.fromValue(json["pictureSource"] ?? 0),
       profileId: json["profileId"],
     );
   }
@@ -11118,7 +11117,7 @@ class ContactCalendarEvent {
   factory ContactCalendarEvent.fromJson(Map json) {
     return ContactCalendarEvent(
       id: json["id"],
-      state: Pb1_EnumC13082m3.fromValue(json["state"]),
+      state: Pb1_EnumC13082m3.fromValue(json["state"] ?? 0),
       year: json["year"],
       month: json["month"],
       day: json["day"],
@@ -11135,7 +11134,7 @@ class ContactCalendarEvents {
 
   factory ContactCalendarEvents.fromJson(Map json) {
     return ContactCalendarEvents(
-      events: Map.from(json["events"]),
+      events: Map.from(json["events"] ?? {}),
     );
   }
 }
@@ -11161,11 +11160,11 @@ class ContactModification {
 
   factory ContactModification.fromJson(Map json) {
     return ContactModification(
-      type: Pb1_EnumC13029i6.fromValue(json["type"]),
+      type: Pb1_EnumC13029i6.fromValue(json["type"] ?? 0),
       luid: json["luid"],
-      phones: List.from(json["phones"]),
-      emails: List.from(json["emails"]),
-      userids: List.from(json["userids"]),
+      phones: List.from(json["phones"] ?? []),
+      emails: List.from(json["emails"] ?? []),
+      userids: List.from(json["userids"] ?? []),
       mobileContactName: json["mobileContactName"],
       phoneticName: json["phoneticName"],
     );
@@ -11187,9 +11186,9 @@ class ContactRegistration {
 
   factory ContactRegistration.fromJson(Map json) {
     return ContactRegistration(
-      contact: Contact.fromJson(json["contact"]),
+      contact: Contact.fromJson(json["contact"] ?? {}),
       luid: json["luid"],
-      contactType: ContactType.fromValue(json["contactType"]),
+      contactType: ContactType.fromValue(json["contactType"] ?? 0),
       contactKey: json["contactKey"],
     );
   }
@@ -11205,7 +11204,7 @@ class Content {
   final ActionButton button;
   final Callback callback;
   final NoBidCallback noBidCallback;
-  final Int64 ttl;
+  final dynamic ttl;
   final bool muteSupported;
   final bool voteSupported;
   final Priority priority;
@@ -11232,15 +11231,15 @@ class Content {
       desc: json["desc"],
       linkUrl: json["linkUrl"],
       fallbackUrl: json["fallbackUrl"],
-      badge: Uf_C14864f.fromJson(json["badge"]),
-      image: Image.fromJson(json["image"]),
-      button: ActionButton.fromJson(json["button"]),
-      callback: Callback.fromJson(json["callback"]),
-      noBidCallback: NoBidCallback.fromJson(json["noBidCallback"]),
+      badge: Uf_C14864f.fromJson(json["badge"] ?? {}),
+      image: Image.fromJson(json["image"] ?? {}),
+      button: ActionButton.fromJson(json["button"] ?? {}),
+      callback: Callback.fromJson(json["callback"] ?? {}),
+      noBidCallback: NoBidCallback.fromJson(json["noBidCallback"] ?? {}),
       ttl: json["ttl"],
       muteSupported: json["muteSupported"],
       voteSupported: json["voteSupported"],
-      priority: Priority.fromJson(json["priority"]),
+      priority: Priority.fromJson(json["priority"] ?? {}),
     );
   }
 }
@@ -11260,7 +11259,7 @@ class ContentRequest {
 
   factory ContentRequest.fromJson(Map json) {
     return ContentRequest(
-      os: Uf_EnumC14873o.fromValue(json["os"]),
+      os: Uf_EnumC14873o.fromValue(json["os"] ?? 0),
       appv: json["appv"],
       lineAcceptableLanguage: json["lineAcceptableLanguage"],
       countryCode: json["countryCode"],
@@ -11300,9 +11299,9 @@ class CreateChatRequest {
   factory CreateChatRequest.fromJson(Map json) {
     return CreateChatRequest(
       reqSeq: json["reqSeq"],
-      type: Pb1_Z2.fromValue(json["type"]),
+      type: Pb1_Z2.fromValue(json["type"] ?? 0),
       name: json["name"],
-      targetUserMids: List.from(json["targetUserMids"]),
+      targetUserMids: List.from(json["targetUserMids"] ?? []),
       picturePath: json["picturePath"],
     );
   }
@@ -11317,7 +11316,7 @@ class CreateChatResponse {
 
   factory CreateChatResponse.fromJson(Map json) {
     return CreateChatResponse(
-      chat: Chat.fromJson(json["chat"]),
+      chat: Chat.fromJson(json["chat"] ?? {}),
     );
   }
 }
@@ -11331,7 +11330,7 @@ class CreateCollectionForUserRequest {
 
   factory CreateCollectionForUserRequest.fromJson(Map json) {
     return CreateCollectionForUserRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
     );
   }
 }
@@ -11345,7 +11344,7 @@ class CreateCollectionForUserResponse {
 
   factory CreateCollectionForUserResponse.fromJson(Map json) {
     return CreateCollectionForUserResponse(
-      collection: Collection.fromJson(json["collection"]),
+      collection: Collection.fromJson(json["collection"] ?? {}),
     );
   }
 }
@@ -11363,8 +11362,8 @@ class CreateCombinationStickerRequest {
 
   factory CreateCombinationStickerRequest.fromJson(Map json) {
     return CreateCombinationStickerRequest(
-      metadata: CombinationStickerMetadata.fromJson(json["metadata"]),
-      stickers: List.from(json["stickers"])
+      metadata: CombinationStickerMetadata.fromJson(json["metadata"] ?? {}),
+      stickers: List.from(json["stickers"] ?? [])
           .map((e) => CombinationStickerStickerData.fromJson(e))
           .toList(),
       idOfPreviousVersionOfCombinationSticker: json["idOfPreviousVersionOfCombinationSticker"],
@@ -11409,7 +11408,7 @@ class CreateGroupCallUrlResponse {
 
   factory CreateGroupCallUrlResponse.fromJson(Map json) {
     return CreateGroupCallUrlResponse(
-      url: GroupCallUrl.fromJson(json["url"]),
+      url: GroupCallUrl.fromJson(json["url"] ?? {}),
     );
   }
 }
@@ -11465,7 +11464,7 @@ class CreateSessionResponse {
 
   factory CreateSessionResponse.fromJson(Map json) {
     return CreateSessionResponse(
-      sessionId: json["sessionId"],
+      sessionId: json[1],
     );
   }
 }
@@ -11485,7 +11484,7 @@ class CreateSquareChatAnnouncementRequest {
     return CreateSquareChatAnnouncementRequest(
       reqSeq: json["reqSeq"],
       squareChatMid: json["squareChatMid"],
-      squareChatAnnouncement: SquareChatAnnouncement.fromJson(json["squareChatAnnouncement"]),
+      squareChatAnnouncement: SquareChatAnnouncement.fromJson(json["squareChatAnnouncement"] ?? {}),
     );
   }
 }
@@ -11499,7 +11498,7 @@ class CreateSquareChatAnnouncementResponse {
 
   factory CreateSquareChatAnnouncementResponse.fromJson(Map json) {
     return CreateSquareChatAnnouncementResponse(
-      announcement: SquareChatAnnouncement.fromJson(json["announcement"]),
+      announcement: SquareChatAnnouncement.fromJson(json["announcement"] ?? {}),
     );
   }
 }
@@ -11518,8 +11517,8 @@ class CreateSquareChatRequest {
   factory CreateSquareChatRequest.fromJson(Map json) {
     return CreateSquareChatRequest(
       reqSeq: json["reqSeq"],
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareMemberMids: List.from(json["squareMemberMids"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareMemberMids: List.from(json["squareMemberMids"] ?? []),
     );
   }
 }
@@ -11539,10 +11538,10 @@ class CreateSquareChatResponse {
 
   factory CreateSquareChatResponse.fromJson(Map json) {
     return CreateSquareChatResponse(
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"]),
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
-      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"] ?? {}),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
+      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"] ?? {}),
     );
   }
 }
@@ -11561,8 +11560,8 @@ class CreateSquareRequest {
   factory CreateSquareRequest.fromJson(Map json) {
     return CreateSquareRequest(
       reqSeq: json["reqSeq"],
-      square: Square.fromJson(json["square"]),
-      creator: SquareMember.fromJson(json["creator"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      creator: SquareMember.fromJson(json["creator"] ?? {}),
     );
   }
 }
@@ -11594,16 +11593,16 @@ class CreateSquareResponse {
 
   factory CreateSquareResponse.fromJson(Map json) {
     return CreateSquareResponse(
-      square: Square.fromJson(json["square"]),
-      creator: SquareMember.fromJson(json["creator"]),
-      authority: SquareAuthority.fromJson(json["authority"]),
-      status: SquareStatus.fromJson(json["status"]),
-      featureSet: SquareFeatureSet.fromJson(json["featureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"]),
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
-      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      creator: SquareMember.fromJson(json["creator"] ?? {}),
+      authority: SquareAuthority.fromJson(json["authority"] ?? {}),
+      status: SquareStatus.fromJson(json["status"] ?? {}),
+      featureSet: SquareFeatureSet.fromJson(json["featureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"] ?? {}),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
+      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"] ?? {}),
     );
   }
 }
@@ -11625,7 +11624,7 @@ class CurrencyProperty {
     return CurrencyProperty(
       code: json["code"],
       symbol: json["symbol"],
-      position: NZ0_EnumC12197q.fromValue(json["position"]),
+      position: NZ0_EnumC12197q.fromValue(json["position"] ?? 0),
       scale: json["scale"],
     );
   }
@@ -11667,7 +11666,7 @@ class DataRetention {
   final String productRegion;
   final fN0_EnumC24466B productType;
   final bool inDataRetention;
-  final Int64 dataRetentionEndTime;
+  final dynamic dataRetentionEndTime;
 
   DataRetention({
     required this.productId,
@@ -11681,7 +11680,7 @@ class DataRetention {
     return DataRetention(
       productId: json["productId"],
       productRegion: json["productRegion"],
-      productType: fN0_EnumC24466B.fromValue(json["productType"]),
+      productType: fN0_EnumC24466B.fromValue(json["productType"] ?? 0),
       inDataRetention: json["inDataRetention"],
       dataRetentionEndTime: json["dataRetentionEndTime"],
     );
@@ -11748,7 +11747,7 @@ class DeleteOtherFromChatRequest {
     return DeleteOtherFromChatRequest(
       reqSeq: json["reqSeq"],
       chatMid: json["chatMid"],
-      targetUserMids: List.from(json["targetUserMids"]),
+      targetUserMids: List.from(json["targetUserMids"] ?? []),
     );
   }
 }
@@ -11770,9 +11769,9 @@ class DeleteSafetyStatusRequest {
 class DeleteSelfFromChatRequest {
   final int reqSeq;
   final String chatMid;
-  final Int64 lastSeenMessageDeliveredTime;
+  final dynamic lastSeenMessageDeliveredTime;
   final String lastSeenMessageId;
-  final Int64 lastMessageDeliveredTime;
+  final dynamic lastMessageDeliveredTime;
   final String lastMessageId;
 
   DeleteSelfFromChatRequest({
@@ -11798,7 +11797,7 @@ class DeleteSelfFromChatRequest {
 
 class DeleteSquareChatAnnouncementRequest {
   final String squareChatMid;
-  final Int64 announcementSeq;
+  final dynamic announcementSeq;
 
   DeleteSquareChatAnnouncementRequest({
     required this.squareChatMid,
@@ -11815,7 +11814,7 @@ class DeleteSquareChatAnnouncementRequest {
 
 class DeleteSquareChatRequest {
   final String squareChatMid;
-  final Int64 revision;
+  final dynamic revision;
 
   DeleteSquareChatRequest({
     required this.squareChatMid,
@@ -11832,7 +11831,7 @@ class DeleteSquareChatRequest {
 
 class DeleteSquareRequest {
   final String mid;
-  final Int64 revision;
+  final dynamic revision;
 
   DeleteSquareRequest({
     required this.mid,
@@ -11909,7 +11908,7 @@ class DestroyMessagesRequest {
   factory DestroyMessagesRequest.fromJson(Map json) {
     return DestroyMessagesRequest(
       squareChatMid: json["squareChatMid"],
-      messageIds: List.from(json["messageIds"]),
+      messageIds: List.from(json["messageIds"] ?? []),
       threadMid: json["threadMid"],
     );
   }
@@ -11931,7 +11930,7 @@ class DetermineMediaMessageFlowRequest {
 
 class DetermineMediaMessageFlowResponse {
   final Map<int, int> flowMap;
-  final Int64 cacheTtlMillis;
+  final dynamic cacheTtlMillis;
 
   DetermineMediaMessageFlowResponse({
     required this.flowMap,
@@ -11940,7 +11939,7 @@ class DetermineMediaMessageFlowResponse {
 
   factory DetermineMediaMessageFlowResponse.fromJson(Map json) {
     return DetermineMediaMessageFlowResponse(
-      flowMap: Map.from(json["flowMap"]),
+      flowMap: Map.from(json["flowMap"] ?? {}),
       cacheTtlMillis: json["cacheTtlMillis"],
     );
   }
@@ -11991,9 +11990,9 @@ class DeviceInfo {
       systemVersion: json["systemVersion"],
       model: json["model"],
       webViewVersion: json["webViewVersion"],
-      carrierCode: CarrierCode.fromValue(json["carrierCode"]),
+      carrierCode: CarrierCode.fromValue(json["carrierCode"] ?? 0),
       carrierName: json["carrierName"],
-      applicationType: ApplicationType.fromValue(json["applicationType"]),
+      applicationType: ApplicationType.fromValue(json["applicationType"] ?? 0),
     );
   }
 }
@@ -12013,7 +12012,7 @@ class DeviceLinkRequest {
 }
 
 class DeviceLinkResponse {
-  final Int64 latestOffset;
+  final dynamic latestOffset;
 
   DeviceLinkResponse({
     required this.latestOffset
@@ -12066,7 +12065,7 @@ class DisasterInfo {
       region: json["region"],
       disasterDescription: json["disasterDescription"],
       seeMoreUrl: json["seeMoreUrl"],
-      status: vh_EnumC37632c.fromValue(json["status"]),
+      status: vh_EnumC37632c.fromValue(json["status"] ?? 0),
       highImpact: json["highImpact"],
     );
   }
@@ -12081,7 +12080,7 @@ class DisconnectEapAccountRequest {
 
   factory DisconnectEapAccountRequest.fromJson(Map json) {
     return DisconnectEapAccountRequest(
-      eapType: Q70_q.fromValue(json["eapType"]),
+      eapType: Q70_q.fromValue(json["eapType"] ?? 0),
     );
   }
 }
@@ -12115,7 +12114,7 @@ class E2EEKeyChain {
 
   factory E2EEKeyChain.fromJson(Map json) {
     return E2EEKeyChain(
-      keychain: List.from(json["keychain"])
+      keychain: List.from(json["keychain"] ?? [])
           .map((e) => Pb1_V3.fromJson(e))
           .toList(),
     );
@@ -12135,15 +12134,15 @@ class E2EEMessageInfo {
 
   factory E2EEMessageInfo.fromJson(Map json) {
     return E2EEMessageInfo(
-      contentType: ContentType.fromValue(json["contentType"]),
-      contentMetadata: Map.from(json["contentMetadata"]),
-      chunks: List.from(json["chunks"]),
+      contentType: ContentType.fromValue(json["contentType"] ?? 0),
+      contentMetadata: Map.from(json["contentMetadata"] ?? {}),
+      chunks: List.from(json["chunks"] ?? []),
     );
   }
 }
 
 class E2EEMetadata {
-  final Int64 e2EEPublicKeyId;
+  final dynamic e2EEPublicKeyId;
 
   E2EEMetadata({
     required this.e2EEPublicKeyId
@@ -12169,8 +12168,8 @@ class E2EENegotiationResult {
 
   factory E2EENegotiationResult.fromJson(Map json) {
     return E2EENegotiationResult(
-      allowedTypes: List.from(json["allowedTypes"]),
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      allowedTypes: List.from(json["allowedTypes"] ?? []),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
       specVersion: json["specVersion"],
     );
   }
@@ -12189,7 +12188,7 @@ class EapLogin {
 
   factory EapLogin.fromJson(Map json) {
     return EapLogin(
-      type: Q70_q.fromValue(json["type"]),
+      type: Q70_q.fromValue(json["type"] ?? 0),
       accessToken: json["accessToken"],
       countryCode: json["countryCode"]
     );
@@ -12208,7 +12207,7 @@ class EditItemsInCollectionRequest {
   factory EditItemsInCollectionRequest.fromJson(Map json) {
     return EditItemsInCollectionRequest(
       collectionId: json["collectionId"],
-      items: List.from(json["items"])
+      items: List.from(json["items"] ?? [])
           .map((e) => CollectionItem.fromJson(e))
           .toList(),
     );
@@ -12216,7 +12215,7 @@ class EditItemsInCollectionRequest {
 }
 
 class EditorsPickBannerForClient {
-  final Int64 id;
+  final dynamic id;
   final String endPageBannerImageUrl;
   final Ob1_I defaulteditorsPickShowcaseType;
   final bool showNewBadge;
@@ -12236,7 +12235,7 @@ class EditorsPickBannerForClient {
     return EditorsPickBannerForClient(
       id: json["id"],
       endPageBannerImageUrl: json["endPageBannerImageUrl"],
-      defaulteditorsPickShowcaseType: Ob1_I.fromValue(json["defaulteditorsPickShowcaseType"]),
+      defaulteditorsPickShowcaseType: Ob1_I.fromValue(json["defaulteditorsPickShowcaseType"] ?? 0),
       showNewBadge: json["showNewBadge"],
       name: json["name"],
       description: json["description"],
@@ -12267,7 +12266,7 @@ class EstablishE2EESessionRequest {
 class EstablishE2EESessionResponse {
   final String sessionId;
   final String serverPublicKey;
-  final Int64 expireAt;
+  final dynamic expireAt;
 
   EstablishE2EESessionResponse({
     required this.sessionId,
@@ -12330,7 +12329,7 @@ class ExecuteOnetimeScenarioOperation {
   factory ExecuteOnetimeScenarioOperation.fromJson(Map json) {
     return ExecuteOnetimeScenarioOperation(
       connectionId: json["connectionId"],
-      scenario: Scenario.fromJson(json["scenario"]),
+      scenario: Scenario.fromJson(json["scenario"] ?? {}),
     );
   }
 }
@@ -12353,12 +12352,12 @@ class ExtendedMessageBox {
   final String id;
   final MIDType midType;
   final MessageBoxV2MessageId lastDeliveredMessageId;
-  final Int64 lastSeenMessageId;
-  final Int64 unreadCount;
+  final dynamic lastSeenMessageId;
+  final dynamic unreadCount;
   final List<Message> lastMessages;
-  final Int64 lastRemovedMessageId;
-  final Int64 lastRemovedTime;
-  final Int64 hiddenAtMessageId;
+  final dynamic lastRemovedMessageId;
+  final dynamic lastRemovedTime;
+  final dynamic hiddenAtMessageId;
 
   ExtendedMessageBox({
     required this.id,
@@ -12375,11 +12374,11 @@ class ExtendedMessageBox {
   factory ExtendedMessageBox.fromJson(Map json) {
     return ExtendedMessageBox(
       id: json["id"],
-      midType: MIDType.fromValue(json["midType"]),
-      lastDeliveredMessageId: MessageBoxV2MessageId.fromJson(json["lastDeliveredMessageId"]),
+      midType: MIDType.fromValue(json["midType"] ?? 0),
+      lastDeliveredMessageId: MessageBoxV2MessageId.fromJson(json["lastDeliveredMessageId"] ?? {}),
       lastSeenMessageId: json["lastSeenMessageId"],
       unreadCount: json["unreadCount"],
-      lastMessages: List.from(json["lastMessages"])
+      lastMessages: List.from(json["lastMessages"] ?? [])
           .map((e) => Message.fromJson(e))
           .toList(),
       lastRemovedMessageId: json["lastRemovedMessageId"],
@@ -12398,7 +12397,7 @@ class ExtendedProfile {
 
   factory ExtendedProfile.fromJson(Map json) {
     return ExtendedProfile(
-      birthday: ExtendedProfileBirthday.fromJson(json["birthday"]),
+      birthday: ExtendedProfileBirthday.fromJson(json["birthday"] ?? {}),
     );
   }
 }
@@ -12423,10 +12422,10 @@ class ExtendedProfileBirthday {
   factory ExtendedProfileBirthday.fromJson(Map json) {
     return ExtendedProfileBirthday(
       year: json["year"],
-      yearPrivacyLevelType: Pb1_H6.fromValue(json["yearPrivacyLevelType"]),
+      yearPrivacyLevelType: Pb1_H6.fromValue(json["yearPrivacyLevelType"] ?? 0),
       yearEnabled: json["yearEnabled"],
       day: json["day"],
-      dayPrivacyLevelType: Pb1_H6.fromValue(json["dayPrivacyLevelType"]),
+      dayPrivacyLevelType: Pb1_H6.fromValue(json["dayPrivacyLevelType"] ?? 0),
       dayEnabled: json["dayEnabled"],
     );
   }
@@ -12468,7 +12467,7 @@ class FetchLiveTalkEventsResponse {
 
   factory FetchLiveTalkEventsResponse.fromJson(Map json) {
     return FetchLiveTalkEventsResponse(
-      events: List.from(json["events"])
+      events: List.from(json["events"] ?? [])
           .map((e) => LiveTalkEvent.fromJson(e))
           .toList(),
       syncToken: json["syncToken"],
@@ -12478,7 +12477,7 @@ class FetchLiveTalkEventsResponse {
 }
 
 class FetchMyEventsRequest {
-  final Int64 subscriptionId;
+  final dynamic subscriptionId;
   final String syncToken;
   final int limit;
   final String continuationToken;
@@ -12515,8 +12514,8 @@ class FetchMyEventsResponse {
 
   factory FetchMyEventsResponse.fromJson(Map json) {
     return FetchMyEventsResponse(
-      subscription: SubscriptionState.fromJson(json["subscription"]),
-      events: List.from(json["events"])
+      subscription: SubscriptionState.fromJson(json["subscription"] ?? {}),
+      events: List.from(json["events"] ?? [])
           .map((e) => SquareEvent.fromJson(e))
           .toList(),
       syncToken: json["syncToken"],
@@ -12527,7 +12526,7 @@ class FetchMyEventsResponse {
 
 class FetchOperationsRequest {
   final String deviceId;
-  final Int64 offsetFrom;
+  final dynamic offsetFrom;
 
   FetchOperationsRequest({
     required this.deviceId,
@@ -12553,7 +12552,7 @@ class FetchOperationsResponse {
 
   factory FetchOperationsResponse.fromJson(Map json) {
     return FetchOperationsResponse(
-      operations: List.from(json["operations"])
+      operations: List.from(json["operations"] ?? [])
           .map((e) => ThingsOperation.fromJson(e))
           .toList(),
       hasNext: json["hasNext"],
@@ -12573,7 +12572,7 @@ class FetchPhonePinCodeMsgRequest {
   factory FetchPhonePinCodeMsgRequest.fromJson(Map json) {
     return FetchPhonePinCodeMsgRequest(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
     );
   }
 }
@@ -12596,7 +12595,7 @@ class FetchPhonePinCodeMsgResponse {
 }
 
 class FetchSquareChatEventsRequest {
-  final Int64 subscriptionId;
+  final dynamic subscriptionId;
   final String squareChatMid;
   final String syncToken;
   final int limit;
@@ -12624,10 +12623,10 @@ class FetchSquareChatEventsRequest {
       squareChatMid: json["squareChatMid"],
       syncToken: json["syncToken"],
       limit: json["limit"],
-      direction: FetchDirection.fromValue(json["direction"]),
-      inclusive: BooleanState.fromValue(json["inclusive"]),
+      direction: FetchDirection.fromValue(json["direction"] ?? 0),
+      inclusive: BooleanState.fromValue(json["inclusive"] ?? 0),
       continuationToken: json["continuationToken"],
-      fetchType: FetchType.fromValue(json["fetchType"]),
+      fetchType: FetchType.fromValue(json["fetchType"] ?? 0),
       threadMid: json["threadMid"],
     );
   }
@@ -12648,8 +12647,8 @@ class FetchSquareChatEventsResponse {
 
   factory FetchSquareChatEventsResponse.fromJson(Map json) {
     return FetchSquareChatEventsResponse(
-      subscription: SubscriptionState.fromJson(json["subscription"]),
-      events: List.from(json["events"])
+      subscription: SubscriptionState.fromJson(json["subscription"] ?? {}),
+      events: List.from(json["events"] ?? [])
           .map((e) => SquareEvent.fromJson(e))
           .toList(),
       syncToken: json["syncToken"],
@@ -12698,7 +12697,7 @@ class FindChatByTicketResponse {
 
   factory FindChatByTicketResponse.fromJson(Map json) {
     return FindChatByTicketResponse(
-      chat: Chat.fromJson(json["chat"]),
+      chat: Chat.fromJson(json["chat"] ?? {}),
     );
   }
 }
@@ -12737,11 +12736,11 @@ class FindLiveTalkByInvitationTicketResponse {
   factory FindLiveTalkByInvitationTicketResponse.fromJson(Map json) {
     return FindLiveTalkByInvitationTicketResponse(
       chatInvitationTicket: json["chatInvitationTicket"],
-      liveTalk: LiveTalk.fromJson(json["liveTalk"]),
-      chat: SquareChat.fromJson(json["chat"]),
-      squareMember: SquareMember.fromJson(json["squareMember"]),
-      chatMembershipState: SquareChatMembershipState.fromValue(json["chatMembershipState"]),
-      squareAdultOnly: BooleanState.fromValue(json["squareAdultOnly"]),
+      liveTalk: LiveTalk.fromJson(json["liveTalk"] ?? {}),
+      chat: SquareChat.fromJson(json["chat"] ?? {}),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
+      chatMembershipState: SquareChatMembershipState.fromValue(json["chatMembershipState"] ?? 0),
+      squareAdultOnly: BooleanState.fromValue(json["squareAdultOnly"] ?? 0),
     );
   }
 }
@@ -12779,12 +12778,12 @@ class FindSquareByEmidResponse {
 
   factory FindSquareByEmidResponse.fromJson(Map json) {
     return FindSquareByEmidResponse(
-      square: Square.fromJson(json["square"]),
-      myMembership: SquareMember.fromJson(json["myMembership"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      myMembership: SquareMember.fromJson(json["myMembership"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
     );
   }
 }
@@ -12826,14 +12825,14 @@ class FindSquareByInvitationTicketResponse {
 
   factory FindSquareByInvitationTicketResponse.fromJson(Map json) {
     return FindSquareByInvitationTicketResponse(
-      square: Square.fromJson(json["square"]),
-      myMembership: SquareMember.fromJson(json["myMembership"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
-      chat: SquareChat.fromJson(json["chat"]),
-      chatStatus: SquareChatStatus.fromJson(json["chatStatus"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      myMembership: SquareMember.fromJson(json["myMembership"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
+      chat: SquareChat.fromJson(json["chat"] ?? {}),
+      chatStatus: SquareChatStatus.fromJson(json["chatStatus"] ?? {}),
     );
   }
 }
@@ -12875,14 +12874,14 @@ class FindSquareByInvitationTicketV2Response {
 
   factory FindSquareByInvitationTicketV2Response.fromJson(Map json) {
     return FindSquareByInvitationTicketV2Response(
-      square: Square.fromJson(json["square"]),
-      myMembership: SquareMember.fromJson(json["myMembership"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
-      chat: SquareChat.fromJson(json["chat"]),
-      chatStatus: SquareChatStatusWithoutMessage.fromJson(json["chatStatus"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      myMembership: SquareMember.fromJson(json["myMembership"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
+      chat: SquareChat.fromJson(json["chat"] ?? {}),
+      chatStatus: SquareChatStatusWithoutMessage.fromJson(json["chatStatus"] ?? {}),
     );
   }
 }
@@ -12920,12 +12919,12 @@ class FollowProfile {
 
   factory FollowProfile.fromJson(Map json) {
     return FollowProfile(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
       displayName: json["displayName"],
       picturePath: json["picturePath"],
       following: json["following"],
       allowFollow: json["allowFollow"],
-      followBuddyDetail: FollowBuddyDetail.fromJson(json["followBuddyDetail"]),
+      followBuddyDetail: FollowBuddyDetail.fromJson(json["followBuddyDetail"] ?? {}),
     );
   }
 }
@@ -12939,7 +12938,7 @@ class FollowRequest {
 
   factory FollowRequest.fromJson(Map json) {
     return FollowRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
     );
   }
 }
@@ -12951,7 +12950,7 @@ class FontMeta {
   final dynamic type;
   final FileMeta font;
   final FileMeta fontSubset;
-  final Int64 expiresAtMillis;
+  final dynamic expiresAtMillis;
 
   FontMeta({
     required this.id,
@@ -12969,8 +12968,8 @@ class FontMeta {
       name: json["name"],
       displayName: json["displayName"],
       type: json["type"],
-      font: FileMeta.fromJson(json["font"]),
-      fontSubset: FileMeta.fromJson(json["fontSubset"]),
+      font: FileMeta.fromJson(json["font"] ?? {}),
+      fontSubset: FileMeta.fromJson(json["fontSubset"] ?? {}),
       expiresAtMillis: json["expiresAtMillis"],
     );
   }
@@ -12995,7 +12994,7 @@ class ForceEndLiveTalkRequest {
 
 class ForceSelectedSubTabInfo {
   final String subTabId;
-  final Int64 forceSelectedSubTabRevision;
+  final dynamic forceSelectedSubTabRevision;
   final String wrsDefaultTabModelId;
 
   ForceSelectedSubTabInfo({
@@ -13036,8 +13035,8 @@ class FriendRequest {
   final Pb1_F4 direction;
   final Pb1_G4 method;
   final String param;
-  final Int64 timestamp;
-  final Int64 seqId;
+  final dynamic timestamp;
+  final dynamic seqId;
   final String displayName;
   final String picturePath;
   final String pictureStatus;
@@ -13059,8 +13058,8 @@ class FriendRequest {
     return FriendRequest(
       eMid: json["eMid"],
       mid: json["mid"],
-      direction: Pb1_F4.fromValue(json["direction"]),
-      method: Pb1_G4.fromValue(json["method"]),
+      direction: Pb1_F4.fromValue(json["direction"] ?? 0),
+      method: Pb1_G4.fromValue(json["method"] ?? 0),
       param: json["param"],
       timestamp: json["timestamp"],
       seqId: json["seqId"],
@@ -13092,10 +13091,10 @@ class FriendRequestsInfo {
     return FriendRequestsInfo(
       totalIncomingCount: json["totalIncomingCount"],
       totalOutgoingCount: json["totalOutgoingCount"],
-      recentIncomings: List.from(json["recentIncomings"])
+      recentIncomings: List.from(json["recentIncomings"] ?? [])
           .map((e) => FriendRequest.fromJson(e))
           .toList(),
-      recentOutgoings: List.from(json["recentOutgoings"])
+      recentOutgoings: List.from(json["recentOutgoings"] ?? [])
           .map((e) => FriendRequest.fromJson(e))
           .toList(),
       totalIncomingLimit: json["totalIncomingLimit"],
@@ -13106,7 +13105,7 @@ class FriendRequestsInfo {
 
 class FullSyncResponse {
   final List<int> reasons;
-  final Int64 nextRevision;
+  final dynamic nextRevision;
 
   FullSyncResponse({
     required this.reasons,
@@ -13115,7 +13114,7 @@ class FullSyncResponse {
 
   factory FullSyncResponse.fromJson(Map json) {
     return FullSyncResponse(
-      reasons: List.from(json["reasons"]),
+      reasons: List.from(json["reasons"] ?? []),
       nextRevision: json["nextRevision"],
     );
   }
@@ -13161,11 +13160,11 @@ class Geolocation {
     return Geolocation(
       longitude: json["longitude"],
       latitude: json["latitude"],
-      accuracy: GeolocationAccuracy.fromJson(json["accuracy"]),
+      accuracy: GeolocationAccuracy.fromJson(json["accuracy"] ?? {}),
       altitudeMeters: json["altitudeMeters"],
       velocityMetersPerSecond: json["velocityMetersPerSecond"],
       bearingDegrees: json["bearingDegrees"],
-      beaconData: List.from(json["beaconData"])
+      beaconData: List.from(json["beaconData"] ?? [])
           .map((e) => BeaconData.fromJson(e))
           .toList(),
     );
@@ -13196,7 +13195,7 @@ class GeolocationAccuracy {
       altitudeAccuracy: json["altitudeAccuracy"],
       velocityAccuracy: json["velocityAccuracy"],
       bearingAccuracy: json["bearingAccuracy"],
-      accuracyMode: Pb1_EnumC13050k.fromValue(json["accuracyMode"]),
+      accuracyMode: Pb1_EnumC13050k.fromValue(json["accuracyMode"] ?? 0),
     );
   }
 }
@@ -13218,7 +13217,7 @@ class GetAccessTokenRequest {
 class GetAccessTokenResponse {
   final Map<String, List<dynamic>> queryParams;
   final Map<String, List<dynamic>> headers;
-  final Int64 expiresAtMillis;
+  final dynamic expiresAtMillis;
 
   GetAccessTokenResponse({
     required this.queryParams,
@@ -13228,8 +13227,8 @@ class GetAccessTokenResponse {
 
   factory GetAccessTokenResponse.fromJson(Map json) {
     return GetAccessTokenResponse(
-      queryParams: Map.from(json["queryParams"]),
-      headers: Map.from(json["headers"]),
+      queryParams: Map.from(json["queryParams"] ?? {}),
+      headers: Map.from(json["headers"] ?? {}),
       expiresAtMillis: json["expiresAtMillis"],
     );
   }
@@ -13260,7 +13259,7 @@ class GetAcctVerifMethodResponse {
 
   factory GetAcctVerifMethodResponse.fromJson(Map json) {
     return GetAcctVerifMethodResponse(
-      availableMethod: T70_EnumC14392c.fromValue(json["availableMethod"]),
+      availableMethod: T70_EnumC14392c.fromValue(json["availableMethod"] ?? 0),
       sameAccountFromAuthFactor: json["sameAccountFromAuthFactor"],
     );
   }
@@ -13275,7 +13274,7 @@ class I80_C26412l {
 
   factory I80_C26412l.fromJson(Map json) {
     return I80_C26412l(
-      availableMethod: I80_EnumC26392b.fromValue(json["availableMethod"]),
+      availableMethod: I80_EnumC26392b.fromValue(json["availableMethod"] ?? 0),
     );
   }
 }
@@ -13291,8 +13290,8 @@ class GetAllChatMidsRequest {
 
   factory GetAllChatMidsRequest.fromJson(Map json) {
     return GetAllChatMidsRequest(
-      withMemberChats: json["withMemberChats"],
-      withInvitedChats: json["withInvitedChats"],
+      withMemberChats: json["withMemberChats"] ?? true,
+      withInvitedChats: json["withInvitedChats"] ?? false,
     );
   }
 }
@@ -13308,8 +13307,8 @@ class GetAllChatMidsResponse {
 
   factory GetAllChatMidsResponse.fromJson(Map json) {
     return GetAllChatMidsResponse(
-      memberChatMids: List.from(json["memberChatMids"]),
-      invitedChatMids: List.from(json["invitedChatMids"]),
+      memberChatMids: List.from(json["memberChatMids"] ?? []),
+      invitedChatMids: List.from(json["invitedChatMids"] ?? []),
     );
   }
 }
@@ -13323,7 +13322,7 @@ class GetAllowedRegistrationMethodResponse {
 
   factory GetAllowedRegistrationMethodResponse.fromJson(Map json) {
     return GetAllowedRegistrationMethodResponse(
-      registrationMethod: T70_Z0.fromValue(json["registrationMethod"]),
+      registrationMethod: T70_Z0.fromValue(json["registrationMethod"] ?? 0),
     );
   }
 }
@@ -13371,7 +13370,7 @@ class GetBalanceResponse {
 
   factory GetBalanceResponse.fromJson(Map json) {
     return GetBalanceResponse(
-      balance: Balance.fromJson(json["balance"]),
+      balance: Balance.fromJson(json["balance"] ?? {}),
     );
   }
 }
@@ -13391,12 +13390,12 @@ class GetBalanceSummaryResponseV2 {
 
   factory GetBalanceSummaryResponseV2.fromJson(Map json) {
     return GetBalanceSummaryResponseV2(
-      payInfo: LinePayInfo.fromJson(json["payInfo"]),
-      payPromotions: List.from(json["payPromotions"])
+      payInfo: LinePayInfo.fromJson(json["payInfo"] ?? {}),
+      payPromotions: List.from(json["payPromotions"] ?? [])
           .map((e) => LinePayPromotion.fromJson(e))
           .toList(),
-      pointInfo: LinePointInfo.fromJson(json["pointInfo"]),
-      balanceShortcutInfo: BalanceShortcutInfo.fromJson(json["balanceShortcutInfo"]),
+      pointInfo: LinePointInfo.fromJson(json["pointInfo"] ?? {}),
+      balanceShortcutInfo: BalanceShortcutInfo.fromJson(json["balanceShortcutInfo"] ?? {}),
     );
   }
 }
@@ -13416,12 +13415,12 @@ class GetBalanceSummaryV4WithPayV3Response {
 
   factory GetBalanceSummaryV4WithPayV3Response.fromJson(Map json) {
     return GetBalanceSummaryV4WithPayV3Response(
-      payInfo: LinePayInfoV3.fromJson(json["payInfo"]),
-      payPromotions: List.from(json["payPromotions"])
+      payInfo: LinePayInfoV3.fromJson(json["payInfo"] ?? {}),
+      payPromotions: List.from(json["payPromotions"] ?? [])
           .map((e) => LinePayPromotion.fromJson(e))
           .toList(),
-      balanceShortcutInfo: BalanceShortcutInfoV4.fromJson(json["balanceShortcutInfo"]),
-      pointInfo: LinePointInfo.fromJson(json["pointInfo"]),
+      balanceShortcutInfo: BalanceShortcutInfoV4.fromJson(json["balanceShortcutInfo"] ?? {}),
+      pointInfo: LinePointInfo.fromJson(json["pointInfo"] ?? {}),
     );
   }
 }
@@ -13435,7 +13434,7 @@ class GetBirthdayEffectResponse {
 
   factory GetBirthdayEffectResponse.fromJson(Map json) {
     return GetBirthdayEffectResponse(
-      effect: HomeEffect.fromJson(json["effect"]),
+      effect: HomeEffect.fromJson(json["effect"] ?? {}),
     );
   }
 }
@@ -13459,7 +13458,7 @@ class GetBleDeviceRequest {
 
 class GetBuddyChatBarRequest {
   final String buddyMid;
-  final Int64 chatBarRevision;
+  final dynamic chatBarRevision;
   final String richMenuId;
 
   GetBuddyChatBarRequest({
@@ -13493,7 +13492,7 @@ class GetBuddyLiveRequest {
 
 class GetBuddyLiveResponse {
   final BuddyLive info;
-  final Int64 refreshedIn;
+  final dynamic refreshedIn;
 
   GetBuddyLiveResponse({
     required this.info,
@@ -13502,7 +13501,7 @@ class GetBuddyLiveResponse {
 
   factory GetBuddyLiveResponse.fromJson(Map json) {
     return GetBuddyLiveResponse(
-      info: BuddyLive.fromJson(json["info"]),
+      info: BuddyLive.fromJson(json["info"] ?? {}),
       refreshedIn: json["refreshedIn"],
     );
   }
@@ -13510,7 +13509,7 @@ class GetBuddyLiveResponse {
 
 class GetBuddyStatusBarV2Request {
   final String botMid;
-  final Int64 revision;
+  final dynamic revision;
 
   GetBuddyStatusBarV2Request({
     required this.botMid,
@@ -13585,7 +13584,7 @@ class GetCampaignRequest {
 class GetCampaignResponse {
   final NZ0_EnumC12188n campaignStatus;
   final CampaignProperty campaignProperty;
-  final Int64 intervalDateTimeMillis;
+  final dynamic intervalDateTimeMillis;
 
   GetCampaignResponse({
     required this.campaignStatus,
@@ -13595,8 +13594,8 @@ class GetCampaignResponse {
 
   factory GetCampaignResponse.fromJson(Map json) {
     return GetCampaignResponse(
-      campaignStatus: NZ0_EnumC12188n.fromValue(json["campaignStatus"]),
-      campaignProperty: CampaignProperty.fromJson(json["campaignProperty"]),
+      campaignStatus: NZ0_EnumC12188n.fromValue(json["campaignStatus"] ?? 0),
+      campaignProperty: CampaignProperty.fromJson(json["campaignProperty"] ?? {}),
       intervalDateTimeMillis: json["intervalDateTimeMillis"],
     );
   }
@@ -13625,7 +13624,7 @@ class GetChallengeForPaakAuthResponse {
 
   factory GetChallengeForPaakAuthResponse.fromJson(Map json) {
     return GetChallengeForPaakAuthResponse(
-      options: PublicKeyCredentialRequestOptions.fromJson(json["options"]),
+      options: PublicKeyCredentialRequestOptions.fromJson(json["options"] ?? {}),
     );
   }
 }
@@ -13653,7 +13652,7 @@ class GetChallengeForPrimaryRegResponse {
 
   factory GetChallengeForPrimaryRegResponse.fromJson(Map json) {
     return GetChallengeForPrimaryRegResponse(
-      options: PublicKeyCredentialCreationOptions.fromJson(json["options"]),
+      options: PublicKeyCredentialCreationOptions.fromJson(json["options"] ?? {}),
     );
   }
 }
@@ -13712,7 +13711,7 @@ class GetChatappResponse {
 
   factory GetChatappResponse.fromJson(Map json) {
     return GetChatappResponse(
-      app: Chatapp.fromJson(json["app"]),
+      app: Chatapp.fromJson(json["app"] ?? {}),
     );
   }
 }
@@ -13730,7 +13729,7 @@ class GetChatsRequest {
 
   factory GetChatsRequest.fromJson(Map json) {
     return GetChatsRequest(
-      chatMids: List.from(json["chatMids"]),
+      chatMids: List.from(json["chatMids"] ?? []),
       withMembers: json["withMembers"],
       withInvitees: json["withInvitees"],
     );
@@ -13746,7 +13745,7 @@ class GetChatsResponse {
 
   factory GetChatsResponse.fromJson(Map json) {
     return GetChatsResponse(
-      chats: List.from(json["chats"])
+      chats: List.from(json["chats"] ?? [])
           .map((e) => Chat.fromJson(e))
           .toList(),
     );
@@ -13772,7 +13771,7 @@ class GetCoinHistoryRequest {
 
   factory GetCoinHistoryRequest.fromJson(Map json) {
     return GetCoinHistoryRequest(
-      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"]),
+      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"] ?? 0),
       country: json["country"],
       language: json["language"],
       searchEndDate: json["searchEndDate"],
@@ -13797,10 +13796,10 @@ class GetCoinHistoryResponse {
 
   factory GetCoinHistoryResponse.fromJson(Map json) {
     return GetCoinHistoryResponse(
-      histories: List.from(json["histories"])
+      histories: List.from(json["histories"] ?? [])
           .map((e) => CoinHistory.fromJson(e))
           .toList(),
-      balance: Coin.fromJson(json["balance"]),
+      balance: Coin.fromJson(json["balance"] ?? {}),
       offset: json["offset"],
       hasNext: json["hasNext"],
     );
@@ -13822,10 +13821,10 @@ class GetCoinProductsRequest {
 
   factory GetCoinProductsRequest.fromJson(Map json) {
     return GetCoinProductsRequest(
-      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"]),
+      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"] ?? 0),
       country: json["country"],
       language: json["language"],
-      pgCode: jO0_EnumC27559z.fromValue(json["pgCode"]),
+      pgCode: jO0_EnumC27559z.fromValue(json["pgCode"] ?? 0),
     );
   }
 }
@@ -13839,7 +13838,7 @@ class GetCoinProductsResponse {
 
   factory GetCoinProductsResponse.fromJson(Map json) {
     return GetCoinProductsResponse(
-      items: List.from(json["items"])
+      items: List.from(json["items"] ?? [])
           .map((e) => CoinProductItem.fromJson(e))
           .toList(),
     );
@@ -13850,7 +13849,7 @@ class GetContactCalendarEventResponse {
   final String targetUserMid;
   final LN0_X0 userType;
   final ContactCalendarEvents contactCalendarEvents;
-  final Int64 snapshotTimeMillis;
+  final dynamic snapshotTimeMillis;
 
   GetContactCalendarEventResponse({
     required this.targetUserMid,
@@ -13862,8 +13861,8 @@ class GetContactCalendarEventResponse {
   factory GetContactCalendarEventResponse.fromJson(Map json) {
     return GetContactCalendarEventResponse(
       targetUserMid: json["targetUserMid"],
-      userType: LN0_X0.fromValue(json["userType"]),
-      contactCalendarEvents: ContactCalendarEvents.fromJson(json["ContactCalendarEvents"]),
+      userType: LN0_X0.fromValue(json["userType"] ?? 0),
+      contactCalendarEvents: ContactCalendarEvents.fromJson(json["ContactCalendarEvents"] ?? {}),
       snapshotTimeMillis: json["snapshotTimeMillis"],
     );
   }
@@ -13896,11 +13895,11 @@ class GetContactCalendarEventsRequest {
 
   factory GetContactCalendarEventsRequest.fromJson(Map json) {
     return GetContactCalendarEventsRequest(
-      targetUsers: List.from(json["targetUsers"])
+      targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetContactCalendarEventTarget.fromJson(e))
           .toList(),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
-      requiredContactCalendarEvents: List.from(json["requiredContactCalendarEvents"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
+      requiredContactCalendarEvents: List.from(json["requiredContactCalendarEvents"] ?? []),
     );
   }
 }
@@ -13914,7 +13913,7 @@ class GetContactCalendarEventsResponse {
 
   factory GetContactCalendarEventsResponse.fromJson(Map json) {
     return GetContactCalendarEventsResponse(
-      responses: List.from(json["responses"])
+      responses: List.from(json["responses"] ?? [])
           .map((e) => GetContactCalendarEventResponse.fromJson(e))
           .toList(),
     );
@@ -13943,12 +13942,12 @@ class GetContactV3Response {
   factory GetContactV3Response.fromJson(Map json) {
     return GetContactV3Response(
       targetUserMid: json["targetUserMid"],
-      userType: LN0_X0.fromValue(json["userType"]),
-      targetProfileDetail: TargetProfileDetail.fromJson(json["targetProfileDetail"]),
+      userType: LN0_X0.fromValue(json["userType"] ?? 0),
+      targetProfileDetail: TargetProfileDetail.fromJson(json["targetProfileDetail"] ?? {}),
       friendDetail: json["friendDetail"],
       blockDetail: json["blockDetail"],
       recommendationDetail: json["recommendationDetail"],
-      notificationSettingEntry: NotificationSettingEntry.fromJson(json["notificationSettingEntry"]),
+      notificationSettingEntry: NotificationSettingEntry.fromJson(json["notificationSettingEntry"] ?? {}),
     );
   }
 }
@@ -13980,10 +13979,10 @@ class GetContactsV3Request {
 
   factory GetContactsV3Request.fromJson(Map json) {
     return GetContactsV3Request(
-      targetUsers: List.from(json["targetUsers"])
+      targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetContactV3Target.fromJson(e))
           .toList(),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
       checkUserStatusStrictly: json["checkUserStatusStrictly"],
     );
   }
@@ -13998,7 +13997,7 @@ class GetContactsV3Response {
 
   factory GetContactsV3Response.fromJson(Map json) {
     return GetContactsV3Response(
-      responses: List.from(json["responses"])
+      responses: List.from(json["responses"] ?? [])
           .map((e) => GetContactV3Response.fromJson(e))
           .toList(),
     );
@@ -14017,7 +14016,7 @@ class I80_C26413m {
   factory I80_C26413m.fromJson(Map json) {
     return I80_C26413m(
       authSessionId: json["authSessionId"],
-      simCard: I80_B0.fromJson(json["simCard"]),
+      simCard: I80_B0.fromJson(json["simCard"] ?? {}),
     );
   }
 }
@@ -14037,7 +14036,7 @@ class I80_C26414n {
     return I80_C26414n(
       countryCode: json["countryCode"],
       countryInEEA: json["countryInEEA"],
-      countrySetOfEEA: List.from(json["countrySetOfEEA"]),
+      countrySetOfEEA: List.from(json["countrySetOfEEA"] ?? []),
     );
   }
 }
@@ -14057,7 +14056,7 @@ class GetCountryInfoResponse {
     return GetCountryInfoResponse(
       countryCode: json["countryCode"],
       countryInEEA: json["countryInEEA"],
-      countrySetOfEEA: List.from(json["countrySetOfEEA"]),
+      countrySetOfEEA: List.from(json["countrySetOfEEA"] ?? []),
     );
   }
 }
@@ -14065,7 +14064,7 @@ class GetCountryInfoResponse {
 class GetDisasterCasesResponse {
   final List<DisasterInfo> disasters;
   final List<String> messageTemplate;
-  final Int64 ttlInMillis;
+  final dynamic ttlInMillis;
 
   GetDisasterCasesResponse({
     required this.disasters,
@@ -14075,10 +14074,10 @@ class GetDisasterCasesResponse {
 
   factory GetDisasterCasesResponse.fromJson(Map json) {
     return GetDisasterCasesResponse(
-      disasters: List.from(json["disasters"])
+      disasters: List.from(json["disasters"] ?? [])
           .map((e) => DisasterInfo.fromJson(e))
           .toList(),
-      messageTemplate: List.from(json["messageTemplate"]),
+      messageTemplate: List.from(json["messageTemplate"] ?? []),
       ttlInMillis: json["ttlInMillis"],
     );
   }
@@ -14093,7 +14092,7 @@ class GetE2EEKeyBackupCertificatesResponse {
 
   factory GetE2EEKeyBackupCertificatesResponse.fromJson(Map json) {
     return GetE2EEKeyBackupCertificatesResponse(
-      urlHashList: List.from(json["urlHashList"]),
+      urlHashList: List.from(json["urlHashList"] ?? []),
     );
   }
 }
@@ -14102,8 +14101,8 @@ class GetE2EEKeyBackupInfoResponse {
   final String blobHeaderHash;
   final String blobPayloadHash;
   final List<int> missingKeyIds;
-  final Int64 startTimeMillis;
-  final Int64 endTimeMillis;
+  final dynamic startTimeMillis;
+  final dynamic endTimeMillis;
 
   GetE2EEKeyBackupInfoResponse({
     required this.blobHeaderHash,
@@ -14117,7 +14116,7 @@ class GetE2EEKeyBackupInfoResponse {
     return GetE2EEKeyBackupInfoResponse(
       blobHeaderHash: json["blobHeaderHash"],
       blobPayloadHash: json["blobPayloadHash"],
-      missingKeyIds: List.from(json["missingKeyIds"]),
+      missingKeyIds: List.from(json["missingKeyIds"] ?? []),
       startTimeMillis: json["startTimeMillis"],
       endTimeMillis: json["endTimeMillis"],
     );
@@ -14147,7 +14146,7 @@ class GetExchangeKeyResponse {
 
   factory GetExchangeKeyResponse.fromJson(Map json) {
     return GetExchangeKeyResponse(
-      exchangeKey: Map.from(json["exchangeKey"]),
+      exchangeKey: Map.from(json["exchangeKey"] ?? {}),
     );
   }
 }
@@ -14177,7 +14176,7 @@ class GetFollowBlacklistResponse {
 
   factory GetFollowBlacklistResponse.fromJson(Map json) {
     return GetFollowBlacklistResponse(
-      profiles: List.from(json["profiles"])
+      profiles: List.from(json["profiles"] ?? [])
           .map((e) => FollowProfile.fromJson(e))
           .toList(),
       cursor: json["cursor"],
@@ -14196,7 +14195,7 @@ class GetFollowersRequest {
 
   factory GetFollowersRequest.fromJson(Map json) {
     return GetFollowersRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
       cursor: json["cursor"],
     );
   }
@@ -14205,8 +14204,8 @@ class GetFollowersRequest {
 class GetFollowersResponse {
   final List<FollowProfile> profiles;
   final String cursor;
-  final Int64 followingCount;
-  final Int64 followerCount;
+  final dynamic followingCount;
+  final dynamic followerCount;
 
   GetFollowersResponse({
     required this.profiles,
@@ -14217,7 +14216,7 @@ class GetFollowersResponse {
 
   factory GetFollowersResponse.fromJson(Map json) {
     return GetFollowersResponse(
-      profiles: List.from(json["profiles"])
+      profiles: List.from(json["profiles"] ?? [])
           .map((e) => FollowProfile.fromJson(e))
           .toList(),
       cursor: json["cursor"],
@@ -14238,7 +14237,7 @@ class GetFollowingsRequest {
 
   factory GetFollowingsRequest.fromJson(Map json) {
     return GetFollowingsRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
       cursor: json["cursor"],
     );
   }
@@ -14247,8 +14246,8 @@ class GetFollowingsRequest {
 class GetFollowingsResponse {
   final List<FollowProfile> profiles;
   final String cursor;
-  final Int64 followingCount;
-  final Int64 followerCount;
+  final dynamic followingCount;
+  final dynamic followerCount;
 
   GetFollowingsResponse({
     required this.profiles,
@@ -14259,7 +14258,7 @@ class GetFollowingsResponse {
 
   factory GetFollowingsResponse.fromJson(Map json) {
     return GetFollowingsResponse(
-      profiles: List.from(json["profiles"])
+      profiles: List.from(json["profiles"] ?? [])
           .map((e) => FollowProfile.fromJson(e))
           .toList(),
       cursor: json["cursor"],
@@ -14278,7 +14277,7 @@ class GetFontMetasRequest {
 
   factory GetFontMetasRequest.fromJson(Map json) {
     return GetFontMetasRequest(
-      requestCause: VR0_l.fromValue(json["requestCause"]),
+      requestCause: VR0_l.fromValue(json["requestCause"] ?? 0),
     );
   }
 }
@@ -14294,7 +14293,7 @@ class GetFontMetasResponse {
 
   factory GetFontMetasResponse.fromJson(Map json) {
     return GetFontMetasResponse(
-      fontMetas: List.from(json["fontMetas"])
+      fontMetas: List.from(json["fontMetas"] ?? [])
           .map((e) => FontMeta.fromJson(e))
           .toList(),
       ttlInSeconds: json["ttlInSeconds"],
@@ -14344,10 +14343,10 @@ class GetFriendDetailsRequest {
 
   factory GetFriendDetailsRequest.fromJson(Map json) {
     return GetFriendDetailsRequest(
-      targetUsers: List.from(json["targetUsers"])
+      targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetFriendDetailTarget.fromJson(e))
           .toList(),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -14361,7 +14360,7 @@ class GetFriendDetailsResponse {
 
   factory GetFriendDetailsResponse.fromJson(Map json) {
     return GetFriendDetailsResponse(
-      responses: List.from(json["responses"])
+      responses: List.from(json["responses"] ?? [])
           .map((e) => GetFriendDetailResponse.fromJson(e))
           .toList(),
     );
@@ -14394,7 +14393,7 @@ class GetGnbBadgeStatusResponse {
   factory GetGnbBadgeStatusResponse.fromJson(Map json) {
     return GetGnbBadgeStatusResponse(
       uenRevision: json["uenRevision"],
-      badgeStatus: NZ0_EnumC12170h.fromValue(json["badgeStatus"]),
+      badgeStatus: NZ0_EnumC12170h.fromValue(json["badgeStatus"] ?? 0),
     );
   }
 }
@@ -14414,7 +14413,7 @@ class GetGoogleAdOptionsRequest {
     return GetGoogleAdOptionsRequest(
       squareMid: json["squareMid"],
       chatMid: json["chatMid"],
-      adScreen: AdScreen.fromValue(json["adScreen"]),
+      adScreen: AdScreen.fromValue(json["adScreen"] ?? 0),
     );
   }
 }
@@ -14435,8 +14434,8 @@ class GetGoogleAdOptionsResponse {
   factory GetGoogleAdOptionsResponse.fromJson(Map json) {
     return GetGoogleAdOptionsResponse(
       showAd: json["showAd"],
-      contentUrls: List.from(json["contentUrls"]),
-      customTargeting: Map.from(json["customTargeting"]),
+      contentUrls: List.from(json["contentUrls"] ?? []),
+      customTargeting: Map.from(json["customTargeting"] ?? {}),
       clientCacheTtlSeconds: json["clientCacheTtlSeconds"],
     );
   }
@@ -14458,7 +14457,7 @@ class GetGroupCallUrlInfoRequest {
 
 class GetGroupCallUrlInfoResponse {
   final String title;
-  final Int64 createdTimeMillis;
+  final dynamic createdTimeMillis;
 
   GetGroupCallUrlInfoResponse({
     required this.title,
@@ -14482,7 +14481,7 @@ class GetGroupCallUrlsResponse {
 
   factory GetGroupCallUrlsResponse.fromJson(Map json) {
     return GetGroupCallUrlsResponse(
-      urls: List.from(json["urls"])
+      urls: List.from(json["urls"] ?? [])
           .map((e) => GroupCallUrl.fromJson(e))
           .toList(),
     );
@@ -14505,9 +14504,9 @@ class GetHomeFlexContentRequest {
 
 class GetHomeFlexContentResponse {
   final List<HomeTabPlacement> placements;
-  final Int64 expireTimeMillis;
+  final dynamic expireTimeMillis;
   final String gnbBadgeId;
-  final Int64 gnbBadgeExpireTimeMillis;
+  final dynamic gnbBadgeExpireTimeMillis;
 
   GetHomeFlexContentResponse({
     required this.placements,
@@ -14518,7 +14517,7 @@ class GetHomeFlexContentResponse {
 
   factory GetHomeFlexContentResponse.fromJson(Map json) {
     return GetHomeFlexContentResponse(
-      placements: List.from(json["placements"])
+      placements: List.from(json["placements"] ?? [])
           .map((e) => HomeTabPlacement.fromJson(e))
           .toList(),
       expireTimeMillis: json["expireTimeMillis"],
@@ -14547,15 +14546,15 @@ class GetHomeServiceListResponse {
 
   factory GetHomeServiceListResponse.fromJson(Map json) {
     return GetHomeServiceListResponse(
-      services: List.from(json["services"])
+      services: List.from(json["services"] ?? [])
           .map((e) => HomeService.fromJson(e))
           .toList(),
-      fixedServiceIds: List.from(json["fixedServiceIds"]),
-      pinnedServiceCandidateIds: List.from(json["pinnedServiceCandidateIds"]),
-      categories: List.from(json["categories"])
+      fixedServiceIds: List.from(json["fixedServiceIds"] ?? []),
+      pinnedServiceCandidateIds: List.from(json["pinnedServiceCandidateIds"] ?? []),
+      categories: List.from(json["categories"] ?? [])
           .map((e) => HomeCategory.fromJson(e))
           .toList(),
-      fixedServiceIdsV3: List.from(json["fixedServiceIdsV3"]),
+      fixedServiceIdsV3: List.from(json["fixedServiceIdsV3"] ?? []),
       specificServiceId: json["specificServiceId"],
     );
   }
@@ -14570,7 +14569,7 @@ class GetHomeServicesRequest {
 
   factory GetHomeServicesRequest.fromJson(Map json) {
     return GetHomeServicesRequest(
-      ids: List.from(json["ids"]),
+      ids: List.from(json["ids"] ?? []),
     );
   }
 }
@@ -14584,7 +14583,7 @@ class GetHomeServicesResponse {
 
   factory GetHomeServicesResponse.fromJson(Map json) {
     return GetHomeServicesResponse(
-      services: List.from(json["services"])
+      services: List.from(json["services"] ?? [])
           .map((e) => HomeService.fromJson(e))
           .toList(),
     );
@@ -14674,12 +14673,12 @@ class GetJoinableSquareChatsResponse {
 
   factory GetJoinableSquareChatsResponse.fromJson(Map json) {
     return GetJoinableSquareChatsResponse(
-      squareChats: List.from(json["squareChats"])
+      squareChats: List.from(json["squareChats"] ?? [])
           .map((e) => SquareChat.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
       totalSquareChatCount: json["totalSquareChatCount"],
-      squareChatStatuses: Map.from(json["squareChatStatuses"]),
+      squareChatStatuses: Map.from(json["squareChatStatuses"] ?? {}),
     );
   }
 }
@@ -14744,11 +14743,11 @@ class GetJoinedSquareChatsResponse {
 
   factory GetJoinedSquareChatsResponse.fromJson(Map json) {
     return GetJoinedSquareChatsResponse(
-      chats: List.from(json["chats"])
+      chats: List.from(json["chats"] ?? [])
           .map((e) => SquareChat.fromJson(e))
           .toList(),
-      chatMembers: Map.from(json["chatMembers"]),
-      statuses: Map.from(json["statuses"]),
+      chatMembers: Map.from(json["chatMembers"] ?? {}),
+      statuses: Map.from(json["statuses"] ?? {}),
       continuationToken: json["continuationToken"],
     );
   }
@@ -14790,14 +14789,14 @@ class GetJoinedSquaresResponse {
 
   factory GetJoinedSquaresResponse.fromJson(Map json) {
     return GetJoinedSquaresResponse(
-      squares: List.from(json["squares"])
+      squares: List.from(json["squares"] ?? [])
           .map((e) => Square.fromJson(e))
           .toList(),
-      members: Map.from(json["members"]),
-      authorities: Map.from(json["authorities"]),
-      statuses: Map.from(json["statuses"]),
+      members: Map.from(json["members"] ?? {}),
+      authorities: Map.from(json["authorities"] ?? {}),
+      statuses: Map.from(json["statuses"] ?? {}),
       continuationToken: json["continuationToken"],
-      noteStatuses: Map.from(json["noteStatuses"]),
+      noteStatuses: Map.from(json["noteStatuses"] ?? {}),
     );
   }
 }
@@ -14811,7 +14810,7 @@ class GetKeyBackupCertificatesV2Response {
 
   factory GetKeyBackupCertificatesV2Response.fromJson(Map json) {
     return GetKeyBackupCertificatesV2Response(
-      urlHashList: List.from(json["urlHashList"]),
+      urlHashList: List.from(json["urlHashList"] ?? []),
     );
   }
 }
@@ -14851,7 +14850,7 @@ class GetLiveTalkInfoForNonMemberRequest {
     return GetLiveTalkInfoForNonMemberRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      speakers: List.from(json["speakers"]),
+      speakers: List.from(json["speakers"] ?? []),
     );
   }
 }
@@ -14875,8 +14874,8 @@ class GetLiveTalkInfoForNonMemberResponse {
     return GetLiveTalkInfoForNonMemberResponse(
       chatName: json["chatName"],
       chatImageObsHash: json["chatImageObsHash"],
-      liveTalk: LiveTalk.fromJson(json["liveTalk"]),
-      speakers: List.from(json["speakers"])
+      liveTalk: LiveTalk.fromJson(json["liveTalk"] ?? {}),
+      speakers: List.from(json["speakers"] ?? [])
           .map((e) => LiveTalkSpeaker.fromJson(e))
           .toList(),
       chatInvitationTicket: json["chatInvitationTicket"],
@@ -14930,7 +14929,7 @@ class GetLiveTalkSpeakersForNonMemberRequest {
     return GetLiveTalkSpeakersForNonMemberRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      speakers: List.from(json["speakers"]),
+      speakers: List.from(json["speakers"] ?? []),
     );
   }
 }
@@ -14944,7 +14943,7 @@ class GetLiveTalkSpeakersForNonMemberResponse {
 
   factory GetLiveTalkSpeakersForNonMemberResponse.fromJson(Map json) {
     return GetLiveTalkSpeakersForNonMemberResponse(
-      speakers: List.from(json["speakers"])
+      speakers: List.from(json["speakers"] ?? [])
           .map((e) => LiveTalkSpeaker.fromJson(e))
           .toList(),
     );
@@ -14991,7 +14990,7 @@ class GetMappedProfileIdsRequest {
 
   factory GetMappedProfileIdsRequest.fromJson(Map json) {
     return GetMappedProfileIdsRequest(
-      targetUserMids: List.from(json["targetUserMids"]),
+      targetUserMids: List.from(json["targetUserMids"] ?? []),
     );
   }
 }
@@ -15005,7 +15004,7 @@ class GetMappedProfileIdsResponse {
 
   factory GetMappedProfileIdsResponse.fromJson(Map json) {
     return GetMappedProfileIdsResponse(
-      mappings: Map.from(json["mappings"]),
+      mappings: Map.from(json["mappings"] ?? {}),
     );
   }
 }
@@ -15073,7 +15072,7 @@ class GetMessageReactionsRequest {
     return GetMessageReactionsRequest(
       squareChatMid: json["squareChatMid"],
       messageId: json["messageId"],
-      type: MessageReactionType.fromValue(json["type"]),
+      type: MessageReactionType.fromValue(json["type"] ?? 0),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
       threadMid: json["threadMid"],
@@ -15094,10 +15093,10 @@ class GetMessageReactionsResponse {
 
   factory GetMessageReactionsResponse.fromJson(Map json) {
     return GetMessageReactionsResponse(
-      reactions: List.from(json["reactions"])
+      reactions: List.from(json["reactions"] ?? [])
           .map((e) => SquareMessageReaction.fromJson(e))
           .toList(),
-      status: SquareMessageReactionStatus.fromJson(json["status"]),
+      status: SquareMessageReactionStatus.fromJson(json["status"] ?? {}),
       continuationToken: json["continuationToken"],
     );
   }
@@ -15150,7 +15149,7 @@ class GetModulesRequestV3 {
   factory GetModulesRequestV3.fromJson(Map json) {
     return GetModulesRequestV3(
       etag: json["etag"],
-      tabIdentifier: NZ0_EnumC12169g1.fromValue(json["tabIdentifier"]),
+      tabIdentifier: NZ0_EnumC12169g1.fromValue(json["tabIdentifier"] ?? 0),
       deviceAdId: json["deviceAdId"],
       agreedWithTargetingAdByMid: json["agreedWithTargetingAdByMid"],
     );
@@ -15184,7 +15183,7 @@ class GetModulesV4WithStatusRequest {
 }
 
 class GetMusicSubscriptionStatusResponse {
-  final Int64 validUntil;
+  final dynamic validUntil;
   final bool expired;
   final bool isStickersPremiumEnabled;
 
@@ -15225,7 +15224,7 @@ class GetMyAssetInformationV2Response {
   final LinkRewardInfo linkRewardInfo;
   final PocketMoneyInfo pocketMoneyInfo;
   final ScoreInfo scoreInfo;
-  final Int64 timestamp;
+  final dynamic timestamp;
 
   GetMyAssetInformationV2Response({
     required this.headerInfo,
@@ -15240,15 +15239,15 @@ class GetMyAssetInformationV2Response {
 
   factory GetMyAssetInformationV2Response.fromJson(Map json) {
     return GetMyAssetInformationV2Response(
-      headerInfo: HeaderInfo.fromJson(json["headerInfo"]),
-      assetServiceInfos: List.from(json["assetServiceInfos"])
+      headerInfo: HeaderInfo.fromJson(json["headerInfo"] ?? {}),
+      assetServiceInfos: List.from(json["assetServiceInfos"] ?? [])
           .map((e) => AssetServiceInfo.fromJson(e))
           .toList(),
-      serviceDisclaimerInfo: ServiceDisclaimerInfo.fromJson(json["serviceDisclaimerInfo"]),
-      pointInfo: PointInfo.fromJson(json["pointInfo"]),
-      linkRewardInfo: LinkRewardInfo.fromJson(json["linkRewardInfo"]),
-      pocketMoneyInfo: PocketMoneyInfo.fromJson(json["pocketMoneyInfo"]),
-      scoreInfo: ScoreInfo.fromJson(json["scoreInfo"]),
+      serviceDisclaimerInfo: ServiceDisclaimerInfo.fromJson(json["serviceDisclaimerInfo"] ?? {}),
+      pointInfo: PointInfo.fromJson(json["pointInfo"] ?? {}),
+      linkRewardInfo: LinkRewardInfo.fromJson(json["linkRewardInfo"] ?? {}),
+      pocketMoneyInfo: PocketMoneyInfo.fromJson(json["pocketMoneyInfo"] ?? {}),
+      scoreInfo: ScoreInfo.fromJson(json["scoreInfo"] ?? {}),
       timestamp: json["timestamp"],
     );
   }
@@ -15282,7 +15281,7 @@ class GetMyChatappsResponse {
 
   factory GetMyChatappsResponse.fromJson(Map json) {
     return GetMyChatappsResponse(
-      apps: List.from(json["apps"])
+      apps: List.from(json["apps"] ?? [])
           .map((e) => MyChatapp.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -15299,7 +15298,7 @@ class GetMyDashboardRequest {
 
   factory GetMyDashboardRequest.fromJson(Map json) {
     return GetMyDashboardRequest(
-      tabIdentifier: NZ0_EnumC12169g1.fromValue(json["tabIdentifier"]),
+      tabIdentifier: NZ0_EnumC12169g1.fromValue(json["tabIdentifier"] ?? 0),
     );
   }
 }
@@ -15319,8 +15318,8 @@ class GetMyDashboardResponse {
 
   factory GetMyDashboardResponse.fromJson(Map json) {
     return GetMyDashboardResponse(
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
-      messages: List.from(json["messages"])
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
+      messages: List.from(json["messages"] ?? [])
           .map((e) => MyDashboardItem.fromJson(e))
           .toList(),
       cacheTimeSec: json["cacheTimeSec"],
@@ -15355,7 +15354,7 @@ class GetNoteStatusResponse {
   factory GetNoteStatusResponse.fromJson(Map json) {
     return GetNoteStatusResponse(
       squareMid: json["squareMid"],
-      status: NoteStatus.fromJson(json["status"]),
+      status: NoteStatus.fromJson(json["status"] ?? {}),
     );
   }
 }
@@ -15371,8 +15370,8 @@ class GetNotificationSettingsRequest {
 
   factory GetNotificationSettingsRequest.fromJson(Map json) {
     return GetNotificationSettingsRequest(
-      chatMids: List.from(json["chatMids"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      chatMids: List.from(json["chatMids"] ?? []),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -15386,7 +15385,7 @@ class GetNotificationSettingsResponse {
 
   factory GetNotificationSettingsResponse.fromJson(Map json) {
     return GetNotificationSettingsResponse(
-      notificationSettingEntries: Map.from(json["notificationSettingEntries"]),
+      notificationSettingEntries: Map.from(json["notificationSettingEntries"] ?? {}),
     );
   }
 }
@@ -15430,8 +15429,8 @@ class GetPasswordHashingParametersForPwdRegResponse {
 
   factory GetPasswordHashingParametersForPwdRegResponse.fromJson(Map json) {
     return GetPasswordHashingParametersForPwdRegResponse(
-      params: PasswordHashingParameters.fromJson(json["params"]),
-      passwordValidationRule: List.from(json["passwordValidationRule"])
+      params: PasswordHashingParameters.fromJson(json["params"] ?? {}),
+      passwordValidationRule: List.from(json["passwordValidationRule"] ?? [])
           .map((e) => PasswordValidationRule.fromJson(e))
           .toList(),
     );
@@ -15449,8 +15448,8 @@ class I80_C26418r {
 
   factory I80_C26418r.fromJson(Map json) {
     return I80_C26418r(
-      params: PasswordHashingParameters.fromJson(json["params"]),
-      passwordValidationRule: List.from(json["passwordValidationRule"])
+      params: PasswordHashingParameters.fromJson(json["params"] ?? {}),
+      passwordValidationRule: List.from(json["passwordValidationRule"] ?? [])
           .map((e) => PasswordValidationRule.fromJson(e))
           .toList(),
     );
@@ -15469,7 +15468,7 @@ class GetPasswordHashingParametersForPwdVerifRequest {
   factory GetPasswordHashingParametersForPwdVerifRequest.fromJson(Map json) {
     return GetPasswordHashingParametersForPwdVerifRequest(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -15502,8 +15501,8 @@ class GetPasswordHashingParametersForPwdVerifResponse {
   factory GetPasswordHashingParametersForPwdVerifResponse.fromJson(Map json) {
     return GetPasswordHashingParametersForPwdVerifResponse(
       isV1HashRequired: json["isV1HashRequired"],
-      v1HashParams: V1PasswordHashingParameters.fromJson(json["v1HashParams"]),
-      hashParams: PasswordHashingParameters.fromJson(json["hashParams"]),
+      v1HashParams: V1PasswordHashingParameters.fromJson(json["v1HashParams"] ?? {}),
+      hashParams: PasswordHashingParameters.fromJson(json["hashParams"] ?? {}),
     );
   }
 }
@@ -15522,8 +15521,8 @@ class I80_C26420t {
   factory I80_C26420t.fromJson(Map json) {
     return I80_C26420t(
       isV1HashRequired: json["isV1HashRequired"],
-      v1HashParams: V1PasswordHashingParameters.fromJson(json["v1HashParams"]),
-      hashParams: PasswordHashingParameters.fromJson(json["hashParams"]),
+      v1HashParams: V1PasswordHashingParameters.fromJson(json["v1HashParams"] ?? {}),
+      hashParams: PasswordHashingParameters.fromJson(json["hashParams"] ?? {}),
     );
   }
 }
@@ -15556,8 +15555,8 @@ class GetPasswordHashingParametersResponse {
   factory GetPasswordHashingParametersResponse.fromJson(Map json) {
     return GetPasswordHashingParametersResponse(
       hmacKey: json["hmacKey"],
-      scryptParams: ScryptParams.fromJson(json["scryptParams"]),
-      passwordValidationRule: List.from(json["passwordValidationRule"])
+      scryptParams: ScryptParams.fromJson(json["scryptParams"] ?? {}),
+      passwordValidationRule: List.from(json["passwordValidationRule"] ?? [])
           .map((e) => PasswordValidationRule.fromJson(e))
           .toList(),
     );
@@ -15578,8 +15577,8 @@ class GetPhoneVerifMethodForRegistrationRequest {
   factory GetPhoneVerifMethodForRegistrationRequest.fromJson(Map json) {
     return GetPhoneVerifMethodForRegistrationRequest(
       authSessionId: json["authSessionId"],
-      device: Device.fromJson(json["device"]),
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      device: Device.fromJson(json["device"] ?? {}),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
     );
   }
 }
@@ -15595,7 +15594,7 @@ class GetPhoneVerifMethodForRegistrationResponse {
 
   factory GetPhoneVerifMethodForRegistrationResponse.fromJson(Map json) {
     return GetPhoneVerifMethodForRegistrationResponse(
-      availableMethods: List.from(json["availableMethods"]),
+      availableMethods: List.from(json["availableMethods"] ?? []),
       prettifiedPhoneNumber: json["prettifiedPhoneNumber"],
     );
   }
@@ -15615,8 +15614,8 @@ class GetPhoneVerifMethodV2Request {
   factory GetPhoneVerifMethodV2Request.fromJson(Map json) {
     return GetPhoneVerifMethodV2Request(
       authSessionId: json["authSessionId"],
-      device: Device.fromJson(json["device"]),
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      device: Device.fromJson(json["device"] ?? {}),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
     );
   }
 }
@@ -15633,7 +15632,7 @@ class I80_C26421u {
   factory I80_C26421u.fromJson(Map json) {
     return I80_C26421u(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
     );
   }
 }
@@ -15649,7 +15648,7 @@ class I80_C26422v {
 
   factory I80_C26422v.fromJson(Map json) {
     return I80_C26422v(
-      availableMethods: List.from(json["availableMethods"]),
+      availableMethods: List.from(json["availableMethods"] ?? []),
       prettifiedPhoneNumber: json["prettifiedPhoneNumber"],
     );
   }
@@ -15666,7 +15665,7 @@ class GetPhoneVerifMethodV2Response {
 
   factory GetPhoneVerifMethodV2Response.fromJson(Map json) {
     return GetPhoneVerifMethodV2Response(
-      availableMethods: List.from(json["availableMethods"]),
+      availableMethods: List.from(json["availableMethods"] ?? []),
       prettifiedPhoneNumber: json["prettifiedPhoneNumber"],
     );
   }
@@ -15674,7 +15673,7 @@ class GetPhoneVerifMethodV2Response {
 
 class GetPhotoboothBalanceResponse {
   final int availableTickets;
-  final Int64 nextTicketAvailableAt;
+  final dynamic nextTicketAvailableAt;
 
   GetPhotoboothBalanceResponse({
     required this.availableTickets,
@@ -15691,7 +15690,7 @@ class GetPhotoboothBalanceResponse {
 
 class GetPopularKeywordsResponse {
   final List<PopularKeyword> popularKeywords;
-  final Int64 expiredAt;
+  final dynamic expiredAt;
 
   GetPopularKeywordsResponse({
     required this.popularKeywords,
@@ -15700,7 +15699,7 @@ class GetPopularKeywordsResponse {
 
   factory GetPopularKeywordsResponse.fromJson(Map json) {
     return GetPopularKeywordsResponse(
-      popularKeywords: List.from(json["popularKeywords"])
+      popularKeywords: List.from(json["popularKeywords"] ?? [])
           .map((e) => PopularKeyword.fromJson(e))
           .toList(),
       expiredAt: json["expiredAt"],
@@ -15717,7 +15716,7 @@ class GetPredefinedScenarioSetsRequest {
 
   factory GetPredefinedScenarioSetsRequest.fromJson(Map json) {
     return GetPredefinedScenarioSetsRequest(
-      deviceIds: List.from(json["deviceIds"]),
+      deviceIds: List.from(json["deviceIds"] ?? []),
     );
   }
 }
@@ -15731,7 +15730,7 @@ class GetPredefinedScenarioSetsResponse {
 
   factory GetPredefinedScenarioSetsResponse.fromJson(Map json) {
     return GetPredefinedScenarioSetsResponse(
-      scenarioSets: Map.from(json["scenarioSets"]),
+      scenarioSets: Map.from(json["scenarioSets"] ?? {}),
     );
   }
 }
@@ -15753,15 +15752,15 @@ class GetPremiumContextForMigResponse {
     return GetPremiumContextForMigResponse(
       isPremiumActive: json["isPremiumActive"],
       isPremiumBackupActive: json["isPremiumBackupActive"],
-      premiumType: T70_L.fromValue(json["premiumType"]),
-      availablePremiumTypes: List.from(json["availablePremiumTypes"]),
+      premiumType: T70_L.fromValue(json["premiumType"] ?? 0),
+      availablePremiumTypes: List.from(json["availablePremiumTypes"] ?? []),
     );
   }
 }
 
 class GetPremiumDataRetentionResponse {
   final List<DataRetention> dataRetentions;
-  final Int64 noSyncUntil;
+  final dynamic noSyncUntil;
 
   GetPremiumDataRetentionResponse({
     required this.dataRetentions,
@@ -15770,7 +15769,7 @@ class GetPremiumDataRetentionResponse {
 
   factory GetPremiumDataRetentionResponse.fromJson(Map json) {
     return GetPremiumDataRetentionResponse(
-      dataRetentions: List.from(json["dataRetentions"])
+      dataRetentions: List.from(json["dataRetentions"] ?? [])
           .map((e) => DataRetention.fromJson(e))
           .toList(),
       noSyncUntil: json["noSyncUntil"],
@@ -15780,8 +15779,8 @@ class GetPremiumDataRetentionResponse {
 
 class GetPremiumStatusResponse {
   final bool active;
-  final Int64 validUntil;
-  final Int64 updatedTime;
+  final dynamic validUntil;
+  final dynamic updatedTime;
   final bool freeTrialUsed;
   final bool willExpire;
   final bool newToYahooShopping;
@@ -15789,14 +15788,14 @@ class GetPremiumStatusResponse {
   final bool onFreeTrial;
   final bool duplicated;
   final fN0_p planType;
-  final Int64 noSyncUntil;
+  final dynamic noSyncUntil;
   final String productId;
   final String currency;
   final String price;
   final fN0_H status;
   final bool invitedByFriend;
   final List<int> canceledProviders;
-  final Int64 nextPaymentTime;
+  final dynamic nextPaymentTime;
 
   GetPremiumStatusResponse({
     required this.active,
@@ -15830,14 +15829,14 @@ class GetPremiumStatusResponse {
       idLinked: json["idLinked"],
       onFreeTrial: json["onFreeTrial"],
       duplicated: json["duplicated"],
-      planType: fN0_p.fromValue(json["planType"]),
+      planType: fN0_p.fromValue(json["planType"] ?? 0),
       noSyncUntil: json["noSyncUntil"],
       productId: json["productId"],
       currency: json["currency"],
       price: json["price"],
-      status: fN0_H.fromValue(json["status"]),
+      status: fN0_H.fromValue(json["status"] ?? 0),
       invitedByFriend: json["invitedByFriend"],
-      canceledProviders: List.from(json["canceledProviders"]),
+      canceledProviders: List.from(json["canceledProviders"] ?? []),
       nextPaymentTime: json["nextPaymentTime"],
     );
   }
@@ -15861,7 +15860,7 @@ class GetPreviousMessagesV2Request {
   factory GetPreviousMessagesV2Request.fromJson(Map json) {
     return GetPreviousMessagesV2Request(
       messageBoxId: json["messageBoxId"],
-      endMessageId: MessageBoxV2MessageId.fromJson(json["endMessageId"]),
+      endMessageId: MessageBoxV2MessageId.fromJson(json["endMessageId"] ?? {}),
       messagesCount: json["messagesCount"],
       withReadCount: json["withReadCount"],
       receivedOnly: json["receivedOnly"],
@@ -15880,14 +15879,14 @@ class GetProductLatestVersionForUserRequest {
 
   factory GetProductLatestVersionForUserRequest.fromJson(Map json) {
     return GetProductLatestVersionForUserRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
     );
   }
 }
 
 class GetProductLatestVersionForUserResponse {
-  final Int64 latestVersion;
+  final dynamic latestVersion;
   final String latestVersionString;
 
   GetProductLatestVersionForUserResponse({
@@ -15918,7 +15917,7 @@ class GetProductRequest {
 
   factory GetProductRequest.fromJson(Map json) {
     return GetProductRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
       carrierCode: json["carrierCode"],
       saveBrowsingHistory: json["saveBrowsingHistory"],
@@ -15935,7 +15934,7 @@ class GetProductResponse {
 
   factory GetProductResponse.fromJson(Map json) {
     return GetProductResponse(
-      productDetail: ProductDetail.fromJson(json["productDetail"]),
+      productDetail: ProductDetail.fromJson(json["productDetail"] ?? {}),
     );
   }
 }
@@ -15963,7 +15962,7 @@ class GetProfileResponse {
 
   factory GetProfileResponse.fromJson(Map json) {
     return GetProfileResponse(
-      profile: Profile.fromJson(json["profile"]),
+      profile: Profile.fromJson(json["profile"] ?? {}),
     );
   }
 }
@@ -15977,7 +15976,7 @@ class GetProfilesRequest {
 
   factory GetProfilesRequest.fromJson(Map json) {
     return GetProfilesRequest(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -15991,7 +15990,7 @@ class GetProfilesResponse {
 
   factory GetProfilesResponse.fromJson(Map json) {
     return GetProfilesResponse(
-      profiles: List.from(json["profiles"])
+      profiles: List.from(json["profiles"] ?? [])
           .map((e) => Profile.fromJson(e))
           .toList(),
     );
@@ -16025,9 +16024,9 @@ class GetQuickMenuResponse {
 
   factory GetQuickMenuResponse.fromJson(Map json) {
     return GetQuickMenuResponse(
-      pointInfo: QuickMenuPointInfo.fromJson(json["pointInfo"]),
-      couponInfo: QuickMenuCouponInfo.fromJson(json["couponInfo"]),
-      myCardInfo: QuickMenuMyCardInfo.fromJson(json["myCardInfo"]),
+      pointInfo: QuickMenuPointInfo.fromJson(json["pointInfo"] ?? {}),
+      couponInfo: QuickMenuCouponInfo.fromJson(json["couponInfo"] ?? {}),
+      myCardInfo: QuickMenuMyCardInfo.fromJson(json["myCardInfo"] ?? {}),
     );
   }
 }
@@ -16074,10 +16073,10 @@ class GetRecommendationDetailsRequest {
 
   factory GetRecommendationDetailsRequest.fromJson(Map json) {
     return GetRecommendationDetailsRequest(
-      targetUsers: List.from(json["targetUsers"])
+      targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetRecommendationDetailTarget.fromJson(e))
           .toList(),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -16091,7 +16090,7 @@ class GetRecommendationDetailsResponse {
 
   factory GetRecommendationDetailsResponse.fromJson(Map json) {
     return GetRecommendationDetailsResponse(
-      responses: List.from(json["responses"])
+      responses: List.from(json["responses"] ?? [])
           .map((e) => GetRecommendationDetailResponse.fromJson(e))
           .toList(),
     );
@@ -16101,7 +16100,7 @@ class GetRecommendationDetailsResponse {
 class GetRecommendationResponse {
   final List<dynamic> results;
   final String continuationToken;
-  final Int64 totalSize;
+  final dynamic totalSize;
 
   GetRecommendationResponse({
     required this.results,
@@ -16111,7 +16110,7 @@ class GetRecommendationResponse {
 
   factory GetRecommendationResponse.fromJson(Map json) {
     return GetRecommendationResponse(
-      results: List.from(json["results"]),
+      results: List.from(json["results"] ?? []),
       continuationToken: json["continuationToken"],
       totalSize: json["totalSize"],
     );
@@ -16151,16 +16150,16 @@ class GetRepairElementsRequest {
     return GetRepairElementsRequest(
       profile: json["profile"],
       settings: json["settings"],
-      configurations: ConfigurationsParams.fromJson(json["configurations"]),
+      configurations: ConfigurationsParams.fromJson(json["configurations"] ?? {}),
       numLocalJoinedGroups: json["numLocalJoinedGroups"],
       numLocalInvitedGroups: json["numLocalInvitedGroups"],
       numLocalFriends: json["numLocalFriends"],
       numLocalRecommendations: json["numLocalRecommendations"],
       numLocalBlockedFriends: json["numLocalBlockedFriends"],
       numLocalBlockedRecommendations: json["numLocalBlockedRecommendations"],
-      localGroupMembers: Map.from(json["localGroupMembers"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
-      localProfileMappings: Map.from(json["localProfileMappings"]),
+      localGroupMembers: Map.from(json["localGroupMembers"] ?? {}),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
+      localProfileMappings: Map.from(json["localProfileMappings"] ?? {}),
     );
   }
 }
@@ -16194,17 +16193,17 @@ class GetRepairElementsResponse {
 
   factory GetRepairElementsResponse.fromJson(Map json) {
     return GetRepairElementsResponse(
-      profile: RepairTriggerProfileElement.fromJson(json["profile"]),
-      settings: RepairTriggerSettingsElement.fromJson(json["settings"]),
-      configurations: RepairTriggerConfigurationsElement.fromJson(json["configurations"]),
-      numJoinedGroups: RepairTriggerNumElement.fromJson(json["numJoinedGroups"]),
-      numInvitedGroups: RepairTriggerNumElement.fromJson(json["numInvitedGroups"]),
-      numFriends: RepairTriggerNumElement.fromJson(json["numFriends"]),
-      numRecommendations: RepairTriggerNumElement.fromJson(json["numRecommendations"]),
-      numBlockedFriends: RepairTriggerNumElement.fromJson(json["numBlockedFriends"]),
-      numBlockedRecommendations: RepairTriggerNumElement.fromJson(json["numBlockedRecommendations"]),
-      groupMembers: RepairTriggerGroupMembersElement.fromJson(json["groupMembers"]),
-      profileMappings: RepairTriggerProfileMappingListElement.fromJson(json["profileMappings"]),
+      profile: RepairTriggerProfileElement.fromJson(json["profile"] ?? {}),
+      settings: RepairTriggerSettingsElement.fromJson(json["settings"] ?? {}),
+      configurations: RepairTriggerConfigurationsElement.fromJson(json["configurations"] ?? {}),
+      numJoinedGroups: RepairTriggerNumElement.fromJson(json["numJoinedGroups"] ?? {}),
+      numInvitedGroups: RepairTriggerNumElement.fromJson(json["numInvitedGroups"] ?? {}),
+      numFriends: RepairTriggerNumElement.fromJson(json["numFriends"] ?? {}),
+      numRecommendations: RepairTriggerNumElement.fromJson(json["numRecommendations"] ?? {}),
+      numBlockedFriends: RepairTriggerNumElement.fromJson(json["numBlockedFriends"] ?? {}),
+      numBlockedRecommendations: RepairTriggerNumElement.fromJson(json["numBlockedRecommendations"] ?? {}),
+      groupMembers: RepairTriggerGroupMembersElement.fromJson(json["groupMembers"] ?? {}),
+      profileMappings: RepairTriggerProfileMappingListElement.fromJson(json["profileMappings"] ?? {}),
     );
   }
 }
@@ -16221,7 +16220,7 @@ class GetRequest {
   factory GetRequest.fromJson(Map json) {
     return GetRequest(
       keyName: json["keyName"],
-      ns: t80_h.fromValue(json["ns"]),
+      ns: t80_h.fromValue(json["ns"] ?? 0),
     );
   }
 }
@@ -16235,7 +16234,7 @@ class GetResourceFileReponse {
 
   factory GetResourceFileReponse.fromJson(Map json) {
     return GetResourceFileReponse(
-      tagClusterFileResponse: GetTagClusterFileResponse.fromJson(json["tagClusterFileResponse"]),
+      tagClusterFileResponse: GetTagClusterFileResponse.fromJson(json["tagClusterFileResponse"] ?? {}),
     );
   }
 }
@@ -16266,7 +16265,7 @@ class GetResponse {
 
   factory GetResponse.fromJson(Map json) {
     return GetResponse(
-      value: SettingValue.fromJson(json["value"]),
+      value: SettingValue.fromJson(json["value"] ?? {}),
     );
   }
 }
@@ -16294,7 +16293,7 @@ class GetResponseStatusResponse {
 
   factory GetResponseStatusResponse.fromJson(Map json) {
     return GetResponseStatusResponse(
-      displayedResponseStatus: jf_EnumC27712a.fromValue(json["displayedResponseStatus"]),
+      displayedResponseStatus: jf_EnumC27712a.fromValue(json["displayedResponseStatus"] ?? 0),
     );
   }
 }
@@ -16336,7 +16335,7 @@ class I80_C26424x {
 
   factory I80_C26424x.fromJson(Map json) {
     return I80_C26424x(
-      encryptionKey: I80_y0.fromJson(json["encryptionKey"]),
+      encryptionKey: I80_y0.fromJson(json["encryptionKey"] ?? {}),
     );
   }
 }
@@ -16350,7 +16349,7 @@ class GetSeasonalEffectsResponse {
 
   factory GetSeasonalEffectsResponse.fromJson(Map json) {
     return GetSeasonalEffectsResponse(
-      effects: List.from(json["effects"])
+      effects: List.from(json["effects"] ?? [])
           .map((e) => HomeEffect.fromJson(e))
           .toList(),
     );
@@ -16366,7 +16365,7 @@ class GetSecondAuthMethodResponse {
 
   factory GetSecondAuthMethodResponse.fromJson(Map json) {
     return GetSecondAuthMethodResponse(
-      secondAuthMethod: T70_e1.fromValue(json["secondAuthMethod"]),
+      secondAuthMethod: T70_e1.fromValue(json["secondAuthMethod"] ?? 0),
     );
   }
 }
@@ -16393,7 +16392,7 @@ class GetServiceShortcutMenuResponse {
       revision: json["revision"],
       refreshTimeSec: json["refreshTimeSec"],
       expandable: json["expandable"],
-      serviceShortcuts: List.from(json["serviceShortcuts"])
+      serviceShortcuts: List.from(json["serviceShortcuts"] ?? [])
           .map((e) => ServiceShortcut.fromJson(e))
           .toList(),
       menuDescription: json["menuDescription"],
@@ -16455,7 +16454,7 @@ class GetSmartChannelRecommendationsResponse {
 
   factory GetSmartChannelRecommendationsResponse.fromJson(Map json) {
     return GetSmartChannelRecommendationsResponse(
-      smartChannelRecommendations: List.from(json["smartChannelRecommendations"])
+      smartChannelRecommendations: List.from(json["smartChannelRecommendations"] ?? [])
           .map((e) => SmartChannelRecommendation.fromJson(e))
           .toList(),
       minInterval: json["minInterval"],
@@ -16473,7 +16472,7 @@ class GetSquareAuthoritiesRequest {
 
   factory GetSquareAuthoritiesRequest.fromJson(Map json) {
     return GetSquareAuthoritiesRequest(
-      squareMids: List.from(json["squareMids"]),
+      squareMids: List.from(json["squareMids"] ?? []),
     );
   }
 }
@@ -16487,7 +16486,7 @@ class GetSquareAuthoritiesResponse {
 
   factory GetSquareAuthoritiesResponse.fromJson(Map json) {
     return GetSquareAuthoritiesResponse(
-      authorities: Map.from(json["authorities"]),
+      authorities: Map.from(json["authorities"] ?? {}),
     );
   }
 }
@@ -16515,7 +16514,7 @@ class GetSquareAuthorityResponse {
 
   factory GetSquareAuthorityResponse.fromJson(Map json) {
     return GetSquareAuthorityResponse(
-      authority: SquareAuthority.fromJson(json["authority"]),
+      authority: SquareAuthority.fromJson(json["authority"] ?? {}),
     );
   }
 }
@@ -16543,7 +16542,7 @@ class GetSquareBotResponse {
 
   factory GetSquareBotResponse.fromJson(Map json) {
     return GetSquareBotResponse(
-      squareBot: SquareBot.fromJson(json["squareBot"]),
+      squareBot: SquareBot.fromJson(json["squareBot"] ?? {}),
     );
   }
 }
@@ -16557,7 +16556,7 @@ class GetSquareCategoriesResponse {
 
   factory GetSquareCategoriesResponse.fromJson(Map json) {
     return GetSquareCategoriesResponse(
-      categoryList: List.from(json["categoryList"])
+      categoryList: List.from(json["categoryList"] ?? [])
           .map((e) => Category.fromJson(e))
           .toList(),
     );
@@ -16587,7 +16586,7 @@ class GetSquareChatAnnouncementsResponse {
 
   factory GetSquareChatAnnouncementsResponse.fromJson(Map json) {
     return GetSquareChatAnnouncementsResponse(
-      announcements: List.from(json["announcements"])
+      announcements: List.from(json["announcements"] ?? [])
           .map((e) => SquareChatAnnouncement.fromJson(e))
           .toList(),
     );
@@ -16645,7 +16644,7 @@ class GetSquareChatFeatureSetResponse {
 
   factory GetSquareChatFeatureSetResponse.fromJson(Map json) {
     return GetSquareChatFeatureSetResponse(
-      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"]),
+      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"] ?? {}),
     );
   }
 }
@@ -16676,7 +16675,7 @@ class GetSquareChatMemberResponse {
 
   factory GetSquareChatMemberResponse.fromJson(Map json) {
     return GetSquareChatMemberResponse(
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
     );
   }
 }
@@ -16714,11 +16713,11 @@ class GetSquareChatMembersResponse {
 
   factory GetSquareChatMembersResponse.fromJson(Map json) {
     return GetSquareChatMembersResponse(
-      squareChatMembers: List.from(json["squareChatMembers"])
+      squareChatMembers: List.from(json["squareChatMembers"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
-      contentsAttributes: Map.from(json["contentsAttributes"]),
+      contentsAttributes: Map.from(json["contentsAttributes"] ?? {}),
     );
   }
 }
@@ -16750,9 +16749,9 @@ class GetSquareChatResponse {
 
   factory GetSquareChatResponse.fromJson(Map json) {
     return GetSquareChatResponse(
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
-      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
+      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"] ?? {}),
     );
   }
 }
@@ -16780,7 +16779,7 @@ class GetSquareChatStatusResponse {
 
   factory GetSquareChatStatusResponse.fromJson(Map json) {
     return GetSquareChatStatusResponse(
-      chatStatus: SquareChatStatus.fromJson(json["chatStatus"]),
+      chatStatus: SquareChatStatus.fromJson(json["chatStatus"] ?? {}),
     );
   }
 }
@@ -16836,7 +16835,7 @@ class GetSquareFeatureSetResponse {
 
   factory GetSquareFeatureSetResponse.fromJson(Map json) {
     return GetSquareFeatureSetResponse(
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
     );
   }
 }
@@ -16907,7 +16906,7 @@ class GetSquareMemberRelationResponse {
     return GetSquareMemberRelationResponse(
       squareMid: json["squareMid"],
       targetSquareMemberMid: json["targetSquareMemberMid"],
-      relation: SquareMemberRelation.fromJson(json["relation"]),
+      relation: SquareMemberRelation.fromJson(json["relation"] ?? {}),
     );
   }
 }
@@ -16925,7 +16924,7 @@ class GetSquareMemberRelationsRequest {
 
   factory GetSquareMemberRelationsRequest.fromJson(Map json) {
     return GetSquareMemberRelationsRequest(
-      state: SquareMemberRelationState.fromValue(json["state"]),
+      state: SquareMemberRelationState.fromValue(json["state"] ?? 0),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
     );
@@ -16945,10 +16944,10 @@ class GetSquareMemberRelationsResponse {
 
   factory GetSquareMemberRelationsResponse.fromJson(Map json) {
     return GetSquareMemberRelationsResponse(
-      squareMembers: List.from(json["squareMembers"])
+      squareMembers: List.from(json["squareMembers"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      relations: Map.from(json["relations"]),
+      relations: Map.from(json["relations"] ?? {}),
       continuationToken: json["continuationToken"],
     );
   }
@@ -16983,10 +16982,10 @@ class GetSquareMemberResponse {
 
   factory GetSquareMemberResponse.fromJson(Map json) {
     return GetSquareMemberResponse(
-      squareMember: SquareMember.fromJson(json["squareMember"]),
-      relation: SquareMemberRelation.fromJson(json["relation"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
+      relation: SquareMemberRelation.fromJson(json["relation"] ?? {}),
       oneOnOneChatMid: json["oneOnOneChatMid"],
-      contentsAttribute: ContentsAttribute.fromValue(json["contentsAttribute"]),
+      contentsAttribute: ContentsAttribute.fromValue(json["contentsAttribute"] ?? 0),
     );
   }
 }
@@ -17003,7 +17002,7 @@ class GetSquareMembersBySquareRequest {
   factory GetSquareMembersBySquareRequest.fromJson(Map json) {
     return GetSquareMembersBySquareRequest(
       squareMid: json["squareMid"],
-      squareMemberMids: List.from(json["squareMemberMids"]),
+      squareMemberMids: List.from(json["squareMemberMids"] ?? []),
     );
   }
 }
@@ -17019,10 +17018,10 @@ class GetSquareMembersBySquareResponse {
 
   factory GetSquareMembersBySquareResponse.fromJson(Map json) {
     return GetSquareMembersBySquareResponse(
-      members: List.from(json["members"])
+      members: List.from(json["members"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      contentsAttributes: Map.from(json["contentsAttributes"]),
+      contentsAttributes: Map.from(json["contentsAttributes"] ?? {}),
     );
   }
 }
@@ -17036,7 +17035,7 @@ class GetSquareMembersRequest {
 
   factory GetSquareMembersRequest.fromJson(Map json) {
     return GetSquareMembersRequest(
-      mids: List.from(json["mids"]),
+      mids: List.from(json["mids"] ?? []),
     );
   }
 }
@@ -17050,7 +17049,7 @@ class GetSquareMembersResponse {
 
   factory GetSquareMembersResponse.fromJson(Map json) {
     return GetSquareMembersResponse(
-      members: Map.from(json["members"]),
+      members: Map.from(json["members"] ?? {}),
     );
   }
 }
@@ -17090,13 +17089,13 @@ class GetSquareResponse {
 
   factory GetSquareResponse.fromJson(Map json) {
     return GetSquareResponse(
-      square: Square.fromJson(json["square"]),
-      myMembership: SquareMember.fromJson(json["myMembership"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
-      extraInfo: SquareExtraInfo.fromJson(json["extraInfo"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      myMembership: SquareMember.fromJson(json["myMembership"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
+      extraInfo: SquareExtraInfo.fromJson(json["extraInfo"] ?? {}),
     );
   }
 }
@@ -17124,7 +17123,7 @@ class GetSquareStatusResponse {
 
   factory GetSquareStatusResponse.fromJson(Map json) {
     return GetSquareStatusResponse(
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
     );
   }
 }
@@ -17190,9 +17189,9 @@ class GetSquareThreadResponse {
 
   factory GetSquareThreadResponse.fromJson(Map json) {
     return GetSquareThreadResponse(
-      squareThread: SquareThread.fromJson(json["squareThread"]),
-      myThreadMember: SquareThreadMember.fromJson(json["myThreadMember"]),
-      rootMessage: SquareMessage.fromJson(json["rootMessage"]),
+      squareThread: SquareThread.fromJson(json["squareThread"] ?? {}),
+      myThreadMember: SquareThreadMember.fromJson(json["myThreadMember"] ?? {}),
+      rootMessage: SquareMessage.fromJson(json["rootMessage"] ?? {}),
     );
   }
 }
@@ -17208,7 +17207,7 @@ class GetStudentInformationResponse {
 
   factory GetStudentInformationResponse.fromJson(Map json) {
     return GetStudentInformationResponse(
-      studentInformation: StudentInformation.fromJson(json["studentInformation"]),
+      studentInformation: StudentInformation.fromJson(json["studentInformation"] ?? {}),
       isValid: json["isValid"],
     );
   }
@@ -17226,7 +17225,7 @@ class GetSubscriptionPlansRequest {
   factory GetSubscriptionPlansRequest.fromJson(Map json) {
     return GetSubscriptionPlansRequest(
       subscriptionService: json["subscriptionService"],
-      storeCode: Ob1_K1.fromValue(json["storeCode"]),
+      storeCode: Ob1_K1.fromValue(json["storeCode"] ?? 0),
     );
   }
 }
@@ -17240,7 +17239,7 @@ class GetSubscriptionPlansResponse {
 
   factory GetSubscriptionPlansResponse.fromJson(Map json) {
     return GetSubscriptionPlansResponse(
-      plans: List.from(json["plans"])
+      plans: List.from(json["plans"] ?? [])
           .map((e) => SubscriptionPlan.fromJson(e))
           .toList(),
     );
@@ -17274,9 +17273,9 @@ class GetSubscriptionStatusResponse {
 
   factory GetSubscriptionStatusResponse.fromJson(Map json) {
     return GetSubscriptionStatusResponse(
-      subscriptions: Map.from(json["subscriptions"]),
+      subscriptions: Map.from(json["subscriptions"] ?? {}),
       hasValidStudentInformation: json["hasValidStudentInformation"],
-      otherOwnedSubscriptions: Map.from(json["otherOwnedSubscriptions"]),
+      otherOwnedSubscriptions: Map.from(json["otherOwnedSubscriptions"] ?? {}),
     );
   }
 }
@@ -17290,7 +17289,7 @@ class GetSuggestDictionarySettingResponse {
 
   factory GetSuggestDictionarySettingResponse.fromJson(Map json) {
     return GetSuggestDictionarySettingResponse(
-      results: List.from(json["results"])
+      results: List.from(json["results"] ?? [])
           .map((e) => SuggestDictionarySetting.fromJson(e))
           .toList(),
     );
@@ -17308,8 +17307,8 @@ class GetSuggestResourcesV2Request {
 
   factory GetSuggestResourcesV2Request.fromJson(Map json) {
     return GetSuggestResourcesV2Request(
-      productType: Ob1_O0.fromValue(json["productType"]),
-      productIds: List.from(json["productIds"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
+      productIds: List.from(json["productIds"] ?? []),
     );
   }
 }
@@ -17323,14 +17322,14 @@ class GetSuggestResourcesV2Response {
 
   factory GetSuggestResourcesV2Response.fromJson(Map json) {
     return GetSuggestResourcesV2Response(
-      suggestResources: Map.from(json["suggestResources"]),
+      suggestResources: Map.from(json["suggestResources"] ?? {}),
     );
   }
 }
 
 class GetSuggestTrialRecommendationResponse {
   final List<SuggestTrialRecommendation> recommendations;
-  final Int64 expiresAt;
+  final dynamic expiresAt;
   final String recommendationGrouping;
 
   GetSuggestTrialRecommendationResponse({
@@ -17341,7 +17340,7 @@ class GetSuggestTrialRecommendationResponse {
 
   factory GetSuggestTrialRecommendationResponse.fromJson(Map json) {
     return GetSuggestTrialRecommendationResponse(
-      recommendations: List.from(json["recommendations"])
+      recommendations: List.from(json["recommendations"] ?? [])
           .map((e) => SuggestTrialRecommendation.fromJson(e))
           .toList(),
       expiresAt: json["expiresAt"],
@@ -17352,7 +17351,7 @@ class GetSuggestTrialRecommendationResponse {
 
 class GetTagClusterFileResponse {
   final String path;
-  final Int64 updatedTimeMillis;
+  final dynamic updatedTimeMillis;
 
   GetTagClusterFileResponse({
     required this.path,
@@ -17405,12 +17404,12 @@ class GetTaiwanBankBalanceResponse {
   factory GetTaiwanBankBalanceResponse.fromJson(Map json) {
     return GetTaiwanBankBalanceResponse(
       maintenaceText: json["maintenaceText"],
-      lineBankPromotions: List.from(json["lineBankPromotions"])
+      lineBankPromotions: List.from(json["lineBankPromotions"] ?? [])
           .map((e) => LineBankPromotion.fromJson(e))
           .toList(),
-      taiwanBankBalanceInfo: TaiwanBankBalanceInfo.fromJson(json["taiwanBankBalanceInfo"]),
-      lineBankShortcutInfo: LineBankShortcutInfo.fromJson(json["lineBankShortcutInfo"]),
-      loginParameters: TaiwanBankLoginParameters.fromJson(json["loginParameters"]),
+      taiwanBankBalanceInfo: TaiwanBankBalanceInfo.fromJson(json["taiwanBankBalanceInfo"] ?? {}),
+      lineBankShortcutInfo: LineBankShortcutInfo.fromJson(json["lineBankShortcutInfo"] ?? {}),
+      loginParameters: TaiwanBankLoginParameters.fromJson(json["loginParameters"] ?? {}),
     );
   }
 }
@@ -17429,8 +17428,8 @@ class GetTargetProfileResponse {
   factory GetTargetProfileResponse.fromJson(Map json) {
     return GetTargetProfileResponse(
       targetUserMid: json["targetUserMid"],
-      userType: LN0_X0.fromValue(json["userType"]),
-      targetProfileDetail: TargetProfileDetail.fromJson(json["targetProfileDetail"]),
+      userType: LN0_X0.fromValue(json["userType"] ?? 0),
+      targetProfileDetail: TargetProfileDetail.fromJson(json["targetProfileDetail"] ?? {}),
     );
   }
 }
@@ -17460,10 +17459,10 @@ class GetTargetProfilesRequest {
 
   factory GetTargetProfilesRequest.fromJson(Map json) {
     return GetTargetProfilesRequest(
-      targetUsers: List.from(json["targetUsers"])
+      targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetTargetProfileTarget.fromJson(e))
           .toList(),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -17477,7 +17476,7 @@ class GetTargetProfilesResponse {
 
   factory GetTargetProfilesResponse.fromJson(Map json) {
     return GetTargetProfilesResponse(
-      responses: List.from(json["responses"])
+      responses: List.from(json["responses"] ?? [])
           .map((e) => GetTargetProfileResponse.fromJson(e))
           .toList(),
     );
@@ -17495,7 +17494,7 @@ class GetTargetingPopupResponse {
 
   factory GetTargetingPopupResponse.fromJson(Map json) {
     return GetTargetingPopupResponse(
-      targetingPopups: List.from(json["targetingPopups"])
+      targetingPopups: List.from(json["targetingPopups"] ?? [])
           .map((e) => PopupProperty.fromJson(e))
           .toList(),
       intervalTimeSec: json["intervalTimeSec"],
@@ -17533,11 +17532,11 @@ class GetThaiBankBalanceResponse {
   factory GetThaiBankBalanceResponse.fromJson(Map json) {
     return GetThaiBankBalanceResponse(
       maintenaceText: json["maintenaceText"],
-      thaiBankBalanceInfo: ThaiBankBalanceInfo.fromJson(json["thaiBankBalanceInfo"]),
-      lineBankPromotions: List.from(json["lineBankPromotions"])
+      thaiBankBalanceInfo: ThaiBankBalanceInfo.fromJson(json["thaiBankBalanceInfo"] ?? {}),
+      lineBankPromotions: List.from(json["lineBankPromotions"] ?? [])
           .map((e) => LineBankPromotion.fromJson(e))
           .toList(),
-      lineBankShortcutInfo: LineBankShortcutInfo.fromJson(json["lineBankShortcutInfo"]),
+      lineBankShortcutInfo: LineBankShortcutInfo.fromJson(json["lineBankShortcutInfo"] ?? {}),
     );
   }
 }
@@ -17551,7 +17550,7 @@ class GetTotalCoinBalanceRequest {
 
   factory GetTotalCoinBalanceRequest.fromJson(Map json) {
     return GetTotalCoinBalanceRequest(
-      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"]),
+      appStoreCode: jO0_EnumC27533B.fromValue(json["appStoreCode"] ?? 0),
     );
   }
 }
@@ -17583,7 +17582,7 @@ class GetTotalCoinBalanceResponse {
 }
 
 class GetUserCollectionsRequest {
-  final Int64 lastUpdatedTimeMillis;
+  final dynamic lastUpdatedTimeMillis;
   final bool includeSummary;
   final Ob1_O0 productType;
 
@@ -17597,7 +17596,7 @@ class GetUserCollectionsRequest {
     return GetUserCollectionsRequest(
       lastUpdatedTimeMillis: json["lastUpdatedTimeMillis"],
       includeSummary: json["includeSummary"],
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
     );
   }
 }
@@ -17613,7 +17612,7 @@ class GetUserCollectionsResponse {
 
   factory GetUserCollectionsResponse.fromJson(Map json) {
     return GetUserCollectionsResponse(
-      collections: List.from(json["collections"])
+      collections: List.from(json["collections"] ?? [])
           .map((e) => Collection.fromJson(e))
           .toList(),
       updated: json["updated"],
@@ -17630,7 +17629,7 @@ class GetUserProfileResponse {
 
   factory GetUserProfileResponse.fromJson(Map json) {
     return GetUserProfileResponse(
-      userProfile: UserProfile.fromJson(json["userProfile"]),
+      userProfile: UserProfile.fromJson(json["userProfile"] ?? {}),
     );
   }
 }
@@ -17644,7 +17643,7 @@ class GetUserSettingsRequest {
 
   factory GetUserSettingsRequest.fromJson(Map json) {
     return GetUserSettingsRequest(
-      requestedAttrs: List.from(json["requestedAttrs"]),
+      requestedAttrs: List.from(json["requestedAttrs"] ?? []),
     );
   }
 }
@@ -17660,8 +17659,8 @@ class GetUserSettingsResponse {
 
   factory GetUserSettingsResponse.fromJson(Map json) {
     return GetUserSettingsResponse(
-      requestedAttrs: List.from(json["requestedAttrs"]),
-      userSettings: SquareUserSettings.fromJson(json["userSettings"]),
+      requestedAttrs: List.from(json["requestedAttrs"] ?? []),
+      userSettings: SquareUserSettings.fromJson(json["userSettings"] ?? {}),
     );
   }
 }
@@ -17693,7 +17692,7 @@ class GetUserVectorResponse {
 
   factory GetUserVectorResponse.fromJson(Map json) {
     return GetUserVectorResponse(
-      userVector: List.from(json["userVector"]),
+      userVector: List.from(json["userVector"] ?? []),
       majorVersion: json["majorVersion"],
       minorVersion: json["minorVersion"],
     );
@@ -17712,7 +17711,7 @@ class GetUsersMappedByProfileRequest {
   factory GetUsersMappedByProfileRequest.fromJson(Map json) {
     return GetUsersMappedByProfileRequest(
       profileId: json["profileId"],
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -17726,7 +17725,7 @@ class GetUsersMappedByProfileResponse {
 
   factory GetUsersMappedByProfileResponse.fromJson(Map json) {
     return GetUsersMappedByProfileResponse(
-      mappedMids: List.from(json["mappedMids"]),
+      mappedMids: List.from(json["mappedMids"] ?? []),
     );
   }
 }
@@ -17735,7 +17734,7 @@ class GlobalEvent {
   final Pb1_EnumC13209v5 type;
   final int minDelayInMinutes;
   final int maxDelayInMinutes;
-  final Int64 createTimeMillis;
+  final dynamic createTimeMillis;
   final bool maxDelayHardLimit;
 
   GlobalEvent({
@@ -17748,7 +17747,7 @@ class GlobalEvent {
 
   factory GlobalEvent.fromJson(Map json) {
     return GlobalEvent(
-      type: Pb1_EnumC13209v5.fromValue(json["type"]),
+      type: Pb1_EnumC13209v5.fromValue(json["type"] ?? 0),
       minDelayInMinutes: json["minDelayInMinutes"],
       maxDelayInMinutes: json["maxDelayInMinutes"],
       createTimeMillis: json["createTimeMillis"],
@@ -17762,7 +17761,7 @@ class GroupCall {
   final String chatMid;
   final String hostMid;
   final List<String> memberMids;
-  final Int64 started;
+  final dynamic started;
   final Pb1_EnumC13237x5 mediaType;
   final Pb1_EnumC13251y5 protocol;
   final int maxAllowableMembers;
@@ -17783,10 +17782,10 @@ class GroupCall {
       online: json["online"],
       chatMid: json["chatMid"],
       hostMid: json["hostMid"],
-      memberMids: List.from(json["memberMids"]),
+      memberMids: List.from(json["memberMids"] ?? []),
       started: json["started"],
-      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"]),
-      protocol: Pb1_EnumC13251y5.fromValue(json["protocol"]),
+      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"] ?? 0),
+      protocol: Pb1_EnumC13251y5.fromValue(json["protocol"] ?? 0),
       maxAllowableMembers: json["maxAllowableMembers"],
     );
   }
@@ -17834,11 +17833,11 @@ class GroupCallRoute {
   factory GroupCallRoute.fromJson(Map json) {
     return GroupCallRoute(
       token: json["token"],
-      cscf: CallHost.fromJson(json["cscf"]),
-      mix: CallHost.fromJson(json["mix"]),
+      cscf: CallHost.fromJson(json["cscf"] ?? {}),
+      mix: CallHost.fromJson(json["mix"] ?? {}),
       hostMid: json["hostMid"],
-      capabilities: List.from(json["capabilities"]),
-      proto: Pb1_EnumC13251y5.fromValue(json["proto"]),
+      capabilities: List.from(json["capabilities"] ?? []),
+      proto: Pb1_EnumC13251y5.fromValue(json["proto"] ?? 0),
       voipAddress: json["voipAddress"],
       voipUdpPort: json["voipUdpPort"],
       voipTcpPort: json["voipTcpPort"],
@@ -17857,7 +17856,7 @@ class GroupCallRoute {
 class GroupCallUrl {
   final String urlId;
   final String title;
-  final Int64 createdTimeMillis;
+  final dynamic createdTimeMillis;
 
   GroupCallUrl({
     required this.urlId,
@@ -17878,8 +17877,8 @@ class GroupExtra {
   final String creator;
   final bool preventedJoinByTicket;
   final String invitationTicket;
-  final Map<String, Int64> memberMids;
-  final Map<String, Int64> inviteeMids;
+  final Map<String, dynamic> memberMids;
+  final Map<String, dynamic> inviteeMids;
   final bool addFriendDisabled;
   final bool ticketDisabled;
   final bool autoName;
@@ -17900,8 +17899,8 @@ class GroupExtra {
       creator: json["creator"],
       preventedJoinByTicket: json["preventedJoinByTicket"],
       invitationTicket: json["invitationTicket"],
-      memberMids: Map.from(json["memberMids"]),
-      inviteeMids: Map.from(json["inviteeMids"]),
+      memberMids: Map.from(json["memberMids"] ?? {}),
+      inviteeMids: Map.from(json["inviteeMids"] ?? {}),
       addFriendDisabled: json["addFriendDisabled"],
       ticketDisabled: json["ticketDisabled"],
       autoName: json["autoName"],
@@ -17950,7 +17949,7 @@ class HeaderInfo {
   factory HeaderInfo.fromJson(Map json) {
     return HeaderInfo(
       totalBalance: json["totalBalance"],
-      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"]),
+      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"] ?? {}),
     );
   }
 }
@@ -17984,7 +17983,7 @@ class HomeCategory {
     return HomeCategory(
       id: json["id"],
       title: json["title"],
-      ids: List.from(json["ids"]),
+      ids: List.from(json["ids"] ?? []),
     );
   }
 }
@@ -17993,8 +17992,8 @@ class HomeEffect {
   final String id;
   final String resourceUrl;
   final String checksum;
-  final Int64 startDate;
-  final Int64 endDate;
+  final dynamic startDate;
+  final dynamic endDate;
 
   HomeEffect({
     required this.id,
@@ -18022,7 +18021,7 @@ class HomeService {
   final String storeUrl;
   final String iconUrl;
   final String pictogramIconUrl;
-  final Int64 badgeUpdatedTimeMillis;
+  final dynamic badgeUpdatedTimeMillis;
   final Eg_EnumC8927a badgeType;
   final String serviceDescription;
   final bool iconThemeDisabled;
@@ -18049,7 +18048,7 @@ class HomeService {
       iconUrl: json["iconUrl"],
       pictogramIconUrl: json["pictogramIconUrl"],
       badgeUpdatedTimeMillis: json["badgeUpdatedTimeMillis"],
-      badgeType: Eg_EnumC8927a.fromValue(json["badgeType"]),
+      badgeType: Eg_EnumC8927a.fromValue(json["badgeType"] ?? 0),
       serviceDescription: json["serviceDescription"],
       iconThemeDisabled: json["iconThemeDisabled"],
     );
@@ -18129,7 +18128,7 @@ class IdentifierConfirmationRequest {
 
   factory IdentifierConfirmationRequest.fromJson(Map json) {
     return IdentifierConfirmationRequest(
-      metaData: Map.from(json["metaData"]),
+      metaData: Map.from(json["metaData"] ?? {}),
       forceRegistration: json["forceRegistration"],
       verificationCode: json["verificationCode"],
     );
@@ -18153,11 +18152,11 @@ class IdentityCredentialRequest {
 
   factory IdentityCredentialRequest.fromJson(Map json) {
     return IdentityCredentialRequest(
-      metaData: Map.from(json["metaData"]),
-      identityProvider: IdentityProvider.fromValue(json["identityProvider"]),
+      metaData: Map.from(json["metaData"] ?? {}),
+      identityProvider: IdentityProvider.fromValue(json["identityProvider"] ?? 0),
       cipherKeyId: json["cipherKeyId"],
       cipherText: json["cipherText"],
-      confirmationRequest: IdentifierConfirmationRequest.fromJson(json["confirmationRequest"]),
+      confirmationRequest: IdentifierConfirmationRequest.fromJson(json["confirmationRequest"] ?? {}),
     );
   }
 }
@@ -18166,7 +18165,7 @@ class IdentityCredentialResponse {
   final Map<String, String> metaData;
   final Pb1_F5 responseType;
   final String confirmationVerifier;
-  final Int64 timeoutInSeconds;
+  final dynamic timeoutInSeconds;
 
   IdentityCredentialResponse({
     required this.metaData,
@@ -18177,8 +18176,8 @@ class IdentityCredentialResponse {
 
   factory IdentityCredentialResponse.fromJson(Map json) {
     return IdentityCredentialResponse(
-      metaData: Map.from(json["metaData"]),
-      responseType: Pb1_F5.fromValue(json["responseType"]),
+      metaData: Map.from(json["metaData"] ?? {}),
+      responseType: Pb1_F5.fromValue(json["responseType"] ?? 0),
       confirmationVerifier: json["confirmationVerifier"],
       timeoutInSeconds: json["timeoutInSeconds"],
     );
@@ -18220,7 +18219,7 @@ class ImageTextProperty {
 
   factory ImageTextProperty.fromJson(Map json) {
     return ImageTextProperty(
-      status: Ob1_EnumC12656r0.fromValue(json["status"]),
+      status: Ob1_EnumC12656r0.fromValue(json["status"] ?? 0),
       plainText: json["plainText"],
       nameTextMaxCharacterCount: json["nameTextMaxCharacterCount"],
       encryptedText: json["encryptedText"],
@@ -18229,9 +18228,9 @@ class ImageTextProperty {
 }
 
 class InstantNews {
-  final Int64 newsId;
+  final dynamic newsId;
   final String newsService;
-  final Int64 ttlMillis;
+  final dynamic ttlMillis;
   final String category;
   final String categoryBgColor;
   final String categoryColor;
@@ -18278,7 +18277,7 @@ class InviteFriendsRequest {
   factory InviteFriendsRequest.fromJson(Map json) {
     return InviteFriendsRequest(
       campaignId: json["campaignId"],
-      invitees: List.from(json["invitees"]),
+      invitees: List.from(json["invitees"] ?? []),
     );
   }
 }
@@ -18292,7 +18291,7 @@ class InviteFriendsResponse {
 
   factory InviteFriendsResponse.fromJson(Map json) {
     return InviteFriendsResponse(
-      result: fN0_EnumC24469a.fromValue(json["result"]),
+      result: fN0_EnumC24469a.fromValue(json["result"] ?? 0),
     );
   }
 }
@@ -18312,7 +18311,7 @@ class InviteIntoChatRequest {
     return InviteIntoChatRequest(
       reqSeq: json["reqSeq"],
       chatMid: json["chatMid"],
-      targetUserMids: List.from(json["targetUserMids"]),
+      targetUserMids: List.from(json["targetUserMids"] ?? []),
     );
   }
 }
@@ -18328,7 +18327,7 @@ class InviteIntoSquareChatRequest {
 
   factory InviteIntoSquareChatRequest.fromJson(Map json) {
     return InviteIntoSquareChatRequest(
-      inviteeMids: List.from(json["inviteeMids"]),
+      inviteeMids: List.from(json["inviteeMids"] ?? []),
       squareChatMid: json["squareChatMid"],
     );
   }
@@ -18343,7 +18342,7 @@ class InviteIntoSquareChatResponse {
 
   factory InviteIntoSquareChatResponse.fromJson(Map json) {
     return InviteIntoSquareChatResponse(
-      inviteeMids: List.from(json["inviteeMids"]),
+      inviteeMids: List.from(json["inviteeMids"] ?? []),
     );
   }
 }
@@ -18366,7 +18365,7 @@ class InviteToChangeRoleRequest {
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
       targetMid: json["targetMid"],
-      targetRole: LiveTalkRole.fromValue(json["targetRole"]),
+      targetRole: LiveTalkRole.fromValue(json["targetRole"] ?? 0),
     );
   }
 }
@@ -18406,7 +18405,7 @@ class InviteToLiveTalkRequest {
     return InviteToLiveTalkRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      invitees: List.from(json["invitees"]),
+      invitees: List.from(json["invitees"] ?? []),
     );
   }
 }
@@ -18459,7 +18458,7 @@ class InviteToSquareRequest {
   factory InviteToSquareRequest.fromJson(Map json) {
     return InviteToSquareRequest(
       squareMid: json["squareMid"],
-      invitees: List.from(json["invitees"]),
+      invitees: List.from(json["invitees"] ?? []),
       squareChatMid: json["squareChatMid"],
     );
   }
@@ -18493,7 +18492,7 @@ class IsProductForCollectionsRequest {
 
   factory IsProductForCollectionsRequest.fromJson(Map json) {
     return IsProductForCollectionsRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
     );
   }
@@ -18592,10 +18591,10 @@ class IssueV3TokenForPrimaryRequest {
 class IssueV3TokenForPrimaryResponse {
   final String accessToken;
   final String refreshToken;
-  final Int64 durationUntilRefreshInSec;
+  final dynamic durationUntilRefreshInSec;
   final RefreshApiRetryPolicy refreshApiRetryPolicy;
   final String loginSessionId;
-  final Int64 tokenIssueTimeEpochSec;
+  final dynamic tokenIssueTimeEpochSec;
   final String mid;
 
   IssueV3TokenForPrimaryResponse({
@@ -18613,7 +18612,7 @@ class IssueV3TokenForPrimaryResponse {
       accessToken: json["accessToken"],
       refreshToken: json["refreshToken"],
       durationUntilRefreshInSec: json["durationUntilRefreshInSec"],
-      refreshApiRetryPolicy: RefreshApiRetryPolicy.fromJson(json["refreshApiRetryPolicy"]),
+      refreshApiRetryPolicy: RefreshApiRetryPolicy.fromJson(json["refreshApiRetryPolicy"] ?? {}),
       loginSessionId: json["loginSessionId"],
       tokenIssueTimeEpochSec: json["tokenIssueTimeEpochSec"],
       mid: json["mid"],
@@ -18630,7 +18629,7 @@ class IssueWebAuthDetailsForSecondAuthResponse {
 
   factory IssueWebAuthDetailsForSecondAuthResponse.fromJson(Map json) {
     return IssueWebAuthDetailsForSecondAuthResponse(
-      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"]),
+      webAuthDetails: WebAuthDetails.fromJson(json["webAuthDetails"] ?? {}),
     );
   }
 }
@@ -18661,7 +18660,7 @@ class JoinChatByCallUrlResponse {
 
   factory JoinChatByCallUrlResponse.fromJson(Map json) {
     return JoinChatByCallUrlResponse(
-      chat: Chat.fromJson(json["chat"]),
+      chat: Chat.fromJson(json["chat"] ?? {}),
     );
   }
 }
@@ -18684,7 +18683,7 @@ class JoinLiveTalkRequest {
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
       wantToSpeak: json["wantToSpeak"],
-      claimAdult: BooleanState.fromValue(json["claimAdult"]),
+      claimAdult: BooleanState.fromValue(json["claimAdult"] ?? 0),
     );
   }
 }
@@ -18772,9 +18771,9 @@ class JoinSquareChatResponse {
 
   factory JoinSquareChatResponse.fromJson(Map json) {
     return JoinSquareChatResponse(
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"]),
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"] ?? {}),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
     );
   }
 }
@@ -18797,10 +18796,10 @@ class JoinSquareRequest {
   factory JoinSquareRequest.fromJson(Map json) {
     return JoinSquareRequest(
       squareMid: json["squareMid"],
-      member: SquareMember.fromJson(json["member"]),
+      member: SquareMember.fromJson(json["member"] ?? {}),
       squareChatMid: json["squareChatMid"],
-      joinValue: SquareJoinMethodValue.fromJson(json["joinValue"]),
-      claimAdult: BooleanState.fromValue(json["claimAdult"]),
+      joinValue: SquareJoinMethodValue.fromJson(json["joinValue"] ?? {}),
+      claimAdult: BooleanState.fromValue(json["claimAdult"] ?? 0),
     );
   }
 }
@@ -18830,15 +18829,15 @@ class JoinSquareResponse {
 
   factory JoinSquareResponse.fromJson(Map json) {
     return JoinSquareResponse(
-      square: Square.fromJson(json["square"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareMember: SquareMember.fromJson(json["squareMember"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
-      squareChat: SquareChat.fromJson(json["squareChat"]),
-      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"]),
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
+      squareChatStatus: SquareChatStatus.fromJson(json["squareChatStatus"] ?? {}),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
     );
   }
 }
@@ -18869,7 +18868,7 @@ class JoinSquareThreadResponse {
 
   factory JoinSquareThreadResponse.fromJson(Map json) {
     return JoinSquareThreadResponse(
-      threadMember: SquareThreadMember.fromJson(json["threadMember"]),
+      threadMember: SquareThreadMember.fromJson(json["threadMember"] ?? {}),
     );
   }
 }
@@ -18885,10 +18884,10 @@ class JoinedMemberships {
 
   factory JoinedMemberships.fromJson(Map json) {
     return JoinedMemberships(
-      subscribing: List.from(json["subscribing"])
+      subscribing: List.from(json["subscribing"] ?? [])
           .map((e) => MemberInfo.fromJson(e))
           .toList(),
-      expired: List.from(json["expired"])
+      expired: List.from(json["expired"] ?? [])
           .map((e) => MemberInfo.fromJson(e))
           .toList(),
     );
@@ -18910,7 +18909,7 @@ class KickOutLiveTalkParticipantsRequest {
     return KickOutLiveTalkParticipantsRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      target: LiveTalkKickOutTarget.fromJson(json["target"]),
+      target: LiveTalkKickOutTarget.fromJson(json["target"] ?? {}),
     );
   }
 }
@@ -18927,7 +18926,7 @@ class KickoutFromGroupCallRequest {
   factory KickoutFromGroupCallRequest.fromJson(Map json) {
     return KickoutFromGroupCallRequest(
       chatMid: json["chatMid"],
-      targetMids: List.from(json["targetMids"]),
+      targetMids: List.from(json["targetMids"] ?? []),
     );
   }
 }
@@ -18949,10 +18948,10 @@ class LFLClusterV2 {
     return LFLClusterV2(
       majorVersion: json["majorVersion"],
       minorVersion: json["minorVersion"],
-      tags: List.from(json["tags"])
+      tags: List.from(json["tags"] ?? [])
           .map((e) => Tag.fromJson(e))
           .toList(),
-      products: List.from(json["products"])
+      products: List.from(json["products"] ?? [])
           .map((e) => Product.fromJson(e))
           .toList(),
     );
@@ -18987,7 +18986,7 @@ class LIFFMenuColor {
   factory LIFFMenuColor.fromJson(Map json) {
     return LIFFMenuColor(
       iconColor: json["iconColor"],
-      statusBarColor: Qj_EnumC13585b.fromValue(json["statusBarColor"]),
+      statusBarColor: Qj_EnumC13585b.fromValue(json["statusBarColor"] ?? 0),
       titleTextColor: json["titleTextColor"],
       titleSubtextColor: json["titleSubtextColor"],
       titleButtonColor: json["titleButtonColor"],
@@ -19011,8 +19010,8 @@ class LIFFMenuColorSetting {
 
   factory LIFFMenuColorSetting.fromJson(Map json) {
     return LIFFMenuColorSetting(
-      lightModeColor: LIFFMenuColor.fromJson(json["lightModeColor"]),
-      darkModeColor: LIFFMenuColor.fromJson(json["darkModeColor"]),
+      lightModeColor: LIFFMenuColor.fromJson(json["lightModeColor"] ?? {}),
+      darkModeColor: LIFFMenuColor.fromJson(json["darkModeColor"] ?? {}),
     );
   }
 }
@@ -19120,26 +19119,26 @@ class LN0_C11274d {
 
   factory LN0_C11274d.fromJson(Map json) {
     return LN0_C11274d(
-      invalid: AddMetaInvalid.fromJson(json["invalid"]),
-      byPhone: AddMetaByPhone.fromJson(json["byPhone"]),
-      bySearchId: AddMetaBySearchId.fromJson(json["bySearchId"]),
-      byUserTicket: AddMetaByUserTicket.fromJson(json["byUserTicket"]),
-      groupMemberList: AddMetaGroupMemberList.fromJson(json["groupMemberList"]),
+      invalid: AddMetaInvalid.fromJson(json["invalid"] ?? {}),
+      byPhone: AddMetaByPhone.fromJson(json["byPhone"] ?? {}),
+      bySearchId: AddMetaBySearchId.fromJson(json["bySearchId"] ?? {}),
+      byUserTicket: AddMetaByUserTicket.fromJson(json["byUserTicket"] ?? {}),
+      groupMemberList: AddMetaGroupMemberList.fromJson(json["groupMemberList"] ?? {}),
       timelineCPF: json["timelineCPF"],
       smartChannelCPF: json["smartChannelCPF"],
       openchatCPF: json["openchatCPF"],
       beaconBanner: json["beaconBanner"],
       friendRecommendation: json["friendRecommendation"],
       homeRecommendation: json["homeRecommendation"],
-      shareContact: AddMetaShareContact.fromJson(json["shareContact"]),
-      strangerMessage: AddMetaStrangerMessage.fromJson(json["strangerMessage"]),
-      strangerCall: AddMetaStrangerCall.fromJson(json["strangerCall"]),
-      mentionInChat: AddMetaMentionInChat.fromJson(json["mentionInChat"]),
+      shareContact: AddMetaShareContact.fromJson(json["shareContact"] ?? {}),
+      strangerMessage: AddMetaStrangerMessage.fromJson(json["strangerMessage"] ?? {}),
+      strangerCall: AddMetaStrangerCall.fromJson(json["strangerCall"] ?? {}),
+      mentionInChat: AddMetaMentionInChat.fromJson(json["mentionInChat"] ?? {}),
       timeline: json["timeline"],
       unifiedSearch: json["unifiedSearch"],
       lineLab: json["lineLab"],
       lineToCall: json["lineToCall"],
-      groupVideo: AddMetaGroupVideoCall.fromJson(json["groupVideo"]),
+      groupVideo: AddMetaGroupVideoCall.fromJson(json["groupVideo"] ?? {}),
       friendRequest: json["friendRequest"],
       liveViewer: json["liveViewer"],
       lineThings: json["lineThings"],
@@ -19148,17 +19147,17 @@ class LN0_C11274d {
       urlScheme: json["urlScheme"],
       addressBook: json["addressBook"],
       unifiedSearchOATab: json["unifiedSearchOATab"],
-      profileUndefined: AddMetaProfileUndefined.fromJson(json["profileUndefined"]),
+      profileUndefined: AddMetaProfileUndefined.fromJson(json["profileUndefined"] ?? {}),
       DEPRECATED_oaChatHeader: json["DEPRECATED_oaChatHeader"],
       chatMenu: json["chatMenu"],
       chatHeader: json["chatHeader"],
       homeTabCPF: json["homeTabCPF"],
       chatList: json["chatList"],
-      chatNote: AddMetaChatNote.fromJson(json["chatNote"]),
-      chatNoteMenu: AddMetaChatNoteMenu.fromJson(json["chatNoteMenu"]),
+      chatNote: AddMetaChatNote.fromJson(json["chatNote"] ?? {}),
+      chatNoteMenu: AddMetaChatNoteMenu.fromJson(json["chatNoteMenu"] ?? {}),
       walletTabCPF: json["walletTabCPF"],
       oaCall: json["oaCall"],
-      searchIdInUnifiedSearch: AddMetaSearchIdInUnifiedSearch.fromJson(json["searchIdInUnifiedSearch"]),
+      searchIdInUnifiedSearch: AddMetaSearchIdInUnifiedSearch.fromJson(json["searchIdInUnifiedSearch"] ?? {}),
       newsDigestADCPF: json["newsDigestADCPF"],
       albumCPF: json["albumCPF"],
       premiumAgreement: json["premiumAgreement"],
@@ -19235,8 +19234,8 @@ class LN0_V {
 
   factory LN0_V.fromJson(Map json) {
     return LN0_V(
-      user: UserBlockDetail.fromJson(json["user"]),
-      bot: BotBlockDetail.fromJson(json["bot"]),
+      user: UserBlockDetail.fromJson(json["user"] ?? {}),
+      bot: BotBlockDetail.fromJson(json["bot"] ?? {}),
       notBlocked: json["notBlocked"],
     );
   }
@@ -19255,8 +19254,8 @@ class LN0_Z {
 
   factory LN0_Z.fromJson(Map json) {
     return LN0_Z(
-      user: UserFriendDetail.fromJson(json["user"]),
-      bot: BotFriendDetail.fromJson(json["bot"]),
+      user: UserFriendDetail.fromJson(json["user"] ?? {}),
+      bot: BotFriendDetail.fromJson(json["bot"] ?? {}),
       notFriend: json["notFriend"],
     );
   }
@@ -19275,7 +19274,7 @@ class LN0_y0 {
 
   factory LN0_y0.fromJson(Map json) {
     return LN0_y0(
-      recommendationDetail: RecommendationDetail.fromJson(json["recommendationDetail"]),
+      recommendationDetail: RecommendationDetail.fromJson(json["recommendationDetail"] ?? {}),
       notRecommended: json["notRecommended"],
     );
   }
@@ -19296,7 +19295,7 @@ class LN0_z0 {
 
   factory LN0_z0.fromJson(Map json) {
     return LN0_z0(
-      sharedChat: RecommendationReasonSharedChat.fromJson(json["sharedChat"]),
+      sharedChat: RecommendationReasonSharedChat.fromJson(json["sharedChat"] ?? {}),
       reverseFriendByUserId: json["reverseFriendByUserId"],
       reverseFriendByQrCode: json["reverseFriendByQrCode"],
       reverseFriendByPhone: json["reverseFriendByPhone"],
@@ -19307,7 +19306,7 @@ class LN0_z0 {
 class LatestProductByAuthorItem {
   final String productId;
   final String displayName;
-  final Int64 version;
+  final dynamic version;
   final bool newFlag;
   final Ob1_I0 productResourceType;
   final Ob1_B0 popupLayer;
@@ -19327,15 +19326,15 @@ class LatestProductByAuthorItem {
       displayName: json["displayName"],
       version: json["version"],
       newFlag: json["newFlag"],
-      productResourceType: Ob1_I0.fromJson(json["productResourceType"]),
-      popupLayer: Ob1_B0.fromValue(json["popupLayer"]),
+      productResourceType: Ob1_I0.fromJson(json["productResourceType"] ?? {}),
+      popupLayer: Ob1_B0.fromValue(json["popupLayer"] ?? 0),
     );
   }
 }
 
 class LatestProductsByAuthorRequest {
   final Ob1_O0 productType;
-  final Int64 authorId;
+  final dynamic authorId;
   final int limit;
 
   LatestProductsByAuthorRequest({
@@ -19346,7 +19345,7 @@ class LatestProductsByAuthorRequest {
 
   factory LatestProductsByAuthorRequest.fromJson(Map json) {
     return LatestProductsByAuthorRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       authorId: json["authorId"],
       limit: json["limit"],
     );
@@ -19354,7 +19353,7 @@ class LatestProductsByAuthorRequest {
 }
 
 class LatestProductsByAuthorResponse {
-  final Int64 authorId;
+  final dynamic authorId;
   final String author;
   final List<LatestProductByAuthorItem> items;
 
@@ -19368,7 +19367,7 @@ class LatestProductsByAuthorResponse {
     return LatestProductsByAuthorResponse(
       authorId: json["authorId"],
       author: json["author"],
-      items: List.from(json["items"])
+      items: List.from(json["items"] ?? [])
           .map((e) => LatestProductByAuthorItem.fromJson(e))
           .toList(),
     );
@@ -19378,7 +19377,7 @@ class LatestProductsByAuthorResponse {
 class LeaveSquareChatRequest {
   final String squareChatMid;
   final bool sayGoodbye;
-  final Int64 squareChatMemberRevision;
+  final dynamic squareChatMemberRevision;
 
   LeaveSquareChatRequest({
     required this.squareChatMid,
@@ -19435,7 +19434,7 @@ class LeaveSquareThreadResponse {
 
   factory LeaveSquareThreadResponse.fromJson(Map json) {
     return LeaveSquareThreadResponse(
-      threadMember: SquareThreadMember.fromJson(json["threadMember"]),
+      threadMember: SquareThreadMember.fromJson(json["threadMember"] ?? {}),
     );
   }
 }
@@ -19444,7 +19443,7 @@ class LeftSquareMember {
   final String squareMemberMid;
   final String displayName;
   final String profileImageObsHash;
-  final Int64 updatedAt;
+  final dynamic updatedAt;
 
   LeftSquareMember({
     required this.squareMemberMid,
@@ -19480,8 +19479,8 @@ class LiffAdvertisingId {
     return LiffAdvertisingId(
       advertisingId: json["advertisingId"],
       tracking: json["tracking"],
-      att: Qj_EnumC13584a.fromValue(json["att"]),
-      skAdNetwork: SKAdNetwork.fromJson(json["skAdNetwork"]),
+      att: Qj_EnumC13584a.fromValue(json["att"] ?? 0),
+      skAdNetwork: SKAdNetwork.fromJson(json["skAdNetwork"] ?? {}),
     );
   }
 }
@@ -19512,7 +19511,7 @@ class LiffDeviceSetting {
   factory LiffDeviceSetting.fromJson(Map json) {
     return LiffDeviceSetting(
       videoAutoPlayAllowed: json["videoAutoPlayAllowed"],
-      advertisingId: LiffAdvertisingId.fromJson(json["advertisingId"]),
+      advertisingId: LiffAdvertisingId.fromJson(json["advertisingId"] ?? {}),
     );
   }
 }
@@ -19666,14 +19665,14 @@ class LiffView {
       titleButtonAreaBackgroundColor: json["titleButtonAreaBackgroundColor"],
       titleButtonAreaBorderColor: json["titleButtonAreaBorderColor"],
       suspendableV2: json["suspendableV2"],
-      menuStyle: Qj_EnumC13606x.fromValue(json["menuStyle"]),
+      menuStyle: Qj_EnumC13606x.fromValue(json["menuStyle"] ?? 0),
       moduleMode: json["moduleMode"],
       pinToHomeServiceId: json["pinToHomeServiceId"],
-      menuColorSetting: LIFFMenuColorSetting.fromJson(json["menuColorSetting"]),
+      menuColorSetting: LIFFMenuColorSetting.fromJson(json["menuColorSetting"] ?? {}),
       showPinInduction: json["showPinInduction"],
       appName: json["appName"],
-      adaptableColorSchemes: List.from(json["adaptableColorSchemes"]),
-      provider: Provider.fromJson(json["provider"]),
+      adaptableColorSchemes: List.from(json["adaptableColorSchemes"] ?? []),
+      provider: Provider.fromJson(json["provider"] ?? {}),
       basicAuthAllowed: json["basicAuthAllowed"],
       siriDonationAllowed: json["siriDonationAllowed"],
       transitionToNonLiffWithoutPopupAllowed: json["transitionToNonLiffWithoutPopupAllowed"],
@@ -19708,9 +19707,9 @@ class LiffViewRequest {
   factory LiffViewRequest.fromJson(Map json) {
     return LiffViewRequest(
       liffId: json["liffId"],
-      context: Qj_C13595l.fromJson(json["context"]),
+      context: Qj_C13595l.fromJson(json["context"] ?? {}),
       lang: json["lang"],
-      deviceSetting: LiffDeviceSetting.fromJson(json["deviceSetting"]),
+      deviceSetting: LiffDeviceSetting.fromJson(json["deviceSetting"] ?? {}),
       msit: json["msit"],
       subsequentLiff: json["subsequentLiff"],
       domain: json["domain"],
@@ -19731,8 +19730,8 @@ class LiffViewResponse {
   final Qj_a0 permanentLinkPattern;
   final SubLiffView subLiffView;
   final Map<int, int> revisions;
-  final Int64 accessTokenExpiresIn;
-  final Int64 accessTokenExpiresInWithRoom;
+  final dynamic accessTokenExpiresIn;
+  final dynamic accessTokenExpiresInWithRoom;
   final String liffId;
   final bool miniDomainAllowed;
   final String miniAppId;
@@ -19769,18 +19768,18 @@ class LiffViewResponse {
 
   factory LiffViewResponse.fromJson(Map json) {
     return LiffViewResponse(
-      view: LiffView.fromJson(json["view"]),
+      view: LiffView.fromJson(json["view"] ?? {}),
       contextToken: json["contextToken"],
       accessToken: json["accessToken"],
       featureToken: json["featureToken"],
-      features: List.from(json["features"]),
+      features: List.from(json["features"] ?? []),
       channelId: json["channelId"],
       idToken: json["idToken"],
-      scopes: List.from(json["scopes"]),
-      launchOptions: List.from(json["launchOptions"]),
-      permanentLinkPattern: Qj_a0.fromValue(json["permanentLinkPattern"]),
-      subLiffView: SubLiffView.fromJson(json["subLiffView"]),
-      revisions: Map.from(json["revisions"]),
+      scopes: List.from(json["scopes"] ?? []),
+      launchOptions: List.from(json["launchOptions"] ?? []),
+      permanentLinkPattern: Qj_a0.fromValue(json["permanentLinkPattern"] ?? 0),
+      subLiffView: SubLiffView.fromJson(json["subLiffView"] ?? {}),
+      revisions: Map.from(json["revisions"] ?? {}),
       accessTokenExpiresIn: json["accessTokenExpiresIn"],
       accessTokenExpiresInWithRoom: json["accessTokenExpiresInWithRoom"],
       liffId: json["liffId"],
@@ -19789,7 +19788,7 @@ class LiffViewResponse {
       miniHistoryServiceId: json["miniHistoryServiceId"],
       addToHomeV2Allowed: json["addToHomeV2Allowed"],
       addToHomeV2LineSchemeAllowed: json["addToHomeV2LineSchemeAllowed"],
-      fido: Qj_C13602t.fromJson(json["fido"]),
+      fido: Qj_C13602t.fromJson(json["fido"] ?? {}),
       omitLiffReferrer: json["omitLiffReferrer"],
     );
   }
@@ -19826,8 +19825,8 @@ class LiffWebLoginRequest {
     return LiffWebLoginRequest(
       hookedFullUrl: json["hookedFullUrl"],
       sessionString: json["sessionString"],
-      context: Qj_C13595l.fromJson(json["context"]),
-      deviceSetting: LiffDeviceSetting.fromJson(json["deviceSetting"]),
+      context: Qj_C13595l.fromJson(json["context"] ?? {}),
+      deviceSetting: LiffDeviceSetting.fromJson(json["deviceSetting"] ?? {}),
     );
   }
 }
@@ -19879,10 +19878,10 @@ class LineBankBalanceShortcut {
       iconUrl: json["iconUrl"],
       iconText: json["iconText"],
       iconAltText: json["iconAltText"],
-      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"]),
+      iconType: NZ0_EnumC12154b1.fromValue(json["iconType"] ?? 0),
       linkUrl: json["linkUrl"],
       tsTargetId: json["tsTargetId"],
-      userGuidePopupInfo: ShortcutUserGuidePopupInfo.fromJson(json["userGuidePopupInfo"]),
+      userGuidePopupInfo: ShortcutUserGuidePopupInfo.fromJson(json["userGuidePopupInfo"] ?? {}),
     );
   }
 }
@@ -19918,10 +19917,10 @@ class LineBankShortcutInfo {
 
   factory LineBankShortcutInfo.fromJson(Map json) {
     return LineBankShortcutInfo(
-      mainShortcuts: List.from(json["mainShortcuts"])
+      mainShortcuts: List.from(json["mainShortcuts"] ?? [])
           .map((e) => LineBankBalanceShortcut.fromJson(e))
           .toList(),
-      subShortcuts: List.from(json["subShortcuts"])
+      subShortcuts: List.from(json["subShortcuts"] ?? [])
           .map((e) => LineBankBalanceShortcut.fromJson(e))
           .toList(),
     );
@@ -19964,19 +19963,19 @@ class LinePayInfo {
   factory LinePayInfo.fromJson(Map json) {
     return LinePayInfo(
       balanceAmount: json["balanceAmount"],
-      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"]),
-      payMemberStatus: NZ0_EnumC12195p0.fromValue(json["payMemberStatus"]),
+      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"] ?? {}),
+      payMemberStatus: NZ0_EnumC12195p0.fromValue(json["payMemberStatus"] ?? 0),
       applicationUrl: json["applicationUrl"],
       chargeUrl: json["chargeUrl"],
-      payMemberGrade: NZ0_EnumC12192o0.fromValue(json["payMemberGrade"]),
+      payMemberGrade: NZ0_EnumC12192o0.fromValue(json["payMemberGrade"] ?? 0),
       country: json["country"],
       referenceNumber: json["referenceNumber"],
-      ipassTokenProperty: IpassTokenProperty.fromJson(json["ipassTokenProperty"]),
+      ipassTokenProperty: IpassTokenProperty.fromJson(json["ipassTokenProperty"] ?? {}),
       iconUrl: json["iconUrl"],
       iconAltText: json["iconAltText"],
       iconLinkUrl: json["iconLinkUrl"],
       suspendedText: json["suspendedText"],
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
     );
   }
 }
@@ -20012,15 +20011,15 @@ class LinePayInfoV3 {
     return LinePayInfoV3(
       availableBalance: json["availableBalance"],
       availableBalanceString: json["availableBalanceString"],
-      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"]),
-      payMemberStatus: NZ0_EnumC12195p0.fromValue(json["payMemberStatus"]),
-      payMemberGrade: NZ0_EnumC12192o0.fromValue(json["payMemberGrade"]),
+      currencyProperty: CurrencyProperty.fromJson(json["currencyProperty"] ?? {}),
+      payMemberStatus: NZ0_EnumC12195p0.fromValue(json["payMemberStatus"] ?? 0),
+      payMemberGrade: NZ0_EnumC12192o0.fromValue(json["payMemberGrade"] ?? 0),
       country: json["country"],
       applicationUrl: json["applicationUrl"],
       iconAltText: json["iconAltText"],
       iconLinkUrl: json["iconLinkUrl"],
       suspendedText: json["suspendedText"],
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
     );
   }
 }
@@ -20075,7 +20074,7 @@ class LinePointInfo {
       applicationUrl: json["applicationUrl"],
       iconUrl: json["iconUrl"],
       displayText: json["displayText"],
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
     );
   }
 }
@@ -20093,7 +20092,7 @@ class LinkRewardInfo {
 
   factory LinkRewardInfo.fromJson(Map json) {
     return LinkRewardInfo(
-      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"]),
+      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"] ?? {}),
       autoConversion: json["autoConversion"],
       backgroundColorCode: json["backgroundColorCode"],
     );
@@ -20110,8 +20109,8 @@ class LiveTalk {
   final String hostMemberMid;
   final String announcement;
   final int participantCount;
-  final Int64 revision;
-  final Int64 startedAt;
+  final dynamic revision;
+  final dynamic startedAt;
 
   LiveTalk({
     required this.squareChatMid,
@@ -20132,8 +20131,8 @@ class LiveTalk {
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
       title: json["title"],
-      type: LiveTalkType.fromValue(json["type"]),
-      speakerSetting: LiveTalkSpeakerSetting.fromValue(json["speakerSetting"]),
+      type: LiveTalkType.fromValue(json["type"] ?? 0),
+      speakerSetting: LiveTalkSpeakerSetting.fromValue(json["speakerSetting"] ?? 0),
       allowRequestToSpeak: json["allowRequestToSpeak"],
       hostMemberMid: json["hostMemberMid"],
       announcement: json["announcement"],
@@ -20147,7 +20146,7 @@ class LiveTalk {
 class LiveTalkEvent {
   final LiveTalkEventType type;
   final LiveTalkEventPayload payload;
-  final Int64 revision;
+  final dynamic revision;
 
   LiveTalkEvent({
     required this.type,
@@ -20157,8 +20156,8 @@ class LiveTalkEvent {
 
   factory LiveTalkEvent.fromJson(Map json) {
     return LiveTalkEvent(
-      type: LiveTalkEventType.fromValue(json["type"]),
-      payload: LiveTalkEventPayload.fromJson(json["payload"]),
+      type: LiveTalkEventType.fromValue(json["type"] ?? 0),
+      payload: LiveTalkEventPayload.fromJson(json["payload"] ?? {}),
       revision: json["revision"],
     );
   }
@@ -20224,7 +20223,7 @@ class LiveTalkEventNotifiedUpdateSquareMember {
       squareMemberMid: json["squareMemberMid"],
       displayName: json["displayName"],
       profileImageObsHash: json["profileImageObsHash"],
-      role: SquareMemberRole.fromValue(json["role"]),
+      role: SquareMemberRole.fromValue(json["role"] ?? 0),
     );
   }
 }
@@ -20241,7 +20240,7 @@ class LiveTalkEventNotifiedUpdateSquareMemberRole {
   factory LiveTalkEventNotifiedUpdateSquareMemberRole.fromJson(Map json) {
     return LiveTalkEventNotifiedUpdateSquareMemberRole(
       squareMemberMid: json["squareMemberMid"],
-      role: SquareMemberRole.fromValue(json["role"]),
+      role: SquareMemberRole.fromValue(json["role"] ?? 0),
     );
   }
 }
@@ -20289,7 +20288,7 @@ class LiveTalkSpeaker {
     return LiveTalkSpeaker(
       displayName: json["displayName"],
       profileImageObsHash: json["profileImageObsHash"],
-      role: SquareMemberRole.fromValue(json["role"]),
+      role: SquareMemberRole.fromValue(json["role"] ?? 0),
     );
   }
 }
@@ -20329,15 +20328,15 @@ class Locale {
 }
 
 class Location {
-  final String title;
-  final String address;
-  final int latitude;
-  final int longitude;
-  final String phone;
-  final String categoryId;
-  final Pb1_D6 provider;
-  final GeolocationAccuracy accuracy;
-  final int altitudeMeters;
+  final String? title;
+  final String? address;
+  final int? latitude;
+  final int? longitude;
+  final String? phone;
+  final String? categoryId;
+  final Pb1_D6? provider;
+  final GeolocationAccuracy? accuracy;
+  final int? altitudeMeters;
 
   Location({
     required this.title,
@@ -20359,8 +20358,8 @@ class Location {
       longitude: json["longitude"],
       phone: json["phone"],
       categoryId: json["categoryId"],
-      provider: Pb1_D6.fromValue(json["provider"]),
-      accuracy: GeolocationAccuracy.fromJson(json["accuracy"]),
+      provider: Pb1_D6.fromValue(json["provider"] ?? 0),
+      accuracy: GeolocationAccuracy.fromJson(json["accuracy"] ?? {}),
       altitudeMeters: json["altitudeMeters"],
     );
   }
@@ -20375,7 +20374,7 @@ class LocationDebugInfo {
 
   factory LocationDebugInfo.fromJson(Map json) {
     return LocationDebugInfo(
-      poiInfo: PoiInfo.fromJson(json["poiInfo"]),
+      poiInfo: PoiInfo.fromJson(json["poiInfo"] ?? {}),
     );
   }
 }
@@ -20403,7 +20402,7 @@ class LookupAvailableEapResponse {
 
   factory LookupAvailableEapResponse.fromJson(Map json) {
     return LookupAvailableEapResponse(
-      availableEap: List.from(json["availableEap"]),
+      availableEap: List.from(json["availableEap"] ?? []),
     );
   }
 }
@@ -20440,7 +20439,7 @@ class MainPopup {
   factory MainPopup.fromJson(Map json) {
     return MainPopup(
       imageObsHash: json["imageObsHash"],
-      button: Button.fromJson(json["button"]),
+      button: Button.fromJson(json["button"] ?? {}),
     );
   }
 }
@@ -20478,7 +20477,7 @@ class ManualRepairResponse {
 
   factory ManualRepairResponse.fromJson(Map json) {
     return ManualRepairResponse(
-      events: List.from(json["events"])
+      events: List.from(json["events"] ?? [])
           .map((e) => SquareEvent.fromJson(e))
           .toList(),
       syncToken: json["syncToken"],
@@ -20499,7 +20498,7 @@ class MapProfileToUsersRequest {
   factory MapProfileToUsersRequest.fromJson(Map json) {
     return MapProfileToUsersRequest(
       profileId: json["profileId"],
-      targetMids: List.from(json["targetMids"]),
+      targetMids: List.from(json["targetMids"] ?? []),
     );
   }
 }
@@ -20513,7 +20512,7 @@ class MapProfileToUsersResponse {
 
   factory MapProfileToUsersResponse.fromJson(Map json) {
     return MapProfileToUsersResponse(
-      mappedMids: List.from(json["mappedMids"]),
+      mappedMids: List.from(json["mappedMids"] ?? []),
     );
   }
 }
@@ -20547,7 +20546,7 @@ class MarkChatsAsReadRequest {
 
   factory MarkChatsAsReadRequest.fromJson(Map json) {
     return MarkChatsAsReadRequest(
-      chatMids: List.from(json["chatMids"]),
+      chatMids: List.from(json["chatMids"] ?? []),
     );
   }
 }
@@ -20571,7 +20570,7 @@ class MemberInfo {
   final int memberNo;
   final bool isJoining;
   final bool isSubscribing;
-  final Int64 validUntil;
+  final dynamic validUntil;
   final String billingItemName;
 
   MemberInfo({
@@ -20585,7 +20584,7 @@ class MemberInfo {
 
   factory MemberInfo.fromJson(Map json) {
     return MemberInfo(
-      membership: Membership.fromJson(json["membership"]),
+      membership: Membership.fromJson(json["membership"] ?? {}),
       memberNo: json["memberNo"],
       isJoining: json["isJoining"],
       isSubscribing: json["isSubscribing"],
@@ -20596,7 +20595,7 @@ class MemberInfo {
 }
 
 class Membership {
-  final Int64 membershipId;
+  final dynamic membershipId;
   final String uniqueKey;
   final String title;
   final String membershipDescription;
@@ -20609,7 +20608,7 @@ class Membership {
   final String currency;
   final og_E membershipStatus;
   final Bot bot;
-  final Int64 closeDate;
+  final dynamic closeDate;
   final String membershipCardUrl;
   final String openchatUrl;
 
@@ -20640,13 +20639,13 @@ class Membership {
       membershipDescription: json["membershipDescription"],
       benefits: json["benefits"],
       isInAppPurchase: json["isInAppPurchase"],
-      paymentType: og_G.fromValue(json["paymentType"]),
+      paymentType: og_G.fromValue(json["paymentType"] ?? 0),
       isPublished: json["isPublished"],
       isFullMember: json["isFullMember"],
       price: json["price"],
       currency: json["currency"],
-      membershipStatus: og_E.fromValue(json["membershipStatus"]),
-      bot: Bot.fromJson(json["bot"]),
+      membershipStatus: og_E.fromValue(json["membershipStatus"] ?? 0),
+      bot: Bot.fromJson(json["bot"] ?? {}),
       closeDate: json["closeDate"],
       membershipCardUrl: json["membershipCardUrl"],
       openchatUrl: json["openchatUrl"],
@@ -20697,33 +20696,33 @@ class MentionableSquareMember {
       mid: json["mid"],
       displayName: json["displayName"],
       profileImageObsHash: json["profileImageObsHash"],
-      role: SquareMemberRole.fromValue(json["role"]),
+      role: SquareMemberRole.fromValue(json["role"] ?? 0),
       squareMid: json["squareMid"],
     );
   }
 }
 
 class Message {
-  final String from;
+  final String? from;
   final String to;
   final MIDType toType;
-  final String id;
-  final Int64 createdTime;
-  final Int64 deliveredTime;
-  String text;
-  Location location;
-  final bool hasContent;
+  final String? id;
+  final dynamic createdTime;
+  final dynamic deliveredTime;
+  String? text;
+  Location? location;
+  final bool? hasContent;
   final ContentType contentType;
-  final String contentPreview;
+  final String? contentPreview;
   Map<String, String> contentMetadata;
-  final int sessionId;
-  final List<dynamic> chunks;
-  final String relatedMessageId;
-  final Pb1_EnumC13015h6 messageRelationType;
-  final int readCount;
-  final Pb1_E7 relatedMessageServiceCode;
-  final Pb1_B appExtensionType;
-  final List<Reaction> reactions;
+  final int? sessionId;
+  final List<dynamic>? chunks;
+  final String? relatedMessageId;
+  final Pb1_EnumC13015h6? messageRelationType;
+  final int? readCount;
+  final Pb1_E7? relatedMessageServiceCode;
+  final Pb1_B? appExtensionType;
+  final List<Reaction>? reactions;
 
   Message({
     required this.from,
@@ -20752,24 +20751,24 @@ class Message {
     return Message(
       from: json["from"],
       to: json["to"],
-      toType: MIDType.fromValue(json["toType"]),
+      toType: MIDType.fromValue(json["toType"] ?? 0),
       id: json["id"],
       createdTime: json["createdTime"],
       deliveredTime: json["deliveredTime"],
       text: json["text"],
-      location: Location.fromJson(json["location"]),
+      location: json["location"] != null ? Location.fromJson(json["location"]) : null,
       hasContent: json["hasContent"],
-      contentType: ContentType.fromValue(json["contentType"]),
+      contentType: ContentType.fromValue(int.parse(json["contentType"] ?? 0)),
       contentPreview: json["contentPreview"],
-      contentMetadata: Map.from(json["contentMetadata"]),
+      contentMetadata: Map.from(json["contentMetadata"] ?? {}),
       sessionId: json["sessionId"],
-      chunks: List.from(json["chunks"]),
+      chunks: List.from(json["chunks"] ?? [] ?? []),
       relatedMessageId: json["relatedMessageId"],
-      messageRelationType: Pb1_EnumC13015h6.fromValue(json["messageRelationType"]),
+      messageRelationType: Pb1_EnumC13015h6.fromValue(json["messageRelationType"] ?? 0),
       readCount: json["readCount"],
-      relatedMessageServiceCode: Pb1_E7.fromValue(json["relatedMessageServiceCode"]),
-      appExtensionType: Pb1_B.fromValue(json["appExtensionType"]),
-      reactions: List.from(json["reactions"])
+      relatedMessageServiceCode: Pb1_E7.fromValue(json["relatedMessageServiceCode"] ?? 0),
+      appExtensionType: Pb1_B.fromValue(json["appExtensionType"] ?? 0),
+      reactions: List.from(json["reactions"] ?? [] ?? [])
           .map((e) => Reaction.fromJson(e))
           .toList(),
     );
@@ -20787,7 +20786,7 @@ class MessageBoxList {
 
   factory MessageBoxList.fromJson(Map json) {
     return MessageBoxList(
-      messageBoxes: List.from(json["messageBoxes"])
+      messageBoxes: List.from(json["messageBoxes"] ?? [])
           .map((e) => ExtendedMessageBox.fromJson(e))
           .toList(),
       hasNext: json["hasNext"],
@@ -20828,8 +20827,8 @@ class MessageBoxListRequest {
 }
 
 class MessageBoxV2MessageId {
-  final Int64 deliveredTime;
-  final Int64 messageId;
+  final dynamic deliveredTime;
+  final dynamic messageId;
 
   MessageBoxV2MessageId({
     required this.deliveredTime,
@@ -20859,10 +20858,10 @@ class MessageSummary {
 
   factory MessageSummary.fromJson(Map json) {
     return MessageSummary(
-      summary: List.from(json["summary"]),
-      keywords: List.from(json["keywords"]),
-      range: MessageSummaryRange.fromJson(json["range"]),
-      detailedSummary: List.from(json["detailedSummary"]),
+      summary: List.from(json["summary"] ?? []),
+      keywords: List.from(json["keywords"] ?? []),
+      range: MessageSummaryRange.fromJson(json["range"] ?? {}),
+      detailedSummary: List.from(json["detailedSummary"] ?? []),
     );
   }
 }
@@ -20880,16 +20879,16 @@ class MessageSummaryContent {
 
   factory MessageSummaryContent.fromJson(Map json) {
     return MessageSummaryContent(
-      summary: List.from(json["summary"]),
-      keywords: List.from(json["keywords"]),
-      range: MessageSummaryRange.fromJson(json["range"]),
+      summary: List.from(json["summary"] ?? []),
+      keywords: List.from(json["keywords"] ?? []),
+      range: MessageSummaryRange.fromJson(json["range"] ?? {}),
     );
   }
 }
 
 class MessageSummaryRange {
-  final Int64 from;
-  final Int64 to;
+  final dynamic from;
+  final dynamic to;
 
   MessageSummaryRange({
     required this.from,
@@ -20962,10 +20961,10 @@ class MigratePrimaryUsingQrCodeResponse {
   factory MigratePrimaryUsingQrCodeResponse.fromJson(Map json) {
     return MigratePrimaryUsingQrCodeResponse(
       mid: json["mid"],
-      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"]),
-      tokenV1IssueResult: TokenV1IssueResult.fromJson(json["tokenV1IssueResult"]),
+      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"] ?? {}),
+      tokenV1IssueResult: TokenV1IssueResult.fromJson(json["tokenV1IssueResult"] ?? {}),
       accountCountryCode: json["accountCountryCode"],
-      formattedPhoneNumbers: FormattedPhoneNumbers.fromJson(json["formattedPhoneNumbers"]),
+      formattedPhoneNumbers: FormattedPhoneNumbers.fromJson(json["formattedPhoneNumbers"] ?? {}),
     );
   }
 }
@@ -20990,7 +20989,7 @@ class MigratePrimaryWithTokenV3Response {
   factory MigratePrimaryWithTokenV3Response.fromJson(Map json) {
     return MigratePrimaryWithTokenV3Response(
       authToken: json["authToken"],
-      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"]),
+      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"] ?? {}),
       countryCode: json["countryCode"],
       prettifiedFormatPhoneNumber: json["prettifiedFormatPhoneNumber"],
       localFormatPhoneNumber: json["localFormatPhoneNumber"],
@@ -21008,7 +21007,7 @@ class ModuleResponse {
 
   factory ModuleResponse.fromJson(Map json) {
     return ModuleResponse(
-      moduleInstance: NZ0_C12206t0.fromJson(json["moduleInstance"]),
+      moduleInstance: NZ0_C12206t0.fromJson(json["moduleInstance"] ?? {}),
     );
   }
 }
@@ -21022,7 +21021,7 @@ class ModuleWithStatusResponse {
 
   factory ModuleWithStatusResponse.fromJson(Map json) {
     return ModuleWithStatusResponse(
-      moduleInstance: NZ0_C12221y0.fromJson(json["moduleInstance"]),
+      moduleInstance: NZ0_C12221y0.fromJson(json["moduleInstance"] ?? {}),
     );
   }
 }
@@ -21030,7 +21029,7 @@ class ModuleWithStatusResponse {
 class MyChatapp {
   final Chatapp app;
   final zf_EnumC40715c category;
-  final Int64 priority;
+  final dynamic priority;
 
   MyChatapp({
     required this.app,
@@ -21040,8 +21039,8 @@ class MyChatapp {
 
   factory MyChatapp.fromJson(Map json) {
     return MyChatapp(
-      app: Chatapp.fromJson(json["app"]),
-      category: zf_EnumC40715c.fromValue(json["category"]),
+      app: Chatapp.fromJson(json["app"] ?? {}),
+      category: zf_EnumC40715c.fromValue(json["category"] ?? 0),
       priority: json["priority"],
     );
   }
@@ -21052,8 +21051,8 @@ class MyDashboardItem {
   final String messageText;
   final MyDashboardMessageIcon icon;
   final String linkUrl;
-  final Int64 exposedAt;
-  final Int64 expiredAt;
+  final dynamic exposedAt;
+  final dynamic expiredAt;
   final int order;
   final String targetWrsModelId;
   final String templateId;
@@ -21078,7 +21077,7 @@ class MyDashboardItem {
     return MyDashboardItem(
       id: json["id"],
       messageText: json["messageText"],
-      icon: MyDashboardMessageIcon.fromJson(json["icon"]),
+      icon: MyDashboardMessageIcon.fromJson(json["icon"] ?? {}),
       linkUrl: json["linkUrl"],
       exposedAt: json["exposedAt"],
       expiredAt: json["expiredAt"],
@@ -21150,16 +21149,16 @@ class NZ0_C12206t0 {
     return NZ0_C12206t0(
       id: json["id"],
       templateName: json["templateName"],
-      fields: Map.from(json["fields"]),
-      lements: List.from(json["lements"]),
+      fields: Map.from(json["fields"] ?? {}),
+      lements: List.from(json["lements"] ?? []),
       etag: json["etag"],
       refreshTimeSec: json["refreshTimeSec"],
       name: json["name"],
       recommendable: json["recommendable"],
       recommendedModelId: json["recommendedModelId"],
       flexContent: json["flexContent"],
-      categories: List.from(json["categories"]),
-      headers: List.from(json["headers"]),
+      categories: List.from(json["categories"] ?? []),
+      headers: List.from(json["headers"] ?? []),
     );
   }
 }
@@ -21181,12 +21180,12 @@ class NZ0_C12209u0 {
 
   factory NZ0_C12209u0.fromJson(Map json) {
     return NZ0_C12209u0(
-      fixedModules: List.from(json["fixedModules"])
+      fixedModules: List.from(json["fixedModules"] ?? [])
           .map((e) => NZ0_C12206t0.fromJson(e))
           .toList(),
       etag: json["etag"],
       refreshTimeSec: json["refreshTimeSec"],
-      recommendedModules: List.from(json["recommendedModules"])
+      recommendedModules: List.from(json["recommendedModules"] ?? [])
           .map((e) => NZ0_C12206t0.fromJson(e))
           .toList(),
     );
@@ -21210,11 +21209,11 @@ class NZ0_C12212v0 {
 
   factory NZ0_C12212v0.fromJson(Map json) {
     return NZ0_C12212v0(
-      topTab: TopTab.fromJson(json["topTab"]),
-      subTabs: List.from(json["subTabs"])
+      topTab: TopTab.fromJson(json["topTab"] ?? {}),
+      subTabs: List.from(json["subTabs"] ?? [])
           .map((e) => SubTab.fromJson(e))
           .toList(),
-      forceSelectedSubTabInfo: ForceSelectedSubTabInfo.fromJson(json["forceSelectedSubTabInfo"]),
+      forceSelectedSubTabInfo: ForceSelectedSubTabInfo.fromJson(json["forceSelectedSubTabInfo"] ?? {}),
       refreshTimeSec: json["refreshTimeSec"],
       etag: json["etag"],
     );
@@ -21254,7 +21253,7 @@ class NZ0_C12221y0 {
 
   factory NZ0_C12221y0.fromJson(Map json) {
     return NZ0_C12221y0(
-      status: NZ0_EnumC12218x0.fromValue(json["status"]),
+      status: NZ0_EnumC12218x0.fromValue(json["status"] ?? 0),
       id: json["id"],
       templateName: json["templateName"],
       etag: json["etag"],
@@ -21262,10 +21261,10 @@ class NZ0_C12221y0 {
       name: json["name"],
       recommendable: json["recommendable"],
       recommendedModelId: json["recommendedModelId"],
-      fields: Map.from(json["fields"]),
-      lements: List.from(json["lements"]),
-      categories: List.from(json["categories"]),
-      headers: List.from(json["headers"]),
+      fields: Map.from(json["fields"] ?? {}),
+      lements: List.from(json["lements"] ?? []),
+      categories: List.from(json["categories"] ?? []),
+      headers: List.from(json["headers"] ?? []),
     );
   }
 }
@@ -21287,10 +21286,10 @@ class NZ0_C12224z0 {
     return NZ0_C12224z0(
       etag: json["etag"],
       refreshTimeSec: json["refreshTimeSec"],
-      fixedModules: List.from(json["fixedModules"])
+      fixedModules: List.from(json["fixedModules"] ?? [])
           .map((e) => NZ0_C12221y0.fromJson(e))
           .toList(),
-      recommendedModules: List.from(json["recommendedModules"])
+      recommendedModules: List.from(json["recommendedModules"] ?? [])
           .map((e) => NZ0_C12221y0.fromJson(e))
           .toList(),
     );
@@ -21310,7 +21309,7 @@ class NZ0_D {
 
   factory NZ0_D.fromJson(Map json) {
     return NZ0_D(
-      moduleLayoutV4: NZ0_C12212v0.fromJson(json["moduleLayoutV4"]),
+      moduleLayoutV4: NZ0_C12212v0.fromJson(json["moduleLayoutV4"] ?? {}),
       notModified: json["notModified"],
       notFound: json["notFound"],
     );
@@ -21359,7 +21358,7 @@ class NZ0_F {
 
   factory NZ0_F.fromJson(Map json) {
     return NZ0_F(
-      moduleResponse: ModuleResponse.fromJson(json["moduleResponse"]),
+      moduleResponse: ModuleResponse.fromJson(json["moduleResponse"] ?? {}),
       notModified: json["notModified"],
       notFound: json["notFound"],
     );
@@ -21412,7 +21411,7 @@ class NZ0_H {
 
   factory NZ0_H.fromJson(Map json) {
     return NZ0_H(
-      moduleResponse: ModuleWithStatusResponse.fromJson(json["moduleResponse"]),
+      moduleResponse: ModuleWithStatusResponse.fromJson(json["moduleResponse"] ?? {}),
       notModified: json["notModified"],
       notFound: json["notFound"],
     );
@@ -21430,7 +21429,7 @@ class NZ0_K {
 
   factory NZ0_K.fromJson(Map json) {
     return NZ0_K(
-      moduleAggregationResponse: NZ0_C12209u0.fromJson(json["moduleAggregationResponse"]),
+      moduleAggregationResponse: NZ0_C12209u0.fromJson(json["moduleAggregationResponse"] ?? {}),
       notModified: json["notModified"],
     );
   }
@@ -21447,7 +21446,7 @@ class NZ0_M {
 
   factory NZ0_M.fromJson(Map json) {
     return NZ0_M(
-      moduleAggregationResponse: NZ0_C12224z0.fromJson(json["moduleAggregationResponse"]),
+      moduleAggregationResponse: NZ0_C12224z0.fromJson(json["moduleAggregationResponse"] ?? {}),
       notModified: json["notModified"],
     );
   }
@@ -21477,8 +21476,8 @@ class NearbyEntry {
       emid: json["emid"],
       distance: json["distance"],
       lastUpdatedInSec: json["lastUpdatedInSec"],
-      property: Map.from(json["property"]),
-      profile: Profile.fromJson(json["profile"]),
+      property: Map.from(json["property"] ?? {}),
+      profile: Profile.fromJson(json["profile"] ?? {}),
     );
   }
 }
@@ -21505,7 +21504,7 @@ class NoBidCallback {
 
 class NoteStatus {
   final int noteCount;
-  final Int64 latestCreatedAt;
+  final dynamic latestCreatedAt;
 
   NoteStatus({
     required this.noteCount,
@@ -21543,7 +21542,7 @@ class NotificationSettingEntry {
 
   factory NotificationSettingEntry.fromJson(Map json) {
     return NotificationSettingEntry(
-      notificationSetting: NotificationSetting.fromJson(json["notificationSetting"]),
+      notificationSetting: NotificationSetting.fromJson(json["notificationSetting"] ?? {}),
     );
   }
 }
@@ -21574,8 +21573,8 @@ class NotifyDeviceConnectionRequest {
   final do0_EnumC23148f connectionType;
   final do0_EnumC23147e code;
   final String errorReason;
-  final Int64 startTime;
-  final Int64 endTime;
+  final dynamic startTime;
+  final dynamic endTime;
 
   NotifyDeviceConnectionRequest({
     required this.deviceId,
@@ -21591,8 +21590,8 @@ class NotifyDeviceConnectionRequest {
     return NotifyDeviceConnectionRequest(
       deviceId: json["deviceId"],
       connectionId: json["connectionId"],
-      connectionType: do0_EnumC23148f.fromValue(json["connectionType"]),
-      code: do0_EnumC23147e.fromValue(json["code"]),
+      connectionType: do0_EnumC23148f.fromValue(json["connectionType"] ?? 0),
+      code: do0_EnumC23147e.fromValue(json["code"] ?? 0),
       errorReason: json["errorReason"],
       startTime: json["startTime"],
       endTime: json["endTime"],
@@ -21601,7 +21600,7 @@ class NotifyDeviceConnectionRequest {
 }
 
 class NotifyDeviceConnectionResponse {
-  final Int64 latestOffset;
+  final dynamic latestOffset;
 
   NotifyDeviceConnectionResponse({
     required this.latestOffset
@@ -21617,7 +21616,7 @@ class NotifyDeviceConnectionResponse {
 class NotifyDeviceDisconnectionRequest {
   final String deviceId;
   final String connectionId;
-  final Int64 disconnectedTime;
+  final dynamic disconnectedTime;
 
   NotifyDeviceDisconnectionRequest({
     required this.deviceId,
@@ -21643,7 +21642,7 @@ class NotifyOATalkroomEventsRequest {
 
   factory NotifyOATalkroomEventsRequest.fromJson(Map json) {
     return NotifyOATalkroomEventsRequest(
-      events: List.from(json["events"])
+      events: List.from(json["events"] ?? [])
           .map((e) => OATalkroomEvent.fromJson(e))
           .toList(),
     );
@@ -21659,7 +21658,7 @@ class NotifyScenarioExecutedRequest {
 
   factory NotifyScenarioExecutedRequest.fromJson(Map json) {
     return NotifyScenarioExecutedRequest(
-      scenarioResults: List.from(json["scenarioResults"])
+      scenarioResults: List.from(json["scenarioResults"] ?? [])
           .map((e) => do0_F.fromJson(e))
           .toList(),
     );
@@ -21682,15 +21681,15 @@ class OATalkroomEvent {
   factory OATalkroomEvent.fromJson(Map json) {
     return OATalkroomEvent(
       eventId: json["eventId"],
-      type: kf_p.fromValue(json["type"]),
-      context: OATalkroomEventContext.fromJson(json["context"]),
-      content: kf_m.fromJson(json["content"]),
+      type: kf_p.fromValue(json["type"] ?? 0),
+      context: OATalkroomEventContext.fromJson(json["context"] ?? {}),
+      content: kf_m.fromJson(json["content"] ?? {}),
     );
   }
 }
 
 class OATalkroomEventContext {
-  final Int64 timestampMillis;
+  final dynamic timestampMillis;
   final String botMid;
   final String userMid;
   final kf_o os;
@@ -21713,7 +21712,7 @@ class OATalkroomEventContext {
       timestampMillis: json["timestampMillis"],
       botMid: json["botMid"],
       userMid: json["userMid"],
-      os: kf_o.fromValue(json["os"]),
+      os: kf_o.fromValue(json["os"] ?? 0),
       osVersion: json["osVersion"],
       appVersion: json["appVersion"],
       region: json["region"],
@@ -21757,7 +21756,7 @@ class Ob1_C12618e0 {
       subscriptionService: json["subscriptionService"],
       continuationToken: json["continuationToken"],
       limit: json["limit"],
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
     );
   }
 }
@@ -21765,7 +21764,7 @@ class Ob1_C12618e0 {
 class Ob1_C12621f0 {
   final List<SubscriptionSlotHistory> history;
   final String continuationToken;
-  final Int64 totalSize;
+  final dynamic totalSize;
 
   Ob1_C12621f0({
     required this.history,
@@ -21775,7 +21774,7 @@ class Ob1_C12621f0 {
 
   factory Ob1_C12621f0.fromJson(Map json) {
     return Ob1_C12621f0(
-      history: List.from(json["history"])
+      history: List.from(json["history"] ?? [])
           .map((e) => SubscriptionSlotHistory.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -21859,12 +21858,12 @@ class Ob1_L {
 
   factory Ob1_L.fromJson(Map json) {
     return Ob1_L(
-      productTypes: List.from(json["productTypes"])
+      productTypes: List.from(json["productTypes"] ?? [])
           .map((e) => Ob1_O0.fromValue(e))
           .toList(),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
-      shopFilter: ShopFilter.fromJson(json["shopFilter"]),
+      shopFilter: ShopFilter.fromJson(json["shopFilter"] ?? {}),
     );
   }
 }
@@ -21882,7 +21881,7 @@ class Ob1_M {
 
   factory Ob1_M.fromJson(Map json) {
     return Ob1_M(
-      browsingHistory: List.from(json["browsingHistory"])
+      browsingHistory: List.from(json["browsingHistory"] ?? [])
           .map((e) => BrowsingHistory.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -21906,9 +21905,9 @@ class Ob1_P0 {
 
   factory Ob1_P0.fromJson(Map json) {
     return Ob1_P0(
-      stickerSummary: StickerSummary.fromJson(json["stickerSummary"]),
-      themeSummary: ThemeSummary.fromJson(json["themeSummary"]),
-      sticonSummary: SticonSummary.fromJson(json["sticonSummary"]),
+      stickerSummary: StickerSummary.fromJson(json["stickerSummary"] ?? {}),
+      themeSummary: ThemeSummary.fromJson(json["themeSummary"] ?? {}),
+      sticonSummary: SticonSummary.fromJson(json["sticonSummary"] ?? {}),
     );
   }
 }
@@ -21930,11 +21929,11 @@ class Ob1_U {
 
   factory Ob1_U.fromJson(Map json) {
     return Ob1_U(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
       subscriptionService: json["subscriptionService"],
-      sortType: Ob1_V1.fromValue(json["sortType"]),
+      sortType: Ob1_V1.fromValue(json["sortType"] ?? 0),
     );
   }
 }
@@ -21942,7 +21941,7 @@ class Ob1_U {
 class Ob1_V {
   final List<ProductSummary> products;
   final String continuationToken;
-  final Int64 totalSize;
+  final dynamic totalSize;
   final int maxSlotCount;
 
   Ob1_V({
@@ -21954,7 +21953,7 @@ class Ob1_V {
 
   factory Ob1_V.fromJson(Map json) {
     return Ob1_V(
-      products: List.from(json["products"])
+      products: List.from(json["products"] ?? [])
           .map((e) => ProductSummary.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -21991,13 +21990,13 @@ class Ob1_W {
     return Ob1_W(
       continuationToken: json["continuationToken"],
       limit: json["limit"],
-      productType: Ob1_O0.fromValue(json["productType"]),
-      recommendationType: Ob1_EnumC12631i1.fromValue(json["recommendationType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
+      recommendationType: Ob1_EnumC12631i1.fromValue(json["recommendationType"] ?? 0),
       productId: json["productId"],
-      subtypes: List.from(json["subtypes"]),
+      subtypes: List.from(json["subtypes"] ?? []),
       shouldShuffle: json["shouldShuffle"],
       includeStickerIds: json["includeStickerIds"],
-      shopFilter: ShopFilter.fromJson(json["shopFilter"]),
+      shopFilter: ShopFilter.fromJson(json["shopFilter"] ?? {}),
     );
   }
 }
@@ -22015,9 +22014,9 @@ class Ob1_W0 {
 
   factory Ob1_W0.fromJson(Map json) {
     return Ob1_W0(
-      promotionBuddyInfo: PromotionBuddyInfo.fromJson(json["promotionBuddyInfo"]),
-      promotionInstallInfo: PromotionInstallInfo.fromJson(json["promotionInstallInfo"]),
-      promotionMissionInfo: PromotionMissionInfo.fromJson(json["promotionMissionInfo"]),
+      promotionBuddyInfo: PromotionBuddyInfo.fromJson(json["promotionBuddyInfo"] ?? {}),
+      promotionInstallInfo: PromotionInstallInfo.fromJson(json["promotionInstallInfo"] ?? {}),
+      promotionMissionInfo: PromotionMissionInfo.fromJson(json["promotionMissionInfo"] ?? {}),
     );
   }
 }
@@ -22045,7 +22044,7 @@ class OpenSessionRequest {
 
   factory OpenSessionRequest.fromJson(Map json) {
     return OpenSessionRequest(
-      metaData: Map.from(json["metaData"])
+      metaData: Map.from(json["metaData"] ?? {})
     );
   }
 }
@@ -22079,12 +22078,12 @@ class OperationResponse {
 
   factory OperationResponse.fromJson(Map json) {
     return OperationResponse(
-      operations: List.from(json["operations"])
+      operations: List.from(json["operations"] ?? [])
           .map((e) => Pb1_C13154r6.fromJson(e))
           .toList(),
       hasMoreOps: json["hasMoreOps"],
-      globalEvents: TGlobalEvents.fromJson(json["globalEvents"]),
-      individualEvents: TIndividualEvents.fromJson(json["individualEvents"]),
+      globalEvents: TGlobalEvents.fromJson(json["globalEvents"] ?? {}),
+      individualEvents: TIndividualEvents.fromJson(json["individualEvents"] ?? {}),
     );
   }
 }
@@ -22107,7 +22106,7 @@ class OrderInfo {
       productId: json["productId"],
       orderId: json["orderId"],
       confirmUrl: json["confirmUrl"],
-      bot: Bot.fromJson(json["bot"]),
+      bot: Bot.fromJson(json["bot"] ?? {}),
     );
   }
 }
@@ -22157,13 +22156,13 @@ class PaidCallDialing {
 
   factory PaidCallDialing.fromJson(Map json) {
     return PaidCallDialing(
-      type: PaidCallType.fromValue(json["type"]),
+      type: PaidCallType.fromValue(json["type"] ?? 0),
       dialedNumber: json["dialedNumber"],
       serviceDomain: json["serviceDomain"],
-      productType: Pb1_EnumC13196u6.fromValue(json["productType"]),
+      productType: Pb1_EnumC13196u6.fromValue(json["productType"] ?? 0),
       productName: json["productName"],
       multipleProduct: json["multipleProduct"],
-      callerIdStatus: Pb1_EnumC13238x6.fromValue(json["callerIdStatus"]),
+      callerIdStatus: Pb1_EnumC13238x6.fromValue(json["callerIdStatus"] ?? 0),
       balance: json["balance"],
       unit: json["unit"],
       rate: json["rate"],
@@ -22194,10 +22193,10 @@ class PaidCallResponse {
 
   factory PaidCallResponse.fromJson(Map json) {
     return PaidCallResponse(
-      host: CallHost.fromJson(json["host"]),
-      dialing: PaidCallDialing.fromJson(json["dialing"]),
+      host: CallHost.fromJson(json["host"] ?? {}),
+      dialing: PaidCallDialing.fromJson(json["dialing"] ?? {}),
       token: json["token"],
-      spotItems: List.from(json["spotItems"])
+      spotItems: List.from(json["spotItems"] ?? [])
           .map((e) => SpotItem.fromJson(e))
           .toList(),
     );
@@ -22205,7 +22204,7 @@ class PaidCallResponse {
 }
 
 class PartialFullSyncResponse {
-  final Map<int, Int64> targetCategories;
+  final Map<int, dynamic> targetCategories;
 
   PartialFullSyncResponse({
     required this.targetCategories
@@ -22213,7 +22212,7 @@ class PartialFullSyncResponse {
 
   factory PartialFullSyncResponse.fromJson(Map json) {
     return PartialFullSyncResponse(
-      targetCategories: Map.from(json["targetCategories"]),
+      targetCategories: Map.from(json["targetCategories"] ?? {}),
     );
   }
 }
@@ -22230,7 +22229,7 @@ class PasswordHashingParameters {
   factory PasswordHashingParameters.fromJson(Map json) {
     return PasswordHashingParameters(
       hmacKey: json["hmacKey"],
-      scryptParams: ScryptParams.fromJson(json["scryptParams"]),
+      scryptParams: ScryptParams.fromJson(json["scryptParams"] ?? {}),
     );
   }
 }
@@ -22249,7 +22248,7 @@ class PasswordValidationRule {
   factory PasswordValidationRule.fromJson(Map json) {
     return PasswordValidationRule(
       type: json["type"],
-      pattern: List.from(json["pattern"]),
+      pattern: List.from(json["pattern"] ?? []),
       clientNoticeMessage: json["clientNoticeMessage"],
     );
   }
@@ -22284,7 +22283,7 @@ class PaymentEligibleFriendStatus {
   factory PaymentEligibleFriendStatus.fromJson(Map json) {
     return PaymentEligibleFriendStatus(
       mid: json["mid"],
-      status: r80_EnumC34367g.fromValue(json["status"]),
+      status: r80_EnumC34367g.fromValue(json["status"] ?? 0),
     );
   }
 }
@@ -22317,8 +22316,8 @@ class PaymentLineCardIssueForm {
 
   factory PaymentLineCardIssueForm.fromJson(Map json) {
     return PaymentLineCardIssueForm(
-      requiredTermsOfServiceBundle: r80_e0.fromValue(json["requiredTermsOfServiceBundle"]),
-      availableLineCards: List.from(json["availableLineCards"])
+      requiredTermsOfServiceBundle: r80_e0.fromValue(json["requiredTermsOfServiceBundle"] ?? 0),
+      availableLineCards: List.from(json["availableLineCards"] ?? [])
           .map((e) => PaymentLineCardInfo.fromJson(e))
           .toList(),
     );
@@ -22346,7 +22345,7 @@ class PaymentRequiredAgreementsInfo {
       desc: json["desc"],
       linkName: json["linkName"],
       linkUrl: json["linkUrl"],
-      newAgreements: List.from(json["newAgreements"]),
+      newAgreements: List.from(json["newAgreements"] ?? []),
     );
   }
 }
@@ -22366,7 +22365,7 @@ class PaymentReservationResult {
     return PaymentReservationResult(
       orderId: json["orderId"],
       confirmUrl: json["confirmUrl"],
-      extras: Map.from(json["extras"]),
+      extras: Map.from(json["extras"] ?? {}),
     );
   }
 }
@@ -22374,13 +22373,13 @@ class PaymentReservationResult {
 class PaymentTradeInfo {
   final String chargeRequestId;
   final r80_g0 chargeRequestType;
-  final Int64 chargeRequestYmdt;
+  final dynamic chargeRequestYmdt;
   final String tradeNumber;
   final String agencyNo;
   final String confirmNo;
-  final Int64 expireYmd;
+  final dynamic expireYmd;
   final DisplayMoney moneyAmount;
-  final Int64 completeYmdt;
+  final dynamic completeYmdt;
   final String paymentProcessCorp;
   final r80_h0 status;
   final String helpUrl;
@@ -22405,16 +22404,16 @@ class PaymentTradeInfo {
   factory PaymentTradeInfo.fromJson(Map json) {
     return PaymentTradeInfo(
       chargeRequestId: json["chargeRequestId"],
-      chargeRequestType: r80_g0.fromValue(json["chargeRequestType"]),
+      chargeRequestType: r80_g0.fromValue(json["chargeRequestType"] ?? 0),
       chargeRequestYmdt: json["chargeRequestYmdt"],
       tradeNumber: json["tradeNumber"],
       agencyNo: json["agencyNo"],
       confirmNo: json["confirmNo"],
       expireYmd: json["expireYmd"],
-      moneyAmount: DisplayMoney.fromJson(json["moneyAmount"]),
+      moneyAmount: DisplayMoney.fromJson(json["moneyAmount"] ?? {}),
       completeYmdt: json["completeYmdt"],
       paymentProcessCorp: json["paymentProcessCorp"],
-      status: r80_h0.fromValue(json["status"]),
+      status: r80_h0.fromValue(json["status"] ?? 0),
       helpUrl: json["helpUrl"],
       guideMessage: json["guideMessage"],
     );
@@ -22473,8 +22472,8 @@ class Pb1_C12938c {
 
   factory Pb1_C12938c.fromJson(Map json) {
     return Pb1_C12938c(
-      message: AbuseReport.fromJson(json["message"]),
-      lineMeeting: AbuseReportLineMeeting.fromJson(json["lineMeeting"]),
+      message: AbuseReport.fromJson(json["message"] ?? {}),
+      lineMeeting: AbuseReportLineMeeting.fromJson(json["lineMeeting"] ?? {}),
     );
   }
 }
@@ -22502,8 +22501,8 @@ class Pb1_C12953d0 {
     return Pb1_C12953d0(
       verifier: json["verifier"],
       pinCode: json["pinCode"],
-      errorCode: ErrorCode.fromValue(json["errorCode"]),
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      errorCode: ErrorCode.fromValue(json["errorCode"] ?? 0),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
       encryptedKeyChain: json["encryptedKeyChain"],
       hashKeyChain: json["hashKeyChain"],
     );
@@ -22526,7 +22525,7 @@ class Pb1_C13097n4 {
   final int version;
   final int keyId;
   final String keyData;
-  final Int64 createdTime;
+  final dynamic createdTime;
 
   Pb1_C13097n4({
     required this.version,
@@ -22556,8 +22555,8 @@ class Pb1_C13113o6 {
 
   factory Pb1_C13113o6.fromJson(Map json) {
     return Pb1_C13113o6(
-      callRoute: CallRoute.fromJson(json["callRoute"]),
-      paidCallResponse: PaidCallResponse.fromJson(json["paidCallResponse"]),
+      callRoute: CallRoute.fromJson(json["callRoute"] ?? {}),
+      paidCallResponse: PaidCallResponse.fromJson(json["paidCallResponse"] ?? {}),
     );
   }
 }
@@ -22571,8 +22570,8 @@ class Pb1_C13131pa {}
 class Pb1_C13150r2 {}
 
 class Pb1_C13154r6 {
-  final Int64 revision;
-  final Int64 createdTime;
+  final dynamic revision;
+  final dynamic createdTime;
   final OpType type;
   final int reqSeq;
   final String checksum;
@@ -22599,14 +22598,14 @@ class Pb1_C13154r6 {
     return Pb1_C13154r6(
       revision: json["revision"],
       createdTime: json["createdTime"],
-      type: OpType.fromValue(json["type"]),
+      type: OpType.fromValue(json["type"] ?? 0),
       reqSeq: json["reqSeq"],
       checksum: json["checksum"],
-      status: Pb1_EnumC13127p6.fromValue(json["status"]),
+      status: Pb1_EnumC13127p6.fromValue(json["status"] ?? 0),
       param1: json["param1"],
       param2: json["param2"],
       param3: json["param3"],
-      message: Message.fromJson(json["message"]),
+      message: Message.fromJson(json["message"] ?? {}),
     );
   }
 }
@@ -22657,9 +22656,9 @@ class Pb1_C13190u0 {
 
   factory Pb1_C13190u0.fromJson(Map json) {
     return Pb1_C13190u0(
-      rich: BuddyRichMenuChatBarItem.fromJson(json["rich"]),
-      widgetList: BuddyWidgetListCharBarItem.fromJson(json["widgetList"]),
-      web: BuddyWebChatBarItem.fromJson(json["web"]),
+      rich: BuddyRichMenuChatBarItem.fromJson(json["rich"] ?? {}),
+      widgetList: BuddyWidgetListCharBarItem.fromJson(json["widgetList"] ?? {}),
+      web: BuddyWebChatBarItem.fromJson(json["web"] ?? {}),
     );
   }
 }
@@ -22677,7 +22676,7 @@ class Pb1_C13208v4 {
 
   factory Pb1_C13208v4.fromJson(Map json) {
     return Pb1_C13208v4(
-      groupExtra: GroupExtra.fromJson(json["groupExtra"]),
+      groupExtra: GroupExtra.fromJson(json["groupExtra"] ?? {}),
       peerExtra: json["peerExtra"],
     );
   }
@@ -22700,7 +22699,7 @@ class Pb1_C13263z3 {
     return Pb1_C13263z3(
       blobHeader: json["blobHeader"],
       blobPayload: json["blobPayload"],
-      reason: Pb1_A3.fromValue(json["reason"]),
+      reason: Pb1_A3.fromValue(json["reason"] ?? 0),
     );
   }
 }
@@ -22719,7 +22718,7 @@ class Pb1_E3 {
   factory Pb1_E3.fromJson(Map json) {
     return Pb1_E3(
       blobHeader: json["blobHeader"],
-      payloadDataList: List.from(json["payloadDataList"])
+      payloadDataList: List.from(json["payloadDataList"] ?? [])
           .map((e) => Pb1_X5.fromJson(e))
           .toList(),
     );
@@ -22806,7 +22805,7 @@ class Pb1_U3 {
       receiver: json["receiver"],
       receiverKeyId: json["receiverKeyId"],
       encryptedSharedKey: json["encryptedSharedKey"],
-      allowedTypes: List.from(json["allowedTypes"]),
+      allowedTypes: List.from(json["allowedTypes"] ?? []),
       specVersion: json["specVersion"],
     );
   }
@@ -22817,7 +22816,7 @@ class Pb1_V3 {
   final int keyId;
   final String publicKey;
   final String privateKey;
-  final Int64 createdTime;
+  final dynamic createdTime;
 
   Pb1_V3({
     required this.version,
@@ -22851,8 +22850,8 @@ class Pb1_W5 {
 
   factory Pb1_W5.fromJson(Map json) {
     return Pb1_W5(
-      e2ee: E2EEMetadata.fromJson(json["e2ee"]),
-      singleValue: SingleValueMetadata.fromJson(json["singleValue"]),
+      e2ee: E2EEMetadata.fromJson(json["e2ee"] ?? {}),
+      singleValue: SingleValueMetadata.fromJson(json["singleValue"] ?? {}),
     );
   }
 }
@@ -22871,7 +22870,7 @@ class Pb1_W6 {
   factory Pb1_W6.fromJson(Map json) {
     return Pb1_W6(
       reqSeq: json["reqSeq"],
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
       blobPayload: json["blobPayload"],
     );
   }
@@ -22895,10 +22894,10 @@ class Pb1_X {
   factory Pb1_X.fromJson(Map json) {
     return Pb1_X(
       verifier: json["verifier"],
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
       encryptedKeyChain: json["encryptedKeyChain"],
       hashKeyChain: json["hashKeyChain"],
-      errorCode: ErrorCode.fromValue(json["errorCode"]),
+      errorCode: ErrorCode.fromValue(json["errorCode"] ?? 0),
     );
   }
 }
@@ -22914,7 +22913,7 @@ class Pb1_X5 {
 
   factory Pb1_X5.fromJson(Map json) {
     return Pb1_X5(
-      metadata: Pb1_W5.fromJson(json["metadata"]),
+      metadata: Pb1_W5.fromJson(json["metadata"] ?? {}),
       blobPayload: json["blobPayload"],
     );
   }
@@ -22933,9 +22932,9 @@ class Pb1_X7 {
 
   factory Pb1_X7.fromJson(Map json) {
     return Pb1_X7(
-      operationResponse: OperationResponse.fromJson(json["operationResponse"]),
-      fullSyncResponse: FullSyncResponse.fromJson(json["fullSyncResponse"]),
-      partialFullSyncResponse: PartialFullSyncResponse.fromJson(json["partialFullSyncResponse"]),
+      operationResponse: OperationResponse.fromJson(json["operationResponse"] ?? {}),
+      fullSyncResponse: FullSyncResponse.fromJson(json["fullSyncResponse"] ?? {}),
+      partialFullSyncResponse: PartialFullSyncResponse.fromJson(json["partialFullSyncResponse"] ?? {}),
     );
   }
 }
@@ -22971,7 +22970,7 @@ class PendingAgreementsResponse {
 
   factory PendingAgreementsResponse.fromJson(Map json) {
     return PendingAgreementsResponse(
-      pendingAgreements: List.from(json["pendingAgreements"]),
+      pendingAgreements: List.from(json["pendingAgreements"] ?? []),
     );
   }
 }
@@ -22988,7 +22987,7 @@ class PermitLoginRequest {
   factory PermitLoginRequest.fromJson(Map json) {
     return PermitLoginRequest(
       sessionId: json["sessionId"],
-      metaData: Map.from(json["metaData"]),
+      metaData: Map.from(json["metaData"] ?? {}),
     );
   }
 }
@@ -23020,8 +23019,8 @@ class PhoneVerificationResult {
 
   factory PhoneVerificationResult.fromJson(Map json) {
     return PhoneVerificationResult(
-      verificationResult: VerificationResult.fromValue(json["verificationResult"]),
-      accountMigrationCheckType: Pb1_EnumC13022i.fromValue(json["accountMigrationCheckType"]),
+      verificationResult: VerificationResult.fromValue(json["verificationResult"] ?? 0),
+      accountMigrationCheckType: Pb1_EnumC13022i.fromValue(json["accountMigrationCheckType"] ?? 0),
       recommendAddFriends: json["recommendAddFriends"],
     );
   }
@@ -23042,9 +23041,9 @@ class PocketMoneyInfo {
 
   factory PocketMoneyInfo.fromJson(Map json) {
     return PocketMoneyInfo(
-      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"]),
-      displayType: NZ0_I0.fromValue(json["displayType"]),
-      productType: NZ0_K0.fromValue(json["productType"]),
+      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"] ?? {}),
+      displayType: NZ0_I0.fromValue(json["displayType"] ?? 0),
+      productType: NZ0_K0.fromValue(json["productType"] ?? 0),
       refinanceText: json["refinanceText"],
     );
   }
@@ -23062,7 +23061,7 @@ class PoiInfo {
   factory PoiInfo.fromJson(Map json) {
     return PoiInfo(
       poiId: json["poiId"],
-      poiRealm: Pb1_F6.fromValue(json["poiRealm"]),
+      poiRealm: Pb1_F6.fromValue(json["poiRealm"] ?? 0),
     );
   }
 }
@@ -23076,7 +23075,7 @@ class PointInfo {
 
   factory PointInfo.fromJson(Map json) {
     return PointInfo(
-      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"]),
+      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"] ?? {}),
     );
   }
 }
@@ -23084,7 +23083,7 @@ class PointInfo {
 class PopularKeyword {
   final String value;
   final bool highlighted;
-  final Int64 id;
+  final dynamic id;
 
   PopularKeyword({
     required this.value,
@@ -23102,16 +23101,16 @@ class PopularKeyword {
 }
 
 class Popup {
-  final Int64 id;
+  final dynamic id;
   final String country;
   final String name;
   final PopupType type;
   final PopupContent content;
   final bool activated;
-  final Int64 revision;
-  final Int64 startsAt;
-  final Int64 endsAt;
-  final Int64 createdAt;
+  final dynamic revision;
+  final dynamic startsAt;
+  final dynamic endsAt;
+  final dynamic createdAt;
 
   Popup({
     required this.id,
@@ -23131,8 +23130,8 @@ class Popup {
       id: json["id"],
       country: json["country"],
       name: json["name"],
-      type: PopupType.fromValue(json["type"]),
-      content: PopupContent.fromJson(json["content"]),
+      type: PopupType.fromValue(json["type"] ?? 0),
+      content: PopupContent.fromJson(json["content"] ?? {}),
       activated: json["activated"],
       revision: json["revision"],
       startsAt: json["startsAt"],
@@ -23168,8 +23167,8 @@ class PopupContent {
 class PopupProperty {
   final String id;
   final String name;
-  final Int64 startDateTimeMillis;
-  final Int64 endDateTimeMillis;
+  final dynamic startDateTimeMillis;
+  final dynamic endDateTimeMillis;
   final List<PopupContent> popupContents;
   final String wrsCampaignId;
   final bool optOut;
@@ -23192,12 +23191,12 @@ class PopupProperty {
       name: json["name"],
       startDateTimeMillis: json["startDateTimeMillis"],
       endDateTimeMillis: json["endDateTimeMillis"],
-      popupContents: List.from(json["popupContents"])
+      popupContents: List.from(json["popupContents"] ?? [])
           .map((e) => PopupContent.fromJson(e))
           .toList(),
       wrsCampaignId: json["wrsCampaignId"],
       optOut: json["optOut"],
-      layoutSize: NZ0_N0.fromValue(json["layoutSize"]),
+      layoutSize: NZ0_N0.fromValue(json["layoutSize"] ?? 0),
     );
   }
 }
@@ -23223,7 +23222,7 @@ class Price {
 }
 
 class Priority {
-  final Int64 value;
+  final dynamic value;
 
   Priority({
     required this.value
@@ -23238,7 +23237,7 @@ class Priority {
 
 class Product {
   final String id;
-  final Int64 productVersion;
+  final dynamic productVersion;
   final AR0_o productDetails;
 
   Product({
@@ -23251,7 +23250,7 @@ class Product {
     return Product(
       id: json["id"],
       productVersion: json["productVersion"],
-      productDetails: AR0_o.fromJson(json["productDetails"]),
+      productDetails: AR0_o.fromJson(json["productDetails"] ?? {}),
     );
   }
 }
@@ -23268,15 +23267,15 @@ class ProductDetail {
   final String copyright;
   final String notice;
   final PromotionInfo promotionInfo;
-  final Int64 latestVersion;
+  final dynamic latestVersion;
   final String latestVersionString;
-  final Int64 version;
+  final dynamic version;
   final String versionString;
   final ApplicationVersionRange applicationVersionRange;
   final bool owned;
   final bool grantedByDefault;
   final int validFor;
-  final Int64 validUntil;
+  final dynamic validUntil;
   final bool onSale;
   final List<String> salesFlags;
   final bool availableForPresent;
@@ -23291,7 +23290,7 @@ class ProductDetail {
   final StickerResourceType stickerResourceType;
   final dynamic productProperty;
   final Ob1_J0 productSalesState;
-  final Int64 installedTime;
+  final dynamic installedTime;
   final ProductWishProperty wishProperty;
   final ProductSubscriptionProperty subscriptionProperty;
   final Ob1_H0 productPromotionProperty;
@@ -23352,43 +23351,43 @@ class ProductDetail {
       id: json["id"],
       billingItemId: json["billingItemId"],
       type: json["type"],
-      subtype: Ob1_X1.fromValue(json["subtype"]),
+      subtype: Ob1_X1.fromValue(json["subtype"] ?? 0),
       billingCpId: json["billingCpId"],
       name: json["name"],
       author: json["author"],
       details: json["details"],
       copyright: json["copyright"],
       notice: json["notice"],
-      promotionInfo: PromotionInfo.fromJson(json["promotionInfo"]),
+      promotionInfo: PromotionInfo.fromJson(json["promotionInfo"] ?? {}),
       latestVersion: json["latestVersion"],
       latestVersionString: json["latestVersionString"],
       version: json["version"],
       versionString: json["versionString"],
-      applicationVersionRange: ApplicationVersionRange.fromJson(json["applicationVersionRange"]),
+      applicationVersionRange: ApplicationVersionRange.fromJson(json["applicationVersionRange"] ?? {}),
       owned: json["owned"],
       grantedByDefault: json["grantedByDefault"],
       validFor: json["validFor"],
       validUntil: json["validUntil"],
       onSale: json["onSale"],
-      salesFlags: List.from(json["salesFlags"]),
+      salesFlags: List.from(json["salesFlags"] ?? []),
       availableForPresent: json["availableForPresent"],
       availableForMyself: json["availableForMyself"],
       priceTier: json["priceTier"],
-      price: Price.fromJson(json["price"]),
+      price: Price.fromJson(json["price"] ?? {}),
       priceInLineCoin: json["priceInLineCoin"],
-      localizedPrice: Price.fromJson(json["localizedPrice"]),
-      images: Map.from(json["images"]),
-      attributes: Map.from(json["attributes"]),
+      localizedPrice: Price.fromJson(json["localizedPrice"] ?? {}),
+      images: Map.from(json["images"] ?? {}),
+      attributes: Map.from(json["attributes"] ?? {}),
       authorId: json["authorId"],
-      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"]),
+      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"] ?? 0),
       productProperty: json["productProperty"],
-      productSalesState: Ob1_J0.fromValue(json["productSalesState"]),
+      productSalesState: Ob1_J0.fromValue(json["productSalesState"] ?? 0),
       installedTime: json["installedTime"],
-      wishProperty: ProductWishProperty.fromJson(json["wishProperty"]),
-      subscriptionProperty: ProductSubscriptionProperty.fromJson(json["subscriptionProperty"]),
-      productPromotionProperty: Ob1_H0.fromJson(json["productPromotionProperty"]),
+      wishProperty: ProductWishProperty.fromJson(json["wishProperty"] ?? {}),
+      subscriptionProperty: ProductSubscriptionProperty.fromJson(json["subscriptionProperty"] ?? {}),
+      productPromotionProperty: Ob1_H0.fromJson(json["productPromotionProperty"] ?? {}),
       availableInCountry: json["availableInCountry"],
-      editorsPickBanners: List.from(json["editorsPickBanners"])
+      editorsPickBanners: List.from(json["editorsPickBanners"] ?? [])
           .map((e) => EditorsPickBannerForClient.fromJson(e))
           .toList(),
       ableToBeGivenAsPresent: json["ableToBeGivenAsPresent"],
@@ -23413,7 +23412,7 @@ class ProductList {
 
   factory ProductList.fromJson(Map json) {
     return ProductList(
-      productList: List.from(json["productList"])
+      productList: List.from(json["productList"] ?? [])
           .map((e) => ProductDetail.fromJson(e))
           .toList(),
       offset: json["offset"],
@@ -23446,14 +23445,14 @@ class ProductListByAuthorRequest {
 
   factory ProductListByAuthorRequest.fromJson(Map json) {
     return ProductListByAuthorRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       authorId: json["authorId"],
       offset: json["offset"],
       limit: json["limit"],
-      shopFilter: ShopFilter.fromJson(json["shopFilter"]),
+      shopFilter: ShopFilter.fromJson(json["shopFilter"] ?? {}),
       includeStickerIds: json["includeStickerIds"],
-      additionalProductTypes: List.from(json["additionalProductTypes"]),
-      showcaseType: Ob1_EnumC12666u1.fromValue(json["showcaseType"]),
+      additionalProductTypes: List.from(json["additionalProductTypes"] ?? []),
+      showcaseType: Ob1_EnumC12666u1.fromValue(json["showcaseType"] ?? 0),
     );
   }
 }
@@ -23472,7 +23471,7 @@ class ProductSubscriptionProperty {
   factory ProductSubscriptionProperty.fromJson(Map json) {
     return ProductSubscriptionProperty(
       availableForSubscribe: json["availableForSubscribe"],
-      subscriptionAvailability: Ob1_D0.fromValue(json["subscriptionAvailability"]),
+      subscriptionAvailability: Ob1_D0.fromValue(json["subscriptionAvailability"] ?? 0),
     );
   }
 }
@@ -23480,14 +23479,14 @@ class ProductSubscriptionProperty {
 class ProductSummary {
   final String id;
   final String name;
-  final Int64 latestVersion;
+  final dynamic latestVersion;
   final ApplicationVersionRange applicationVersionRange;
   final bool grantedByDefault;
   final Map<String, String> attributes;
   final Ob1_P0 productTypeSummary;
-  final Int64 validUntil;
+  final dynamic validUntil;
   final int validFor;
-  final Int64 installedTime;
+  final dynamic installedTime;
   final Ob1_D0 availability;
   final String authorId;
   final bool canAutoDownload;
@@ -23515,27 +23514,27 @@ class ProductSummary {
       id: json["id"],
       name: json["name"],
       latestVersion: json["latestVersion"],
-      applicationVersionRange: ApplicationVersionRange.fromJson(json["applicationVersionRange"]),
+      applicationVersionRange: ApplicationVersionRange.fromJson(json["applicationVersionRange"] ?? {}),
       grantedByDefault: json["grantedByDefault"],
-      attributes: Map.from(json["attributes"]),
-      productTypeSummary: Ob1_P0.fromJson(json["productTypeSummary"]),
+      attributes: Map.from(json["attributes"] ?? {}),
+      productTypeSummary: Ob1_P0.fromJson(json["productTypeSummary"] ?? {}),
       validUntil: json["validUntil"],
       validFor: json["validFor"],
       installedTime: json["installedTime"],
-      availability: Ob1_D0.fromValue(json["availability"]),
+      availability: Ob1_D0.fromValue(json["availability"] ?? 0),
       authorId: json["authorId"],
       canAutoDownload: json["canAutoDownload"],
-      promotionInfo: PromotionInfo.fromJson(json["promotionInfo"]),
+      promotionInfo: PromotionInfo.fromJson(json["promotionInfo"] ?? {}),
     );
   }
 }
 
 class ProductSummaryForAutoSuggest {
   final String id;
-  final Int64 version;
+  final dynamic version;
   final String name;
   final StickerResourceType stickerResourceType;
-  final Int64 suggestVersion;
+  final dynamic suggestVersion;
   final Ob1_B0 popupLayer;
   final Ob1_O0 type;
   final Ob1_I0 resourceType;
@@ -23558,12 +23557,12 @@ class ProductSummaryForAutoSuggest {
       id: json["id"],
       version: json["version"],
       name: json["name"],
-      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"]),
+      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"] ?? 0),
       suggestVersion: json["suggestVersion"],
-      popupLayer: Ob1_B0.fromValue(json["popupLayer"]),
-      type: Ob1_O0.fromValue(json["type"]),
-      resourceType: Ob1_I0.fromJson(json["resourceType"]),
-      stickerSize: Ob1_C1.fromValue(json["stickerSize"]),
+      popupLayer: Ob1_B0.fromValue(json["popupLayer"] ?? 0),
+      type: Ob1_O0.fromValue(json["type"] ?? 0),
+      resourceType: Ob1_I0.fromJson(json["resourceType"] ?? {}),
+      stickerSize: Ob1_C1.fromValue(json["stickerSize"] ?? 0),
     );
   }
 }
@@ -23581,7 +23580,7 @@ class ProductSummaryList {
 
   factory ProductSummaryList.fromJson(Map json) {
     return ProductSummaryList(
-      productList: List.from(json["productList"])
+      productList: List.from(json["productList"] ?? [])
           .map((e) => ProductSummary.fromJson(e))
           .toList(),
       offset: json["offset"],
@@ -23601,7 +23600,7 @@ class ProductValidationRequest {
 
   factory ProductValidationRequest.fromJson(Map json) {
     return ProductValidationRequest(
-      validationScheme: ProductValidationScheme.fromJson(json["validationScheme"]),
+      validationScheme: ProductValidationScheme.fromJson(json["validationScheme"] ?? {}),
       authCode: json["authCode"],
     );
   }
@@ -23623,8 +23622,8 @@ class ProductValidationResult {
 
 class ProductValidationScheme {
   final String key;
-  final Int64 offset;
-  final Int64 size;
+  final dynamic offset;
+  final dynamic size;
 
   ProductValidationScheme({
     required this.key,
@@ -23642,7 +23641,7 @@ class ProductValidationScheme {
 }
 
 class ProductWishProperty {
-  final Int64 totalCount;
+  final dynamic totalCount;
 
   ProductWishProperty({
     required this.totalCount
@@ -23656,28 +23655,28 @@ class ProductWishProperty {
 }
 
 class Profile {
-  final String mid;
-  final String userid;
-  final String phone;
-  final String email;
-  final String regionCode;
-  final String displayName;
-  final String phoneticName;
-  final String pictureStatus;
-  final String thumbnailUrl;
-  final String statusMessage;
-  final bool allowSearchByUserid;
-  final bool allowSearchByEmail;
-  final String picturePath;
-  final String musicProfile;
-  final String videoProfile;
-  final Map<String, String> statusMessageContentMetadata;
-  final AvatarProfile avatarProfile;
-  final bool nftProfile;
-  final Pb1_N6 pictureSource;
-  final String profileId;
-  final Pb1_O6 profileType;
-  final Int64 createdTimeMillis;
+  final String? mid;
+  final String? userid;
+  final String? phone;
+  final String? email;
+  final String? regionCode;
+  final String? displayName;
+  final String? phoneticName;
+  final String? pictureStatus;
+  final String? thumbnailUrl;
+  final String? statusMessage;
+  final bool? allowSearchByUserid;
+  final bool? allowSearchByEmail;
+  final String? picturePath;
+  final String? musicProfile;
+  final String? videoProfile;
+  final Map<String, String>? statusMessageContentMetadata;
+  final AvatarProfile? avatarProfile;
+  final bool? nftProfile;
+  final Pb1_N6? pictureSource;
+  final String? profileId;
+  final Pb1_O6? profileType;
+  final dynamic createdTimeMillis;
 
   Profile({
     required this.mid,
@@ -23721,12 +23720,12 @@ class Profile {
       picturePath: json["picturePath"],
       musicProfile: json["musicProfile"],
       videoProfile: json["videoProfile"],
-      statusMessageContentMetadata: Map.from(json["statusMessageContentMetadata"]),
-      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"]),
+      statusMessageContentMetadata: Map.from(json["statusMessageContentMetadata"] ?? {}),
+      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"] ?? {}),
       nftProfile: json["nftProfile"],
-      pictureSource: Pb1_N6.fromValue(json["pictureSource"]),
+      pictureSource: Pb1_N6.fromValue(json["pictureSource"] ?? 0),
       profileId: json["profileId"],
-      profileType: Pb1_O6.fromValue(json["profileType"]),
+      profileType: Pb1_O6.fromValue(json["profileType"] ?? 0),
       createdTimeMillis: json["createdTimeMillis"],
     );
   }
@@ -23744,7 +23743,7 @@ class ProfileContent {
   factory ProfileContent.fromJson(Map json) {
     return ProfileContent(
       value: json["value"],
-      meta: Map.from(json["meta"]),
+      meta: Map.from(json["meta"] ?? {}),
     );
   }
 }
@@ -23758,7 +23757,7 @@ class ProfileRefererContent {
 
   factory ProfileRefererContent.fromJson(Map json) {
     return ProfileRefererContent(
-      oatQueryParameters: Map.from(json["oatQueryParameters"]),
+      oatQueryParameters: Map.from(json["oatQueryParameters"] ?? {}),
     );
   }
 }
@@ -23783,11 +23782,11 @@ class PromotionBuddyDetail {
   factory PromotionBuddyDetail.fromJson(Map json) {
     return PromotionBuddyDetail(
       searchId: json["searchId"],
-      contactStatus: ContactStatus.fromValue(json["contactStatus"]),
+      contactStatus: ContactStatus.fromValue(json["contactStatus"] ?? 0),
       name: json["name"],
       pictureUrl: json["pictureUrl"],
       statusMessage: json["statusMessage"],
-      brandType: Ob1_EnumC12641m.fromValue(json["brandType"]),
+      brandType: Ob1_EnumC12641m.fromValue(json["brandType"] ?? 0),
     );
   }
 }
@@ -23806,7 +23805,7 @@ class PromotionBuddyInfo {
   factory PromotionBuddyInfo.fromJson(Map json) {
     return PromotionBuddyInfo(
       buddyMid: json["buddyMid"],
-      promotionBuddyDetail: PromotionBuddyDetail.fromJson(json["promotionBuddyDetail"]),
+      promotionBuddyDetail: PromotionBuddyDetail.fromJson(json["promotionBuddyDetail"] ?? {}),
       showBanner: json["showBanner"],
     );
   }
@@ -23825,9 +23824,9 @@ class PromotionInfo {
 
   factory PromotionInfo.fromJson(Map json) {
     return PromotionInfo(
-      promotionType: Ob1_EnumC12610b1.fromValue(json["promotionType"]),
-      promotionDetail: Ob1_W0.fromJson(json["promotionDetail"]),
-      buddyInfo: PromotionBuddyInfo.fromJson(json["buddyInfo"]),
+      promotionType: Ob1_EnumC12610b1.fromValue(json["promotionType"] ?? 0),
+      promotionDetail: Ob1_W0.fromJson(json["promotionDetail"] ?? {}),
+      buddyInfo: PromotionBuddyInfo.fromJson(json["buddyInfo"] ?? {}),
     );
   }
 }
@@ -23866,7 +23865,7 @@ class PromotionMissionInfo {
 
   factory PromotionMissionInfo.fromJson(Map json) {
     return PromotionMissionInfo(
-      promotionMissionType: Ob1_EnumC12607a1.fromValue(json["promotionMissionType"]),
+      promotionMissionType: Ob1_EnumC12607a1.fromValue(json["promotionMissionType"] ?? 0),
       missionCompleted: json["missionCompleted"],
       downloadUrl: json["downloadUrl"],
       customUrlSchema: json["customUrlSchema"],
@@ -23900,7 +23899,7 @@ class PublicKeyCredentialCreationOptions {
   final PublicKeyCredentialUserEntity user;
   final String challenge;
   final List<PublicKeyCredentialParameters> pubKeyCredParams;
-  final Int64 timeout;
+  final dynamic timeout;
   final List<PublicKeyCredentialDescriptor> excludeCredentials;
   final AuthenticatorSelectionCriteria authenticatorSelection;
   final String attestation;
@@ -23920,19 +23919,19 @@ class PublicKeyCredentialCreationOptions {
 
   factory PublicKeyCredentialCreationOptions.fromJson(Map json) {
     return PublicKeyCredentialCreationOptions(
-      rp: PublicKeyCredentialRpEntity.fromJson(json["rp"]),
-      user: PublicKeyCredentialUserEntity.fromJson(json["user"]),
+      rp: PublicKeyCredentialRpEntity.fromJson(json["rp"] ?? {}),
+      user: PublicKeyCredentialUserEntity.fromJson(json["user"] ?? {}),
       challenge: json["challenge"],
-      pubKeyCredParams: List.from(json["pubKeyCredParams"])
+      pubKeyCredParams: List.from(json["pubKeyCredParams"] ?? [])
           .map((e) => PublicKeyCredentialParameters.fromJson(e))
           .toList(),
       timeout: json["timeout"],
-      excludeCredentials: List.from(json["excludeCredentials"])
+      excludeCredentials: List.from(json["excludeCredentials"] ?? [])
           .map((e) => PublicKeyCredentialDescriptor.fromJson(e))
           .toList(),
-      authenticatorSelection: AuthenticatorSelectionCriteria.fromJson(json["authenticatorSelection"]),
+      authenticatorSelection: AuthenticatorSelectionCriteria.fromJson(json["authenticatorSelection"] ?? {}),
       attestation: json["attestation"],
-      extensions: AuthenticationExtensionsClientInputs.fromJson(json["extensions"]),
+      extensions: AuthenticationExtensionsClientInputs.fromJson(json["extensions"] ?? {}),
     );
   }
 }
@@ -23952,7 +23951,7 @@ class PublicKeyCredentialDescriptor {
     return PublicKeyCredentialDescriptor(
       type: json["type"],
       id: json["id"],
-      transports: List.from(json["transports"]),
+      transports: List.from(json["transports"] ?? []),
     );
   }
 }
@@ -23976,7 +23975,7 @@ class PublicKeyCredentialParameters {
 
 class PublicKeyCredentialRequestOptions {
   final String challenge;
-  final Int64 timeout;
+  final dynamic timeout;
   final String rpId;
   final List<PublicKeyCredentialDescriptor> allowCredentials;
   final String userVerification;
@@ -23996,11 +23995,11 @@ class PublicKeyCredentialRequestOptions {
       challenge: json["challenge"],
       timeout: json["timeout"],
       rpId: json["rpId"],
-      allowCredentials: List.from(json["allowCredentials"])
+      allowCredentials: List.from(json["allowCredentials"] ?? [])
           .map((e) => PublicKeyCredentialDescriptor.fromJson(e))
           .toList(),
       userVerification: json["userVerification"],
-      extensions: AuthenticationExtensionsClientInputs.fromJson(json["extensions"]),
+      extensions: AuthenticationExtensionsClientInputs.fromJson(json["extensions"] ?? {}),
     );
   }
 }
@@ -24086,10 +24085,10 @@ class PurchaseOrder {
       shopId: json["shopId"],
       productId: json["productId"],
       recipientMid: json["recipientMid"],
-      price: Price.fromJson(json["price"]),
+      price: Price.fromJson(json["price"] ?? {}),
       enableLinePointAutoExchange: json["enableLinePointAutoExchange"],
-      locale: Locale.fromJson(json["locale"]),
-      presentAttributes: Map.from(json["presentAttributes"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
+      presentAttributes: Map.from(json["presentAttributes"] ?? {}),
     );
   }
 }
@@ -24108,7 +24107,7 @@ class PurchaseOrderResponse {
   factory PurchaseOrderResponse.fromJson(Map json) {
     return PurchaseOrderResponse(
       orderId: json["orderId"],
-      attributes: Map.from(json["attributes"]),
+      attributes: Map.from(json["attributes"] ?? {}),
       billingConfirmUrl: json["billingConfirmUrl"],
     );
   }
@@ -24116,7 +24115,7 @@ class PurchaseOrderResponse {
 
 class PurchaseRecord {
   final ProductDetail productDetail;
-  final Int64 purchasedTime;
+  final dynamic purchasedTime;
   final String giver;
   final String recipient;
   final Price purchasedPrice;
@@ -24131,11 +24130,11 @@ class PurchaseRecord {
 
   factory PurchaseRecord.fromJson(Map json) {
     return PurchaseRecord(
-      productDetail: ProductDetail.fromJson(json["productDetail"]),
+      productDetail: ProductDetail.fromJson(json["productDetail"] ?? {}),
       purchasedTime: json["purchasedTime"],
       giver: json["giver"],
       recipient: json["recipient"],
-      purchasedPrice: Price.fromJson(json["purchasedPrice"]),
+      purchasedPrice: Price.fromJson(json["purchasedPrice"] ?? {}),
     );
   }
 }
@@ -24153,7 +24152,7 @@ class PurchaseRecordList {
 
   factory PurchaseRecordList.fromJson(Map json) {
     return PurchaseRecordList(
-      purchaseRecords: List.from(json["purchaseRecords"])
+      purchaseRecords: List.from(json["purchaseRecords"] ?? [])
           .map((e) => PurchaseRecord.fromJson(e))
           .toList(),
       offset: json["offset"],
@@ -24183,7 +24182,7 @@ class PurchaseSubscriptionRequest {
     return PurchaseSubscriptionRequest(
       billingItemId: json["billingItemId"],
       subscriptionService: json["subscriptionService"],
-      storeCode: Ob1_K1.fromValue(json["storeCode"]),
+      storeCode: Ob1_K1.fromValue(json["storeCode"] ?? 0),
       storeOrderId: json["storeOrderId"],
       outsideAppPurchase: json["outsideAppPurchase"],
       unavailableItemPurchase: json["unavailableItemPurchase"],
@@ -24204,7 +24203,7 @@ class PurchaseSubscriptionResponse {
 
   factory PurchaseSubscriptionResponse.fromJson(Map json) {
     return PurchaseSubscriptionResponse(
-      result: Ob1_M1.fromValue(json["result"]),
+      result: Ob1_M1.fromValue(json["result"] ?? 0),
       orderId: json["orderId"],
       confirmUrl: json["confirmUrl"],
     );
@@ -24213,12 +24212,12 @@ class PurchaseSubscriptionResponse {
 
 class PushRecvReport {
   final String pushTrackingId;
-  final Int64 recvTimestamp;
+  final dynamic recvTimestamp;
   final int battery;
   final Pb1_EnumC13009h0 batteryMode;
   final Pb1_EnumC12998g3 clientNetworkType;
   final String carrierCode;
-  final Int64 displayTimestamp;
+  final dynamic displayTimestamp;
 
   PushRecvReport({
     required this.pushTrackingId,
@@ -24235,8 +24234,8 @@ class PushRecvReport {
       pushTrackingId: json["pushTrackingId"],
       recvTimestamp: json["recvTimestamp"],
       battery: json["battery"],
-      batteryMode: Pb1_EnumC13009h0.fromValue(json["batteryMode"]),
-      clientNetworkType: Pb1_EnumC12998g3.fromValue(json["clientNetworkType"]),
+      batteryMode: Pb1_EnumC13009h0.fromValue(json["batteryMode"] ?? 0),
+      clientNetworkType: Pb1_EnumC12998g3.fromValue(json["clientNetworkType"] ?? 0),
       carrierCode: json["carrierCode"],
       displayTimestamp: json["displayTimestamp"],
     );
@@ -24255,7 +24254,7 @@ class PutE2eeKeyRequest {
   factory PutE2eeKeyRequest.fromJson(Map json) {
     return PutE2eeKeyRequest(
       sessionId: json["sessionId"],
-      e2eeKey: Map.from(json["e2eeKey"]),
+      e2eeKey: Map.from(json["e2eeKey"] ?? {}),
     );
   }
 }
@@ -24278,8 +24277,8 @@ class Qj_C13595l {
   factory Qj_C13595l.fromJson(Map json) {
     return Qj_C13595l(
       none: json["none"],
-      chat: LiffChatContext.fromJson(json["chat"]),
-      squareChat: LiffSquareChatContext.fromJson(json["squareChat"]),
+      chat: LiffChatContext.fromJson(json["chat"] ?? {}),
+      squareChat: LiffSquareChatContext.fromJson(json["squareChat"] ?? {}),
     );
   }
 }
@@ -24295,8 +24294,8 @@ class Qj_C13599p {
 
   factory Qj_C13599p.fromJson(Map json) {
     return Qj_C13599p(
-      consentRequired: LiffErrorConsentRequired.fromJson(json["consentRequired"]),
-      permanentLinkInvalidRequest: LiffErrorPermanentLinkInvalidRequest.fromJson(json["permanentLinkInvalidRequest"]),
+      consentRequired: LiffErrorConsentRequired.fromJson(json["consentRequired"] ?? {}),
+      permanentLinkInvalidRequest: LiffErrorPermanentLinkInvalidRequest.fromJson(json["permanentLinkInvalidRequest"] ?? {}),
     );
   }
 }
@@ -24346,7 +24345,7 @@ class QuickMenuCouponInfo {
       iconUrl: json["iconUrl"],
       targetId: json["targetId"],
       targetName: json["targetName"],
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
       darkModeIconUrl: json["darkModeIconUrl"],
     );
   }
@@ -24363,10 +24362,10 @@ class QuickMenuMyCardInfo {
 
   factory QuickMenuMyCardInfo.fromJson(Map json) {
     return QuickMenuMyCardInfo(
-      myCardItems: List.from(json["myCardItems"])
+      myCardItems: List.from(json["myCardItems"] ?? [])
           .map((e) => QuickMenuMyCardItem.fromJson(e))
           .toList(),
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
     );
   }
 }
@@ -24392,7 +24391,7 @@ class QuickMenuMyCardItem {
 
   factory QuickMenuMyCardItem.fromJson(Map json) {
     return QuickMenuMyCardItem(
-      itemType: NZ0_S0.fromValue(json["itemType"]),
+      itemType: NZ0_S0.fromValue(json["itemType"] ?? 0),
       mainText: json["mainText"],
       linkUrl: json["linkUrl"],
       iconUrl: json["iconUrl"],
@@ -24427,7 +24426,7 @@ class QuickMenuPointInfo {
       iconUrl: json["iconUrl"],
       targetId: json["targetId"],
       targetName: json["targetName"],
-      responseStatus: NZ0_W0.fromValue(json["responseStatus"]),
+      responseStatus: NZ0_W0.fromValue(json["responseStatus"] ?? 0),
     );
   }
 }
@@ -24499,7 +24498,7 @@ class RSAKey {
 
 class ReactRequest {
   final int reqSeq;
-  final Int64 messageId;
+  final dynamic messageId;
   final ReactionType reactionType;
 
   ReactRequest({
@@ -24512,7 +24511,7 @@ class ReactRequest {
     return ReactRequest(
       reqSeq: json["reqSeq"],
       messageId: json["messageId"],
-      reactionType: ReactionType.fromJson(json["reactionType"]),
+      reactionType: ReactionType.fromJson(json["reactionType"] ?? {}),
     );
   }
 }
@@ -24537,7 +24536,7 @@ class ReactToMessageRequest {
       reqSeq: json["reqSeq"],
       squareChatMid: json["squareChatMid"],
       messageId: json["messageId"],
-      reactionType: MessageReactionType.fromValue(json["reactionType"]),
+      reactionType: MessageReactionType.fromValue(json["reactionType"] ?? 0),
       threadMid: json["threadMid"],
     );
   }
@@ -24554,15 +24553,15 @@ class ReactToMessageResponse {
 
   factory ReactToMessageResponse.fromJson(Map json) {
     return ReactToMessageResponse(
-      reaction: SquareMessageReaction.fromJson(json["reaction"]),
-      status: SquareMessageReactionStatus.fromJson(json["status"]),
+      reaction: SquareMessageReaction.fromJson(json["reaction"] ?? {}),
+      status: SquareMessageReactionStatus.fromJson(json["status"] ?? {}),
     );
   }
 }
 
 class Reaction {
   final String fromUserMid;
-  final Int64 atMillis;
+  final dynamic atMillis;
   final ReactionType reactionType;
 
   Reaction({
@@ -24575,7 +24574,7 @@ class Reaction {
     return Reaction(
       fromUserMid: json["fromUserMid"],
       atMillis: json["atMillis"],
-      reactionType: ReactionType.fromJson(json["reactionType"]),
+      reactionType: ReactionType.fromJson(json["reactionType"] ?? {}),
     );
   }
 }
@@ -24589,13 +24588,13 @@ class ReactionType {
 
   factory ReactionType.fromJson(Map json) {
     return ReactionType(
-      predefinedReactionType: MessageReactionType.fromValue(json["predefinedReactionType"]),
+      predefinedReactionType: MessageReactionType.fromValue(json["predefinedReactionType"] ?? 0),
     );
   }
 }
 
 class RecommendationDetail {
-  final Int64 createdTime;
+  final dynamic createdTime;
   final List<LN0_z0> reasons;
   final bool hidden;
 
@@ -24608,7 +24607,7 @@ class RecommendationDetail {
   factory RecommendationDetail.fromJson(Map json) {
     return RecommendationDetail(
       createdTime: json["createdTime"],
-      reasons: List.from(json["reasons"])
+      reasons: List.from(json["reasons"] ?? [])
           .map((e) => LN0_z0.fromJson(e))
           .toList(),
       hidden: json["hidden"],
@@ -24646,9 +24645,9 @@ class RefreshAccessTokenRequest {
 
 class RefreshAccessTokenResponse {
   final String accessToken;
-  final Int64 durationUntilRefreshInSec;
+  final dynamic durationUntilRefreshInSec;
   final RetryPolicy retryPolicy;
-  final Int64 tokenIssueTimeEpochSec;
+  final dynamic tokenIssueTimeEpochSec;
   final String refreshToken;
 
   RefreshAccessTokenResponse({
@@ -24663,7 +24662,7 @@ class RefreshAccessTokenResponse {
     return RefreshAccessTokenResponse(
       accessToken: json["accessToken"],
       durationUntilRefreshInSec: json["durationUntilRefreshInSec"],
-      retryPolicy: RetryPolicy.fromJson(json["retryPolicy"]),
+      retryPolicy: RetryPolicy.fromJson(json["retryPolicy"] ?? {}),
       tokenIssueTimeEpochSec: json["tokenIssueTimeEpochSec"],
       refreshToken: json["refreshToken"],
     );
@@ -24671,8 +24670,8 @@ class RefreshAccessTokenResponse {
 }
 
 class RefreshApiRetryPolicy {
-  final Int64 initialDelayInMillis;
-  final Int64 maxDelayInMillis;
+  final dynamic initialDelayInMillis;
+  final dynamic maxDelayInMillis;
   final int multiplier;
   final int jitterRate;
 
@@ -24694,7 +24693,7 @@ class RefreshApiRetryPolicy {
 }
 
 class RefreshSubscriptionsRequest {
-  final List<Int64> subscriptions;
+  final List<dynamic> subscriptions;
 
   RefreshSubscriptionsRequest({
     required this.subscriptions
@@ -24702,14 +24701,14 @@ class RefreshSubscriptionsRequest {
 
   factory RefreshSubscriptionsRequest.fromJson(Map json) {
     return RefreshSubscriptionsRequest(
-      subscriptions: List.from(json["subscriptions"]),
+      subscriptions: List.from(json["subscriptions"] ?? []),
     );
   }
 }
 
 class RefreshSubscriptionsResponse {
-  final Int64 ttlMillis;
-  final Map<Int64, SubscriptionState> subscriptionStates;
+  final dynamic ttlMillis;
+  final Map<dynamic, SubscriptionState> subscriptionStates;
 
   RefreshSubscriptionsResponse({
     required this.ttlMillis,
@@ -24719,7 +24718,7 @@ class RefreshSubscriptionsResponse {
   factory RefreshSubscriptionsResponse.fromJson(Map json) {
     return RefreshSubscriptionsResponse(
       ttlMillis: json["ttlMillis"],
-      subscriptionStates: Map.from(json["subscriptionStates"]),
+      subscriptionStates: Map.from(json["subscriptionStates"] ?? {}),
     );
   }
 }
@@ -24741,8 +24740,8 @@ class RegPublicKeyCredential {
     return RegPublicKeyCredential(
       id: json["id"],
       type: json["type"],
-      response: AuthenticatorAttestationResponse.fromJson(json["response"]),
-      extensionResults: AuthenticationExtensionsClientOutputs.fromJson(json["extensionResults"]),
+      response: AuthenticatorAttestationResponse.fromJson(json["response"] ?? {}),
+      extensionResults: AuthenticationExtensionsClientOutputs.fromJson(json["extensionResults"] ?? {}),
     );
   }
 }
@@ -24766,7 +24765,7 @@ class RegisterCampaignRewardResponse {
   final ResultPopupProperty resultPopupProperty;
   final String errorMessage;
   final String registeredId;
-  final Int64 registeredDateTimeMillis;
+  final dynamic registeredDateTimeMillis;
   final String redirectUrlWithoutResultPopup;
 
   RegisterCampaignRewardResponse({
@@ -24780,8 +24779,8 @@ class RegisterCampaignRewardResponse {
 
   factory RegisterCampaignRewardResponse.fromJson(Map json) {
     return RegisterCampaignRewardResponse(
-      campaignStatus: NZ0_EnumC12188n.fromValue(json["campaignStatus"]),
-      resultPopupProperty: ResultPopupProperty.fromJson(json["resultPopupProperty"]),
+      campaignStatus: NZ0_EnumC12188n.fromValue(json["campaignStatus"] ?? 0),
+      resultPopupProperty: ResultPopupProperty.fromJson(json["resultPopupProperty"] ?? {}),
       errorMessage: json["errorMessage"],
       registeredId: json["registeredId"],
       registeredDateTimeMillis: json["registeredDateTimeMillis"],
@@ -24801,7 +24800,7 @@ class RegisterE2EEPublicKeyV2Response {
 
   factory RegisterE2EEPublicKeyV2Response.fromJson(Map json) {
     return RegisterE2EEPublicKeyV2Response(
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
       isMasterKeyConflict: json["isMasterKeyConflict"],
     );
   }
@@ -24838,7 +24837,7 @@ class RegisterPrimaryWithTokenV3Response {
   factory RegisterPrimaryWithTokenV3Response.fromJson(Map json) {
     return RegisterPrimaryWithTokenV3Response(
       authToken: json["authToken"],
-      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"]),
+      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"] ?? {}),
       mid: json["mid"],
     );
   }
@@ -24856,7 +24855,7 @@ class I80_q0 {
   factory I80_q0.fromJson(Map json) {
     return I80_q0(
       authSessionId: json["authSessionId"],
-      encryptionKey: I80_y0.fromJson(json["encryptionKey"]),
+      encryptionKey: I80_y0.fromJson(json["encryptionKey"] ?? {}),
     );
   }
 }
@@ -24941,7 +24940,7 @@ class RejectSpeakersRequest {
     return RejectSpeakersRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      targetMids: List.from(json["targetMids"]),
+      targetMids: List.from(json["targetMids"] ?? []),
     );
   }
 }
@@ -24958,7 +24957,7 @@ class RejectSquareMembersRequest {
   factory RejectSquareMembersRequest.fromJson(Map json) {
     return RejectSquareMembersRequest(
       squareMid: json["squareMid"],
-      requestedMemberMids: List.from(json["requestedMemberMids"]),
+      requestedMemberMids: List.from(json["requestedMemberMids"] ?? []),
     );
   }
 }
@@ -24974,10 +24973,10 @@ class RejectSquareMembersResponse {
 
   factory RejectSquareMembersResponse.fromJson(Map json) {
     return RejectSquareMembersResponse(
-      rejectedMembers: List.from(json["rejectedMembers"])
+      rejectedMembers: List.from(json["rejectedMembers"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      status: SquareStatus.fromJson(json["status"]),
+      status: SquareStatus.fromJson(json["status"] ?? {}),
     );
   }
 }
@@ -25011,7 +25010,7 @@ class RemoveFollowerRequest {
 
   factory RemoveFollowerRequest.fromJson(Map json) {
     return RemoveFollowerRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
     );
   }
 }
@@ -25025,7 +25024,7 @@ class RemoveFromFollowBlacklistRequest {
 
   factory RemoveFromFollowBlacklistRequest.fromJson(Map json) {
     return RemoveFromFollowBlacklistRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
     );
   }
 }
@@ -25082,10 +25081,10 @@ class RemoveProductFromSubscriptionSlotRequest {
 
   factory RemoveProductFromSubscriptionSlotRequest.fromJson(Map json) {
     return RemoveProductFromSubscriptionSlotRequest(
-      productType: Ob1_O0.fromValue(json["productType"]),
+      productType: Ob1_O0.fromValue(json["productType"] ?? 0),
       productId: json["productId"],
       subscriptionService: json["subscriptionService"],
-      productIds: List.from(json["productIds"]),
+      productIds: List.from(json["productIds"] ?? []),
     );
   }
 }
@@ -25099,13 +25098,13 @@ class RemoveProductFromSubscriptionSlotResponse {
 
   factory RemoveProductFromSubscriptionSlotResponse.fromJson(Map json) {
     return RemoveProductFromSubscriptionSlotResponse(
-      result: Ob1_U1.fromValue(json["result"]),
+      result: Ob1_U1.fromValue(json["result"] ?? 0),
     );
   }
 }
 
 class RemoveSubscriptionsRequest {
-  final List<Int64> unsubscriptions;
+  final List<dynamic> unsubscriptions;
 
   RemoveSubscriptionsRequest({
     required this.unsubscriptions
@@ -25113,7 +25112,7 @@ class RemoveSubscriptionsRequest {
 
   factory RemoveSubscriptionsRequest.fromJson(Map json) {
     return RemoveSubscriptionsRequest(
-      unsubscriptions: List.from(json["unsubscriptions"]),
+      unsubscriptions: List.from(json["unsubscriptions"] ?? []),
     );
   }
 }
@@ -25163,7 +25162,7 @@ class RepairTriggerConfigurationsElement {
 
   factory RepairTriggerConfigurationsElement.fromJson(Map json) {
     return RepairTriggerConfigurationsElement(
-      serverConfigurations: Configurations.fromJson(json["serverConfigurations"]),
+      serverConfigurations: Configurations.fromJson(json["serverConfigurations"] ?? {}),
       nextCallIntervalMinutes: json["nextCallIntervalMinutes"],
     );
   }
@@ -25182,8 +25181,8 @@ class RepairTriggerGroupMembersElement {
 
   factory RepairTriggerGroupMembersElement.fromJson(Map json) {
     return RepairTriggerGroupMembersElement(
-      matchedGroups: Map.from(json["matchedGroups"]),
-      mismatchedGroups: Map.from(json["mismatchedGroups"]),
+      matchedGroups: Map.from(json["matchedGroups"] ?? {}),
+      mismatchedGroups: Map.from(json["mismatchedGroups"] ?? {}),
       nextCallIntervalMinutes: json["nextCallIntervalMinutes"],
     );
   }
@@ -25222,9 +25221,9 @@ class RepairTriggerProfileElement {
 
   factory RepairTriggerProfileElement.fromJson(Map json) {
     return RepairTriggerProfileElement(
-      serverProfile: Profile.fromJson(json["serverProfile"]),
+      serverProfile: Profile.fromJson(json["serverProfile"] ?? {}),
       nextCallIntervalMinutes: json["nextCallIntervalMinutes"],
-      serverMultiProfiles: List.from(json["serverMultiProfiles"])
+      serverMultiProfiles: List.from(json["serverMultiProfiles"] ?? [])
           .map((e) => Profile.fromJson(e))
           .toList(),
     );
@@ -25242,7 +25241,7 @@ class RepairTriggerProfileMappingListElement {
 
   factory RepairTriggerProfileMappingListElement.fromJson(Map json) {
     return RepairTriggerProfileMappingListElement(
-      profileMappings: Map.from(json["profileMappings"]),
+      profileMappings: Map.from(json["profileMappings"] ?? {}),
       nextCallIntervalMinutes: json["nextCallIntervalMinutes"],
     );
   }
@@ -25259,7 +25258,7 @@ class RepairTriggerSettingsElement {
 
   factory RepairTriggerSettingsElement.fromJson(Map json) {
     return RepairTriggerSettingsElement(
-      serverSettings: Settings.fromJson(json["serverSettings"]),
+      serverSettings: Settings.fromJson(json["serverSettings"] ?? {}),
       nextCallIntervalMinutes: json["nextCallIntervalMinutes"],
     );
   }
@@ -25274,7 +25273,7 @@ class ReportAbuseExRequest {
 
   factory ReportAbuseExRequest.fromJson(Map json) {
     return ReportAbuseExRequest(
-      abuseReportEntry: Pb1_C12938c.fromJson(json["abuseReportEntry"]),
+      abuseReportEntry: Pb1_C12938c.fromJson(json["abuseReportEntry"] ?? {}),
     );
   }
 }
@@ -25294,7 +25293,7 @@ class ReportLiveTalkRequest {
     return ReportLiveTalkRequest(
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
-      reportType: LiveTalkReportType.fromValue(json["reportType"]),
+      reportType: LiveTalkReportType.fromValue(json["reportType"] ?? 0),
     );
   }
 }
@@ -25317,14 +25316,14 @@ class ReportLiveTalkSpeakerRequest {
       squareChatMid: json["squareChatMid"],
       sessionId: json["sessionId"],
       speakerMemberMid: json["speakerMemberMid"],
-      reportType: LiveTalkReportType.fromValue(json["reportType"]),
+      reportType: LiveTalkReportType.fromValue(json["reportType"] ?? 0),
     );
   }
 }
 
 class ReportMessageSummaryRequest {
   final String chatEmid;
-  final Int64 messageSummaryRangeTo;
+  final dynamic messageSummaryRangeTo;
   final MessageSummaryReportType reportType;
 
   ReportMessageSummaryRequest({
@@ -25337,7 +25336,7 @@ class ReportMessageSummaryRequest {
     return ReportMessageSummaryRequest(
       chatEmid: json["chatEmid"],
       messageSummaryRangeTo: json["messageSummaryRangeTo"],
-      reportType: MessageSummaryReportType.fromValue(json["reportType"]),
+      reportType: MessageSummaryReportType.fromValue(json["reportType"] ?? 0),
     );
   }
 }
@@ -25373,7 +25372,7 @@ class ReportSquareChatRequest {
     return ReportSquareChatRequest(
       squareMid: json["squareMid"],
       squareChatMid: json["squareChatMid"],
-      reportType: ReportType.fromValue(json["reportType"]),
+      reportType: ReportType.fromValue(json["reportType"] ?? 0),
       otherReason: json["otherReason"],
     );
   }
@@ -25397,7 +25396,7 @@ class ReportSquareMemberRequest {
   factory ReportSquareMemberRequest.fromJson(Map json) {
     return ReportSquareMemberRequest(
       squareMemberMid: json["squareMemberMid"],
-      reportType: ReportType.fromValue(json["reportType"]),
+      reportType: ReportType.fromValue(json["reportType"] ?? 0),
       otherReason: json["otherReason"],
       squareChatMid: json["squareChatMid"],
       threadMid: json["threadMid"],
@@ -25427,7 +25426,7 @@ class ReportSquareMessageRequest {
       squareMid: json["squareMid"],
       squareChatMid: json["squareChatMid"],
       squareMessageId: json["squareMessageId"],
-      reportType: ReportType.fromValue(json["reportType"]),
+      reportType: ReportType.fromValue(json["reportType"] ?? 0),
       otherReason: json["otherReason"],
       threadMid: json["threadMid"],
     );
@@ -25448,7 +25447,7 @@ class ReportSquareRequest {
   factory ReportSquareRequest.fromJson(Map json) {
     return ReportSquareRequest(
       squareMid: json["squareMid"],
-      reportType: ReportType.fromValue(json["reportType"]),
+      reportType: ReportType.fromValue(json["reportType"] ?? 0),
       otherReason: json["otherReason"],
     );
   }
@@ -25468,8 +25467,8 @@ class ReqToSendPhonePinCodeRequest {
   factory ReqToSendPhonePinCodeRequest.fromJson(Map json) {
     return ReqToSendPhonePinCodeRequest(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
-      verifMethod: T70_K.fromValue(json["verifMethod"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
+      verifMethod: T70_K.fromValue(json["verifMethod"] ?? 0),
     );
   }
 }
@@ -25488,8 +25487,8 @@ class I80_s0 {
   factory I80_s0.fromJson(Map json) {
     return I80_s0(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
-      verifMethod: I80_EnumC26425y.fromValue(json["verifMethod"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
+      verifMethod: I80_EnumC26425y.fromValue(json["verifMethod"] ?? 0),
     );
   }
 }
@@ -25503,7 +25502,7 @@ class I80_t0 {
 
   factory I80_t0.fromJson(Map json) {
     return I80_t0(
-      availableMethods: List.from(json["availableMethods"]),
+      availableMethods: List.from(json["availableMethods"] ?? []),
     );
   }
 }
@@ -25517,7 +25516,7 @@ class ReqToSendPhonePinCodeResponse {
 
   factory ReqToSendPhonePinCodeResponse.fromJson(Map json) {
     return ReqToSendPhonePinCodeResponse(
-      availableMethods: List.from(json["availableMethods"]),
+      availableMethods: List.from(json["availableMethods"] ?? []),
     );
   }
 }
@@ -25557,7 +25556,7 @@ class I80_u0 {
 }
 
 class RequestToSendPasswordSetVerificationEmailResponse {
-  final Int64 timeoutMinutes;
+  final dynamic timeoutMinutes;
 
   RequestToSendPasswordSetVerificationEmailResponse({
     required this.timeoutMinutes
@@ -25615,8 +25614,8 @@ class ReserveInfo {
 
   factory ReserveInfo.fromJson(Map json) {
     return ReserveInfo(
-      purchaseEnabledStatus: og_I.fromValue(json["purchaseEnabledStatus"]),
-      orderInfo: OrderInfo.fromJson(json["orderInfo"]),
+      purchaseEnabledStatus: og_I.fromValue(json["purchaseEnabledStatus"] ?? 0),
+      orderInfo: OrderInfo.fromJson(json["orderInfo"] ?? {}),
     );
   }
 }
@@ -25655,7 +25654,7 @@ class ReserveSubscriptionPurchaseRequest {
   factory ReserveSubscriptionPurchaseRequest.fromJson(Map json) {
     return ReserveSubscriptionPurchaseRequest(
       billingItemId: json["billingItemId"],
-      storeCode: fN0_G.fromValue(json["storeCode"]),
+      storeCode: fN0_G.fromValue(json["storeCode"] ?? 0),
       addOaFriend: json["addOaFriend"],
       entryPoint: json["entryPoint"],
       campaignId: json["campaignId"],
@@ -25677,7 +25676,7 @@ class ReserveSubscriptionPurchaseResponse {
 
   factory ReserveSubscriptionPurchaseResponse.fromJson(Map json) {
     return ReserveSubscriptionPurchaseResponse(
-      result: fN0_F.fromValue(json["result"]),
+      result: fN0_F.fromValue(json["result"] ?? 0),
       orderId: json["orderId"],
       confirmUrl: json["confirmUrl"],
     );
@@ -25716,10 +25715,10 @@ class I80_x0 {
   factory I80_x0.fromJson(Map json) {
     return I80_x0(
       mid: json["mid"],
-      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"]),
-      tokenV1IssueResult: TokenV1IssueResult.fromJson(json["tokenV1IssueResult"]),
+      tokenV3IssueResult: TokenV3IssueResult.fromJson(json["tokenV3IssueResult"] ?? {}),
+      tokenV1IssueResult: TokenV1IssueResult.fromJson(json["tokenV1IssueResult"] ?? {}),
       accountCountryCode: json["accountCountryCode"],
-      formattedPhoneNumbers: FormattedPhoneNumbers.fromJson(json["formattedPhoneNumbers"]),
+      formattedPhoneNumbers: FormattedPhoneNumbers.fromJson(json["formattedPhoneNumbers"] ?? {}),
     );
   }
 }
@@ -25750,8 +25749,8 @@ class ResultPopupProperty {
       closeButtonText: json["closeButtonText"],
       linkButtonText: json["linkButtonText"],
       linkButtonForwardUrl: json["linkButtonForwardUrl"],
-      eventButton: EventButton.fromJson(json["eventButton"]),
-      oaAddfreindArea: OaAddFriendArea.fromJson(json["oaAddfreindArea"]),
+      eventButton: EventButton.fromJson(json["eventButton"] ?? {}),
+      oaAddfreindArea: OaAddFriendArea.fromJson(json["oaAddfreindArea"] ?? {}),
     );
   }
 }
@@ -25771,8 +25770,8 @@ class RetrieveRequestTokenWithDocomoV2Response {
 }
 
 class RetryPolicy {
-  final Int64 initialDelayInMillis;
-  final Int64 maxDelayInMillis;
+  final dynamic initialDelayInMillis;
+  final dynamic maxDelayInMillis;
   final int multiplier;
   final int jitterRate;
 
@@ -25802,7 +25801,7 @@ class RevokeTokensRequest {
 
   factory RevokeTokensRequest.fromJson(Map json) {
     return RevokeTokensRequest(
-      accessTokens: List.from(json["accessTokens"]),
+      accessTokens: List.from(json["accessTokens"] ?? []),
     );
   }
 }
@@ -25810,7 +25809,7 @@ class RevokeTokensRequest {
 class RichContent {
   final Callback callback;
   final NoBidCallback noBidCallback;
-  final Int64 ttl;
+  final dynamic ttl;
   final bool muteSupported;
   final bool voteSupported;
   final Priority priority;
@@ -25828,13 +25827,13 @@ class RichContent {
 
   factory RichContent.fromJson(Map json) {
     return RichContent(
-      callback: Callback.fromJson(json["callback"]),
-      noBidCallback: NoBidCallback.fromJson(json["noBidCallback"]),
+      callback: Callback.fromJson(json["callback"] ?? {}),
+      noBidCallback: NoBidCallback.fromJson(json["noBidCallback"] ?? {}),
       ttl: json["ttl"],
       muteSupported: json["muteSupported"],
       voteSupported: json["voteSupported"],
-      priority: Priority.fromJson(json["priority"]),
-      richFormatPayload: Uf_t.fromJson(json["richFormatPayload"]),
+      priority: Priority.fromJson(json["priority"] ?? {}),
+      richFormatPayload: Uf_t.fromJson(json["richFormatPayload"] ?? {}),
     );
   }
 }
@@ -25874,8 +25873,8 @@ class RichItem {
     return RichItem(
       eyeCatchMessage: json["eyeCatchMessage"],
       message: json["message"],
-      animationLayer: AnimationLayer.fromJson(json["animationLayer"]),
-      thumbnailLayer: ThumbnailLayer.fromJson(json["thumbnailLayer"]),
+      animationLayer: AnimationLayer.fromJson(json["animationLayer"] ?? {}),
+      thumbnailLayer: ThumbnailLayer.fromJson(json["thumbnailLayer"] ?? {}),
       linkUrl: json["linkUrl"],
       fallbackUrl: json["fallbackUrl"],
     );
@@ -25894,7 +25893,7 @@ class RichString {
   factory RichString.fromJson(Map json) {
     return RichString(
       content: json["content"],
-      meta: Map.from(json["meta"]),
+      meta: Map.from(json["meta"] ?? {}),
     );
   }
 }
@@ -25935,12 +25934,12 @@ class RichmenuEvent {
 
   factory RichmenuEvent.fromJson(Map json) {
     return RichmenuEvent(
-      type: kf_u.fromValue(json["type"]),
+      type: kf_u.fromValue(json["type"] ?? 0),
       richmenuId: json["richmenuId"],
-      coordinates: RichmenuCoordinates.fromJson(json["coordinates"]),
+      coordinates: RichmenuCoordinates.fromJson(json["coordinates"] ?? {}),
       areaIndex: json["areaIndex"],
       clickUrl: json["clickUrl"],
-      clickAction: kf_r.fromValue(json["clickAction"]),
+      clickAction: kf_r.fromValue(json["clickAction"] ?? 0),
     );
   }
 }
@@ -25972,7 +25971,7 @@ class RingbackTone {
       trackId: json["trackId"],
       title: json["title"],
       oid: json["oid"],
-      tids: Map.from(json["tids"]),
+      tids: Map.from(json["tids"] ?? {}),
       sid: json["sid"],
       artist: json["artist"],
       channelId: json["channelId"],
@@ -26005,7 +26004,7 @@ class Ringtone {
 
 class Room {
   final String mid;
-  final Int64 createdTime;
+  final dynamic createdTime;
   final List<Contact> contacts;
   final bool notificationDisabled;
   final List<String> memberMids;
@@ -26022,11 +26021,11 @@ class Room {
     return Room(
       mid: json["mid"],
       createdTime: json["createdTime"],
-      contacts: List.from(json["contacts"])
+      contacts: List.from(json["contacts"] ?? [])
           .map((e) => Contact.fromJson(e))
           .toList(),
       notificationDisabled: json["notificationDisabled"],
-      memberMids: List.from(json["memberMids"]),
+      memberMids: List.from(json["memberMids"] ?? []),
     );
   }
 }
@@ -26138,7 +26137,7 @@ class SaveStudentInformationRequest {
 
   factory SaveStudentInformationRequest.fromJson(Map json) {
     return SaveStudentInformationRequest(
-      studentInformation: StudentInformation.fromJson(json["studentInformation"]),
+      studentInformation: StudentInformation.fromJson(json["studentInformation"] ?? {}),
     );
   }
 }
@@ -26157,8 +26156,8 @@ class Scenario {
   factory Scenario.fromJson(Map json) {
     return Scenario(
       id: json["id"],
-      trigger: do0_I.fromJson(json["trigger"]),
-      actions: List.from(json["actions"])
+      trigger: do0_I.fromJson(json["trigger"] ?? {}),
+      actions: List.from(json["actions"] ?? [])
           .map((e) => do0_C23141D.fromJson(e))
           .toList(),
     );
@@ -26168,9 +26167,9 @@ class Scenario {
 class ScenarioSet {
   final List<Scenario> scenarios;
   final bool autoClose;
-  final Int64 suppressionInterval;
-  final Int64 revision;
-  final Int64 modifiedTime;
+  final dynamic suppressionInterval;
+  final dynamic revision;
+  final dynamic modifiedTime;
 
   ScenarioSet({
     required this.scenarios,
@@ -26182,7 +26181,7 @@ class ScenarioSet {
 
   factory ScenarioSet.fromJson(Map json) {
     return ScenarioSet(
-      scenarios: List.from(json["scenarios"])
+      scenarios: List.from(json["scenarios"] ?? [])
           .map((e) => Scenario.fromJson(e))
           .toList(),
       autoClose: json["autoClose"],
@@ -26202,7 +26201,7 @@ class ScoreInfo {
 
   factory ScoreInfo.fromJson(Map json) {
     return ScoreInfo(
-      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"]),
+      assetServiceInfo: AssetServiceInfo.fromJson(json["assetServiceInfo"] ?? {}),
     );
   }
 }
@@ -26243,7 +26242,7 @@ class SearchSquareChatMembersRequest {
   factory SearchSquareChatMembersRequest.fromJson(Map json) {
     return SearchSquareChatMembersRequest(
       squareChatMid: json["squareChatMid"],
-      searchOption: SquareChatMemberSearchOption.fromJson(json["searchOption"]),
+      searchOption: SquareChatMemberSearchOption.fromJson(json["searchOption"] ?? {}),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
     );
@@ -26263,7 +26262,7 @@ class SearchSquareChatMembersResponse {
 
   factory SearchSquareChatMembersResponse.fromJson(Map json) {
     return SearchSquareChatMembersResponse(
-      members: List.from(json["members"])
+      members: List.from(json["members"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -26288,7 +26287,7 @@ class SearchSquareChatMentionablesRequest {
   factory SearchSquareChatMentionablesRequest.fromJson(Map json) {
     return SearchSquareChatMentionablesRequest(
       squareChatMid: json["squareChatMid"],
-      searchOption: SquareChatMentionableSearchOption.fromJson(json["searchOption"]),
+      searchOption: SquareChatMentionableSearchOption.fromJson(json["searchOption"] ?? {}),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
     );
@@ -26306,7 +26305,7 @@ class SearchSquareChatMentionablesResponse {
 
   factory SearchSquareChatMentionablesResponse.fromJson(Map json) {
     return SearchSquareChatMentionablesResponse(
-      mentionables: List.from(json["mentionables"])
+      mentionables: List.from(json["mentionables"] ?? [])
           .map((e) => Mentionable.fromJson(e))
           .toList(),
       continuationToken: json["continuationToken"],
@@ -26330,7 +26329,7 @@ class SearchSquareMembersRequest {
   factory SearchSquareMembersRequest.fromJson(Map json) {
     return SearchSquareMembersRequest(
       squareMid: json["squareMid"],
-      searchOption: SquareMemberSearchOption.fromJson(json["searchOption"]),
+      searchOption: SquareMemberSearchOption.fromJson(json["searchOption"] ?? {}),
       continuationToken: json["continuationToken"],
       limit: json["limit"],
     );
@@ -26339,7 +26338,7 @@ class SearchSquareMembersRequest {
 
 class SearchSquareMembersResponse {
   final List<SquareMember> members;
-  final Int64 revision;
+  final dynamic revision;
   final String continuationToken;
   final int totalCount;
 
@@ -26352,7 +26351,7 @@ class SearchSquareMembersResponse {
 
   factory SearchSquareMembersResponse.fromJson(Map json) {
     return SearchSquareMembersResponse(
-      members: List.from(json["members"])
+      members: List.from(json["members"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
       revision: json["revision"],
@@ -26399,13 +26398,13 @@ class SearchSquaresResponse {
 
   factory SearchSquaresResponse.fromJson(Map json) {
     return SearchSquaresResponse(
-      squares: List.from(json["squares"])
+      squares: List.from(json["squares"] ?? [])
           .map((e) => Square.fromJson(e))
           .toList(),
-      squareStatuses: Map.from(json["squareStatuses"]),
-      myMemberships: Map.from(json["myMemberships"]),
+      squareStatuses: Map.from(json["squareStatuses"] ?? {}),
+      myMemberships: Map.from(json["myMemberships"] ?? {}),
       continuationToken: json["continuationToken"],
-      noteStatuses: Map.from(json["noteStatuses"]),
+      noteStatuses: Map.from(json["noteStatuses"] ?? {}),
     );
   }
 }
@@ -26465,7 +26464,7 @@ class SendMessageRequest {
     return SendMessageRequest(
       reqSeq: json["reqSeq"],
       squareChatMid: json["squareChatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
     );
   }
 }
@@ -26479,7 +26478,7 @@ class SendMessageResponse {
 
   factory SendMessageResponse.fromJson(Map json) {
     return SendMessageResponse(
-      createdSquareMessage: SquareMessage.fromJson(json["createdSquareMessage"]),
+      createdSquareMessage: SquareMessage.fromJson(json["createdSquareMessage"] ?? {}),
     );
   }
 }
@@ -26525,7 +26524,7 @@ class SendSquareThreadMessageRequest {
       reqSeq: json["reqSeq"],
       chatMid: json["chatMid"],
       threadMid: json["threadMid"],
-      threadMessage: SquareMessage.fromJson(json["threadMessage"]),
+      threadMessage: SquareMessage.fromJson(json["threadMessage"] ?? {}),
     );
   }
 }
@@ -26539,7 +26538,7 @@ class SendSquareThreadMessageResponse {
 
   factory SendSquareThreadMessageResponse.fromJson(Map json) {
     return SendSquareThreadMessageResponse(
-      createdThreadMessage: SquareMessage.fromJson(json["createdThreadMessage"]),
+      createdThreadMessage: SquareMessage.fromJson(json["createdThreadMessage"] ?? {}),
     );
   }
 }
@@ -26598,9 +26597,9 @@ class ServiceShortcut {
       storeUrl: json["storeUrl"],
       badgeActiveUntilTimestamp: json["badgeActiveUntilTimestamp"],
       recommendedModelId: json["recommendedModelId"],
-      eventIcon: Icon.fromJson(json["eventIcon"]),
-      coloredPictogramIcon: Icon.fromJson(json["coloredPictogramIcon"]),
-      customBadgeLabel: CustomBadgeLabel.fromJson(json["customBadgeLabel"]),
+      eventIcon: Icon.fromJson(json["eventIcon"] ?? {}),
+      coloredPictogramIcon: Icon.fromJson(json["coloredPictogramIcon"] ?? {}),
+      customBadgeLabel: CustomBadgeLabel.fromJson(json["customBadgeLabel"] ?? {}),
     );
   }
 }
@@ -26608,7 +26607,7 @@ class ServiceShortcut {
 class SetChatHiddenStatusRequest {
   final int reqSeq;
   final String chatMid;
-  final Int64 lastMessageId;
+  final dynamic lastMessageId;
   final bool hidden;
 
   SetChatHiddenStatusRequest({
@@ -26682,7 +26681,7 @@ class SetPasswordRequest {
 class SetRequest {
   final String keyName;
   final t80_p value;
-  final Int64 clientTimestampMillis;
+  final dynamic clientTimestampMillis;
   final t80_h ns;
   final String transactionId;
   final UpdateReason updateReason;
@@ -26699,11 +26698,11 @@ class SetRequest {
   factory SetRequest.fromJson(Map json) {
     return SetRequest(
       keyName: json["keyName"],
-      value: t80_p.fromJson(json["value"]),
+      value: t80_p.fromJson(json["value"] ?? {}),
       clientTimestampMillis: json["clientTimestampMillis"],
-      ns: t80_h.fromValue(json["ns"]),
+      ns: t80_h.fromValue(json["ns"] ?? 0),
       transactionId: json["transactionId"],
-      updateReason: UpdateReason.fromJson(json["updateReason"]),
+      updateReason: UpdateReason.fromJson(json["updateReason"] ?? {}),
     );
   }
 }
@@ -26719,7 +26718,7 @@ class SetResponse {
 
   factory SetResponse.fromJson(Map json) {
     return SetResponse(
-      value: SettingValue.fromJson(json["value"]),
+      value: SettingValue.fromJson(json["value"] ?? {}),
       updateTransactionId: json["updateTransactionId"],
     );
   }
@@ -26727,7 +26726,7 @@ class SetResponse {
 
 class SettingValue {
   final t80_p value;
-  final Int64 updateTimeMillis;
+  final dynamic updateTimeMillis;
   final t80_i scope;
   final String scopeKey;
 
@@ -26740,9 +26739,9 @@ class SettingValue {
 
   factory SettingValue.fromJson(Map json) {
     return SettingValue(
-      value: t80_p.fromJson(json["value"]),
+      value: t80_p.fromJson(json["value"] ?? {}),
       updateTimeMillis: json["updateTimeMillis"],
-      scope: t80_i.fromValue(json["scope"]),
+      scope: t80_i.fromValue(json["scope"] ?? 0),
       scopeKey: json["scopeKey"],
     );
   }
@@ -26750,7 +26749,7 @@ class SettingValue {
 
 class Settings {
   final bool notificationEnable;
-  final Int64 notificationMuteExpiration;
+  final dynamic notificationMuteExpiration;
   final bool notificationNewMessage;
   final bool notificationGroupInvitation;
   final bool notificationShowMessage;
@@ -26786,59 +26785,59 @@ class Settings {
   final bool hitokotoBackupRequested;
   final bool privacyProfileMusicPostToMyhome;
   final bool privacyAllowNearby;
-  final Int64 agreementNearbyTime;
-  final Int64 agreementSquareTime;
+  final dynamic agreementNearbyTime;
+  final dynamic agreementSquareTime;
   final bool notificationMention;
-  final Int64 botUseAgreementAcceptedAt;
-  final Int64 agreementShakeFunction;
-  final Int64 agreementMobileContactName;
+  final dynamic botUseAgreementAcceptedAt;
+  final dynamic agreementShakeFunction;
+  final dynamic agreementMobileContactName;
   final bool notificationThumbnail;
-  final Int64 agreementSoundToText;
+  final dynamic agreementSoundToText;
   final String privacyPolicyVersion;
-  final Int64 agreementAdByWebAccess;
-  final Int64 agreementPhoneNumberMatching;
-  final Int64 agreementCommunicationInfo;
+  final dynamic agreementAdByWebAccess;
+  final dynamic agreementPhoneNumberMatching;
+  final dynamic agreementCommunicationInfo;
   final Pb1_I6 privacySharePersonalInfoToFriends;
-  final Int64 agreementThingsWirelessCommunication;
-  final Int64 agreementGdpr;
+  final dynamic agreementThingsWirelessCommunication;
+  final dynamic agreementGdpr;
   final Pb1_S7 privacyStatusMessageHistory;
-  final Int64 agreementProvideLocation;
-  final Int64 agreementBeacon;
+  final dynamic agreementProvideLocation;
+  final dynamic agreementBeacon;
   final Pb1_M6 privacyAllowProfileHistory;
-  final Int64 agreementContentsSuggest;
-  final Int64 agreementContentsSuggestDataCollection;
+  final dynamic agreementContentsSuggest;
+  final dynamic agreementContentsSuggestDataCollection;
   final Pb1_gd privacyAgeResult;
   final bool privacyAgeResultReceived;
-  final Int64 agreementOcrImageCollection;
+  final dynamic agreementOcrImageCollection;
   final bool privacyAllowFollow;
   final bool privacyShowFollowList;
   final bool notificationBadgeTalkOnly;
-  final Int64 agreementIcna;
+  final dynamic agreementIcna;
   final bool notificationReaction;
-  final Int64 agreementMid;
+  final dynamic agreementMid;
   final bool homeNotificationNewFriend;
   final bool homeNotificationFavoriteFriendUpdate;
   final bool homeNotificationGroupMemberUpdate;
   final bool homeNotificationBirthday;
   final Map<int, bool> eapAllowedToConnect;
-  final Int64 agreementLineOutUse;
-  final Int64 agreementLineOutProvideInfo;
+  final dynamic agreementLineOutUse;
+  final dynamic agreementLineOutProvideInfo;
   final bool notificationShowProfileImage;
-  final Int64 agreementPdpa;
+  final dynamic agreementPdpa;
   final String agreementLocationVersion;
   final bool zhdPageAllowedToShow;
-  final Int64 agreementSnowAiAvatar;
+  final dynamic agreementSnowAiAvatar;
   final bool eapOnlyAccountTargetCountry;
-  final Int64 agreementLypPremiumAlbum;
-  final Int64 agreementLypPremiumAlbumVersion;
-  final Int64 agreementAlbumUsageData;
-  final Int64 agreementAlbumUsageDataVersion;
-  final Int64 agreementLypPremiumBackup;
-  final Int64 agreementLypPremiumBackupVersion;
-  final Int64 agreementOaAiAssistant;
-  final Int64 agreementOaAiAssistantVersion;
-  final Int64 agreementLypPremiumMultiProfile;
-  final Int64 agreementLypPremiumMultiProfileVersion;
+  final dynamic agreementLypPremiumAlbum;
+  final dynamic agreementLypPremiumAlbumVersion;
+  final dynamic agreementAlbumUsageData;
+  final dynamic agreementAlbumUsageDataVersion;
+  final dynamic agreementLypPremiumBackup;
+  final dynamic agreementLypPremiumBackupVersion;
+  final dynamic agreementOaAiAssistant;
+  final dynamic agreementOaAiAssistantVersion;
+  final dynamic agreementLypPremiumMultiProfile;
+  final dynamic agreementLypPremiumMultiProfileVersion;
 
   Settings({
     required this.notificationEnable,
@@ -26956,18 +26955,18 @@ class Settings {
       privacyAgreeUsePaidCall: json["privacyAgreeUsePaidCall"],
       privacyAllowFriendRequest: json["privacyAllowFriendRequest"],
       contactMyTicket: json["contactMyTicket"],
-      identityProvider: IdentityProvider.fromValue(json["identityProvider"]),
+      identityProvider: IdentityProvider.fromValue(json["identityProvider"] ?? 0),
       identityIdentifier: json["identityIdentifier"],
-      snsAccounts: Map.from(json["snsAccounts"]),
+      snsAccounts: Map.from(json["snsAccounts"] ?? {}),
       phoneRegistration: json["phoneRegistration"],
-      emailConfirmationStatus: EmailConfirmationStatus.fromValue(json["emailConfirmationStatus"]),
-      accountMigrationPincodeType: AccountMigrationPincodeType.fromValue(json["accountMigrationPincodeType"]),
+      emailConfirmationStatus: EmailConfirmationStatus.fromValue(json["emailConfirmationStatus"] ?? 0),
+      accountMigrationPincodeType: AccountMigrationPincodeType.fromValue(json["accountMigrationPincodeType"] ?? 0),
       enforcedInputAccountMigrationPincode: json["enforcedInputAccountMigrationPincode"],
-      securityCenterSettingsType: AccountMigrationPincodeType.fromValue(json["securityCenterSettingsType"]),
+      securityCenterSettingsType: AccountMigrationPincodeType.fromValue(json["securityCenterSettingsType"] ?? 0),
       allowUnregistrationSecondaryDevice: json["allowUnregistrationSecondaryDevice"],
       pwlessPrimaryCredentialRegistration: json["pwlessPrimaryCredentialRegistration"],
       preferenceLocale: json["preferenceLocale"],
-      customModes: Map.from(json["customModes"]),
+      customModes: Map.from(json["customModes"] ?? {}),
       e2eeEnable: json["e2eeEnable"],
       hitokotoBackupRequested: json["hitokotoBackupRequested"],
       privacyProfileMusicPostToMyhome: json["privacyProfileMusicPostToMyhome"],
@@ -26984,16 +26983,16 @@ class Settings {
       agreementAdByWebAccess: json["agreementAdByWebAccess"],
       agreementPhoneNumberMatching: json["agreementPhoneNumberMatching"],
       agreementCommunicationInfo: json["agreementCommunicationInfo"],
-      privacySharePersonalInfoToFriends: Pb1_I6.fromValue(json["privacySharePersonalInfoToFriends"]),
+      privacySharePersonalInfoToFriends: Pb1_I6.fromValue(json["privacySharePersonalInfoToFriends"] ?? 0),
       agreementThingsWirelessCommunication: json["agreementThingsWirelessCommunication"],
       agreementGdpr: json["agreementGdpr"],
-      privacyStatusMessageHistory: Pb1_S7.fromValue(json["privacyStatusMessageHistory"]),
+      privacyStatusMessageHistory: Pb1_S7.fromValue(json["privacyStatusMessageHistory"] ?? 0),
       agreementProvideLocation: json["agreementProvideLocation"],
       agreementBeacon: json["agreementBeacon"],
-      privacyAllowProfileHistory: Pb1_M6.fromValue(json["privacyAllowProfileHistory"]),
+      privacyAllowProfileHistory: Pb1_M6.fromValue(json["privacyAllowProfileHistory"] ?? 0),
       agreementContentsSuggest: json["agreementContentsSuggest"],
       agreementContentsSuggestDataCollection: json["agreementContentsSuggestDataCollection"],
-      privacyAgeResult: Pb1_gd.fromValue(json["privacyAgeResult"]),
+      privacyAgeResult: Pb1_gd.fromValue(json["privacyAgeResult"] ?? 0),
       privacyAgeResultReceived: json["privacyAgeResultReceived"],
       agreementOcrImageCollection: json["agreementOcrImageCollection"],
       privacyAllowFollow: json["privacyAllowFollow"],
@@ -27006,7 +27005,7 @@ class Settings {
       homeNotificationFavoriteFriendUpdate: json["homeNotificationFavoriteFriendUpdate"],
       homeNotificationGroupMemberUpdate: json["homeNotificationGroupMemberUpdate"],
       homeNotificationBirthday: json["homeNotificationBirthday"],
-      eapAllowedToConnect: Map.from(json["eapAllowedToConnect"]),
+      eapAllowedToConnect: Map.from(json["eapAllowedToConnect"] ?? {}),
       agreementLineOutUse: json["agreementLineOutUse"],
       agreementLineOutProvideInfo: json["agreementLineOutProvideInfo"],
       notificationShowProfileImage: json["notificationShowProfileImage"],
@@ -27046,7 +27045,7 @@ class ShareTargetPickerResultRequest {
     return ShareTargetPickerResultRequest(
       ott: json["ott"],
       liffId: json["liffId"],
-      resultCode: Qj_e0.fromValue(json["resultCode"]),
+      resultCode: Qj_e0.fromValue(json["resultCode"] ?? 0),
       resultDescription: json["resultDescription"],
     );
   }
@@ -27065,9 +27064,9 @@ class ShopFilter {
 
   factory ShopFilter.fromJson(Map json) {
     return ShopFilter(
-      productAvailabilities: List.from(json["productAvailabilities"]),
-      stickerSizes: List.from(json["stickerSizes"]),
-      popupLayers: List.from(json["popupLayers"]),
+      productAvailabilities: List.from(json["productAvailabilities"] ?? []),
+      stickerSizes: List.from(json["stickerSizes"] ?? []),
+      popupLayers: List.from(json["popupLayers"] ?? []),
     );
   }
 }
@@ -27075,7 +27074,7 @@ class ShopFilter {
 class ShortcutUserGuidePopupInfo {
   final String popupTitle;
   final String popupText;
-  final Int64 revisionTimeMillis;
+  final dynamic revisionTimeMillis;
 
   ShortcutUserGuidePopupInfo({
     required this.popupTitle,
@@ -27161,7 +27160,7 @@ class SingleValueMetadata {
 }
 
 class SleepAction {
-  final Int64 sleepMillis;
+  final dynamic sleepMillis;
 
   SleepAction({
     required this.sleepMillis
@@ -27219,7 +27218,7 @@ class SmartChannelRecommendation {
       muteEventUrl: json["muteEventUrl"],
       upvoteEventUrl: json["upvoteEventUrl"],
       downvoteEventUrl: json["downvoteEventUrl"],
-      template: SmartChannelRecommendationTemplate.fromJson(json["template"]),
+      template: SmartChannelRecommendationTemplate.fromJson(json["template"] ?? {}),
     );
   }
 }
@@ -27254,7 +27253,7 @@ class SocialLogin {
 
   factory SocialLogin.fromJson(Map json) {
     return SocialLogin(
-      type: T70_j1.fromValue(json["type"]),
+      type: T70_j1.fromValue(json["type"] ?? 0),
       accessToken: json["accessToken"],
       countryCode: json["countryCode"],
     );
@@ -27282,7 +27281,7 @@ class SpotItem {
     return SpotItem(
       name: json["name"],
       phone: json["phone"],
-      category: SpotCategory.fromValue(json["category"]),
+      category: SpotCategory.fromValue(json["category"] ?? 0),
       mid: json["mid"],
       countryAreaCode: json["countryAreaCode"],
       freePhoneCallable: json["freePhoneCallable"],
@@ -27300,14 +27299,14 @@ class Square {
   final SquareType type;
   final int categoryId;
   final String invitationURL;
-  final Int64 revision;
+  final dynamic revision;
   final bool ableToUseInvitationTicket;
   final SquareState state;
   final List<SquareEmblem> emblems;
   final SquareJoinMethod joinMethod;
   final BooleanState adultOnly;
   final List<String> svcTags;
-  final Int64 createdAt;
+  final dynamic createdAt;
 
   Square({
     required this.mid,
@@ -27337,18 +27336,18 @@ class Square {
       profileImageObsHash: json["profileImageObsHash"],
       desc: json["desc"],
       searchable: json["searchable"],
-      type: SquareType.fromValue(json["type"]),
+      type: SquareType.fromValue(json["type"] ?? 0),
       categoryId: json["categoryId"],
       invitationURL: json["invitationURL"],
       revision: json["revision"],
       ableToUseInvitationTicket: json["ableToUseInvitationTicket"],
-      state: SquareState.fromValue(json["state"]),
-      emblems: List.from(json["emblems"])
+      state: SquareState.fromValue(json["state"] ?? 0),
+      emblems: List.from(json["emblems"] ?? [])
           .map((e) => SquareEmblem.fromValue(e))
           .toList(),
-      joinMethod: SquareJoinMethod.fromJson(json["joinMethod"]),
-      adultOnly: BooleanState.fromValue(json["adultOnly"]),
-      svcTags: List.from(json["svcTags"]),
+      joinMethod: SquareJoinMethod.fromJson(json["joinMethod"] ?? {}),
+      adultOnly: BooleanState.fromValue(json["adultOnly"] ?? 0),
+      svcTags: List.from(json["svcTags"] ?? []),
       createdAt: json["createdAt"],
     );
   }
@@ -27365,7 +27364,7 @@ class SquareAuthority {
   final SquareMemberRole removeSquareMember;
   final SquareMemberRole grantRole;
   final SquareMemberRole enableInvitationTicket;
-  final Int64 revision;
+  final dynamic revision;
   final SquareMemberRole createSquareChatAnnouncement;
   final SquareMemberRole updateMaxChatMemberCount;
   final SquareMemberRole useReadonlyDefaultChat;
@@ -27392,20 +27391,20 @@ class SquareAuthority {
   factory SquareAuthority.fromJson(Map json) {
     return SquareAuthority(
       squareMid: json["squareMid"],
-      updateSquareProfile: SquareMemberRole.fromValue(json["updateSquareProfile"]),
-      inviteNewMember: SquareMemberRole.fromValue(json["inviteNewMember"]),
-      approveJoinRequest: SquareMemberRole.fromValue(json["approveJoinRequest"]),
-      createPost: SquareMemberRole.fromValue(json["createPost"]),
-      createOpenSquareChat: SquareMemberRole.fromValue(json["createOpenSquareChat"]),
-      deleteSquareChatOrPost: SquareMemberRole.fromValue(json["deleteSquareChatOrPost"]),
-      removeSquareMember: SquareMemberRole.fromValue(json["removeSquareMember"]),
-      grantRole: SquareMemberRole.fromValue(json["grantRole"]),
-      enableInvitationTicket: SquareMemberRole.fromValue(json["enableInvitationTicket"]),
+      updateSquareProfile: SquareMemberRole.fromValue(json["updateSquareProfile"] ?? 0),
+      inviteNewMember: SquareMemberRole.fromValue(json["inviteNewMember"] ?? 0),
+      approveJoinRequest: SquareMemberRole.fromValue(json["approveJoinRequest"] ?? 0),
+      createPost: SquareMemberRole.fromValue(json["createPost"] ?? 0),
+      createOpenSquareChat: SquareMemberRole.fromValue(json["createOpenSquareChat"] ?? 0),
+      deleteSquareChatOrPost: SquareMemberRole.fromValue(json["deleteSquareChatOrPost"] ?? 0),
+      removeSquareMember: SquareMemberRole.fromValue(json["removeSquareMember"] ?? 0),
+      grantRole: SquareMemberRole.fromValue(json["grantRole"] ?? 0),
+      enableInvitationTicket: SquareMemberRole.fromValue(json["enableInvitationTicket"] ?? 0),
       revision: json["revision"],
-      createSquareChatAnnouncement: SquareMemberRole.fromValue(json["createSquareChatAnnouncement"]),
-      updateMaxChatMemberCount: SquareMemberRole.fromValue(json["updateMaxChatMemberCount"]),
-      useReadonlyDefaultChat: SquareMemberRole.fromValue(json["useReadonlyDefaultChat"]),
-      sendAllMention: SquareMemberRole.fromValue(json["sendAllMention"]),
+      createSquareChatAnnouncement: SquareMemberRole.fromValue(json["createSquareChatAnnouncement"] ?? 0),
+      updateMaxChatMemberCount: SquareMemberRole.fromValue(json["updateMaxChatMemberCount"] ?? 0),
+      useReadonlyDefaultChat: SquareMemberRole.fromValue(json["useReadonlyDefaultChat"] ?? 0),
+      sendAllMention: SquareMemberRole.fromValue(json["sendAllMention"] ?? 0),
     );
   }
 }
@@ -27416,8 +27415,8 @@ class SquareBot {
   final String displayName;
   final String profileImageObsHash;
   final int iconType;
-  final Int64 lastModifiedAt;
-  final Int64 expiredIn;
+  final dynamic lastModifiedAt;
+  final dynamic expiredIn;
 
   SquareBot({
     required this.botMid,
@@ -27448,7 +27447,7 @@ class SquareChat {
   final SquareChatType type;
   final String name;
   final String chatImageObsHash;
-  final Int64 squareChatRevision;
+  final dynamic squareChatRevision;
   final int maxMemberCount;
   final SquareChatState state;
   final String invitationUrl;
@@ -27473,24 +27472,24 @@ class SquareChat {
     return SquareChat(
       squareChatMid: json["squareChatMid"],
       squareMid: json["squareMid"],
-      type: SquareChatType.fromValue(json["type"]),
+      type: SquareChatType.fromValue(json["type"] ?? 0),
       name: json["name"],
       chatImageObsHash: json["chatImageObsHash"],
       squareChatRevision: json["squareChatRevision"],
       maxMemberCount: json["maxMemberCount"],
-      state: SquareChatState.fromValue(json["state"]),
+      state: SquareChatState.fromValue(json["state"] ?? 0),
       invitationUrl: json["invitationUrl"],
-      messageVisibility: MessageVisibility.fromJson(json["messageVisibility"]),
-      ableToSearchMessage: BooleanState.fromValue(json["ableToSearchMessage"]),
+      messageVisibility: MessageVisibility.fromJson(json["messageVisibility"] ?? {}),
+      ableToSearchMessage: BooleanState.fromValue(json["ableToSearchMessage"] ?? 0),
     );
   }
 }
 
 class SquareChatAnnouncement {
-  final Int64 announcementSeq;
+  final dynamic announcementSeq;
   final int type;
   final SquareChatAnnouncementContents contents;
-  final Int64 createdAt;
+  final dynamic createdAt;
   final String creator;
 
   SquareChatAnnouncement({
@@ -27505,7 +27504,7 @@ class SquareChatAnnouncement {
     return SquareChatAnnouncement(
       announcementSeq: json["announcementSeq"],
       type: json["type"],
-      contents: SquareChatAnnouncementContents.fromJson(json["contents"]),
+      contents: SquareChatAnnouncementContents.fromJson(json["contents"] ?? {}),
       createdAt: json["createdAt"],
       creator: json["creator"],
     );
@@ -27523,15 +27522,15 @@ class SquareChatFeature {
 
   factory SquareChatFeature.fromJson(Map json) {
     return SquareChatFeature(
-      controlState: SquareChatFeatureControlState.fromValue(json["controlState"]),
-      booleanValue: BooleanState.fromValue(json["booleanValue"]),
+      controlState: SquareChatFeatureControlState.fromValue(json["controlState"] ?? 0),
+      booleanValue: BooleanState.fromValue(json["booleanValue"] ?? 0),
     );
   }
 }
 
 class SquareChatFeatureSet {
   final String squareChatMid;
-  final Int64 revision;
+  final dynamic revision;
   final SquareChatFeature disableUpdateMaxChatMemberCount;
   final SquareChatFeature disableMarkAsReadEvent;
 
@@ -27546,8 +27545,8 @@ class SquareChatFeatureSet {
     return SquareChatFeatureSet(
       squareChatMid: json["squareChatMid"],
       revision: json["revision"],
-      disableUpdateMaxChatMemberCount: SquareChatFeature.fromJson(json["disableUpdateMaxChatMemberCount"]),
-      disableMarkAsReadEvent: SquareChatFeature.fromJson(json["disableMarkAsReadEvent"]),
+      disableUpdateMaxChatMemberCount: SquareChatFeature.fromJson(json["disableUpdateMaxChatMemberCount"] ?? {}),
+      disableMarkAsReadEvent: SquareChatFeature.fromJson(json["disableMarkAsReadEvent"] ?? {}),
     );
   }
 }
@@ -27555,7 +27554,7 @@ class SquareChatFeatureSet {
 class SquareChatMember {
   final String squareMemberMid;
   final String squareChatMid;
-  final Int64 revision;
+  final dynamic revision;
   final SquareChatMembershipState membershipState;
   final bool notificationForMessage;
   final bool notificationForNewMember;
@@ -27574,7 +27573,7 @@ class SquareChatMember {
       squareMemberMid: json["squareMemberMid"],
       squareChatMid: json["squareChatMid"],
       revision: json["revision"],
-      membershipState: SquareChatMembershipState.fromValue(json["membershipState"]),
+      membershipState: SquareChatMembershipState.fromValue(json["membershipState"] ?? 0),
       notificationForMessage: json["notificationForMessage"],
       notificationForNewMember: json["notificationForNewMember"],
     );
@@ -27625,9 +27624,9 @@ class SquareChatStatus {
 
   factory SquareChatStatus.fromJson(Map json) {
     return SquareChatStatus(
-      lastMessage: SquareMessage.fromJson(json["lastMessage"]),
+      lastMessage: SquareMessage.fromJson(json["lastMessage"] ?? {}),
       senderDisplayName: json["senderDisplayName"],
-      otherStatus: SquareChatStatusWithoutMessage.fromJson(json["otherStatus"]),
+      otherStatus: SquareChatStatusWithoutMessage.fromJson(json["otherStatus"] ?? {}),
     );
   }
 }
@@ -27655,8 +27654,8 @@ class SquareChatStatusWithoutMessage {
       unreadMessageCount: json["unreadMessageCount"],
       markedAsReadMessageId: json["markedAsReadMessageId"],
       mentionedMessageId: json["mentionedMessageId"],
-      notifiedMessageType: NotifiedMessageType.fromValue(json["notifiedMessageType"]),
-      badges: List.from(json["badges"]),
+      notifiedMessageType: NotifiedMessageType.fromValue(json["notifiedMessageType"] ?? 0),
+      badges: List.from(json["badges"] ?? []),
     );
   }
 }
@@ -27676,7 +27675,7 @@ class SquareCleanScore {
 }
 
 class SquareEvent {
-  final Int64 createdTime;
+  final dynamic createdTime;
   final SquareEventType type;
   final SquareEventPayload payload;
   final String syncToken;
@@ -27693,17 +27692,17 @@ class SquareEvent {
   factory SquareEvent.fromJson(Map json) {
     return SquareEvent(
       createdTime: json["createdTime"],
-      type: SquareEventType.fromValue(json["type"]),
-      payload: SquareEventPayload.fromJson(json["payload"]),
+      type: SquareEventType.fromValue(json["type"] ?? 0),
+      payload: SquareEventPayload.fromJson(json["payload"] ?? {}),
       syncToken: json["syncToken"],
-      eventStatus: SquareEventStatus.fromValue(json["eventStatus"]),
+      eventStatus: SquareEventStatus.fromValue(json["eventStatus"] ?? 0),
     );
   }
 }
 
 class SquareEventChatPopup {
   final String squareChatMid;
-  final Int64 popupId;
+  final dynamic popupId;
   final String flexJson;
   final ButtonContent button;
 
@@ -27719,7 +27718,7 @@ class SquareEventChatPopup {
       squareChatMid: json["squareChatMid"],
       popupId: json["popupId"],
       flexJson: json["flexJson"],
-      button: ButtonContent.fromJson(json["button"]),
+      button: ButtonContent.fromJson(json["button"] ?? {}),
     );
   }
 }
@@ -27742,7 +27741,7 @@ class SquareEventMutateMessage {
   factory SquareEventMutateMessage.fromJson(Map json) {
     return SquareEventMutateMessage(
       squareChatMid: json["squareChatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
       reqSeq: json["reqSeq"],
       senderDisplayName: json["senderDisplayName"],
       threadMid: json["threadMid"],
@@ -27840,12 +27839,12 @@ class SquareEventNotificationMessage {
   factory SquareEventNotificationMessage.fromJson(Map json) {
     return SquareEventNotificationMessage(
       squareChatMid: json["squareChatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
       senderDisplayName: json["senderDisplayName"],
       unreadCount: json["unreadCount"],
       requiredToFetchChatEvents: json["requiredToFetchChatEvents"],
       mentionedMessageId: json["mentionedMessageId"],
-      notifiedMessageType: NotifiedMessageType.fromValue(json["notifiedMessageType"]),
+      notifiedMessageType: NotifiedMessageType.fromValue(json["notifiedMessageType"] ?? 0),
       reqSeq: json["reqSeq"],
     );
   }
@@ -27878,7 +27877,7 @@ class SquareEventNotificationMessageReaction {
       reactorName: json["reactorName"],
       thumbnailObsHash: json["thumbnailObsHash"],
       messageText: json["messageText"],
-      type: MessageReactionType.fromValue(json["type"]),
+      type: MessageReactionType.fromValue(json["type"] ?? 0),
     );
   }
 }
@@ -27918,7 +27917,7 @@ class SquareEventNotificationPost {
   factory SquareEventNotificationPost.fromJson(Map json) {
     return SquareEventNotificationPost(
       squareMid: json["squareMid"],
-      notificationPostType: NotificationPostType.fromValue(json["notificationPostType"]),
+      notificationPostType: NotificationPostType.fromValue(json["notificationPostType"] ?? 0),
       thumbnailObsHash: json["thumbnailObsHash"],
       text: json["text"],
       actionUri: json["actionUri"],
@@ -27994,8 +27993,8 @@ class SquareEventNotificationThreadMessage {
   final String chatMid;
   final SquareMessage squareMessage;
   final String senderDisplayName;
-  final Int64 unreadCount;
-  final Int64 totalMessageCount;
+  final dynamic unreadCount;
+  final dynamic totalMessageCount;
   final String threadRootMessageId;
 
   SquareEventNotificationThreadMessage({
@@ -28012,7 +28011,7 @@ class SquareEventNotificationThreadMessage {
     return SquareEventNotificationThreadMessage(
       threadMid: json["threadMid"],
       chatMid: json["chatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
       senderDisplayName: json["senderDisplayName"],
       unreadCount: json["unreadCount"],
       totalMessageCount: json["totalMessageCount"],
@@ -28066,7 +28065,7 @@ class SquareEventNotifiedAddBot {
   factory SquareEventNotifiedAddBot.fromJson(Map json) {
     return SquareEventNotifiedAddBot(
       squareChatMid: json["squareChatMid"],
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
       botMid: json["botMid"],
       botDisplayName: json["botDisplayName"],
     );
@@ -28077,7 +28076,7 @@ class SquareEventNotifiedCreateSquareChatMember {
   final SquareChat chat;
   final SquareChatStatus chatStatus;
   final SquareChatMember chatMember;
-  final Int64 joinedAt;
+  final dynamic joinedAt;
   final SquareMember peerSquareMember;
   final SquareChatFeatureSet squareChatFeatureSet;
 
@@ -28092,12 +28091,12 @@ class SquareEventNotifiedCreateSquareChatMember {
 
   factory SquareEventNotifiedCreateSquareChatMember.fromJson(Map json) {
     return SquareEventNotifiedCreateSquareChatMember(
-      chat: SquareChat.fromJson(json["chat"]),
-      chatStatus: SquareChatStatus.fromJson(json["chatStatus"]),
-      chatMember: SquareChatMember.fromJson(json["chatMember"]),
+      chat: SquareChat.fromJson(json["chat"] ?? {}),
+      chatStatus: SquareChatStatus.fromJson(json["chatStatus"] ?? {}),
+      chatMember: SquareChatMember.fromJson(json["chatMember"] ?? {}),
       joinedAt: json["joinedAt"],
-      peerSquareMember: SquareMember.fromJson(json["peerSquareMember"]),
-      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"]),
+      peerSquareMember: SquareMember.fromJson(json["peerSquareMember"] ?? {}),
+      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"] ?? {}),
     );
   }
 }
@@ -28121,12 +28120,12 @@ class SquareEventNotifiedCreateSquareMember {
 
   factory SquareEventNotifiedCreateSquareMember.fromJson(Map json) {
     return SquareEventNotifiedCreateSquareMember(
-      square: Square.fromJson(json["square"]),
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareMember: SquareMember.fromJson(json["squareMember"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
     );
   }
 }
@@ -28140,7 +28139,7 @@ class SquareEventNotifiedDeleteSquareChat {
 
   factory SquareEventNotifiedDeleteSquareChat.fromJson(Map json) {
     return SquareEventNotifiedDeleteSquareChat(
-      squareChat: SquareChat.fromJson(json["squareChat"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
     );
   }
 }
@@ -28181,11 +28180,11 @@ class SquareEventNotifiedInviteIntoSquareChat {
   factory SquareEventNotifiedInviteIntoSquareChat.fromJson(Map json) {
     return SquareEventNotifiedInviteIntoSquareChat(
       squareChatMid: json["squareChatMid"],
-      invitees: List.from(json["invitees"])
+      invitees: List.from(json["invitees"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      invitor: SquareMember.fromJson(json["invitor"]),
-      invitorRelation: SquareMemberRelation.fromJson(json["invitorRelation"]),
+      invitor: SquareMember.fromJson(json["invitor"] ?? {}),
+      invitorRelation: SquareMemberRelation.fromJson(json["invitorRelation"] ?? {}),
     );
   }
 }
@@ -28202,7 +28201,7 @@ class SquareEventNotifiedJoinSquareChat {
   factory SquareEventNotifiedJoinSquareChat.fromJson(Map json) {
     return SquareEventNotifiedJoinSquareChat(
       squareChatMid: json["squareChatMid"],
-      joinedMember: SquareMember.fromJson(json["joinedMember"]),
+      joinedMember: SquareMember.fromJson(json["joinedMember"] ?? {}),
     );
   }
 }
@@ -28221,10 +28220,10 @@ class SquareEventNotifiedKickoutFromSquare {
   factory SquareEventNotifiedKickoutFromSquare.fromJson(Map json) {
     return SquareEventNotifiedKickoutFromSquare(
       squareChatMid: json["squareChatMid"],
-      kickees: List.from(json["kickees"])
+      kickees: List.from(json["kickees"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
-      kicker: SquareMember.fromJson(json["kicker"]),
+      kicker: SquareMember.fromJson(json["kicker"] ?? {}),
     );
   }
 }
@@ -28247,7 +28246,7 @@ class SquareEventNotifiedLeaveSquareChat {
       squareChatMid: json["squareChatMid"],
       squareMemberMid: json["squareMemberMid"],
       sayGoodbye: json["sayGoodbye"],
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
     );
   }
 }
@@ -28288,7 +28287,7 @@ class SquareEventNotifiedRemoveBot {
   factory SquareEventNotifiedRemoveBot.fromJson(Map json) {
     return SquareEventNotifiedRemoveBot(
       squareChatMid: json["squareChatMid"],
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
       botMid: json["botMid"],
       botDisplayName: json["botDisplayName"],
     );
@@ -28307,7 +28306,7 @@ class SquareEventNotifiedShutdownSquare {
   factory SquareEventNotifiedShutdownSquare.fromJson(Map json) {
     return SquareEventNotifiedShutdownSquare(
       squareChatMid: json["squareChatMid"],
-      square: Square.fromJson(json["square"]),
+      square: Square.fromJson(json["square"] ?? {}),
     );
   }
 }
@@ -28366,7 +28365,7 @@ class SquareEventNotifiedUpdateLiveTalkInfo {
   factory SquareEventNotifiedUpdateLiveTalkInfo.fromJson(Map json) {
     return SquareEventNotifiedUpdateLiveTalkInfo(
       squareChatMid: json["squareChatMid"],
-      liveTalk: LiveTalk.fromJson(json["liveTalk"]),
+      liveTalk: LiveTalk.fromJson(json["liveTalk"] ?? {}),
       liveTalkOnAir: json["liveTalkOnAir"],
     );
   }
@@ -28389,7 +28388,7 @@ class SquareEventNotifiedUpdateMessageStatus {
     return SquareEventNotifiedUpdateMessageStatus(
       squareChatMid: json["squareChatMid"],
       messageId: json["messageId"],
-      messageStatus: SquareMessageStatus.fromJson(json["messageStatus"]),
+      messageStatus: SquareMessageStatus.fromJson(json["messageStatus"] ?? {}),
       threadMid: json["threadMid"],
     );
   }
@@ -28424,7 +28423,7 @@ class SquareEventNotifiedUpdateSquare {
   factory SquareEventNotifiedUpdateSquare.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquare(
       squareMid: json["squareMid"],
-      square: Square.fromJson(json["square"]),
+      square: Square.fromJson(json["square"] ?? {}),
     );
   }
 }
@@ -28441,7 +28440,7 @@ class SquareEventNotifiedUpdateSquareAuthority {
   factory SquareEventNotifiedUpdateSquareAuthority.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareAuthority(
       squareMid: json["squareMid"],
-      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"]),
+      squareAuthority: SquareAuthority.fromJson(json["squareAuthority"] ?? {}),
     );
   }
 }
@@ -28461,14 +28460,14 @@ class SquareEventNotifiedUpdateSquareChat {
     return SquareEventNotifiedUpdateSquareChat(
       squareMid: json["squareMid"],
       squareChatMid: json["squareChatMid"],
-      squareChat: SquareChat.fromJson(json["squareChat"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
     );
   }
 }
 
 class SquareEventNotifiedUpdateSquareChatAnnouncement {
   final String squareChatMid;
-  final Int64 announcementSeq;
+  final dynamic announcementSeq;
 
   SquareEventNotifiedUpdateSquareChatAnnouncement({
     required this.squareChatMid,
@@ -28492,7 +28491,7 @@ class SquareEventNotifiedUpdateSquareChatFeatureSet {
 
   factory SquareEventNotifiedUpdateSquareChatFeatureSet.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareChatFeatureSet(
-      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"]),
+      squareChatFeatureSet: SquareChatFeatureSet.fromJson(json["squareChatFeatureSet"] ?? {}),
     );
   }
 }
@@ -28512,7 +28511,7 @@ class SquareEventNotifiedUpdateSquareChatMaxMemberCount {
     return SquareEventNotifiedUpdateSquareChatMaxMemberCount(
       squareChatMid: json["squareChatMid"],
       maxMemberCount: json["maxMemberCount"],
-      editor: SquareMember.fromJson(json["editor"]),
+      editor: SquareMember.fromJson(json["editor"] ?? {}),
     );
   }
 }
@@ -28529,7 +28528,7 @@ class SquareEventNotifiedUpdateSquareChatMember {
   factory SquareEventNotifiedUpdateSquareChatMember.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareChatMember(
       squareChatMid: json["squareChatMid"],
-      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"]),
+      squareChatMember: SquareChatMember.fromJson(json["squareChatMember"] ?? {}),
     );
   }
 }
@@ -28546,7 +28545,7 @@ class SquareEventNotifiedUpdateSquareChatProfileImage {
   factory SquareEventNotifiedUpdateSquareChatProfileImage.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareChatProfileImage(
       squareChatMid: json["squareChatMid"],
-      editor: SquareMember.fromJson(json["editor"]),
+      editor: SquareMember.fromJson(json["editor"] ?? {}),
     );
   }
 }
@@ -28565,7 +28564,7 @@ class SquareEventNotifiedUpdateSquareChatProfileName {
   factory SquareEventNotifiedUpdateSquareChatProfileName.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareChatProfileName(
       squareChatMid: json["squareChatMid"],
-      editor: SquareMember.fromJson(json["editor"]),
+      editor: SquareMember.fromJson(json["editor"] ?? {}),
       updatedChatName: json["updatedChatName"],
     );
   }
@@ -28583,7 +28582,7 @@ class SquareEventNotifiedUpdateSquareChatStatus {
   factory SquareEventNotifiedUpdateSquareChatStatus.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareChatStatus(
       squareChatMid: json["squareChatMid"],
-      statusWithoutMessage: SquareChatStatusWithoutMessage.fromJson(json["statusWithoutMessage"]),
+      statusWithoutMessage: SquareChatStatusWithoutMessage.fromJson(json["statusWithoutMessage"] ?? {}),
     );
   }
 }
@@ -28597,7 +28596,7 @@ class SquareEventNotifiedUpdateSquareFeatureSet {
 
   factory SquareEventNotifiedUpdateSquareFeatureSet.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareFeatureSet(
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
     );
   }
 }
@@ -28617,7 +28616,7 @@ class SquareEventNotifiedUpdateSquareMember {
     return SquareEventNotifiedUpdateSquareMember(
       squareMid: json["squareMid"],
       squareMemberMid: json["squareMemberMid"],
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
     );
   }
 }
@@ -28634,7 +28633,7 @@ class SquareEventNotifiedUpdateSquareMemberProfile {
   factory SquareEventNotifiedUpdateSquareMemberProfile.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareMemberProfile(
       squareChatMid: json["squareChatMid"],
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
     );
   }
 }
@@ -28657,7 +28656,7 @@ class SquareEventNotifiedUpdateSquareMemberRelation {
       squareMid: json["squareMid"],
       myMemberMid: json["myMemberMid"],
       targetSquareMemberMid: json["targetSquareMemberMid"],
-      squareMemberRelation: SquareMemberRelation.fromJson(json["squareMemberRelation"]),
+      squareMemberRelation: SquareMemberRelation.fromJson(json["squareMemberRelation"] ?? {}),
     );
   }
 }
@@ -28674,7 +28673,7 @@ class SquareEventNotifiedUpdateSquareNoteStatus {
   factory SquareEventNotifiedUpdateSquareNoteStatus.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareNoteStatus(
       squareMid: json["squareMid"],
-      noteStatus: NoteStatus.fromJson(json["noteStatus"]),
+      noteStatus: NoteStatus.fromJson(json["noteStatus"] ?? {}),
     );
   }
 }
@@ -28691,7 +28690,7 @@ class SquareEventNotifiedUpdateSquareStatus {
   factory SquareEventNotifiedUpdateSquareStatus.fromJson(Map json) {
     return SquareEventNotifiedUpdateSquareStatus(
       squareMid: json["squareMid"],
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
     );
   }
 }
@@ -28705,7 +28704,7 @@ class SquareEventNotifiedUpdateThread {
 
   factory SquareEventNotifiedUpdateThread.fromJson(Map json) {
     return SquareEventNotifiedUpdateThread(
-      squareThread: SquareThread.fromJson(json["squareThread"]),
+      squareThread: SquareThread.fromJson(json["squareThread"] ?? {}),
     );
   }
 }
@@ -28714,7 +28713,7 @@ class SquareEventNotifiedUpdateThreadMember {
   final SquareThreadMember threadMember;
   final SquareThread squareThread;
   final SquareMessage threadRootMessage;
-  final Int64 totalMessageCount;
+  final dynamic totalMessageCount;
   final SquareMessage lastMessage;
   final String lastMessageSenderDisplayName;
 
@@ -28729,11 +28728,11 @@ class SquareEventNotifiedUpdateThreadMember {
 
   factory SquareEventNotifiedUpdateThreadMember.fromJson(Map json) {
     return SquareEventNotifiedUpdateThreadMember(
-      threadMember: SquareThreadMember.fromJson(json["threadMember"]),
-      squareThread: SquareThread.fromJson(json["squareThread"]),
-      threadRootMessage: SquareMessage.fromJson(json["threadRootMessage"]),
+      threadMember: SquareThreadMember.fromJson(json["threadMember"] ?? {}),
+      squareThread: SquareThread.fromJson(json["squareThread"] ?? {}),
+      threadRootMessage: SquareMessage.fromJson(json["threadRootMessage"] ?? {}),
       totalMessageCount: json["totalMessageCount"],
-      lastMessage: SquareMessage.fromJson(json["lastMessage"]),
+      lastMessage: SquareMessage.fromJson(json["lastMessage"] ?? {}),
       lastMessageSenderDisplayName: json["lastMessageSenderDisplayName"],
     );
   }
@@ -28748,7 +28747,7 @@ class SquareEventNotifiedUpdateThreadRootMessage {
 
   factory SquareEventNotifiedUpdateThreadRootMessage.fromJson(Map json) {
     return SquareEventNotifiedUpdateThreadRootMessage(
-      squareThread: SquareThread.fromJson(json["squareThread"]),
+      squareThread: SquareThread.fromJson(json["squareThread"] ?? {}),
     );
   }
 }
@@ -28757,8 +28756,8 @@ class SquareEventNotifiedUpdateThreadRootMessageStatus {
   final String chatMid;
   final String threadMid;
   final String threadRootMessageId;
-  final Int64 totalMessageCount;
-  final Int64 lastMessageAt;
+  final dynamic totalMessageCount;
+  final dynamic lastMessageAt;
 
   SquareEventNotifiedUpdateThreadRootMessageStatus({
     required this.chatMid,
@@ -28782,7 +28781,7 @@ class SquareEventNotifiedUpdateThreadRootMessageStatus {
 class SquareEventNotifiedUpdateThreadStatus {
   final String threadMid;
   final String chatMid;
-  final Int64 unreadCount;
+  final dynamic unreadCount;
   final String markAsReadMessageId;
 
   SquareEventNotifiedUpdateThreadStatus({
@@ -28807,11 +28806,11 @@ class SquareEventReceiveMessage {
   final SquareMessage squareMessage;
   final String senderDisplayName;
   final SquareMessageReactionStatus messageReactionStatus;
-  final Int64 senderRevision;
+  final dynamic senderRevision;
   final String squareMid;
   final String threadMid;
-  final Int64 threadTotalMessageCount;
-  final Int64 threadLastMessageAt;
+  final dynamic threadTotalMessageCount;
+  final dynamic threadLastMessageAt;
   final ContentsAttribute contentsAttribute;
 
   SquareEventReceiveMessage({
@@ -28830,15 +28829,15 @@ class SquareEventReceiveMessage {
   factory SquareEventReceiveMessage.fromJson(Map json) {
     return SquareEventReceiveMessage(
       squareChatMid: json["squareChatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
       senderDisplayName: json["senderDisplayName"],
-      messageReactionStatus: SquareMessageReactionStatus.fromJson(json["messageReactionStatus"]),
+      messageReactionStatus: SquareMessageReactionStatus.fromJson(json["messageReactionStatus"] ?? {}),
       senderRevision: json["senderRevision"],
       squareMid: json["squareMid"],
       threadMid: json["threadMid"],
       threadTotalMessageCount: json["threadTotalMessageCount"],
       threadLastMessageAt: json["threadLastMessageAt"],
-      contentsAttribute: ContentsAttribute.fromValue(json["contentsAttribute"]),
+      contentsAttribute: ContentsAttribute.fromValue(json["contentsAttribute"] ?? 0),
     );
   }
 }
@@ -28850,8 +28849,8 @@ class SquareEventSendMessage {
   final String senderDisplayName;
   final SquareMessageReactionStatus messageReactionStatus;
   final String threadMid;
-  final Int64 threadTotalMessageCount;
-  final Int64 threadLastMessageAt;
+  final dynamic threadTotalMessageCount;
+  final dynamic threadLastMessageAt;
 
   SquareEventSendMessage({
     required this.squareChatMid,
@@ -28867,10 +28866,10 @@ class SquareEventSendMessage {
   factory SquareEventSendMessage.fromJson(Map json) {
     return SquareEventSendMessage(
       squareChatMid: json["squareChatMid"],
-      squareMessage: SquareMessage.fromJson(json["squareMessage"]),
+      squareMessage: SquareMessage.fromJson(json["squareMessage"] ?? {}),
       reqSeq: json["reqSeq"],
       senderDisplayName: json["senderDisplayName"],
-      messageReactionStatus: SquareMessageReactionStatus.fromJson(json["messageReactionStatus"]),
+      messageReactionStatus: SquareMessageReactionStatus.fromJson(json["messageReactionStatus"] ?? {}),
       threadMid: json["threadMid"],
       threadTotalMessageCount: json["threadTotalMessageCount"],
       threadLastMessageAt: json["threadLastMessageAt"],
@@ -28903,15 +28902,15 @@ class SquareFeature {
 
   factory SquareFeature.fromJson(Map json) {
     return SquareFeature(
-      controlState: SquareFeatureControlState.fromValue(json["controlState"]),
-      booleanValue: BooleanState.fromValue(json["booleanValue"]),
+      controlState: SquareFeatureControlState.fromValue(json["controlState"] ?? 0),
+      booleanValue: BooleanState.fromValue(json["booleanValue"] ?? 0),
     );
   }
 }
 
 class SquareFeatureSet {
   final String squareMid;
-  final Int64 revision;
+  final dynamic revision;
   final SquareFeature creatingSecretSquareChat;
   final SquareFeature invitingIntoOpenSquareChat;
   final SquareFeature creatingSquareChat;
@@ -28952,21 +28951,21 @@ class SquareFeatureSet {
     return SquareFeatureSet(
       squareMid: json["squareMid"],
       revision: json["revision"],
-      creatingSecretSquareChat: SquareFeature.fromJson(json["creatingSecretSquareChat"]),
-      invitingIntoOpenSquareChat: SquareFeature.fromJson(json["invitingIntoOpenSquareChat"]),
-      creatingSquareChat: SquareFeature.fromJson(json["creatingSquareChat"]),
-      readonlyDefaultChat: SquareFeature.fromJson(json["readonlyDefaultChat"]),
-      showingAdvertisement: SquareFeature.fromJson(json["showingAdvertisement"]),
-      delegateJoinToPlug: SquareFeature.fromJson(json["delegateJoinToPlug"]),
-      delegateKickOutToPlug: SquareFeature.fromJson(json["delegateKickOutToPlug"]),
-      disableUpdateJoinMethod: SquareFeature.fromJson(json["disableUpdateJoinMethod"]),
-      disableTransferAdmin: SquareFeature.fromJson(json["disableTransferAdmin"]),
-      creatingLiveTalk: SquareFeature.fromJson(json["creatingLiveTalk"]),
-      disableUpdateSearchable: SquareFeature.fromJson(json["disableUpdateSearchable"]),
-      summarizingMessages: SquareFeature.fromJson(json["summarizingMessages"]),
-      creatingSquareThread: SquareFeature.fromJson(json["creatingSquareThread"]),
-      enableSquareThread: SquareFeature.fromJson(json["enableSquareThread"]),
-      disableChangeRoleCoAdmin: SquareFeature.fromJson(json["disableChangeRoleCoAdmin"]),
+      creatingSecretSquareChat: SquareFeature.fromJson(json["creatingSecretSquareChat"] ?? {}),
+      invitingIntoOpenSquareChat: SquareFeature.fromJson(json["invitingIntoOpenSquareChat"] ?? {}),
+      creatingSquareChat: SquareFeature.fromJson(json["creatingSquareChat"] ?? {}),
+      readonlyDefaultChat: SquareFeature.fromJson(json["readonlyDefaultChat"] ?? {}),
+      showingAdvertisement: SquareFeature.fromJson(json["showingAdvertisement"] ?? {}),
+      delegateJoinToPlug: SquareFeature.fromJson(json["delegateJoinToPlug"] ?? {}),
+      delegateKickOutToPlug: SquareFeature.fromJson(json["delegateKickOutToPlug"] ?? {}),
+      disableUpdateJoinMethod: SquareFeature.fromJson(json["disableUpdateJoinMethod"] ?? {}),
+      disableTransferAdmin: SquareFeature.fromJson(json["disableTransferAdmin"] ?? {}),
+      creatingLiveTalk: SquareFeature.fromJson(json["creatingLiveTalk"] ?? {}),
+      disableUpdateSearchable: SquareFeature.fromJson(json["disableUpdateSearchable"] ?? {}),
+      summarizingMessages: SquareFeature.fromJson(json["summarizingMessages"] ?? {}),
+      creatingSquareThread: SquareFeature.fromJson(json["creatingSquareThread"] ?? {}),
+      enableSquareThread: SquareFeature.fromJson(json["enableSquareThread"] ?? {}),
+      disableChangeRoleCoAdmin: SquareFeature.fromJson(json["disableChangeRoleCoAdmin"] ?? {}),
     );
   }
 }
@@ -28984,9 +28983,9 @@ class SquareInfo {
 
   factory SquareInfo.fromJson(Map json) {
     return SquareInfo(
-      square: Square.fromJson(json["square"]),
-      squareStatus: SquareStatus.fromJson(json["squareStatus"]),
-      squareNoteStatus: NoteStatus.fromJson(json["squareNoteStatus"]),
+      square: Square.fromJson(json["square"] ?? {}),
+      squareStatus: SquareStatus.fromJson(json["squareStatus"] ?? {}),
+      squareNoteStatus: NoteStatus.fromJson(json["squareNoteStatus"] ?? {}),
     );
   }
 }
@@ -29002,8 +29001,8 @@ class SquareJoinMethod {
 
   factory SquareJoinMethod.fromJson(Map json) {
     return SquareJoinMethod(
-      type: SquareJoinMethodType.fromValue(json["type"]),
-      value: SquareJoinMethodValue.fromJson(json["value"]),
+      type: SquareJoinMethodType.fromValue(json["type"] ?? 0),
+      value: SquareJoinMethodValue.fromJson(json["value"] ?? {}),
     );
   }
 }
@@ -29019,8 +29018,8 @@ class SquareJoinMethodValue {
 
   factory SquareJoinMethodValue.fromJson(Map json) {
     return SquareJoinMethodValue(
-      approvalValue: ApprovalValue.fromJson(json["approvalValue"]),
-      codeValue: CodeValue.fromJson(json["codeValue"]),
+      approvalValue: ApprovalValue.fromJson(json["approvalValue"] ?? {}),
+      codeValue: CodeValue.fromJson(json["codeValue"] ?? {}),
     );
   }
 }
@@ -29033,10 +29032,10 @@ class SquareMember {
   final bool ableToReceiveMessage;
   final SquareMembershipState membershipState;
   final SquareMemberRole role;
-  final Int64 revision;
+  final dynamic revision;
   final SquarePreference preference;
   final String joinMessage;
-  final Int64 createdAt;
+  final dynamic createdAt;
 
   SquareMember({
     required this.squareMemberMid,
@@ -29059,10 +29058,10 @@ class SquareMember {
       displayName: json["displayName"],
       profileImageObsHash: json["profileImageObsHash"],
       ableToReceiveMessage: json["ableToReceiveMessage"],
-      membershipState: SquareMembershipState.fromValue(json["membershipState"]),
-      role: SquareMemberRole.fromValue(json["role"]),
+      membershipState: SquareMembershipState.fromValue(json["membershipState"] ?? 0),
+      role: SquareMemberRole.fromValue(json["role"] ?? 0),
       revision: json["revision"],
-      preference: SquarePreference.fromJson(json["preference"]),
+      preference: SquarePreference.fromJson(json["preference"] ?? {}),
       joinMessage: json["joinMessage"],
       createdAt: json["createdAt"],
     );
@@ -29071,7 +29070,7 @@ class SquareMember {
 
 class SquareMemberRelation {
   final SquareMemberRelationState state;
-  final Int64 revision;
+  final dynamic revision;
 
   SquareMemberRelation({
     required this.state,
@@ -29080,7 +29079,7 @@ class SquareMemberRelation {
 
   factory SquareMemberRelation.fromJson(Map json) {
     return SquareMemberRelation(
-      state: SquareMemberRelationState.fromValue(json["state"]),
+      state: SquareMemberRelationState.fromValue(json["state"] ?? 0),
       revision: json["revision"],
     );
   }
@@ -29111,13 +29110,13 @@ class SquareMemberSearchOption {
 
   factory SquareMemberSearchOption.fromJson(Map json) {
     return SquareMemberSearchOption(
-      membershipState: SquareMembershipState.fromValue(json["membershipState"]),
-      memberRoles: List.from(json["memberRoles"])
+      membershipState: SquareMembershipState.fromValue(json["membershipState"] ?? 0),
+      memberRoles: List.from(json["memberRoles"] ?? [])
           .map((e) => SquareMemberRole.fromValue(e))
           .toList(),
       displayName: json["displayName"],
-      ableToReceiveMessage: BooleanState.fromValue(json["ableToReceiveMessage"]),
-      ableToReceiveFriendRequest: BooleanState.fromValue(json["ableToReceiveFriendRequest"]),
+      ableToReceiveMessage: BooleanState.fromValue(json["ableToReceiveMessage"] ?? 0),
+      ableToReceiveFriendRequest: BooleanState.fromValue(json["ableToReceiveFriendRequest"] ?? 0),
       chatMidToExcludeMembers: json["chatMidToExcludeMembers"],
       includingMe: json["includingMe"],
       excludeBlockedMembers: json["excludeBlockedMembers"],
@@ -29129,7 +29128,7 @@ class SquareMemberSearchOption {
 class SquareMessage {
   final Message message;
   final MIDType fromType;
-  final Int64 squareMessageRevision;
+  final dynamic squareMessageRevision;
   final SquareMessageState state;
   final SquareMessageThreadInfo threadInfo;
 
@@ -29143,11 +29142,11 @@ class SquareMessage {
 
   factory SquareMessage.fromJson(Map json) {
     return SquareMessage(
-      message: Message.fromJson(json["message"]),
-      fromType: MIDType.fromValue(json["fromType"]),
+      message: Message.fromJson(json["message"] ?? {}),
+      fromType: MIDType.fromValue(json["fromType"] ?? 0),
       squareMessageRevision: json["squareMessageRevision"],
-      state: SquareMessageState.fromValue(json["state"]),
-      threadInfo: SquareMessageThreadInfo.fromJson(json["threadInfo"]),
+      state: SquareMessageState.fromValue(json["state"] ?? 0),
+      threadInfo: SquareMessageThreadInfo.fromJson(json["threadInfo"] ?? {}),
     );
   }
 }
@@ -29167,10 +29166,10 @@ class SquareMessageInfo {
 
   factory SquareMessageInfo.fromJson(Map json) {
     return SquareMessageInfo(
-      message: SquareMessage.fromJson(json["message"]),
-      square: Square.fromJson(json["square"]),
-      chat: SquareChat.fromJson(json["chat"]),
-      sender: SquareMember.fromJson(json["sender"]),
+      message: SquareMessage.fromJson(json["message"] ?? {}),
+      square: Square.fromJson(json["square"] ?? {}),
+      chat: SquareChat.fromJson(json["chat"] ?? {}),
+      sender: SquareMember.fromJson(json["sender"] ?? {}),
     );
   }
 }
@@ -29178,8 +29177,8 @@ class SquareMessageInfo {
 class SquareMessageReaction {
   final MessageReactionType type;
   final SquareMember reactor;
-  final Int64 createdAt;
-  final Int64 updatedAt;
+  final dynamic createdAt;
+  final dynamic updatedAt;
 
   SquareMessageReaction({
     required this.type,
@@ -29190,8 +29189,8 @@ class SquareMessageReaction {
 
   factory SquareMessageReaction.fromJson(Map json) {
     return SquareMessageReaction(
-      type: MessageReactionType.fromValue(json["type"]),
-      reactor: SquareMember.fromJson(json["reactor"]),
+      type: MessageReactionType.fromValue(json["type"] ?? 0),
+      reactor: SquareMember.fromJson(json["reactor"] ?? {}),
       createdAt: json["createdAt"],
       updatedAt: json["updatedAt"],
     );
@@ -29212,8 +29211,8 @@ class SquareMessageReactionStatus {
   factory SquareMessageReactionStatus.fromJson(Map json) {
     return SquareMessageReactionStatus(
       totalCount: json["totalCount"],
-      countByReactionType: Map.from(json["countByReactionType"]),
-      myReaction: SquareMessageReaction.fromJson(json["myReaction"]),
+      countByReactionType: Map.from(json["countByReactionType"] ?? {}),
+      myReaction: SquareMessageReaction.fromJson(json["myReaction"] ?? {}),
     );
   }
 }
@@ -29223,7 +29222,7 @@ class SquareMessageStatus {
   final String globalMessageId;
   final dynamic type;
   final MessageStatusContents contents;
-  final Int64 publishedAt;
+  final dynamic publishedAt;
   final String squareChatThreadMid;
 
   SquareMessageStatus({
@@ -29240,7 +29239,7 @@ class SquareMessageStatus {
       squareChatMid: json["squareChatMid"],
       globalMessageId: json["globalMessageId"],
       type: json["type"],
-      contents: MessageStatusContents.fromJson(json["contents"]),
+      contents: MessageStatusContents.fromJson(json["contents"] ?? {}),
       publishedAt: json["publishedAt"],
       squareChatThreadMid: json["squareChatThreadMid"],
     );
@@ -29267,9 +29266,9 @@ class SquareMessageThreadInfo {
 class SquareMetadata {
   final String mid;
   final List<int> excluded;
-  final Int64 revision;
+  final dynamic revision;
   final bool noAd;
-  final Int64 updatedAt;
+  final dynamic updatedAt;
 
   SquareMetadata({
     required this.mid,
@@ -29282,7 +29281,7 @@ class SquareMetadata {
   factory SquareMetadata.fromJson(Map json) {
     return SquareMetadata(
       mid: json["mid"],
-      excluded: List.from(json["excluded"]),
+      excluded: List.from(json["excluded"] ?? []),
       revision: json["revision"],
       noAd: json["noAd"],
       updatedAt: json["updatedAt"],
@@ -29291,7 +29290,7 @@ class SquareMetadata {
 }
 
 class SquarePreference {
-  final Int64 favoriteTimestamp;
+  final dynamic favoriteTimestamp;
   final bool notiForNewJoinRequest;
 
   SquarePreference({
@@ -29310,7 +29309,7 @@ class SquarePreference {
 class SquareStatus {
   final int memberCount;
   final int joinRequestCount;
-  final Int64 lastJoinRequestAt;
+  final dynamic lastJoinRequestAt;
   final int openChatCount;
 
   SquareStatus({
@@ -29336,9 +29335,9 @@ class SquareThread {
   final String squareMid;
   final String messageId;
   final SquareThreadState state;
-  final Int64 expiresAt;
-  final Int64 readOnlyAt;
-  final Int64 revision;
+  final dynamic expiresAt;
+  final dynamic readOnlyAt;
+  final dynamic revision;
 
   SquareThread({
     required this.threadMid,
@@ -29357,7 +29356,7 @@ class SquareThread {
       chatMid: json["chatMid"],
       squareMid: json["squareMid"],
       messageId: json["messageId"],
-      state: SquareThreadState.fromValue(json["state"]),
+      state: SquareThreadState.fromValue(json["state"] ?? 0),
       expiresAt: json["expiresAt"],
       readOnlyAt: json["readOnlyAt"],
       revision: json["revision"],
@@ -29369,7 +29368,7 @@ class SquareThreadMember {
   final String squareMemberMid;
   final String threadMid;
   final String chatMid;
-  final Int64 revision;
+  final dynamic revision;
   final SquareThreadMembershipState membershipState;
 
   SquareThreadMember({
@@ -29386,7 +29385,7 @@ class SquareThreadMember {
       threadMid: json["threadMid"],
       chatMid: json["chatMid"],
       revision: json["revision"],
-      membershipState: SquareThreadMembershipState.fromValue(json["membershipState"]),
+      membershipState: SquareThreadMembershipState.fromValue(json["membershipState"] ?? 0),
     );
   }
 }
@@ -29400,7 +29399,7 @@ class SquareUserSettings {
 
   factory SquareUserSettings.fromJson(Map json) {
     return SquareUserSettings(
-      liveTalkNotification: BooleanState.fromValue(json["liveTalkNotification"]),
+      liveTalkNotification: BooleanState.fromValue(json["liveTalkNotification"] ?? 0),
     );
   }
 }
@@ -29482,7 +29481,7 @@ class I80_D0 {
   factory I80_D0.fromJson(Map json) {
     return I80_D0(
       displayName: json["displayName"],
-      availableAuthFactors: List.from(json["availableAuthFactors"]),
+      availableAuthFactors: List.from(json["availableAuthFactors"] ?? []),
     );
   }
 }
@@ -29501,7 +29500,7 @@ class Sticker {
   factory Sticker.fromJson(Map json) {
     return Sticker(
       resourceType: json["resourceType"],
-      popupLayer: zR0_EnumC40578c.fromValue(json["popupLayer"]),
+      popupLayer: zR0_EnumC40578c.fromValue(json["popupLayer"] ?? 0),
       stickerSize: json["stickerSize"],
     );
   }
@@ -29516,7 +29515,7 @@ class StickerDisplayData {
   final Ob1_D0 productAvailability;
   final int height;
   final int width;
-  final Int64 version;
+  final dynamic version;
   final bool availableForCombinationSticker;
 
   StickerDisplayData({
@@ -29535,11 +29534,11 @@ class StickerDisplayData {
   factory StickerDisplayData.fromJson(Map json) {
     return StickerDisplayData(
       stickerHash: json["stickerHash"],
-      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"]),
-      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"]),
-      popupLayer: Ob1_B0.fromValue(json["popupLayer"]),
-      stickerSize: Ob1_C1.fromValue(json["stickerSize"]),
-      productAvailability: Ob1_D0.fromValue(json["productAvailability"]),
+      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"] ?? 0),
+      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"] ?? {}),
+      popupLayer: Ob1_B0.fromValue(json["popupLayer"] ?? 0),
+      stickerSize: Ob1_C1.fromValue(json["stickerSize"] ?? 0),
+      productAvailability: Ob1_D0.fromValue(json["productAvailability"] ?? 0),
       height: json["height"],
       width: json["width"],
       version: json["version"],
@@ -29549,7 +29548,7 @@ class StickerDisplayData {
 }
 
 class StickerIdRange {
-  final Int64 start;
+  final dynamic start;
   final int size;
 
   StickerIdRange({
@@ -29576,8 +29575,8 @@ class StickerLayout {
 
   factory StickerLayout.fromJson(Map json) {
     return StickerLayout(
-      layoutInfo: StickerLayoutInfo.fromJson(json["layoutInfo"]),
-      stickerInfo: StickerLayoutStickerInfo.fromJson(json["stickerInfo"]),
+      layoutInfo: StickerLayoutInfo.fromJson(json["layoutInfo"] ?? {}),
+      stickerInfo: StickerLayoutStickerInfo.fromJson(json["stickerInfo"] ?? {}),
     );
   }
 }
@@ -29609,11 +29608,11 @@ class StickerLayoutInfo {
 }
 
 class StickerLayoutStickerInfo {
-  final Int64 stickerId;
-  final Int64 productId;
+  final dynamic stickerId;
+  final dynamic productId;
   final String stickerHash;
   final String stickerOptions;
-  final Int64 stickerVersion;
+  final dynamic stickerVersion;
 
   StickerLayoutStickerInfo({
     required this.stickerId,
@@ -29674,16 +29673,16 @@ class StickerProperty {
       hasAnimation: json["hasAnimation"],
       hasSound: json["hasSound"],
       hasPopup: json["hasPopup"],
-      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"]),
+      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"] ?? 0),
       stickerOptions: json["stickerOptions"],
       compactStickerOptions: json["compactStickerOptions"],
       stickerHash: json["stickerHash"],
-      stickerIds: List.from(json["stickerIds"]),
-      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"]),
+      stickerIds: List.from(json["stickerIds"] ?? []),
+      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"] ?? {}),
       availableForPhotoEdit: json["availableForPhotoEdit"],
-      stickerDefaultTexts: Map.from(json["stickerDefaultTexts"]),
-      stickerSize: Ob1_C1.fromValue(json["stickerSize"]),
-      popupLayer: Ob1_B0.fromValue(json["popupLayer"]),
+      stickerDefaultTexts: Map.from(json["stickerDefaultTexts"] ?? {}),
+      stickerSize: Ob1_C1.fromValue(json["stickerSize"] ?? 0),
+      popupLayer: Ob1_B0.fromValue(json["popupLayer"] ?? 0),
       cpdProduct: json["cpdProduct"],
       availableForCombinationSticker: json["availableForCombinationSticker"],
     );
@@ -29692,7 +29691,7 @@ class StickerProperty {
 
 class StickerSummary {
   final List<StickerIdRange> stickerIdRanges;
-  final Int64 suggestVersion;
+  final dynamic suggestVersion;
   final String stickerHash;
   final bool defaultDisplayOnKeyboard;
   final StickerResourceType stickerResourceType;
@@ -29717,17 +29716,17 @@ class StickerSummary {
 
   factory StickerSummary.fromJson(Map json) {
     return StickerSummary(
-      stickerIdRanges: List.from(json["stickerIdRanges"])
+      stickerIdRanges: List.from(json["stickerIdRanges"] ?? [])
           .map((e) => StickerIdRange.fromJson(e))
           .toList(),
       suggestVersion: json["suggestVersion"],
       stickerHash: json["stickerHash"],
       defaultDisplayOnKeyboard: json["defaultDisplayOnKeyboard"],
-      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"]),
-      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"]),
+      stickerResourceType: StickerResourceType.fromValue(json["stickerResourceType"] ?? 0),
+      nameTextProperty: ImageTextProperty.fromJson(json["nameTextProperty"] ?? {}),
       availableForPhotoEdit: json["availableForPhotoEdit"],
-      popupLayer: Ob1_B0.fromValue(json["popupLayer"]),
-      stickerSize: Ob1_C1.fromValue(json["stickerSize"]),
+      popupLayer: Ob1_B0.fromValue(json["popupLayer"] ?? 0),
+      stickerSize: Ob1_C1.fromValue(json["stickerSize"] ?? 0),
       availableForCombinationSticker: json["availableForCombinationSticker"],
     );
   }
@@ -29748,10 +29747,10 @@ class SticonProperty {
 
   factory SticonProperty.fromJson(Map json) {
     return SticonProperty(
-      sticonIds: List.from(json["sticonIds"]),
+      sticonIds: List.from(json["sticonIds"] ?? []),
       availableForPhotoEdit: json["availableForPhotoEdit"],
-      sticonResourceType: Ob1_F1.fromValue(json["sticonResourceType"]),
-      endPageMainImages: List.from(json["endPageMainImages"])
+      sticonResourceType: Ob1_F1.fromValue(json["sticonResourceType"] ?? 0),
+      endPageMainImages: List.from(json["endPageMainImages"] ?? [])
           .map((e) => List<dynamic>.from(e))
           .toList(),
     );
@@ -29759,7 +29758,7 @@ class SticonProperty {
 }
 
 class SticonSummary {
-  final Int64 suggestVersion;
+  final dynamic suggestVersion;
   final bool availableForPhotoEdit;
   final Ob1_F1 sticonResourceType;
 
@@ -29773,7 +29772,7 @@ class SticonSummary {
     return SticonSummary(
       suggestVersion: json["suggestVersion"],
       availableForPhotoEdit: json["availableForPhotoEdit"],
-      sticonResourceType: Ob1_F1.fromValue(json["sticonResourceType"]),
+      sticonResourceType: Ob1_F1.fromValue(json["sticonResourceType"] ?? 0),
     );
   }
 }
@@ -29790,7 +29789,7 @@ class StopBundleSubscriptionRequest {
   factory StopBundleSubscriptionRequest.fromJson(Map json) {
     return StopBundleSubscriptionRequest(
       subscriptionService: json["subscriptionService"],
-      storeCode: Ob1_K1.fromValue(json["storeCode"]),
+      storeCode: Ob1_K1.fromValue(json["storeCode"] ?? 0),
     );
   }
 }
@@ -29804,7 +29803,7 @@ class StopBundleSubscriptionResponse {
 
   factory StopBundleSubscriptionResponse.fromJson(Map json) {
     return StopBundleSubscriptionResponse(
-      result: Ob1_J1.fromValue(json["result"]),
+      result: Ob1_J1.fromValue(json["result"] ?? 0),
     );
   }
 }
@@ -29864,11 +29863,11 @@ class SubLiffView {
 
   factory SubLiffView.fromJson(Map json) {
     return SubLiffView(
-      presentationType: Qj_i0.fromValue(json["presentationType"]),
+      presentationType: Qj_i0.fromValue(json["presentationType"] ?? 0),
       url: json["url"],
       maxBrightness: json["maxBrightness"],
-      menuColorSetting: LIFFMenuColorSetting.fromJson(json["menuColorSetting"]),
-      closeButtonPosition: Qj_h0.fromValue(json["closeButtonPosition"]),
+      menuColorSetting: LIFFMenuColorSetting.fromJson(json["menuColorSetting"] ?? {}),
+      closeButtonPosition: Qj_h0.fromValue(json["closeButtonPosition"] ?? 0),
       closeButtonLabel: json["closeButtonLabel"],
       skipWebRTCPermissionPopupAllowed: json["skipWebRTCPermissionPopupAllowed"],
     );
@@ -29896,9 +29895,9 @@ class SubTab {
     return SubTab(
       id: json["id"],
       name: json["name"],
-      badgeInfo: BadgeInfo.fromJson(json["badgeInfo"]),
-      tooltipInfo: TooltipInfo.fromJson(json["tooltipInfo"]),
-      modulesOrder: List.from(json["modulesOrder"]),
+      badgeInfo: BadgeInfo.fromJson(json["badgeInfo"] ?? {}),
+      tooltipInfo: TooltipInfo.fromJson(json["tooltipInfo"] ?? {}),
+      modulesOrder: List.from(json["modulesOrder"] ?? []),
       wrsSubTabModelId: json["wrsSubTabModelId"],
     );
   }
@@ -29922,7 +29921,7 @@ class SubWindowResultRequest {
 }
 
 class SubscriptionNotification {
-  final Int64 subscriptionId;
+  final dynamic subscriptionId;
 
   SubscriptionNotification({
     required this.subscriptionId
@@ -29968,24 +29967,24 @@ class SubscriptionPlan {
     return SubscriptionPlan(
       billingItemId: json["billingItemId"],
       subscriptionService: json["subscriptionService"],
-      target: Ob1_P1.fromValue(json["target"]),
-      type: Ob1_R1.fromValue(json["type"]),
+      target: Ob1_P1.fromValue(json["target"] ?? 0),
+      type: Ob1_R1.fromValue(json["type"] ?? 0),
       period: json["period"],
       freeTrial: json["freeTrial"],
       localizedName: json["localizedName"],
-      price: Price.fromJson(json["price"]),
-      availability: Ob1_O1.fromValue(json["availability"]),
+      price: Price.fromJson(json["price"] ?? {}),
+      availability: Ob1_O1.fromValue(json["availability"] ?? 0),
       cpId: json["cpId"],
       nameKey: json["nameKey"],
-      tier: Ob1_Q1.fromValue(json["tier"]),
+      tier: Ob1_Q1.fromValue(json["tier"] ?? 0),
     );
   }
 }
 
 class SubscriptionSlotHistory {
   final dynamic product;
-  final Int64 addedTime;
-  final Int64 removedTime;
+  final dynamic addedTime;
+  final dynamic removedTime;
 
   SubscriptionSlotHistory({
     required this.product,
@@ -30003,8 +30002,8 @@ class SubscriptionSlotHistory {
 }
 
 class SubscriptionState {
-  final Int64 subscriptionId;
-  final Int64 ttlMillis;
+  final dynamic subscriptionId;
+  final dynamic ttlMillis;
 
   SubscriptionState({
     required this.subscriptionId,
@@ -30026,7 +30025,7 @@ class SubscriptionStatus {
   final String localizedName;
   final bool freeTrial;
   final bool expired;
-  final Int64 validUntil;
+  final dynamic validUntil;
   final int maxSlotCount;
   final Ob1_P1 target;
   final Ob1_R1 type;
@@ -30036,7 +30035,7 @@ class SubscriptionStatus {
   final bool accountHold;
   final Map<int, int> maxSlotCountsByProductType;
   final bool agreementAccepted;
-  final Int64 originalValidUntil;
+  final dynamic originalValidUntil;
 
   SubscriptionStatus({
     required this.billingItemId,
@@ -30068,13 +30067,13 @@ class SubscriptionStatus {
       expired: json["expired"],
       validUntil: json["validUntil"],
       maxSlotCount: json["maxSlotCount"],
-      target: Ob1_P1.fromValue(json["target"]),
-      type: Ob1_R1.fromValue(json["type"]),
-      storeCode: Ob1_K1.fromValue(json["storeCode"]),
+      target: Ob1_P1.fromValue(json["target"] ?? 0),
+      type: Ob1_R1.fromValue(json["type"] ?? 0),
+      storeCode: Ob1_K1.fromValue(json["storeCode"] ?? 0),
       nameKey: json["nameKey"],
-      tier: Ob1_Q1.fromValue(json["tier"]),
+      tier: Ob1_Q1.fromValue(json["tier"] ?? 0),
       accountHold: json["accountHold"],
-      maxSlotCountsByProductType: Map.from(json["maxSlotCountsByProductType"]),
+      maxSlotCountsByProductType: Map.from(json["maxSlotCountsByProductType"] ?? {}),
       agreementAccepted: json["agreementAccepted"],
       originalValidUntil: json["originalValidUntil"],
     );
@@ -30086,9 +30085,9 @@ class SuggestDictionarySetting {
   final String name;
   final bool preload;
   final SuggestResource suggestResource;
-  final Map<Int64, String> patch;
+  final Map<dynamic, String> patch;
   final SuggestResource suggestTagResource;
-  final Map<Int64, String> tagPatch;
+  final Map<dynamic, String> tagPatch;
   final SuggestResource corpusResource;
 
   SuggestDictionarySetting({
@@ -30107,19 +30106,19 @@ class SuggestDictionarySetting {
       language: json["language"],
       name: json["name"],
       preload: json["preload"],
-      suggestResource: SuggestResource.fromJson(json["suggestResource"]),
-      patch: Map.from(json["patch"]),
-      suggestTagResource: SuggestResource.fromJson(json["suggestTagResource"]),
-      tagPatch: Map.from(json["tagPatch"]),
-      corpusResource: SuggestResource.fromJson(json["corpusResource"]),
+      suggestResource: SuggestResource.fromJson(json["suggestResource"] ?? {}),
+      patch: Map.from(json["patch"] ?? {}),
+      suggestTagResource: SuggestResource.fromJson(json["suggestTagResource"] ?? {}),
+      tagPatch: Map.from(json["tagPatch"] ?? {}),
+      corpusResource: SuggestResource.fromJson(json["corpusResource"] ?? {}),
     );
   }
 }
 
 class SuggestResource {
   final String dataUrl;
-  final Int64 version;
-  final Int64 updatedTime;
+  final dynamic version;
+  final dynamic updatedTime;
 
   SuggestResource({
     required this.dataUrl,
@@ -30155,7 +30154,7 @@ class SuggestTag {
 
 class SuggestTrialRecommendation {
   final String productId;
-  final Int64 productVersion;
+  final dynamic productVersion;
   final String productName;
   final zR0_C40580e resource;
   final List<SuggestTag> tags;
@@ -30173,8 +30172,8 @@ class SuggestTrialRecommendation {
       productId: json["productId"],
       productVersion: json["productVersion"],
       productName: json["productName"],
-      resource: zR0_C40580e.fromJson(json["resource"]),
-      tags: List.from(json["tags"])
+      resource: zR0_C40580e.fromJson(json["resource"] ?? {}),
+      tags: List.from(json["tags"] ?? [])
           .map((e) => SuggestTag.fromJson(e))
           .toList(),
     );
@@ -30182,12 +30181,12 @@ class SuggestTrialRecommendation {
 }
 
 class SyncRequest {
-  final Int64 lastRevision;
+  final dynamic lastRevision;
   final int count;
-  final Int64 lastGlobalRevision;
-  final Int64 lastIndividualRevision;
+  final dynamic lastGlobalRevision;
+  final dynamic lastIndividualRevision;
   final Pb1_J4 fullSyncRequestReason;
-  final Map<int, Int64> lastPartialFullSyncs;
+  final Map<int, dynamic> lastPartialFullSyncs;
 
   SyncRequest({
     required this.lastRevision,
@@ -30204,15 +30203,15 @@ class SyncRequest {
       count: json["count"],
       lastGlobalRevision: json["lastGlobalRevision"],
       lastIndividualRevision: json["lastIndividualRevision"],
-      fullSyncRequestReason: Pb1_J4.fromValue(json["fullSyncRequestReason"]),
-      lastPartialFullSyncs: Map.from(json["lastPartialFullSyncs"]),
+      fullSyncRequestReason: Pb1_J4.fromValue(json["fullSyncRequestReason"] ?? 0),
+      lastPartialFullSyncs: Map.from(json["lastPartialFullSyncs"] ?? {}),
     );
   }
 }
 
 class SyncSquareMembersRequest {
   final String squareMid;
-  final Map<String, Int64> squareMembers;
+  final Map<String, dynamic> squareMembers;
 
   SyncSquareMembersRequest({
     required this.squareMid,
@@ -30222,7 +30221,7 @@ class SyncSquareMembersRequest {
   factory SyncSquareMembersRequest.fromJson(Map json) {
     return SyncSquareMembersRequest(
       squareMid: json["squareMid"],
-      squareMembers: Map.from(json["squareMembers"]),
+      squareMembers: Map.from(json["squareMembers"] ?? {}),
     );
   }
 }
@@ -30236,7 +30235,7 @@ class SyncSquareMembersResponse {
 
   factory SyncSquareMembersResponse.fromJson(Map json) {
     return SyncSquareMembersResponse(
-      updatedSquareMembers: List.from(json["updatedSquareMembers"])
+      updatedSquareMembers: List.from(json["updatedSquareMembers"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
     );
@@ -30253,7 +30252,7 @@ class T70_s1 {}
 
 class TGlobalEvents {
   final Map<int, GlobalEvent> events;
-  final Int64 lastRevision;
+  final dynamic lastRevision;
 
   TGlobalEvents({
     required this.events,
@@ -30262,7 +30261,7 @@ class TGlobalEvents {
 
   factory TGlobalEvents.fromJson(Map json) {
     return TGlobalEvents(
-      events: Map.from(json["events"]),
+      events: Map.from(json["events"] ?? {}),
       lastRevision: json["lastRevision"],
     );
   }
@@ -30270,7 +30269,7 @@ class TGlobalEvents {
 
 class TIndividualEvents {
   final List<int> events;
-  final Int64 lastRevision;
+  final dynamic lastRevision;
 
   TIndividualEvents({
     required this.events,
@@ -30279,7 +30278,7 @@ class TIndividualEvents {
 
   factory TIndividualEvents.fromJson(Map json) {
     return TIndividualEvents(
-      events: List.from(json["events"]),
+      events: List.from(json["events"] ?? []),
       lastRevision: json["lastRevision"],
     );
   }
@@ -30297,16 +30296,16 @@ class TMessageReadRange {
   factory TMessageReadRange.fromJson(Map json) {
     return TMessageReadRange(
       chatId: json["chatId"],
-      ranges: Map.from(json["ranges"]),
+      ranges: Map.from(json["ranges"] ?? {}),
     );
   }
 }
 
 class TMessageReadRangeEntry {
-  final Int64 startMessageId;
-  final Int64 endMessageId;
-  final Int64 startTime;
-  final Int64 endTime;
+  final dynamic startMessageId;
+  final dynamic endMessageId;
+  final dynamic startTime;
+  final dynamic endTime;
 
   TMessageReadRangeEntry({
     required this.startMessageId,
@@ -30337,7 +30336,7 @@ class Tag {
   factory Tag.fromJson(Map json) {
     return Tag(
       tagId: json["tagId"],
-      candidates: List.from(json["candidates"])
+      candidates: List.from(json["candidates"] ?? [])
           .map((e) => Candidate.fromJson(e))
           .toList(),
     );
@@ -30363,7 +30362,7 @@ class TaiwanBankAgreementRequiredPopupInfo {
 
 class TaiwanBankBalanceInfo {
   final bool bankUser;
-  final Int64 balance;
+  final dynamic balance;
   final String accessToken;
   final int accessTokenExpiresInSecond;
   final String balanceLinkUrl;
@@ -30391,7 +30390,7 @@ class TaiwanBankBalanceInfo {
       balanceLinkUrl: json["balanceLinkUrl"],
       balanceDisplay: json["balanceDisplay"],
       agreedToShowBalance: json["agreedToShowBalance"],
-      agreementRequiredPopupInfo: TaiwanBankAgreementRequiredPopupInfo.fromJson(json["agreementRequiredPopupInfo"]),
+      agreementRequiredPopupInfo: TaiwanBankAgreementRequiredPopupInfo.fromJson(json["agreementRequiredPopupInfo"] ?? {}),
     );
   }
 }
@@ -30442,8 +30441,8 @@ class TalkroomEnterReferer {
   factory TalkroomEnterReferer.fromJson(Map json) {
     return TalkroomEnterReferer(
       urlScheme: json["urlScheme"],
-      type: kf_x.fromValue(json["type"]),
-      content: kf_w.fromJson(json["content"]),
+      type: kf_x.fromValue(json["type"] ?? 0),
+      content: kf_w.fromJson(json["content"] ?? {}),
     );
   }
 }
@@ -30460,13 +30459,13 @@ class TalkroomEvent {
   factory TalkroomEvent.fromJson(Map json) {
     return TalkroomEvent(
       type: json["type"],
-      referer: TalkroomEnterReferer.fromJson(json["referer"]),
+      referer: TalkroomEnterReferer.fromJson(json["referer"] ?? {}),
     );
   }
 }
 
 class TargetProfileDetail {
-  final Int64 snapshotTimeMillis;
+  final dynamic snapshotTimeMillis;
   final String profileName;
   final String picturePath;
   final RichString statusMessage;
@@ -30495,11 +30494,11 @@ class TargetProfileDetail {
       snapshotTimeMillis: json["snapshotTimeMillis"],
       profileName: json["profileName"],
       picturePath: json["picturePath"],
-      statusMessage: RichString.fromJson(json["statusMessage"]),
+      statusMessage: RichString.fromJson(json["statusMessage"] ?? {}),
       musicProfile: json["musicProfile"],
       videoProfile: json["videoProfile"],
-      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"]),
-      pictureSource: Pb1_N6.fromValue(json["pictureSource"]),
+      avatarProfile: AvatarProfile.fromJson(json["avatarProfile"] ?? {}),
+      pictureSource: Pb1_N6.fromValue(json["pictureSource"] ?? 0),
       pictureStatus: json["pictureStatus"],
       profileId: json["profileId"],
     );
@@ -30544,7 +30543,7 @@ class TextMessageAnnouncementContents {
   final String messageId;
   final String text;
   final String senderSquareMemberMid;
-  final Int64 createdAt;
+  final dynamic createdAt;
   final String senderMid;
 
   TextMessageAnnouncementContents({
@@ -30601,14 +30600,14 @@ class ThemeProperty {
   factory ThemeProperty.fromJson(Map json) {
     return ThemeProperty(
       thumbnailUrl: json["thumbnailUrl"],
-      themeResourceType: Ob1_c2.fromValue(json["themeResourceType"]),
+      themeResourceType: Ob1_c2.fromValue(json["themeResourceType"] ?? 0),
     );
   }
 }
 
 class ThemeSummary {
   final String imagePath;
-  final Int64 version;
+  final dynamic version;
   final String versionString;
 
   ThemeSummary({
@@ -30656,10 +30655,10 @@ class ThingsDevice {
       deviceId: json["deviceId"],
       actionUri: json["actionUri"],
       botMid: json["botMid"],
-      productType: do0_EnumC23139B.fromValue(json["productType"]),
+      productType: do0_EnumC23139B.fromValue(json["productType"] ?? 0),
       providerName: json["providerName"],
       profileImageLocation: json["profileImageLocation"],
-      channelIdList: List.from(json["channelIdList"]),
+      channelIdList: List.from(json["channelIdList"] ?? []),
       targetABCEngineVersion: json["targetABCEngineVersion"],
       serviceUuid: json["serviceUuid"],
       bondingRequired: json["bondingRequired"],
@@ -30669,7 +30668,7 @@ class ThingsDevice {
 
 class ThingsOperation {
   final String deviceId;
-  final Int64 offset;
+  final dynamic offset;
   final do0_C23138A action;
 
   ThingsOperation({
@@ -30682,7 +30681,7 @@ class ThingsOperation {
     return ThingsOperation(
       deviceId: json["deviceId"],
       offset: json["offset"],
-      action: do0_C23138A.fromJson(json["action"]),
+      action: do0_C23138A.fromJson(json["action"] ?? {}),
     );
   }
 }
@@ -30698,15 +30697,15 @@ class ThumbnailLayer {
 
   factory ThumbnailLayer.fromJson(Map json) {
     return ThumbnailLayer(
-      frontThumbnailImage: RichImage.fromJson(json["frontThumbnailImage"]),
-      backgroundThumbnailImage: RichImage.fromJson(json["backgroundThumbnailImage"]),
+      frontThumbnailImage: RichImage.fromJson(json["frontThumbnailImage"] ?? {}),
+      backgroundThumbnailImage: RichImage.fromJson(json["backgroundThumbnailImage"] ?? {}),
     );
   }
 }
 
 class Ticket {
   final String id;
-  final Int64 expirationTime;
+  final dynamic expirationTime;
   final int maxUseCount;
 
   Ticket({
@@ -30741,10 +30740,10 @@ class TokenV1IssueResult {
 class TokenV3IssueResult {
   final String accessToken;
   final String refreshToken;
-  final Int64 durationUntilRefreshInSec;
+  final dynamic durationUntilRefreshInSec;
   final RefreshApiRetryPolicy refreshApiRetryPolicy;
   final String loginSessionId;
-  final Int64 tokenIssueTimeEpochSec;
+  final dynamic tokenIssueTimeEpochSec;
 
   TokenV3IssueResult({
     required this.accessToken,
@@ -30760,7 +30759,7 @@ class TokenV3IssueResult {
       accessToken: json["accessToken"],
       refreshToken: json["refreshToken"],
       durationUntilRefreshInSec: json["durationUntilRefreshInSec"],
-      refreshApiRetryPolicy: RefreshApiRetryPolicy.fromJson(json["refreshApiRetryPolicy"]),
+      refreshApiRetryPolicy: RefreshApiRetryPolicy.fromJson(json["refreshApiRetryPolicy"] ?? {}),
       loginSessionId: json["loginSessionId"],
       tokenIssueTimeEpochSec: json["tokenIssueTimeEpochSec"],
     );
@@ -30769,7 +30768,7 @@ class TokenV3IssueResult {
 
 class Tooltip {
   final String text;
-  final Int64 revisionTimeMillis;
+  final dynamic revisionTimeMillis;
 
   Tooltip({
     required this.text,
@@ -30786,7 +30785,7 @@ class Tooltip {
 
 class TooltipInfo {
   final String text;
-  final Int64 tooltipRevision;
+  final dynamic tooltipRevision;
 
   TooltipInfo({
     required this.text,
@@ -30813,7 +30812,7 @@ class TopTab {
   factory TopTab.fromJson(Map json) {
     return TopTab(
       id: json["id"],
-      modulesOrder: List.from(json["modulesOrder"]),
+      modulesOrder: List.from(json["modulesOrder"] ?? []),
     );
   }
 }
@@ -30839,7 +30838,7 @@ class U70_t {}
 class U70_v {}
 
 class UEN {
-  final Int64 revision;
+  final dynamic revision;
 
   UEN({
     required this.revision
@@ -30863,8 +30862,8 @@ class Uf_C14856C {
 
   factory Uf_C14856C.fromJson(Map json) {
     return Uf_C14856C(
-      uen: UEN.fromJson(json["uen"]),
-      beacon: Beacon.fromJson(json["beacon"]),
+      uen: UEN.fromJson(json["uen"] ?? {}),
+      beacon: Beacon.fromJson(json["beacon"] ?? {}),
     );
   }
 }
@@ -30880,8 +30879,8 @@ class Uf_C14864f {
 
   factory Uf_C14864f.fromJson(Map json) {
     return Uf_C14864f(
-      regularBadge: RegularBadge.fromJson(json["regularBadge"]),
-      urgentBadge: UrgentBadge.fromJson(json["urgentBadge"]),
+      regularBadge: RegularBadge.fromJson(json["regularBadge"] ?? {}),
+      urgentBadge: UrgentBadge.fromJson(json["urgentBadge"] ?? {}),
     );
   }
 }
@@ -30899,9 +30898,9 @@ class Uf_p {
 
   factory Uf_p.fromJson(Map json) {
     return Uf_p(
-      ad: AD.fromJson(json["ad"]),
-      content: Content.fromJson(json["content"]),
-      richContent: RichContent.fromJson(json["richContent"]),
+      ad: AD.fromJson(json["ad"] ?? {}),
+      content: Content.fromJson(json["content"] ?? {}),
+      richContent: RichContent.fromJson(json["richContent"] ?? {}),
     );
   }
 }
@@ -30917,8 +30916,8 @@ class Uf_t {
 
   factory Uf_t.fromJson(Map json) {
     return Uf_t(
-      typeA: RichItem.fromJson(json["typeA"]),
-      typeB: RichItem.fromJson(json["typeB"]),
+      typeA: RichItem.fromJson(json["typeA"] ?? {}),
+      typeB: RichItem.fromJson(json["typeB"] ?? {}),
     );
   }
 }
@@ -30932,7 +30931,7 @@ class UnfollowRequest {
 
   factory UnfollowRequest.fromJson(Map json) {
     return UnfollowRequest(
-      followMid: Pb1_A4.fromJson(json["followMid"]),
+      followMid: Pb1_A4.fromJson(json["followMid"] ?? {}),
     );
   }
 }
@@ -30962,7 +30961,7 @@ class UnregisterAvailabilityInfo {
 
   factory UnregisterAvailabilityInfo.fromJson(Map json) {
     return UnregisterAvailabilityInfo(
-      result: r80_m0.fromValue(json["result"]),
+      result: r80_m0.fromValue(json["result"] ?? 0),
       message: json["message"],
     );
   }
@@ -30997,7 +30996,7 @@ class UnsendMessageResponse {
 
   factory UnsendMessageResponse.fromJson(Map json) {
     return UnsendMessageResponse(
-      unsentMessage: SquareMessage.fromJson(json["unsentMessage"]),
+      unsentMessage: SquareMessage.fromJson(json["unsentMessage"] ?? {}),
     );
   }
 }
@@ -31016,8 +31015,8 @@ class UpdateChatRequest {
   factory UpdateChatRequest.fromJson(Map json) {
     return UpdateChatRequest(
       reqSeq: json["reqSeq"],
-      chat: Chat.fromJson(json["chat"]),
-      updatedAttribute: Pb1_O2.fromValue(json["updatedAttribute"]),
+      chat: Chat.fromJson(json["chat"] ?? {}),
+      updatedAttribute: Pb1_O2.fromValue(json["updatedAttribute"] ?? 0),
     );
   }
 }
@@ -31034,7 +31033,7 @@ class UpdateGroupCallUrlRequest {
   factory UpdateGroupCallUrlRequest.fromJson(Map json) {
     return UpdateGroupCallUrlRequest(
       urlId: json["urlId"],
-      targetAttribute: Pb1_ad.fromJson(json["targetAttribute"]),
+      targetAttribute: Pb1_ad.fromJson(json["targetAttribute"] ?? {}),
     );
   }
 }
@@ -31050,10 +31049,10 @@ class UpdateLiveTalkAttrsRequest {
 
   factory UpdateLiveTalkAttrsRequest.fromJson(Map json) {
     return UpdateLiveTalkAttrsRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => LiveTalkAttribute.fromValue(e))
           .toList(),
-      liveTalk: LiveTalk.fromJson(json["liveTalk"]),
+      liveTalk: LiveTalk.fromJson(json["liveTalk"] ?? {}),
     );
   }
 }
@@ -31089,7 +31088,7 @@ class UpdateProfileAttributesRequest {
   factory UpdateProfileAttributesRequest.fromJson(Map json) {
     return UpdateProfileAttributesRequest(
       reqSeq: json["reqSeq"],
-      profileAttributes: Map.from(json["profileAttributes"]),
+      profileAttributes: Map.from(json["profileAttributes"] ?? {}),
       profileId: json["profileId"],
     );
   }
@@ -31106,7 +31105,7 @@ class UpdateReason {
 
   factory UpdateReason.fromJson(Map json) {
     return UpdateReason(
-      type: t80_r.fromValue(json["type"]),
+      type: t80_r.fromValue(json["type"] ?? 0),
       detail: json["detail"],
     );
   }
@@ -31126,7 +31125,7 @@ class UpdateSafetyStatusRequest {
   factory UpdateSafetyStatusRequest.fromJson(Map json) {
     return UpdateSafetyStatusRequest(
       disasterId: json["disasterId"],
-      safetyStatus: vh_m.fromValue(json["safetyStatus"]),
+      safetyStatus: vh_m.fromValue(json["safetyStatus"] ?? 0),
       message: json["message"],
     );
   }
@@ -31143,10 +31142,10 @@ class UpdateSquareAuthorityRequest {
 
   factory UpdateSquareAuthorityRequest.fromJson(Map json) {
     return UpdateSquareAuthorityRequest(
-      updateAttributes: List.from(json["updateAttributes"])
+      updateAttributes: List.from(json["updateAttributes"] ?? [])
           .map((e) => SquareAuthorityAttribute.fromValue(e))
           .toList(),
-      authority: SquareAuthority.fromJson(json["authority"]),
+      authority: SquareAuthority.fromJson(json["authority"] ?? {}),
     );
   }
 }
@@ -31162,8 +31161,8 @@ class UpdateSquareAuthorityResponse {
 
   factory UpdateSquareAuthorityResponse.fromJson(Map json) {
     return UpdateSquareAuthorityResponse(
-      updatdAttributes: List.from(json["updatdAttributes"]),
-      authority: SquareAuthority.fromJson(json["authority"]),
+      updatdAttributes: List.from(json["updatdAttributes"] ?? []),
+      authority: SquareAuthority.fromJson(json["authority"] ?? {}),
     );
   }
 }
@@ -31179,10 +31178,10 @@ class UpdateSquareChatMemberRequest {
 
   factory UpdateSquareChatMemberRequest.fromJson(Map json) {
     return UpdateSquareChatMemberRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => SquareChatMemberAttribute.fromValue(e))
           .toList(),
-      chatMember: SquareChatMember.fromJson(json["chatMember"]),
+      chatMember: SquareChatMember.fromJson(json["chatMember"] ?? {}),
     );
   }
 }
@@ -31196,7 +31195,7 @@ class UpdateSquareChatMemberResponse {
 
   factory UpdateSquareChatMemberResponse.fromJson(Map json) {
     return UpdateSquareChatMemberResponse(
-      updatedChatMember: SquareChatMember.fromJson(json["updatedChatMember"]),
+      updatedChatMember: SquareChatMember.fromJson(json["updatedChatMember"] ?? {}),
     );
   }
 }
@@ -31212,10 +31211,10 @@ class UpdateSquareChatRequest {
 
   factory UpdateSquareChatRequest.fromJson(Map json) {
     return UpdateSquareChatRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => SquareChatAttribute.fromValue(e))
           .toList(),
-      squareChat: SquareChat.fromJson(json["squareChat"]),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
     );
   }
 }
@@ -31231,8 +31230,8 @@ class UpdateSquareChatResponse {
 
   factory UpdateSquareChatResponse.fromJson(Map json) {
     return UpdateSquareChatResponse(
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      squareChat: SquareChat.fromJson(json["squareChat"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      squareChat: SquareChat.fromJson(json["squareChat"] ?? {}),
     );
   }
 }
@@ -31248,10 +31247,10 @@ class UpdateSquareFeatureSetRequest {
 
   factory UpdateSquareFeatureSetRequest.fromJson(Map json) {
     return UpdateSquareFeatureSetRequest(
-      updateAttributes: List.from(json["updateAttributes"])
+      updateAttributes: List.from(json["updateAttributes"] ?? [])
           .map((e) => SquareFeatureSetAttribute.fromValue(e))
           .toList(),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
     );
   }
 }
@@ -31267,8 +31266,8 @@ class UpdateSquareFeatureSetResponse {
 
   factory UpdateSquareFeatureSetResponse.fromJson(Map json) {
     return UpdateSquareFeatureSetResponse(
-      updateAttributes: List.from(json["updateAttributes"]),
-      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"]),
+      updateAttributes: List.from(json["updateAttributes"] ?? []),
+      squareFeatureSet: SquareFeatureSet.fromJson(json["squareFeatureSet"] ?? {}),
     );
   }
 }
@@ -31290,8 +31289,8 @@ class UpdateSquareMemberRelationRequest {
     return UpdateSquareMemberRelationRequest(
       squareMid: json["squareMid"],
       targetSquareMemberMid: json["targetSquareMemberMid"],
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      relation: SquareMemberRelation.fromJson(json["relation"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      relation: SquareMemberRelation.fromJson(json["relation"] ?? {}),
     );
   }
 }
@@ -31313,8 +31312,8 @@ class UpdateSquareMemberRelationResponse {
     return UpdateSquareMemberRelationResponse(
       squareMid: json["squareMid"],
       targetSquareMemberMid: json["targetSquareMemberMid"],
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      relation: SquareMemberRelation.fromJson(json["relation"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      relation: SquareMemberRelation.fromJson(json["relation"] ?? {}),
     );
   }
 }
@@ -31332,13 +31331,13 @@ class UpdateSquareMemberRequest {
 
   factory UpdateSquareMemberRequest.fromJson(Map json) {
     return UpdateSquareMemberRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => SquareMemberAttribute.fromValue(e))
           .toList(),
-      updatedPreferenceAttrs: List.from(json["updatedPreferenceAttrs"])
+      updatedPreferenceAttrs: List.from(json["updatedPreferenceAttrs"] ?? [])
           .map((e) => SquarePreferenceAttribute.fromValue(e))
           .toList(),
-      squareMember: SquareMember.fromJson(json["squareMember"]),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
     );
   }
 }
@@ -31356,9 +31355,9 @@ class UpdateSquareMemberResponse {
 
   factory UpdateSquareMemberResponse.fromJson(Map json) {
     return UpdateSquareMemberResponse(
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      squareMember: SquareMember.fromJson(json["squareMember"]),
-      updatedPreferenceAttrs: List.from(json["updatedPreferenceAttrs"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      squareMember: SquareMember.fromJson(json["squareMember"] ?? {}),
+      updatedPreferenceAttrs: List.from(json["updatedPreferenceAttrs"] ?? []),
     );
   }
 }
@@ -31374,10 +31373,10 @@ class UpdateSquareMembersRequest {
 
   factory UpdateSquareMembersRequest.fromJson(Map json) {
     return UpdateSquareMembersRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => SquareMemberAttribute.fromValue(e))
           .toList(),
-      members: List.from(json["members"])
+      members: List.from(json["members"] ?? [])
           .map((e) => SquareMember.fromJson(e))
           .toList(),
     );
@@ -31397,9 +31396,9 @@ class UpdateSquareMembersResponse {
 
   factory UpdateSquareMembersResponse.fromJson(Map json) {
     return UpdateSquareMembersResponse(
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      editor: SquareMember.fromJson(json["editor"]),
-      members: Map.from(json["members"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      editor: SquareMember.fromJson(json["editor"] ?? {}),
+      members: Map.from(json["members"] ?? {}),
     );
   }
 }
@@ -31415,10 +31414,10 @@ class UpdateSquareRequest {
 
   factory UpdateSquareRequest.fromJson(Map json) {
     return UpdateSquareRequest(
-      updatedAttrs: List.from(json["updatedAttrs"])
+      updatedAttrs: List.from(json["updatedAttrs"] ?? [])
           .map((e) => SquareAttribute.fromValue(e))
           .toList(),
-      square: Square.fromJson(json["square"]),
+      square: Square.fromJson(json["square"] ?? {}),
     );
   }
 }
@@ -31434,8 +31433,8 @@ class UpdateSquareResponse {
 
   factory UpdateSquareResponse.fromJson(Map json) {
     return UpdateSquareResponse(
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      square: Square.fromJson(json["square"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      square: Square.fromJson(json["square"] ?? {}),
     );
   }
 }
@@ -31451,8 +31450,8 @@ class UpdateUserSettingsRequest {
 
   factory UpdateUserSettingsRequest.fromJson(Map json) {
     return UpdateUserSettingsRequest(
-      updatedAttrs: List.from(json["updatedAttrs"]),
-      userSettings: SquareUserSettings.fromJson(json["userSettings"]),
+      updatedAttrs: List.from(json["updatedAttrs"] ?? []),
+      userSettings: SquareUserSettings.fromJson(json["userSettings"] ?? {}),
     );
   }
 }
@@ -31550,16 +31549,16 @@ class UserDevice {
 
   factory UserDevice.fromJson(Map json) {
     return UserDevice(
-      device: ThingsDevice.fromJson(json["device"]),
+      device: ThingsDevice.fromJson(json["device"] ?? {}),
       deviceDisplayName: json["deviceDisplayName"],
     );
   }
 }
 
 class UserFriendDetail {
-  final Int64 createdTime;
+  final dynamic createdTime;
   final String overriddenName;
-  final Int64 favoriteTime;
+  final dynamic favoriteTime;
   final bool hidden;
   final String ringtone;
   final String ringbackTone;
@@ -31674,12 +31673,12 @@ class VerificationSessionData {
   factory VerificationSessionData.fromJson(Map json) {
     return VerificationSessionData(
       sessionId: json["sessionId"],
-      method: VerificationMethod.fromValue(json["method"]),
+      method: VerificationMethod.fromValue(json["method"] ?? 0),
       callback: json["callback"],
       normalizedPhone: json["normalizedPhone"],
       countryCode: json["countryCode"],
       nationalSignificantNumber: json["nationalSignificantNumber"],
-      availableVerificationMethods: List.from(json["availableVerificationMethods"]),
+      availableVerificationMethods: List.from(json["availableVerificationMethods"] ?? []),
       callerIdMask: json["callerIdMask"],
     );
   }
@@ -31701,7 +31700,7 @@ class VerifyAccountUsingHashedPwdRequest {
   factory VerifyAccountUsingHashedPwdRequest.fromJson(Map json) {
     return VerifyAccountUsingHashedPwdRequest(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
       v1HashedPassword: json["v1HashedPassword"],
       clientHashedPassword: json["clientHashedPassword"],
     );
@@ -31737,7 +31736,7 @@ class VerifyAccountUsingHashedPwdResponse {
 
   factory VerifyAccountUsingHashedPwdResponse.fromJson(Map json) {
     return VerifyAccountUsingHashedPwdResponse(
-      userProfile: UserProfile.fromJson(json["userProfile"]),
+      userProfile: UserProfile.fromJson(json["userProfile"] ?? {}),
     );
   }
 }
@@ -31797,7 +31796,7 @@ class VerifyEapLoginRequest {
   factory VerifyEapLoginRequest.fromJson(Map json) {
     return VerifyEapLoginRequest(
       authSessionId: json["authSessionId"],
-      eapLogin: EapLogin.fromJson(json["eapLogin"]),
+      eapLogin: EapLogin.fromJson(json["eapLogin"] ?? {}),
     );
   }
 }
@@ -31814,7 +31813,7 @@ class I80_G0 {
   factory I80_G0.fromJson(Map json) {
     return I80_G0(
       authSessionId: json["authSessionId"],
-      eapLogin: EapLogin.fromJson(json["eapLogin"]),
+      eapLogin: EapLogin.fromJson(json["eapLogin"] ?? {}),
     );
   }
 }
@@ -31861,7 +31860,7 @@ class VerifyPhonePinCodeRequest {
   factory VerifyPhonePinCodeRequest.fromJson(Map json) {
     return VerifyPhonePinCodeRequest(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
       pinCode: json["pinCode"],
     );
   }
@@ -31881,7 +31880,7 @@ class I80_I0 {
   factory I80_I0.fromJson(Map json) {
     return I80_I0(
       authSessionId: json["authSessionId"],
-      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"]),
+      userPhoneNumber: UserPhoneNumber.fromJson(json["userPhoneNumber"] ?? {}),
       pinCode: json["pinCode"],
     );
   }
@@ -31905,7 +31904,7 @@ class VerifyPhonePinCodeResponse {
       accountExist: json["accountExist"],
       sameUdidFromAccount: json["sameUdidFromAccount"],
       allowedToRegister: json["allowedToRegister"],
-      userProfile: UserProfile.fromJson(json["userProfile"]),
+      userProfile: UserProfile.fromJson(json["userProfile"] ?? {}),
     );
   }
 }
@@ -31953,7 +31952,7 @@ class VerifyQrCodeRequest {
   factory VerifyQrCodeRequest.fromJson(Map json) {
     return VerifyQrCodeRequest(
       authSessionId: json["authSessionId"],
-      metaData: Map.from(json["metaData"]),
+      metaData: Map.from(json["metaData"] ?? {}),
     );
   }
 }
@@ -31972,7 +31971,7 @@ class VerifySocialLoginResponse {
   factory VerifySocialLoginResponse.fromJson(Map json) {
     return VerifySocialLoginResponse(
       accountExist: json["accountExist"],
-      userProfile: UserProfile.fromJson(json["userProfile"]),
+      userProfile: UserProfile.fromJson(json["userProfile"] ?? {}),
       sameUdidFromAccount: json["sameUdidFromAccount"],
     );
   }
@@ -32060,7 +32059,7 @@ class WifiSignal {
   final String bssid;
   final String wifiStandard;
   final int frequency;
-  final Int64 lastSeenTimestamp;
+  final dynamic lastSeenTimestamp;
   final int rssi;
 
   WifiSignal({
@@ -32112,7 +32111,7 @@ class acceptChatInvitationByTicket_args {
 
   factory acceptChatInvitationByTicket_args.fromJson(Map json) {
     return acceptChatInvitationByTicket_args(
-      request: AcceptChatInvitationByTicketRequest.fromJson(json["request"]),
+      request: AcceptChatInvitationByTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32129,7 +32128,7 @@ class acceptChatInvitationByTicket_result {
   factory acceptChatInvitationByTicket_result.fromJson(Map json) {
     return acceptChatInvitationByTicket_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32143,7 +32142,7 @@ class acceptChatInvitation_args {
 
   factory acceptChatInvitation_args.fromJson(Map json) {
     return acceptChatInvitation_args(
-      request: AcceptChatInvitationRequest.fromJson(json["request"]),
+      request: AcceptChatInvitationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32160,7 +32159,7 @@ class acceptChatInvitation_result {
   factory acceptChatInvitation_result.fromJson(Map json) {
     return acceptChatInvitation_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32177,7 +32176,7 @@ class SquareService_acceptSpeakers_result {
   factory SquareService_acceptSpeakers_result.fromJson(Map json) {
     return SquareService_acceptSpeakers_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32194,7 +32193,7 @@ class SquareService_acceptToChangeRole_result {
   factory SquareService_acceptToChangeRole_result.fromJson(Map json) {
     return SquareService_acceptToChangeRole_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32211,7 +32210,7 @@ class SquareService_acceptToListen_result {
   factory SquareService_acceptToListen_result.fromJson(Map json) {
     return SquareService_acceptToListen_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32228,7 +32227,7 @@ class SquareService_acceptToSpeak_result {
   factory SquareService_acceptToSpeak_result.fromJson(Map json) {
     return SquareService_acceptToSpeak_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32244,8 +32243,8 @@ class SquareService_acquireLiveTalk_result {
 
   factory SquareService_acquireLiveTalk_result.fromJson(Map json) {
     return SquareService_acquireLiveTalk_result(
-      success: AcquireLiveTalkResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: AcquireLiveTalkResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32262,7 +32261,7 @@ class SquareService_cancelToSpeak_result {
   factory SquareService_cancelToSpeak_result.fromJson(Map json) {
     return SquareService_cancelToSpeak_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32278,8 +32277,8 @@ class SquareService_fetchLiveTalkEvents_result {
 
   factory SquareService_fetchLiveTalkEvents_result.fromJson(Map json) {
     return SquareService_fetchLiveTalkEvents_result(
-      success: FetchLiveTalkEventsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FetchLiveTalkEventsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32295,8 +32294,8 @@ class SquareService_findLiveTalkByInvitationTicket_result {
 
   factory SquareService_findLiveTalkByInvitationTicket_result.fromJson(Map json) {
     return SquareService_findLiveTalkByInvitationTicket_result(
-      success: FindLiveTalkByInvitationTicketResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FindLiveTalkByInvitationTicketResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32313,7 +32312,7 @@ class SquareService_forceEndLiveTalk_result {
   factory SquareService_forceEndLiveTalk_result.fromJson(Map json) {
     return SquareService_forceEndLiveTalk_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32329,8 +32328,8 @@ class SquareService_getLiveTalkInfoForNonMember_result {
 
   factory SquareService_getLiveTalkInfoForNonMember_result.fromJson(Map json) {
     return SquareService_getLiveTalkInfoForNonMember_result(
-      success: GetLiveTalkInfoForNonMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetLiveTalkInfoForNonMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32346,8 +32345,8 @@ class SquareService_getLiveTalkInvitationUrl_result {
 
   factory SquareService_getLiveTalkInvitationUrl_result.fromJson(Map json) {
     return SquareService_getLiveTalkInvitationUrl_result(
-      success: GetLiveTalkInvitationUrlResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetLiveTalkInvitationUrlResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32363,8 +32362,8 @@ class SquareService_getLiveTalkSpeakersForNonMember_result {
 
   factory SquareService_getLiveTalkSpeakersForNonMember_result.fromJson(Map json) {
     return SquareService_getLiveTalkSpeakersForNonMember_result(
-      success: GetLiveTalkSpeakersForNonMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetLiveTalkSpeakersForNonMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32380,8 +32379,8 @@ class SquareService_getSquareInfoByChatMid_result {
 
   factory SquareService_getSquareInfoByChatMid_result.fromJson(Map json) {
     return SquareService_getSquareInfoByChatMid_result(
-      success: GetSquareInfoByChatMidResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareInfoByChatMidResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32398,7 +32397,7 @@ class SquareService_inviteToChangeRole_result {
   factory SquareService_inviteToChangeRole_result.fromJson(Map json) {
     return SquareService_inviteToChangeRole_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32415,7 +32414,7 @@ class SquareService_inviteToListen_result {
   factory SquareService_inviteToListen_result.fromJson(Map json) {
     return SquareService_inviteToListen_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32432,7 +32431,7 @@ class SquareService_inviteToLiveTalk_result {
   factory SquareService_inviteToLiveTalk_result.fromJson(Map json) {
     return SquareService_inviteToLiveTalk_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32448,8 +32447,8 @@ class SquareService_inviteToSpeak_result {
 
   factory SquareService_inviteToSpeak_result.fromJson(Map json) {
     return SquareService_inviteToSpeak_result(
-      success: InviteToSpeakResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: InviteToSpeakResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32465,8 +32464,8 @@ class SquareService_joinLiveTalk_result {
 
   factory SquareService_joinLiveTalk_result.fromJson(Map json) {
     return SquareService_joinLiveTalk_result(
-      success: JoinLiveTalkResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: JoinLiveTalkResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32483,7 +32482,7 @@ class SquareService_kickOutLiveTalkParticipants_result {
   factory SquareService_kickOutLiveTalkParticipants_result.fromJson(Map json) {
     return SquareService_kickOutLiveTalkParticipants_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32500,7 +32499,7 @@ class SquareService_rejectSpeakers_result {
   factory SquareService_rejectSpeakers_result.fromJson(Map json) {
     return SquareService_rejectSpeakers_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32517,7 +32516,7 @@ class SquareService_rejectToSpeak_result {
   factory SquareService_rejectToSpeak_result.fromJson(Map json) {
     return SquareService_rejectToSpeak_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32534,7 +32533,7 @@ class SquareService_removeLiveTalkSubscription_result {
   factory SquareService_removeLiveTalkSubscription_result.fromJson(Map json) {
     return SquareService_removeLiveTalkSubscription_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32551,7 +32550,7 @@ class SquareService_reportLiveTalk_result {
   factory SquareService_reportLiveTalk_result.fromJson(Map json) {
     return SquareService_reportLiveTalk_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32568,7 +32567,7 @@ class SquareService_reportLiveTalkSpeaker_result {
   factory SquareService_reportLiveTalkSpeaker_result.fromJson(Map json) {
     return SquareService_reportLiveTalkSpeaker_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32585,7 +32584,7 @@ class SquareService_requestToListen_result {
   factory SquareService_requestToListen_result.fromJson(Map json) {
     return SquareService_requestToListen_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32602,7 +32601,7 @@ class SquareService_requestToSpeak_result {
   factory SquareService_requestToSpeak_result.fromJson(Map json) {
     return SquareService_requestToSpeak_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32619,7 +32618,7 @@ class SquareService_updateLiveTalkAttrs_result {
   factory SquareService_updateLiveTalkAttrs_result.fromJson(Map json) {
     return SquareService_updateLiveTalkAttrs_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -32633,7 +32632,7 @@ class SquareService_acceptSpeakers_args {
 
   factory SquareService_acceptSpeakers_args.fromJson(Map json) {
     return SquareService_acceptSpeakers_args(
-      request: AcceptSpeakersRequest.fromJson(json["request"]),
+      request: AcceptSpeakersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32647,7 +32646,7 @@ class SquareService_acceptToChangeRole_args {
 
   factory SquareService_acceptToChangeRole_args.fromJson(Map json) {
     return SquareService_acceptToChangeRole_args(
-      request: AcceptToChangeRoleRequest.fromJson(json["request"]),
+      request: AcceptToChangeRoleRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32661,7 +32660,7 @@ class SquareService_acceptToListen_args {
 
   factory SquareService_acceptToListen_args.fromJson(Map json) {
     return SquareService_acceptToListen_args(
-      request: AcceptToListenRequest.fromJson(json["request"]),
+      request: AcceptToListenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32675,7 +32674,7 @@ class SquareService_acceptToSpeak_args {
 
   factory SquareService_acceptToSpeak_args.fromJson(Map json) {
     return SquareService_acceptToSpeak_args(
-      request: AcceptToSpeakRequest.fromJson(json["request"]),
+      request: AcceptToSpeakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32689,7 +32688,7 @@ class SquareService_acquireLiveTalk_args {
 
   factory SquareService_acquireLiveTalk_args.fromJson(Map json) {
     return SquareService_acquireLiveTalk_args(
-      request: AcquireLiveTalkRequest.fromJson(json["request"]),
+      request: AcquireLiveTalkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32703,7 +32702,7 @@ class SquareService_cancelToSpeak_args {
 
   factory SquareService_cancelToSpeak_args.fromJson(Map json) {
     return SquareService_cancelToSpeak_args(
-      request: CancelToSpeakRequest.fromJson(json["request"]),
+      request: CancelToSpeakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32717,7 +32716,7 @@ class SquareService_fetchLiveTalkEvents_args {
 
   factory SquareService_fetchLiveTalkEvents_args.fromJson(Map json) {
     return SquareService_fetchLiveTalkEvents_args(
-      request: FetchLiveTalkEventsRequest.fromJson(json["request"]),
+      request: FetchLiveTalkEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32731,7 +32730,7 @@ class SquareService_findLiveTalkByInvitationTicket_args {
 
   factory SquareService_findLiveTalkByInvitationTicket_args.fromJson(Map json) {
     return SquareService_findLiveTalkByInvitationTicket_args(
-      request: FindLiveTalkByInvitationTicketRequest.fromJson(json["request"]),
+      request: FindLiveTalkByInvitationTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32745,7 +32744,7 @@ class SquareService_forceEndLiveTalk_args {
 
   factory SquareService_forceEndLiveTalk_args.fromJson(Map json) {
     return SquareService_forceEndLiveTalk_args(
-      request: ForceEndLiveTalkRequest.fromJson(json["request"]),
+      request: ForceEndLiveTalkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32759,7 +32758,7 @@ class SquareService_getLiveTalkInfoForNonMember_args {
 
   factory SquareService_getLiveTalkInfoForNonMember_args.fromJson(Map json) {
     return SquareService_getLiveTalkInfoForNonMember_args(
-      request: GetLiveTalkInfoForNonMemberRequest.fromJson(json["request"]),
+      request: GetLiveTalkInfoForNonMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32773,7 +32772,7 @@ class SquareService_getLiveTalkInvitationUrl_args {
 
   factory SquareService_getLiveTalkInvitationUrl_args.fromJson(Map json) {
     return SquareService_getLiveTalkInvitationUrl_args(
-      request: GetLiveTalkInvitationUrlRequest.fromJson(json["request"]),
+      request: GetLiveTalkInvitationUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32787,7 +32786,7 @@ class SquareService_getLiveTalkSpeakersForNonMember_args {
 
   factory SquareService_getLiveTalkSpeakersForNonMember_args.fromJson(Map json) {
     return SquareService_getLiveTalkSpeakersForNonMember_args(
-      request: GetLiveTalkSpeakersForNonMemberRequest.fromJson(json["request"]),
+      request: GetLiveTalkSpeakersForNonMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32801,7 +32800,7 @@ class SquareService_getSquareInfoByChatMid_args {
 
   factory SquareService_getSquareInfoByChatMid_args.fromJson(Map json) {
     return SquareService_getSquareInfoByChatMid_args(
-      request: GetSquareInfoByChatMidRequest.fromJson(json["request"]),
+      request: GetSquareInfoByChatMidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32815,7 +32814,7 @@ class SquareService_inviteToChangeRole_args {
 
   factory SquareService_inviteToChangeRole_args.fromJson(Map json) {
     return SquareService_inviteToChangeRole_args(
-      request: InviteToChangeRoleRequest.fromJson(json["request"]),
+      request: InviteToChangeRoleRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32829,7 +32828,7 @@ class SquareService_inviteToListen_args {
 
   factory SquareService_inviteToListen_args.fromJson(Map json) {
     return SquareService_inviteToListen_args(
-      request: InviteToListenRequest.fromJson(json["request"]),
+      request: InviteToListenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32843,7 +32842,7 @@ class SquareService_inviteToLiveTalk_args {
 
   factory SquareService_inviteToLiveTalk_args.fromJson(Map json) {
     return SquareService_inviteToLiveTalk_args(
-      request: InviteToLiveTalkRequest.fromJson(json["request"]),
+      request: InviteToLiveTalkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32857,7 +32856,7 @@ class SquareService_inviteToSpeak_args {
 
   factory SquareService_inviteToSpeak_args.fromJson(Map json) {
     return SquareService_inviteToSpeak_args(
-      request: InviteToSpeakRequest.fromJson(json["request"]),
+      request: InviteToSpeakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32871,7 +32870,7 @@ class SquareService_joinLiveTalk_args {
 
   factory SquareService_joinLiveTalk_args.fromJson(Map json) {
     return SquareService_joinLiveTalk_args(
-      request: JoinLiveTalkRequest.fromJson(json["request"]),
+      request: JoinLiveTalkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32885,7 +32884,7 @@ class SquareService_kickOutLiveTalkParticipants_args {
 
   factory SquareService_kickOutLiveTalkParticipants_args.fromJson(Map json) {
     return SquareService_kickOutLiveTalkParticipants_args(
-      request: KickOutLiveTalkParticipantsRequest.fromJson(json["request"]),
+      request: KickOutLiveTalkParticipantsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32899,7 +32898,7 @@ class SquareService_rejectSpeakers_args {
 
   factory SquareService_rejectSpeakers_args.fromJson(Map json) {
     return SquareService_rejectSpeakers_args(
-      request: RejectSpeakersRequest.fromJson(json["request"]),
+      request: RejectSpeakersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32913,7 +32912,7 @@ class SquareService_rejectToSpeak_args {
 
   factory SquareService_rejectToSpeak_args.fromJson(Map json) {
     return SquareService_rejectToSpeak_args(
-      request: RejectToSpeakRequest.fromJson(json["request"]),
+      request: RejectToSpeakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32927,7 +32926,7 @@ class SquareService_removeLiveTalkSubscription_args {
 
   factory SquareService_removeLiveTalkSubscription_args.fromJson(Map json) {
     return SquareService_removeLiveTalkSubscription_args(
-      request: RemoveLiveTalkSubscriptionRequest.fromJson(json["request"]),
+      request: RemoveLiveTalkSubscriptionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32941,7 +32940,7 @@ class SquareService_reportLiveTalk_args {
 
   factory SquareService_reportLiveTalk_args.fromJson(Map json) {
     return SquareService_reportLiveTalk_args(
-      request: ReportLiveTalkRequest.fromJson(json["request"]),
+      request: ReportLiveTalkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32955,7 +32954,7 @@ class SquareService_reportLiveTalkSpeaker_args {
 
   factory SquareService_reportLiveTalkSpeaker_args.fromJson(Map json) {
     return SquareService_reportLiveTalkSpeaker_args(
-      request: ReportLiveTalkSpeakerRequest.fromJson(json["request"]),
+      request: ReportLiveTalkSpeakerRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32969,7 +32968,7 @@ class SquareService_requestToListen_args {
 
   factory SquareService_requestToListen_args.fromJson(Map json) {
     return SquareService_requestToListen_args(
-      request: RequestToListenRequest.fromJson(json["request"]),
+      request: RequestToListenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32983,7 +32982,7 @@ class SquareService_requestToSpeak_args {
 
   factory SquareService_requestToSpeak_args.fromJson(Map json) {
     return SquareService_requestToSpeak_args(
-      request: RequestToSpeakRequest.fromJson(json["request"]),
+      request: RequestToSpeakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -32997,7 +32996,7 @@ class SquareService_updateLiveTalkAttrs_args {
 
   factory SquareService_updateLiveTalkAttrs_args.fromJson(Map json) {
     return SquareService_updateLiveTalkAttrs_args(
-      request: UpdateLiveTalkAttrsRequest.fromJson(json["request"]),
+      request: UpdateLiveTalkAttrsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33016,8 +33015,8 @@ class acquireCallRoute_args {
   factory acquireCallRoute_args.fromJson(Map json) {
     return acquireCallRoute_args(
       to: json["to"],
-      callType: Pb1_D4.fromValue(json["callType"]),
-      fromEnvInfo: Map.from(json["fromEnvInfo"]),
+      callType: Pb1_D4.fromValue(json["callType"] ?? 0),
+      fromEnvInfo: Map.from(json["fromEnvInfo"] ?? {}),
     );
   }
 }
@@ -33033,8 +33032,8 @@ class acquireCallRoute_result {
 
   factory acquireCallRoute_result.fromJson(Map json) {
     return acquireCallRoute_result(
-      success: CallRoute.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CallRoute.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33048,7 +33047,7 @@ class acquireEncryptedAccessToken_args {
 
   factory acquireEncryptedAccessToken_args.fromJson(Map json) {
     return acquireEncryptedAccessToken_args(
-      featureType: Pb1_EnumC13222w4.fromValue(json["featureType"]),
+      featureType: Pb1_EnumC13222w4.fromValue(json["featureType"] ?? 0),
     );
   }
 }
@@ -33065,7 +33064,7 @@ class acquireEncryptedAccessToken_result {
   factory acquireEncryptedAccessToken_result.fromJson(Map json) {
     return acquireEncryptedAccessToken_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33086,9 +33085,9 @@ class acquireGroupCallRoute_args {
   factory acquireGroupCallRoute_args.fromJson(Map json) {
     return acquireGroupCallRoute_args(
       chatMid: json["chatMid"],
-      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"]),
+      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"] ?? 0),
       isInitialHost: json["isInitialHost"],
-      capabilities: List.from(json["capabilities"]),
+      capabilities: List.from(json["capabilities"] ?? []),
     );
   }
 }
@@ -33104,8 +33103,8 @@ class acquireGroupCallRoute_result {
 
   factory acquireGroupCallRoute_result.fromJson(Map json) {
     return acquireGroupCallRoute_result(
-      success: GroupCallRoute.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GroupCallRoute.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33119,7 +33118,7 @@ class acquireOACallRoute_args {
 
   factory acquireOACallRoute_args.fromJson(Map json) {
     return acquireOACallRoute_args(
-      request: AcquireOACallRouteRequest.fromJson(json["request"]),
+      request: AcquireOACallRouteRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33135,8 +33134,8 @@ class acquireOACallRoute_result {
 
   factory acquireOACallRoute_result.fromJson(Map json) {
     return acquireOACallRoute_result(
-      success: AcquireOACallRouteResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: AcquireOACallRouteResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33162,7 +33161,7 @@ class acquirePaidCallRoute_args {
 
   factory acquirePaidCallRoute_args.fromJson(Map json) {
     return acquirePaidCallRoute_args(
-      paidCallType: PaidCallType.fromValue(json["paidCallType"]),
+      paidCallType: PaidCallType.fromValue(json["paidCallType"] ?? 0),
       dialedNumber: json["dialedNumber"],
       language: json["language"],
       networkCode: json["networkCode"],
@@ -33184,8 +33183,8 @@ class acquirePaidCallRoute_result {
 
   factory acquirePaidCallRoute_result.fromJson(Map json) {
     return acquirePaidCallRoute_result(
-      success: PaidCallResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: PaidCallResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33199,7 +33198,7 @@ class activateSubscription_args {
 
   factory activateSubscription_args.fromJson(Map json) {
     return activateSubscription_args(
-      request: ActivateSubscriptionRequest.fromJson(json["request"]),
+      request: ActivateSubscriptionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33213,7 +33212,7 @@ class activateSubscription_result {
 
   factory activateSubscription_result.fromJson(Map json) {
     return activateSubscription_result(
-      e: MembershipException.fromJson(json["e"]),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33227,7 +33226,7 @@ class adTypeOptOutClickEvent_args {
 
   factory adTypeOptOutClickEvent_args.fromJson(Map json) {
     return adTypeOptOutClickEvent_args(
-      request: AdTypeOptOutClickEventRequest.fromJson(json["request"]),
+      request: AdTypeOptOutClickEventRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33244,7 +33243,7 @@ class adTypeOptOutClickEvent_result {
   factory adTypeOptOutClickEvent_result.fromJson(Map json) {
     return adTypeOptOutClickEvent_result(
       success: json["success"],
-      e: WalletException.fromJson(json["e"]),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33258,7 +33257,7 @@ class addFriendByMid_args {
 
   factory addFriendByMid_args.fromJson(Map json) {
     return addFriendByMid_args(
-      request: AddFriendByMidRequest.fromJson(json["request"]),
+      request: AddFriendByMidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33279,9 +33278,9 @@ class addFriendByMid_result {
   factory addFriendByMid_result.fromJson(Map json) {
     return addFriendByMid_result(
       success: json["success"],
-      be: RejectedException.fromJson(json["be"]),
-      ce: ServerFailureException.fromJson(json["ce"]),
-      te: TalkException.fromJson(json["te"]),
+      be: RejectedException.fromJson(json["be"] ?? {}),
+      ce: ServerFailureException.fromJson(json["ce"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
     );
   }
 }
@@ -33295,7 +33294,7 @@ class addItemToCollection_args {
 
   factory addItemToCollection_args.fromJson(Map json) {
     return addItemToCollection_args(
-      request: AddItemToCollectionRequest.fromJson(json["request"]),
+      request: AddItemToCollectionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -33312,7 +33311,7 @@ class addItemToCollection_result {
   factory addItemToCollection_result.fromJson(Map json) {
     return addItemToCollection_result(
       success: json["success"],
-      e: CollectionException.fromJson(json["e"]),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33342,8 +33341,8 @@ class addOaFriend_result {
 
   factory addOaFriend_result.fromJson(Map json) {
     return addOaFriend_result(
-      success: AddOaFriendResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: AddOaFriendResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33357,7 +33356,7 @@ class addProductToSubscriptionSlot_args {
 
   factory addProductToSubscriptionSlot_args.fromJson(Map json) {
     return addProductToSubscriptionSlot_args(
-      req: AddProductToSubscriptionSlotRequest.fromJson(json["req"]),
+      req: AddProductToSubscriptionSlotRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -33373,8 +33372,8 @@ class addProductToSubscriptionSlot_result {
 
   factory addProductToSubscriptionSlot_result.fromJson(Map json) {
     return addProductToSubscriptionSlot_result(
-      success: AddProductToSubscriptionSlotResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: AddProductToSubscriptionSlotResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33388,7 +33387,7 @@ class addThemeToSubscriptionSlot_args {
 
   factory addThemeToSubscriptionSlot_args.fromJson(Map json) {
     return addThemeToSubscriptionSlot_args(
-      req: AddThemeToSubscriptionSlotRequest.fromJson(json["req"]),
+      req: AddThemeToSubscriptionSlotRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -33404,8 +33403,8 @@ class addThemeToSubscriptionSlot_result {
 
   factory addThemeToSubscriptionSlot_result.fromJson(Map json) {
     return addThemeToSubscriptionSlot_result(
-      success: AddThemeToSubscriptionSlotResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: AddThemeToSubscriptionSlotResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33419,7 +33418,7 @@ class addToFollowBlacklist_args {
 
   factory addToFollowBlacklist_args.fromJson(Map json) {
     return addToFollowBlacklist_args(
-      addToFollowBlacklistRequest: AddToFollowBlacklistRequest.fromJson(json["addToFollowBlacklistRequest"]),
+      addToFollowBlacklistRequest: AddToFollowBlacklistRequest.fromJson(json["addToFollowBlacklistRequest"] ?? {}),
     );
   }
 }
@@ -33433,7 +33432,7 @@ class addToFollowBlacklist_result {
 
   factory addToFollowBlacklist_result.fromJson(Map json) {
     return addToFollowBlacklist_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33450,7 +33449,7 @@ class SquareService_agreeToTerms_result {
   factory SquareService_agreeToTerms_result.fromJson(Map json) {
     return SquareService_agreeToTerms_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33466,8 +33465,8 @@ class SquareService_approveSquareMembers_result {
 
   factory SquareService_approveSquareMembers_result.fromJson(Map json) {
     return SquareService_approveSquareMembers_result(
-      success: ApproveSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: ApproveSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33483,8 +33482,8 @@ class SquareService_checkJoinCode_result {
 
   factory SquareService_checkJoinCode_result.fromJson(Map json) {
     return SquareService_checkJoinCode_result(
-      success: CheckJoinCodeResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: CheckJoinCodeResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33500,8 +33499,8 @@ class SquareService_createSquareChatAnnouncement_result {
 
   factory SquareService_createSquareChatAnnouncement_result.fromJson(Map json) {
     return SquareService_createSquareChatAnnouncement_result(
-      success: CreateSquareChatAnnouncementResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: CreateSquareChatAnnouncementResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33517,8 +33516,8 @@ class SquareService_createSquareChat_result {
 
   factory SquareService_createSquareChat_result.fromJson(Map json) {
     return SquareService_createSquareChat_result(
-      success: CreateSquareChatResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: CreateSquareChatResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33534,8 +33533,8 @@ class SquareService_createSquare_result {
 
   factory SquareService_createSquare_result.fromJson(Map json) {
     return SquareService_createSquare_result(
-      success: CreateSquareResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: CreateSquareResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33552,7 +33551,7 @@ class SquareService_deleteSquareChatAnnouncement_result {
   factory SquareService_deleteSquareChatAnnouncement_result.fromJson(Map json) {
     return SquareService_deleteSquareChatAnnouncement_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33569,7 +33568,7 @@ class SquareService_deleteSquareChat_result {
   factory SquareService_deleteSquareChat_result.fromJson(Map json) {
     return SquareService_deleteSquareChat_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33586,7 +33585,7 @@ class SquareService_deleteSquare_result {
   factory SquareService_deleteSquare_result.fromJson(Map json) {
     return SquareService_deleteSquare_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33603,7 +33602,7 @@ class SquareService_destroyMessage_result {
   factory SquareService_destroyMessage_result.fromJson(Map json) {
     return SquareService_destroyMessage_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33620,7 +33619,7 @@ class SquareService_destroyMessages_result {
   factory SquareService_destroyMessages_result.fromJson(Map json) {
     return SquareService_destroyMessages_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33636,8 +33635,8 @@ class SquareService_fetchMyEvents_result {
 
   factory SquareService_fetchMyEvents_result.fromJson(Map json) {
     return SquareService_fetchMyEvents_result(
-      success: FetchMyEventsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FetchMyEventsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33653,8 +33652,8 @@ class SquareService_fetchSquareChatEvents_result {
 
   factory SquareService_fetchSquareChatEvents_result.fromJson(Map json) {
     return SquareService_fetchSquareChatEvents_result(
-      success: FetchSquareChatEventsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FetchSquareChatEventsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33670,8 +33669,8 @@ class SquareService_findSquareByEmid_result {
 
   factory SquareService_findSquareByEmid_result.fromJson(Map json) {
     return SquareService_findSquareByEmid_result(
-      success: FindSquareByEmidResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FindSquareByEmidResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33687,8 +33686,8 @@ class SquareService_findSquareByInvitationTicket_result {
 
   factory SquareService_findSquareByInvitationTicket_result.fromJson(Map json) {
     return SquareService_findSquareByInvitationTicket_result(
-      success: FindSquareByInvitationTicketResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FindSquareByInvitationTicketResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33704,8 +33703,8 @@ class SquareService_findSquareByInvitationTicketV2_result {
 
   factory SquareService_findSquareByInvitationTicketV2_result.fromJson(Map json) {
     return SquareService_findSquareByInvitationTicketV2_result(
-      success: FindSquareByInvitationTicketV2Response.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: FindSquareByInvitationTicketV2Response.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33721,8 +33720,8 @@ class SquareService_getGoogleAdOptions_result {
 
   factory SquareService_getGoogleAdOptions_result.fromJson(Map json) {
     return SquareService_getGoogleAdOptions_result(
-      success: GetGoogleAdOptionsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetGoogleAdOptionsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33738,8 +33737,8 @@ class SquareService_getInvitationTicketUrl_result {
 
   factory SquareService_getInvitationTicketUrl_result.fromJson(Map json) {
     return SquareService_getInvitationTicketUrl_result(
-      success: GetInvitationTicketUrlResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetInvitationTicketUrlResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33755,8 +33754,8 @@ class SquareService_getJoinableSquareChats_result {
 
   factory SquareService_getJoinableSquareChats_result.fromJson(Map json) {
     return SquareService_getJoinableSquareChats_result(
-      success: GetJoinableSquareChatsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetJoinableSquareChatsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33772,8 +33771,8 @@ class SquareService_getJoinedSquareChats_result {
 
   factory SquareService_getJoinedSquareChats_result.fromJson(Map json) {
     return SquareService_getJoinedSquareChats_result(
-      success: GetJoinedSquareChatsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetJoinedSquareChatsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33789,8 +33788,8 @@ class SquareService_getJoinedSquares_result {
 
   factory SquareService_getJoinedSquares_result.fromJson(Map json) {
     return SquareService_getJoinedSquares_result(
-      success: GetJoinedSquaresResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetJoinedSquaresResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33806,8 +33805,8 @@ class SquareService_getMessageReactions_result {
 
   factory SquareService_getMessageReactions_result.fromJson(Map json) {
     return SquareService_getMessageReactions_result(
-      success: GetMessageReactionsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetMessageReactionsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33823,8 +33822,8 @@ class SquareService_getNoteStatus_result {
 
   factory SquareService_getNoteStatus_result.fromJson(Map json) {
     return SquareService_getNoteStatus_result(
-      success: GetNoteStatusResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetNoteStatusResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33840,8 +33839,8 @@ class SquareService_getPopularKeywords_result {
 
   factory SquareService_getPopularKeywords_result.fromJson(Map json) {
     return SquareService_getPopularKeywords_result(
-      success: GetPopularKeywordsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetPopularKeywordsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33857,8 +33856,8 @@ class SquareService_getSquareAuthorities_result {
 
   factory SquareService_getSquareAuthorities_result.fromJson(Map json) {
     return SquareService_getSquareAuthorities_result(
-      success: GetSquareAuthoritiesResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareAuthoritiesResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33874,8 +33873,8 @@ class SquareService_getSquareAuthority_result {
 
   factory SquareService_getSquareAuthority_result.fromJson(Map json) {
     return SquareService_getSquareAuthority_result(
-      success: GetSquareAuthorityResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareAuthorityResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33891,8 +33890,8 @@ class SquareService_getCategories_result {
 
   factory SquareService_getCategories_result.fromJson(Map json) {
     return SquareService_getCategories_result(
-      success: GetSquareCategoriesResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareCategoriesResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33908,8 +33907,8 @@ class SquareService_getSquareChatAnnouncements_result {
 
   factory SquareService_getSquareChatAnnouncements_result.fromJson(Map json) {
     return SquareService_getSquareChatAnnouncements_result(
-      success: GetSquareChatAnnouncementsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatAnnouncementsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33925,8 +33924,8 @@ class SquareService_getSquareChatEmid_result {
 
   factory SquareService_getSquareChatEmid_result.fromJson(Map json) {
     return SquareService_getSquareChatEmid_result(
-      success: GetSquareChatEmidResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatEmidResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33942,8 +33941,8 @@ class SquareService_getSquareChatFeatureSet_result {
 
   factory SquareService_getSquareChatFeatureSet_result.fromJson(Map json) {
     return SquareService_getSquareChatFeatureSet_result(
-      success: GetSquareChatFeatureSetResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatFeatureSetResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33959,8 +33958,8 @@ class SquareService_getSquareChatMember_result {
 
   factory SquareService_getSquareChatMember_result.fromJson(Map json) {
     return SquareService_getSquareChatMember_result(
-      success: GetSquareChatMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33976,8 +33975,8 @@ class SquareService_getSquareChatMembers_result {
 
   factory SquareService_getSquareChatMembers_result.fromJson(Map json) {
     return SquareService_getSquareChatMembers_result(
-      success: GetSquareChatMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -33993,8 +33992,8 @@ class SquareService_getSquareChat_result {
 
   factory SquareService_getSquareChat_result.fromJson(Map json) {
     return SquareService_getSquareChat_result(
-      success: GetSquareChatResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34010,8 +34009,8 @@ class SquareService_getSquareChatStatus_result {
 
   factory SquareService_getSquareChatStatus_result.fromJson(Map json) {
     return SquareService_getSquareChatStatus_result(
-      success: GetSquareChatStatusResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareChatStatusResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34027,8 +34026,8 @@ class SquareService_getSquareEmid_result {
 
   factory SquareService_getSquareEmid_result.fromJson(Map json) {
     return SquareService_getSquareEmid_result(
-      success: GetSquareEmidResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareEmidResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34044,8 +34043,8 @@ class SquareService_getSquareFeatureSet_result {
 
   factory SquareService_getSquareFeatureSet_result.fromJson(Map json) {
     return SquareService_getSquareFeatureSet_result(
-      success: GetSquareFeatureSetResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareFeatureSetResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34061,8 +34060,8 @@ class SquareService_getSquareMemberRelation_result {
 
   factory SquareService_getSquareMemberRelation_result.fromJson(Map json) {
     return SquareService_getSquareMemberRelation_result(
-      success: GetSquareMemberRelationResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareMemberRelationResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34078,8 +34077,8 @@ class SquareService_getSquareMemberRelations_result {
 
   factory SquareService_getSquareMemberRelations_result.fromJson(Map json) {
     return SquareService_getSquareMemberRelations_result(
-      success: GetSquareMemberRelationsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareMemberRelationsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34095,8 +34094,8 @@ class SquareService_getSquareMember_result {
 
   factory SquareService_getSquareMember_result.fromJson(Map json) {
     return SquareService_getSquareMember_result(
-      success: GetSquareMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34112,8 +34111,8 @@ class SquareService_getSquareMembersBySquare_result {
 
   factory SquareService_getSquareMembersBySquare_result.fromJson(Map json) {
     return SquareService_getSquareMembersBySquare_result(
-      success: GetSquareMembersBySquareResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareMembersBySquareResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34129,8 +34128,8 @@ class SquareService_getSquareMembers_result {
 
   factory SquareService_getSquareMembers_result.fromJson(Map json) {
     return SquareService_getSquareMembers_result(
-      success: GetSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34146,8 +34145,8 @@ class SquareService_getSquare_result {
 
   factory SquareService_getSquare_result.fromJson(Map json) {
     return SquareService_getSquare_result(
-      success: GetSquareResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34163,8 +34162,8 @@ class SquareService_getSquareStatus_result {
 
   factory SquareService_getSquareStatus_result.fromJson(Map json) {
     return SquareService_getSquareStatus_result(
-      success: GetSquareStatusResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareStatusResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34180,8 +34179,8 @@ class SquareService_getSquareThreadMid_result {
 
   factory SquareService_getSquareThreadMid_result.fromJson(Map json) {
     return SquareService_getSquareThreadMid_result(
-      success: GetSquareThreadMidResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareThreadMidResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34197,8 +34196,8 @@ class SquareService_getSquareThread_result {
 
   factory SquareService_getSquareThread_result.fromJson(Map json) {
     return SquareService_getSquareThread_result(
-      success: GetSquareThreadResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetSquareThreadResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34214,8 +34213,8 @@ class SquareService_getUserSettings_result {
 
   factory SquareService_getUserSettings_result.fromJson(Map json) {
     return SquareService_getUserSettings_result(
-      success: GetUserSettingsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: GetUserSettingsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34232,7 +34231,7 @@ class SquareService_hideSquareMemberContents_result {
   factory SquareService_hideSquareMemberContents_result.fromJson(Map json) {
     return SquareService_hideSquareMemberContents_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34248,8 +34247,8 @@ class SquareService_inviteIntoSquareChat_result {
 
   factory SquareService_inviteIntoSquareChat_result.fromJson(Map json) {
     return SquareService_inviteIntoSquareChat_result(
-      success: InviteIntoSquareChatResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: InviteIntoSquareChatResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34266,7 +34265,7 @@ class SquareService_inviteToSquare_result {
   factory SquareService_inviteToSquare_result.fromJson(Map json) {
     return SquareService_inviteToSquare_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34282,8 +34281,8 @@ class SquareService_joinSquareChat_result {
 
   factory SquareService_joinSquareChat_result.fromJson(Map json) {
     return SquareService_joinSquareChat_result(
-      success: JoinSquareChatResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: JoinSquareChatResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34299,8 +34298,8 @@ class SquareService_joinSquare_result {
 
   factory SquareService_joinSquare_result.fromJson(Map json) {
     return SquareService_joinSquare_result(
-      success: JoinSquareResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: JoinSquareResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34316,8 +34315,8 @@ class SquareService_joinSquareThread_result {
 
   factory SquareService_joinSquareThread_result.fromJson(Map json) {
     return SquareService_joinSquareThread_result(
-      success: JoinSquareThreadResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: JoinSquareThreadResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34334,7 +34333,7 @@ class SquareService_leaveSquareChat_result {
   factory SquareService_leaveSquareChat_result.fromJson(Map json) {
     return SquareService_leaveSquareChat_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34351,7 +34350,7 @@ class SquareService_leaveSquare_result {
   factory SquareService_leaveSquare_result.fromJson(Map json) {
     return SquareService_leaveSquare_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34367,8 +34366,8 @@ class SquareService_leaveSquareThread_result {
 
   factory SquareService_leaveSquareThread_result.fromJson(Map json) {
     return SquareService_leaveSquareThread_result(
-      success: LeaveSquareThreadResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: LeaveSquareThreadResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34384,8 +34383,8 @@ class SquareService_manualRepair_result {
 
   factory SquareService_manualRepair_result.fromJson(Map json) {
     return SquareService_manualRepair_result(
-      success: ManualRepairResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: ManualRepairResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34402,7 +34401,7 @@ class SquareService_markAsRead_result {
   factory SquareService_markAsRead_result.fromJson(Map json) {
     return SquareService_markAsRead_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34419,7 +34418,7 @@ class SquareService_markChatsAsRead_result {
   factory SquareService_markChatsAsRead_result.fromJson(Map json) {
     return SquareService_markChatsAsRead_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34436,7 +34435,7 @@ class SquareService_markThreadsAsRead_result {
   factory SquareService_markThreadsAsRead_result.fromJson(Map json) {
     return SquareService_markThreadsAsRead_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34452,8 +34451,8 @@ class SquareService_reactToMessage_result {
 
   factory SquareService_reactToMessage_result.fromJson(Map json) {
     return SquareService_reactToMessage_result(
-      success: ReactToMessageResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: ReactToMessageResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34469,8 +34468,8 @@ class SquareService_refreshSubscriptions_result {
 
   factory SquareService_refreshSubscriptions_result.fromJson(Map json) {
     return SquareService_refreshSubscriptions_result(
-      success: RefreshSubscriptionsResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: RefreshSubscriptionsResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34486,8 +34485,8 @@ class SquareService_rejectSquareMembers_result {
 
   factory SquareService_rejectSquareMembers_result.fromJson(Map json) {
     return SquareService_rejectSquareMembers_result(
-      success: RejectSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: RejectSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34504,7 +34503,7 @@ class SquareService_removeSubscriptions_result {
   factory SquareService_removeSubscriptions_result.fromJson(Map json) {
     return SquareService_removeSubscriptions_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34521,7 +34520,7 @@ class SquareService_reportMessageSummary_result {
   factory SquareService_reportMessageSummary_result.fromJson(Map json) {
     return SquareService_reportMessageSummary_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34538,7 +34537,7 @@ class SquareService_reportSquareChat_result {
   factory SquareService_reportSquareChat_result.fromJson(Map json) {
     return SquareService_reportSquareChat_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34555,7 +34554,7 @@ class SquareService_reportSquareMember_result {
   factory SquareService_reportSquareMember_result.fromJson(Map json) {
     return SquareService_reportSquareMember_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34572,7 +34571,7 @@ class SquareService_reportSquareMessage_result {
   factory SquareService_reportSquareMessage_result.fromJson(Map json) {
     return SquareService_reportSquareMessage_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34589,7 +34588,7 @@ class SquareService_reportSquare_result {
   factory SquareService_reportSquare_result.fromJson(Map json) {
     return SquareService_reportSquare_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34605,8 +34604,8 @@ class SquareService_searchSquareChatMembers_result {
 
   factory SquareService_searchSquareChatMembers_result.fromJson(Map json) {
     return SquareService_searchSquareChatMembers_result(
-      success: SearchSquareChatMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SearchSquareChatMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34622,8 +34621,8 @@ class SquareService_searchSquareChatMentionables_result {
 
   factory SquareService_searchSquareChatMentionables_result.fromJson(Map json) {
     return SquareService_searchSquareChatMentionables_result(
-      success: SearchSquareChatMentionablesResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SearchSquareChatMentionablesResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34639,8 +34638,8 @@ class SquareService_searchSquareMembers_result {
 
   factory SquareService_searchSquareMembers_result.fromJson(Map json) {
     return SquareService_searchSquareMembers_result(
-      success: SearchSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SearchSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34656,8 +34655,8 @@ class SquareService_searchSquares_result {
 
   factory SquareService_searchSquares_result.fromJson(Map json) {
     return SquareService_searchSquares_result(
-      success: SearchSquaresResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SearchSquaresResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34673,8 +34672,8 @@ class SquareService_sendMessage_result {
 
   factory SquareService_sendMessage_result.fromJson(Map json) {
     return SquareService_sendMessage_result(
-      success: SendMessageResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SendMessageResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34690,8 +34689,8 @@ class SquareService_sendSquareThreadMessage_result {
 
   factory SquareService_sendSquareThreadMessage_result.fromJson(Map json) {
     return SquareService_sendSquareThreadMessage_result(
-      success: SendSquareThreadMessageResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SendSquareThreadMessageResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34707,8 +34706,8 @@ class SquareService_syncSquareMembers_result {
 
   factory SquareService_syncSquareMembers_result.fromJson(Map json) {
     return SquareService_syncSquareMembers_result(
-      success: SyncSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: SyncSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34725,7 +34724,7 @@ class SquareService_unhideSquareMemberContents_result {
   factory SquareService_unhideSquareMemberContents_result.fromJson(Map json) {
     return SquareService_unhideSquareMemberContents_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34741,8 +34740,8 @@ class SquareService_unsendMessage_result {
 
   factory SquareService_unsendMessage_result.fromJson(Map json) {
     return SquareService_unsendMessage_result(
-      success: UnsendMessageResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UnsendMessageResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34758,8 +34757,8 @@ class SquareService_updateSquareAuthority_result {
 
   factory SquareService_updateSquareAuthority_result.fromJson(Map json) {
     return SquareService_updateSquareAuthority_result(
-      success: UpdateSquareAuthorityResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareAuthorityResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34775,8 +34774,8 @@ class SquareService_updateSquareChatMember_result {
 
   factory SquareService_updateSquareChatMember_result.fromJson(Map json) {
     return SquareService_updateSquareChatMember_result(
-      success: UpdateSquareChatMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareChatMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34792,8 +34791,8 @@ class SquareService_updateSquareChat_result {
 
   factory SquareService_updateSquareChat_result.fromJson(Map json) {
     return SquareService_updateSquareChat_result(
-      success: UpdateSquareChatResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareChatResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34809,8 +34808,8 @@ class SquareService_updateSquareFeatureSet_result {
 
   factory SquareService_updateSquareFeatureSet_result.fromJson(Map json) {
     return SquareService_updateSquareFeatureSet_result(
-      success: UpdateSquareFeatureSetResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareFeatureSetResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34826,8 +34825,8 @@ class SquareService_updateSquareMemberRelation_result {
 
   factory SquareService_updateSquareMemberRelation_result.fromJson(Map json) {
     return SquareService_updateSquareMemberRelation_result(
-      success: UpdateSquareMemberRelationResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareMemberRelationResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34843,8 +34842,8 @@ class SquareService_updateSquareMember_result {
 
   factory SquareService_updateSquareMember_result.fromJson(Map json) {
     return SquareService_updateSquareMember_result(
-      success: UpdateSquareMemberResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareMemberResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34860,8 +34859,8 @@ class SquareService_updateSquareMembers_result {
 
   factory SquareService_updateSquareMembers_result.fromJson(Map json) {
     return SquareService_updateSquareMembers_result(
-      success: UpdateSquareMembersResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareMembersResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34877,8 +34876,8 @@ class SquareService_updateSquare_result {
 
   factory SquareService_updateSquare_result.fromJson(Map json) {
     return SquareService_updateSquare_result(
-      success: UpdateSquareResponse.fromJson(json["success"]),
-      e: SquareException.fromJson(json["e"]),
+      success: UpdateSquareResponse.fromJson(json["success"] ?? {}),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34895,7 +34894,7 @@ class SquareService_updateUserSettings_result {
   factory SquareService_updateUserSettings_result.fromJson(Map json) {
     return SquareService_updateUserSettings_result(
       success: json["success"],
-      e: SquareException.fromJson(json["e"]),
+      e: SquareException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -34909,7 +34908,7 @@ class SquareService_agreeToTerms_args {
 
   factory SquareService_agreeToTerms_args.fromJson(Map json) {
     return SquareService_agreeToTerms_args(
-      request: AgreeToTermsRequest.fromJson(json["request"]),
+      request: AgreeToTermsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -34923,7 +34922,7 @@ class SquareService_approveSquareMembers_args {
 
   factory SquareService_approveSquareMembers_args.fromJson(Map json) {
     return SquareService_approveSquareMembers_args(
-      request: ApproveSquareMembersRequest.fromJson(json["request"]),
+      request: ApproveSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -34937,7 +34936,7 @@ class SquareService_checkJoinCode_args {
 
   factory SquareService_checkJoinCode_args.fromJson(Map json) {
     return SquareService_checkJoinCode_args(
-      request: CheckJoinCodeRequest.fromJson(json["request"]),
+      request: CheckJoinCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -34951,7 +34950,7 @@ class SquareService_createSquareChatAnnouncement_args {
 
   factory SquareService_createSquareChatAnnouncement_args.fromJson(Map json) {
     return SquareService_createSquareChatAnnouncement_args(
-      createSquareChatAnnouncementRequest: CreateSquareChatAnnouncementRequest.fromJson(json["createSquareChatAnnouncementRequest"]),
+      createSquareChatAnnouncementRequest: CreateSquareChatAnnouncementRequest.fromJson(json["createSquareChatAnnouncementRequest"] ?? {}),
     );
   }
 }
@@ -34965,7 +34964,7 @@ class SquareService_createSquareChat_args {
 
   factory SquareService_createSquareChat_args.fromJson(Map json) {
     return SquareService_createSquareChat_args(
-      request: CreateSquareChatRequest.fromJson(json["request"]),
+      request: CreateSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -34979,7 +34978,7 @@ class SquareService_createSquare_args {
 
   factory SquareService_createSquare_args.fromJson(Map json) {
     return SquareService_createSquare_args(
-      request: CreateSquareRequest.fromJson(json["request"]),
+      request: CreateSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -34993,7 +34992,7 @@ class SquareService_deleteSquareChatAnnouncement_args {
 
   factory SquareService_deleteSquareChatAnnouncement_args.fromJson(Map json) {
     return SquareService_deleteSquareChatAnnouncement_args(
-      deleteSquareChatAnnouncementRequest: DeleteSquareChatAnnouncementRequest.fromJson(json["deleteSquareChatAnnouncementRequest"]),
+      deleteSquareChatAnnouncementRequest: DeleteSquareChatAnnouncementRequest.fromJson(json["deleteSquareChatAnnouncementRequest"] ?? {}),
     );
   }
 }
@@ -35007,7 +35006,7 @@ class SquareService_deleteSquareChat_args {
 
   factory SquareService_deleteSquareChat_args.fromJson(Map json) {
     return SquareService_deleteSquareChat_args(
-      request: DeleteSquareChatRequest.fromJson(json["request"]),
+      request: DeleteSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35021,7 +35020,7 @@ class SquareService_deleteSquare_args {
 
   factory SquareService_deleteSquare_args.fromJson(Map json) {
     return SquareService_deleteSquare_args(
-      request: DeleteSquareRequest.fromJson(json["request"]),
+      request: DeleteSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35035,7 +35034,7 @@ class SquareService_destroyMessage_args {
 
   factory SquareService_destroyMessage_args.fromJson(Map json) {
     return SquareService_destroyMessage_args(
-      request: DestroyMessageRequest.fromJson(json["request"]),
+      request: DestroyMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35049,7 +35048,7 @@ class SquareService_destroyMessages_args {
 
   factory SquareService_destroyMessages_args.fromJson(Map json) {
     return SquareService_destroyMessages_args(
-      request: DestroyMessagesRequest.fromJson(json["request"]),
+      request: DestroyMessagesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35063,7 +35062,7 @@ class SquareService_fetchMyEvents_args {
 
   factory SquareService_fetchMyEvents_args.fromJson(Map json) {
     return SquareService_fetchMyEvents_args(
-      request: FetchMyEventsRequest.fromJson(json["request"]),
+      request: FetchMyEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35077,7 +35076,7 @@ class SquareService_fetchSquareChatEvents_args {
 
   factory SquareService_fetchSquareChatEvents_args.fromJson(Map json) {
     return SquareService_fetchSquareChatEvents_args(
-      request: FetchSquareChatEventsRequest.fromJson(json["request"]),
+      request: FetchSquareChatEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35091,7 +35090,7 @@ class SquareService_findSquareByEmid_args {
 
   factory SquareService_findSquareByEmid_args.fromJson(Map json) {
     return SquareService_findSquareByEmid_args(
-      findSquareByEmidRequest: FindSquareByEmidRequest.fromJson(json["findSquareByEmidRequest"]),
+      findSquareByEmidRequest: FindSquareByEmidRequest.fromJson(json["findSquareByEmidRequest"] ?? {}),
     );
   }
 }
@@ -35105,7 +35104,7 @@ class SquareService_findSquareByInvitationTicket_args {
 
   factory SquareService_findSquareByInvitationTicket_args.fromJson(Map json) {
     return SquareService_findSquareByInvitationTicket_args(
-      request: FindSquareByInvitationTicketRequest.fromJson(json["request"]),
+      request: FindSquareByInvitationTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35119,7 +35118,7 @@ class SquareService_findSquareByInvitationTicketV2_args {
 
   factory SquareService_findSquareByInvitationTicketV2_args.fromJson(Map json) {
     return SquareService_findSquareByInvitationTicketV2_args(
-      request: FindSquareByInvitationTicketV2Request.fromJson(json["request"]),
+      request: FindSquareByInvitationTicketV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35133,7 +35132,7 @@ class SquareService_getGoogleAdOptions_args {
 
   factory SquareService_getGoogleAdOptions_args.fromJson(Map json) {
     return SquareService_getGoogleAdOptions_args(
-      request: GetGoogleAdOptionsRequest.fromJson(json["request"]),
+      request: GetGoogleAdOptionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35147,7 +35146,7 @@ class SquareService_getInvitationTicketUrl_args {
 
   factory SquareService_getInvitationTicketUrl_args.fromJson(Map json) {
     return SquareService_getInvitationTicketUrl_args(
-      request: GetInvitationTicketUrlRequest.fromJson(json["request"]),
+      request: GetInvitationTicketUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35161,7 +35160,7 @@ class SquareService_getJoinableSquareChats_args {
 
   factory SquareService_getJoinableSquareChats_args.fromJson(Map json) {
     return SquareService_getJoinableSquareChats_args(
-      request: GetJoinableSquareChatsRequest.fromJson(json["request"]),
+      request: GetJoinableSquareChatsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35175,7 +35174,7 @@ class SquareService_getJoinedSquareChats_args {
 
   factory SquareService_getJoinedSquareChats_args.fromJson(Map json) {
     return SquareService_getJoinedSquareChats_args(
-      request: GetJoinedSquareChatsRequest.fromJson(json["request"]),
+      request: GetJoinedSquareChatsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35189,7 +35188,7 @@ class SquareService_getJoinedSquares_args {
 
   factory SquareService_getJoinedSquares_args.fromJson(Map json) {
     return SquareService_getJoinedSquares_args(
-      request: GetJoinedSquaresRequest.fromJson(json["request"]),
+      request: GetJoinedSquaresRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35203,7 +35202,7 @@ class SquareService_getMessageReactions_args {
 
   factory SquareService_getMessageReactions_args.fromJson(Map json) {
     return SquareService_getMessageReactions_args(
-      request: GetMessageReactionsRequest.fromJson(json["request"]),
+      request: GetMessageReactionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35217,7 +35216,7 @@ class SquareService_getNoteStatus_args {
 
   factory SquareService_getNoteStatus_args.fromJson(Map json) {
     return SquareService_getNoteStatus_args(
-      request: GetNoteStatusRequest.fromJson(json["request"]),
+      request: GetNoteStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35245,7 +35244,7 @@ class SquareService_getSquareAuthorities_args {
 
   factory SquareService_getSquareAuthorities_args.fromJson(Map json) {
     return SquareService_getSquareAuthorities_args(
-      request: GetSquareAuthoritiesRequest.fromJson(json["request"]),
+      request: GetSquareAuthoritiesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35259,7 +35258,7 @@ class SquareService_getSquareAuthority_args {
 
   factory SquareService_getSquareAuthority_args.fromJson(Map json) {
     return SquareService_getSquareAuthority_args(
-      request: GetSquareAuthorityRequest.fromJson(json["request"]),
+      request: GetSquareAuthorityRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35287,7 +35286,7 @@ class SquareService_getSquareChatAnnouncements_args {
 
   factory SquareService_getSquareChatAnnouncements_args.fromJson(Map json) {
     return SquareService_getSquareChatAnnouncements_args(
-      getSquareChatAnnouncementsRequest: GetSquareChatAnnouncementsRequest.fromJson(json["getSquareChatAnnouncementsRequest"]),
+      getSquareChatAnnouncementsRequest: GetSquareChatAnnouncementsRequest.fromJson(json["getSquareChatAnnouncementsRequest"] ?? {}),
     );
   }
 }
@@ -35301,7 +35300,7 @@ class SquareService_getSquareChatEmid_args {
 
   factory SquareService_getSquareChatEmid_args.fromJson(Map json) {
     return SquareService_getSquareChatEmid_args(
-      request: GetSquareChatEmidRequest.fromJson(json["request"]),
+      request: GetSquareChatEmidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35315,7 +35314,7 @@ class SquareService_getSquareChatFeatureSet_args {
 
   factory SquareService_getSquareChatFeatureSet_args.fromJson(Map json) {
     return SquareService_getSquareChatFeatureSet_args(
-      request: GetSquareChatFeatureSetRequest.fromJson(json["request"]),
+      request: GetSquareChatFeatureSetRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35329,7 +35328,7 @@ class SquareService_getSquareChatMember_args {
 
   factory SquareService_getSquareChatMember_args.fromJson(Map json) {
     return SquareService_getSquareChatMember_args(
-      request: GetSquareChatMemberRequest.fromJson(json["request"]),
+      request: GetSquareChatMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35343,7 +35342,7 @@ class SquareService_getSquareChatMembers_args {
 
   factory SquareService_getSquareChatMembers_args.fromJson(Map json) {
     return SquareService_getSquareChatMembers_args(
-      request: GetSquareChatMembersRequest.fromJson(json["request"]),
+      request: GetSquareChatMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35357,7 +35356,7 @@ class SquareService_getSquareChat_args {
 
   factory SquareService_getSquareChat_args.fromJson(Map json) {
     return SquareService_getSquareChat_args(
-      request: GetSquareChatRequest.fromJson(json["request"]),
+      request: GetSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35371,7 +35370,7 @@ class SquareService_getSquareChatStatus_args {
 
   factory SquareService_getSquareChatStatus_args.fromJson(Map json) {
     return SquareService_getSquareChatStatus_args(
-      request: GetSquareChatStatusRequest.fromJson(json["request"]),
+      request: GetSquareChatStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35385,7 +35384,7 @@ class SquareService_getSquareEmid_args {
 
   factory SquareService_getSquareEmid_args.fromJson(Map json) {
     return SquareService_getSquareEmid_args(
-      request: GetSquareEmidRequest.fromJson(json["request"]),
+      request: GetSquareEmidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35399,7 +35398,7 @@ class SquareService_getSquareFeatureSet_args {
 
   factory SquareService_getSquareFeatureSet_args.fromJson(Map json) {
     return SquareService_getSquareFeatureSet_args(
-      request: GetSquareFeatureSetRequest.fromJson(json["request"]),
+      request: GetSquareFeatureSetRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35413,7 +35412,7 @@ class SquareService_getSquareMemberRelation_args {
 
   factory SquareService_getSquareMemberRelation_args.fromJson(Map json) {
     return SquareService_getSquareMemberRelation_args(
-      request: GetSquareMemberRelationRequest.fromJson(json["request"]),
+      request: GetSquareMemberRelationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35427,7 +35426,7 @@ class SquareService_getSquareMemberRelations_args {
 
   factory SquareService_getSquareMemberRelations_args.fromJson(Map json) {
     return SquareService_getSquareMemberRelations_args(
-      request: GetSquareMemberRelationsRequest.fromJson(json["request"]),
+      request: GetSquareMemberRelationsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35441,7 +35440,7 @@ class SquareService_getSquareMember_args {
 
   factory SquareService_getSquareMember_args.fromJson(Map json) {
     return SquareService_getSquareMember_args(
-      request: GetSquareMemberRequest.fromJson(json["request"]),
+      request: GetSquareMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35455,7 +35454,7 @@ class SquareService_getSquareMembersBySquare_args {
 
   factory SquareService_getSquareMembersBySquare_args.fromJson(Map json) {
     return SquareService_getSquareMembersBySquare_args(
-      request: GetSquareMembersBySquareRequest.fromJson(json["request"]),
+      request: GetSquareMembersBySquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35469,7 +35468,7 @@ class SquareService_getSquareMembers_args {
 
   factory SquareService_getSquareMembers_args.fromJson(Map json) {
     return SquareService_getSquareMembers_args(
-      request: GetSquareMembersRequest.fromJson(json["request"]),
+      request: GetSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35483,7 +35482,7 @@ class SquareService_getSquare_args {
 
   factory SquareService_getSquare_args.fromJson(Map json) {
     return SquareService_getSquare_args(
-      request: GetSquareRequest.fromJson(json["request"]),
+      request: GetSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35497,7 +35496,7 @@ class SquareService_getSquareStatus_args {
 
   factory SquareService_getSquareStatus_args.fromJson(Map json) {
     return SquareService_getSquareStatus_args(
-      request: GetSquareStatusRequest.fromJson(json["request"]),
+      request: GetSquareStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35511,7 +35510,7 @@ class SquareService_getSquareThreadMid_args {
 
   factory SquareService_getSquareThreadMid_args.fromJson(Map json) {
     return SquareService_getSquareThreadMid_args(
-      request: GetSquareThreadMidRequest.fromJson(json["request"]),
+      request: GetSquareThreadMidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35525,7 +35524,7 @@ class SquareService_getSquareThread_args {
 
   factory SquareService_getSquareThread_args.fromJson(Map json) {
     return SquareService_getSquareThread_args(
-      request: GetSquareThreadRequest.fromJson(json["request"]),
+      request: GetSquareThreadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35539,7 +35538,7 @@ class SquareService_getUserSettings_args {
 
   factory SquareService_getUserSettings_args.fromJson(Map json) {
     return SquareService_getUserSettings_args(
-      request: GetUserSettingsRequest.fromJson(json["request"]),
+      request: GetUserSettingsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35553,7 +35552,7 @@ class SquareService_hideSquareMemberContents_args {
 
   factory SquareService_hideSquareMemberContents_args.fromJson(Map json) {
     return SquareService_hideSquareMemberContents_args(
-      request: HideSquareMemberContentsRequest.fromJson(json["request"]),
+      request: HideSquareMemberContentsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35567,7 +35566,7 @@ class SquareService_inviteIntoSquareChat_args {
 
   factory SquareService_inviteIntoSquareChat_args.fromJson(Map json) {
     return SquareService_inviteIntoSquareChat_args(
-      request: InviteIntoSquareChatRequest.fromJson(json["request"]),
+      request: InviteIntoSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35581,7 +35580,7 @@ class SquareService_inviteToSquare_args {
 
   factory SquareService_inviteToSquare_args.fromJson(Map json) {
     return SquareService_inviteToSquare_args(
-      request: InviteToSquareRequest.fromJson(json["request"]),
+      request: InviteToSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35595,7 +35594,7 @@ class SquareService_joinSquareChat_args {
 
   factory SquareService_joinSquareChat_args.fromJson(Map json) {
     return SquareService_joinSquareChat_args(
-      request: JoinSquareChatRequest.fromJson(json["request"]),
+      request: JoinSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35609,7 +35608,7 @@ class SquareService_joinSquare_args {
 
   factory SquareService_joinSquare_args.fromJson(Map json) {
     return SquareService_joinSquare_args(
-      request: JoinSquareRequest.fromJson(json["request"]),
+      request: JoinSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35623,7 +35622,7 @@ class SquareService_joinSquareThread_args {
 
   factory SquareService_joinSquareThread_args.fromJson(Map json) {
     return SquareService_joinSquareThread_args(
-      request: JoinSquareThreadRequest.fromJson(json["request"]),
+      request: JoinSquareThreadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35637,7 +35636,7 @@ class SquareService_leaveSquareChat_args {
 
   factory SquareService_leaveSquareChat_args.fromJson(Map json) {
     return SquareService_leaveSquareChat_args(
-      request: LeaveSquareChatRequest.fromJson(json["request"]),
+      request: LeaveSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35651,7 +35650,7 @@ class SquareService_leaveSquare_args {
 
   factory SquareService_leaveSquare_args.fromJson(Map json) {
     return SquareService_leaveSquare_args(
-      request: LeaveSquareRequest.fromJson(json["request"]),
+      request: LeaveSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35665,7 +35664,7 @@ class SquareService_leaveSquareThread_args {
 
   factory SquareService_leaveSquareThread_args.fromJson(Map json) {
     return SquareService_leaveSquareThread_args(
-      request: LeaveSquareThreadRequest.fromJson(json["request"]),
+      request: LeaveSquareThreadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35679,7 +35678,7 @@ class SquareService_manualRepair_args {
 
   factory SquareService_manualRepair_args.fromJson(Map json) {
     return SquareService_manualRepair_args(
-      request: ManualRepairRequest.fromJson(json["request"]),
+      request: ManualRepairRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35693,7 +35692,7 @@ class SquareService_markAsRead_args {
 
   factory SquareService_markAsRead_args.fromJson(Map json) {
     return SquareService_markAsRead_args(
-      request: MarkAsReadRequest.fromJson(json["request"]),
+      request: MarkAsReadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35707,7 +35706,7 @@ class SquareService_markChatsAsRead_args {
 
   factory SquareService_markChatsAsRead_args.fromJson(Map json) {
     return SquareService_markChatsAsRead_args(
-      request: MarkChatsAsReadRequest.fromJson(json["request"]),
+      request: MarkChatsAsReadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35721,7 +35720,7 @@ class SquareService_markThreadsAsRead_args {
 
   factory SquareService_markThreadsAsRead_args.fromJson(Map json) {
     return SquareService_markThreadsAsRead_args(
-      request: MarkThreadsAsReadRequest.fromJson(json["request"]),
+      request: MarkThreadsAsReadRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35735,7 +35734,7 @@ class SquareService_reactToMessage_args {
 
   factory SquareService_reactToMessage_args.fromJson(Map json) {
     return SquareService_reactToMessage_args(
-      request: ReactToMessageRequest.fromJson(json["request"]),
+      request: ReactToMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35749,7 +35748,7 @@ class SquareService_refreshSubscriptions_args {
 
   factory SquareService_refreshSubscriptions_args.fromJson(Map json) {
     return SquareService_refreshSubscriptions_args(
-      request: RefreshSubscriptionsRequest.fromJson(json["request"]),
+      request: RefreshSubscriptionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35763,7 +35762,7 @@ class SquareService_rejectSquareMembers_args {
 
   factory SquareService_rejectSquareMembers_args.fromJson(Map json) {
     return SquareService_rejectSquareMembers_args(
-      request: RejectSquareMembersRequest.fromJson(json["request"]),
+      request: RejectSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35777,7 +35776,7 @@ class SquareService_removeSubscriptions_args {
 
   factory SquareService_removeSubscriptions_args.fromJson(Map json) {
     return SquareService_removeSubscriptions_args(
-      request: RemoveSubscriptionsRequest.fromJson(json["request"]),
+      request: RemoveSubscriptionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35791,7 +35790,7 @@ class SquareService_reportMessageSummary_args {
 
   factory SquareService_reportMessageSummary_args.fromJson(Map json) {
     return SquareService_reportMessageSummary_args(
-      request: ReportMessageSummaryRequest.fromJson(json["request"]),
+      request: ReportMessageSummaryRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35805,7 +35804,7 @@ class SquareService_reportSquareChat_args {
 
   factory SquareService_reportSquareChat_args.fromJson(Map json) {
     return SquareService_reportSquareChat_args(
-      request: ReportSquareChatRequest.fromJson(json["request"]),
+      request: ReportSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35819,7 +35818,7 @@ class SquareService_reportSquareMember_args {
 
   factory SquareService_reportSquareMember_args.fromJson(Map json) {
     return SquareService_reportSquareMember_args(
-      request: ReportSquareMemberRequest.fromJson(json["request"]),
+      request: ReportSquareMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35833,7 +35832,7 @@ class SquareService_reportSquareMessage_args {
 
   factory SquareService_reportSquareMessage_args.fromJson(Map json) {
     return SquareService_reportSquareMessage_args(
-      request: ReportSquareMessageRequest.fromJson(json["request"]),
+      request: ReportSquareMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35847,7 +35846,7 @@ class SquareService_reportSquare_args {
 
   factory SquareService_reportSquare_args.fromJson(Map json) {
     return SquareService_reportSquare_args(
-      request: ReportSquareRequest.fromJson(json["request"]),
+      request: ReportSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35861,7 +35860,7 @@ class SquareService_searchSquareChatMembers_args {
 
   factory SquareService_searchSquareChatMembers_args.fromJson(Map json) {
     return SquareService_searchSquareChatMembers_args(
-      request: SearchSquareChatMembersRequest.fromJson(json["request"]),
+      request: SearchSquareChatMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35875,7 +35874,7 @@ class SquareService_searchSquareChatMentionables_args {
 
   factory SquareService_searchSquareChatMentionables_args.fromJson(Map json) {
     return SquareService_searchSquareChatMentionables_args(
-      request: SearchSquareChatMentionablesRequest.fromJson(json["request"]),
+      request: SearchSquareChatMentionablesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35889,7 +35888,7 @@ class SquareService_searchSquareMembers_args {
 
   factory SquareService_searchSquareMembers_args.fromJson(Map json) {
     return SquareService_searchSquareMembers_args(
-      request: SearchSquareMembersRequest.fromJson(json["request"]),
+      request: SearchSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35903,7 +35902,7 @@ class SquareService_searchSquares_args {
 
   factory SquareService_searchSquares_args.fromJson(Map json) {
     return SquareService_searchSquares_args(
-      request: SearchSquaresRequest.fromJson(json["request"]),
+      request: SearchSquaresRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35917,7 +35916,7 @@ class SquareService_sendMessage_args {
 
   factory SquareService_sendMessage_args.fromJson(Map json) {
     return SquareService_sendMessage_args(
-      request: SendMessageRequest.fromJson(json["request"]),
+      request: SendMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35931,7 +35930,7 @@ class SquareService_sendSquareThreadMessage_args {
 
   factory SquareService_sendSquareThreadMessage_args.fromJson(Map json) {
     return SquareService_sendSquareThreadMessage_args(
-      request: SendSquareThreadMessageRequest.fromJson(json["request"]),
+      request: SendSquareThreadMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35945,7 +35944,7 @@ class SquareService_syncSquareMembers_args {
 
   factory SquareService_syncSquareMembers_args.fromJson(Map json) {
     return SquareService_syncSquareMembers_args(
-      request: SyncSquareMembersRequest.fromJson(json["request"]),
+      request: SyncSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35959,7 +35958,7 @@ class SquareService_unhideSquareMemberContents_args {
 
   factory SquareService_unhideSquareMemberContents_args.fromJson(Map json) {
     return SquareService_unhideSquareMemberContents_args(
-      request: UnhideSquareMemberContentsRequest.fromJson(json["request"]),
+      request: UnhideSquareMemberContentsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35973,7 +35972,7 @@ class SquareService_unsendMessage_args {
 
   factory SquareService_unsendMessage_args.fromJson(Map json) {
     return SquareService_unsendMessage_args(
-      request: UnsendMessageRequest.fromJson(json["request"]),
+      request: UnsendMessageRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -35987,7 +35986,7 @@ class SquareService_updateSquareAuthority_args {
 
   factory SquareService_updateSquareAuthority_args.fromJson(Map json) {
     return SquareService_updateSquareAuthority_args(
-      request: UpdateSquareAuthorityRequest.fromJson(json["request"]),
+      request: UpdateSquareAuthorityRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36001,7 +36000,7 @@ class SquareService_updateSquareChatMember_args {
 
   factory SquareService_updateSquareChatMember_args.fromJson(Map json) {
     return SquareService_updateSquareChatMember_args(
-      request: UpdateSquareChatMemberRequest.fromJson(json["request"]),
+      request: UpdateSquareChatMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36015,7 +36014,7 @@ class SquareService_updateSquareChat_args {
 
   factory SquareService_updateSquareChat_args.fromJson(Map json) {
     return SquareService_updateSquareChat_args(
-      request: UpdateSquareChatRequest.fromJson(json["request"]),
+      request: UpdateSquareChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36029,7 +36028,7 @@ class SquareService_updateSquareFeatureSet_args {
 
   factory SquareService_updateSquareFeatureSet_args.fromJson(Map json) {
     return SquareService_updateSquareFeatureSet_args(
-      request: UpdateSquareFeatureSetRequest.fromJson(json["request"]),
+      request: UpdateSquareFeatureSetRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36043,7 +36042,7 @@ class SquareService_updateSquareMemberRelation_args {
 
   factory SquareService_updateSquareMemberRelation_args.fromJson(Map json) {
     return SquareService_updateSquareMemberRelation_args(
-      request: UpdateSquareMemberRelationRequest.fromJson(json["request"]),
+      request: UpdateSquareMemberRelationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36057,7 +36056,7 @@ class SquareService_updateSquareMember_args {
 
   factory SquareService_updateSquareMember_args.fromJson(Map json) {
     return SquareService_updateSquareMember_args(
-      request: UpdateSquareMemberRequest.fromJson(json["request"]),
+      request: UpdateSquareMemberRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36071,7 +36070,7 @@ class SquareService_updateSquareMembers_args {
 
   factory SquareService_updateSquareMembers_args.fromJson(Map json) {
     return SquareService_updateSquareMembers_args(
-      request: UpdateSquareMembersRequest.fromJson(json["request"]),
+      request: UpdateSquareMembersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36085,7 +36084,7 @@ class SquareService_updateSquare_args {
 
   factory SquareService_updateSquare_args.fromJson(Map json) {
     return SquareService_updateSquare_args(
-      request: UpdateSquareRequest.fromJson(json["request"]),
+      request: UpdateSquareRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36099,7 +36098,7 @@ class SquareService_updateUserSettings_args {
 
   factory SquareService_updateUserSettings_args.fromJson(Map json) {
     return SquareService_updateUserSettings_args(
-      request: UpdateUserSettingsRequest.fromJson(json["request"]),
+      request: UpdateUserSettingsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36129,8 +36128,8 @@ class approveChannelAndIssueChannelToken_result {
 
   factory approveChannelAndIssueChannelToken_result.fromJson(Map json) {
     return approveChannelAndIssueChannelToken_result(
-      success: ChannelToken.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ChannelToken.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36154,11 +36153,11 @@ class authenticateUsingBankAccountEx_args {
 
   factory authenticateUsingBankAccountEx_args.fromJson(Map json) {
     return authenticateUsingBankAccountEx_args(
-      type: r80_EnumC34362b.fromValue(json["type"]),
+      type: r80_EnumC34362b.fromValue(json["type"] ?? 0),
       bankId: json["bankId"],
       bankBranchId: json["bankBranchId"],
       realAccountNo: json["realAccountNo"],
-      accountProductCode: r80_EnumC34361a.fromValue(json["accountProductCode"]),
+      accountProductCode: r80_EnumC34361a.fromValue(json["accountProductCode"] ?? 0),
       authToken: json["authToken"],
     );
   }
@@ -36175,8 +36174,8 @@ class authenticateUsingBankAccountEx_result {
 
   factory authenticateUsingBankAccountEx_result.fromJson(Map json) {
     return authenticateUsingBankAccountEx_result(
-      success: PaymentAuthenticationInfo.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: PaymentAuthenticationInfo.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36190,7 +36189,7 @@ class authenticateWithPaak_args {
 
   factory authenticateWithPaak_args.fromJson(Map json) {
     return authenticateWithPaak_args(
-      request: AuthenticateWithPaakRequest.fromJson(json["request"]),
+      request: AuthenticateWithPaakRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36209,8 +36208,8 @@ class authenticateWithPaak_result {
   factory authenticateWithPaak_result.fromJson(Map json) {
     return authenticateWithPaak_result(
       success: json["success"],
-      cpae: ChannelPaakAuthnException.fromJson(json["cpae"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      cpae: ChannelPaakAuthnException.fromJson(json["cpae"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -36241,7 +36240,7 @@ class blockContact_result {
 
   factory blockContact_result.fromJson(Map json) {
     return blockContact_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36272,7 +36271,7 @@ class blockRecommendation_result {
 
   factory blockRecommendation_result.fromJson(Map json) {
     return blockRecommendation_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36286,7 +36285,7 @@ class bulkFollow_args {
 
   factory bulkFollow_args.fromJson(Map json) {
     return bulkFollow_args(
-      bulkFollowRequest: BulkFollowRequest.fromJson(json["bulkFollowRequest"]),
+      bulkFollowRequest: BulkFollowRequest.fromJson(json["bulkFollowRequest"] ?? {}),
     );
   }
 }
@@ -36303,7 +36302,7 @@ class bulkFollow_result {
   factory bulkFollow_result.fromJson(Map json) {
     return bulkFollow_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36317,7 +36316,7 @@ class bulkGetSetting_args {
 
   factory bulkGetSetting_args.fromJson(Map json) {
     return bulkGetSetting_args(
-      request: BulkGetRequest.fromJson(json["request"]),
+      request: BulkGetRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36334,7 +36333,7 @@ class bulkGetSetting_result {
   factory bulkGetSetting_result.fromJson(Map json) {
     return bulkGetSetting_result(
       success: json["success"],
-      e: SettingsException.fromJson(json["e"]),
+      e: SettingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36365,7 +36364,7 @@ class bulkSetSetting_result {
   factory bulkSetSetting_result.fromJson(Map json) {
     return bulkSetSetting_result(
       success: json["success"],
-      e: SettingsException.fromJson(json["e"]),
+      e: SettingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36379,7 +36378,7 @@ class buyMustbuyProduct_args {
 
   factory buyMustbuyProduct_args.fromJson(Map json) {
     return buyMustbuyProduct_args(
-      request: BuyMustbuyRequest.fromJson(json["request"]),
+      request: BuyMustbuyRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36393,7 +36392,7 @@ class buyMustbuyProduct_result {
 
   factory buyMustbuyProduct_result.fromJson(Map json) {
     return buyMustbuyProduct_result(
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36407,7 +36406,7 @@ class canCreateCombinationSticker_args {
 
   factory canCreateCombinationSticker_args.fromJson(Map json) {
     return canCreateCombinationSticker_args(
-      request: CanCreateCombinationStickerRequest.fromJson(json["request"]),
+      request: CanCreateCombinationStickerRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36423,8 +36422,8 @@ class canCreateCombinationSticker_result {
 
   factory canCreateCombinationSticker_result.fromJson(Map json) {
     return canCreateCombinationSticker_result(
-      success: CanCreateCombinationStickerResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: CanCreateCombinationStickerResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36446,7 +36445,7 @@ class canReceivePresent_args {
     return canReceivePresent_args(
       shopId: json["shopId"],
       productId: json["productId"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
       recipientMid: json["recipientMid"],
     );
   }
@@ -36461,7 +36460,7 @@ class canReceivePresent_result {
 
   factory canReceivePresent_result.fromJson(Map json) {
     return canReceivePresent_result(
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36475,7 +36474,7 @@ class cancelChatInvitation_args {
 
   factory cancelChatInvitation_args.fromJson(Map json) {
     return cancelChatInvitation_args(
-      request: CancelChatInvitationRequest.fromJson(json["request"]),
+      request: CancelChatInvitationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36492,7 +36491,7 @@ class cancelChatInvitation_result {
   factory cancelChatInvitation_result.fromJson(Map json) {
     return cancelChatInvitation_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36506,7 +36505,7 @@ class cancelPaakAuth_args {
 
   factory cancelPaakAuth_args.fromJson(Map json) {
     return cancelPaakAuth_args(
-      request: CancelPaakAuthRequest.fromJson(json["request"]),
+      request: CancelPaakAuthRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36523,7 +36522,7 @@ class cancelPaakAuth_result {
   factory cancelPaakAuth_result.fromJson(Map json) {
     return cancelPaakAuth_result(
       success: json["success"],
-      e: SecondaryPwlessLoginException.fromJson(json["e"]),
+      e: SecondaryPwlessLoginException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36537,7 +36536,7 @@ class cancelPaakAuthentication_args {
 
   factory cancelPaakAuthentication_args.fromJson(Map json) {
     return cancelPaakAuthentication_args(
-      request: CancelPaakAuthenticationRequest.fromJson(json["request"]),
+      request: CancelPaakAuthenticationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36556,8 +36555,8 @@ class cancelPaakAuthentication_result {
   factory cancelPaakAuthentication_result.fromJson(Map json) {
     return cancelPaakAuthentication_result(
       success: json["success"],
-      cpae: ChannelPaakAuthnException.fromJson(json["cpae"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      cpae: ChannelPaakAuthnException.fromJson(json["cpae"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -36571,7 +36570,7 @@ class cancelPinCode_args {
 
   factory cancelPinCode_args.fromJson(Map json) {
     return cancelPinCode_args(
-      request: CancelPinCodeRequest.fromJson(json["request"]),
+      request: CancelPinCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36588,7 +36587,7 @@ class cancelPinCode_result {
   factory cancelPinCode_result.fromJson(Map json) {
     return cancelPinCode_result(
       success: json["success"],
-      e: SecondaryQrCodeException.fromJson(json["e"]),
+      e: SecondaryQrCodeException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36602,7 +36601,7 @@ class cancelReaction_args {
 
   factory cancelReaction_args.fromJson(Map json) {
     return cancelReaction_args(
-      cancelReactionRequest: CancelReactionRequest.fromJson(json["cancelReactionRequest"]),
+      cancelReactionRequest: CancelReactionRequest.fromJson(json["cancelReactionRequest"] ?? {}),
     );
   }
 }
@@ -36616,7 +36615,7 @@ class cancelReaction_result {
 
   factory cancelReaction_result.fromJson(Map json) {
     return cancelReaction_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36646,8 +36645,8 @@ class changeSubscription_result {
 
   factory changeSubscription_result.fromJson(Map json) {
     return changeSubscription_result(
-      success: ChangeSubscriptionResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: ChangeSubscriptionResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36664,7 +36663,7 @@ class changeVerificationMethod_args {
   factory changeVerificationMethod_args.fromJson(Map json) {
     return changeVerificationMethod_args(
       sessionId: json["sessionId"],
-      method: VerificationMethod.fromValue(json["method"]),
+      method: VerificationMethod.fromValue(json["method"] ?? 0),
     );
   }
 }
@@ -36680,8 +36679,8 @@ class changeVerificationMethod_result {
 
   factory changeVerificationMethod_result.fromJson(Map json) {
     return changeVerificationMethod_result(
-      success: VerificationSessionData.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: VerificationSessionData.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36695,7 +36694,7 @@ class checkCanUnregisterEx_args {
 
   factory checkCanUnregisterEx_args.fromJson(Map json) {
     return checkCanUnregisterEx_args(
-      type: r80_n0.fromValue(json["type"]),
+      type: r80_n0.fromValue(json["type"] ?? 0),
     );
   }
 }
@@ -36711,8 +36710,8 @@ class checkCanUnregisterEx_result {
 
   factory checkCanUnregisterEx_result.fromJson(Map json) {
     return checkCanUnregisterEx_result(
-      success: UnregisterAvailabilityInfo.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: UnregisterAvailabilityInfo.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36726,7 +36725,7 @@ class I80_C26370F {
 
   factory I80_C26370F.fromJson(Map json) {
     return I80_C26370F(
-      request: I80_C26396d.fromJson(json["request"]),
+      request: I80_C26396d.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36743,7 +36742,7 @@ class checkEmailAssigned_args {
   factory checkEmailAssigned_args.fromJson(Map json) {
     return checkEmailAssigned_args(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -36759,8 +36758,8 @@ class checkEmailAssigned_result {
 
   factory checkEmailAssigned_result.fromJson(Map json) {
     return checkEmailAssigned_result(
-      success: CheckEmailAssignedResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: CheckEmailAssignedResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36777,7 +36776,7 @@ class I80_C26371G {
   factory I80_C26371G.fromJson(Map json) {
     return I80_C26371G(
       success: json["success"],
-      e: I80_C26390a.fromJson(json["e"]),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36791,7 +36790,7 @@ class checkIfEncryptedE2EEKeyReceived_args {
 
   factory checkIfEncryptedE2EEKeyReceived_args.fromJson(Map json) {
     return checkIfEncryptedE2EEKeyReceived_args(
-      request: CheckIfEncryptedE2EEKeyReceivedRequest.fromJson(json["request"]),
+      request: CheckIfEncryptedE2EEKeyReceivedRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36807,8 +36806,8 @@ class checkIfEncryptedE2EEKeyReceived_result {
 
   factory checkIfEncryptedE2EEKeyReceived_result.fromJson(Map json) {
     return checkIfEncryptedE2EEKeyReceived_result(
-      success: CheckIfEncryptedE2EEKeyReceivedResponse.fromJson(json["success"]),
-      e: PrimaryQrCodeMigrationException.fromJson(json["e"]),
+      success: CheckIfEncryptedE2EEKeyReceivedResponse.fromJson(json["success"] ?? {}),
+      e: PrimaryQrCodeMigrationException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36822,7 +36821,7 @@ class I80_C26372H {
 
   factory I80_C26372H.fromJson(Map json) {
     return I80_C26372H(
-      request: I80_C26400f.fromJson(json["request"]),
+      request: I80_C26400f.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36853,7 +36852,7 @@ class checkIfPasswordSetVerificationEmailVerified_result {
   factory checkIfPasswordSetVerificationEmailVerified_result.fromJson(Map json) {
     return checkIfPasswordSetVerificationEmailVerified_result(
       success: json["success"],
-      e: AuthException.fromJson(json["e"]),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36869,8 +36868,8 @@ class I80_C26373I {
 
   factory I80_C26373I.fromJson(Map json) {
     return I80_C26373I(
-      success: I80_C26402g.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26402g.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36884,7 +36883,7 @@ class checkIfPhonePinCodeMsgVerified_args {
 
   factory checkIfPhonePinCodeMsgVerified_args.fromJson(Map json) {
     return checkIfPhonePinCodeMsgVerified_args(
-      request: CheckIfPhonePinCodeMsgVerifiedRequest.fromJson(json["request"]),
+      request: CheckIfPhonePinCodeMsgVerifiedRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36900,8 +36899,8 @@ class checkIfPhonePinCodeMsgVerified_result {
 
   factory checkIfPhonePinCodeMsgVerified_result.fromJson(Map json) {
     return checkIfPhonePinCodeMsgVerified_result(
-      success: CheckIfPhonePinCodeMsgVerifiedResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: CheckIfPhonePinCodeMsgVerifiedResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36919,9 +36918,9 @@ class checkOperationTimeEx_args {
 
   factory checkOperationTimeEx_args.fromJson(Map json) {
     return checkOperationTimeEx_args(
-      type: r80_EnumC34368h.fromValue(json["type"]),
+      type: r80_EnumC34368h.fromValue(json["type"] ?? 0),
       lpAccountNo: json["lpAccountNo"],
-      channelType: r80_EnumC34371k.fromValue(json["channelType"]),
+      channelType: r80_EnumC34371k.fromValue(json["channelType"] ?? 0),
     );
   }
 }
@@ -36937,8 +36936,8 @@ class checkOperationTimeEx_result {
 
   factory checkOperationTimeEx_result.fromJson(Map json) {
     return checkOperationTimeEx_result(
-      success: CheckOperationResult.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: CheckOperationResult.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36952,7 +36951,7 @@ class checkUserAgeAfterApprovalWithDocomoV2_args {
 
   factory checkUserAgeAfterApprovalWithDocomoV2_args.fromJson(Map json) {
     return checkUserAgeAfterApprovalWithDocomoV2_args(
-      request: CheckUserAgeAfterApprovalWithDocomoV2Request.fromJson(json["request"]),
+      request: CheckUserAgeAfterApprovalWithDocomoV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36968,8 +36967,8 @@ class checkUserAgeAfterApprovalWithDocomoV2_result {
 
   factory checkUserAgeAfterApprovalWithDocomoV2_result.fromJson(Map json) {
     return checkUserAgeAfterApprovalWithDocomoV2_result(
-      success: CheckUserAgeAfterApprovalWithDocomoV2Response.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CheckUserAgeAfterApprovalWithDocomoV2Response.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -36983,7 +36982,7 @@ class checkUserAgeWithDocomoV2_args {
 
   factory checkUserAgeWithDocomoV2_args.fromJson(Map json) {
     return checkUserAgeWithDocomoV2_args(
-      request: CheckUserAgeWithDocomoV2Request.fromJson(json["request"]),
+      request: CheckUserAgeWithDocomoV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -36999,8 +36998,8 @@ class checkUserAgeWithDocomoV2_result {
 
   factory checkUserAgeWithDocomoV2_result.fromJson(Map json) {
     return checkUserAgeWithDocomoV2_result(
-      success: CheckUserAgeWithDocomoV2Response.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CheckUserAgeWithDocomoV2Response.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37020,7 +37019,7 @@ class checkUserAge_args {
 
   factory checkUserAge_args.fromJson(Map json) {
     return checkUserAge_args(
-      carrier: CarrierCode.fromValue(json["carrier"]),
+      carrier: CarrierCode.fromValue(json["carrier"] ?? 0),
       sessionId: json["sessionId"],
       verifier: json["verifier"],
       standardAge: json["standardAge"],
@@ -37039,8 +37038,8 @@ class checkUserAge_result {
 
   factory checkUserAge_result.fromJson(Map json) {
     return checkUserAge_result(
-      success: Pb1_gd.fromValue(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_gd.fromValue(json["success"] ?? 0),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37054,7 +37053,7 @@ class clearRingbackTone_result {
 
   factory clearRingbackTone_result.fromJson(Map json) {
     return clearRingbackTone_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37082,7 +37081,7 @@ class clearRingtone_result {
 
   factory clearRingtone_result.fromJson(Map json) {
     return clearRingtone_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37150,11 +37149,11 @@ class LiveTalkEventPayload {
 
   factory LiveTalkEventPayload.fromJson(Map json) {
     return LiveTalkEventPayload(
-      notifiedUpdateLiveTalkTitle: LiveTalkEventNotifiedUpdateLiveTalkTitle.fromJson(json["notifiedUpdateLiveTalkTitle"]),
-      notifiedUpdateLiveTalkAnnouncement: LiveTalkEventNotifiedUpdateLiveTalkAnnouncement.fromJson(json["notifiedUpdateLiveTalkAnnouncement"]),
-      notifiedUpdateSquareMemberRole: LiveTalkEventNotifiedUpdateSquareMemberRole.fromJson(json["notifiedUpdateSquareMemberRole"]),
-      notifiedUpdateLiveTalkAllowRequestToSpeak: LiveTalkEventNotifiedUpdateLiveTalkAllowRequestToSpeak.fromJson(json["notifiedUpdateLiveTalkAllowRequestToSpeak"]),
-      notifiedUpdateSquareMember: LiveTalkEventNotifiedUpdateSquareMember.fromJson(json["notifiedUpdateSquareMember"]),
+      notifiedUpdateLiveTalkTitle: LiveTalkEventNotifiedUpdateLiveTalkTitle.fromJson(json["notifiedUpdateLiveTalkTitle"] ?? {}),
+      notifiedUpdateLiveTalkAnnouncement: LiveTalkEventNotifiedUpdateLiveTalkAnnouncement.fromJson(json["notifiedUpdateLiveTalkAnnouncement"] ?? {}),
+      notifiedUpdateSquareMemberRole: LiveTalkEventNotifiedUpdateSquareMemberRole.fromJson(json["notifiedUpdateSquareMemberRole"] ?? {}),
+      notifiedUpdateLiveTalkAllowRequestToSpeak: LiveTalkEventNotifiedUpdateLiveTalkAllowRequestToSpeak.fromJson(json["notifiedUpdateLiveTalkAllowRequestToSpeak"] ?? {}),
+      notifiedUpdateSquareMember: LiveTalkEventNotifiedUpdateSquareMember.fromJson(json["notifiedUpdateSquareMember"] ?? {}),
     );
   }
 }
@@ -37170,7 +37169,7 @@ class LiveTalkKickOutTarget {
 
   factory LiveTalkKickOutTarget.fromJson(Map json) {
     return LiveTalkKickOutTarget(
-      liveTalkParticipant: LiveTalkParticipant.fromJson(json["liveTalkParticipant"]),
+      liveTalkParticipant: LiveTalkParticipant.fromJson(json["liveTalkParticipant"] ?? {}),
       allNonMemberLiveTalkParticipants: json["allNonMemberLiveTalkParticipants"],
     );
   }
@@ -37331,64 +37330,64 @@ class SquareEventPayload {
 
   factory SquareEventPayload.fromJson(Map json) {
     return SquareEventPayload(
-      receiveMessage: SquareEventReceiveMessage.fromJson(json["receiveMessage"]),
-      sendMessage: SquareEventSendMessage.fromJson(json["sendMessage"]),
-      notifiedJoinSquareChat: SquareEventNotifiedJoinSquareChat.fromJson(json["notifiedJoinSquareChat"]),
-      notifiedInviteIntoSquareChat: SquareEventNotifiedInviteIntoSquareChat.fromJson(json["notifiedInviteIntoSquareChat"]),
-      notifiedLeaveSquareChat: SquareEventNotifiedLeaveSquareChat.fromJson(json["notifiedLeaveSquareChat"]),
-      notifiedDestroyMessage: SquareEventNotifiedDestroyMessage.fromJson(json["notifiedDestroyMessage"]),
-      notifiedMarkAsRead: SquareEventNotifiedMarkAsRead.fromJson(json["notifiedMarkAsRead"]),
-      notifiedUpdateSquareMemberProfile: SquareEventNotifiedUpdateSquareMemberProfile.fromJson(json["notifiedUpdateSquareMemberProfile"]),
-      notifiedUpdateSquare: SquareEventNotifiedUpdateSquare.fromJson(json["notifiedUpdateSquare"]),
-      notifiedUpdateSquareMember: SquareEventNotifiedUpdateSquareMember.fromJson(json["notifiedUpdateSquareMember"]),
-      notifiedUpdateSquareChat: SquareEventNotifiedUpdateSquareChat.fromJson(json["notifiedUpdateSquareChat"]),
-      notifiedUpdateSquareChatMember: SquareEventNotifiedUpdateSquareChatMember.fromJson(json["notifiedUpdateSquareChatMember"]),
-      notifiedUpdateSquareAuthority: SquareEventNotifiedUpdateSquareAuthority.fromJson(json["notifiedUpdateSquareAuthority"]),
-      notifiedUpdateSquareStatus: SquareEventNotifiedUpdateSquareStatus.fromJson(json["notifiedUpdateSquareStatus"]),
-      notifiedUpdateSquareChatStatus: SquareEventNotifiedUpdateSquareChatStatus.fromJson(json["notifiedUpdateSquareChatStatus"]),
-      notifiedCreateSquareMember: SquareEventNotifiedCreateSquareMember.fromJson(json["notifiedCreateSquareMember"]),
-      notifiedCreateSquareChatMember: SquareEventNotifiedCreateSquareChatMember.fromJson(json["notifiedCreateSquareChatMember"]),
-      notifiedUpdateSquareMemberRelation: SquareEventNotifiedUpdateSquareMemberRelation.fromJson(json["notifiedUpdateSquareMemberRelation"]),
-      notifiedShutdownSquare: SquareEventNotifiedShutdownSquare.fromJson(json["notifiedShutdownSquare"]),
-      notifiedKickoutFromSquare: SquareEventNotifiedKickoutFromSquare.fromJson(json["notifiedKickoutFromSquare"]),
-      notifiedDeleteSquareChat: SquareEventNotifiedDeleteSquareChat.fromJson(json["notifiedDeleteSquareChat"]),
-      notificationJoinRequest: SquareEventNotificationJoinRequest.fromJson(json["notificationJoinRequest"]),
-      notificationJoined: SquareEventNotificationMemberUpdate.fromJson(json["notificationJoined"]),
-      notificationPromoteCoadmin: SquareEventNotificationMemberUpdate.fromJson(json["notificationPromoteCoadmin"]),
-      notificationPromoteAdmin: SquareEventNotificationMemberUpdate.fromJson(json["notificationPromoteAdmin"]),
-      notificationDemoteMember: SquareEventNotificationMemberUpdate.fromJson(json["notificationDemoteMember"]),
-      notificationKickedOut: SquareEventNotificationMemberUpdate.fromJson(json["notificationKickedOut"]),
-      notificationSquareDelete: SquareEventNotificationSquareDelete.fromJson(json["notificationSquareDelete"]),
-      notificationSquareChatDelete: SquareEventNotificationSquareChatDelete.fromJson(json["notificationSquareChatDelete"]),
-      notificationMessage: SquareEventNotificationMessage.fromJson(json["notificationMessage"]),
-      notifiedUpdateSquareChatProfileName: SquareEventNotifiedUpdateSquareChatProfileName.fromJson(json["notifiedUpdateSquareChatProfileName"]),
-      notifiedUpdateSquareChatProfileImage: SquareEventNotifiedUpdateSquareChatProfileImage.fromJson(json["notifiedUpdateSquareChatProfileImage"]),
-      notifiedUpdateSquareFeatureSet: SquareEventNotifiedUpdateSquareFeatureSet.fromJson(json["notifiedUpdateSquareFeatureSet"]),
-      notifiedAddBot: SquareEventNotifiedAddBot.fromJson(json["notifiedAddBot"]),
-      notifiedRemoveBot: SquareEventNotifiedRemoveBot.fromJson(json["notifiedRemoveBot"]),
-      notifiedUpdateSquareNoteStatus: SquareEventNotifiedUpdateSquareNoteStatus.fromJson(json["notifiedUpdateSquareNoteStatus"]),
-      notifiedUpdateSquareChatAnnouncement: SquareEventNotifiedUpdateSquareChatAnnouncement.fromJson(json["notifiedUpdateSquareChatAnnouncement"]),
-      notifiedUpdateSquareChatMaxMemberCount: SquareEventNotifiedUpdateSquareChatMaxMemberCount.fromJson(json["notifiedUpdateSquareChatMaxMemberCount"]),
-      notificationPostAnnouncement: SquareEventNotificationPostAnnouncement.fromJson(json["notificationPostAnnouncement"]),
-      notificationPost: SquareEventNotificationPost.fromJson(json["notificationPost"]),
-      mutateMessage: SquareEventMutateMessage.fromJson(json["mutateMessage"]),
-      notificationNewChatMember: SquareEventNotificationNewChatMember.fromJson(json["notificationNewChatMember"]),
-      notifiedUpdateReadonlyChat: SquareEventNotifiedUpdateReadonlyChat.fromJson(json["notifiedUpdateReadonlyChat"]),
-      notifiedUpdateMessageStatus: SquareEventNotifiedUpdateMessageStatus.fromJson(json["notifiedUpdateMessageStatus"]),
-      notificationMessageReaction: SquareEventNotificationMessageReaction.fromJson(json["notificationMessageReaction"]),
-      chatPopup: SquareEventChatPopup.fromJson(json["chatPopup"]),
-      notifiedSystemMessage: SquareEventNotifiedSystemMessage.fromJson(json["notifiedSystemMessage"]),
-      notifiedUpdateSquareChatFeatureSet: SquareEventNotifiedUpdateSquareChatFeatureSet.fromJson(json["notifiedUpdateSquareChatFeatureSet"]),
-      notifiedUpdateLiveTalkInfo: SquareEventNotifiedUpdateLiveTalkInfo.fromJson(json["notifiedUpdateLiveTalkInfo"]),
-      notifiedUpdateLiveTalk: SquareEventNotifiedUpdateLiveTalk.fromJson(json["notifiedUpdateLiveTalk"]),
-      notificationLiveTalk: SquareEventNotificationLiveTalk.fromJson(json["notificationLiveTalk"]),
-      notificationThreadMessage: SquareEventNotificationThreadMessage.fromJson(json["notificationThreadMessage"]),
-      notificationThreadMessageReaction: SquareEventNotificationThreadMessageReaction.fromJson(json["notificationThreadMessageReaction"]),
-      notifiedUpdateThread: SquareEventNotifiedUpdateThread.fromJson(json["notifiedUpdateThread"]),
-      notifiedUpdateThreadStatus: SquareEventNotifiedUpdateThreadStatus.fromJson(json["notifiedUpdateThreadStatus"]),
-      notifiedUpdateThreadMember: SquareEventNotifiedUpdateThreadMember.fromJson(json["notifiedUpdateThreadMember"]),
-      notifiedUpdateThreadRootMessage: SquareEventNotifiedUpdateThreadRootMessage.fromJson(json["notifiedUpdateThreadRootMessage"]),
-      notifiedUpdateThreadRootMessageStatus: SquareEventNotifiedUpdateThreadRootMessageStatus.fromJson(json["notifiedUpdateThreadRootMessageStatus"]),
+      receiveMessage: SquareEventReceiveMessage.fromJson(json["receiveMessage"] ?? {}),
+      sendMessage: SquareEventSendMessage.fromJson(json["sendMessage"] ?? {}),
+      notifiedJoinSquareChat: SquareEventNotifiedJoinSquareChat.fromJson(json["notifiedJoinSquareChat"] ?? {}),
+      notifiedInviteIntoSquareChat: SquareEventNotifiedInviteIntoSquareChat.fromJson(json["notifiedInviteIntoSquareChat"] ?? {}),
+      notifiedLeaveSquareChat: SquareEventNotifiedLeaveSquareChat.fromJson(json["notifiedLeaveSquareChat"] ?? {}),
+      notifiedDestroyMessage: SquareEventNotifiedDestroyMessage.fromJson(json["notifiedDestroyMessage"] ?? {}),
+      notifiedMarkAsRead: SquareEventNotifiedMarkAsRead.fromJson(json["notifiedMarkAsRead"] ?? {}),
+      notifiedUpdateSquareMemberProfile: SquareEventNotifiedUpdateSquareMemberProfile.fromJson(json["notifiedUpdateSquareMemberProfile"] ?? {}),
+      notifiedUpdateSquare: SquareEventNotifiedUpdateSquare.fromJson(json["notifiedUpdateSquare"] ?? {}),
+      notifiedUpdateSquareMember: SquareEventNotifiedUpdateSquareMember.fromJson(json["notifiedUpdateSquareMember"] ?? {}),
+      notifiedUpdateSquareChat: SquareEventNotifiedUpdateSquareChat.fromJson(json["notifiedUpdateSquareChat"] ?? {}),
+      notifiedUpdateSquareChatMember: SquareEventNotifiedUpdateSquareChatMember.fromJson(json["notifiedUpdateSquareChatMember"] ?? {}),
+      notifiedUpdateSquareAuthority: SquareEventNotifiedUpdateSquareAuthority.fromJson(json["notifiedUpdateSquareAuthority"] ?? {}),
+      notifiedUpdateSquareStatus: SquareEventNotifiedUpdateSquareStatus.fromJson(json["notifiedUpdateSquareStatus"] ?? {}),
+      notifiedUpdateSquareChatStatus: SquareEventNotifiedUpdateSquareChatStatus.fromJson(json["notifiedUpdateSquareChatStatus"] ?? {}),
+      notifiedCreateSquareMember: SquareEventNotifiedCreateSquareMember.fromJson(json["notifiedCreateSquareMember"] ?? {}),
+      notifiedCreateSquareChatMember: SquareEventNotifiedCreateSquareChatMember.fromJson(json["notifiedCreateSquareChatMember"] ?? {}),
+      notifiedUpdateSquareMemberRelation: SquareEventNotifiedUpdateSquareMemberRelation.fromJson(json["notifiedUpdateSquareMemberRelation"] ?? {}),
+      notifiedShutdownSquare: SquareEventNotifiedShutdownSquare.fromJson(json["notifiedShutdownSquare"] ?? {}),
+      notifiedKickoutFromSquare: SquareEventNotifiedKickoutFromSquare.fromJson(json["notifiedKickoutFromSquare"] ?? {}),
+      notifiedDeleteSquareChat: SquareEventNotifiedDeleteSquareChat.fromJson(json["notifiedDeleteSquareChat"] ?? {}),
+      notificationJoinRequest: SquareEventNotificationJoinRequest.fromJson(json["notificationJoinRequest"] ?? {}),
+      notificationJoined: SquareEventNotificationMemberUpdate.fromJson(json["notificationJoined"] ?? {}),
+      notificationPromoteCoadmin: SquareEventNotificationMemberUpdate.fromJson(json["notificationPromoteCoadmin"] ?? {}),
+      notificationPromoteAdmin: SquareEventNotificationMemberUpdate.fromJson(json["notificationPromoteAdmin"] ?? {}),
+      notificationDemoteMember: SquareEventNotificationMemberUpdate.fromJson(json["notificationDemoteMember"] ?? {}),
+      notificationKickedOut: SquareEventNotificationMemberUpdate.fromJson(json["notificationKickedOut"] ?? {}),
+      notificationSquareDelete: SquareEventNotificationSquareDelete.fromJson(json["notificationSquareDelete"] ?? {}),
+      notificationSquareChatDelete: SquareEventNotificationSquareChatDelete.fromJson(json["notificationSquareChatDelete"] ?? {}),
+      notificationMessage: SquareEventNotificationMessage.fromJson(json["notificationMessage"] ?? {}),
+      notifiedUpdateSquareChatProfileName: SquareEventNotifiedUpdateSquareChatProfileName.fromJson(json["notifiedUpdateSquareChatProfileName"] ?? {}),
+      notifiedUpdateSquareChatProfileImage: SquareEventNotifiedUpdateSquareChatProfileImage.fromJson(json["notifiedUpdateSquareChatProfileImage"] ?? {}),
+      notifiedUpdateSquareFeatureSet: SquareEventNotifiedUpdateSquareFeatureSet.fromJson(json["notifiedUpdateSquareFeatureSet"] ?? {}),
+      notifiedAddBot: SquareEventNotifiedAddBot.fromJson(json["notifiedAddBot"] ?? {}),
+      notifiedRemoveBot: SquareEventNotifiedRemoveBot.fromJson(json["notifiedRemoveBot"] ?? {}),
+      notifiedUpdateSquareNoteStatus: SquareEventNotifiedUpdateSquareNoteStatus.fromJson(json["notifiedUpdateSquareNoteStatus"] ?? {}),
+      notifiedUpdateSquareChatAnnouncement: SquareEventNotifiedUpdateSquareChatAnnouncement.fromJson(json["notifiedUpdateSquareChatAnnouncement"] ?? {}),
+      notifiedUpdateSquareChatMaxMemberCount: SquareEventNotifiedUpdateSquareChatMaxMemberCount.fromJson(json["notifiedUpdateSquareChatMaxMemberCount"] ?? {}),
+      notificationPostAnnouncement: SquareEventNotificationPostAnnouncement.fromJson(json["notificationPostAnnouncement"] ?? {}),
+      notificationPost: SquareEventNotificationPost.fromJson(json["notificationPost"] ?? {}),
+      mutateMessage: SquareEventMutateMessage.fromJson(json["mutateMessage"] ?? {}),
+      notificationNewChatMember: SquareEventNotificationNewChatMember.fromJson(json["notificationNewChatMember"] ?? {}),
+      notifiedUpdateReadonlyChat: SquareEventNotifiedUpdateReadonlyChat.fromJson(json["notifiedUpdateReadonlyChat"] ?? {}),
+      notifiedUpdateMessageStatus: SquareEventNotifiedUpdateMessageStatus.fromJson(json["notifiedUpdateMessageStatus"] ?? {}),
+      notificationMessageReaction: SquareEventNotificationMessageReaction.fromJson(json["notificationMessageReaction"] ?? {}),
+      chatPopup: SquareEventChatPopup.fromJson(json["chatPopup"] ?? {}),
+      notifiedSystemMessage: SquareEventNotifiedSystemMessage.fromJson(json["notifiedSystemMessage"] ?? {}),
+      notifiedUpdateSquareChatFeatureSet: SquareEventNotifiedUpdateSquareChatFeatureSet.fromJson(json["notifiedUpdateSquareChatFeatureSet"] ?? {}),
+      notifiedUpdateLiveTalkInfo: SquareEventNotifiedUpdateLiveTalkInfo.fromJson(json["notifiedUpdateLiveTalkInfo"] ?? {}),
+      notifiedUpdateLiveTalk: SquareEventNotifiedUpdateLiveTalk.fromJson(json["notifiedUpdateLiveTalk"] ?? {}),
+      notificationLiveTalk: SquareEventNotificationLiveTalk.fromJson(json["notificationLiveTalk"] ?? {}),
+      notificationThreadMessage: SquareEventNotificationThreadMessage.fromJson(json["notificationThreadMessage"] ?? {}),
+      notificationThreadMessageReaction: SquareEventNotificationThreadMessageReaction.fromJson(json["notificationThreadMessageReaction"] ?? {}),
+      notifiedUpdateThread: SquareEventNotifiedUpdateThread.fromJson(json["notifiedUpdateThread"] ?? {}),
+      notifiedUpdateThreadStatus: SquareEventNotifiedUpdateThreadStatus.fromJson(json["notifiedUpdateThreadStatus"] ?? {}),
+      notifiedUpdateThreadMember: SquareEventNotifiedUpdateThreadMember.fromJson(json["notifiedUpdateThreadMember"] ?? {}),
+      notifiedUpdateThreadRootMessage: SquareEventNotifiedUpdateThreadRootMessage.fromJson(json["notifiedUpdateThreadRootMessage"] ?? {}),
+      notifiedUpdateThreadRootMessageStatus: SquareEventNotifiedUpdateThreadRootMessageStatus.fromJson(json["notifiedUpdateThreadRootMessageStatus"] ?? {}),
     );
   }
 }
@@ -37410,7 +37409,7 @@ class ButtonBGColor {
 
   factory ButtonBGColor.fromJson(Map json) {
     return ButtonBGColor(
-      custom: CustomColor.fromJson(json["custom"]),
+      custom: CustomColor.fromJson(json["custom"] ?? {}),
       defaultGradient: json["defaultGradient"],
     );
   }
@@ -37429,9 +37428,9 @@ class ButtonContent {
 
   factory ButtonContent.fromJson(Map json) {
     return ButtonContent(
-      urlButton: UrlButton.fromJson(json["urlButton"]),
-      textButton: TextButton.fromJson(json["textButton"]),
-      okButton: OkButton.fromJson(json["okButton"]),
+      urlButton: UrlButton.fromJson(json["urlButton"] ?? {}),
+      textButton: TextButton.fromJson(json["textButton"] ?? {}),
+      okButton: OkButton.fromJson(json["okButton"] ?? {}),
     );
   }
 }
@@ -37456,10 +37455,10 @@ class ErrorExtraInfo {
   factory ErrorExtraInfo.fromJson(Map json) {
     return ErrorExtraInfo(
       preconditionFailedExtraInfo: json["preconditionFailedExtraInfo"],
-      userRestrictionInfo: UserRestrictionExtraInfo.fromJson(json["userRestrictionInfo"]),
-      tryAgainLaterExtraInfo: TryAgainLaterExtraInfo.fromJson(json["tryAgainLaterExtraInfo"]),
-      liveTalkExtraInfo: LiveTalkExtraInfo.fromJson(json["liveTalkExtraInfo"]),
-      termsAgreementExtraInfo: TermsAgreementExtraInfo.fromJson(json["termsAgreementExtraInfo"]),
+      userRestrictionInfo: UserRestrictionExtraInfo.fromJson(json["userRestrictionInfo"] ?? {}),
+      tryAgainLaterExtraInfo: TryAgainLaterExtraInfo.fromJson(json["tryAgainLaterExtraInfo"] ?? {}),
+      liveTalkExtraInfo: LiveTalkExtraInfo.fromJson(json["liveTalkExtraInfo"] ?? {}),
+      termsAgreementExtraInfo: TermsAgreementExtraInfo.fromJson(json["termsAgreementExtraInfo"] ?? {}),
     );
   }
 }
@@ -37475,8 +37474,8 @@ class Mentionable {
 
   factory Mentionable.fromJson(Map json) {
     return Mentionable(
-      squareMember: MentionableSquareMember.fromJson(json["squareMember"]),
-      bot: MentionableBot.fromJson(json["bot"]),
+      squareMember: MentionableSquareMember.fromJson(json["squareMember"] ?? {}),
+      bot: MentionableBot.fromJson(json["bot"] ?? {}),
     );
   }
 }
@@ -37518,7 +37517,7 @@ class SquareChatAnnouncementContents {
 
   factory SquareChatAnnouncementContents.fromJson(Map json) {
     return SquareChatAnnouncementContents(
-      textMessageAnnouncementContents: TextMessageAnnouncementContents.fromJson(json["textMessageAnnouncementContents"]),
+      textMessageAnnouncementContents: TextMessageAnnouncementContents.fromJson(json["textMessageAnnouncementContents"] ?? {}),
     );
   }
 }
@@ -37536,8 +37535,8 @@ class TargetChats {
 
   factory TargetChats.fromJson(Map json) {
     return TargetChats(
-      mids: List.from(json["mids"]),
-      categories: List.from(json["categories"]),
+      mids: List.from(json["mids"] ?? []),
+      categories: List.from(json["categories"] ?? []),
       channelId: json["channelId"],
     );
   }
@@ -37552,7 +37551,7 @@ class TargetUsers {
 
   factory TargetUsers.fromJson(Map json) {
     return TargetUsers(
-      mids: List.from(json["mids"]),
+      mids: List.from(json["mids"] ?? []),
     );
   }
 }
@@ -37583,7 +37582,7 @@ class confirmIdentifier_args {
   factory confirmIdentifier_args.fromJson(Map json) {
     return confirmIdentifier_args(
       authSessionId: json["authSessionId"],
-      request: IdentityCredentialRequest.fromJson(json["request"]),
+      request: IdentityCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37599,8 +37598,8 @@ class confirmIdentifier_result {
 
   factory confirmIdentifier_result.fromJson(Map json) {
     return confirmIdentifier_result(
-      success: IdentityCredentialResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IdentityCredentialResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37614,7 +37613,7 @@ class connectEapAccount_args {
 
   factory connectEapAccount_args.fromJson(Map json) {
     return connectEapAccount_args(
-      request: ConnectEapAccountRequest.fromJson(json["request"]),
+      request: ConnectEapAccountRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37631,7 +37630,7 @@ class connectEapAccount_result {
   factory connectEapAccount_result.fromJson(Map json) {
     return connectEapAccount_result(
       success: json["success"],
-      e: AccountEapConnectException.fromJson(json["e"]),
+      e: AccountEapConnectException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37653,8 +37652,8 @@ class createChatRoomAnnouncement_args {
     return createChatRoomAnnouncement_args(
       reqSeq: json["reqSeq"],
       chatRoomMid: json["chatRoomMid"],
-      type: Pb1_X2.fromValue(json["type"]),
-      contents: ChatRoomAnnouncementContents.fromJson(json["contents"]),
+      type: Pb1_X2.fromValue(json["type"] ?? 0),
+      contents: ChatRoomAnnouncementContents.fromJson(json["contents"] ?? {}),
     );
   }
 }
@@ -37670,8 +37669,8 @@ class createChatRoomAnnouncement_result {
 
   factory createChatRoomAnnouncement_result.fromJson(Map json) {
     return createChatRoomAnnouncement_result(
-      success: ChatRoomAnnouncement.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: ChatRoomAnnouncement.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37685,7 +37684,7 @@ class createChat_args {
 
   factory createChat_args.fromJson(Map json) {
     return createChat_args(
-      request: CreateChatRequest.fromJson(json["request"]),
+      request: CreateChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37701,8 +37700,8 @@ class createChat_result {
 
   factory createChat_result.fromJson(Map json) {
     return createChat_result(
-      success: CreateChatResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CreateChatResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37733,7 +37732,7 @@ class createCollectionForUser_result {
   factory createCollectionForUser_result.fromJson(Map json) {
     return createCollectionForUser_result(
       success: json["success"],
-      e: CollectionException.fromJson(json["e"]),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37764,7 +37763,7 @@ class createCombinationSticker_result {
   factory createCombinationSticker_result.fromJson(Map json) {
     return createCombinationSticker_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37778,7 +37777,7 @@ class createE2EEKeyBackupEnforced_args {
 
   factory createE2EEKeyBackupEnforced_args.fromJson(Map json) {
     return createE2EEKeyBackupEnforced_args(
-      request: Pb1_C13263z3.fromJson(json["request"]),
+      request: Pb1_C13263z3.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37795,7 +37794,7 @@ class createE2EEKeyBackupEnforced_result {
   factory createE2EEKeyBackupEnforced_result.fromJson(Map json) {
     return createE2EEKeyBackupEnforced_result(
       success: json["success"],
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37809,7 +37808,7 @@ class createGroupCallUrl_args {
 
   factory createGroupCallUrl_args.fromJson(Map json) {
     return createGroupCallUrl_args(
-      request: CreateGroupCallUrlRequest.fromJson(json["request"]),
+      request: CreateGroupCallUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37825,8 +37824,8 @@ class createGroupCallUrl_result {
 
   factory createGroupCallUrl_result.fromJson(Map json) {
     return createGroupCallUrl_result(
-      success: CreateGroupCallUrlResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CreateGroupCallUrlResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37840,7 +37839,7 @@ class createLifetimeKeyBackup_args {
 
   factory createLifetimeKeyBackup_args.fromJson(Map json) {
     return createLifetimeKeyBackup_args(
-      request: Pb1_E3.fromJson(json["request"]),
+      request: Pb1_E3.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37857,7 +37856,7 @@ class createLifetimeKeyBackup_result {
   factory createLifetimeKeyBackup_result.fromJson(Map json) {
     return createLifetimeKeyBackup_result(
       success: json["success"],
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37871,7 +37870,7 @@ class createMultiProfile_args {
 
   factory createMultiProfile_args.fromJson(Map json) {
     return createMultiProfile_args(
-      request: CreateMultiProfileRequest.fromJson(json["request"]),
+      request: CreateMultiProfileRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -37887,8 +37886,8 @@ class createMultiProfile_result {
 
   factory createMultiProfile_result.fromJson(Map json) {
     return createMultiProfile_result(
-      success: CreateMultiProfileResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: CreateMultiProfileResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37905,7 +37904,7 @@ class createRoomV2_args {
   factory createRoomV2_args.fromJson(Map json) {
     return createRoomV2_args(
       reqSeq: json["reqSeq"],
-      contactIds: List.from(json["contactIds"]),
+      contactIds: List.from(json["contactIds"] ?? []),
     );
   }
 }
@@ -37921,8 +37920,8 @@ class createRoomV2_result {
 
   factory createRoomV2_result.fromJson(Map json) {
     return createRoomV2_result(
-      success: Room.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Room.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37966,8 +37965,8 @@ class createSession_result {
 
   factory createSession_result.fromJson(Map json) {
     return createSession_result(
-      success: CreateSessionResponse.fromJson(json["success"]),
-      e: PwlessCredentialException.fromJson(json["e"]),
+      success: CreateSessionResponse.fromJson(json["success"] ?? {}),
+      e: PwlessCredentialException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -37985,9 +37984,9 @@ class I80_C26366B {
 
   factory I80_C26366B.fromJson(Map json) {
     return I80_C26366B(
-      success: I80_C26406i.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      success: I80_C26406i.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -38018,7 +38017,7 @@ class decryptFollowEMid_result {
   factory decryptFollowEMid_result.fromJson(Map json) {
     return decryptFollowEMid_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38049,7 +38048,7 @@ class deleteE2EEKeyBackup_result {
   factory deleteE2EEKeyBackup_result.fromJson(Map json) {
     return deleteE2EEKeyBackup_result(
       success: json["success"],
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38063,7 +38062,7 @@ class deleteGroupCallUrl_args {
 
   factory deleteGroupCallUrl_args.fromJson(Map json) {
     return deleteGroupCallUrl_args(
-      request: DeleteGroupCallUrlRequest.fromJson(json["request"]),
+      request: DeleteGroupCallUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38080,7 +38079,7 @@ class deleteGroupCallUrl_result {
   factory deleteGroupCallUrl_result.fromJson(Map json) {
     return deleteGroupCallUrl_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38094,7 +38093,7 @@ class deleteMultiProfile_args {
 
   factory deleteMultiProfile_args.fromJson(Map json) {
     return deleteMultiProfile_args(
-      request: DeleteMultiProfileRequest.fromJson(json["request"]),
+      request: DeleteMultiProfileRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38111,7 +38110,7 @@ class deleteMultiProfile_result {
   factory deleteMultiProfile_result.fromJson(Map json) {
     return deleteMultiProfile_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38125,7 +38124,7 @@ class deleteOtherFromChat_args {
 
   factory deleteOtherFromChat_args.fromJson(Map json) {
     return deleteOtherFromChat_args(
-      request: DeleteOtherFromChatRequest.fromJson(json["request"]),
+      request: DeleteOtherFromChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38142,7 +38141,7 @@ class deleteOtherFromChat_result {
   factory deleteOtherFromChat_result.fromJson(Map json) {
     return deleteOtherFromChat_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38173,7 +38172,7 @@ class deletePrimaryCredential_result {
   factory deletePrimaryCredential_result.fromJson(Map json) {
     return deletePrimaryCredential_result(
       success: json["success"],
-      e: PwlessCredentialException.fromJson(json["e"]),
+      e: PwlessCredentialException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38187,7 +38186,7 @@ class deleteSafetyStatus_args {
 
   factory deleteSafetyStatus_args.fromJson(Map json) {
     return deleteSafetyStatus_args(
-      req: DeleteSafetyStatusRequest.fromJson(json["req"]),
+      req: DeleteSafetyStatusRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -38215,7 +38214,7 @@ class deleteSelfFromChat_args {
 
   factory deleteSelfFromChat_args.fromJson(Map json) {
     return deleteSelfFromChat_args(
-      request: DeleteSelfFromChatRequest.fromJson(json["request"]),
+      request: DeleteSelfFromChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38232,7 +38231,7 @@ class deleteSelfFromChat_result {
   factory deleteSelfFromChat_result.fromJson(Map json) {
     return deleteSelfFromChat_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38246,7 +38245,7 @@ class determineMediaMessageFlow_args {
 
   factory determineMediaMessageFlow_args.fromJson(Map json) {
     return determineMediaMessageFlow_args(
-      request: DetermineMediaMessageFlowRequest.fromJson(json["request"]),
+      request: DetermineMediaMessageFlowRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38262,8 +38261,8 @@ class determineMediaMessageFlow_result {
 
   factory determineMediaMessageFlow_result.fromJson(Map json) {
     return determineMediaMessageFlow_result(
-      success: DetermineMediaMessageFlowResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: DetermineMediaMessageFlowResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38277,7 +38276,7 @@ class disableNearby_result {
 
   factory disableNearby_result.fromJson(Map json) {
     return disableNearby_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38291,7 +38290,7 @@ class disconnectEapAccount_args {
 
   factory disconnectEapAccount_args.fromJson(Map json) {
     return disconnectEapAccount_args(
-      request: DisconnectEapAccountRequest.fromJson(json["request"]),
+      request: DisconnectEapAccountRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38308,7 +38307,7 @@ class disconnectEapAccount_result {
   factory disconnectEapAccount_result.fromJson(Map json) {
     return disconnectEapAccount_result(
       success: json["success"],
-      e: AccountEapConnectException.fromJson(json["e"]),
+      e: AccountEapConnectException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38324,8 +38323,8 @@ class do0_C23138A {
 
   factory do0_C23138A.fromJson(Map json) {
     return do0_C23138A(
-      connectDevice: ConnectDeviceOperation.fromJson(json["connectDevice"]),
-      executeOnetimeScenario: ExecuteOnetimeScenarioOperation.fromJson(json["executeOnetimeScenario"]),
+      connectDevice: ConnectDeviceOperation.fromJson(json["connectDevice"] ?? {}),
+      executeOnetimeScenario: ExecuteOnetimeScenarioOperation.fromJson(json["executeOnetimeScenario"] ?? {}),
     );
   }
 }
@@ -38347,11 +38346,11 @@ class do0_C23141D {
 
   factory do0_C23141D.fromJson(Map json) {
     return do0_C23141D(
-      gattRead: GattReadAction.fromJson(json["gattRead"]),
-      gattWrite: do0_C23158p.fromJson(json["gattWrite"]),
-      sleep: SleepAction.fromJson(json["sleep"]),
+      gattRead: GattReadAction.fromJson(json["gattRead"] ?? {}),
+      gattWrite: do0_C23158p.fromJson(json["gattWrite"] ?? {}),
+      sleep: SleepAction.fromJson(json["sleep"] ?? {}),
       disconnect: json["disconnect"],
-      stopNotification: StopNotificationAction.fromJson(json["stopNotification"]),
+      stopNotification: StopNotificationAction.fromJson(json["stopNotification"] ?? {}),
     );
   }
 }
@@ -38368,7 +38367,7 @@ class do0_C23142E {
   factory do0_C23142E.fromJson(Map json) {
     return do0_C23142E(
       voidResult: json["voidResult"],
-      binaryResult: do0_C23143a.fromJson(json["binaryResult"]),
+      binaryResult: do0_C23143a.fromJson(json["binaryResult"] ?? {}),
     );
   }
 }
@@ -38420,9 +38419,9 @@ class do0_C23167z {}
 class do0_F {
   final String scenarioId;
   final String deviceId;
-  final Int64 revision;
-  final Int64 startTime;
-  final Int64 endTime;
+  final dynamic revision;
+  final dynamic startTime;
+  final dynamic endTime;
   final do0_G code;
   final String errorReason;
   final String bleNotificationPayload;
@@ -38449,10 +38448,10 @@ class do0_F {
       revision: json["revision"],
       startTime: json["startTime"],
       endTime: json["endTime"],
-      code: do0_G.fromValue(json["code"]),
+      code: do0_G.fromValue(json["code"] ?? 0),
       errorReason: json["errorReason"],
       bleNotificationPayload: json["bleNotificationPayload"],
-      actionResults: List.from(json["actionResults"])
+      actionResults: List.from(json["actionResults"] ?? [])
           .map((e) => do0_C23142E.fromJson(e))
           .toList(),
       connectionId: json["connectionId"],
@@ -38472,7 +38471,7 @@ class do0_I {
   factory do0_I.fromJson(Map json) {
     return do0_I(
       immediate: json["immediate"],
-      bleNotificationReceived: BleNotificationReceivedTrigger.fromJson(json["bleNotificationReceived"]),
+      bleNotificationReceived: BleNotificationReceivedTrigger.fromJson(json["bleNotificationReceived"] ?? {}),
     );
   }
 }
@@ -38509,7 +38508,7 @@ class editItemsInCollection_result {
   factory editItemsInCollection_result.fromJson(Map json) {
     return editItemsInCollection_result(
       success: json["success"],
-      e: CollectionException.fromJson(json["e"]),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38537,7 +38536,7 @@ class enablePointForOneTimeKey_result {
 
   factory enablePointForOneTimeKey_result.fromJson(Map json) {
     return enablePointForOneTimeKey_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38568,7 +38567,7 @@ class establishE2EESession_result {
   factory establishE2EESession_result.fromJson(Map json) {
     return establishE2EESession_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38598,8 +38597,8 @@ class existPinCode_result {
 
   factory existPinCode_result.fromJson(Map json) {
     return existPinCode_result(
-      success: ExistPinCodeResponse.fromJson(json["success"]),
-      e: SecondAuthFactorPinCodeException.fromJson(json["e"]),
+      success: ExistPinCodeResponse.fromJson(json["success"] ?? {}),
+      e: SecondAuthFactorPinCodeException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38621,7 +38620,7 @@ class fetchOperations_args {
 
   factory fetchOperations_args.fromJson(Map json) {
     return fetchOperations_args(
-      request: FetchOperationsRequest.fromJson(json["request"]),
+      request: FetchOperationsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38637,8 +38636,8 @@ class fetchOperations_result {
 
   factory fetchOperations_result.fromJson(Map json) {
     return fetchOperations_result(
-      success: FetchOperationsResponse.fromJson(json["success"]),
-      e: ThingsException.fromJson(json["e"]),
+      success: FetchOperationsResponse.fromJson(json["success"] ?? {}),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38652,7 +38651,7 @@ class fetchPhonePinCodeMsg_args {
 
   factory fetchPhonePinCodeMsg_args.fromJson(Map json) {
     return fetchPhonePinCodeMsg_args(
-      request: FetchPhonePinCodeMsgRequest.fromJson(json["request"]),
+      request: FetchPhonePinCodeMsgRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38668,8 +38667,8 @@ class fetchPhonePinCodeMsg_result {
 
   factory fetchPhonePinCodeMsg_result.fromJson(Map json) {
     return fetchPhonePinCodeMsg_result(
-      success: FetchPhonePinCodeMsgResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: FetchPhonePinCodeMsgResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38685,8 +38684,8 @@ class findAndAddContactByMetaTag_result {
 
   factory findAndAddContactByMetaTag_result.fromJson(Map json) {
     return findAndAddContactByMetaTag_result(
-      success: Contact.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Contact.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38702,8 +38701,8 @@ class findAndAddContactsByMid_result {
 
   factory findAndAddContactsByMid_result.fromJson(Map json) {
     return findAndAddContactsByMid_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38719,8 +38718,8 @@ class findAndAddContactsByPhone_result {
 
   factory findAndAddContactsByPhone_result.fromJson(Map json) {
     return findAndAddContactsByPhone_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38736,8 +38735,8 @@ class findAndAddContactsByUserid_result {
 
   factory findAndAddContactsByUserid_result.fromJson(Map json) {
     return findAndAddContactsByUserid_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38766,7 +38765,7 @@ class findBuddyContactsByQuery_args {
       query: json["query"],
       fromIndex: json["fromIndex"],
       count: json["count"],
-      requestSource: Pb1_F0.fromValue(json["requestSource"]),
+      requestSource: Pb1_F0.fromValue(json["requestSource"] ?? 0),
     );
   }
 }
@@ -38782,10 +38781,10 @@ class findBuddyContactsByQuery_result {
 
   factory findBuddyContactsByQuery_result.fromJson(Map json) {
     return findBuddyContactsByQuery_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => BuddySearchResult.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38799,7 +38798,7 @@ class findChatByTicket_args {
 
   factory findChatByTicket_args.fromJson(Map json) {
     return findChatByTicket_args(
-      request: FindChatByTicketRequest.fromJson(json["request"]),
+      request: FindChatByTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -38815,8 +38814,8 @@ class findChatByTicket_result {
 
   factory findChatByTicket_result.fromJson(Map json) {
     return findChatByTicket_result(
-      success: FindChatByTicketResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: FindChatByTicketResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38846,8 +38845,8 @@ class findContactByUserTicket_result {
 
   factory findContactByUserTicket_result.fromJson(Map json) {
     return findContactByUserTicket_result(
-      success: Contact.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Contact.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38877,8 +38876,8 @@ class findContactByUserid_result {
 
   factory findContactByUserid_result.fromJson(Map json) {
     return findContactByUserid_result(
-      success: Contact.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Contact.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38892,7 +38891,7 @@ class findContactsByPhone_args {
 
   factory findContactsByPhone_args.fromJson(Map json) {
     return findContactsByPhone_args(
-      phones: List.from(json["phones"]),
+      phones: List.from(json["phones"] ?? []),
     );
   }
 }
@@ -38908,8 +38907,8 @@ class findContactsByPhone_result {
 
   factory findContactsByPhone_result.fromJson(Map json) {
     return findContactsByPhone_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38937,7 +38936,7 @@ class finishUpdateVerification_result {
 
   factory finishUpdateVerification_result.fromJson(Map json) {
     return finishUpdateVerification_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38951,7 +38950,7 @@ class follow_args {
 
   factory follow_args.fromJson(Map json) {
     return follow_args(
-      followRequest: FollowRequest.fromJson(json["followRequest"]),
+      followRequest: FollowRequest.fromJson(json["followRequest"] ?? {}),
     );
   }
 }
@@ -38965,7 +38964,7 @@ class follow_result {
 
   factory follow_result.fromJson(Map json) {
     return follow_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -38975,7 +38974,7 @@ class gN0_C25143G {}
 class gN0_C25147d {}
 
 class generateUserTicket_args {
-  final Int64 expirationTime;
+  final dynamic expirationTime;
   final int maxUseCount;
 
   generateUserTicket_args({
@@ -39002,8 +39001,8 @@ class generateUserTicket_result {
 
   factory generateUserTicket_result.fromJson(Map json) {
     return generateUserTicket_result(
-      success: Ticket.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Ticket.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39017,7 +39016,7 @@ class getAccessToken_args {
 
   factory getAccessToken_args.fromJson(Map json) {
     return getAccessToken_args(
-      request: GetAccessTokenRequest.fromJson(json["request"]),
+      request: GetAccessTokenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39033,8 +39032,8 @@ class getAccessToken_result {
 
   factory getAccessToken_result.fromJson(Map json) {
     return getAccessToken_result(
-      success: GetAccessTokenResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetAccessTokenResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39065,7 +39064,7 @@ class getAccountBalanceAsync_result {
 
   factory getAccountBalanceAsync_result.fromJson(Map json) {
     return getAccountBalanceAsync_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39079,7 +39078,7 @@ class I80_C26374J {
 
   factory I80_C26374J.fromJson(Map json) {
     return I80_C26374J(
-      request: I80_C26410k.fromJson(json["request"]),
+      request: I80_C26410k.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39096,7 +39095,7 @@ class getAcctVerifMethod_args {
   factory getAcctVerifMethod_args.fromJson(Map json) {
     return getAcctVerifMethod_args(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -39112,8 +39111,8 @@ class getAcctVerifMethod_result {
 
   factory getAcctVerifMethod_result.fromJson(Map json) {
     return getAcctVerifMethod_result(
-      success: GetAcctVerifMethodResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetAcctVerifMethodResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39129,8 +39128,8 @@ class I80_C26375K {
 
   factory I80_C26375K.fromJson(Map json) {
     return I80_C26375K(
-      success: I80_C26412l.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26412l.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39146,8 +39145,8 @@ class getAllChatMids_args {
 
   factory getAllChatMids_args.fromJson(Map json) {
     return getAllChatMids_args(
-      request: GetAllChatMidsRequest.fromJson(json["request"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      request: GetAllChatMidsRequest.fromJson(json["request"] ?? {}),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -39163,8 +39162,8 @@ class getAllChatMids_result {
 
   factory getAllChatMids_result.fromJson(Map json) {
     return getAllChatMids_result(
-      success: GetAllChatMidsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetAllChatMidsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39178,7 +39177,7 @@ class getAllContactIds_args {
 
   factory getAllContactIds_args.fromJson(Map json) {
     return getAllContactIds_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -39194,8 +39193,8 @@ class getAllContactIds_result {
 
   factory getAllContactIds_result.fromJson(Map json) {
     return getAllContactIds_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39228,8 +39227,8 @@ class getAllowedRegistrationMethod_result {
 
   factory getAllowedRegistrationMethod_result.fromJson(Map json) {
     return getAllowedRegistrationMethod_result(
-      success: GetAllowedRegistrationMethodResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetAllowedRegistrationMethodResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39245,14 +39244,14 @@ class getAnalyticsInfo_result {
 
   factory getAnalyticsInfo_result.fromJson(Map json) {
     return getAnalyticsInfo_result(
-      success: AnalyticsInfo.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: AnalyticsInfo.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class getApprovedChannels_args {
-  final Int64 lastSynced;
+  final dynamic lastSynced;
   final String locale;
 
   getApprovedChannels_args({
@@ -39279,8 +39278,8 @@ class getApprovedChannels_result {
 
   factory getApprovedChannels_result.fromJson(Map json) {
     return getApprovedChannels_result(
-      success: ApprovedChannelInfos.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ApprovedChannelInfos.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39312,7 +39311,7 @@ class getAssertionChallenge_result {
 
   factory getAssertionChallenge_result.fromJson(Map json) {
     return getAssertionChallenge_result(
-      success: GetAssertionChallengeResponse.fromJson(json["success"]),
+      success: GetAssertionChallengeResponse.fromJson(json["success"] ?? {}),
       deviceAttestationException: json["deviceAttestationException"],
       attestationRequiredException: json["attestationRequiredException"],
     );
@@ -39344,7 +39343,7 @@ class getAttestationChallenge_result {
 
   factory getAttestationChallenge_result.fromJson(Map json) {
     return getAttestationChallenge_result(
-      success: GetAttestationChallengeResponse.fromJson(json["success"]),
+      success: GetAttestationChallengeResponse.fromJson(json["success"] ?? {}),
       deviceAttestationException: json["deviceAttestationException"],
     );
   }
@@ -39362,7 +39361,7 @@ class getAuthRSAKey_args {
   factory getAuthRSAKey_args.fromJson(Map json) {
     return getAuthRSAKey_args(
       authSessionId: json["authSessionId"],
-      identityProvider: IdentityProvider.fromValue(json["identityProvider"]),
+      identityProvider: IdentityProvider.fromValue(json["identityProvider"] ?? 0),
     );
   }
 }
@@ -39378,8 +39377,8 @@ class getAuthRSAKey_result {
 
   factory getAuthRSAKey_result.fromJson(Map json) {
     return getAuthRSAKey_result(
-      success: RSAKey.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: RSAKey.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39393,7 +39392,7 @@ class getAuthorsLatestProducts_args {
 
   factory getAuthorsLatestProducts_args.fromJson(Map json) {
     return getAuthorsLatestProducts_args(
-      latestProductsByAuthorRequest: LatestProductsByAuthorRequest.fromJson(json["latestProductsByAuthorRequest"]),
+      latestProductsByAuthorRequest: LatestProductsByAuthorRequest.fromJson(json["latestProductsByAuthorRequest"] ?? {}),
     );
   }
 }
@@ -39409,8 +39408,8 @@ class getAuthorsLatestProducts_result {
 
   factory getAuthorsLatestProducts_result.fromJson(Map json) {
     return getAuthorsLatestProducts_result(
-      success: LatestProductsByAuthorResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: LatestProductsByAuthorResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39424,7 +39423,7 @@ class getAutoSuggestionShowcase_args {
 
   factory getAutoSuggestionShowcase_args.fromJson(Map json) {
     return getAutoSuggestionShowcase_args(
-      autoSuggestionShowcaseRequest: AutoSuggestionShowcaseRequest.fromJson(json["autoSuggestionShowcaseRequest"]),
+      autoSuggestionShowcaseRequest: AutoSuggestionShowcaseRequest.fromJson(json["autoSuggestionShowcaseRequest"] ?? {}),
     );
   }
 }
@@ -39440,8 +39439,8 @@ class getAutoSuggestionShowcase_result {
 
   factory getAutoSuggestionShowcase_result.fromJson(Map json) {
     return getAutoSuggestionShowcase_result(
-      success: AutoSuggestionShowcaseResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: AutoSuggestionShowcaseResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39471,8 +39470,8 @@ class getBalanceSummaryV2_result {
 
   factory getBalanceSummaryV2_result.fromJson(Map json) {
     return getBalanceSummaryV2_result(
-      success: GetBalanceSummaryResponseV2.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetBalanceSummaryResponseV2.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39502,8 +39501,8 @@ class getBalanceSummaryV4WithPayV3_result {
 
   factory getBalanceSummaryV4WithPayV3_result.fromJson(Map json) {
     return getBalanceSummaryV4WithPayV3_result(
-      success: GetBalanceSummaryV4WithPayV3Response.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetBalanceSummaryV4WithPayV3Response.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39533,8 +39532,8 @@ class getBalance_result {
 
   factory getBalance_result.fromJson(Map json) {
     return getBalance_result(
-      success: GetBalanceResponse.fromJson(json["success"]),
-      e: PointException.fromJson(json["e"]),
+      success: GetBalanceResponse.fromJson(json["success"] ?? {}),
+      e: PointException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39573,10 +39572,10 @@ class getBankBranches_result {
 
   factory getBankBranches_result.fromJson(Map json) {
     return getBankBranches_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => BankBranchInfo.fromJson(e))
           .toList(),
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39590,7 +39589,7 @@ class getBanners_args {
 
   factory getBanners_args.fromJson(Map json) {
     return getBanners_args(
-      request: BannerRequest.fromJson(json["request"]),
+      request: BannerRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39604,7 +39603,7 @@ class getBanners_result {
 
   factory getBanners_result.fromJson(Map json) {
     return getBanners_result(
-      success: BannerResponse.fromJson(json["success"]),
+      success: BannerResponse.fromJson(json["success"] ?? {}),
     );
   }
 }
@@ -39634,7 +39633,7 @@ class getBirthdayEffect_result {
 
   factory getBirthdayEffect_result.fromJson(Map json) {
     return getBirthdayEffect_result(
-      success: GetBirthdayEffectResponse.fromJson(json["success"]),
+      success: GetBirthdayEffectResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -39649,7 +39648,7 @@ class getBleDevice_args {
 
   factory getBleDevice_args.fromJson(Map json) {
     return getBleDevice_args(
-      request: GetBleDeviceRequest.fromJson(json["request"]),
+      request: GetBleDeviceRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39665,8 +39664,8 @@ class getBleDevice_result {
 
   factory getBleDevice_result.fromJson(Map json) {
     return getBleDevice_result(
-      success: ThingsDevice.fromJson(json["success"]),
-      e: ThingsException.fromJson(json["e"]),
+      success: ThingsDevice.fromJson(json["success"] ?? {}),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39682,10 +39681,10 @@ class getBleProducts_result {
 
   factory getBleProducts_result.fromJson(Map json) {
     return getBleProducts_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => BleProduct.fromJson(e))
           .toList(),
-      e: ThingsException.fromJson(json["e"]),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39699,7 +39698,7 @@ class getBlockedContactIds_args {
 
   factory getBlockedContactIds_args.fromJson(Map json) {
     return getBlockedContactIds_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -39715,8 +39714,8 @@ class getBlockedContactIds_result {
 
   factory getBlockedContactIds_result.fromJson(Map json) {
     return getBlockedContactIds_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39730,7 +39729,7 @@ class getBlockedRecommendationIds_args {
 
   factory getBlockedRecommendationIds_args.fromJson(Map json) {
     return getBlockedRecommendationIds_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -39746,8 +39745,8 @@ class getBlockedRecommendationIds_result {
 
   factory getBlockedRecommendationIds_result.fromJson(Map json) {
     return getBlockedRecommendationIds_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39778,7 +39777,7 @@ class getBrowsingHistory_result {
   factory getBrowsingHistory_result.fromJson(Map json) {
     return getBrowsingHistory_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39792,7 +39791,7 @@ class getBuddyChatBarV2_args {
 
   factory getBuddyChatBarV2_args.fromJson(Map json) {
     return getBuddyChatBarV2_args(
-      request: GetBuddyChatBarRequest.fromJson(json["request"]),
+      request: GetBuddyChatBarRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39808,8 +39807,8 @@ class getBuddyChatBarV2_result {
 
   factory getBuddyChatBarV2_result.fromJson(Map json) {
     return getBuddyChatBarV2_result(
-      success: BuddyChatBar.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BuddyChatBar.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39826,7 +39825,7 @@ class getBuddyDetailWithPersonal_args {
   factory getBuddyDetailWithPersonal_args.fromJson(Map json) {
     return getBuddyDetailWithPersonal_args(
       buddyMid: json["buddyMid"],
-      attributeSet: List.from(json["attributeSet"])
+      attributeSet: List.from(json["attributeSet"] ?? [])
           .map((e) => Pb1_D0.fromValue(e))
           .toList(),
     );
@@ -39844,8 +39843,8 @@ class getBuddyDetailWithPersonal_result {
 
   factory getBuddyDetailWithPersonal_result.fromJson(Map json) {
     return getBuddyDetailWithPersonal_result(
-      success: BuddyDetailWithPersonal.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BuddyDetailWithPersonal.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39875,8 +39874,8 @@ class getBuddyDetail_result {
 
   factory getBuddyDetail_result.fromJson(Map json) {
     return getBuddyDetail_result(
-      success: BuddyDetail.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BuddyDetail.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39890,7 +39889,7 @@ class getBuddyLive_args {
 
   factory getBuddyLive_args.fromJson(Map json) {
     return getBuddyLive_args(
-      request: GetBuddyLiveRequest.fromJson(json["request"]),
+      request: GetBuddyLiveRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39906,8 +39905,8 @@ class getBuddyLive_result {
 
   factory getBuddyLive_result.fromJson(Map json) {
     return getBuddyLive_result(
-      success: GetBuddyLiveResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetBuddyLiveResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39937,8 +39936,8 @@ class getBuddyOnAir_result {
 
   factory getBuddyOnAir_result.fromJson(Map json) {
     return getBuddyOnAir_result(
-      success: BuddyOnAir.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BuddyOnAir.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39952,7 +39951,7 @@ class getBuddyStatusBarV2_args {
 
   factory getBuddyStatusBarV2_args.fromJson(Map json) {
     return getBuddyStatusBarV2_args(
-      request: GetBuddyStatusBarV2Request.fromJson(json["request"]),
+      request: GetBuddyStatusBarV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39968,8 +39967,8 @@ class getBuddyStatusBarV2_result {
 
   factory getBuddyStatusBarV2_result.fromJson(Map json) {
     return getBuddyStatusBarV2_result(
-      success: BuddyStatusBar.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BuddyStatusBar.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -39983,7 +39982,7 @@ class getCallStatus_args {
 
   factory getCallStatus_args.fromJson(Map json) {
     return getCallStatus_args(
-      request: GetCallStatusRequest.fromJson(json["request"]),
+      request: GetCallStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -39999,8 +39998,8 @@ class getCallStatus_result {
 
   factory getCallStatus_result.fromJson(Map json) {
     return getCallStatus_result(
-      success: GetCallStatusResponse.fromJson(json["success"]),
-      e: OaChatException.fromJson(json["e"]),
+      success: GetCallStatusResponse.fromJson(json["success"] ?? {}),
+      e: OaChatException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40014,7 +40013,7 @@ class getCampaign_args {
 
   factory getCampaign_args.fromJson(Map json) {
     return getCampaign_args(
-      request: GetCampaignRequest.fromJson(json["request"]),
+      request: GetCampaignRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40030,8 +40029,8 @@ class getCampaign_result {
 
   factory getCampaign_result.fromJson(Map json) {
     return getCampaign_result(
-      success: GetCampaignResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetCampaignResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40045,7 +40044,7 @@ class getChallengeForPaakAuth_args {
 
   factory getChallengeForPaakAuth_args.fromJson(Map json) {
     return getChallengeForPaakAuth_args(
-      request: GetChallengeForPaakAuthRequest.fromJson(json["request"]),
+      request: GetChallengeForPaakAuthRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40063,9 +40062,9 @@ class getChallengeForPaakAuth_result {
 
   factory getChallengeForPaakAuth_result.fromJson(Map json) {
     return getChallengeForPaakAuth_result(
-      success: GetChallengeForPaakAuthResponse.fromJson(json["success"]),
-      cpae: ChannelPaakAuthnException.fromJson(json["cpae"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      success: GetChallengeForPaakAuthResponse.fromJson(json["success"] ?? {}),
+      cpae: ChannelPaakAuthnException.fromJson(json["cpae"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -40079,7 +40078,7 @@ class getChallengeForPrimaryReg_args {
 
   factory getChallengeForPrimaryReg_args.fromJson(Map json) {
     return getChallengeForPrimaryReg_args(
-      request: GetChallengeForPrimaryRegRequest.fromJson(json["request"]),
+      request: GetChallengeForPrimaryRegRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40095,8 +40094,8 @@ class getChallengeForPrimaryReg_result {
 
   factory getChallengeForPrimaryReg_result.fromJson(Map json) {
     return getChallengeForPrimaryReg_result(
-      success: GetChallengeForPrimaryRegResponse.fromJson(json["success"]),
-      e: PwlessCredentialException.fromJson(json["e"]),
+      success: GetChallengeForPrimaryRegResponse.fromJson(json["success"] ?? {}),
+      e: PwlessCredentialException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40110,7 +40109,7 @@ class getChannelContext_args {
 
   factory getChannelContext_args.fromJson(Map json) {
     return getChannelContext_args(
-      request: GetChannelContextRequest.fromJson(json["request"]),
+      request: GetChannelContextRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40128,9 +40127,9 @@ class getChannelContext_result {
 
   factory getChannelContext_result.fromJson(Map json) {
     return getChannelContext_result(
-      success: GetChannelContextResponse.fromJson(json["success"]),
-      cpae: ChannelPaakAuthnException.fromJson(json["cpae"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      success: GetChannelContextResponse.fromJson(json["success"] ?? {}),
+      cpae: ChannelPaakAuthnException.fromJson(json["cpae"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -40163,8 +40162,8 @@ class getChannelInfo_result {
 
   factory getChannelInfo_result.fromJson(Map json) {
     return getChannelInfo_result(
-      success: ChannelInfo.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ChannelInfo.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40194,10 +40193,10 @@ class getChannelNotificationSettings_result {
 
   factory getChannelNotificationSettings_result.fromJson(Map json) {
     return getChannelNotificationSettings_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => ChannelNotificationSetting.fromJson(e))
           .toList(),
-      e: ChannelException.fromJson(json["e"]),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40213,8 +40212,8 @@ class getChannelSettings_result {
 
   factory getChannelSettings_result.fromJson(Map json) {
     return getChannelSettings_result(
-      success: ChannelSettings.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ChannelSettings.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40228,7 +40227,7 @@ class getChatEffectMetaList_args {
 
   factory getChatEffectMetaList_args.fromJson(Map json) {
     return getChatEffectMetaList_args(
-      categories: List.from(json["categories"])
+      categories: List.from(json["categories"] ?? [])
           .map((e) => Pb1_Q2.fromValue(e))
           .toList(),
     );
@@ -40246,10 +40245,10 @@ class getChatEffectMetaList_result {
 
   factory getChatEffectMetaList_result.fromJson(Map json) {
     return getChatEffectMetaList_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => ChatEffectMeta.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40265,8 +40264,8 @@ class getChatRoomAnnouncementsBulk_args {
 
   factory getChatRoomAnnouncementsBulk_args.fromJson(Map json) {
     return getChatRoomAnnouncementsBulk_args(
-      chatRoomMids: List.from(json["chatRoomMids"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      chatRoomMids: List.from(json["chatRoomMids"] ?? []),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -40282,8 +40281,8 @@ class getChatRoomAnnouncementsBulk_result {
 
   factory getChatRoomAnnouncementsBulk_result.fromJson(Map json) {
     return getChatRoomAnnouncementsBulk_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40313,10 +40312,10 @@ class getChatRoomAnnouncements_result {
 
   factory getChatRoomAnnouncements_result.fromJson(Map json) {
     return getChatRoomAnnouncements_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => ChatRoomAnnouncement.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40332,8 +40331,8 @@ class getChatRoomBGMs_args {
 
   factory getChatRoomBGMs_args.fromJson(Map json) {
     return getChatRoomBGMs_args(
-      chatRoomMids: List.from(json["chatRoomMids"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      chatRoomMids: List.from(json["chatRoomMids"] ?? []),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -40349,8 +40348,8 @@ class getChatRoomBGMs_result {
 
   factory getChatRoomBGMs_result.fromJson(Map json) {
     return getChatRoomBGMs_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40364,7 +40363,7 @@ class getChatapp_args {
 
   factory getChatapp_args.fromJson(Map json) {
     return getChatapp_args(
-      request: GetChatappRequest.fromJson(json["request"]),
+      request: GetChatappRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40380,8 +40379,8 @@ class getChatapp_result {
 
   factory getChatapp_result.fromJson(Map json) {
     return getChatapp_result(
-      success: GetChatappResponse.fromJson(json["success"]),
-      e: ChatappException.fromJson(json["e"]),
+      success: GetChatappResponse.fromJson(json["success"] ?? {}),
+      e: ChatappException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40397,8 +40396,8 @@ class getChats_args {
 
   factory getChats_args.fromJson(Map json) {
     return getChats_args(
-      request: GetChatsRequest.fromJson(json["request"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      request: GetChatsRequest.fromJson(json["request"] ?? {}),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -40414,8 +40413,8 @@ class getChats_result {
 
   factory getChats_result.fromJson(Map json) {
     return getChats_result(
-      success: GetChatsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetChatsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40429,7 +40428,7 @@ class getCoinProducts_args {
 
   factory getCoinProducts_args.fromJson(Map json) {
     return getCoinProducts_args(
-      request: GetCoinProductsRequest.fromJson(json["request"]),
+      request: GetCoinProductsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40445,8 +40444,8 @@ class getCoinProducts_result {
 
   factory getCoinProducts_result.fromJson(Map json) {
     return getCoinProducts_result(
-      success: GetCoinProductsResponse.fromJson(json["success"]),
-      e: CoinException.fromJson(json["e"]),
+      success: GetCoinProductsResponse.fromJson(json["success"] ?? {}),
+      e: CoinException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40460,7 +40459,7 @@ class getCoinPurchaseHistory_args {
 
   factory getCoinPurchaseHistory_args.fromJson(Map json) {
     return getCoinPurchaseHistory_args(
-      request: GetCoinHistoryRequest.fromJson(json["request"]),
+      request: GetCoinHistoryRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40476,8 +40475,8 @@ class getCoinPurchaseHistory_result {
 
   factory getCoinPurchaseHistory_result.fromJson(Map json) {
     return getCoinPurchaseHistory_result(
-      success: GetCoinHistoryResponse.fromJson(json["success"]),
-      e: CoinException.fromJson(json["e"]),
+      success: GetCoinHistoryResponse.fromJson(json["success"] ?? {}),
+      e: CoinException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40491,7 +40490,7 @@ class getCoinUseAndRefundHistory_args {
 
   factory getCoinUseAndRefundHistory_args.fromJson(Map json) {
     return getCoinUseAndRefundHistory_args(
-      request: GetCoinHistoryRequest.fromJson(json["request"]),
+      request: GetCoinHistoryRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40507,14 +40506,14 @@ class getCoinUseAndRefundHistory_result {
 
   factory getCoinUseAndRefundHistory_result.fromJson(Map json) {
     return getCoinUseAndRefundHistory_result(
-      success: GetCoinHistoryResponse.fromJson(json["success"]),
-      e: CoinException.fromJson(json["e"]),
+      success: GetCoinHistoryResponse.fromJson(json["success"] ?? {}),
+      e: CoinException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class getCommonDomains_args {
-  final Int64 lastSynced;
+  final dynamic lastSynced;
 
   getCommonDomains_args({
     required this.lastSynced
@@ -40538,14 +40537,14 @@ class getCommonDomains_result {
 
   factory getCommonDomains_result.fromJson(Map json) {
     return getCommonDomains_result(
-      success: ChannelDomains.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ChannelDomains.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class getConfigurations_args {
-  final Int64 revision;
+  final dynamic revision;
   final String regionOfUsim;
   final String regionOfTelephone;
   final String regionOfLocale;
@@ -40568,7 +40567,7 @@ class getConfigurations_args {
       regionOfTelephone: json["regionOfTelephone"],
       regionOfLocale: json["regionOfLocale"],
       carrier: json["carrier"],
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -40584,8 +40583,8 @@ class getConfigurations_result {
 
   factory getConfigurations_result.fromJson(Map json) {
     return getConfigurations_result(
-      success: Configurations.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Configurations.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40599,7 +40598,7 @@ class getContactCalendarEvents_args {
 
   factory getContactCalendarEvents_args.fromJson(Map json) {
     return getContactCalendarEvents_args(
-      request: GetContactCalendarEventsRequest.fromJson(json["request"]),
+      request: GetContactCalendarEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40621,11 +40620,11 @@ class getContactCalendarEvents_result {
 
   factory getContactCalendarEvents_result.fromJson(Map json) {
     return getContactCalendarEvents_result(
-      success: GetContactCalendarEventsResponse.fromJson(json["success"]),
-      re: RejectedException.fromJson(json["re"]),
-      sfe: ServerFailureException.fromJson(json["sfe"]),
-      te: TalkException.fromJson(json["te"]),
-      ere: ExcessiveRequestItemException.fromJson(json["ere"]),
+      success: GetContactCalendarEventsResponse.fromJson(json["success"] ?? {}),
+      re: RejectedException.fromJson(json["re"] ?? {}),
+      sfe: ServerFailureException.fromJson(json["sfe"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
+      ere: ExcessiveRequestItemException.fromJson(json["ere"] ?? {}),
     );
   }
 }
@@ -40641,8 +40640,8 @@ class getContact_result {
 
   factory getContact_result.fromJson(Map json) {
     return getContact_result(
-      success: Contact.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Contact.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40656,7 +40655,7 @@ class getContactsV3_args {
 
   factory getContactsV3_args.fromJson(Map json) {
     return getContactsV3_args(
-      request: GetContactsV3Request.fromJson(json["request"]),
+      request: GetContactsV3Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40678,11 +40677,11 @@ class getContactsV3_result {
 
   factory getContactsV3_result.fromJson(Map json) {
     return getContactsV3_result(
-      success: GetContactsV3Response.fromJson(json["success"]),
-      be: RejectedException.fromJson(json["be"]),
-      ce: ServerFailureException.fromJson(json["ce"]),
-      te: TalkException.fromJson(json["te"]),
-      ere: ExcessiveRequestItemException.fromJson(json["ere"]),
+      success: GetContactsV3Response.fromJson(json["success"] ?? {}),
+      be: RejectedException.fromJson(json["be"] ?? {}),
+      ce: ServerFailureException.fromJson(json["ce"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
+      ere: ExcessiveRequestItemException.fromJson(json["ere"] ?? {}),
     );
   }
 }
@@ -40698,10 +40697,10 @@ class getContacts_result {
 
   factory getContacts_result.fromJson(Map json) {
     return getContacts_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Contact.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40715,7 +40714,7 @@ class getCountries_args {
 
   factory getCountries_args.fromJson(Map json) {
     return getCountries_args(
-      countryGroup: Pb1_EnumC13221w3.fromValue(json["countryGroup"]),
+      countryGroup: Pb1_EnumC13221w3.fromValue(json["countryGroup"] ?? 0),
     );
   }
 }
@@ -40731,8 +40730,8 @@ class getCountries_result {
 
   factory getCountries_result.fromJson(Map json) {
     return getCountries_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40746,7 +40745,7 @@ class I80_C26376L {
 
   factory I80_C26376L.fromJson(Map json) {
     return I80_C26376L(
-      request: I80_C26413m.fromJson(json["request"]),
+      request: I80_C26413m.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40763,7 +40762,7 @@ class getCountryInfo_args {
   factory getCountryInfo_args.fromJson(Map json) {
     return getCountryInfo_args(
       authSessionId: json["authSessionId"],
-      simCard: SimCard.fromJson(json["simCard"]),
+      simCard: SimCard.fromJson(json["simCard"] ?? {}),
     );
   }
 }
@@ -40779,8 +40778,8 @@ class getCountryInfo_result {
 
   factory getCountryInfo_result.fromJson(Map json) {
     return getCountryInfo_result(
-      success: GetCountryInfoResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetCountryInfoResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40796,8 +40795,8 @@ class I80_C26377M {
 
   factory I80_C26377M.fromJson(Map json) {
     return I80_C26377M(
-      success: I80_C26414n.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26414n.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40814,7 +40813,7 @@ class getCountryWithRequestIp_result {
   factory getCountryWithRequestIp_result.fromJson(Map json) {
     return getCountryWithRequestIp_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40844,8 +40843,8 @@ class getDataRetention_result {
 
   factory getDataRetention_result.fromJson(Map json) {
     return getDataRetention_result(
-      success: GetPremiumDataRetentionResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: GetPremiumDataRetentionResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40859,7 +40858,7 @@ class getDestinationUrl_args {
 
   factory getDestinationUrl_args.fromJson(Map json) {
     return getDestinationUrl_args(
-      request: DestinationLIFFRequest.fromJson(json["request"]),
+      request: DestinationLIFFRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -40875,8 +40874,8 @@ class getDestinationUrl_result {
 
   factory getDestinationUrl_result.fromJson(Map json) {
     return getDestinationUrl_result(
-      success: DestinationLIFFResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
+      success: DestinationLIFFResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
     );
   }
 }
@@ -40906,7 +40905,7 @@ class getDisasterCases_result {
 
   factory getDisasterCases_result.fromJson(Map json) {
     return getDisasterCases_result(
-      success: GetDisasterCasesResponse.fromJson(json["success"]),
+      success: GetDisasterCasesResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -40943,8 +40942,8 @@ class getE2EEGroupSharedKey_result {
 
   factory getE2EEGroupSharedKey_result.fromJson(Map json) {
     return getE2EEGroupSharedKey_result(
-      success: Pb1_U3.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_U3.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -40974,8 +40973,8 @@ class getE2EEKeyBackupCertificates_result {
 
   factory getE2EEKeyBackupCertificates_result.fromJson(Map json) {
     return getE2EEKeyBackupCertificates_result(
-      success: GetE2EEKeyBackupCertificatesResponse.fromJson(json["success"]),
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      success: GetE2EEKeyBackupCertificatesResponse.fromJson(json["success"] ?? {}),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41005,8 +41004,8 @@ class getE2EEKeyBackupInfo_result {
 
   factory getE2EEKeyBackupInfo_result.fromJson(Map json) {
     return getE2EEKeyBackupInfo_result(
-      success: GetE2EEKeyBackupInfoResponse.fromJson(json["success"]),
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      success: GetE2EEKeyBackupInfoResponse.fromJson(json["success"] ?? {}),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41042,8 +41041,8 @@ class getE2EEPublicKey_result {
 
   factory getE2EEPublicKey_result.fromJson(Map json) {
     return getE2EEPublicKey_result(
-      success: Pb1_C13097n4.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_C13097n4.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41059,10 +41058,10 @@ class getE2EEPublicKeys_result {
 
   factory getE2EEPublicKeys_result.fromJson(Map json) {
     return getE2EEPublicKeys_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Pb1_C13097n4.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41078,8 +41077,8 @@ class getEncryptedIdentityV3_result {
 
   factory getEncryptedIdentityV3_result.fromJson(Map json) {
     return getEncryptedIdentityV3_result(
-      success: Pb1_C12916a5.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_C12916a5.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41093,7 +41092,7 @@ class getExchangeKey_args {
 
   factory getExchangeKey_args.fromJson(Map json) {
     return getExchangeKey_args(
-      request: GetExchangeKeyRequest.fromJson(json["request"]),
+      request: GetExchangeKeyRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41109,8 +41108,8 @@ class getExchangeKey_result {
 
   factory getExchangeKey_result.fromJson(Map json) {
     return getExchangeKey_result(
-      success: GetExchangeKeyResponse.fromJson(json["success"]),
-      e: SecondaryPwlessLoginException.fromJson(json["e"]),
+      success: GetExchangeKeyResponse.fromJson(json["success"] ?? {}),
+      e: SecondaryPwlessLoginException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41124,7 +41123,7 @@ class getExtendedProfile_args {
 
   factory getExtendedProfile_args.fromJson(Map json) {
     return getExtendedProfile_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -41140,8 +41139,8 @@ class getExtendedProfile_result {
 
   factory getExtendedProfile_result.fromJson(Map json) {
     return getExtendedProfile_result(
-      success: ExtendedProfile.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: ExtendedProfile.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41155,7 +41154,7 @@ class getFollowBlacklist_args {
 
   factory getFollowBlacklist_args.fromJson(Map json) {
     return getFollowBlacklist_args(
-      getFollowBlacklistRequest: GetFollowBlacklistRequest.fromJson(json["getFollowBlacklistRequest"]),
+      getFollowBlacklistRequest: GetFollowBlacklistRequest.fromJson(json["getFollowBlacklistRequest"] ?? {}),
     );
   }
 }
@@ -41171,8 +41170,8 @@ class getFollowBlacklist_result {
 
   factory getFollowBlacklist_result.fromJson(Map json) {
     return getFollowBlacklist_result(
-      success: GetFollowBlacklistResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetFollowBlacklistResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41186,7 +41185,7 @@ class getFollowers_args {
 
   factory getFollowers_args.fromJson(Map json) {
     return getFollowers_args(
-      getFollowersRequest: GetFollowersRequest.fromJson(json["getFollowersRequest"]),
+      getFollowersRequest: GetFollowersRequest.fromJson(json["getFollowersRequest"] ?? {}),
     );
   }
 }
@@ -41202,8 +41201,8 @@ class getFollowers_result {
 
   factory getFollowers_result.fromJson(Map json) {
     return getFollowers_result(
-      success: GetFollowersResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetFollowersResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41217,7 +41216,7 @@ class getFollowings_args {
 
   factory getFollowings_args.fromJson(Map json) {
     return getFollowings_args(
-      getFollowingsRequest: GetFollowingsRequest.fromJson(json["getFollowingsRequest"]),
+      getFollowingsRequest: GetFollowingsRequest.fromJson(json["getFollowingsRequest"] ?? {}),
     );
   }
 }
@@ -41233,8 +41232,8 @@ class getFollowings_result {
 
   factory getFollowings_result.fromJson(Map json) {
     return getFollowings_result(
-      success: GetFollowingsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetFollowingsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41248,7 +41247,7 @@ class getFontMetas_args {
 
   factory getFontMetas_args.fromJson(Map json) {
     return getFontMetas_args(
-      request: GetFontMetasRequest.fromJson(json["request"]),
+      request: GetFontMetasRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41264,8 +41263,8 @@ class getFontMetas_result {
 
   factory getFontMetas_result.fromJson(Map json) {
     return getFontMetas_result(
-      success: GetFontMetasResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetFontMetasResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41279,7 +41278,7 @@ class getFriendDetails_args {
 
   factory getFriendDetails_args.fromJson(Map json) {
     return getFriendDetails_args(
-      request: GetFriendDetailsRequest.fromJson(json["request"]),
+      request: GetFriendDetailsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41301,18 +41300,18 @@ class getFriendDetails_result {
 
   factory getFriendDetails_result.fromJson(Map json) {
     return getFriendDetails_result(
-      success: GetFriendDetailsResponse.fromJson(json["success"]),
-      re: RejectedException.fromJson(json["re"]),
-      sfe: ServerFailureException.fromJson(json["sfe"]),
-      te: TalkException.fromJson(json["te"]),
-      ere: ExcessiveRequestItemException.fromJson(json["ere"]),
+      success: GetFriendDetailsResponse.fromJson(json["success"] ?? {}),
+      re: RejectedException.fromJson(json["re"] ?? {}),
+      sfe: ServerFailureException.fromJson(json["sfe"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
+      ere: ExcessiveRequestItemException.fromJson(json["ere"] ?? {}),
     );
   }
 }
 
 class getFriendRequests_args {
   final Pb1_F4 direction;
-  final Int64 lastSeenSeqId;
+  final dynamic lastSeenSeqId;
 
   getFriendRequests_args({
     required this.direction,
@@ -41321,7 +41320,7 @@ class getFriendRequests_args {
 
   factory getFriendRequests_args.fromJson(Map json) {
     return getFriendRequests_args(
-      direction: Pb1_F4.fromValue(json["direction"]),
+      direction: Pb1_F4.fromValue(json["direction"] ?? 0),
       lastSeenSeqId: json["lastSeenSeqId"],
     );
   }
@@ -41338,10 +41337,10 @@ class getFriendRequests_result {
 
   factory getFriendRequests_result.fromJson(Map json) {
     return getFriendRequests_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => FriendRequest.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41355,7 +41354,7 @@ class getGnbBadgeStatus_args {
 
   factory getGnbBadgeStatus_args.fromJson(Map json) {
     return getGnbBadgeStatus_args(
-      request: GetGnbBadgeStatusRequest.fromJson(json["request"]),
+      request: GetGnbBadgeStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41371,8 +41370,8 @@ class getGnbBadgeStatus_result {
 
   factory getGnbBadgeStatus_result.fromJson(Map json) {
     return getGnbBadgeStatus_result(
-      success: GetGnbBadgeStatusResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetGnbBadgeStatusResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41386,7 +41385,7 @@ class getGroupCallUrlInfo_args {
 
   factory getGroupCallUrlInfo_args.fromJson(Map json) {
     return getGroupCallUrlInfo_args(
-      request: GetGroupCallUrlInfoRequest.fromJson(json["request"]),
+      request: GetGroupCallUrlInfoRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41402,8 +41401,8 @@ class getGroupCallUrlInfo_result {
 
   factory getGroupCallUrlInfo_result.fromJson(Map json) {
     return getGroupCallUrlInfo_result(
-      success: GetGroupCallUrlInfoResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetGroupCallUrlInfoResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41433,8 +41432,8 @@ class getGroupCallUrls_result {
 
   factory getGroupCallUrls_result.fromJson(Map json) {
     return getGroupCallUrls_result(
-      success: GetGroupCallUrlsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetGroupCallUrlsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41464,8 +41463,8 @@ class getGroupCall_result {
 
   factory getGroupCall_result.fromJson(Map json) {
     return getGroupCall_result(
-      success: GroupCall.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GroupCall.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41479,7 +41478,7 @@ class getHomeFlexContent_args {
 
   factory getHomeFlexContent_args.fromJson(Map json) {
     return getHomeFlexContent_args(
-      request: GetHomeFlexContentRequest.fromJson(json["request"]),
+      request: GetHomeFlexContentRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41495,7 +41494,7 @@ class getHomeFlexContent_result {
 
   factory getHomeFlexContent_result.fromJson(Map json) {
     return getHomeFlexContent_result(
-      success: GetHomeFlexContentResponse.fromJson(json["success"]),
+      success: GetHomeFlexContentResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -41526,7 +41525,7 @@ class getHomeServiceList_result {
 
   factory getHomeServiceList_result.fromJson(Map json) {
     return getHomeServiceList_result(
-      success: GetHomeServiceListResponse.fromJson(json["success"]),
+      success: GetHomeServiceListResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -41541,7 +41540,7 @@ class getHomeServices_args {
 
   factory getHomeServices_args.fromJson(Map json) {
     return getHomeServices_args(
-      request: GetHomeServicesRequest.fromJson(json["request"]),
+      request: GetHomeServicesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41557,7 +41556,7 @@ class getHomeServices_result {
 
   factory getHomeServices_result.fromJson(Map json) {
     return getHomeServices_result(
-      success: GetHomeServicesResponse.fromJson(json["success"]),
+      success: GetHomeServicesResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -41588,8 +41587,8 @@ class getIncentiveStatus_result {
 
   factory getIncentiveStatus_result.fromJson(Map json) {
     return getIncentiveStatus_result(
-      success: GetIncentiveStatusResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: GetIncentiveStatusResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41606,7 +41605,7 @@ class getInstantNews_args {
   factory getInstantNews_args.fromJson(Map json) {
     return getInstantNews_args(
       region: json["region"],
-      location: Location.fromJson(json["location"]),
+      location: Location.fromJson(json["location"] ?? {}),
     );
   }
 }
@@ -41622,10 +41621,10 @@ class getInstantNews_result {
 
   factory getInstantNews_result.fromJson(Map json) {
     return getInstantNews_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => InstantNews.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41639,7 +41638,7 @@ class getJoinedMembershipByBotMid_args {
 
   factory getJoinedMembershipByBotMid_args.fromJson(Map json) {
     return getJoinedMembershipByBotMid_args(
-      request: GetJoinedMembershipByBotMidRequest.fromJson(json["request"]),
+      request: GetJoinedMembershipByBotMidRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41655,8 +41654,8 @@ class getJoinedMembershipByBotMid_result {
 
   factory getJoinedMembershipByBotMid_result.fromJson(Map json) {
     return getJoinedMembershipByBotMid_result(
-      success: MemberInfo.fromJson(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: MemberInfo.fromJson(json["success"] ?? {}),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41670,7 +41669,7 @@ class getJoinedMembership_args {
 
   factory getJoinedMembership_args.fromJson(Map json) {
     return getJoinedMembership_args(
-      request: GetJoinedMembershipRequest.fromJson(json["request"]),
+      request: GetJoinedMembershipRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41686,8 +41685,8 @@ class getJoinedMembership_result {
 
   factory getJoinedMembership_result.fromJson(Map json) {
     return getJoinedMembership_result(
-      success: MemberInfo.fromJson(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: MemberInfo.fromJson(json["success"] ?? {}),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41703,8 +41702,8 @@ class getJoinedMemberships_result {
 
   factory getJoinedMemberships_result.fromJson(Map json) {
     return getJoinedMemberships_result(
-      success: JoinedMemberships.fromJson(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: JoinedMemberships.fromJson(json["success"] ?? {}),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41734,8 +41733,8 @@ class getKeyBackupCertificatesV2_result {
 
   factory getKeyBackupCertificatesV2_result.fromJson(Map json) {
     return getKeyBackupCertificatesV2_result(
-      success: GetKeyBackupCertificatesV2Response.fromJson(json["success"]),
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      success: GetKeyBackupCertificatesV2Response.fromJson(json["success"] ?? {}),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41765,8 +41764,8 @@ class getLFLSuggestion_result {
 
   factory getLFLSuggestion_result.fromJson(Map json) {
     return getLFLSuggestion_result(
-      success: GetLFLSuggestionResponse.fromJson(json["success"]),
-      e: LFLPremiumException.fromJson(json["e"]),
+      success: GetLFLSuggestionResponse.fromJson(json["success"] ?? {}),
+      e: LFLPremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41799,8 +41798,8 @@ class getLastE2EEGroupSharedKey_result {
 
   factory getLastE2EEGroupSharedKey_result.fromJson(Map json) {
     return getLastE2EEGroupSharedKey_result(
-      success: Pb1_U3.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_U3.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41830,14 +41829,14 @@ class getLastE2EEPublicKeys_result {
 
   factory getLastE2EEPublicKeys_result.fromJson(Map json) {
     return getLastE2EEPublicKeys_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class getLastOpRevision_result {
-  final Int64 success;
+  final dynamic success;
   final TalkException e;
 
   getLastOpRevision_result({
@@ -41848,7 +41847,7 @@ class getLastOpRevision_result {
   factory getLastOpRevision_result.fromJson(Map json) {
     return getLastOpRevision_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41862,7 +41861,7 @@ class getLiffViewWithoutUserContext_args {
 
   factory getLiffViewWithoutUserContext_args.fromJson(Map json) {
     return getLiffViewWithoutUserContext_args(
-      request: LiffViewWithoutUserContextRequest.fromJson(json["request"]),
+      request: LiffViewWithoutUserContextRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41880,9 +41879,9 @@ class getLiffViewWithoutUserContext_result {
 
   factory getLiffViewWithoutUserContext_result.fromJson(Map json) {
     return getLiffViewWithoutUserContext_result(
-      success: LiffViewResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      success: LiffViewResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -41896,7 +41895,7 @@ class getLineCardIssueForm_args {
 
   factory getLineCardIssueForm_args.fromJson(Map json) {
     return getLineCardIssueForm_args(
-      resolutionType: r80_EnumC34372l.fromValue(json["resolutionType"]),
+      resolutionType: r80_EnumC34372l.fromValue(json["resolutionType"] ?? 0),
     );
   }
 }
@@ -41912,8 +41911,8 @@ class getLineCardIssueForm_result {
 
   factory getLineCardIssueForm_result.fromJson(Map json) {
     return getLineCardIssueForm_result(
-      success: PaymentLineCardIssueForm.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: PaymentLineCardIssueForm.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41929,10 +41928,10 @@ class getLinkedDevices_result {
 
   factory getLinkedDevices_result.fromJson(Map json) {
     return getLinkedDevices_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => UserDevice.fromJson(e))
           .toList(),
-      e: ThingsException.fromJson(json["e"]),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41946,7 +41945,7 @@ class getLoginActorContext_args {
 
   factory getLoginActorContext_args.fromJson(Map json) {
     return getLoginActorContext_args(
-      request: GetLoginActorContextRequest.fromJson(json["request"]),
+      request: GetLoginActorContextRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41962,8 +41961,8 @@ class getLoginActorContext_result {
 
   factory getLoginActorContext_result.fromJson(Map json) {
     return getLoginActorContext_result(
-      success: GetLoginActorContextResponse.fromJson(json["success"]),
-      e: SecondaryPwlessLoginException.fromJson(json["e"]),
+      success: GetLoginActorContextResponse.fromJson(json["success"] ?? {}),
+      e: SecondaryPwlessLoginException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -41977,7 +41976,7 @@ class getMappedProfileIds_args {
 
   factory getMappedProfileIds_args.fromJson(Map json) {
     return getMappedProfileIds_args(
-      request: GetMappedProfileIdsRequest.fromJson(json["request"]),
+      request: GetMappedProfileIdsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -41993,8 +41992,8 @@ class getMappedProfileIds_result {
 
   factory getMappedProfileIds_result.fromJson(Map json) {
     return getMappedProfileIds_result(
-      success: GetMappedProfileIdsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetMappedProfileIdsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42008,7 +42007,7 @@ class I80_C26378N {
 
   factory I80_C26378N.fromJson(Map json) {
     return I80_C26378N(
-      request: I80_C26415o.fromJson(json["request"]),
+      request: I80_C26415o.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42025,7 +42024,7 @@ class getMaskedEmail_args {
   factory getMaskedEmail_args.fromJson(Map json) {
     return getMaskedEmail_args(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -42041,8 +42040,8 @@ class getMaskedEmail_result {
 
   factory getMaskedEmail_result.fromJson(Map json) {
     return getMaskedEmail_result(
-      success: GetMaskedEmailResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetMaskedEmailResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42058,8 +42057,8 @@ class I80_C26379O {
 
   factory I80_C26379O.fromJson(Map json) {
     return I80_C26379O(
-      success: I80_C26416p.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26416p.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42075,8 +42074,8 @@ class getMessageBoxes_args {
 
   factory getMessageBoxes_args.fromJson(Map json) {
     return getMessageBoxes_args(
-      messageBoxListRequest: MessageBoxListRequest.fromJson(json["messageBoxListRequest"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      messageBoxListRequest: MessageBoxListRequest.fromJson(json["messageBoxListRequest"] ?? {}),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -42092,8 +42091,8 @@ class getMessageBoxes_result {
 
   factory getMessageBoxes_result.fromJson(Map json) {
     return getMessageBoxes_result(
-      success: MessageBoxList.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: MessageBoxList.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42109,8 +42108,8 @@ class getMessageReadRange_args {
 
   factory getMessageReadRange_args.fromJson(Map json) {
     return getMessageReadRange_args(
-      chatIds: List.from(json["chatIds"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      chatIds: List.from(json["chatIds"] ?? []),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -42126,10 +42125,10 @@ class getMessageReadRange_result {
 
   factory getMessageReadRange_result.fromJson(Map json) {
     return getMessageReadRange_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => TMessageReadRange.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42143,7 +42142,7 @@ class getModuleLayoutV4_args {
 
   factory getModuleLayoutV4_args.fromJson(Map json) {
     return getModuleLayoutV4_args(
-      request: GetModuleLayoutV4Request.fromJson(json["request"]),
+      request: GetModuleLayoutV4Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42159,8 +42158,8 @@ class getModuleLayoutV4_result {
 
   factory getModuleLayoutV4_result.fromJson(Map json) {
     return getModuleLayoutV4_result(
-      success: NZ0_D.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_D.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42174,7 +42173,7 @@ class getModuleWithStatus_args {
 
   factory getModuleWithStatus_args.fromJson(Map json) {
     return getModuleWithStatus_args(
-      request: NZ0_G.fromJson(json["request"]),
+      request: NZ0_G.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42190,8 +42189,8 @@ class getModuleWithStatus_result {
 
   factory getModuleWithStatus_result.fromJson(Map json) {
     return getModuleWithStatus_result(
-      success: NZ0_H.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_H.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42205,7 +42204,7 @@ class getModule_args {
 
   factory getModule_args.fromJson(Map json) {
     return getModule_args(
-      request: NZ0_E.fromJson(json["request"]),
+      request: NZ0_E.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42221,8 +42220,8 @@ class getModule_result {
 
   factory getModule_result.fromJson(Map json) {
     return getModule_result(
-      success: NZ0_F.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_F.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42236,7 +42235,7 @@ class getModulesV2_args {
 
   factory getModulesV2_args.fromJson(Map json) {
     return getModulesV2_args(
-      request: GetModulesRequestV2.fromJson(json["request"]),
+      request: GetModulesRequestV2.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42252,8 +42251,8 @@ class getModulesV2_result {
 
   factory getModulesV2_result.fromJson(Map json) {
     return getModulesV2_result(
-      success: NZ0_K.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_K.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42267,7 +42266,7 @@ class getModulesV3_args {
 
   factory getModulesV3_args.fromJson(Map json) {
     return getModulesV3_args(
-      request: GetModulesRequestV3.fromJson(json["request"]),
+      request: GetModulesRequestV3.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42283,8 +42282,8 @@ class getModulesV3_result {
 
   factory getModulesV3_result.fromJson(Map json) {
     return getModulesV3_result(
-      success: NZ0_K.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_K.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42298,7 +42297,7 @@ class getModulesV4WithStatus_args {
 
   factory getModulesV4WithStatus_args.fromJson(Map json) {
     return getModulesV4WithStatus_args(
-      request: GetModulesV4WithStatusRequest.fromJson(json["request"]),
+      request: GetModulesV4WithStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42314,8 +42313,8 @@ class getModulesV4WithStatus_result {
 
   factory getModulesV4WithStatus_result.fromJson(Map json) {
     return getModulesV4WithStatus_result(
-      success: NZ0_M.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: NZ0_M.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42346,7 +42345,7 @@ class getMusicSubscriptionStatus_result {
   factory getMusicSubscriptionStatus_result.fromJson(Map json) {
     return getMusicSubscriptionStatus_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42360,7 +42359,7 @@ class getMyAssetInformationV2_args {
 
   factory getMyAssetInformationV2_args.fromJson(Map json) {
     return getMyAssetInformationV2_args(
-      request: GetMyAssetInformationV2Request.fromJson(json["request"]),
+      request: GetMyAssetInformationV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42376,8 +42375,8 @@ class getMyAssetInformationV2_result {
 
   factory getMyAssetInformationV2_result.fromJson(Map json) {
     return getMyAssetInformationV2_result(
-      success: GetMyAssetInformationV2Response.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetMyAssetInformationV2Response.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42391,7 +42390,7 @@ class getMyChatapps_args {
 
   factory getMyChatapps_args.fromJson(Map json) {
     return getMyChatapps_args(
-      request: GetMyChatappsRequest.fromJson(json["request"]),
+      request: GetMyChatappsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42407,8 +42406,8 @@ class getMyChatapps_result {
 
   factory getMyChatapps_result.fromJson(Map json) {
     return getMyChatapps_result(
-      success: GetMyChatappsResponse.fromJson(json["success"]),
-      e: ChatappException.fromJson(json["e"]),
+      success: GetMyChatappsResponse.fromJson(json["success"] ?? {}),
+      e: ChatappException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42422,7 +42421,7 @@ class getMyDashboard_args {
 
   factory getMyDashboard_args.fromJson(Map json) {
     return getMyDashboard_args(
-      request: GetMyDashboardRequest.fromJson(json["request"]),
+      request: GetMyDashboardRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42438,8 +42437,8 @@ class getMyDashboard_result {
 
   factory getMyDashboard_result.fromJson(Map json) {
     return getMyDashboard_result(
-      success: GetMyDashboardResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetMyDashboardResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42459,7 +42458,7 @@ class getNewlyReleasedBuddyIds_args {
 }
 
 class getNewlyReleasedBuddyIds_result {
-  final Map<String, Int64> success;
+  final Map<String, dynamic> success;
   final TalkException e;
 
   getNewlyReleasedBuddyIds_result({
@@ -42469,8 +42468,8 @@ class getNewlyReleasedBuddyIds_result {
 
   factory getNewlyReleasedBuddyIds_result.fromJson(Map json) {
     return getNewlyReleasedBuddyIds_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42484,7 +42483,7 @@ class getNotificationSettings_args {
 
   factory getNotificationSettings_args.fromJson(Map json) {
     return getNotificationSettings_args(
-      request: GetNotificationSettingsRequest.fromJson(json["request"]),
+      request: GetNotificationSettingsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42500,8 +42499,8 @@ class getNotificationSettings_result {
 
   factory getNotificationSettings_result.fromJson(Map json) {
     return getNotificationSettings_result(
-      success: GetNotificationSettingsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetNotificationSettingsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42524,7 +42523,7 @@ class getOwnedProductSummaries_args {
       shopId: json["shopId"],
       offset: json["offset"],
       limit: json["limit"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
     );
   }
 }
@@ -42541,7 +42540,7 @@ class getOwnedProductSummaries_result {
   factory getOwnedProductSummaries_result.fromJson(Map json) {
     return getOwnedProductSummaries_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42555,7 +42554,7 @@ class getPasswordHashingParameter_args {
 
   factory getPasswordHashingParameter_args.fromJson(Map json) {
     return getPasswordHashingParameter_args(
-      request: GetPasswordHashingParametersRequest.fromJson(json["request"]),
+      request: GetPasswordHashingParametersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42573,9 +42572,9 @@ class getPasswordHashingParameter_result {
 
   factory getPasswordHashingParameter_result.fromJson(Map json) {
     return getPasswordHashingParameter_result(
-      success: GetPasswordHashingParametersResponse.fromJson(json["success"]),
-      pue: PasswordUpdateException.fromJson(json["pue"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      success: GetPasswordHashingParametersResponse.fromJson(json["success"] ?? {}),
+      pue: PasswordUpdateException.fromJson(json["pue"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -42589,7 +42588,7 @@ class getPasswordHashingParametersForPwdReg_args {
 
   factory getPasswordHashingParametersForPwdReg_args.fromJson(Map json) {
     return getPasswordHashingParametersForPwdReg_args(
-      request: GetPasswordHashingParametersForPwdRegRequest.fromJson(json["request"]),
+      request: GetPasswordHashingParametersForPwdRegRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42603,7 +42602,7 @@ class I80_C26380P {
 
   factory I80_C26380P.fromJson(Map json) {
     return I80_C26380P(
-      request: I80_C26417q.fromJson(json["request"]),
+      request: I80_C26417q.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42619,8 +42618,8 @@ class getPasswordHashingParametersForPwdReg_result {
 
   factory getPasswordHashingParametersForPwdReg_result.fromJson(Map json) {
     return getPasswordHashingParametersForPwdReg_result(
-      success: GetPasswordHashingParametersForPwdRegResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetPasswordHashingParametersForPwdRegResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42636,8 +42635,8 @@ class I80_C26381Q {
 
   factory I80_C26381Q.fromJson(Map json) {
     return I80_C26381Q(
-      success: I80_C26418r.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26418r.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42651,7 +42650,7 @@ class getPasswordHashingParametersForPwdVerif_args {
 
   factory getPasswordHashingParametersForPwdVerif_args.fromJson(Map json) {
     return getPasswordHashingParametersForPwdVerif_args(
-      request: GetPasswordHashingParametersForPwdVerifRequest.fromJson(json["request"]),
+      request: GetPasswordHashingParametersForPwdVerifRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42665,7 +42664,7 @@ class I80_C26382S {
 
   factory I80_C26382S.fromJson(Map json) {
     return I80_C26382S(
-      request: I80_C26419s.fromJson(json["request"]),
+      request: I80_C26419s.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42681,8 +42680,8 @@ class getPasswordHashingParametersForPwdVerif_result {
 
   factory getPasswordHashingParametersForPwdVerif_result.fromJson(Map json) {
     return getPasswordHashingParametersForPwdVerif_result(
-      success: GetPasswordHashingParametersForPwdVerifResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetPasswordHashingParametersForPwdVerifResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42698,8 +42697,8 @@ class I80_C26383T {
 
   factory I80_C26383T.fromJson(Map json) {
     return I80_C26383T(
-      success: I80_C26420t.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26420t.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42730,7 +42729,7 @@ class getPaymentUrlByKey_result {
   factory getPaymentUrlByKey_result.fromJson(Map json) {
     return getPaymentUrlByKey_result(
       success: json["success"],
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42746,8 +42745,8 @@ class getPendingAgreements_result {
 
   factory getPendingAgreements_result.fromJson(Map json) {
     return getPendingAgreements_result(
-      success: PendingAgreementsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: PendingAgreementsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42761,7 +42760,7 @@ class getPhoneVerifMethodForRegistration_args {
 
   factory getPhoneVerifMethodForRegistration_args.fromJson(Map json) {
     return getPhoneVerifMethodForRegistration_args(
-      request: GetPhoneVerifMethodForRegistrationRequest.fromJson(json["request"]),
+      request: GetPhoneVerifMethodForRegistrationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42777,8 +42776,8 @@ class getPhoneVerifMethodForRegistration_result {
 
   factory getPhoneVerifMethodForRegistration_result.fromJson(Map json) {
     return getPhoneVerifMethodForRegistration_result(
-      success: GetPhoneVerifMethodForRegistrationResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetPhoneVerifMethodForRegistrationResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42792,7 +42791,7 @@ class getPhoneVerifMethodV2_args {
 
   factory getPhoneVerifMethodV2_args.fromJson(Map json) {
     return getPhoneVerifMethodV2_args(
-      request: GetPhoneVerifMethodV2Request.fromJson(json["request"]),
+      request: GetPhoneVerifMethodV2Request.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42806,7 +42805,7 @@ class I80_C26384U {
 
   factory I80_C26384U.fromJson(Map json) {
     return I80_C26384U(
-      request: I80_C26421u.fromJson(json["request"]),
+      request: I80_C26421u.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42822,8 +42821,8 @@ class getPhoneVerifMethodV2_result {
 
   factory getPhoneVerifMethodV2_result.fromJson(Map json) {
     return getPhoneVerifMethodV2_result(
-      success: GetPhoneVerifMethodV2Response.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetPhoneVerifMethodV2Response.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42839,8 +42838,8 @@ class I80_C26385V {
 
   factory I80_C26385V.fromJson(Map json) {
     return I80_C26385V(
-      success: I80_C26422v.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26422v.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42870,8 +42869,8 @@ class getPhotoboothBalance_result {
 
   factory getPhotoboothBalance_result.fromJson(Map json) {
     return getPhotoboothBalance_result(
-      success: GetPhotoboothBalanceResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetPhotoboothBalanceResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42885,7 +42884,7 @@ class getPredefinedScenarioSets_args {
 
   factory getPredefinedScenarioSets_args.fromJson(Map json) {
     return getPredefinedScenarioSets_args(
-      request: GetPredefinedScenarioSetsRequest.fromJson(json["request"]),
+      request: GetPredefinedScenarioSetsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42901,8 +42900,8 @@ class getPredefinedScenarioSets_result {
 
   factory getPredefinedScenarioSets_result.fromJson(Map json) {
     return getPredefinedScenarioSets_result(
-      success: GetPredefinedScenarioSetsResponse.fromJson(json["success"]),
-      e: ThingsException.fromJson(json["e"]),
+      success: GetPredefinedScenarioSetsResponse.fromJson(json["success"] ?? {}),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42916,7 +42915,7 @@ class getPrefetchableBanners_args {
 
   factory getPrefetchableBanners_args.fromJson(Map json) {
     return getPrefetchableBanners_args(
-      request: BannerRequest.fromJson(json["request"]),
+      request: BannerRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -42930,7 +42929,7 @@ class getPrefetchableBanners_result {
 
   factory getPrefetchableBanners_result.fromJson(Map json) {
     return getPrefetchableBanners_result(
-      success: BannerResponse.fromJson(json["success"]),
+      success: BannerResponse.fromJson(json["success"] ?? {}),
     );
   }
 }
@@ -42960,8 +42959,8 @@ class getPremiumStatusForUpgrade_result {
 
   factory getPremiumStatusForUpgrade_result.fromJson(Map json) {
     return getPremiumStatusForUpgrade_result(
-      success: GetPremiumStatusResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: GetPremiumStatusResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -42991,8 +42990,8 @@ class getPremiumStatus_result {
 
   factory getPremiumStatus_result.fromJson(Map json) {
     return getPremiumStatus_result(
-      success: GetPremiumStatusResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: GetPremiumStatusResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43008,8 +43007,8 @@ class getPreviousMessagesV2WithRequest_args {
 
   factory getPreviousMessagesV2WithRequest_args.fromJson(Map json) {
     return getPreviousMessagesV2WithRequest_args(
-      request: GetPreviousMessagesV2Request.fromJson(json["request"]),
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      request: GetPreviousMessagesV2Request.fromJson(json["request"] ?? {}),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -43025,10 +43024,10 @@ class getPreviousMessagesV2WithRequest_result {
 
   factory getPreviousMessagesV2WithRequest_result.fromJson(Map json) {
     return getPreviousMessagesV2WithRequest_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Message.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43036,7 +43035,7 @@ class getPreviousMessagesV2WithRequest_result {
 class getProductByVersion_args {
   final String shopId;
   final String productId;
-  final Int64 productVersion;
+  final dynamic productVersion;
   final Locale locale;
 
   getProductByVersion_args({
@@ -43051,7 +43050,7 @@ class getProductByVersion_args {
       shopId: json["shopId"],
       productId: json["productId"],
       productVersion: json["productVersion"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
     );
   }
 }
@@ -43068,7 +43067,7 @@ class getProductByVersion_result {
   factory getProductByVersion_result.fromJson(Map json) {
     return getProductByVersion_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43099,7 +43098,7 @@ class getProductLatestVersionForUser_result {
   factory getProductLatestVersionForUser_result.fromJson(Map json) {
     return getProductLatestVersionForUser_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43130,7 +43129,7 @@ class getProductSummariesInSubscriptionSlots_result {
   factory getProductSummariesInSubscriptionSlots_result.fromJson(Map json) {
     return getProductSummariesInSubscriptionSlots_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43161,7 +43160,7 @@ class getProductV2_result {
   factory getProductV2_result.fromJson(Map json) {
     return getProductV2_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43169,7 +43168,7 @@ class getProductV2_result {
 class getProductValidationScheme_args {
   final String shopId;
   final String productId;
-  final Int64 productVersion;
+  final dynamic productVersion;
 
   getProductValidationScheme_args({
     required this.shopId,
@@ -43198,7 +43197,7 @@ class getProductValidationScheme_result {
   factory getProductValidationScheme_result.fromJson(Map json) {
     return getProductValidationScheme_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43229,7 +43228,7 @@ class getProductsByAuthor_result {
   factory getProductsByAuthor_result.fromJson(Map json) {
     return getProductsByAuthor_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43243,7 +43242,7 @@ class getProfile_args {
 
   factory getProfile_args.fromJson(Map json) {
     return getProfile_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0 ?? 0),
     );
   }
 }
@@ -43259,8 +43258,8 @@ class getProfile_result {
 
   factory getProfile_result.fromJson(Map json) {
     return getProfile_result(
-      success: Profile.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Profile.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43293,10 +43292,10 @@ class getPromotedBuddyContacts_result {
 
   factory getPromotedBuddyContacts_result.fromJson(Map json) {
     return getPromotedBuddyContacts_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Contact.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43310,7 +43309,7 @@ class getPublishedMemberships_args {
 
   factory getPublishedMemberships_args.fromJson(Map json) {
     return getPublishedMemberships_args(
-      request: GetPublishedMembershipsRequest.fromJson(json["request"]),
+      request: GetPublishedMembershipsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43326,10 +43325,10 @@ class getPublishedMemberships_result {
 
   factory getPublishedMemberships_result.fromJson(Map json) {
     return getPublishedMemberships_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Membership.fromJson(e))
           .toList(),
-      e: MembershipException.fromJson(json["e"]),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43343,7 +43342,7 @@ class getPurchaseEnabledStatus_args {
 
   factory getPurchaseEnabledStatus_args.fromJson(Map json) {
     return getPurchaseEnabledStatus_args(
-      request: PurchaseEnabledRequest.fromJson(json["request"]),
+      request: PurchaseEnabledRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43359,8 +43358,8 @@ class getPurchaseEnabledStatus_result {
 
   factory getPurchaseEnabledStatus_result.fromJson(Map json) {
     return getPurchaseEnabledStatus_result(
-      success: og_I.fromValue(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: og_I.fromValue(json["success"] ?? 0),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43383,7 +43382,7 @@ class getPurchasedProducts_args {
       shopId: json["shopId"],
       offset: json["offset"],
       limit: json["limit"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
     );
   }
 }
@@ -43399,8 +43398,8 @@ class getPurchasedProducts_result {
 
   factory getPurchasedProducts_result.fromJson(Map json) {
     return getPurchasedProducts_result(
-      success: PurchaseRecordList.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseRecordList.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43430,8 +43429,8 @@ class getQuickMenu_result {
 
   factory getQuickMenu_result.fromJson(Map json) {
     return getQuickMenu_result(
-      success: GetQuickMenuResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetQuickMenuResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43447,8 +43446,8 @@ class getRSAKeyInfo_result {
 
   factory getRSAKeyInfo_result.fromJson(Map json) {
     return getRSAKeyInfo_result(
-      success: RSAKey.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: RSAKey.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43471,7 +43470,7 @@ class getReceivedPresents_args {
       shopId: json["shopId"],
       offset: json["offset"],
       limit: json["limit"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
     );
   }
 }
@@ -43487,8 +43486,8 @@ class getReceivedPresents_result {
 
   factory getReceivedPresents_result.fromJson(Map json) {
     return getReceivedPresents_result(
-      success: PurchaseRecordList.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseRecordList.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43502,7 +43501,7 @@ class getRecentFriendRequests_args {
 
   factory getRecentFriendRequests_args.fromJson(Map json) {
     return getRecentFriendRequests_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -43518,8 +43517,8 @@ class getRecentFriendRequests_result {
 
   factory getRecentFriendRequests_result.fromJson(Map json) {
     return getRecentFriendRequests_result(
-      success: FriendRequestsInfo.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: FriendRequestsInfo.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43533,7 +43532,7 @@ class getRecommendationDetails_args {
 
   factory getRecommendationDetails_args.fromJson(Map json) {
     return getRecommendationDetails_args(
-      request: GetRecommendationDetailsRequest.fromJson(json["request"]),
+      request: GetRecommendationDetailsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43555,11 +43554,11 @@ class getRecommendationDetails_result {
 
   factory getRecommendationDetails_result.fromJson(Map json) {
     return getRecommendationDetails_result(
-      success: GetRecommendationDetailsResponse.fromJson(json["success"]),
-      re: RejectedException.fromJson(json["re"]),
-      sfe: ServerFailureException.fromJson(json["sfe"]),
-      te: TalkException.fromJson(json["te"]),
-      ere: ExcessiveRequestItemException.fromJson(json["ere"]),
+      success: GetRecommendationDetailsResponse.fromJson(json["success"] ?? {}),
+      re: RejectedException.fromJson(json["re"] ?? {}),
+      sfe: ServerFailureException.fromJson(json["sfe"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
+      ere: ExcessiveRequestItemException.fromJson(json["ere"] ?? {}),
     );
   }
 }
@@ -43573,7 +43572,7 @@ class getRecommendationIds_args {
 
   factory getRecommendationIds_args.fromJson(Map json) {
     return getRecommendationIds_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -43589,8 +43588,8 @@ class getRecommendationIds_result {
 
   factory getRecommendationIds_result.fromJson(Map json) {
     return getRecommendationIds_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43621,7 +43620,7 @@ class getRecommendationList_result {
   factory getRecommendationList_result.fromJson(Map json) {
     return getRecommendationList_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43635,7 +43634,7 @@ class getRepairElements_args {
 
   factory getRepairElements_args.fromJson(Map json) {
     return getRepairElements_args(
-      request: GetRepairElementsRequest.fromJson(json["request"]),
+      request: GetRepairElementsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43651,8 +43650,8 @@ class getRepairElements_result {
 
   factory getRepairElements_result.fromJson(Map json) {
     return getRepairElements_result(
-      success: GetRepairElementsResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetRepairElementsResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43668,8 +43667,8 @@ class getRequiredAgreements_result {
 
   factory getRequiredAgreements_result.fromJson(Map json) {
     return getRequiredAgreements_result(
-      success: PaymentRequiredAgreementsInfo.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: PaymentRequiredAgreementsInfo.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43700,7 +43699,7 @@ class getResourceFile_result {
   factory getResourceFile_result.fromJson(Map json) {
     return getResourceFile_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43714,7 +43713,7 @@ class getResponseStatus_args {
 
   factory getResponseStatus_args.fromJson(Map json) {
     return getResponseStatus_args(
-      request: GetResponseStatusRequest.fromJson(json["request"]),
+      request: GetResponseStatusRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43730,8 +43729,8 @@ class getResponseStatus_result {
 
   factory getResponseStatus_result.fromJson(Map json) {
     return getResponseStatus_result(
-      success: GetResponseStatusResponse.fromJson(json["success"]),
-      e: OaChatException.fromJson(json["e"]),
+      success: GetResponseStatusResponse.fromJson(json["success"] ?? {}),
+      e: OaChatException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43745,7 +43744,7 @@ class getReturnUrlWithRequestTokenForAutoLogin_args {
 
   factory getReturnUrlWithRequestTokenForAutoLogin_args.fromJson(Map json) {
     return getReturnUrlWithRequestTokenForAutoLogin_args(
-      webLoginRequest: WebLoginRequest.fromJson(json["webLoginRequest"]),
+      webLoginRequest: WebLoginRequest.fromJson(json["webLoginRequest"] ?? {}),
     );
   }
 }
@@ -43761,8 +43760,8 @@ class getReturnUrlWithRequestTokenForAutoLogin_result {
 
   factory getReturnUrlWithRequestTokenForAutoLogin_result.fromJson(Map json) {
     return getReturnUrlWithRequestTokenForAutoLogin_result(
-      success: WebLoginResponse.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: WebLoginResponse.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43776,7 +43775,7 @@ class getReturnUrlWithRequestTokenForMultiLiffLogin_args {
 
   factory getReturnUrlWithRequestTokenForMultiLiffLogin_args.fromJson(Map json) {
     return getReturnUrlWithRequestTokenForMultiLiffLogin_args(
-      request: LiffWebLoginRequest.fromJson(json["request"]),
+      request: LiffWebLoginRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43796,10 +43795,10 @@ class getReturnUrlWithRequestTokenForMultiLiffLogin_result {
 
   factory getReturnUrlWithRequestTokenForMultiLiffLogin_result.fromJson(Map json) {
     return getReturnUrlWithRequestTokenForMultiLiffLogin_result(
-      success: LiffWebLoginResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
-      channelException: LiffChannelException.fromJson(json["channelException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      success: LiffWebLoginResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      channelException: LiffChannelException.fromJson(json["channelException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -43815,8 +43814,8 @@ class getRingbackTone_result {
 
   factory getRingbackTone_result.fromJson(Map json) {
     return getRingbackTone_result(
-      success: RingbackTone.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: RingbackTone.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43832,8 +43831,8 @@ class getRingtone_result {
 
   factory getRingtone_result.fromJson(Map json) {
     return getRingtone_result(
-      success: Ringtone.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Ringtone.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43847,7 +43846,7 @@ class getRoomsV2_args {
 
   factory getRoomsV2_args.fromJson(Map json) {
     return getRoomsV2_args(
-      roomIds: List.from(json["roomIds"]),
+      roomIds: List.from(json["roomIds"] ?? []),
     );
   }
 }
@@ -43863,10 +43862,10 @@ class getRoomsV2_result {
 
   factory getRoomsV2_result.fromJson(Map json) {
     return getRoomsV2_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => Room.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43880,7 +43879,7 @@ class getSCC_args {
 
   factory getSCC_args.fromJson(Map json) {
     return getSCC_args(
-      request: GetSCCRequest.fromJson(json["request"]),
+      request: GetSCCRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43896,8 +43895,8 @@ class getSCC_result {
 
   factory getSCC_result.fromJson(Map json) {
     return getSCC_result(
-      success: SCC.fromJson(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: SCC.fromJson(json["success"] ?? {}),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43911,7 +43910,7 @@ class I80_C26386W {
 
   factory I80_C26386W.fromJson(Map json) {
     return I80_C26386W(
-      request: I80_C26423w.fromJson(json["request"]),
+      request: I80_C26423w.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -43927,8 +43926,8 @@ class I80_C26387X {
 
   factory I80_C26387X.fromJson(Map json) {
     return I80_C26387X(
-      success: I80_C26424x.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_C26424x.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -43958,7 +43957,7 @@ class getSeasonalEffects_result {
 
   factory getSeasonalEffects_result.fromJson(Map json) {
     return getSeasonalEffects_result(
-      success: GetSeasonalEffectsResponse.fromJson(json["success"]),
+      success: GetSeasonalEffectsResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -43989,8 +43988,8 @@ class getSecondAuthMethod_result {
 
   factory getSecondAuthMethod_result.fromJson(Map json) {
     return getSecondAuthMethod_result(
-      success: GetSecondAuthMethodResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetSecondAuthMethodResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44013,7 +44012,7 @@ class getSentPresents_args {
       shopId: json["shopId"],
       offset: json["offset"],
       limit: json["limit"],
-      locale: Locale.fromJson(json["locale"]),
+      locale: Locale.fromJson(json["locale"] ?? {}),
     );
   }
 }
@@ -44029,14 +44028,14 @@ class getSentPresents_result {
 
   factory getSentPresents_result.fromJson(Map json) {
     return getSentPresents_result(
-      success: PurchaseRecordList.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseRecordList.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class getServerTime_result {
-  final Int64 success;
+  final dynamic success;
   final TalkException e;
 
   getServerTime_result({
@@ -44047,7 +44046,7 @@ class getServerTime_result {
   factory getServerTime_result.fromJson(Map json) {
     return getServerTime_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44077,8 +44076,8 @@ class getServiceShortcutMenu_result {
 
   factory getServiceShortcutMenu_result.fromJson(Map json) {
     return getServiceShortcutMenu_result(
-      success: GetServiceShortcutMenuResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetServiceShortcutMenuResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44108,8 +44107,8 @@ class getSessionContentBeforeMigCompletion_result {
 
   factory getSessionContentBeforeMigCompletion_result.fromJson(Map json) {
     return getSessionContentBeforeMigCompletion_result(
-      success: GetSessionContentBeforeMigCompletionResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetSessionContentBeforeMigCompletionResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44123,7 +44122,7 @@ class getSettingsAttributes2_args {
 
   factory getSettingsAttributes2_args.fromJson(Map json) {
     return getSettingsAttributes2_args(
-      attributesToRetrieve: List.from(json["attributesToRetrieve"])
+      attributesToRetrieve: List.from(json["attributesToRetrieve"] ?? [])
           .map((e) => SettingsAttributeEx.fromValue(e))
           .toList(),
     );
@@ -44141,8 +44140,8 @@ class getSettingsAttributes2_result {
 
   factory getSettingsAttributes2_result.fromJson(Map json) {
     return getSettingsAttributes2_result(
-      success: Settings.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Settings.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44158,8 +44157,8 @@ class getSettingsAttributes_result {
 
   factory getSettingsAttributes_result.fromJson(Map json) {
     return getSettingsAttributes_result(
-      success: Settings.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Settings.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44173,7 +44172,7 @@ class getSettings_args {
 
   factory getSettings_args.fromJson(Map json) {
     return getSettings_args(
-      syncReason: Pb1_V7.fromValue(json["syncReason"]),
+      syncReason: Pb1_V7.fromValue(json["syncReason"] ?? 0),
     );
   }
 }
@@ -44189,8 +44188,8 @@ class getSettings_result {
 
   factory getSettings_result.fromJson(Map json) {
     return getSettings_result(
-      success: Settings.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Settings.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44204,7 +44203,7 @@ class getSmartChannelRecommendations_args {
 
   factory getSmartChannelRecommendations_args.fromJson(Map json) {
     return getSmartChannelRecommendations_args(
-      request: GetSmartChannelRecommendationsRequest.fromJson(json["request"]),
+      request: GetSmartChannelRecommendationsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44220,8 +44219,8 @@ class getSmartChannelRecommendations_result {
 
   factory getSmartChannelRecommendations_result.fromJson(Map json) {
     return getSmartChannelRecommendations_result(
-      success: GetSmartChannelRecommendationsResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetSmartChannelRecommendationsResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44235,7 +44234,7 @@ class getSquareBot_args {
 
   factory getSquareBot_args.fromJson(Map json) {
     return getSquareBot_args(
-      req: GetSquareBotRequest.fromJson(json["req"]),
+      req: GetSquareBotRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -44251,8 +44250,8 @@ class getSquareBot_result {
 
   factory getSquareBot_result.fromJson(Map json) {
     return getSquareBot_result(
-      success: GetSquareBotResponse.fromJson(json["success"]),
-      e: BotException.fromJson(json["e"]),
+      success: GetSquareBotResponse.fromJson(json["success"] ?? {}),
+      e: BotException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44282,8 +44281,8 @@ class getStudentInformation_result {
 
   factory getStudentInformation_result.fromJson(Map json) {
     return getStudentInformation_result(
-      success: GetStudentInformationResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: GetStudentInformationResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44297,7 +44296,7 @@ class getSubscriptionPlans_args {
 
   factory getSubscriptionPlans_args.fromJson(Map json) {
     return getSubscriptionPlans_args(
-      req: GetSubscriptionPlansRequest.fromJson(json["req"]),
+      req: GetSubscriptionPlansRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -44313,8 +44312,8 @@ class getSubscriptionPlans_result {
 
   factory getSubscriptionPlans_result.fromJson(Map json) {
     return getSubscriptionPlans_result(
-      success: GetSubscriptionPlansResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: GetSubscriptionPlansResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44328,7 +44327,7 @@ class getSubscriptionSlotHistory_args {
 
   factory getSubscriptionSlotHistory_args.fromJson(Map json) {
     return getSubscriptionSlotHistory_args(
-      req: Ob1_C12618e0.fromJson(json["req"]),
+      req: Ob1_C12618e0.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -44344,8 +44343,8 @@ class getSubscriptionSlotHistory_result {
 
   factory getSubscriptionSlotHistory_result.fromJson(Map json) {
     return getSubscriptionSlotHistory_result(
-      success: Ob1_C12621f0.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: Ob1_C12621f0.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44359,7 +44358,7 @@ class getSubscriptionStatus_args {
 
   factory getSubscriptionStatus_args.fromJson(Map json) {
     return getSubscriptionStatus_args(
-      req: GetSubscriptionStatusRequest.fromJson(json["req"]),
+      req: GetSubscriptionStatusRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -44375,8 +44374,8 @@ class getSubscriptionStatus_result {
 
   factory getSubscriptionStatus_result.fromJson(Map json) {
     return getSubscriptionStatus_result(
-      success: GetSubscriptionStatusResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: GetSubscriptionStatusResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44406,8 +44405,8 @@ class getSuggestDictionarySetting_result {
 
   factory getSuggestDictionarySetting_result.fromJson(Map json) {
     return getSuggestDictionarySetting_result(
-      success: GetSuggestDictionarySettingResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: GetSuggestDictionarySettingResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44421,7 +44420,7 @@ class getSuggestResourcesV2_args {
 
   factory getSuggestResourcesV2_args.fromJson(Map json) {
     return getSuggestResourcesV2_args(
-      req: GetSuggestResourcesV2Request.fromJson(json["req"]),
+      req: GetSuggestResourcesV2Request.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -44437,8 +44436,8 @@ class getSuggestResourcesV2_result {
 
   factory getSuggestResourcesV2_result.fromJson(Map json) {
     return getSuggestResourcesV2_result(
-      success: GetSuggestResourcesV2Response.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: GetSuggestResourcesV2Response.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44452,7 +44451,7 @@ class getTaiwanBankBalance_args {
 
   factory getTaiwanBankBalance_args.fromJson(Map json) {
     return getTaiwanBankBalance_args(
-      request: GetTaiwanBankBalanceRequest.fromJson(json["request"]),
+      request: GetTaiwanBankBalanceRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44468,8 +44467,8 @@ class getTaiwanBankBalance_result {
 
   factory getTaiwanBankBalance_result.fromJson(Map json) {
     return getTaiwanBankBalance_result(
-      success: GetTaiwanBankBalanceResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetTaiwanBankBalanceResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44483,7 +44482,7 @@ class getTargetProfiles_args {
 
   factory getTargetProfiles_args.fromJson(Map json) {
     return getTargetProfiles_args(
-      request: GetTargetProfilesRequest.fromJson(json["request"]),
+      request: GetTargetProfilesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44505,11 +44504,11 @@ class getTargetProfiles_result {
 
   factory getTargetProfiles_result.fromJson(Map json) {
     return getTargetProfiles_result(
-      success: GetTargetProfilesResponse.fromJson(json["success"]),
-      re: RejectedException.fromJson(json["re"]),
-      sfe: ServerFailureException.fromJson(json["sfe"]),
-      te: TalkException.fromJson(json["te"]),
-      ere: ExcessiveRequestItemException.fromJson(json["ere"]),
+      success: GetTargetProfilesResponse.fromJson(json["success"] ?? {}),
+      re: RejectedException.fromJson(json["re"] ?? {}),
+      sfe: ServerFailureException.fromJson(json["sfe"] ?? {}),
+      te: TalkException.fromJson(json["te"] ?? {}),
+      ere: ExcessiveRequestItemException.fromJson(json["ere"] ?? {}),
     );
   }
 }
@@ -44539,8 +44538,8 @@ class getTargetingPopup_result {
 
   factory getTargetingPopup_result.fromJson(Map json) {
     return getTargetingPopup_result(
-      success: GetTargetingPopupResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetTargetingPopupResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44554,7 +44553,7 @@ class getThaiBankBalance_args {
 
   factory getThaiBankBalance_args.fromJson(Map json) {
     return getThaiBankBalance_args(
-      request: GetThaiBankBalanceRequest.fromJson(json["request"]),
+      request: GetThaiBankBalanceRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44570,8 +44569,8 @@ class getThaiBankBalance_result {
 
   factory getThaiBankBalance_result.fromJson(Map json) {
     return getThaiBankBalance_result(
-      success: GetThaiBankBalanceResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: GetThaiBankBalanceResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44585,7 +44584,7 @@ class getTotalCoinBalance_args {
 
   factory getTotalCoinBalance_args.fromJson(Map json) {
     return getTotalCoinBalance_args(
-      request: GetTotalCoinBalanceRequest.fromJson(json["request"]),
+      request: GetTotalCoinBalanceRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44601,8 +44600,8 @@ class getTotalCoinBalance_result {
 
   factory getTotalCoinBalance_result.fromJson(Map json) {
     return getTotalCoinBalance_result(
-      success: GetTotalCoinBalanceResponse.fromJson(json["success"]),
-      e: CoinException.fromJson(json["e"]),
+      success: GetTotalCoinBalanceResponse.fromJson(json["success"] ?? {}),
+      e: CoinException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44616,7 +44615,7 @@ class getUpdatedChannelIds_args {
 
   factory getUpdatedChannelIds_args.fromJson(Map json) {
     return getUpdatedChannelIds_args(
-      channelIds: List.from(json["channelIds"])
+      channelIds: List.from(json["channelIds"] ?? [])
           .map((e) => ChannelIdWithLastUpdated.fromJson(e))
           .toList(),
     );
@@ -44634,8 +44633,8 @@ class getUpdatedChannelIds_result {
 
   factory getUpdatedChannelIds_result.fromJson(Map json) {
     return getUpdatedChannelIds_result(
-      success: List.from(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44649,7 +44648,7 @@ class getUserCollections_args {
 
   factory getUserCollections_args.fromJson(Map json) {
     return getUserCollections_args(
-      request: GetUserCollectionsRequest.fromJson(json["request"]),
+      request: GetUserCollectionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44665,8 +44664,8 @@ class getUserCollections_result {
 
   factory getUserCollections_result.fromJson(Map json) {
     return getUserCollections_result(
-      success: GetUserCollectionsResponse.fromJson(json["success"]),
-      e: CollectionException.fromJson(json["e"]),
+      success: GetUserCollectionsResponse.fromJson(json["success"] ?? {}),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44683,7 +44682,7 @@ class getUserProfile_args {
   factory getUserProfile_args.fromJson(Map json) {
     return getUserProfile_args(
       authSessionId: json["authSessionId"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -44699,8 +44698,8 @@ class getUserProfile_result {
 
   factory getUserProfile_result.fromJson(Map json) {
     return getUserProfile_result(
-      success: GetUserProfileResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: GetUserProfileResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44714,7 +44713,7 @@ class getUserVector_args {
 
   factory getUserVector_args.fromJson(Map json) {
     return getUserVector_args(
-      request: GetUserVectorRequest.fromJson(json["request"]),
+      request: GetUserVectorRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44730,8 +44729,8 @@ class getUserVector_result {
 
   factory getUserVector_result.fromJson(Map json) {
     return getUserVector_result(
-      success: GetUserVectorResponse.fromJson(json["success"]),
-      e: LFLPremiumException.fromJson(json["e"]),
+      success: GetUserVectorResponse.fromJson(json["success"] ?? {}),
+      e: LFLPremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44745,7 +44744,7 @@ class getUsersMappedByProfile_args {
 
   factory getUsersMappedByProfile_args.fromJson(Map json) {
     return getUsersMappedByProfile_args(
-      request: GetUsersMappedByProfileRequest.fromJson(json["request"]),
+      request: GetUsersMappedByProfileRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44761,8 +44760,8 @@ class getUsersMappedByProfile_result {
 
   factory getUsersMappedByProfile_result.fromJson(Map json) {
     return getUsersMappedByProfile_result(
-      success: GetUsersMappedByProfileResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: GetUsersMappedByProfileResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44776,7 +44775,7 @@ class getWebLoginDisallowedUrlForMultiLiffLogin_args {
 
   factory getWebLoginDisallowedUrlForMultiLiffLogin_args.fromJson(Map json) {
     return getWebLoginDisallowedUrlForMultiLiffLogin_args(
-      request: LiffWebLoginRequest.fromJson(json["request"]),
+      request: LiffWebLoginRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44796,10 +44795,10 @@ class getWebLoginDisallowedUrlForMultiLiffLogin_result {
 
   factory getWebLoginDisallowedUrlForMultiLiffLogin_result.fromJson(Map json) {
     return getWebLoginDisallowedUrlForMultiLiffLogin_result(
-      success: LiffWebLoginResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
-      channelException: LiffChannelException.fromJson(json["channelException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      success: LiffWebLoginResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      channelException: LiffChannelException.fromJson(json["channelException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -44813,7 +44812,7 @@ class getWebLoginDisallowedUrl_args {
 
   factory getWebLoginDisallowedUrl_args.fromJson(Map json) {
     return getWebLoginDisallowedUrl_args(
-      webLoginRequest: WebLoginRequest.fromJson(json["webLoginRequest"]),
+      webLoginRequest: WebLoginRequest.fromJson(json["webLoginRequest"] ?? {}),
     );
   }
 }
@@ -44829,8 +44828,8 @@ class getWebLoginDisallowedUrl_result {
 
   factory getWebLoginDisallowedUrl_result.fromJson(Map json) {
     return getWebLoginDisallowedUrl_result(
-      success: WebLoginResponse.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: WebLoginResponse.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44877,7 +44876,7 @@ class inviteFriends_args {
 
   factory inviteFriends_args.fromJson(Map json) {
     return inviteFriends_args(
-      request: InviteFriendsRequest.fromJson(json["request"]),
+      request: InviteFriendsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44893,8 +44892,8 @@ class inviteFriends_result {
 
   factory inviteFriends_result.fromJson(Map json) {
     return inviteFriends_result(
-      success: InviteFriendsResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: InviteFriendsResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44908,7 +44907,7 @@ class inviteIntoChat_args {
 
   factory inviteIntoChat_args.fromJson(Map json) {
     return inviteIntoChat_args(
-      request: InviteIntoChatRequest.fromJson(json["request"]),
+      request: InviteIntoChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -44925,7 +44924,7 @@ class inviteIntoChat_result {
   factory inviteIntoChat_result.fromJson(Map json) {
     return inviteIntoChat_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44944,8 +44943,8 @@ class inviteIntoGroupCall_args {
   factory inviteIntoGroupCall_args.fromJson(Map json) {
     return inviteIntoGroupCall_args(
       chatMid: json["chatMid"],
-      memberMids: List.from(json["memberMids"]),
-      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"]),
+      memberMids: List.from(json["memberMids"] ?? []),
+      mediaType: Pb1_EnumC13237x5.fromValue(json["mediaType"] ?? 0),
     );
   }
 }
@@ -44959,7 +44958,7 @@ class inviteIntoGroupCall_result {
 
   factory inviteIntoGroupCall_result.fromJson(Map json) {
     return inviteIntoGroupCall_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -44979,7 +44978,7 @@ class inviteIntoRoom_args {
     return inviteIntoRoom_args(
       reqSeq: json["reqSeq"],
       roomId: json["roomId"],
-      contactIds: List.from(json["contactIds"]),
+      contactIds: List.from(json["contactIds"] ?? []),
     );
   }
 }
@@ -44993,7 +44992,7 @@ class inviteIntoRoom_result {
 
   factory inviteIntoRoom_result.fromJson(Map json) {
     return inviteIntoRoom_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45007,7 +45006,7 @@ class isProductForCollections_args {
 
   factory isProductForCollections_args.fromJson(Map json) {
     return isProductForCollections_args(
-      request: IsProductForCollectionsRequest.fromJson(json["request"]),
+      request: IsProductForCollectionsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45023,8 +45022,8 @@ class isProductForCollections_result {
 
   factory isProductForCollections_result.fromJson(Map json) {
     return isProductForCollections_result(
-      success: IsProductForCollectionsResponse.fromJson(json["success"]),
-      e: CollectionException.fromJson(json["e"]),
+      success: IsProductForCollectionsResponse.fromJson(json["success"] ?? {}),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45038,7 +45037,7 @@ class isStickerAvailableForCombinationSticker_args {
 
   factory isStickerAvailableForCombinationSticker_args.fromJson(Map json) {
     return isStickerAvailableForCombinationSticker_args(
-      request: IsStickerAvailableForCombinationStickerRequest.fromJson(json["request"]),
+      request: IsStickerAvailableForCombinationStickerRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45054,8 +45053,8 @@ class isStickerAvailableForCombinationSticker_result {
 
   factory isStickerAvailableForCombinationSticker_result.fromJson(Map json) {
     return isStickerAvailableForCombinationSticker_result(
-      success: IsStickerAvailableForCombinationStickerResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: IsStickerAvailableForCombinationStickerResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45086,7 +45085,7 @@ class isUseridAvailable_result {
   factory isUseridAvailable_result.fromJson(Map json) {
     return isUseridAvailable_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45116,8 +45115,8 @@ class issueChannelToken_result {
 
   factory issueChannelToken_result.fromJson(Map json) {
     return issueChannelToken_result(
-      success: ChannelToken.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: ChannelToken.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45131,7 +45130,7 @@ class issueLiffView_args {
 
   factory issueLiffView_args.fromJson(Map json) {
     return issueLiffView_args(
-      request: LiffViewRequest.fromJson(json["request"]),
+      request: LiffViewRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45149,9 +45148,9 @@ class issueLiffView_result {
 
   factory issueLiffView_result.fromJson(Map json) {
     return issueLiffView_result(
-      success: LiffViewResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      success: LiffViewResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -45168,7 +45167,7 @@ class issueNonce_result {
   factory issueNonce_result.fromJson(Map json) {
     return issueNonce_result(
       success: json["success"],
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45190,7 +45189,7 @@ class issueRequestTokenWithAuthScheme_args {
     return issueRequestTokenWithAuthScheme_args(
       channelId: json["channelId"],
       otpId: json["otpId"],
-      authScheme: List.from(json["authScheme"]),
+      authScheme: List.from(json["authScheme"] ?? []),
       returnUrl: json["returnUrl"],
     );
   }
@@ -45207,8 +45206,8 @@ class issueRequestTokenWithAuthScheme_result {
 
   factory issueRequestTokenWithAuthScheme_result.fromJson(Map json) {
     return issueRequestTokenWithAuthScheme_result(
-      success: RequestTokenResponse.fromJson(json["success"]),
-      e: ChannelException.fromJson(json["e"]),
+      success: RequestTokenResponse.fromJson(json["success"] ?? {}),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45222,7 +45221,7 @@ class issueSubLiffView_args {
 
   factory issueSubLiffView_args.fromJson(Map json) {
     return issueSubLiffView_args(
-      request: LiffViewRequest.fromJson(json["request"]),
+      request: LiffViewRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45240,9 +45239,9 @@ class issueSubLiffView_result {
 
   factory issueSubLiffView_result.fromJson(Map json) {
     return issueSubLiffView_result(
-      success: LiffViewResponse.fromJson(json["success"]),
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      success: LiffViewResponse.fromJson(json["success"] ?? {}),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -45272,8 +45271,8 @@ class issueTokenForAccountMigrationSettings_result {
 
   factory issueTokenForAccountMigrationSettings_result.fromJson(Map json) {
     return issueTokenForAccountMigrationSettings_result(
-      success: SecurityCenterResult.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: SecurityCenterResult.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45287,7 +45286,7 @@ class issueToken_args {
 
   factory issueToken_args.fromJson(Map json) {
     return issueToken_args(
-      request: IssueBirthdayGiftTokenRequest.fromJson(json["request"]),
+      request: IssueBirthdayGiftTokenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45303,7 +45302,7 @@ class issueToken_result {
 
   factory issueToken_result.fromJson(Map json) {
     return issueToken_result(
-      success: IssueBirthdayGiftTokenResponse.fromJson(json["success"]),
+      success: IssueBirthdayGiftTokenResponse.fromJson(json["success"] ?? {}),
       e: json["e"],
     );
   }
@@ -45318,7 +45317,7 @@ class issueV3TokenForPrimary_args {
 
   factory issueV3TokenForPrimary_args.fromJson(Map json) {
     return issueV3TokenForPrimary_args(
-      request: IssueV3TokenForPrimaryRequest.fromJson(json["request"]),
+      request: IssueV3TokenForPrimaryRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45334,8 +45333,8 @@ class issueV3TokenForPrimary_result {
 
   factory issueV3TokenForPrimary_result.fromJson(Map json) {
     return issueV3TokenForPrimary_result(
-      success: IssueV3TokenForPrimaryResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IssueV3TokenForPrimaryResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45365,8 +45364,8 @@ class issueWebAuthDetailsForSecondAuth_result {
 
   factory issueWebAuthDetailsForSecondAuth_result.fromJson(Map json) {
     return issueWebAuthDetailsForSecondAuth_result(
-      success: IssueWebAuthDetailsForSecondAuthResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: IssueWebAuthDetailsForSecondAuthResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45380,7 +45379,7 @@ class joinChatByCallUrl_args {
 
   factory joinChatByCallUrl_args.fromJson(Map json) {
     return joinChatByCallUrl_args(
-      request: JoinChatByCallUrlRequest.fromJson(json["request"]),
+      request: JoinChatByCallUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45396,8 +45395,8 @@ class joinChatByCallUrl_result {
 
   factory joinChatByCallUrl_result.fromJson(Map json) {
     return joinChatByCallUrl_result(
-      success: JoinChatByCallUrlResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: JoinChatByCallUrlResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45419,8 +45418,8 @@ class kf_m {
 
   factory kf_m.fromJson(Map json) {
     return kf_m(
-      richmenu: RichmenuEvent.fromJson(json["richmenu"]),
-      talkroom: TalkroomEvent.fromJson(json["talkroom"]),
+      richmenu: RichmenuEvent.fromJson(json["richmenu"] ?? {}),
+      talkroom: TalkroomEvent.fromJson(json["talkroom"] ?? {}),
     );
   }
 }
@@ -45448,7 +45447,7 @@ class kickoutFromGroupCall_args {
 
   factory kickoutFromGroupCall_args.fromJson(Map json) {
     return kickoutFromGroupCall_args(
-      kickoutFromGroupCallRequest: KickoutFromGroupCallRequest.fromJson(json["kickoutFromGroupCallRequest"]),
+      kickoutFromGroupCallRequest: KickoutFromGroupCallRequest.fromJson(json["kickoutFromGroupCallRequest"] ?? {}),
     );
   }
 }
@@ -45465,7 +45464,7 @@ class kickoutFromGroupCall_result {
   factory kickoutFromGroupCall_result.fromJson(Map json) {
     return kickoutFromGroupCall_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45496,7 +45495,7 @@ class leaveRoom_result {
 
   factory leaveRoom_result.fromJson(Map json) {
     return leaveRoom_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45510,7 +45509,7 @@ class linkDevice_args {
 
   factory linkDevice_args.fromJson(Map json) {
     return linkDevice_args(
-      request: DeviceLinkRequest.fromJson(json["request"]),
+      request: DeviceLinkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45526,8 +45525,8 @@ class linkDevice_result {
 
   factory linkDevice_result.fromJson(Map json) {
     return linkDevice_result(
-      success: DeviceLinkResponse.fromJson(json["success"]),
-      e: ThingsException.fromJson(json["e"]),
+      success: DeviceLinkResponse.fromJson(json["success"] ?? {}),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45541,7 +45540,7 @@ class logoutV2_result {
 
   factory logoutV2_result.fromJson(Map json) {
     return logoutV2_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45555,7 +45554,7 @@ class lookupAvailableEap_args {
 
   factory lookupAvailableEap_args.fromJson(Map json) {
     return lookupAvailableEap_args(
-      request: LookupAvailableEapRequest.fromJson(json["request"]),
+      request: LookupAvailableEapRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45571,8 +45570,8 @@ class lookupAvailableEap_result {
 
   factory lookupAvailableEap_result.fromJson(Map json) {
     return lookupAvailableEap_result(
-      success: LookupAvailableEapResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: LookupAvailableEapResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45608,8 +45607,8 @@ class lookupPaidCall_result {
 
   factory lookupPaidCall_result.fromJson(Map json) {
     return lookupPaidCall_result(
-      success: PaidCallResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: PaidCallResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45631,7 +45630,7 @@ class mapProfileToUsers_args {
 
   factory mapProfileToUsers_args.fromJson(Map json) {
     return mapProfileToUsers_args(
-      request: MapProfileToUsersRequest.fromJson(json["request"]),
+      request: MapProfileToUsersRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45647,8 +45646,8 @@ class mapProfileToUsers_result {
 
   factory mapProfileToUsers_result.fromJson(Map json) {
     return mapProfileToUsers_result(
-      success: MapProfileToUsersResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: MapProfileToUsersResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45678,8 +45677,8 @@ class migratePrimaryUsingEapAccountWithTokenV3_result {
 
   factory migratePrimaryUsingEapAccountWithTokenV3_result.fromJson(Map json) {
     return migratePrimaryUsingEapAccountWithTokenV3_result(
-      success: MigratePrimaryWithTokenV3Response.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: MigratePrimaryWithTokenV3Response.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45709,8 +45708,8 @@ class migratePrimaryUsingPhoneWithTokenV3_result {
 
   factory migratePrimaryUsingPhoneWithTokenV3_result.fromJson(Map json) {
     return migratePrimaryUsingPhoneWithTokenV3_result(
-      success: MigratePrimaryWithTokenV3Response.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: MigratePrimaryWithTokenV3Response.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45724,7 +45723,7 @@ class migratePrimaryUsingQrCode_args {
 
   factory migratePrimaryUsingQrCode_args.fromJson(Map json) {
     return migratePrimaryUsingQrCode_args(
-      request: MigratePrimaryUsingQrCodeRequest.fromJson(json["request"]),
+      request: MigratePrimaryUsingQrCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45740,8 +45739,8 @@ class migratePrimaryUsingQrCode_result {
 
   factory migratePrimaryUsingQrCode_result.fromJson(Map json) {
     return migratePrimaryUsingQrCode_result(
-      success: MigratePrimaryUsingQrCodeResponse.fromJson(json["success"]),
-      e: PrimaryQrCodeMigrationException.fromJson(json["e"]),
+      success: MigratePrimaryUsingQrCodeResponse.fromJson(json["success"] ?? {}),
+      e: PrimaryQrCodeMigrationException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45775,8 +45774,8 @@ class negotiateE2EEPublicKey_result {
 
   factory negotiateE2EEPublicKey_result.fromJson(Map json) {
     return negotiateE2EEPublicKey_result(
-      success: E2EENegotiationResult.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: E2EENegotiationResult.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45790,7 +45789,7 @@ class noop_result {
 
   factory noop_result.fromJson(Map json) {
     return noop_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45804,7 +45803,7 @@ class notifyBannerShowing_result {
 
   factory notifyBannerShowing_result.fromJson(Map json) {
     return notifyBannerShowing_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45818,7 +45817,7 @@ class notifyBannerTapped_result {
 
   factory notifyBannerTapped_result.fromJson(Map json) {
     return notifyBannerTapped_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45832,7 +45831,7 @@ class notifyBeaconDetected_result {
 
   factory notifyBeaconDetected_result.fromJson(Map json) {
     return notifyBeaconDetected_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45846,7 +45845,7 @@ class notifyChatAdEntry_args {
 
   factory notifyChatAdEntry_args.fromJson(Map json) {
     return notifyChatAdEntry_args(
-      request: NotifyChatAdEntryRequest.fromJson(json["request"]),
+      request: NotifyChatAdEntryRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45863,7 +45862,7 @@ class notifyChatAdEntry_result {
   factory notifyChatAdEntry_result.fromJson(Map json) {
     return notifyChatAdEntry_result(
       success: json["success"],
-      e: BotExternalException.fromJson(json["e"]),
+      e: BotExternalException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45877,7 +45876,7 @@ class notifyDeviceConnection_args {
 
   factory notifyDeviceConnection_args.fromJson(Map json) {
     return notifyDeviceConnection_args(
-      request: NotifyDeviceConnectionRequest.fromJson(json["request"]),
+      request: NotifyDeviceConnectionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45893,8 +45892,8 @@ class notifyDeviceConnection_result {
 
   factory notifyDeviceConnection_result.fromJson(Map json) {
     return notifyDeviceConnection_result(
-      success: NotifyDeviceConnectionResponse.fromJson(json["success"]),
-      e: ThingsException.fromJson(json["e"]),
+      success: NotifyDeviceConnectionResponse.fromJson(json["success"] ?? {}),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45908,7 +45907,7 @@ class notifyDeviceDisconnection_args {
 
   factory notifyDeviceDisconnection_args.fromJson(Map json) {
     return notifyDeviceDisconnection_args(
-      request: NotifyDeviceDisconnectionRequest.fromJson(json["request"]),
+      request: NotifyDeviceDisconnectionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45925,7 +45924,7 @@ class notifyDeviceDisconnection_result {
   factory notifyDeviceDisconnection_result.fromJson(Map json) {
     return notifyDeviceDisconnection_result(
       success: json["success"],
-      e: ThingsException.fromJson(json["e"]),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45956,7 +45955,7 @@ class notifyInstalled_result {
 
   factory notifyInstalled_result.fromJson(Map json) {
     return notifyInstalled_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45970,7 +45969,7 @@ class notifyOATalkroomEvents_args {
 
   factory notifyOATalkroomEvents_args.fromJson(Map json) {
     return notifyOATalkroomEvents_args(
-      request: NotifyOATalkroomEventsRequest.fromJson(json["request"]),
+      request: NotifyOATalkroomEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -45987,7 +45986,7 @@ class notifyOATalkroomEvents_result {
   factory notifyOATalkroomEvents_result.fromJson(Map json) {
     return notifyOATalkroomEvents_result(
       success: json["success"],
-      e: BotExternalException.fromJson(json["e"]),
+      e: BotExternalException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -45995,8 +45994,8 @@ class notifyOATalkroomEvents_result {
 class notifyProductEvent_args {
   final String shopId;
   final String productId;
-  final Int64 productVersion;
-  final Int64 productEvent;
+  final dynamic productVersion;
+  final dynamic productEvent;
 
   notifyProductEvent_args({
     required this.shopId,
@@ -46024,7 +46023,7 @@ class notifyProductEvent_result {
 
   factory notifyProductEvent_result.fromJson(Map json) {
     return notifyProductEvent_result(
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46055,7 +46054,7 @@ class notifyRegistrationComplete_result {
 
   factory notifyRegistrationComplete_result.fromJson(Map json) {
     return notifyRegistrationComplete_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46069,7 +46068,7 @@ class notifyScenarioExecuted_args {
 
   factory notifyScenarioExecuted_args.fromJson(Map json) {
     return notifyScenarioExecuted_args(
-      request: NotifyScenarioExecutedRequest.fromJson(json["request"]),
+      request: NotifyScenarioExecutedRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46086,7 +46085,7 @@ class notifyScenarioExecuted_result {
   factory notifyScenarioExecuted_result.fromJson(Map json) {
     return notifyScenarioExecuted_result(
       success: json["success"],
-      e: ThingsException.fromJson(json["e"]),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46100,13 +46099,13 @@ class notifySleep_result {
 
   factory notifySleep_result.fromJson(Map json) {
     return notifySleep_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class notifyUpdated_args {
-  final Int64 lastRev;
+  final dynamic lastRev;
   final DeviceInfo deviceInfo;
   final String udidHash;
   final String oldUdidHash;
@@ -46121,7 +46120,7 @@ class notifyUpdated_args {
   factory notifyUpdated_args.fromJson(Map json) {
     return notifyUpdated_args(
       lastRev: json["lastRev"],
-      deviceInfo: DeviceInfo.fromJson(json["deviceInfo"]),
+      deviceInfo: DeviceInfo.fromJson(json["deviceInfo"] ?? {}),
       udidHash: json["udidHash"],
       oldUdidHash: json["oldUdidHash"],
     );
@@ -46137,7 +46136,7 @@ class notifyUpdated_result {
 
   factory notifyUpdated_result.fromJson(Map json) {
     return notifyUpdated_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46159,7 +46158,7 @@ class openAuthSession_args {
 
   factory openAuthSession_args.fromJson(Map json) {
     return openAuthSession_args(
-      request: AuthSessionRequest.fromJson(json["request"]),
+      request: AuthSessionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46176,7 +46175,7 @@ class openAuthSession_result {
   factory openAuthSession_result.fromJson(Map json) {
     return openAuthSession_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46193,7 +46192,7 @@ class openProximityMatch_result {
   factory openProximityMatch_result.fromJson(Map json) {
     return openProximityMatch_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46207,7 +46206,7 @@ class openSession_args {
 
   factory openSession_args.fromJson(Map json) {
     return openSession_args(
-      request: OpenSessionRequest.fromJson(json["request"]),
+      request: OpenSessionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46223,8 +46222,8 @@ class openSession_result {
 
   factory openSession_result.fromJson(Map json) {
     return openSession_result(
-      success: OpenSessionResponse.fromJson(json["success"]),
-      e: AccountEapConnectException.fromJson(json["e"]),
+      success: OpenSessionResponse.fromJson(json["success"] ?? {}),
+      e: AccountEapConnectException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46238,7 +46237,7 @@ class permitLogin_args {
 
   factory permitLogin_args.fromJson(Map json) {
     return permitLogin_args(
-      request: PermitLoginRequest.fromJson(json["request"]),
+      request: PermitLoginRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46256,9 +46255,9 @@ class permitLogin_result {
 
   factory permitLogin_result.fromJson(Map json) {
     return permitLogin_result(
-      success: PermitLoginResponse.fromJson(json["success"]),
-      sle: SeamlessLoginException.fromJson(json["sle"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      success: PermitLoginResponse.fromJson(json["success"] ?? {}),
+      sle: SeamlessLoginException.fromJson(json["sle"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -46272,7 +46271,7 @@ class placePurchaseOrderForFreeProduct_args {
 
   factory placePurchaseOrderForFreeProduct_args.fromJson(Map json) {
     return placePurchaseOrderForFreeProduct_args(
-      purchaseOrder: PurchaseOrder.fromJson(json["purchaseOrder"]),
+      purchaseOrder: PurchaseOrder.fromJson(json["purchaseOrder"] ?? {}),
     );
   }
 }
@@ -46288,8 +46287,8 @@ class placePurchaseOrderForFreeProduct_result {
 
   factory placePurchaseOrderForFreeProduct_result.fromJson(Map json) {
     return placePurchaseOrderForFreeProduct_result(
-      success: PurchaseOrderResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseOrderResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46303,7 +46302,7 @@ class placePurchaseOrderWithLineCoin_args {
 
   factory placePurchaseOrderWithLineCoin_args.fromJson(Map json) {
     return placePurchaseOrderWithLineCoin_args(
-      purchaseOrder: PurchaseOrder.fromJson(json["purchaseOrder"]),
+      purchaseOrder: PurchaseOrder.fromJson(json["purchaseOrder"] ?? {}),
     );
   }
 }
@@ -46319,8 +46318,8 @@ class placePurchaseOrderWithLineCoin_result {
 
   factory placePurchaseOrderWithLineCoin_result.fromJson(Map json) {
     return placePurchaseOrderWithLineCoin_result(
-      success: PurchaseOrderResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseOrderResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46337,7 +46336,7 @@ class postPopupButtonEvents_args {
   factory postPopupButtonEvents_args.fromJson(Map json) {
     return postPopupButtonEvents_args(
       buttonId: json["buttonId"],
-      checkboxes: Map.from(json["checkboxes"]),
+      checkboxes: Map.from(json["checkboxes"] ?? {}),
     );
   }
 }
@@ -46351,7 +46350,7 @@ class postPopupButtonEvents_result {
 
   factory postPopupButtonEvents_result.fromJson(Map json) {
     return postPopupButtonEvents_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46365,7 +46364,7 @@ class purchaseSubscription_args {
 
   factory purchaseSubscription_args.fromJson(Map json) {
     return purchaseSubscription_args(
-      req: PurchaseSubscriptionRequest.fromJson(json["req"]),
+      req: PurchaseSubscriptionRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -46381,8 +46380,8 @@ class purchaseSubscription_result {
 
   factory purchaseSubscription_result.fromJson(Map json) {
     return purchaseSubscription_result(
-      success: PurchaseSubscriptionResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: PurchaseSubscriptionResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46396,7 +46395,7 @@ class putE2eeKey_args {
 
   factory putE2eeKey_args.fromJson(Map json) {
     return putE2eeKey_args(
-      request: PutE2eeKeyRequest.fromJson(json["request"]),
+      request: PutE2eeKeyRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46413,7 +46412,7 @@ class putE2eeKey_result {
   factory putE2eeKey_result.fromJson(Map json) {
     return putE2eeKey_result(
       success: json["success"],
-      e: SecondaryPwlessLoginException.fromJson(json["e"]),
+      e: SecondaryPwlessLoginException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46450,10 +46449,10 @@ class qm_C34115h {
   final ApplicationType applicationType;
   final String applicationVersion;
   final String userSessionId;
-  final Int64 actionId;
+  final dynamic actionId;
   final String screen;
-  final Int64 bannerStartedAt;
-  final Int64 bannerShownFor;
+  final dynamic bannerStartedAt;
+  final dynamic bannerShownFor;
 
   qm_C34115h({
     required this.hwid,
@@ -46471,7 +46470,7 @@ class qm_C34115h {
     return qm_C34115h(
       hwid: json["hwid"],
       secureMessage: json["secureMessage"],
-      applicationType: ApplicationType.fromValue(json["applicationType"]),
+      applicationType: ApplicationType.fromValue(json["applicationType"] ?? 0),
       applicationVersion: json["applicationVersion"],
       userSessionId: json["userSessionId"],
       actionId: json["actionId"],
@@ -46488,9 +46487,9 @@ class qm_j {
   final ApplicationType applicationType;
   final String applicationVersion;
   final String userSessionId;
-  final Int64 actionId;
+  final dynamic actionId;
   final String screen;
-  final Int64 bannerTappedAt;
+  final dynamic bannerTappedAt;
   final bool beaconTermAgreed;
 
   qm_j({
@@ -46509,7 +46508,7 @@ class qm_j {
     return qm_j(
       hwid: json["hwid"],
       secureMessage: json["secureMessage"],
-      applicationType: ApplicationType.fromValue(json["applicationType"]),
+      applicationType: ApplicationType.fromValue(json["applicationType"] ?? 0),
       applicationVersion: json["applicationVersion"],
       userSessionId: json["userSessionId"],
       actionId: json["actionId"],
@@ -46543,7 +46542,7 @@ class qm_l {
     return qm_l(
       hwid: json["hwid"],
       secureMessage: json["secureMessage"],
-      applicationType: ApplicationType.fromValue(json["applicationType"]),
+      applicationType: ApplicationType.fromValue(json["applicationType"] ?? 0),
       applicationVersion: json["applicationVersion"],
       lang: json["lang"],
       region: json["region"],
@@ -46569,8 +46568,8 @@ class qm_o {
     return qm_o(
       hwid: json["hwid"],
       secureMessage: json["secureMessage"],
-      notificationType: qm_EnumC34112e.fromValue(json["notificationType"]),
-      rssi: Rssi.fromJson(json["rssi"]),
+      notificationType: qm_EnumC34112e.fromValue(json["notificationType"] ?? 0),
+      rssi: Rssi.fromJson(json["rssi"] ?? {}),
     );
   }
 }
@@ -46586,8 +46585,8 @@ class queryBeaconActions_result {
 
   factory queryBeaconActions_result.fromJson(Map json) {
     return queryBeaconActions_result(
-      success: BeaconQueryResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: BeaconQueryResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46605,7 +46604,7 @@ class react_args {
 
   factory react_args.fromJson(Map json) {
     return react_args(
-      reactRequest: ReactRequest.fromJson(json["reactRequest"]),
+      reactRequest: ReactRequest.fromJson(json["reactRequest"] ?? {}),
     );
   }
 }
@@ -46619,7 +46618,7 @@ class react_result {
 
   factory react_result.fromJson(Map json) {
     return react_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46633,7 +46632,7 @@ class refresh_args {
 
   factory refresh_args.fromJson(Map json) {
     return refresh_args(
-      request: RefreshAccessTokenRequest.fromJson(json["request"]),
+      request: RefreshAccessTokenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46649,8 +46648,8 @@ class refresh_result {
 
   factory refresh_result.fromJson(Map json) {
     return refresh_result(
-      success: RefreshAccessTokenResponse.fromJson(json["success"]),
-      accessTokenRefreshException: AccessTokenRefreshException.fromJson(json["accessTokenRefreshException"]),
+      success: RefreshAccessTokenResponse.fromJson(json["success"] ?? {}),
+      accessTokenRefreshException: AccessTokenRefreshException.fromJson(json["accessTokenRefreshException"] ?? {}),
     );
   }
 }
@@ -46673,7 +46672,7 @@ class registerBarcodeAsync_args {
       requestToken: json["requestToken"],
       barcodeRequestId: json["barcodeRequestId"],
       barcode: json["barcode"],
-      password: RSAEncryptedPassword.fromJson(json["password"]),
+      password: RSAEncryptedPassword.fromJson(json["password"] ?? {}),
     );
   }
 }
@@ -46687,7 +46686,7 @@ class registerBarcodeAsync_result {
 
   factory registerBarcodeAsync_result.fromJson(Map json) {
     return registerBarcodeAsync_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46701,7 +46700,7 @@ class registerCampaignReward_args {
 
   factory registerCampaignReward_args.fromJson(Map json) {
     return registerCampaignReward_args(
-      request: RegisterCampaignRewardRequest.fromJson(json["request"]),
+      request: RegisterCampaignRewardRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46717,8 +46716,8 @@ class registerCampaignReward_result {
 
   factory registerCampaignReward_result.fromJson(Map json) {
     return registerCampaignReward_result(
-      success: RegisterCampaignRewardResponse.fromJson(json["success"]),
-      e: WalletException.fromJson(json["e"]),
+      success: RegisterCampaignRewardResponse.fromJson(json["success"] ?? {}),
+      e: WalletException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46742,9 +46741,9 @@ class registerE2EEGroupKey_args {
     return registerE2EEGroupKey_args(
       keyVersion: json["keyVersion"],
       chatMid: json["chatMid"],
-      members: List.from(json["members"]),
-      keyIds: List.from(json["keyIds"]),
-      encryptedSharedKeys: List.from(json["encryptedSharedKeys"]),
+      members: List.from(json["members"] ?? []),
+      keyIds: List.from(json["keyIds"] ?? []),
+      encryptedSharedKeys: List.from(json["encryptedSharedKeys"] ?? []),
     );
   }
 }
@@ -46760,8 +46759,8 @@ class registerE2EEGroupKey_result {
 
   factory registerE2EEGroupKey_result.fromJson(Map json) {
     return registerE2EEGroupKey_result(
-      success: Pb1_U3.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_U3.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46775,7 +46774,7 @@ class registerE2EEPublicKeyV2_args {
 
   factory registerE2EEPublicKeyV2_args.fromJson(Map json) {
     return registerE2EEPublicKeyV2_args(
-      request: Pb1_W6.fromJson(json["request"]),
+      request: Pb1_W6.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46791,8 +46790,8 @@ class registerE2EEPublicKeyV2_result {
 
   factory registerE2EEPublicKeyV2_result.fromJson(Map json) {
     return registerE2EEPublicKeyV2_result(
-      success: RegisterE2EEPublicKeyV2Response.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: RegisterE2EEPublicKeyV2Response.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46809,7 +46808,7 @@ class registerE2EEPublicKey_args {
   factory registerE2EEPublicKey_args.fromJson(Map json) {
     return registerE2EEPublicKey_args(
       reqSeq: json["reqSeq"],
-      publicKey: Pb1_C13097n4.fromJson(json["publicKey"]),
+      publicKey: Pb1_C13097n4.fromJson(json["publicKey"] ?? {}),
     );
   }
 }
@@ -46825,8 +46824,8 @@ class registerE2EEPublicKey_result {
 
   factory registerE2EEPublicKey_result.fromJson(Map json) {
     return registerE2EEPublicKey_result(
-      success: Pb1_C13097n4.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_C13097n4.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46840,7 +46839,7 @@ class registerPrimaryCredential_args {
 
   factory registerPrimaryCredential_args.fromJson(Map json) {
     return registerPrimaryCredential_args(
-      request: RegisterPrimaryCredentialRequest.fromJson(json["request"]),
+      request: RegisterPrimaryCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46857,7 +46856,7 @@ class registerPrimaryCredential_result {
   factory registerPrimaryCredential_result.fromJson(Map json) {
     return registerPrimaryCredential_result(
       success: json["success"],
-      e: PwlessCredentialException.fromJson(json["e"]),
+      e: PwlessCredentialException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46887,8 +46886,8 @@ class registerPrimaryUsingEapAccount_result {
 
   factory registerPrimaryUsingEapAccount_result.fromJson(Map json) {
     return registerPrimaryUsingEapAccount_result(
-      success: RegisterPrimaryWithTokenV3Response.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: RegisterPrimaryWithTokenV3Response.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46918,8 +46917,8 @@ class registerPrimaryUsingPhoneWithTokenV3_result {
 
   factory registerPrimaryUsingPhoneWithTokenV3_result.fromJson(Map json) {
     return registerPrimaryUsingPhoneWithTokenV3_result(
-      success: RegisterPrimaryWithTokenV3Response.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: RegisterPrimaryWithTokenV3Response.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -46933,7 +46932,7 @@ class I80_C26367C {
 
   factory I80_C26367C.fromJson(Map json) {
     return I80_C26367C(
-      request: I80_q0.fromJson(json["request"]),
+      request: I80_q0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -46952,8 +46951,8 @@ class I80_C26368D {
   factory I80_C26368D.fromJson(Map json) {
     return I80_C26368D(
       success: json["success"],
-      e: I80_C26390a.fromJson(json["e"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -46987,7 +46986,7 @@ class registerUserid_result {
   factory registerUserid_result.fromJson(Map json) {
     return registerUserid_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47001,7 +47000,7 @@ class reissueChatTicket_args {
 
   factory reissueChatTicket_args.fromJson(Map json) {
     return reissueChatTicket_args(
-      request: ReissueChatTicketRequest.fromJson(json["request"]),
+      request: ReissueChatTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47017,8 +47016,8 @@ class reissueChatTicket_result {
 
   factory reissueChatTicket_result.fromJson(Map json) {
     return reissueChatTicket_result(
-      success: ReissueChatTicketResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: ReissueChatTicketResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47032,7 +47031,7 @@ class rejectChatInvitation_args {
 
   factory rejectChatInvitation_args.fromJson(Map json) {
     return rejectChatInvitation_args(
-      request: RejectChatInvitationRequest.fromJson(json["request"]),
+      request: RejectChatInvitationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47049,7 +47048,7 @@ class rejectChatInvitation_result {
   factory rejectChatInvitation_result.fromJson(Map json) {
     return rejectChatInvitation_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47063,7 +47062,7 @@ class removeAllMessages_result {
 
   factory removeAllMessages_result.fromJson(Map json) {
     return removeAllMessages_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47071,7 +47070,7 @@ class removeAllMessages_result {
 class removeChatRoomAnnouncement_args {
   final int reqSeq;
   final String chatRoomMid;
-  final Int64 announcementSeq;
+  final dynamic announcementSeq;
 
   removeChatRoomAnnouncement_args({
     required this.reqSeq,
@@ -47097,7 +47096,7 @@ class removeChatRoomAnnouncement_result {
 
   factory removeChatRoomAnnouncement_result.fromJson(Map json) {
     return removeChatRoomAnnouncement_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47111,7 +47110,7 @@ class removeFollower_args {
 
   factory removeFollower_args.fromJson(Map json) {
     return removeFollower_args(
-      removeFollowerRequest: RemoveFollowerRequest.fromJson(json["removeFollowerRequest"]),
+      removeFollowerRequest: RemoveFollowerRequest.fromJson(json["removeFollowerRequest"] ?? {}),
     );
   }
 }
@@ -47125,7 +47124,7 @@ class removeFollower_result {
 
   factory removeFollower_result.fromJson(Map json) {
     return removeFollower_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47141,7 +47140,7 @@ class removeFriendRequest_args {
 
   factory removeFriendRequest_args.fromJson(Map json) {
     return removeFriendRequest_args(
-      direction: Pb1_F4.fromValue(json["direction"]),
+      direction: Pb1_F4.fromValue(json["direction"] ?? 0),
       midOrEMid: json["midOrEMid"],
     );
   }
@@ -47156,7 +47155,7 @@ class removeFriendRequest_result {
 
   factory removeFriendRequest_result.fromJson(Map json) {
     return removeFriendRequest_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47170,7 +47169,7 @@ class removeFromFollowBlacklist_args {
 
   factory removeFromFollowBlacklist_args.fromJson(Map json) {
     return removeFromFollowBlacklist_args(
-      removeFromFollowBlacklistRequest: RemoveFromFollowBlacklistRequest.fromJson(json["removeFromFollowBlacklistRequest"]),
+      removeFromFollowBlacklistRequest: RemoveFromFollowBlacklistRequest.fromJson(json["removeFromFollowBlacklistRequest"] ?? {}),
     );
   }
 }
@@ -47184,7 +47183,7 @@ class removeFromFollowBlacklist_result {
 
   factory removeFromFollowBlacklist_result.fromJson(Map json) {
     return removeFromFollowBlacklist_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47201,7 +47200,7 @@ class removeIdentifier_args {
   factory removeIdentifier_args.fromJson(Map json) {
     return removeIdentifier_args(
       authSessionId: json["authSessionId"],
-      request: IdentityCredentialRequest.fromJson(json["request"]),
+      request: IdentityCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47217,8 +47216,8 @@ class removeIdentifier_result {
 
   factory removeIdentifier_result.fromJson(Map json) {
     return removeIdentifier_result(
-      success: IdentityCredentialResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IdentityCredentialResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47232,7 +47231,7 @@ class removeItemFromCollection_args {
 
   factory removeItemFromCollection_args.fromJson(Map json) {
     return removeItemFromCollection_args(
-      request: RemoveItemFromCollectionRequest.fromJson(json["request"]),
+      request: RemoveItemFromCollectionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47249,7 +47248,7 @@ class removeItemFromCollection_result {
   factory removeItemFromCollection_result.fromJson(Map json) {
     return removeItemFromCollection_result(
       success: json["success"],
-      e: CollectionException.fromJson(json["e"]),
+      e: CollectionException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47277,7 +47276,7 @@ class removeLinePayAccount_result {
 
   factory removeLinePayAccount_result.fromJson(Map json) {
     return removeLinePayAccount_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47291,7 +47290,7 @@ class removeProductFromSubscriptionSlot_args {
 
   factory removeProductFromSubscriptionSlot_args.fromJson(Map json) {
     return removeProductFromSubscriptionSlot_args(
-      req: RemoveProductFromSubscriptionSlotRequest.fromJson(json["req"]),
+      req: RemoveProductFromSubscriptionSlotRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -47307,8 +47306,8 @@ class removeProductFromSubscriptionSlot_result {
 
   factory removeProductFromSubscriptionSlot_result.fromJson(Map json) {
     return removeProductFromSubscriptionSlot_result(
-      success: RemoveProductFromSubscriptionSlotResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: RemoveProductFromSubscriptionSlotResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47322,7 +47321,7 @@ class reportAbuseEx_args {
 
   factory reportAbuseEx_args.fromJson(Map json) {
     return reportAbuseEx_args(
-      request: ReportAbuseExRequest.fromJson(json["request"]),
+      request: ReportAbuseExRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47339,7 +47338,7 @@ class reportAbuseEx_result {
   factory reportAbuseEx_result.fromJson(Map json) {
     return reportAbuseEx_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47355,8 +47354,8 @@ class reportDeviceState_args {
 
   factory reportDeviceState_args.fromJson(Map json) {
     return reportDeviceState_args(
-      booleanState: Map.from(json["booleanState"]),
-      stringState: Map.from(json["stringState"]),
+      booleanState: Map.from(json["booleanState"] ?? {}),
+      stringState: Map.from(json["stringState"] ?? {}),
     );
   }
 }
@@ -47370,7 +47369,7 @@ class reportDeviceState_result {
 
   factory reportDeviceState_result.fromJson(Map json) {
     return reportDeviceState_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47379,8 +47378,8 @@ class reportLocation_args {
   final Geolocation location;
   final Pb1_EnumC12917a6 trigger;
   final ClientNetworkStatus networkStatus;
-  final Int64 measuredAt;
-  final Int64 clientCurrentTimestamp;
+  final dynamic measuredAt;
+  final dynamic clientCurrentTimestamp;
   final LocationDebugInfo debugInfo;
 
   reportLocation_args({
@@ -47394,12 +47393,12 @@ class reportLocation_args {
 
   factory reportLocation_args.fromJson(Map json) {
     return reportLocation_args(
-      location: Geolocation.fromJson(json["location"]),
-      trigger: Pb1_EnumC12917a6.fromValue(json["trigger"]),
-      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"]),
+      location: Geolocation.fromJson(json["location"] ?? {}),
+      trigger: Pb1_EnumC12917a6.fromValue(json["trigger"] ?? 0),
+      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"] ?? {}),
       measuredAt: json["measuredAt"],
       clientCurrentTimestamp: json["clientCurrentTimestamp"],
-      debugInfo: LocationDebugInfo.fromJson(json["debugInfo"]),
+      debugInfo: LocationDebugInfo.fromJson(json["debugInfo"] ?? {}),
     );
   }
 }
@@ -47413,7 +47412,7 @@ class reportLocation_result {
 
   factory reportLocation_result.fromJson(Map json) {
     return reportLocation_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47421,8 +47420,8 @@ class reportLocation_result {
 class reportNetworkStatus_args {
   final Pb1_EnumC12917a6 trigger;
   final ClientNetworkStatus networkStatus;
-  final Int64 measuredAt;
-  final Int64 scanCompletionTimestamp;
+  final dynamic measuredAt;
+  final dynamic scanCompletionTimestamp;
 
   reportNetworkStatus_args({
     required this.trigger,
@@ -47433,8 +47432,8 @@ class reportNetworkStatus_args {
 
   factory reportNetworkStatus_args.fromJson(Map json) {
     return reportNetworkStatus_args(
-      trigger: Pb1_EnumC12917a6.fromValue(json["trigger"]),
-      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"]),
+      trigger: Pb1_EnumC12917a6.fromValue(json["trigger"] ?? 0),
+      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"] ?? {}),
       measuredAt: json["measuredAt"],
       scanCompletionTimestamp: json["scanCompletionTimestamp"],
     );
@@ -47450,13 +47449,13 @@ class reportNetworkStatus_result {
 
   factory reportNetworkStatus_result.fromJson(Map json) {
     return reportNetworkStatus_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
 
 class reportProfile_args {
-  final Int64 syncOpRevision;
+  final dynamic syncOpRevision;
   final Profile profile;
 
   reportProfile_args({
@@ -47467,7 +47466,7 @@ class reportProfile_args {
   factory reportProfile_args.fromJson(Map json) {
     return reportProfile_args(
       syncOpRevision: json["syncOpRevision"],
-      profile: Profile.fromJson(json["profile"]),
+      profile: Profile.fromJson(json["profile"] ?? {}),
     );
   }
 }
@@ -47481,7 +47480,7 @@ class reportProfile_result {
 
   factory reportProfile_result.fromJson(Map json) {
     return reportProfile_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47498,7 +47497,7 @@ class reportPushRecvReports_args {
   factory reportPushRecvReports_args.fromJson(Map json) {
     return reportPushRecvReports_args(
       reqSeq: json["reqSeq"],
-      pushRecvReports: List.from(json["pushRecvReports"])
+      pushRecvReports: List.from(json["pushRecvReports"] ?? [])
           .map((e) => PushRecvReport.fromJson(e))
           .toList(),
     );
@@ -47514,7 +47513,7 @@ class reportPushRecvReports_result {
 
   factory reportPushRecvReports_result.fromJson(Map json) {
     return reportPushRecvReports_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47528,7 +47527,7 @@ class reportRefreshedAccessToken_args {
 
   factory reportRefreshedAccessToken_args.fromJson(Map json) {
     return reportRefreshedAccessToken_args(
-      request: ReportRefreshedAccessTokenRequest.fromJson(json["request"]),
+      request: ReportRefreshedAccessTokenRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47545,13 +47544,13 @@ class reportRefreshedAccessToken_result {
   factory reportRefreshedAccessToken_result.fromJson(Map json) {
     return reportRefreshedAccessToken_result(
       success: json["success"],
-      accessTokenRefreshException: AccessTokenRefreshException.fromJson(json["accessTokenRefreshException"]),
+      accessTokenRefreshException: AccessTokenRefreshException.fromJson(json["accessTokenRefreshException"] ?? {}),
     );
   }
 }
 
 class reportSettings_args {
-  final Int64 syncOpRevision;
+  final dynamic syncOpRevision;
   final Settings settings;
 
   reportSettings_args({
@@ -47562,7 +47561,7 @@ class reportSettings_args {
   factory reportSettings_args.fromJson(Map json) {
     return reportSettings_args(
       syncOpRevision: json["syncOpRevision"],
-      settings: Settings.fromJson(json["settings"]),
+      settings: Settings.fromJson(json["settings"] ?? {}),
     );
   }
 }
@@ -47576,7 +47575,7 @@ class reportSettings_result {
 
   factory reportSettings_result.fromJson(Map json) {
     return reportSettings_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47590,7 +47589,7 @@ class requestCleanupUserProvidedData_args {
 
   factory requestCleanupUserProvidedData_args.fromJson(Map json) {
     return requestCleanupUserProvidedData_args(
-      dataTypes: List.from(json["dataTypes"])
+      dataTypes: List.from(json["dataTypes"] ?? [])
           .map((e) => Pb1_od.fromValue(e))
           .toList(),
     );
@@ -47606,7 +47605,7 @@ class requestCleanupUserProvidedData_result {
 
   factory requestCleanupUserProvidedData_result.fromJson(Map json) {
     return requestCleanupUserProvidedData_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47620,7 +47619,7 @@ class I80_C26388Y {
 
   factory I80_C26388Y.fromJson(Map json) {
     return I80_C26388Y(
-      request: I80_u0.fromJson(json["request"]),
+      request: I80_u0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47640,7 +47639,7 @@ class requestToSendPasswordSetVerificationEmail_args {
     return requestToSendPasswordSetVerificationEmail_args(
       authSessionId: json["authSessionId"],
       email: json["email"],
-      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"]),
+      accountIdentifier: AccountIdentifier.fromJson(json["accountIdentifier"] ?? {}),
     );
   }
 }
@@ -47656,8 +47655,8 @@ class requestToSendPasswordSetVerificationEmail_result {
 
   factory requestToSendPasswordSetVerificationEmail_result.fromJson(Map json) {
     return requestToSendPasswordSetVerificationEmail_result(
-      success: RequestToSendPasswordSetVerificationEmailResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: RequestToSendPasswordSetVerificationEmailResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47674,7 +47673,7 @@ class I80_C26389Z {
   factory I80_C26389Z.fromJson(Map json) {
     return I80_C26389Z(
       success: json["success"],
-      e: I80_C26390a.fromJson(json["e"]),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47688,7 +47687,7 @@ class requestToSendPhonePinCode_args {
 
   factory requestToSendPhonePinCode_args.fromJson(Map json) {
     return requestToSendPhonePinCode_args(
-      request: ReqToSendPhonePinCodeRequest.fromJson(json["request"]),
+      request: ReqToSendPhonePinCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47702,7 +47701,7 @@ class I80_C26391a0 {
 
   factory I80_C26391a0.fromJson(Map json) {
     return I80_C26391a0(
-      request: I80_s0.fromJson(json["request"]),
+      request: I80_s0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47718,8 +47717,8 @@ class requestToSendPhonePinCode_result {
 
   factory requestToSendPhonePinCode_result.fromJson(Map json) {
     return requestToSendPhonePinCode_result(
-      success: ReqToSendPhonePinCodeResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: ReqToSendPhonePinCodeResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47735,8 +47734,8 @@ class I80_C26393b0 {
 
   factory I80_C26393b0.fromJson(Map json) {
     return I80_C26393b0(
-      success: I80_t0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_t0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47757,7 +47756,7 @@ class requestTradeNumber_args {
   factory requestTradeNumber_args.fromJson(Map json) {
     return requestTradeNumber_args(
       requestToken: json["requestToken"],
-      requestType: r80_g0.fromValue(json["requestType"]),
+      requestType: r80_g0.fromValue(json["requestType"] ?? 0),
       amount: json["amount"],
       name: json["name"],
     );
@@ -47775,8 +47774,8 @@ class requestTradeNumber_result {
 
   factory requestTradeNumber_result.fromJson(Map json) {
     return requestTradeNumber_result(
-      success: PaymentTradeInfo.fromJson(json["success"]),
-      e: PaymentException.fromJson(json["e"]),
+      success: PaymentTradeInfo.fromJson(json["success"] ?? {}),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47793,7 +47792,7 @@ class resendIdentifierConfirmation_args {
   factory resendIdentifierConfirmation_args.fromJson(Map json) {
     return resendIdentifierConfirmation_args(
       authSessionId: json["authSessionId"],
-      request: IdentityCredentialRequest.fromJson(json["request"]),
+      request: IdentityCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47809,8 +47808,8 @@ class resendIdentifierConfirmation_result {
 
   factory resendIdentifierConfirmation_result.fromJson(Map json) {
     return resendIdentifierConfirmation_result(
-      success: IdentityCredentialResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IdentityCredentialResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47838,7 +47837,7 @@ class resendPinCode_result {
 
   factory resendPinCode_result.fromJson(Map json) {
     return resendPinCode_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47852,7 +47851,7 @@ class reserveCoinPurchase_args {
 
   factory reserveCoinPurchase_args.fromJson(Map json) {
     return reserveCoinPurchase_args(
-      request: CoinPurchaseReservation.fromJson(json["request"]),
+      request: CoinPurchaseReservation.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47868,8 +47867,8 @@ class reserveCoinPurchase_result {
 
   factory reserveCoinPurchase_result.fromJson(Map json) {
     return reserveCoinPurchase_result(
-      success: PaymentReservationResult.fromJson(json["success"]),
-      e: CoinException.fromJson(json["e"]),
+      success: PaymentReservationResult.fromJson(json["success"] ?? {}),
+      e: CoinException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47883,7 +47882,7 @@ class reserveSubscriptionPurchase_args {
 
   factory reserveSubscriptionPurchase_args.fromJson(Map json) {
     return reserveSubscriptionPurchase_args(
-      request: ReserveSubscriptionPurchaseRequest.fromJson(json["request"]),
+      request: ReserveSubscriptionPurchaseRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47899,8 +47898,8 @@ class reserveSubscriptionPurchase_result {
 
   factory reserveSubscriptionPurchase_result.fromJson(Map json) {
     return reserveSubscriptionPurchase_result(
-      success: ReserveSubscriptionPurchaseResponse.fromJson(json["success"]),
-      e: PremiumException.fromJson(json["e"]),
+      success: ReserveSubscriptionPurchaseResponse.fromJson(json["success"] ?? {}),
+      e: PremiumException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47914,7 +47913,7 @@ class reserve_args {
 
   factory reserve_args.fromJson(Map json) {
     return reserve_args(
-      request: ReserveRequest.fromJson(json["request"]),
+      request: ReserveRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47930,8 +47929,8 @@ class reserve_result {
 
   factory reserve_result.fromJson(Map json) {
     return reserve_result(
-      success: ReserveInfo.fromJson(json["success"]),
-      e: MembershipException.fromJson(json["e"]),
+      success: ReserveInfo.fromJson(json["success"] ?? {}),
+      e: MembershipException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47945,7 +47944,7 @@ class respondE2EEKeyExchange_result {
 
   factory respondE2EEKeyExchange_result.fromJson(Map json) {
     return respondE2EEKeyExchange_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47959,7 +47958,7 @@ class respondE2EELoginRequest_result {
 
   factory respondE2EELoginRequest_result.fromJson(Map json) {
     return respondE2EELoginRequest_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -47973,7 +47972,7 @@ class restoreE2EEKeyBackup_args {
 
   factory restoreE2EEKeyBackup_args.fromJson(Map json) {
     return restoreE2EEKeyBackup_args(
-      request: Pb1_C13155r7.fromJson(json["request"]),
+      request: Pb1_C13155r7.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -47989,8 +47988,8 @@ class restoreE2EEKeyBackup_result {
 
   factory restoreE2EEKeyBackup_result.fromJson(Map json) {
     return restoreE2EEKeyBackup_result(
-      success: Pb1_C13169s7.fromJson(json["success"]),
-      e: E2EEKeyBackupException.fromJson(json["e"]),
+      success: Pb1_C13169s7.fromJson(json["success"] ?? {}),
+      e: E2EEKeyBackupException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48004,7 +48003,7 @@ class I80_C26395c0 {
 
   factory I80_C26395c0.fromJson(Map json) {
     return I80_C26395c0(
-      request: I80_w0.fromJson(json["request"]),
+      request: I80_w0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48020,8 +48019,8 @@ class I80_C26397d0 {
 
   factory I80_C26397d0.fromJson(Map json) {
     return I80_C26397d0(
-      success: I80_x0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_x0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48035,7 +48034,7 @@ class I80_C26399e0 {
 
   factory I80_C26399e0.fromJson(Map json) {
     return I80_C26399e0(
-      request: I80_w0.fromJson(json["request"]),
+      request: I80_w0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48051,8 +48050,8 @@ class I80_C26401f0 {
 
   factory I80_C26401f0.fromJson(Map json) {
     return I80_C26401f0(
-      success: I80_x0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_x0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48082,8 +48081,8 @@ class retrieveRequestTokenWithDocomoV2_result {
 
   factory retrieveRequestTokenWithDocomoV2_result.fromJson(Map json) {
     return retrieveRequestTokenWithDocomoV2_result(
-      success: RetrieveRequestTokenWithDocomoV2Response.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: RetrieveRequestTokenWithDocomoV2Response.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48097,7 +48096,7 @@ class retrieveRequestToken_args {
 
   factory retrieveRequestToken_args.fromJson(Map json) {
     return retrieveRequestToken_args(
-      carrier: CarrierCode.fromValue(json["carrier"]),
+      carrier: CarrierCode.fromValue(json["carrier"] ?? 0),
     );
   }
 }
@@ -48113,8 +48112,8 @@ class retrieveRequestToken_result {
 
   factory retrieveRequestToken_result.fromJson(Map json) {
     return retrieveRequestToken_result(
-      success: AgeCheckRequestResult.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: AgeCheckRequestResult.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48128,7 +48127,7 @@ class revokeTokens_args {
 
   factory revokeTokens_args.fromJson(Map json) {
     return revokeTokens_args(
-      request: RevokeTokensRequest.fromJson(json["request"]),
+      request: RevokeTokensRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48144,8 +48143,8 @@ class revokeTokens_result {
 
   factory revokeTokens_result.fromJson(Map json) {
     return revokeTokens_result(
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -48159,7 +48158,7 @@ class saveStudentInformation_args {
 
   factory saveStudentInformation_args.fromJson(Map json) {
     return saveStudentInformation_args(
-      req: SaveStudentInformationRequest.fromJson(json["req"]),
+      req: SaveStudentInformationRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -48176,7 +48175,7 @@ class saveStudentInformation_result {
   factory saveStudentInformation_result.fromJson(Map json) {
     return saveStudentInformation_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48213,7 +48212,7 @@ class sendChatChecked_result {
 
   factory sendChatChecked_result.fromJson(Map json) {
     return sendChatChecked_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48250,7 +48249,7 @@ class sendChatRemoved_result {
 
   factory sendChatRemoved_result.fromJson(Map json) {
     return sendChatRemoved_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48264,7 +48263,7 @@ class sendEncryptedE2EEKey_args {
 
   factory sendEncryptedE2EEKey_args.fromJson(Map json) {
     return sendEncryptedE2EEKey_args(
-      request: SendEncryptedE2EEKeyRequest.fromJson(json["request"]),
+      request: SendEncryptedE2EEKeyRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48283,8 +48282,8 @@ class sendEncryptedE2EEKey_result {
   factory sendEncryptedE2EEKey_result.fromJson(Map json) {
     return sendEncryptedE2EEKey_result(
       success: json["success"],
-      pqme: PrimaryQrCodeMigrationException.fromJson(json["pqme"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      pqme: PrimaryQrCodeMigrationException.fromJson(json["pqme"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -48300,8 +48299,8 @@ class sendMessage_args {
 
   factory sendMessage_args.fromJson(Map json) {
     return sendMessage_args(
-      seq: json["seq"],
-      message: Message.fromJson(json["message"]),
+      seq: json["seq"] ?? 0,
+      message: Message.fromJson(json["message"] ?? {}),
     );
   }
 }
@@ -48317,8 +48316,8 @@ class sendMessage_result {
 
   factory sendMessage_result.fromJson(Map json) {
     return sendMessage_result(
-      success: Message.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Message.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48332,7 +48331,7 @@ class sendPostback_args {
 
   factory sendPostback_args.fromJson(Map json) {
     return sendPostback_args(
-      request: SendPostbackRequest.fromJson(json["request"]),
+      request: SendPostbackRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48346,7 +48345,7 @@ class sendPostback_result {
 
   factory sendPostback_result.fromJson(Map json) {
     return sendPostback_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48360,7 +48359,7 @@ class setChatHiddenStatus_args {
 
   factory setChatHiddenStatus_args.fromJson(Map json) {
     return setChatHiddenStatus_args(
-      setChatHiddenStatusRequest: SetChatHiddenStatusRequest.fromJson(json["setChatHiddenStatusRequest"]),
+      setChatHiddenStatusRequest: SetChatHiddenStatusRequest.fromJson(json["setChatHiddenStatusRequest"] ?? {}),
     );
   }
 }
@@ -48374,7 +48373,7 @@ class setChatHiddenStatus_result {
 
   factory setChatHiddenStatus_result.fromJson(Map json) {
     return setChatHiddenStatus_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48388,7 +48387,7 @@ class setHashedPassword_args {
 
   factory setHashedPassword_args.fromJson(Map json) {
     return setHashedPassword_args(
-      request: SetHashedPasswordRequest.fromJson(json["request"]),
+      request: SetHashedPasswordRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48402,7 +48401,7 @@ class I80_C26403g0 {
 
   factory I80_C26403g0.fromJson(Map json) {
     return I80_C26403g0(
-      request: I80_z0.fromJson(json["request"]),
+      request: I80_z0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48419,7 +48418,7 @@ class setHashedPassword_result {
   factory setHashedPassword_result.fromJson(Map json) {
     return setHashedPassword_result(
       success: json["success"],
-      e: AuthException.fromJson(json["e"]),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48436,7 +48435,7 @@ class I80_C26405h0 {
   factory I80_C26405h0.fromJson(Map json) {
     return I80_C26405h0(
       success: json["success"],
-      e: I80_C26390a.fromJson(json["e"]),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48453,7 +48452,7 @@ class setIdentifier_args {
   factory setIdentifier_args.fromJson(Map json) {
     return setIdentifier_args(
       authSessionId: json["authSessionId"],
-      request: IdentityCredentialRequest.fromJson(json["request"]),
+      request: IdentityCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48469,8 +48468,8 @@ class setIdentifier_result {
 
   factory setIdentifier_result.fromJson(Map json) {
     return setIdentifier_result(
-      success: IdentityCredentialResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IdentityCredentialResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48491,7 +48490,7 @@ class setNotificationsEnabled_args {
   factory setNotificationsEnabled_args.fromJson(Map json) {
     return setNotificationsEnabled_args(
       reqSeq: json["reqSeq"],
-      type: MIDType.fromValue(json["type"]),
+      type: MIDType.fromValue(json["type"] ?? 0),
       target: json["target"],
       enablement: json["enablement"],
     );
@@ -48507,7 +48506,7 @@ class setNotificationsEnabled_result {
 
   factory setNotificationsEnabled_result.fromJson(Map json) {
     return setNotificationsEnabled_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48521,7 +48520,7 @@ class setPassword_args {
 
   factory setPassword_args.fromJson(Map json) {
     return setPassword_args(
-      request: SetPasswordRequest.fromJson(json["request"]),
+      request: SetPasswordRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48540,8 +48539,8 @@ class setPassword_result {
   factory setPassword_result.fromJson(Map json) {
     return setPassword_result(
       success: json["success"],
-      pue: PasswordUpdateException.fromJson(json["pue"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      pue: PasswordUpdateException.fromJson(json["pue"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -48571,8 +48570,8 @@ class shouldShowWelcomeStickerBanner_result {
 
   factory shouldShowWelcomeStickerBanner_result.fromJson(Map json) {
     return shouldShowWelcomeStickerBanner_result(
-      success: ShouldShowWelcomeStickerBannerResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: ShouldShowWelcomeStickerBannerResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48586,7 +48585,7 @@ class startPhotobooth_args {
 
   factory startPhotobooth_args.fromJson(Map json) {
     return startPhotobooth_args(
-      request: StartPhotoboothRequest.fromJson(json["request"]),
+      request: StartPhotoboothRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48602,8 +48601,8 @@ class startPhotobooth_result {
 
   factory startPhotobooth_result.fromJson(Map json) {
     return startPhotobooth_result(
-      success: StartPhotoboothResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: StartPhotoboothResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48617,7 +48616,7 @@ class I80_C26407i0 {
 
   factory I80_C26407i0.fromJson(Map json) {
     return I80_C26407i0(
-      request: I80_C0.fromJson(json["request"]),
+      request: I80_C0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48633,8 +48632,8 @@ class I80_C26409j0 {
 
   factory I80_C26409j0.fromJson(Map json) {
     return I80_C26409j0(
-      success: I80_D0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_D0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48663,13 +48662,13 @@ class startUpdateVerification_args {
   factory startUpdateVerification_args.fromJson(Map json) {
     return startUpdateVerification_args(
       region: json["region"],
-      carrier: CarrierCode.fromValue(json["carrier"]),
+      carrier: CarrierCode.fromValue(json["carrier"] ?? 0),
       phone: json["phone"],
       udidHash: json["udidHash"],
-      deviceInfo: DeviceInfo.fromJson(json["deviceInfo"]),
+      deviceInfo: DeviceInfo.fromJson(json["deviceInfo"] ?? {}),
       networkCode: json["networkCode"],
       locale: json["locale"],
-      simInfo: SIMInfo.fromJson(json["simInfo"]),
+      simInfo: SIMInfo.fromJson(json["simInfo"] ?? {}),
     );
   }
 }
@@ -48685,8 +48684,8 @@ class startUpdateVerification_result {
 
   factory startUpdateVerification_result.fromJson(Map json) {
     return startUpdateVerification_result(
-      success: VerificationSessionData.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: VerificationSessionData.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48700,7 +48699,7 @@ class stopBundleSubscription_args {
 
   factory stopBundleSubscription_args.fromJson(Map json) {
     return stopBundleSubscription_args(
-      request: StopBundleSubscriptionRequest.fromJson(json["request"]),
+      request: StopBundleSubscriptionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48716,8 +48715,8 @@ class stopBundleSubscription_result {
 
   factory stopBundleSubscription_result.fromJson(Map json) {
     return stopBundleSubscription_result(
-      success: StopBundleSubscriptionResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: StopBundleSubscriptionResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48731,7 +48730,7 @@ class storeShareTargetPickerResult_args {
 
   factory storeShareTargetPickerResult_args.fromJson(Map json) {
     return storeShareTargetPickerResult_args(
-      request: ShareTargetPickerResultRequest.fromJson(json["request"]),
+      request: ShareTargetPickerResultRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48747,8 +48746,8 @@ class storeShareTargetPickerResult_result {
 
   factory storeShareTargetPickerResult_result.fromJson(Map json) {
     return storeShareTargetPickerResult_result(
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -48762,7 +48761,7 @@ class storeSubWindowResult_args {
 
   factory storeSubWindowResult_args.fromJson(Map json) {
     return storeSubWindowResult_args(
-      request: SubWindowResultRequest.fromJson(json["request"]),
+      request: SubWindowResultRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48778,8 +48777,8 @@ class storeSubWindowResult_result {
 
   factory storeSubWindowResult_result.fromJson(Map json) {
     return storeSubWindowResult_result(
-      liffException: LiffException.fromJson(json["liffException"]),
-      talkException: TalkException.fromJson(json["talkException"]),
+      liffException: LiffException.fromJson(json["liffException"] ?? {}),
+      talkException: TalkException.fromJson(json["talkException"] ?? {}),
     );
   }
 }
@@ -48796,7 +48795,7 @@ class syncContacts_args {
   factory syncContacts_args.fromJson(Map json) {
     return syncContacts_args(
       reqSeq: json["reqSeq"],
-      localContacts: List.from(json["localContacts"])
+      localContacts: List.from(json["localContacts"] ?? [])
           .map((e) => ContactModification.fromJson(e))
           .toList(),
     );
@@ -48814,8 +48813,8 @@ class syncContacts_result {
 
   factory syncContacts_result.fromJson(Map json) {
     return syncContacts_result(
-      success: Map.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Map.from(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48829,7 +48828,7 @@ class sync_args {
 
   factory sync_args.fromJson(Map json) {
     return sync_args(
-      request: SyncRequest.fromJson(json["request"]),
+      request: SyncRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -48845,8 +48844,8 @@ class sync_result {
 
   factory sync_result.fromJson(Map json) {
     return sync_result(
-      success: Pb1_X7.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: Pb1_X7.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48862,8 +48861,8 @@ class t80_g {
 
   factory t80_g.fromJson(Map json) {
     return t80_g(
-      response: GetResponse.fromJson(json["response"]),
-      error: SettingsException.fromJson(json["error"]),
+      response: GetResponse.fromJson(json["response"] ?? {}),
+      error: SettingsException.fromJson(json["error"] ?? {}),
     );
   }
 }
@@ -48879,15 +48878,15 @@ class t80_l {
 
   factory t80_l.fromJson(Map json) {
     return t80_l(
-      response: SetResponse.fromJson(json["response"]),
-      error: SettingsException.fromJson(json["error"]),
+      response: SetResponse.fromJson(json["response"] ?? {}),
+      error: SettingsException.fromJson(json["error"] ?? {}),
     );
   }
 }
 
 class t80_p {
   final bool booleanValue;
-  final Int64 i64Value;
+  final dynamic i64Value;
   final String stringValue;
   final List<dynamic> stringListValue;
   final List<dynamic> i64ListValue;
@@ -48921,16 +48920,16 @@ class t80_p {
       booleanValue: json["booleanValue"],
       i64Value: json["i64Value"],
       stringValue: json["stringValue"],
-      stringListValue: List.from(json["stringListValue"]),
-      i64ListValue: List.from(json["i64ListValue"]),
+      stringListValue: List.from(json["stringListValue"] ?? []),
+      i64ListValue: List.from(json["i64ListValue"] ?? []),
       rawJsonStringValue: json["rawJsonStringValue"],
       i8Value: json["i8Value"],
       i16Value: json["i16Value"],
       i32Value: json["i32Value"],
       doubleValue: json["doubleValue"],
-      i8ListValue: List.from(json["i8ListValue"]),
-      i16ListValue: List.from(json["i16ListValue"]),
-      i32ListValue: List.from(json["i32ListValue"]),
+      i8ListValue: List.from(json["i8ListValue"] ?? []),
+      i16ListValue: List.from(json["i16ListValue"] ?? []),
+      i32ListValue: List.from(json["i32ListValue"] ?? []),
     );
   }
 }
@@ -48949,7 +48948,7 @@ class tryFriendRequest_args {
   factory tryFriendRequest_args.fromJson(Map json) {
     return tryFriendRequest_args(
       midOrEMid: json["midOrEMid"],
-      method: Pb1_G4.fromValue(json["method"]),
+      method: Pb1_G4.fromValue(json["method"] ?? 0),
       friendRequestParams: json["friendRequestParams"],
     );
   }
@@ -48964,7 +48963,7 @@ class tryFriendRequest_result {
 
   factory tryFriendRequest_result.fromJson(Map json) {
     return tryFriendRequest_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -48998,7 +48997,7 @@ class unblockContact_result {
 
   factory unblockContact_result.fromJson(Map json) {
     return unblockContact_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49029,7 +49028,7 @@ class unblockRecommendation_result {
 
   factory unblockRecommendation_result.fromJson(Map json) {
     return unblockRecommendation_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49043,7 +49042,7 @@ class unfollow_args {
 
   factory unfollow_args.fromJson(Map json) {
     return unfollow_args(
-      unfollowRequest: UnfollowRequest.fromJson(json["unfollowRequest"]),
+      unfollowRequest: UnfollowRequest.fromJson(json["unfollowRequest"] ?? {}),
     );
   }
 }
@@ -49057,7 +49056,7 @@ class unfollow_result {
 
   factory unfollow_result.fromJson(Map json) {
     return unfollow_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49071,7 +49070,7 @@ class unlinkDevice_args {
 
   factory unlinkDevice_args.fromJson(Map json) {
     return unlinkDevice_args(
-      request: DeviceUnlinkRequest.fromJson(json["request"]),
+      request: DeviceUnlinkRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49088,7 +49087,7 @@ class unlinkDevice_result {
   factory unlinkDevice_result.fromJson(Map json) {
     return unlinkDevice_result(
       success: json["success"],
-      e: ThingsException.fromJson(json["e"]),
+      e: ThingsException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49105,7 +49104,7 @@ class unregisterUserAndDevice_result {
   factory unregisterUserAndDevice_result.fromJson(Map json) {
     return unregisterUserAndDevice_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49136,7 +49135,7 @@ class unsendMessage_result {
 
   factory unsendMessage_result.fromJson(Map json) {
     return unsendMessage_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49149,8 +49148,8 @@ class updateAndGetNearby_args {
   final int altitudeMeters;
   final int velocityMetersPerSecond;
   final int bearingDegrees;
-  final Int64 measuredAtTimestamp;
-  final Int64 clientCurrentTimestamp;
+  final dynamic measuredAtTimestamp;
+  final dynamic clientCurrentTimestamp;
 
   updateAndGetNearby_args({
     required this.latitude,
@@ -49168,8 +49167,8 @@ class updateAndGetNearby_args {
     return updateAndGetNearby_args(
       latitude: json["latitude"],
       longitude: json["longitude"],
-      accuracy: GeolocationAccuracy.fromJson(json["accuracy"]),
-      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"]),
+      accuracy: GeolocationAccuracy.fromJson(json["accuracy"] ?? {}),
+      networkStatus: ClientNetworkStatus.fromJson(json["networkStatus"] ?? {}),
       altitudeMeters: json["altitudeMeters"],
       velocityMetersPerSecond: json["velocityMetersPerSecond"],
       bearingDegrees: json["bearingDegrees"],
@@ -49190,10 +49189,10 @@ class updateAndGetNearby_result {
 
   factory updateAndGetNearby_result.fromJson(Map json) {
     return updateAndGetNearby_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => NearbyEntry.fromJson(e))
           .toList(),
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49207,7 +49206,7 @@ class updateChannelNotificationSetting_args {
 
   factory updateChannelNotificationSetting_args.fromJson(Map json) {
     return updateChannelNotificationSetting_args(
-      setting: List.from(json["setting"])
+      setting: List.from(json["setting"] ?? [])
           .map((e) => ChannelNotificationSetting.fromJson(e))
           .toList(),
     );
@@ -49223,7 +49222,7 @@ class updateChannelNotificationSetting_result {
 
   factory updateChannelNotificationSetting_result.fromJson(Map json) {
     return updateChannelNotificationSetting_result(
-      e: ChannelException.fromJson(json["e"]),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49237,7 +49236,7 @@ class updateChannelSettings_args {
 
   factory updateChannelSettings_args.fromJson(Map json) {
     return updateChannelSettings_args(
-      channelSettings: ChannelSettings.fromJson(json["channelSettings"]),
+      channelSettings: ChannelSettings.fromJson(json["channelSettings"] ?? {}),
     );
   }
 }
@@ -49254,7 +49253,7 @@ class updateChannelSettings_result {
   factory updateChannelSettings_result.fromJson(Map json) {
     return updateChannelSettings_result(
       success: json["success"],
-      e: ChannelException.fromJson(json["e"]),
+      e: ChannelException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49290,8 +49289,8 @@ class updateChatRoomBGM_result {
 
   factory updateChatRoomBGM_result.fromJson(Map json) {
     return updateChatRoomBGM_result(
-      success: ChatRoomBGM.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: ChatRoomBGM.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49305,7 +49304,7 @@ class updateChat_args {
 
   factory updateChat_args.fromJson(Map json) {
     return updateChat_args(
-      request: UpdateChatRequest.fromJson(json["request"]),
+      request: UpdateChatRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49322,7 +49321,7 @@ class updateChat_result {
   factory updateChat_result.fromJson(Map json) {
     return updateChat_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49344,7 +49343,7 @@ class updateContactSetting_args {
     return updateContactSetting_args(
       reqSeq: json["reqSeq"],
       mid: json["mid"],
-      flag: ContactSetting.fromValue(json["flag"]),
+      flag: ContactSetting.fromValue(json["flag"] ?? 0),
       value: json["value"],
     );
   }
@@ -49359,7 +49358,7 @@ class updateContactSetting_result {
 
   factory updateContactSetting_result.fromJson(Map json) {
     return updateContactSetting_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49379,7 +49378,7 @@ class updateExtendedProfileAttribute_args {
     return updateExtendedProfileAttribute_args(
       reqSeq: json["reqSeq"],
       attr: json["attr"],
-      extendedProfile: ExtendedProfile.fromJson(json["extendedProfile"]),
+      extendedProfile: ExtendedProfile.fromJson(json["extendedProfile"] ?? {}),
     );
   }
 }
@@ -49393,7 +49392,7 @@ class updateExtendedProfileAttribute_result {
 
   factory updateExtendedProfileAttribute_result.fromJson(Map json) {
     return updateExtendedProfileAttribute_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49407,7 +49406,7 @@ class updateGroupCallUrl_args {
 
   factory updateGroupCallUrl_args.fromJson(Map json) {
     return updateGroupCallUrl_args(
-      request: UpdateGroupCallUrlRequest.fromJson(json["request"]),
+      request: UpdateGroupCallUrlRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49424,7 +49423,7 @@ class updateGroupCallUrl_result {
   factory updateGroupCallUrl_result.fromJson(Map json) {
     return updateGroupCallUrl_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49441,7 +49440,7 @@ class updateIdentifier_args {
   factory updateIdentifier_args.fromJson(Map json) {
     return updateIdentifier_args(
       authSessionId: json["authSessionId"],
-      request: IdentityCredentialRequest.fromJson(json["request"]),
+      request: IdentityCredentialRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49457,8 +49456,8 @@ class updateIdentifier_result {
 
   factory updateIdentifier_result.fromJson(Map json) {
     return updateIdentifier_result(
-      success: IdentityCredentialResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: IdentityCredentialResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49475,7 +49474,7 @@ class updateNotificationToken_args {
   factory updateNotificationToken_args.fromJson(Map json) {
     return updateNotificationToken_args(
       token: json["token"],
-      type: NotificationType.fromValue(json["type"]),
+      type: NotificationType.fromValue(json["type"] ?? 0),
     );
   }
 }
@@ -49489,7 +49488,7 @@ class updateNotificationToken_result {
 
   factory updateNotificationToken_result.fromJson(Map json) {
     return updateNotificationToken_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49503,7 +49502,7 @@ class updatePassword_args {
 
   factory updatePassword_args.fromJson(Map json) {
     return updatePassword_args(
-      request: UpdatePasswordRequest.fromJson(json["request"]),
+      request: UpdatePasswordRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49522,8 +49521,8 @@ class updatePassword_result {
   factory updatePassword_result.fromJson(Map json) {
     return updatePassword_result(
       success: json["success"],
-      pue: PasswordUpdateException.fromJson(json["pue"]),
-      tae: TokenAuthException.fromJson(json["tae"]),
+      pue: PasswordUpdateException.fromJson(json["pue"] ?? {}),
+      tae: TokenAuthException.fromJson(json["tae"] ?? {}),
     );
   }
 }
@@ -49537,7 +49536,7 @@ class updateProfileAttribute_result {
 
   factory updateProfileAttribute_result.fromJson(Map json) {
     return updateProfileAttribute_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49554,7 +49553,7 @@ class updateProfileAttributes_args {
   factory updateProfileAttributes_args.fromJson(Map json) {
     return updateProfileAttributes_args(
       reqSeq: json["reqSeq"],
-      request: UpdateProfileAttributesRequest.fromJson(json["request"]),
+      request: UpdateProfileAttributesRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49571,7 +49570,7 @@ class updateProfileAttributes_result {
   factory updateProfileAttributes_result.fromJson(Map json) {
     return updateProfileAttributes_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49585,7 +49584,7 @@ class updateSafetyStatus_args {
 
   factory updateSafetyStatus_args.fromJson(Map json) {
     return updateSafetyStatus_args(
-      req: UpdateSafetyStatusRequest.fromJson(json["req"]),
+      req: UpdateSafetyStatusRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -49613,7 +49612,7 @@ class updateSettingsAttribute_result {
 
   factory updateSettingsAttribute_result.fromJson(Map json) {
     return updateSettingsAttribute_result(
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49632,8 +49631,8 @@ class updateSettingsAttributes2_args {
   factory updateSettingsAttributes2_args.fromJson(Map json) {
     return updateSettingsAttributes2_args(
       reqSeq: json["reqSeq"],
-      settings: Settings.fromJson(json["settings"]),
-      attributesToUpdate: List.from(json["attributesToUpdate"])
+      settings: Settings.fromJson(json["settings"] ?? {}),
+      attributesToUpdate: List.from(json["attributesToUpdate"] ?? [])
           .map((e) => SettingsAttributeEx.fromValue(e))
           .toList(),
     );
@@ -49651,8 +49650,8 @@ class updateSettingsAttributes2_result {
 
   factory updateSettingsAttributes2_result.fromJson(Map json) {
     return updateSettingsAttributes2_result(
-      success: List.from(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: List.from(json["success"] ?? []),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49666,7 +49665,7 @@ class updateUserGeneralSettings_args {
 
   factory updateUserGeneralSettings_args.fromJson(Map json) {
     return updateUserGeneralSettings_args(
-      settings: Map.from(json["settings"]),
+      settings: Map.from(json["settings"] ?? {}),
     );
   }
 }
@@ -49680,7 +49679,7 @@ class updateUserGeneralSettings_result {
 
   factory updateUserGeneralSettings_result.fromJson(Map json) {
     return updateUserGeneralSettings_result(
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49694,7 +49693,7 @@ class usePhotoboothTicket_args {
 
   factory usePhotoboothTicket_args.fromJson(Map json) {
     return usePhotoboothTicket_args(
-      request: UsePhotoboothTicketRequest.fromJson(json["request"]),
+      request: UsePhotoboothTicketRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49710,8 +49709,8 @@ class usePhotoboothTicket_result {
 
   factory usePhotoboothTicket_result.fromJson(Map json) {
     return usePhotoboothTicket_result(
-      success: UsePhotoboothTicketResponse.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: UsePhotoboothTicketResponse.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49727,8 +49726,8 @@ class validateEligibleFriends_args {
 
   factory validateEligibleFriends_args.fromJson(Map json) {
     return validateEligibleFriends_args(
-      friends: List.from(json["friends"]),
-      type: r80_EnumC34376p.fromValue(json["type"]),
+      friends: List.from(json["friends"] ?? []),
+      type: r80_EnumC34376p.fromValue(json["type"] ?? 0),
     );
   }
 }
@@ -49744,10 +49743,10 @@ class validateEligibleFriends_result {
 
   factory validateEligibleFriends_result.fromJson(Map json) {
     return validateEligibleFriends_result(
-      success: List.from(json["success"])
+      success: List.from(json["success"] ?? [])
           .map((e) => PaymentEligibleFriendStatus.fromJson(e))
           .toList(),
-      e: PaymentException.fromJson(json["e"]),
+      e: PaymentException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49755,7 +49754,7 @@ class validateEligibleFriends_result {
 class validateProduct_args {
   final String shopId;
   final String productId;
-  final Int64 productVersion;
+  final dynamic productVersion;
   final dynamic validationReq;
 
   validateProduct_args({
@@ -49787,7 +49786,7 @@ class validateProduct_result {
   factory validateProduct_result.fromJson(Map json) {
     return validateProduct_result(
       success: json["success"],
-      e: ShopException.fromJson(json["e"]),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49821,7 +49820,7 @@ class validateProfile_result {
   factory validateProfile_result.fromJson(Map json) {
     return validateProfile_result(
       success: json["success"],
-      e: AuthException.fromJson(json["e"]),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49835,7 +49834,7 @@ class verifyAccountUsingHashedPwd_args {
 
   factory verifyAccountUsingHashedPwd_args.fromJson(Map json) {
     return verifyAccountUsingHashedPwd_args(
-      request: VerifyAccountUsingHashedPwdRequest.fromJson(json["request"]),
+      request: VerifyAccountUsingHashedPwdRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49849,7 +49848,7 @@ class I80_C26411k0 {
 
   factory I80_C26411k0.fromJson(Map json) {
     return I80_C26411k0(
-      request: I80_E0.fromJson(json["request"]),
+      request: I80_E0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49865,8 +49864,8 @@ class verifyAccountUsingHashedPwd_result {
 
   factory verifyAccountUsingHashedPwd_result.fromJson(Map json) {
     return verifyAccountUsingHashedPwd_result(
-      success: VerifyAccountUsingHashedPwdResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: VerifyAccountUsingHashedPwdResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49883,7 +49882,7 @@ class I80_l0 {
   factory I80_l0.fromJson(Map json) {
     return I80_l0(
       success: json["success"],
-      e: I80_C26390a.fromJson(json["e"]),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49897,7 +49896,7 @@ class verifyAssertion_args {
 
   factory verifyAssertion_args.fromJson(Map json) {
     return verifyAssertion_args(
-      request: VerifyAssertionRequest.fromJson(json["request"]),
+      request: VerifyAssertionRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49928,7 +49927,7 @@ class verifyAttestation_args {
 
   factory verifyAttestation_args.fromJson(Map json) {
     return verifyAttestation_args(
-      request: VerifyAttestationRequest.fromJson(json["request"]),
+      request: VerifyAttestationRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -49959,7 +49958,7 @@ class verifyBirthdayGiftAssociationToken_args {
 
   factory verifyBirthdayGiftAssociationToken_args.fromJson(Map json) {
     return verifyBirthdayGiftAssociationToken_args(
-      req: BirthdayGiftAssociationVerifyRequest.fromJson(json["req"]),
+      req: BirthdayGiftAssociationVerifyRequest.fromJson(json["req"] ?? {}),
     );
   }
 }
@@ -49975,8 +49974,8 @@ class verifyBirthdayGiftAssociationToken_result {
 
   factory verifyBirthdayGiftAssociationToken_result.fromJson(Map json) {
     return verifyBirthdayGiftAssociationToken_result(
-      success: BirthdayGiftAssociationVerifyResponse.fromJson(json["success"]),
-      e: ShopException.fromJson(json["e"]),
+      success: BirthdayGiftAssociationVerifyResponse.fromJson(json["success"] ?? {}),
+      e: ShopException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -49995,8 +49994,8 @@ class verifyEapAccountForRegistration_args {
   factory verifyEapAccountForRegistration_args.fromJson(Map json) {
     return verifyEapAccountForRegistration_args(
       authSessionId: json["authSessionId"],
-      device: Device.fromJson(json["device"]),
-      socialLogin: SocialLogin.fromJson(json["socialLogin"]),
+      device: Device.fromJson(json["device"] ?? {}),
+      socialLogin: SocialLogin.fromJson(json["socialLogin"] ?? {}),
     );
   }
 }
@@ -50013,7 +50012,7 @@ class verifyEapAccountForRegistration_result {
   factory verifyEapAccountForRegistration_result.fromJson(Map json) {
     return verifyEapAccountForRegistration_result(
       success: json["success"],
-      e: AuthException.fromJson(json["e"]),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50027,7 +50026,7 @@ class verifyEapLogin_args {
 
   factory verifyEapLogin_args.fromJson(Map json) {
     return verifyEapLogin_args(
-      request: VerifyEapLoginRequest.fromJson(json["request"]),
+      request: VerifyEapLoginRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50041,7 +50040,7 @@ class I80_m0 {
 
   factory I80_m0.fromJson(Map json) {
     return I80_m0(
-      request: I80_G0.fromJson(json["request"]),
+      request: I80_G0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50057,8 +50056,8 @@ class verifyEapLogin_result {
 
   factory verifyEapLogin_result.fromJson(Map json) {
     return verifyEapLogin_result(
-      success: VerifyEapLoginResponse.fromJson(json["success"]),
-      e: AccountEapConnectException.fromJson(json["e"]),
+      success: VerifyEapLoginResponse.fromJson(json["success"] ?? {}),
+      e: AccountEapConnectException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50074,8 +50073,8 @@ class I80_n0 {
 
   factory I80_n0.fromJson(Map json) {
     return I80_n0(
-      success: I80_H0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_H0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50117,8 +50116,8 @@ class verifyPhoneNumber_result {
 
   factory verifyPhoneNumber_result.fromJson(Map json) {
     return verifyPhoneNumber_result(
-      success: PhoneVerificationResult.fromJson(json["success"]),
-      e: TalkException.fromJson(json["e"]),
+      success: PhoneVerificationResult.fromJson(json["success"] ?? {}),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50132,7 +50131,7 @@ class verifyPhonePinCode_args {
 
   factory verifyPhonePinCode_args.fromJson(Map json) {
     return verifyPhonePinCode_args(
-      request: VerifyPhonePinCodeRequest.fromJson(json["request"]),
+      request: VerifyPhonePinCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50146,7 +50145,7 @@ class I80_o0 {
 
   factory I80_o0.fromJson(Map json) {
     return I80_o0(
-      request: I80_I0.fromJson(json["request"]),
+      request: I80_I0.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50162,8 +50161,8 @@ class verifyPhonePinCode_result {
 
   factory verifyPhonePinCode_result.fromJson(Map json) {
     return verifyPhonePinCode_result(
-      success: VerifyPhonePinCodeResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: VerifyPhonePinCodeResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50179,8 +50178,8 @@ class I80_p0 {
 
   factory I80_p0.fromJson(Map json) {
     return I80_p0(
-      success: I80_J0.fromJson(json["success"]),
-      e: I80_C26390a.fromJson(json["e"]),
+      success: I80_J0.fromJson(json["success"] ?? {}),
+      e: I80_C26390a.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50194,7 +50193,7 @@ class verifyPinCode_args {
 
   factory verifyPinCode_args.fromJson(Map json) {
     return verifyPinCode_args(
-      request: VerifyPinCodeRequest.fromJson(json["request"]),
+      request: VerifyPinCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50211,7 +50210,7 @@ class verifyPinCode_result {
   factory verifyPinCode_result.fromJson(Map json) {
     return verifyPinCode_result(
       success: json["success"],
-      e: SecondAuthFactorPinCodeException.fromJson(json["e"]),
+      e: SecondAuthFactorPinCodeException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50225,7 +50224,7 @@ class verifyQrCode_args {
 
   factory verifyQrCode_args.fromJson(Map json) {
     return verifyQrCode_args(
-      request: VerifyQrCodeRequest.fromJson(json["request"]),
+      request: VerifyQrCodeRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
@@ -50259,7 +50258,7 @@ class verifyQrcodeWithE2EE_result {
   factory verifyQrcodeWithE2EE_result.fromJson(Map json) {
     return verifyQrcodeWithE2EE_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50293,7 +50292,7 @@ class verifyQrcode_result {
   factory verifyQrcode_result.fromJson(Map json) {
     return verifyQrcode_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50312,8 +50311,8 @@ class verifySocialLogin_args {
   factory verifySocialLogin_args.fromJson(Map json) {
     return verifySocialLogin_args(
       authSessionId: json["authSessionId"],
-      device: Device.fromJson(json["device"]),
-      socialLogin: SocialLogin.fromJson(json["socialLogin"]),
+      device: Device.fromJson(json["device"] ?? {}),
+      socialLogin: SocialLogin.fromJson(json["socialLogin"] ?? {}),
     );
   }
 }
@@ -50329,8 +50328,8 @@ class verifySocialLogin_result {
 
   factory verifySocialLogin_result.fromJson(Map json) {
     return verifySocialLogin_result(
-      success: VerifySocialLoginResponse.fromJson(json["success"]),
-      e: AuthException.fromJson(json["e"]),
+      success: VerifySocialLoginResponse.fromJson(json["success"] ?? {}),
+      e: AuthException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50338,7 +50337,7 @@ class verifySocialLogin_result {
 class vh_C37633d {}
 
 class wakeUpLongPolling_args {
-  final Int64 clientRevision;
+  final dynamic clientRevision;
 
   wakeUpLongPolling_args({
     required this.clientRevision
@@ -50363,7 +50362,7 @@ class wakeUpLongPolling_result {
   factory wakeUpLongPolling_result.fromJson(Map json) {
     return wakeUpLongPolling_result(
       success: json["success"],
-      e: TalkException.fromJson(json["e"]),
+      e: TalkException.fromJson(json["e"] ?? {}),
     );
   }
 }
@@ -50393,14 +50392,14 @@ class GetContactsV2Response {
 
   factory GetContactsV2Response.fromJson(Map json) {
     return GetContactsV2Response(
-      contacts: Map.from(json["contacts"]),
+      contacts: Map.from(json["contacts"] ?? {}),
     );
   }
 }
 
 class ContactEntry {
   final dynamic userStatus;
-  final Int64 snapshotTimeMillis;
+  final dynamic snapshotTimeMillis;
   final Contact contact;
   final ContactCalendarEvents calendarEvents;
 
@@ -50415,8 +50414,8 @@ class ContactEntry {
     return ContactEntry(
       userStatus: json["userStatus"],
       snapshotTimeMillis: json["snapshotTimeMillis"],
-      contact: Contact.fromJson(json["contact"]),
-      calendarEvents: ContactCalendarEvents.fromJson(json["calendarEvents"]),
+      contact: Contact.fromJson(json["contact"] ?? {}),
+      calendarEvents: ContactCalendarEvents.fromJson(json["calendarEvents"] ?? {}),
     );
   }
 }
@@ -50445,7 +50444,7 @@ class LoginResult {
   final String verifier;
   final String pinCode;
   final LoginResultType type;
-  final Int64 lastPrimaryBindTime;
+  final dynamic lastPrimaryBindTime;
   final String displayMessage;
   final VerificationSessionData sessionForSMSConfirm;
 
@@ -50466,10 +50465,10 @@ class LoginResult {
       certificate: json["certificate"],
       verifier: json["verifier"],
       pinCode: json["pinCode"],
-      type: LoginResultType.fromValue(json["type"]),
+      type: LoginResultType.fromValue(json["type"] ?? 0),
       lastPrimaryBindTime: json["lastPrimaryBindTime"],
       displayMessage: json["displayMessage"],
-      sessionForSMSConfirm: VerificationSessionData.fromJson(json["sessionForSMSConfirm"]),
+      sessionForSMSConfirm: VerificationSessionData.fromJson(json["sessionForSMSConfirm"] ?? {}),
     );
   }
 }

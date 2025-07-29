@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:fbthrift/fbthrift.dart';
 import '../transport/t_framed_transport.dart' as TFramedTransport;
 
-dynamic readStruct(TCompactProtocol input) {
+dynamic readStruct(dynamic input) {
   Map returnData = {};
   input.readStructBegin();
   while (true) {
@@ -22,12 +22,17 @@ dynamic readStruct(TCompactProtocol input) {
 }
 
 bool isBinary(dynamic bin) {
-  String str = utf8.decode(bin);
+  String str;
+  try {
+    str = utf8.decode(Uint8List.fromList(bin));
+  } catch(e) {
+    return true;
+  }
   if (str.contains('\\u')) {
     return true;
   }
   Uint8List bin2 = Uint8List.fromList(utf8.encode(str));
-  return base64.encode(bin) != base64.encode(bin2);
+  return base64.encode(Uint8List.fromList(utf8.encode(str))) != base64.encode(bin2);
 }
 
 dynamic bigInt(Uint8List bin) {
@@ -41,7 +46,7 @@ dynamic bigInt(Uint8List bin) {
   return bigValue.toInt();
 }
 
-dynamic readValue(TCompactProtocol input, int ftype) {
+dynamic readValue(dynamic input, int ftype) {
   if (ftype == TType.STRUCT) {
     return readStruct(input);
   } else if (ftype == TType.I32) {
@@ -53,9 +58,9 @@ dynamic readValue(TCompactProtocol input, int ftype) {
   } else if (ftype == TType.STRING) {
     dynamic bin = input.readBinary();
     if (isBinary(bin)) {
-      return bin;
+      return Uint8List.fromList(bin);
     } else {
-      return bin.toString();
+      return utf8.decode(Uint8List.fromList(List.from(bin)));
     }
   } else if (ftype == TType.LIST) {
     List returnData = [];
@@ -120,7 +125,7 @@ Map readThrift(data, protocol) {
 dynamic readThriftStruct(Uint8List data, dynamic protocol) {
   TFramedTransport.TFramedTransport bufTrans = TFramedTransport.TFramedTransport(data, null);
   dynamic proto;
-  if (protocol == TCompactProtocol) {
+  if (protocol == null || protocol == TCompactProtocol) {
     proto = TCompactProtocol(bufTrans as TTransport);
   } else if (protocol == TBinaryProtocol) {
     proto = TBinaryProtocol(bufTrans as TTransport);

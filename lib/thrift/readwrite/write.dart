@@ -6,7 +6,7 @@ import 'package:fixnum/fixnum.dart';
 
 Uint8List writeThrift(List<List> value, String name, protocol) {
   final builder = BytesBuilder();
-  var buftra = TBufferedTransport((inBuf) {
+  dynamic buftra = TBufferedTransport((inBuf) {
     builder.add(inBuf);
   });
   dynamic myprot;
@@ -48,7 +48,7 @@ void _writeStruct(dynamic output, List value) {
 
   output.writeStructBegin(TStruct(''));
 
-  for (var e in value) {
+  for (dynamic e in value) {
     if (e == null) {
       return;
     }
@@ -68,14 +68,14 @@ void writeValue(dynamic output, int ftype, int fid, val) {
     case TType.STRING:
       if (val is Uint8List) {
         output.writeFieldBegin(TField('', TType.STRING, fid));
-        output.writeBinary(val, val.length);
+        output.writeBinary(Int8List.view(val.buffer));
         output.writeFieldEnd();
       } else {
         if (val is! String) {
           throw ArgumentError('ftype=$ftype: value is not string');
         }
         output.writeFieldBegin(TField('', TType.STRING, fid));
-        output.writeBinary(Uint8List.fromList(val.codeUnits));
+        output.writeBinary(Int8List.view(Uint8List.fromList(val.codeUnits).buffer));
         output.writeFieldEnd();
       }
       break;
@@ -102,7 +102,11 @@ void writeValue(dynamic output, int ftype, int fid, val) {
       break;
     case TType.I32:
       if (val is! int) {
-        throw ArgumentError('ftype=$ftype: value is not number');
+        try {
+          val = int.parse(val.value.toString());
+        } catch(e) {
+          throw ArgumentError('ftype=$ftype: value is not number');
+        }
       }
       output.writeFieldBegin(TField('', TType.I32, fid));
       output.writeI32(Int32(val.toInt()).toInt());
@@ -113,7 +117,7 @@ void writeValue(dynamic output, int ftype, int fid, val) {
         throw ArgumentError('ftype=$ftype: value is not boolean');
       }
       output.writeFieldBegin(TField('', TType.BOOL, fid));
-      output.writeBool(bool.parse(val.toString()));
+      output.writeBool(val == 0 ? false : true);
       output.writeFieldEnd();
       break;
     case TType.STRUCT:
@@ -129,12 +133,12 @@ void writeValue(dynamic output, int ftype, int fid, val) {
       break;
     case TType.MAP:
       val = val as List<dynamic>;
-      if (!val[2]) {
+      if (val[2] == null) {
         return;
       }
       output.writeFieldBegin(TField('', TType.MAP, fid));
       output.writeMapBegin(TMap(val[0], val[1], (val[2]).length));
-      for (dynamic kiter in val[2]) {
+      for (dynamic kiter in val[2].keys) {
         if ((val[2]).containsKey(kiter)) {
           dynamic viter = val[2][kiter];
           writeValue_(output, val[0], kiter);
@@ -146,22 +150,20 @@ void writeValue(dynamic output, int ftype, int fid, val) {
       break;
     case TType.LIST:
       val = val as List;
-      if (!val[1]) {
+      if (val[1] == null) {
         return;
       }
       output.writeFieldBegin(TField('', TType.LIST, fid));
       output.writeListBegin(TList(val[0], (val[1]).length));
-      for (dynamic iter in val[1] as dynamic) {
-        if ((val[1]).containsKey(iter)) {
-          writeValue_(output, val[0], val[1][iter]);
-        }
+      for (int i = 0; i < (val[1] as List).length; i++) {
+        writeValue_(output, val[0], val[1][i]);
       }
       output.writeListEnd();
       output.writeFieldEnd();
       break;
     case TType.SET:
       val = val as List;
-      if (!val[1]) {
+      if (val[1] == null) {
         return;
       }
       output.writeFieldBegin(TField('', TType.SET, fid));
