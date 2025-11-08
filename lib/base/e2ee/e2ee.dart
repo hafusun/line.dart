@@ -4,9 +4,9 @@ import 'dart:math' as math;
 import 'package:pointycastle/export.dart' hide Mac;
 import 'package:crypto/crypto.dart' hide Hmac;
 import 'package:cryptography/cryptography.dart';
-import '../../thrift/line_types.dart' as LINETypes;
-import '../core/core.dart';
-import '../core/utils/error.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/base/core/core.dart';
+import 'package:linedart/base/core/utils/error.dart';
 import './cbc.dart';
 
 class E2EE {

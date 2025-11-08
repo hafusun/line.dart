@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'package:fbthrift/fbthrift.dart';
 import 'declares.dart';
-import '../transport/t_buffered_transport.dart';
+import 'package:linedart/thrift/transport/t_buffered_transport.dart';
 import 'package:fixnum/fixnum.dart';
 
 Uint8List writeThrift(List<List> value, String name, protocol) {

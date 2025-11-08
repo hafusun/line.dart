@@ -1,9 +1,9 @@
 import 'dart:convert';
-import '../../service/types.dart';
-import '../../core/core.dart';
-import '../../core/utils/error.dart';
-import '../../../thrift/line_types.dart' as LINETypes;
-import '../../../thrift/readwrite/struct.dart' as LINEStructs;
+import 'package:linedart/base/service/types.dart';
+import 'package:linedart/base/core/core.dart';
+import 'package:linedart/base/core/utils/error.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/thrift/readwrite/struct.dart' as LINEStructs;
 import "package:http/http.dart" hide BaseClient;
 
 class LiffService extends BaseService {

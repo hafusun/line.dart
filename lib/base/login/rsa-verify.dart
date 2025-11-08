@@ -1,4 +1,4 @@
-import '../../../thrift/line_types.dart' as LINETypes;
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
 
 import 'package:pointycastle/export.dart';
 import 'package:convert/convert.dart';

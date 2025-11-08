@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' hide BaseClient;
-import '../core/utils/devices.dart';
-import '../core/utils/error.dart';
+import 'package:linedart/base/core/utils/devices.dart';
+import 'package:linedart/base/core/utils/error.dart';
 
-import '../core/core.dart';
+import 'package:linedart/base/core/core.dart';
 import './regex.dart';
-import '../../thrift/line_types.dart' as LINETypes;
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
 import './rsa-verify.dart';
 
 class Login {

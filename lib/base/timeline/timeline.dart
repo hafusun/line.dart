@@ -1,9 +1,9 @@
 import "dart:convert";
 import "package:http/http.dart" hide BaseClient;
-import "../core/utils/error.dart";
+import "package:linedart/base/core/utils/error.dart";
 
-import '../../thrift/line_types.dart' as LINETypes;
-import "../core/core.dart";
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import "package:linedart/base/core/core.dart";
 
 class Timeline {
   BaseClient client;

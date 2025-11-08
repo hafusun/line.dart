@@ -1,8 +1,8 @@
-import '../../core/utils/error.dart';
-import '../../core/core.dart';
-import '../../../thrift/line_types.dart' as LINETypes;
-import '../../../thrift/readwrite/struct.dart' as LINEStructs;
-import '../types.dart';
+import 'package:linedart/base/core/utils/error.dart';
+import 'package:linedart/base/core/core.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/thrift/readwrite/struct.dart' as LINEStructs;
+import 'package:linedart/base/service/types.dart';
 
 class AuthService extends BaseService {
   @override

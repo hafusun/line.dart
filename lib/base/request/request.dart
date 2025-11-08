@@ -2,11 +2,11 @@ import "dart:convert";
 import 'dart:typed_data';
 
 import "package:http/http.dart" hide BaseClient;
-import "../core/utils/devices.dart";
-import "../core/utils/error.dart";
-import "../../thrift/readwrite/declares.dart";
+import "package:linedart/base/core/utils/devices.dart";
+import "package:linedart/base/core/utils/error.dart";
+import "package:linedart/thrift/readwrite/declares.dart";
 
-import "../core/core.dart";
+import "package:linedart/base/core/core.dart";
 
 List<String> square = ["/SQ1", "/SQLV1"];
 

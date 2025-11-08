@@ -4,10 +4,10 @@ import 'package:fbthrift/fbthrift.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' hide BaseClient;
 
-import '../../thrift/readwrite/write.dart';
-import '../../thrift/line_types.dart' as LINETypes;
-import '../core/utils/error.dart';
-import '../core/core.dart';
+import 'package:linedart/thrift/readwrite/write.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/base/core/utils/error.dart';
+import 'package:linedart/base/core/core.dart';
 
 class ObsMetaData {
   late String status;

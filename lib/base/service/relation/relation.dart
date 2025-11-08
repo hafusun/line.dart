@@ -1,7 +1,7 @@
-import '../../service/types.dart';
-import '../../core/core.dart';
-import '../../../thrift/line_types.dart' as LINETypes;
-import '../../../thrift/readwrite/struct.dart' as LINEStructs;
+import 'package:linedart/base/service/types.dart';
+import 'package:linedart/base/core/core.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/thrift/readwrite/struct.dart' as LINEStructs;
 
 class RelationService extends BaseService {
   @override

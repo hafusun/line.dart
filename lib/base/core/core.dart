@@ -2,32 +2,32 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
-import '../polling/polling.dart';
+import 'package:linedart/base/polling/polling.dart';
 
-import '../obs/obs.dart';
-import '../request/request.dart';
+import 'package:linedart/base/obs/obs.dart';
+import 'package:linedart/base/request/request.dart';
 
-import '../service/auth/auth.dart';
-import '../service/channel/channel.dart';
-import '../service/call/call.dart';
-import '../service/liff/liff.dart';
-import '../service/livetalk/livetalk.dart';
-import '../service/relation/relation.dart';
-import '../service/square/square.dart';
-import '../service/talk/talk.dart';
-import '../timeline/timeline.dart';
+import 'package:linedart/base/service/auth/auth.dart';
+import 'package:linedart/base/service/channel/channel.dart';
+import 'package:linedart/base/service/call/call.dart';
+import 'package:linedart/base/service/liff/liff.dart';
+import 'package:linedart/base/service/livetalk/livetalk.dart';
+import 'package:linedart/base/service/relation/relation.dart';
+import 'package:linedart/base/service/square/square.dart';
+import 'package:linedart/base/service/talk/talk.dart';
+import 'package:linedart/base/timeline/timeline.dart';
 
-import '../login/login.dart';
+import 'package:linedart/base/login/login.dart';
 
-import '../../thrift/fid.dart';
+import 'package:linedart/thrift/fid.dart';
 
 import "./utils/devices.dart";
 import "./typed-event-emitter/emitter.dart";
-import '../../thrift/thrift.dart';
-import '../storage/base.dart';
-import '../storage/storage.dart';
-import '../../thrift/line_types.dart' as LINETypes;
-import '../e2ee/e2ee.dart';
+import 'package:linedart/thrift/thrift.dart';
+import 'package:linedart/base/storage/base.dart';
+import 'package:linedart/base/storage/storage.dart';
+import 'package:linedart/thrift/line_types.dart' as LINETypes;
+import 'package:linedart/base/e2ee/e2ee.dart';
 
 class Config {
   int timeout;

@@ -1,4 +1,4 @@
-import '../core/core.dart';
+import 'package:linedart/base/core/core.dart';
 
 abstract class BaseService {
   late BaseClient client;

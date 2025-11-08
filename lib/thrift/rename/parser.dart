@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import '../readwrite/declares.dart';
+import 'package:linedart/thrift/readwrite/declares.dart';
 
 Map TYPE = {
   "STOP": 0,
