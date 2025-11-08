@@ -13,8 +13,8 @@ List<String> square = ["/SQ1", "/SQLV1"];
 class RequestClient {
   BaseClient client;
   String? endpoint;
-  late String userAgent;
-  late String systemType;
+  late final String userAgent;
+  late final String systemType;
   Map EXCEPTION_TYPES = {
     "/S3": "TalkException",
     "/S4": "TalkException",

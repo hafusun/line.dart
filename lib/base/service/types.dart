@@ -1,8 +1,8 @@
 import 'package:linedart/base/core/core.dart';
 
 abstract class BaseService {
-  late BaseClient client;
-  late int protocolType;
-  late String requestPath;
-  late  String errorName;
+  late final BaseClient client;
+  late final int protocolType;
+  late final String requestPath;
+  late final  String errorName;
 }

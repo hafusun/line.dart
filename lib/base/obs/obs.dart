@@ -10,23 +10,23 @@ import 'package:linedart/base/core/utils/error.dart';
 import 'package:linedart/base/core/core.dart';
 
 class ObsMetaData {
-  late String status;
-  late String name;
-  late String mime;
-  late String type;
-  late String hash;
-  late String cksum;
-  late dynamic size;
-  late int ctimeMillis;
-  late ImageDetails? imageDetails;
-  late VideoMp4Details? videoMp4Details;
-  late AudioM4aDetails? audioM4aDetails;
-  late String svc;
-  late int offset;
-  late String ctime;
-  late String oid;
-  late String userid;
-  late String sid;
+  late final String status;
+  late final String name;
+  late final String mime;
+  late final String type;
+  late final String hash;
+  late final String cksum;
+  late final dynamic size;
+  late final int ctimeMillis;
+  late final ImageDetails? imageDetails;
+  late final VideoMp4Details? videoMp4Details;
+  late final AudioM4aDetails? audioM4aDetails;
+  late final String svc;
+  late final int offset;
+  late final String ctime;
+  late final String oid;
+  late final String userid;
+  late final String sid;
 
   ObsMetaData(this.status, this.name, this.mime, this.type, this.hash, this.cksum, this.size, this.ctimeMillis, this.imageDetails, this.videoMp4Details, this.audioM4aDetails, this.svc, this.offset, this.ctime, this.oid, this.userid, this.sid);
 

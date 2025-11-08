@@ -27,7 +27,7 @@ class TypedEventEmitter {
   }
 
   Future<List<dynamic>> waitFor(String event) {
-    late EventCallback listener;
+    late final EventCallback listener;
 
     final completer = Completer<List<dynamic>>();
     listener = (args) {

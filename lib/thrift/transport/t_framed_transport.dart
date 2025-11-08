@@ -2,7 +2,7 @@ import 'dart:typed_data';
 import 'package:fbthrift/fbthrift.dart';
 
 class TFramedTransport extends TTransport {
-  late Uint8List inBuf;
+  late final Uint8List inBuf;
   List<Uint8List> outBuffers = [];
   int outCount = 0;
   int readPos = 0;
