@@ -36,16 +36,16 @@ class LiffService extends BaseService {
 
   Future<LINETypes.LiffViewResponse> issueLiffView(String liffId, [String? chatMid, String? lang]) async {
     List context = [12, 1, []];
-    int chaLINETypes;
+    int chatLINETypes;
     List chat;
     if (chatMid != null) {
       chat = [11, 1, chatMid];
       if (["u", "c", "r"].contains(chatMid[0])) {
-        chaLINETypes = 2;
+        chatLINETypes = 2;
       } else {
-        chaLINETypes = 3;
+        chatLINETypes = 3;
       }
-      context = [12, chaLINETypes, [chat]];
+      context = [12, chatLINETypes, [chat]];
     }
     return LINETypes.LiffViewResponse.fromJson(await client.request.request(
       [[12, 1, [

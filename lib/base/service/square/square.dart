@@ -167,7 +167,7 @@ class SquareService extends BaseService {
             "revision": 0,
             "ableToUseInvitationTicket": true,
             "joinMethod": { "type": param["SquareJoinMethodType"] ?? 0 },
-            "adualtOnly": "NONE",
+            "adultOnly": "NONE",
             "svcTags": [],
           },
           "creator": {

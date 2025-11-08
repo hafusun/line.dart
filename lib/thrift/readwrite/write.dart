@@ -122,7 +122,7 @@ void writeValue(dynamic output, int ftype, int fid, val) {
       break;
     case TType.STRUCT:
       if (val is! List) {
-        throw ArgumentError('ftypr=$ftype: value is not struct');
+        throw ArgumentError('ftype=$ftype: value is not struct');
       }
       if (val.isEmpty) {
         return;
@@ -137,13 +137,15 @@ void writeValue(dynamic output, int ftype, int fid, val) {
         return;
       }
       output.writeFieldBegin(TField('', TType.MAP, fid));
-      output.writeMapBegin(TMap(val[0], val[1], (val[2]).length));
-      for (dynamic kiter in val[2].keys) {
-        if ((val[2]).containsKey(kiter)) {
-          dynamic viter = val[2][kiter];
-          writeValue_(output, val[0], kiter);
-          writeValue_(output, val[1], viter);
-        }
+      if (val[2] is! Map) {
+        throw ArgumentError('ftype=$ftype: value[2] is not a Map');
+      }
+      Map mapVal = val[2];
+      output.writeMapBegin(TMap(val[0], val[1], mapVal.length));
+      for (dynamic kiter in mapVal.keys) {
+        dynamic viter = mapVal[kiter];
+        writeValue_(output, val[0], kiter);
+        writeValue_(output, val[1], viter);
       }
       output.writeMapEnd();
       output.writeFieldEnd();
@@ -166,12 +168,13 @@ void writeValue(dynamic output, int ftype, int fid, val) {
       if (val[1] == null) {
         return;
       }
+      if (val[1] is! Set) {
+        val[1] = Set.from(val[1]);
+      }
       output.writeFieldBegin(TField('', TType.SET, fid));
-      output.writeSetBegin(TSet(val[0], (val[1]).length));
-      for (dynamic iter in val[1]) {
-        if ((val[1]).containsKey(iter)) {
-          writeValue_(output, val[0], val[1][iter]);
-        }
+      output.writeSetBegin(TSet(val[0], val[1].length));
+      for (var element in val[1]) {
+        writeValue_(output, val[0], element);
       }
       output.writeSetEnd();
       output.writeFieldEnd();
