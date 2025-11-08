@@ -43,29 +43,29 @@ class BaseClient extends TypedEventEmitter {
   String? authToken;
   Map device;
   dynamic savePath;
-  late Thrift thrift;
-  late RequestClient request;
-  late BaseStorage storage;
-  late E2EE e2ee;
-  late LineObs obs;
-  late Timeline timeline;
+  late final Thrift thrift;
+  late final RequestClient request;
+  late final BaseStorage storage;
+  late final E2EE e2ee;
+  late final LineObs obs;
+  late final Timeline timeline;
 
-  late AuthService auth;
-  late CallService call;
-  late ChannelService channel;
-  late LiffService liff;
-  late SquareLiveTalkService livetalk;
-  late RelationService relation;
-  late SquareService square;
-  late TalkService talk;
+  late final AuthService auth;
+  late final CallService call;
+  late final ChannelService channel;
+  late final LiffService liff;
+  late final SquareLiveTalkService livetalk;
+  late final RelationService relation;
+  late final SquareService square;
+  late final TalkService talk;
 
-  late Login login;
+  late final Login login;
 
   Function? customFetch;
 
-  late LINETypes.Profile? profile;
-  late Config config;
-  late DeviceDetails deviceDetails;
+  late final LINETypes.Profile? profile;
+  late final Config config;
+  late final DeviceDetails deviceDetails;
 
   String? endpoint;
 
