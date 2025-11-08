@@ -367,7 +367,7 @@ class TalkService extends BaseService {
   Future<void> blockContact(Map param) async {
     return await client.request.request(
       LINEStructs.blockContact_args(LINETypes.blockContact_args.fromJson(param)),
-      "bloakContact",
+      "blockContact",
       protocolType,
       true,
       requestPath
