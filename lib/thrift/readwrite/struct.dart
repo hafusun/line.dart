@@ -3075,7 +3075,7 @@ List GetContactCalendarEventTarget(LINEtypes.GetContactCalendarEventTarget? para
 		[11, 1, param.targetUserMid],
 	];
 }
-List GetContactCalendarEventsRequest(LINEtypes.GetContactCalendarEventsRequest? param) {
+List GetContactCalenderEventsRequest(LINEtypes.GetContactCalenderEventsRequest? param) {
 	if (param == null) {
 		return [];
 	}
@@ -7389,12 +7389,12 @@ List getConfigurations_args(LINEtypes.getConfigurations_args? param) {
 		[8, 7, Pb1_V7(param.syncReason)],
 	];
 }
-List getContactCalendarEvents_args(LINEtypes.getContactCalendarEvents_args? param) {
+List getContactCalenderEvents_args(LINEtypes.getContactCalenderEvents_args? param) {
 	if (param == null) {
 		return [];
 	}
 	return [
-		[12, 1, GetContactCalendarEventsRequest(param.request)],
+		[12, 1, GetContactCalenderEventsRequest(param.request)],
 	];
 }
 List getContactsV3_args(LINEtypes.getContactsV3_args? param) {

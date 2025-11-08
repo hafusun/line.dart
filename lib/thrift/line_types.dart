@@ -13882,19 +13882,19 @@ class GetContactCalendarEventTarget {
   }
 }
 
-class GetContactCalendarEventsRequest {
+class GetContactCalenderEventsRequest {
   final List<GetContactCalendarEventTarget> targetUsers;
   final Pb1_V7 syncReason;
   final List<dynamic> requiredContactCalendarEvents;
 
-  GetContactCalendarEventsRequest({
+  GetContactCalenderEventsRequest({
     required this.targetUsers,
     required this.syncReason,
     required this.requiredContactCalendarEvents
   });
 
-  factory GetContactCalendarEventsRequest.fromJson(Map json) {
-    return GetContactCalendarEventsRequest(
+  factory GetContactCalenderEventsRequest.fromJson(Map json) {
+    return GetContactCalenderEventsRequest(
       targetUsers: List.from(json["targetUsers"] ?? [])
           .map((e) => GetContactCalendarEventTarget.fromJson(e))
           .toList(),
@@ -13904,15 +13904,15 @@ class GetContactCalendarEventsRequest {
   }
 }
 
-class GetContactCalendarEventsResponse {
+class GetContactCalenderEventsResponse {
   final List<GetContactCalendarEventResponse> responses;
 
-  GetContactCalendarEventsResponse({
+  GetContactCalenderEventsResponse({
     required this.responses
   });
 
-  factory GetContactCalendarEventsResponse.fromJson(Map json) {
-    return GetContactCalendarEventsResponse(
+  factory GetContactCalenderEventsResponse.fromJson(Map json) {
+    return GetContactCalenderEventsResponse(
       responses: List.from(json["responses"] ?? [])
           .map((e) => GetContactCalendarEventResponse.fromJson(e))
           .toList(),
@@ -40589,28 +40589,28 @@ class getConfigurations_result {
   }
 }
 
-class getContactCalendarEvents_args {
-  final GetContactCalendarEventsRequest request;
+class getContactCalenderEvents_args {
+  final GetContactCalenderEventsRequest request;
 
-  getContactCalendarEvents_args({
+  getContactCalenderEvents_args({
     required this.request
   });
 
-  factory getContactCalendarEvents_args.fromJson(Map json) {
-    return getContactCalendarEvents_args(
-      request: GetContactCalendarEventsRequest.fromJson(json["request"] ?? {}),
+  factory getContactCalenderEvents_args.fromJson(Map json) {
+    return getContactCalenderEvents_args(
+      request: GetContactCalenderEventsRequest.fromJson(json["request"] ?? {}),
     );
   }
 }
 
-class getContactCalendarEvents_result {
-  final GetContactCalendarEventsResponse success;
+class getContactCalenderEvents_result {
+  final GetContactCalenderEventsResponse success;
   final RejectedException re;
   final ServerFailureException sfe;
   final TalkException te;
   final ExcessiveRequestItemException ere;
 
-  getContactCalendarEvents_result({
+  getContactCalenderEvents_result({
     required this.success,
     required this.re,
     required this.sfe,
@@ -40618,9 +40618,9 @@ class getContactCalendarEvents_result {
     required this.ere
   });
 
-  factory getContactCalendarEvents_result.fromJson(Map json) {
-    return getContactCalendarEvents_result(
-      success: GetContactCalendarEventsResponse.fromJson(json["success"] ?? {}),
+  factory getContactCalenderEvents_result.fromJson(Map json) {
+    return getContactCalenderEvents_result(
+      success: GetContactCalenderEventsResponse.fromJson(json["success"] ?? {}),
       re: RejectedException.fromJson(json["re"] ?? {}),
       sfe: ServerFailureException.fromJson(json["sfe"] ?? {}),
       te: TalkException.fromJson(json["te"] ?? {}),

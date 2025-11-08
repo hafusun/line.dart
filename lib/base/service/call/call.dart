@@ -65,7 +65,7 @@ class CallService extends BaseService {
     );
   }
 
-  Future<dynamic> getGrooupCall(Map param) async {
+  Future<dynamic> getGroupCall(Map param) async {
     return await client.request.request(
       LINEStructs.getGroupCall_args(LINETypes.getGroupCall_args.fromJson(param)),
       "getGroupCall",

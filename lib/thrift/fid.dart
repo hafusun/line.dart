@@ -9178,7 +9178,7 @@ Map fid2nameMap = {
 			"type": 11,
 		},
 	],
-	"GetContactCalendarEventsRequest": [
+	"GetContactCalenderEventsRequest": [
 		{
 			"fid": 1,
 			"name": "targetUsers",
@@ -9195,7 +9195,7 @@ Map fid2nameMap = {
 			"set": "Pb1_EnumC13096n3",
 		},
 	],
-	"GetContactCalendarEventsResponse": [
+	"GetContactCalenderEventsResponse": [
 		{
 			"fid": 1,
 			"name": "responses",
@@ -31016,18 +31016,18 @@ Map fid2nameMap = {
 			"struct": "TalkException",
 		},
 	],
-	"getContactCalendarEvents_args": [
+	"getContactCalenderEvents_args": [
 		{
 			"fid": 1,
 			"name": "request",
-			"struct": "GetContactCalendarEventsRequest",
+			"struct": "GetContactCalenderEventsRequest",
 		},
 	],
-	"getContactCalendarEvents_result": [
+	"getContactCalenderEvents_result": [
 		{
 			"fid": 0,
 			"name": "success",
-			"struct": "GetContactCalendarEventsResponse",
+			"struct": "GetContactCalenderEventsResponse",
 		},
 		{
 			"fid": 1,

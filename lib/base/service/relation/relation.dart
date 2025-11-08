@@ -37,7 +37,7 @@ class RelationService extends BaseService {
 
   Future<dynamic> getContactCalenderEvents(Map param) async {
     return await client.request.request(
-      LINEStructs.getContactCalendarEvents_args(LINETypes.getContactCalendarEvents_args.fromJson(param)),
+      LINEStructs.getContactCalenderEvents_args(LINETypes.getContactCalenderEvents_args.fromJson(param)),
       "getContactCalenderEvents",
       protocolType,
       true,

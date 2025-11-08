@@ -155,7 +155,7 @@ class LineObs {
     };
 
     params.addAll(baseParam);
-    if (data.isEmpty || data.isEmpty) {
+    if (data.isEmpty) {
       throw InternalError("ObsError", "No data to send.");
     }
     Map<String, String> headers = client.request.getHeader("POST");
@@ -229,7 +229,7 @@ class LineObs {
       Map uploadResponse = await uploadObjectForService(
         data: edata,
         oType: "file",
-        obsPath: "$serviceName/$obsNamespace/$tempId " "__ud-preview",
+        obsPath: "$serviceName/$obsNamespace/$tempId" + "__ud-preview",
         params: params,
       );
       String objId2 = uploadResponse["objId"];

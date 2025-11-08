@@ -121,7 +121,7 @@ class LiffService extends BaseService {
     Map<String, String> liffHeaders = {
       "Accept": "application/json, text/plain, */*",
       "User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; G730-U00 Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 Line/9.8.0",
-      "Accept-Encoding": "gzip, defeate",
+      "Accept-Encoding": "gzip, deflate",
       "Accept-Language": "zh-TW,zh;q=0.9",
       "Authorization": "Bearer $token",
       "content-type": "application/json",
@@ -140,7 +140,7 @@ class LiffService extends BaseService {
     return responseBody;
   }
 
-  Future<bool> tryConsentLiff(String channelId, [String? refere]) async {
+  Future<bool> tryConsentLiff(String channelId, [String? referer]) async {
     String payload = jsonEncode({ "on": ["P", "CM"], "off": [] });
     Map<String, String> headers = {
       "X-LINE-ChannelId": channelId,
@@ -151,7 +151,7 @@ class LiffService extends BaseService {
       "X-Requested-With": "XMLHttpRequest",
       "Accept-Language": "ja-JP,en-US;q=0.8"
     };
-    headers.addAll(refere != null ? { "refere": refere } : {});
+    headers.addAll(referer != null ? { "referer": referer } : {});
     Response response = await client.fetch(
       CONSENT_API_URL,
       method: "POST",
