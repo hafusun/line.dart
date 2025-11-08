@@ -53,7 +53,7 @@ class LiffService extends BaseService {
         [12, 2, [context]],
         [11, 3, (lang ?? "ja_JP")],
       ]]],
-      "issueLiffiew",
+      "issueLiffview",
       protocolType,
       true,
       requestPath

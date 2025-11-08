@@ -449,7 +449,7 @@ class SquareService extends BaseService {
   Future<dynamic> rejectSquareMember(Map param) async {
     return await client.request.request(
       LINEStructs.SquareService_rejectSquareMembers_args(LINETypes.SquareService_rejectSquareMembers_args.fromJson(param)),
-      "rejectSquareMember",
+      "rejectSquareMembers",
       protocolType,
       true,
       requestPath
@@ -479,7 +479,7 @@ class SquareService extends BaseService {
   Future<dynamic> getInvitationTicketUrl(Map param) async {
     return await client.request.request(
       LINEStructs.SquareService_getInvitationTicketUrl_args(LINETypes.SquareService_getInvitationTicketUrl_args.fromJson(param)),
-      "getInvitationUrl",
+      "getInvitationTicketUrl",
       protocolType,
       true,
       requestPath

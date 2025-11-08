@@ -407,7 +407,7 @@ class TalkService extends BaseService {
   Future<dynamic> getRepairElements(Map param) async {
     return await client.request.request(
       LINEStructs.getRepairElements_args(LINETypes.getRepairElements_args.fromJson(param)),
-      "getRepairEements",
+      "getRepairElements",
       protocolType,
       true,
       requestPath
@@ -772,7 +772,7 @@ class TalkService extends BaseService {
     );
   }
 
-  Future<dynamic> veriftQrcode(Map param) async {
+  Future<dynamic> verifyQrcode(Map param) async {
     return await client.request.request(
       LINEStructs.verifyQrcode_args(LINETypes.verifyQrcode_args.fromJson(param)),
       "verifyQrcode",
