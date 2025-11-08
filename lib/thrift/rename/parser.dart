@@ -40,7 +40,7 @@ bool isStruct(dynamic obj) {
 class ThriftRenameParser {
   Map def = {};
 
-  dynamic _name2fid(String structName, String, name) {
+  dynamic _name2fid(String structName, String name) {
     dynamic struct = def[structName];
     if (struct != null && struct is List) {
       final result = struct.indexWhere((e) => e["name"] == name);
@@ -98,9 +98,15 @@ class ThriftRenameParser {
           });
         } else if (finfo["set"] != null && finfo["set"] is String && (value is Map || value is List)) {
           newObject[finfo["name"]] = [];
-          value.forEach((e, i) => {
-            newObject[finfo["name"]][i] = rename_thrift(finfo["set"], e)
-          });
+          if (value is Map) {
+            for (var v in value.values) {
+              newObject[finfo["name"]].add(rename_thrift(finfo["set"], v));
+            }
+          } else {
+            for (int i = 0; i < value.length; i++) {
+              newObject[finfo["name"]].add(rename_thrift(finfo["set"], value[i]));
+            }
+          }
         } else {
           newObject[finfo["name"]] = value;
         }
@@ -131,10 +137,16 @@ class ThriftRenameParser {
               newObject[finfo["name"]][k] = rename_thrift(finfo["map"], v);
             });
           } else if (finfo["set"] != null && finfo["set"] is String && (value is Map || value is List)) {
-            newObject[finfo["name"]] = [];
-            value.forEach((e, i) => {
-              newObject[finfo["name"]][i] = rename_thrift(finfo["set"], e)
-            });
+              newObject[finfo["name"]] = [];
+              if (value is Map) {
+                for (var v in value.values) {
+                  newObject[finfo["name"]].add(rename_thrift(finfo["set"], v));
+                }
+              } else {
+                for (int i = 0; i < value.length; i++) {
+                  newObject[finfo["name"]].add(rename_thrift(finfo["set"], value[i]));
+                }
+              }
           }  else {
             newObject[finfo["fid"]] = value;
           }
